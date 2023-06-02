@@ -38,13 +38,12 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100%;
-  
 }
 
 html {
   margin: 0px;
   padding: 0px;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; 
 }
 
 
@@ -64,4 +63,29 @@ html {
   justify-content: center;
   align-items: center;
   height: 100px;
+}
+
+#about{
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  color: white;
+}
+
+#profile {
+  background-color: black;
+  color: white; 
+  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
+}
+
+#projects{
+
+  background-image: linear-gradient(to top, #09203f 0%, #35063a 100%);
+  color: white;
+}
+
+h1 {
+  margin:"0px";
+}
+
+p {
+  margin:"0px";
 }

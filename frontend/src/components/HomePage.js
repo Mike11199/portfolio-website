@@ -18,10 +18,10 @@ const HomePage = () => {
             </HashLink>
         </nav>
         
-        <section id="about" style={{  marginTop:"100px"}}>
-        	<h1> About</h1>
-           
-            <p style={{height:"400px"}}>
+        <section id="about" style={{  marginTop:"76px", marginBottom:"0px"}}>   
+          <div style={{height:"40px", marginBottom:"0px"}}></div>       
+        	<h1> About</h1>           
+            <p style={{height:"400px", marginBottom:"0px"}}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Vero, nam! Iure officia aut esse tempore accusantium
                 explicabo? Corporis deleniti ipsa fuga quas aut neque
@@ -33,9 +33,9 @@ const HomePage = () => {
             </p>        
         </section>
         
-        <section id="profile">
-        	<h1> Profile </h1>
-          <p style={{height:"400px"}}>
+        <section id="profile" style={{margin:"0px"}}>
+        	<h1 style={{margin:"0px"}}> Profile </h1>
+          <p style={{height:"400px", margin:"0px"}}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Vero, nam! Iure officia aut esse tempore accusantium
                 explicabo? Corporis deleniti ipsa fuga quas aut neque
@@ -47,9 +47,9 @@ const HomePage = () => {
             </p>
         </section>
         
-        <section id="Projects">
-        	<h1> Projects </h1>
-          <p style={{height:"400px"}}>
+        <section id="projects">
+        	<h1 style={{margin:"0px", paddingTop:"40px"}}> Projects </h1>
+          <p style={{height:"400px", margin:"0px"}}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Vero, nam! Iure officia aut esse tempore accusantium
                 explicabo? Corporis deleniti ipsa fuga quas aut neque
