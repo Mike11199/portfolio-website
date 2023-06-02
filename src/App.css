@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+.navbar_link {
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: medium;
+  transition: color .3s; 
+  text-decoration: none;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar_link:hover {
+  color: #0062b9; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  position: fixed;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  height: 100px;
+  background: #fefefe;
+  background: #0e0d0d;
+  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); 
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  box-sizing: border-box;
+  position: relative;
+  line-height: 1.5;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: 'Source Sans Pro', sans-serif; 
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html {
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+}
+
+.main-footer {
+  background: #000;
+  color: #fff; 
+  height: 300px;
+}
+
+.profile_photo_image {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 200px;
+  margin-right: 122vh;
+  margin-left: 2vh;
 }
