@@ -33,8 +33,8 @@ const HomePage = () => {
             </p>        
         </section>
         
-        <section id="profile" style={{margin:"0px"}}>
-        	<h1 style={{margin:"0px"}}> Profile </h1>
+        <section id="projects" style={{margin:"0px"}}>
+        	<h1 style={{margin:"0px"}}> Projects </h1>
           <p style={{height:"400px", margin:"0px"}}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Vero, nam! Iure officia aut esse tempore accusantium
@@ -47,8 +47,8 @@ const HomePage = () => {
             </p>
         </section>
         
-        <section id="projects">
-        	<h1 style={{margin:"0px", paddingTop:"40px"}}> Projects </h1>
+        <section id="profile">
+        	<h1 style={{margin:"0px", paddingTop:"40px"}}> Profile </h1>
           <p style={{height:"400px", margin:"0px"}}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Vero, nam! Iure officia aut esse tempore accusantium

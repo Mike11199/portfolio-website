@@ -70,13 +70,13 @@ html {
   color: white;
 }
 
-#profile {
+#projects {
   background-color: black;
   color: white; 
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
 }
 
-#projects{
+#profile{
 
   background-image: linear-gradient(to top, #09203f 0%, #35063a 100%);
   color: white;
@@ -84,8 +84,10 @@ html {
 
 h1 {
   margin:"0px";
+  padding-left: 50px;
 }
 
 p {
   margin:"0px";
+  padding-left: 50px;
 }
