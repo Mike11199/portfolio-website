@@ -18,7 +18,7 @@ const HomePage = () => {
             </HashLink>
         </nav>
         
-        <section id="about">
+        <section id="about" style={{  marginTop:"100px"}}>
         	<h1> About</h1>
            
             <p style={{height:"400px"}}>

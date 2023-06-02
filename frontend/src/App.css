@@ -38,6 +38,7 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100%;
+  
 }
 
 html {
@@ -46,11 +47,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.main-footer {
-  background: #000;
-  color: #fff; 
-  height: 300px;
-}
 
 .profile_photo_image {
   width: 6vh;
@@ -58,4 +54,14 @@ html {
   border-radius: 200px;
   margin-right: 122vh;
   margin-left: 2vh;
+}
+
+
+.bottom_footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
