@@ -10,6 +10,7 @@
   transition: color .3s; 
   text-decoration: none;
   padding: 20px;
+  z-index: -1;
 }
 
 .navbar_link:hover {
@@ -27,6 +28,7 @@
   box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); 
   align-items: center;
   justify-content: center;
+  z-index: 111;
 }
 
 body {
@@ -139,4 +141,16 @@ p {
    50% { transform: rotate(10.0deg) }
    60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
   100% { transform: rotate( 0.0deg) }
+}
+
+.player-wrapper {  
+  position: relative;  
+  z-index: 1;
+}
+.bar{
+  position: absolute;
+  top: 0;  
+  width: 270px;
+  height: 50px;
+  
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, React } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import Shop_Image_1 from '../images/shop_1.png'
 import Shop_Image_2 from '../images/shop_2.png'
@@ -21,20 +21,45 @@ import Space_Tau_4 from '../images/space_tau_4.png'
 import Space_Tau_5 from '../images/space_tau_5.png'
 import Space_Tau_6 from '../images/space_tau_6.png'
 import Space_Tau_7 from '../images/space_tau_7.png'
+import Vent5Video from '../images/vent5.mp4'
+import ReactPlayer from 'react-player'
+import YTBackground from '../images/hide_youtube_channel_name.png'
+
 
 const HomePage = () => {
 
+  const youtubeOptions = {
+    playerVars: {
+      controls: 1,
+      showinfo: 0,
+      playsinline: 1,
+    }}
+
   return (
 <>
-          <section id="about" style={{  paddingTop:"140px", marginBottom:"0px", height:"822px"}}>   
+          <section id="about" style={{  paddingTop:"140px", marginBottom:"0px", height:"950px"}}>   
           <div style={{height:"40px", marginBottom:"0px"}}></div>       
         	<h1>About Me <span class="wave">👋</span></h1>      
-          <div className='about_me_section'>
+          <div className='about_me_section'>           
+          <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"70px", paddingBottom:"70px"}} >
+              <ReactPlayer   
+                width={336}
+                height={598}
+                playing
+                url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
+                loop="true"
+                muted="true"
+                style={{zIndex:1}}
+                config={{
+                  youtube: youtubeOptions,
+                }}
+              />
+            </div>
               <img
                 src={IceCavePhoto2}
                 alt="Michael Iwanek Navbar"
                 class="profile_photo_image_body"
-              />  
+              />            
             <div style={{height:"400px", marginBottom:"0px", paddingRight:"14vh"}}>
             <p>Hey there!</p>
             <p>
