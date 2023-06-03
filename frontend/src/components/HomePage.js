@@ -9,6 +9,17 @@ import Job_Tracker_Home_Page from '../images/apply_your_self_home_page.png'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import IceCavePhoto from '../images/me_ice_cave.png'
+import RSA_Gif from '../images/rsa_encryption_1.gif'
+import AES_Gif from '../images/aes_encryption_1.gif'
+import RSA_Image from '../images/AESPage.png'
+import AES_Image from '../images/RSAPage.png'
+import Space_Tau_1 from '../images/space_tau_1.png'
+import Space_Tau_2 from '../images/space_tau_2.png'
+import Space_Tau_3 from '../images/space_tau_3.png'
+import Space_Tau_4 from '../images/space_tau_4.png'
+import Space_Tau_5 from '../images/space_tau_5.png'
+import Space_Tau_6 from '../images/space_tau_6.png'
+import Space_Tau_7 from '../images/space_tau_7.png'
 
 const HomePage = () => {
 
@@ -71,7 +82,7 @@ const HomePage = () => {
           </div>
 
         </section>
-        <section id="profile"  style={{margin:"0px"}}>       
+        <section id="profile"  style={{margin:"0px", height:"1000px"}}>       
           <div style={{margin:"0px"}}>
           <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>
            applyYourSelf Job Application Tracker
@@ -94,6 +105,72 @@ const HomePage = () => {
           </div>
           </div>
         </section>      
+        <section id="projects" style={{margin:"0px", height:"1000px"}}>
+          <h2 style={{marginBottom:"30px", marginTop:"0px", paddingBottom:"40px"}}>
+            RSA & AES Encryption App - Electron.js, React.js
+          </h2>   
+          <div class="project_card">     
+              <Carousel width="50%" autoPlay="true" infiniteLoop="true">
+                    <div>
+                        <img alt="shop_1" src={RSA_Gif} />
+                        {/* <p className="legend">Legend 1</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_2" src={RSA_Image} />
+                        {/* <p className="legend">Legend 2</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_3"src={AES_Gif} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_3"src={AES_Image} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+              </Carousel>
+          </div>
+
+        </section>
+        <section id="profile"  style={{margin:"0px", height:"1000px"}}>       
+          <div style={{margin:"0px"}}>
+          <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
+          SpaceTau-Flask-and-MySQL-App
+          </h2>   
+          <div class="project_card" style={{marginBottom:"100px"}}>     
+              <Carousel width="50%" autoPlay="true" infiniteLoop="true" dynamicHeight="true" showArrows="true">
+                    <div>
+                        <img alt="shop_1" src={Space_Tau_1} />
+                        {/* <p className="legend">Legend 1</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_2" src={Space_Tau_2} />
+                        {/* <p className="legend">Legend 2</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_3"src={Space_Tau_3} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_3"src={Space_Tau_4} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_3"src={Space_Tau_5} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_3"src={Space_Tau_6} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_3"src={Space_Tau_7} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+              </Carousel>
+          </div>
+          </div>
+        </section>   
+
     </>
   );
 }
