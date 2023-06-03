@@ -9,6 +9,7 @@ import Job_Tracker_Home_Page from '../images/apply_your_self_home_page.png'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import IceCavePhoto from '../images/me_ice_cave.png'
+import IceCavePhoto2 from '../images/me_ice_cave2.jpg'
 import RSA_Gif from '../images/rsa_encryption_1.gif'
 import AES_Gif from '../images/aes_encryption_1.gif'
 import RSA_Image from '../images/AESPage.png'
@@ -30,7 +31,7 @@ const HomePage = () => {
         	<h1>About Me <span class="wave">👋</span></h1>      
           <div className='about_me_section'>
               <img
-                src={IceCavePhoto}
+                src={IceCavePhoto2}
                 alt="Michael Iwanek Navbar"
                 class="profile_photo_image_body"
               />  
