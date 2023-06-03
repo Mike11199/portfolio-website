@@ -15,6 +15,7 @@ const Navbar = () => {
                 class="profile_photo_image"
               />
             </div>
+            <p style={{color:"white", fontWeight: 150, fontFamily: "Segoe UI", fontSize: "35px", paddingRight:"90vh", textTransform: "uppercase", color:"white"}}>Michael Iwanek</p>
             <Link className="navbar_link" to="/">Home</Link>
             <Link className="navbar_link" to="/rsa">About</Link>
             <HashLink className="navbar_link" smooth to="/#Projects">
