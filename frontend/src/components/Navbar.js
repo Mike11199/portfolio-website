@@ -2,12 +2,34 @@ import { Link } from "react-router-dom";
 import '../App.css'; // Import the CSS file
 import { HashLink } from 'react-router-hash-link';
 import IceCavePhoto from '../images/me_ice_cave.png'
-
+import { useScroll, animated } from "react-spring";
+import { useState } from "react";
 
 const Navbar = () => {
+
+  const [scrollVal, setScrollVal] = useState(0)
+
+  const { scrollYProgress } = useScroll({
+    onChange: ({ value: { scrollYProgress } }) => {
+      setScrollVal(scrollYProgress * 100);
+    }
+  });
+
   return (
         <>
         <div className="navbar">
+      <animated.div
+        style={{
+          position: "absolute",
+          top: "100%", 
+          left: 0,  
+          transform: `scaleX(${scrollVal})`,
+          background: "purple",
+          height: "1px",
+          width: "2%"
+        }}
+      ></animated.div>
+
             <div class="profile_photo">
               <img
                 src={IceCavePhoto}
