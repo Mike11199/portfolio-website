@@ -4,6 +4,8 @@ import { HashLink } from 'react-router-hash-link';
 import IceCavePhoto from '../images/me_ice_cave.png'
 import { useScroll, animated } from "react-spring";
 import { useState } from "react";
+import Resume_PDF from '../misc/CV_Small.pdf';
+
 
 const Navbar = () => {
 
@@ -24,9 +26,10 @@ const Navbar = () => {
           top: "100%", 
           left: 0,  
           transform: `scaleX(${scrollVal})`,
-          background: "purple",
-          height: "1px",
-          width: "2%"
+          background: "darkred",
+          height: "5px",
+          width: "2%",
+          // borderRadius: "1px"
         }}
       ></animated.div>
 
@@ -39,11 +42,11 @@ const Navbar = () => {
             </div>
             <p style={{color:"white", fontWeight: 150, fontFamily: "Segoe UI", fontSize: "35px", paddingRight:"90vh", textTransform: "uppercase", color:"white"}}>Michael Iwanek</p>
             <Link className="navbar_link" to="/">Home</Link>
-            <Link className="navbar_link" to="/rsa">About</Link>
-            <HashLink className="navbar_link" smooth to="/#Projects">
+            {/* <Link className="navbar_link" to="/rsa">About</Link> */}
+            <HashLink className="navbar_link" smooth to="#Projects">
               Projects
             </HashLink>            
-            <Link className="navbar_link" to="/base64">Resume</Link>
+            <Link className="navbar_link"to={Resume_PDF} target="_blank" rel="noopener noreferrer">Resume</Link>
             <Link className="navbar_link" to="/tutorial">Contact</Link>
         </div>
         </>

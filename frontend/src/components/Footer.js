@@ -6,7 +6,7 @@ const Footer = () => {
   return (
         <>
         <div className="bottom_footer">
-          <p>Copyright Michael Iwanek</p>            
+          <p>© Copyright Michael Iwanek - 2023</p>            
         </div>
         </>
   );

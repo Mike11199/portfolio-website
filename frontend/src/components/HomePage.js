@@ -131,7 +131,7 @@ const HomePage = () => {
           </div>
           </div>
         </section>      
-        <section id="projects" style={{margin:"0px", height:"1000px"}}>
+        <section id="projects2" style={{margin:"0px", height:"1000px"}}>
           <h2 style={{marginBottom:"30px", marginTop:"0px", paddingBottom:"40px"}}>
             RSA & AES Encryption App - Electron.js, React.js
           </h2>   
@@ -157,44 +157,86 @@ const HomePage = () => {
           </div>
 
         </section>
-        <section id="profile"  style={{margin:"0px", height:"1200px"}}>       
-          <div style={{margin:"0px"}}>
-          <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
-          SpaceTau-Flask-and-MySQL-App
-          </h2>   
-          <div class="project_card" style={{marginBottom:"100px"}}>     
-              <Carousel width="50%" autoPlay="true" infiniteLoop="true" dynamicHeight="true" showArrows="true">
-                    <div>
-                        <img alt="shop_1" src={Space_Tau_1} />
-                        {/* <p className="legend">Legend 1</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_2" src={Space_Tau_2} />
-                        {/* <p className="legend">Legend 2</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={Space_Tau_3} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={Space_Tau_4} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={Space_Tau_5} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={Space_Tau_6} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={Space_Tau_7} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-              </Carousel>
-          </div>
-          </div>
+        <section id="profile"  style={{margin:"0px", height:"1600px"}}>       
+              <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
+              SpaceTau-Flask-and-MySQL-App
+              </h2>   
+              <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
+              <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"50%"}}>
+              <div class="project_card" style={{marginBottom:"50px"}}>     
+                  <Carousel width="100%" autoPlay="true" infiniteLoop="true" dynamicHeight="true" showArrows="true">
+                        <div>
+                            <img alt="shop_1" src={Space_Tau_1} />
+                            {/* <p className="legend">Legend 1</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_2" src={Space_Tau_2} />
+                            {/* <p className="legend">Legend 2</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_3"src={Space_Tau_3} />
+                            {/* <p className="legend">Legend 3</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_3"src={Space_Tau_4} />
+                            {/* <p className="legend">Legend 3</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_3"src={Space_Tau_5} />
+                            {/* <p className="legend">Legend 3</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_3"src={Space_Tau_6} />
+                            {/* <p className="legend">Legend 3</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_3"src={Space_Tau_7} />
+                            {/* <p className="legend">Legend 3</p> */}
+                        </div>
+                  </Carousel>
+              </div>
+          
+              {/* <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"120px", paddingBottom:"70px"}} >
+                <ReactPlayer   
+                  width={576}
+                  height={324}
+                  playing
+                  url="https://www.youtube.com/watch?v=U-nX-urr8_c?autoplay=1&modestbranding=1&frameborder=12"
+                  loop="true"
+                  muted="true"
+                  style={{zIndex:1}}
+                  config={{
+                  youtube: youtubeOptions,
+                }}
+                />
+              </div> */}
+              <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"120px", paddingBottom:"70px"}} >
+                <ReactPlayer   
+                  width={576}
+                  height={324}
+                  playing
+                  url="https://www.youtube.com/watch?v=yFzZ-Xfj5Wk?autoplay=1&modestbranding=1&frameborder=12"
+                  loop="true"
+                  muted="true"
+                  style={{zIndex:1}}
+                  config={{
+                  youtube: youtubeOptions,
+                }}
+                />
+              </div>
+              
+            </div>
+              <div style={{paddingRight:"150px"}}>
+                  <p>This is a project I made to learn Flask and run Python in a back-end server environment, using a Jinja templating system to render HTML on the front-end.</p>
+                  <p>I implemented a MariaDB backed MySQL database and designed a schema for this in MySQL Workbench, to support relationships among the database tables.  The project serves as a web-based application to a fictional database system for a space company.</p>
+                  <p>Multiple one-to-many relationships are supported, as well as one many-to-many relationship between spacecraft and parts.</p>
+                  <p>
+                     This project's theme is due to the fact that I've always had an interest in space exploration.  
+                     I enjoy reading about recent developments by NASA and other entities, and in my spare time enjoy simulator games like Kerbal Space Program (see gameplay video below), which has taught me much about physics in a fun way.
+                  </p>
+              </div>
+            </div>
+
         </section>   
 
     </>
