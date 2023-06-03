@@ -34,31 +34,31 @@ const HomePage = () => {
                 alt="Michael Iwanek Navbar"
                 class="profile_photo_image_body"
               />  
-            <p style={{height:"400px", marginBottom:"0px"}}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Vero, nam! Iure officia aut esse tempore accusantium
-                explicabo? Corporis deleniti ipsa fuga quas aut neque
-                dicta nostrum laboriosam, iusto ullam minima est porro,
-                totam saepe. Facilis aliquid praesentium, voluptates rem
-                quibusdam sequi numquam illo eius adipisci eaque,
-                necessitatibus consectetur, labore vero et ipsum.
-                Officiis, ea vero. Praesentium, et. Enim, nostrum illo.
-            </p>        
+            <div style={{height:"400px", marginBottom:"0px", paddingRight:"14vh"}}>
+            <p>Hey there!</p>
+            <p>
+            I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for my personal learning.  
+            </p>      
+            <p>
+            I'm currently a Computer Science student at Oregon State University in an accelerated post-baccalaureate program.  
+            My first degree was in accounting, and after graduation I worked for about three years as a CPA in public accounting and government roles.
+            </p>     
+            <p>
+            I first discovered programming by self-teaching myself VBA to automate work tasks, and discovered how much I enjoy working through coding problems and building things.
+            </p>         
+            <p>
+            Outside of work and school, I enjoy rock climbing, skiing, and PC games.  It's on my bucket list to be able to eventually climb multi-pitch routes get into back-country skiing one day.
+            </p>         
+              
+            </div>   
             </div>   
         </section>
         
         <section id="projects" style={{margin:"0px"}}>
         	<h1 style={{margin:"0px"}}> Projects </h1>
-          <p style={{height:"auto", marginBottom:"150px"}}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Vero, nam! Iure officia aut esse tempore accusantium
-                explicabo? Corporis deleniti ipsa fuga quas aut neque
-                dicta nostrum laboriosam, iusto ullam minima est porro,
-                totam saepe. Facilis aliquid praesentium, voluptates rem
-                quibusdam sequi numquam illo eius adipisci eaque,
-                necessitatibus consectetur, labore vero et ipsum.
-                Officiis, ea vero. Praesentium, et. Enim, nostrum illo.
-            </p>
+          <p style={{height:"auto", marginBottom:"100px"}}>
+            Please see full-stack Computer Science projects I've completed below, in various programming languages.
+          </p>
 
           
           <h2 style={{marginBottom:"30px", marginTop:"100px", paddingBottom:"40px"}}>
@@ -131,7 +131,7 @@ const HomePage = () => {
           </div>
 
         </section>
-        <section id="profile"  style={{margin:"0px", height:"1600px"}}>       
+        <section id="profile"  style={{margin:"0px", height:"1200px"}}>       
           <div style={{margin:"0px"}}>
           <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
           SpaceTau-Flask-and-MySQL-App
