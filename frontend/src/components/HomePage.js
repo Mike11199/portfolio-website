@@ -3,6 +3,9 @@ import { HashLink } from 'react-router-hash-link';
 import Shop_Image_1 from '../images/shop_1.png'
 import Shop_Image_2 from '../images/shop_2.png'
 import Shop_Image_3 from '../images/shop_3.png'
+import Shop_Image_4 from '../images/shop_4.png'
+import Shop_Image_5 from '../images/shop_5.png'
+import Shop_Image_6 from '../images/shop_6.png'
 import Job_Tracker_Gif_1 from '../images/apply_your_self_1.gif'
 import Job_Tracker_Gif_2 from '../images/apply_your_self_2.gif'
 import Job_Tracker_Home_Page from '../images/apply_your_self_home_page.png'
@@ -24,6 +27,9 @@ import Space_Tau_7 from '../images/space_tau_7.png'
 import Vent5Video from '../images/vent5.mp4'
 import ReactPlayer from 'react-player'
 import YTBackground from '../images/hide_youtube_channel_name.png'
+import Job_Tracker_1 from '../images/job_tracker_1.png'
+import Job_Tracker_2 from '../images/job_tracker_2.png'
+import Job_Tracker_3 from '../images/job_tracker_3.png'
 
 
 const HomePage = () => {
@@ -104,6 +110,20 @@ const HomePage = () => {
                         <img alt="shop_3"src={Shop_Image_3} />
                         {/* <p className="legend">Legend 3</p> */}
                     </div>
+                    <div>
+                        <img alt="shop_4"src={Shop_Image_4} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_5"src={Shop_Image_5} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_6"src={Shop_Image_6} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+
+
               </Carousel>
           </div>
 
@@ -119,12 +139,21 @@ const HomePage = () => {
                         <img alt="shop_1" src={Job_Tracker_Gif_1} />
                         {/* <p className="legend">Legend 1</p> */}
                     </div>
-                    <div>
-                        <img alt="shop_2" src={Job_Tracker_Home_Page} />
-                        {/* <p className="legend">Legend 2</p> */}
-                    </div>
+
                     <div>
                         <img alt="shop_3"src={Job_Tracker_Home_Page} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_3"src={Job_Tracker_1} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_3"src={Job_Tracker_2} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_3"src={Job_Tracker_3} />
                         {/* <p className="legend">Legend 3</p> */}
                     </div>
               </Carousel>
