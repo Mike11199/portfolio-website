@@ -157,12 +157,12 @@ const HomePage = () => {
           </div>
 
         </section>
-        <section id="profile"  style={{margin:"0px", height:"1600px"}}>       
+        <section id="profile"  style={{margin:"0px", height:"1200px"}}>       
               <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
               SpaceTau-Flask-and-MySQL-App
               </h2>   
               <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
-              <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"50%"}}>
+              <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"100%"}}>
               <div class="project_card" style={{marginBottom:"50px"}}>     
                   <Carousel width="100%" autoPlay="true" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                         <div>
