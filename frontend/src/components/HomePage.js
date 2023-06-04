@@ -28,6 +28,7 @@ import ReactPlayer from 'react-player'
 import Job_Tracker_1 from '../images/job_tracker_1.png'
 import Job_Tracker_2 from '../images/job_tracker_2.png'
 import Job_Tracker_3 from '../images/job_tracker_3.png'
+import Editing_Ski_Photo from '../images/editing_ski_photo_GIMP.gif'
 
 
 const HomePage = () => {
@@ -121,8 +122,10 @@ const HomePage = () => {
                         <img alt="shop_6"src={Shop_Image_6} />
                         {/* <p className="legend">Legend 3</p> */}
                     </div>
-
-
+                    <div>
+                        <img alt="shop_6"src={Editing_Ski_Photo} />
+                        {/* <p className="legend">Legend 3</p> */}
+                    </div>
               </Carousel>
           </div>
 
