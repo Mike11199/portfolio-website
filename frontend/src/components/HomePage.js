@@ -29,6 +29,9 @@ import Job_Tracker_1 from '../images/job_tracker_1.png'
 import Job_Tracker_2 from '../images/job_tracker_2.png'
 import Job_Tracker_3 from '../images/job_tracker_3.png'
 import Editing_Ski_Photo from '../images/editing_ski_photo_GIMP.gif'
+import Heavenly_Ski_Resort_Photo from '../images/heavenly_ski_resort_me.jpg'
+
+
 
 
 const HomePage = () => {
@@ -47,7 +50,7 @@ const HomePage = () => {
           <div style={{height:"40px", marginBottom:"0px"}}></div>       
         	<h1>About Me <span class="wave">👋</span></h1>      
           <div className='about_me_section'>           
-          <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"70px", paddingBottom:"70px"}} >
+          <div className='player-wrapper' style={{paddingRight:"40px", paddingLeft:"70px", paddingBottom:"70px"}} >
               <ReactPlayer   
                 width={336}
                 height={598}
@@ -65,7 +68,14 @@ const HomePage = () => {
                 src={IceCavePhoto2}
                 alt="Michael Iwanek Navbar"
                 class="profile_photo_image_body"
-              />            
+              />   
+              
+              <img                    
+                src={Heavenly_Ski_Resort_Photo}
+                alt="Michael Iwanek Navbar"
+                class="profile_photo_image_body_2"
+              />    
+                     
             <div style={{height:"400px", marginBottom:"0px", paddingRight:"14vh"}}>
             <p>Hey there!</p>
             <p>
