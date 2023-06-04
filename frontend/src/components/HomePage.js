@@ -45,12 +45,12 @@ const HomePage = () => {
 
   return (
 <>
-<div id="about_me_section"></div>
-          <section id="about" style={{  paddingTop:"140px", marginBottom:"0px", height:"950px"}}>   
+        <div id="about_me_section"></div>
+        <section id="about" style={{  paddingTop:"100px", marginBottom:"0px", height:"850px"}}>   
           <div style={{height:"40px", marginBottom:"0px"}}></div>       
         	<h1>About Me <span class="wave">👋</span></h1>      
           <div className='about_me_section'>           
-          <div className='player-wrapper' style={{paddingRight:"40px", paddingLeft:"70px", paddingBottom:"70px"}} >
+          <div className='player-wrapper' style={{paddingRight:"40px", paddingLeft:"70px", paddingBottom:"40px"}} >
               <ReactPlayer   
                 width={336}
                 height={598}
@@ -68,8 +68,7 @@ const HomePage = () => {
                 src={IceCavePhoto2}
                 alt="Michael Iwanek Navbar"
                 class="profile_photo_image_body"
-              />   
-              
+              />                 
               <img                    
                 src={Heavenly_Ski_Resort_Photo}
                 alt="Michael Iwanek Navbar"
@@ -90,11 +89,14 @@ const HomePage = () => {
             </p>         
             <p>
             Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb multi-pitch routes and get into back-country skiing one day.
-            </p>         
-              
+            </p>                       
             </div>   
             </div>   
         </section>
+
+
+
+        {/* SECTION FOR PROJECT #1 */}
         <div id="projects_section"></div>
         <section id="projects" style={{margin:"0px"}}>
         	<h1 style={{margin:"0px"}}> Projects </h1>
@@ -106,8 +108,10 @@ const HomePage = () => {
           <h2 style={{marginBottom:"30px", marginTop:"100px", paddingBottom:"40px"}}>
             Ski & Rock Climbing E-Commerce Store
           </h2>   
+          <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
+          <div style={{margin:"0px", width:"100%"}}>
           <div class="project_card">     
-              <Carousel width="50%" autoPlay="true" infiniteLoop="true">
+              <Carousel width="100%" autoPlay="true" infiniteLoop="true">
                     <div>
                         <img alt="shop_1" src={Shop_Image_1} />
                         {/* <p className="legend">Legend 1</p> */}
@@ -138,66 +142,156 @@ const HomePage = () => {
                     </div>
               </Carousel>
           </div>
-
+          </div>
+          <div style={{paddingRight:"150px"}}>
+          <ul>
+            <li>
+              A complex full-stack website (REI/Amazon clone) where users can search for products, 
+              add them to a cart, and submit/pay for an order with PayPal. An Admin dashboard allows 
+              for product/inventory management, and real-time statistics/user chats.  
+            </li>
+            <li>
+              Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website, 
+              sending order info to PayPal and marking an order as paid in the MongoDB database depending 
+              on the external API response.
+            </li>
+            <li>
+              Implemented Socket.IO to allow for bi-directional client and server communication, to enable real-time messaging between a logged in admin and user. Used Redux for global state management and Bootstrap to develop React components.
+            </li>
+            <li>
+              Modeled complicated database relationships between products, orders, and users using embedded MongoDB documents.
+            </li>
+            <li>
+              Added Google OAuth2.0 Log In, decoding JWT credentials from Google, and locating the user by email in MongoDB to verify the user.
+            </li>
+          </ul> 
+              </div>
+          </div>
         </section>
-        <section id="profile"  style={{margin:"0px", height:"1000px"}}>       
-          <div style={{margin:"0px"}}>
+       
+
+
+       
+        {/* SECTION FOR PROJECT #2 */}
+        <section id="profile"  style={{margin:"0px", height:"800px", width:"100%"}}>       
+          
+
           <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>
-           applyYourSelf Job Application Tracker
+          applyYourSelf Job Application Tracker  
           </h2>   
-          <div class="project_card">     
-              <Carousel width="50%" autoPlay="true" infiniteLoop="true" dynamicHeight="true" showArrows="true">
-                    <div>
-                        <img alt="shop_1" src={Job_Tracker_Gif_1} />
-                        {/* <p className="legend">Legend 1</p> */}
-                    </div>
+          <div style={{margin:"0px", display:"flex", flexDirection: "row", width:"100%"}}>
 
-                    <div>
-                        <img alt="shop_3"src={Job_Tracker_Home_Page} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={Job_Tracker_1} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={Job_Tracker_2} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={Job_Tracker_3} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-              </Carousel>
-          </div>
-          </div>
+            <div class="project_card" style={{margin:"0px", width:"50%"}}>     
+                <Carousel width="100%" autoPlay="true" infiniteLoop="true" dynamicHeight="true" showArrows="true">
+                      <div>
+                          <img alt="shop_1" src={Job_Tracker_Gif_1} />
+                          {/* <p className="legend">Legend 1</p> */}
+                      </div>
+
+                      <div>
+                          <img alt="shop_3"src={Job_Tracker_Home_Page} />
+                          {/* <p className="legend">Legend 3</p> */}
+                      </div>
+                      <div>
+                          <img alt="shop_3"src={Job_Tracker_1} />
+                          {/* <p className="legend">Legend 3</p> */}
+                      </div>
+                      <div>
+                          <img alt="shop_3"src={Job_Tracker_2} />
+                          {/* <p className="legend">Legend 3</p> */}
+                      </div>
+                      <div>
+                          <img alt="shop_3"src={Job_Tracker_3} />
+                          {/* <p className="legend">Legend 3</p> */}
+                      </div>
+                </Carousel>
+            </div>
+           
+
+            <div style={{paddingRight:"150px", width:"50%"}}>
+            <ul>
+              <li>
+              Full-stack MERN web application that allows multiple users to track their job application history on one convenient 
+              website from anywhere. Allows jobs to be searched, sorted by date, name, and categorized by application status with full 
+              CRUD functionality. A dashboard shows statistical data visually via a Bar chart and Sankey chart, showing which jobs led 
+              to subsequent interviews and applications per month. Detailed notes can also be added to each job's history. 
+              </li>
+              <li>
+              Features are implemented by several REST APIs, allowing user registration and login via Express.js routes, such as google 
+              OAuth 2.0. Back-end is run on Node.js connected to a MongoDB NoSQL database, with collections mapped to various Mongoose schema 
+              for Users/Jobs. Uses JWT bearer-tokens to access restricted pages, password hashing (brypt.js), and private API routes using Axios 
+              interceptors so users can only access their own data. 
+              </li>
+              <li>
+              Added various controllers to the APIs for jobs/user routes to implement error handling, user authentication, and not-found middleware. 
+              Used Postman to test HTTP requests made with Axios by the front-end to the server and check JSON responses. Features React.js reducers/actions 
+              to update the global state (React Context) and various statistics used to generate charts (Sankey, Bar Chart, etc.).
+              </li>
+            </ul> 
+            </div>
+          </div>               
         </section>      
-        <section id="projects2" style={{margin:"0px", height:"1000px"}}>
-          <h2 style={{marginBottom:"30px", marginTop:"0px", paddingBottom:"40px"}}>
-            RSA & AES Encryption App - Electron.js, React.js
-          </h2>   
-          <div class="project_card">     
-              <Carousel width="50%" autoPlay="true" infiniteLoop="true">
-                    <div>
-                        <img alt="shop_1" src={RSA_Gif} />
-                        {/* <p className="legend">Legend 1</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_2" src={RSA_Image} />
-                        {/* <p className="legend">Legend 2</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={AES_Gif} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={AES_Image} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-              </Carousel>
-          </div>
 
-        </section>
+
+
+
+        {/* SECTION FOR PROJECT #3 */}
+        <section id="projects2"  style={{margin:"0px", height:"1000px", width:"100%"}}>                 
+
+          <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>
+          RSA & AES Encryption App - Electron.js, React.js
+          </h2>   
+          <div style={{margin:"0px", display:"flex", flexDirection: "row", width:"100%"}}>
+
+            <div class="project_card" style={{margin:"0px", width:"50%"}}>     
+              <Carousel width="100%" autoPlay="true" infiniteLoop="true">
+                      <div>
+                          <img alt="shop_1" src={RSA_Gif} />
+                          {/* <p className="legend">Legend 1</p> */}
+                      </div>
+                      <div>
+                          <img alt="shop_2" src={RSA_Image} />
+                          {/* <p className="legend">Legend 2</p> */}
+                      </div>
+                      <div>
+                          <img alt="shop_3"src={AES_Gif} />
+                          {/* <p className="legend">Legend 3</p> */}
+                      </div>
+                      <div>
+                          <img alt="shop_3"src={AES_Image} />
+                          {/* <p className="legend">Legend 3</p> */}
+                      </div>
+              </Carousel>
+            </div>
+           
+
+            <div style={{paddingRight:"150px", width:"50%"}}>
+            <ul>
+              <li>
+              Developed an Electron.js (local exe) and web application to allow a user to encrypt/decrypt text 
+              with RSA and AES encryption, using front end technologies. 
+              </li>
+              <li>
+              Added tutorials to allow for a user to follow along to the website using a CLI approach and the openssl 
+              library. The library is fully compatible with the RSA encryption used by the website, allowing a user to 
+              store their private key locally, use the website to encrypt with a public key, and then use AES locally 
+              with the CLI to exchange files/text. This approach is completely secure as only text encrypted by the public
+              key is exchanged over the web (the encrypted AES key). 
+              </li>
+              <li>
+              Implemented a microservice developed by another student to simulate a hybrid encryption scheme, where one uses 
+              RSA to exchange an AES key. The RSA key-pair holder sends their public key via an HTTP request to the partner's 
+              microservice, which sends back an encrypted AES key, along with random text encrypted with that AES key. These 
+              two items can then be decrypted using the website's functionality.
+              </li>
+            </ul> 
+            </div>
+          </div>               
+        </section>      
+
+
+
+        {/* SECTION FOR PROJECT #4 */}
         <section id="profile"  style={{margin:"0px", height:"1200px"}}>       
               <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
               SpaceTau-Flask-and-MySQL-App
@@ -268,13 +362,27 @@ const HomePage = () => {
               
             </div>
               <div style={{paddingRight:"150px"}}>
-                  <p>This is a project I made to learn Flask and run Python in a back-end server environment, using a Jinja templating system to render HTML on the front-end.</p>
-                  <p>I implemented a MariaDB backed MySQL database and designed a schema for this in MySQL Workbench, to support relationships among the database tables.  The project serves as a web-based application to a fictional database system for a space company.</p>
-                  <p>Multiple one-to-many relationships are supported, as well as one many-to-many relationship between spacecraft and parts.</p>
-                  <p>
+                <ul>
+                  <li>
+                    This is a project I made to learn Flask and run Python in a back-end server environment, 
+                    using a Jinja templating system to render HTML on the front-end.
+                  </li>
+                  <li>
+                    I implemented a MariaDB backed MySQL database and designed a schema for this in MySQL Workbench,
+                     to support relationships among the database tables.  The project serves as a web-based application 
+                     to a fictional database system for a space company.
+                  </li>
+                  <li>
+                    Multiple one-to-many relationships are supported, as well as one many-to-many relationship between 
+                    spacecraft and parts.
+                  </li>
+                  <li>
                      This project's theme is due to the fact that I've always had an interest in space exploration.  
-                     I enjoy reading about recent developments by NASA and other entities, and in my spare time enjoy simulator games like Kerbal Space Program (see gameplay video below), which has taught me much about physics in a fun way.
-                  </p>
+                     I enjoy reading about recent developments by NASA and other entities, and in my spare time enjoy 
+                     simulator games like Kerbal Space Program (see gameplay video below), which has taught me much about 
+                     physics in a fun way.
+                  </li>
+                  </ul>
               </div>
             </div>
 

@@ -186,3 +186,11 @@ p {
   visibility: hidden;
 }
 
+ul {
+  list-style-type: square;
+  margin-left: 20px; 
+}
+
+li {
+  margin-bottom: 30px;
+}
