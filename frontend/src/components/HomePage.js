@@ -79,7 +79,7 @@ const HomePage = () => {
             <div style={{height:"400px", marginBottom:"0px", paddingRight:"14vh"}}>
             <p>Hey there!</p>
             <p>
-            I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for my personal learning.  
+            I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for personal learning and development.  
             </p>      
             <p>
             I'm currently a Computer Science student at Oregon State University in an accelerated post-baccalaureate program.  
@@ -89,7 +89,7 @@ const HomePage = () => {
             I first discovered programming by self-teaching myself VBA to automate work tasks, and discovered how much I enjoy working through coding problems and building things.
             </p>         
             <p>
-            Outside of work and school, I enjoy rock climbing, skiing, and PC games.  It's on my bucket list to be able to eventually climb multi-pitch routes get into back-country skiing one day.
+            Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb multi-pitch routes and get into back-country skiing one day.
             </p>         
               
             </div>   
