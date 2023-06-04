@@ -17,6 +17,10 @@ const Navbar = () => {
     }
   });
 
+  const handleContactClick = () => {
+    window.open("https://www.linkedin.com/in/michael-iwanek/", "_blank");
+  };
+
   return (
         <>
         <div className="navbar">
@@ -50,7 +54,7 @@ const Navbar = () => {
               Projects
             </HashLink>            
             <Link className="navbar_link"to={Resume_PDF} target="_blank" rel="noopener noreferrer">Resume</Link>
-            <Link className="navbar_link" to="/tutorial">Contact</Link>
+            <Link className="navbar_link" onClick={handleContactClick}>Contact</Link>
         </div>
         </>
   );
