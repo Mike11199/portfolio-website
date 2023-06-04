@@ -41,9 +41,12 @@ const Navbar = () => {
               />
             </div>
             <p style={{color:"white", fontWeight: 150, fontFamily: "Segoe UI", fontSize: "35px", paddingRight:"90vh", textTransform: "uppercase", color:"white"}}>Michael Iwanek</p>
-            <Link className="navbar_link" to="/">Home</Link>
+            {/* <Link className="navbar_link" to="/">Home</Link> */}
+            <HashLink className="navbar_link" smooth to="./#about_me_section">
+              Home
+            </HashLink>       
             {/* <Link className="navbar_link" to="/rsa">About</Link> */}
-            <HashLink className="navbar_link" smooth to="#Projects">
+            <HashLink className="navbar_link" smooth to="./#projects_section">
               Projects
             </HashLink>            
             <Link className="navbar_link"to={Resume_PDF} target="_blank" rel="noopener noreferrer">Resume</Link>

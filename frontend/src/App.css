@@ -162,3 +162,18 @@ p {
   height: 50px;
   
 }
+
+#projects_section{
+  display: block;
+  position: relative;
+  top: -160px;
+  visibility: hidden;
+}
+
+#about_me_section{
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+}
+

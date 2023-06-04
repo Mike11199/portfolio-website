@@ -7,7 +7,7 @@ import Shop_Image_4 from '../images/shop_4.png'
 import Shop_Image_5 from '../images/shop_5.png'
 import Shop_Image_6 from '../images/shop_6.png'
 import Job_Tracker_Gif_1 from '../images/apply_your_self_1.gif'
-import Job_Tracker_Gif_2 from '../images/apply_your_self_2.gif'
+import Job_Tracker_Gif_2 from '../images/apply_your_self_2.gif'  //don't use this is mobile view and breaking site
 import Job_Tracker_Home_Page from '../images/apply_your_self_home_page.png'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -24,9 +24,7 @@ import Space_Tau_4 from '../images/space_tau_4.png'
 import Space_Tau_5 from '../images/space_tau_5.png'
 import Space_Tau_6 from '../images/space_tau_6.png'
 import Space_Tau_7 from '../images/space_tau_7.png'
-import Vent5Video from '../images/vent5.mp4'
 import ReactPlayer from 'react-player'
-import YTBackground from '../images/hide_youtube_channel_name.png'
 import Job_Tracker_1 from '../images/job_tracker_1.png'
 import Job_Tracker_2 from '../images/job_tracker_2.png'
 import Job_Tracker_3 from '../images/job_tracker_3.png'
@@ -43,6 +41,7 @@ const HomePage = () => {
 
   return (
 <>
+<div id="about_me_section"></div>
           <section id="about" style={{  paddingTop:"140px", marginBottom:"0px", height:"950px"}}>   
           <div style={{height:"40px", marginBottom:"0px"}}></div>       
         	<h1>About Me <span class="wave">👋</span></h1>      
@@ -85,7 +84,7 @@ const HomePage = () => {
             </div>   
             </div>   
         </section>
-        
+        <div id="projects_section"></div>
         <section id="projects" style={{margin:"0px"}}>
         	<h1 style={{margin:"0px"}}> Projects </h1>
           <p style={{height:"auto", marginBottom:"100px"}}>
