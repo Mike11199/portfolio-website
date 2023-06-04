@@ -1,3 +1,6 @@
 https://michael-iwanek-portfolio.herokuapp.com/
 
-![image](https://github.com/Mike11199/portfolio-website/assets/91037796/fb24843c-9de2-4e7a-a691-56bb2501543f)
+- WIP developed with Express.js and React.js.
+- Added react-spring for top "progress bar" that moves as one scrolls down the page.  
+
+![image](https://github.com/Mike11199/portfolio-website/assets/91037796/9db324d4-fbb2-44c8-9685-15f6130b06e2)
