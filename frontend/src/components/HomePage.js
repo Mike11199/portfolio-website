@@ -111,7 +111,7 @@ const HomePage = () => {
           <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
           <div style={{margin:"0px", width:"100%"}}>
           <div class="project_card">     
-              <Carousel width="100%" autoPlay="true" infiniteLoop="true">
+              <Carousel width="100%" infiniteLoop="true">
                     <div>
                         <img alt="shop_1" src={Shop_Image_1} />
                         {/* <p className="legend">Legend 1</p> */}
@@ -182,7 +182,7 @@ const HomePage = () => {
           <div style={{margin:"0px", display:"flex", flexDirection: "row", width:"100%"}}>
 
             <div class="project_card" style={{margin:"0px", width:"50%"}}>     
-                <Carousel width="100%" autoPlay="true" infiniteLoop="true" dynamicHeight="true" showArrows="true">
+                <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                       <div>
                           <img alt="shop_1" src={Job_Tracker_Gif_1} />
                           {/* <p className="legend">Legend 1</p> */}
@@ -213,13 +213,19 @@ const HomePage = () => {
               <li>
               Full-stack MERN web application that allows multiple users to track their job application history on one convenient 
               website from anywhere. Allows jobs to be searched, sorted by date, name, and categorized by application status with full 
-              CRUD functionality. A dashboard shows statistical data visually via a Bar chart and Sankey chart, showing which jobs led 
-              to subsequent interviews and applications per month. Detailed notes can also be added to each job's history. 
+              CRUD functionality.
+              </li> 
+              <li>
+              A dashboard shows statistical data visually via a Bar chart and Sankey chart, showing which jobs led 
+              to subsequent interviews and applications per month. Detailed notes can also be added to each job's history.               
               </li>
               <li>
               Features are implemented by several REST APIs, allowing user registration and login via Express.js routes, such as google 
               OAuth 2.0. Back-end is run on Node.js connected to a MongoDB NoSQL database, with collections mapped to various Mongoose schema 
-              for Users/Jobs. Uses JWT bearer-tokens to access restricted pages, password hashing (brypt.js), and private API routes using Axios 
+              for Users/Jobs. 
+              </li>
+              <li>
+              Uses JWT bearer-tokens to access restricted pages, password hashing (brypt.js), and private API routes using Axios 
               interceptors so users can only access their own data. 
               </li>
               <li>
@@ -244,7 +250,7 @@ const HomePage = () => {
           <div style={{margin:"0px", display:"flex", flexDirection: "row", width:"100%"}}>
 
             <div class="project_card" style={{margin:"0px", width:"50%"}}>     
-              <Carousel width="100%" autoPlay="true" infiniteLoop="true">
+              <Carousel width="100%" infiniteLoop="true">
                       <div>
                           <img alt="shop_1" src={RSA_Gif} />
                           {/* <p className="legend">Legend 1</p> */}
@@ -272,6 +278,10 @@ const HomePage = () => {
               with RSA and AES encryption, using front end technologies. 
               </li>
               <li>
+              Displayed RSA/AES keys and ciphertext as encoded in Base64, to allow for bits outside normal character encoding to be 
+              viewable as a text string on the website.
+              </li>
+              <li>
               Added tutorials to allow for a user to follow along to the website using a CLI approach and the openssl 
               library. The library is fully compatible with the RSA encryption used by the website, allowing a user to 
               store their private key locally, use the website to encrypt with a public key, and then use AES locally 
@@ -297,9 +307,9 @@ const HomePage = () => {
               SpaceTau-Flask-and-MySQL-App
               </h2>   
               <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
-              <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"100%"}}>
+              <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"120%"}}>
               <div class="project_card" style={{marginBottom:"50px"}}>     
-                  <Carousel width="100%" autoPlay="true" infiniteLoop="true" dynamicHeight="true" showArrows="true">
+                  <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                         <div>
                             <img alt="shop_1" src={Space_Tau_1} />
                             {/* <p className="legend">Legend 1</p> */}
@@ -350,7 +360,7 @@ const HomePage = () => {
                   width={576}
                   height={324}
                   playing
-                  url="https://www.youtube.com/watch?v=yFzZ-Xfj5Wk?autoplay=1&modestbranding=1&frameborder=12"
+                  url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1&frameborder=12"
                   loop="true"
                   muted="true"
                   style={{zIndex:1}}
@@ -364,23 +374,27 @@ const HomePage = () => {
               <div style={{paddingRight:"150px"}}>
                 <ul>
                   <li>
-                    This is a project I made to learn Flask and run Python in a back-end server environment, 
-                    using a Jinja templating system to render HTML on the front-end.
+                    Project programmed in Flask to run Python in a back-end server environment, 
+                    using a Jinja templating system to render HTML and JavaScript on the front-end.
                   </li>
                   <li>
-                    I implemented a MariaDB backed MySQL database and designed a schema for this in MySQL Workbench,
-                     to support relationships among the database tables.  The project serves as a web-based application 
-                     to a fictional database system for a space company.
+                    Implemented a MariaDB backed MySQL database and designed a schema for this in MySQL Workbench,
+                    to support relationships among the database tables.  The project serves as a web-based application 
+                    to a fictional database system for a space launch services company.
                   </li>
                   <li>
-                    Multiple one-to-many relationships are supported, as well as one many-to-many relationship between 
-                    spacecraft and parts.
+                    Multiple one-to-many relationships are supported, as well as a many-to-many relationship between 
+                    spacecraft and parts via an intersection table.
                   </li>
                   <li>
-                     This project's theme is due to the fact that I've always had an interest in space exploration.  
-                     I enjoy reading about recent developments by NASA and other entities, and in my spare time enjoy 
-                     simulator games like Kerbal Space Program (see gameplay video below), which has taught me much about 
-                     physics in a fun way.
+                    Added constraints such as ON CASCADE DELETE to automatically allow for child rows to be deleted from a M:N relationship 
+                    and prevent database anomalies. Added foreign key (FK) constraints to prevent adding nonsensical relationships between tables,
+                    such as referencing a FK that doesn't exist.
+                  </li>
+                  <li>
+                    The theme of this project is inspired by my interest in NASA / space exploration and Kerbal Space Program (see gameplay video below), 
+                    which has taught me much about physics and obrital mechanics in a fun way.  I've also dabbled in using C# to automate launches 
+                    in the game with kRPC scripting (remote procedure calls), and eventually plan to use Unity/ C# to create mods for the game with Visual Studio.
                   </li>
                   </ul>
               </div>
