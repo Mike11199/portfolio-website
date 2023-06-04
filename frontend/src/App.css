@@ -202,3 +202,33 @@ ul {
 li {
   margin-bottom: 30px;
 }
+
+.github_button {
+  width: 200px;
+  height: 50px;
+  justify-content: center;
+  margin-left: 100px;
+  color: white;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #1e1e1e;  
+  margin-bottom: 20px;
+  border-radius: 20px;
+  
+}
+
+
+.website_button {
+  width: 200px;
+  height: 50px;
+  justify-content: center;
+  margin-left: 30px;
+  color: white;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #0c457e;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}

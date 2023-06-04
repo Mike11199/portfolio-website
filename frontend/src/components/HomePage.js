@@ -30,6 +30,7 @@ import Job_Tracker_2 from '../images/job_tracker_2.png'
 import Job_Tracker_3 from '../images/job_tracker_3.png'
 import Editing_Ski_Photo from '../images/editing_ski_photo_GIMP.gif'
 import Heavenly_Ski_Resort_Photo from '../images/heavenly_ski_resort_me.jpg'
+import GitHubLogo from '../images/github.png'
 
 
 
@@ -42,6 +43,11 @@ const HomePage = () => {
       showinfo: 0,
       playsinline: 1,
     }}
+
+    const handleClick = (site) => {
+      window.open(site, '_blank');
+    };
+    
 
   return (
 <>
@@ -105,9 +111,18 @@ const HomePage = () => {
           </p>
 
           
-          <h2 style={{marginBottom:"30px", marginTop:"100px", paddingBottom:"40px"}}>
+          <h2 style={{marginBottom:"30px", marginTop:"100px"}}>
             Ski & Rock Climbing E-Commerce Store
-          </h2>   
+          </h2>    
+          <div style={{display:"flex"}}>         
+          <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack")}>
+            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            GitHub Link
+          </button>
+          <button class="website_button" onClick={() => handleClick("https://recreational-equipment-shop.herokuapp.com/")}>
+            Live Website Link
+          </button>
+          </div>
           <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
           <div style={{margin:"0px", width:"100%"}}>
           <div class="project_card">     
@@ -179,6 +194,15 @@ const HomePage = () => {
           <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>
           applyYourSelf Job Application Tracker  
           </h2>   
+          <div style={{display:"flex"}}>         
+          <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/applyYourSelf-Job-Tracker")}>
+            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            GitHub Link
+          </button>
+          <button class="website_button" onClick={() => handleClick("https://applyyourself-tracker-prod.herokuapp.com")}>
+            Live Website Link
+          </button>
+          </div>
           <div style={{margin:"0px", display:"flex", flexDirection: "row", width:"100%"}}>
 
             <div class="project_card" style={{margin:"0px", width:"50%"}}>     
@@ -247,6 +271,15 @@ const HomePage = () => {
           <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>
           RSA & AES Encryption App - Electron.js, React.js
           </h2>   
+          <div style={{display:"flex"}}>         
+          <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-361-RSA-React-App")}>
+            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            GitHub Link
+          </button>
+          <button class="website_button" onClick={() => handleClick("https://rsa-react-app.herokuapp.com/")}>
+            Live Website Link
+          </button>
+          </div>
           <div style={{margin:"0px", display:"flex", flexDirection: "row", width:"100%"}}>
 
             <div class="project_card" style={{margin:"0px", width:"50%"}}>     
@@ -306,6 +339,15 @@ const HomePage = () => {
               <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
               SpaceTau-Flask-and-MySQL-App
               </h2>   
+              <div style={{display:"flex"}}>         
+          <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340")}>
+            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            GitHub Link
+          </button>
+          <button class="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
+            Live Website Link
+          </button>
+          </div>
               <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
               <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"120%"}}>
               <div class="project_card" style={{marginBottom:"50px"}}>     
@@ -416,6 +458,12 @@ const HomePage = () => {
               <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
               Small Shell (smallsh) - C Unix Shell
               </h2>   
+              <div style={{display:"flex"}}>         
+          {/* <button class="github_button">
+            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            GitHub Link
+          </button> */}
+          </div>
               <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
               <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"100%"}}>
               <div class="project_card" style={{marginBottom:"50px"}}>     
