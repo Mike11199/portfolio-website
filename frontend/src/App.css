@@ -204,31 +204,65 @@ li {
 }
 
 .github_button {
+  font-family: "Segoe UI";
+  font-weight: 500;
   width: 200px;
-  height: 50px;
-  justify-content: center;
-  margin-left: 100px;
-  color: white;
   display: flex;
-  gap: 10px;
+  flex-direction: row;
   align-items: center;
-  background-color: #1e1e1e;  
-  margin-bottom: 20px;
-  border-radius: 20px;
-  
+  gap: 20px;
+  margin-left: 100px;
+  margin-bottom: 30px;
+  height: 50px;  
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 16px;
+  min-width: 96px;
+  min-height: 38px;
+  border: none;
+  color: #fff;
+  background-color: #24292e;
+  transition: background-color .17s ease,color .17s ease;
+}
+
+.github_button:hover {
+  background-color: rgb(46, 46, 46);
+}
+
+.github_button:active {
+  transform: scale(0.9);
+  /* Add your desired action here */
 }
 
 
 .website_button {
+  font-family: "Segoe UI";
+  font-weight: 500;
   width: 200px;
   height: 50px;
-  justify-content: center;
   margin-left: 30px;
-  color: white;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  background-color: #0c457e;
-  margin-bottom: 20px;
-  border-radius: 20px;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;  
+  line-height: 16px;
+  padding: 2px 16px;
+  min-width: 96px;
+  min-height: 38px;
+  border: none;
+  color: #fff;
+  background-color: rgb(36, 43, 121);
+  transition: background-color .17s ease,color .17s ease;
+}
+
+.website_button:hover {
+  background-color: rgb(38, 43, 102);
+}
+
+.website_button:active {
+  transform: scale(0.9);  
 }

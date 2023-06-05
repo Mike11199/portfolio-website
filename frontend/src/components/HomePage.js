@@ -30,7 +30,7 @@ import Job_Tracker_2 from '../images/job_tracker_2.png'
 import Job_Tracker_3 from '../images/job_tracker_3.png'
 import Editing_Ski_Photo from '../images/editing_ski_photo_GIMP.gif'
 import Heavenly_Ski_Resort_Photo from '../images/heavenly_ski_resort_me.jpg'
-import GitHubLogo from '../images/github.png'
+import GitHubLogo from '../images/github_1.png'
 
 
 
@@ -45,7 +45,9 @@ const HomePage = () => {
     }}
 
     const handleClick = (site) => {
-      window.open(site, '_blank');
+      setTimeout(function() {
+        window.open(site, '_blank');
+      }, 130);
     };
     
 
