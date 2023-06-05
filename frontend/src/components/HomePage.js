@@ -1,5 +1,4 @@
 import { useEffect, React } from 'react';
-import { HashLink } from 'react-router-hash-link';
 import Shop_Image_1 from '../images/shop_1.png'
 import Shop_Image_2 from '../images/shop_2.png'
 import Shop_Image_3 from '../images/shop_3.png'
@@ -7,11 +6,9 @@ import Shop_Image_4 from '../images/shop_4.png'
 import Shop_Image_5 from '../images/shop_5.png'
 import Shop_Image_6 from '../images/shop_6.png'
 import Job_Tracker_Gif_1 from '../images/apply_your_self_1.gif'
-import Job_Tracker_Gif_2 from '../images/apply_your_self_2.gif'  //don't use this is mobile view and breaking site
 import Job_Tracker_Home_Page from '../images/apply_your_self_home_page.png'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import IceCavePhoto from '../images/me_ice_cave.png'
 import IceCavePhoto2 from '../images/me_ice_cave2.jpg'
 import RSA_Gif from '../images/rsa_encryption_1.gif'
 import AES_Gif from '../images/aes_encryption_1.gif'
@@ -31,8 +28,9 @@ import Job_Tracker_3 from '../images/job_tracker_3.png'
 import Editing_Ski_Photo from '../images/editing_ski_photo_GIMP.gif'
 import Heavenly_Ski_Resort_Photo from '../images/heavenly_ski_resort_me.jpg'
 import GitHubLogo from '../images/github_1.png'
-
-
+import Hash_Map_Image_1 from '../images/hash_map_1.png'
+import Hash_Map_Image_2 from '../images/hash_map_2.png'
+import Hash_Map_GIF_1 from '../images/hash_map_sc.gif'
 
 
 const HomePage = () => {
@@ -83,22 +81,28 @@ const HomePage = () => {
                 class="profile_photo_image_body_2"
               />    
                      
-            <div style={{height:"400px", marginBottom:"0px", paddingRight:"14vh"}}>
-            <p>Hey there!</p>
-            <p>
-            I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for personal learning and development.  
-            </p>      
-            <p>
-            I'm currently a Computer Science student at Oregon State University in an accelerated post-baccalaureate program.  
-            My first degree was in accounting, and after graduation I worked for about three years as a CPA in public accounting and government roles.
-            </p>     
-            <p>
-            I first discovered programming by self-teaching myself VBA to automate work tasks, and discovered how much I enjoy working through coding problems and building things.
-            </p>         
-            <p>
-            Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb multi-pitch routes and get into back-country skiing one day.
-            </p>                       
-            </div>   
+              <div style={{height:"400px", marginBottom:"0px", paddingRight:"14vh"}}>
+              <p>
+                Hey there!
+              </p>
+              <p>
+                I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for personal 
+                learning and development.  
+              </p>      
+              <p>
+                I'm currently a Computer Science student at Oregon State University in an accelerated post-baccalaureate 
+                program.  My first degree was in accounting, and after graduation I worked for about three years as a CPA 
+                in public accounting and government roles.
+              </p>     
+              <p>
+                I first discovered programming by self-teaching myself VBA to automate work tasks, and discovered how much 
+                I enjoy working through coding problems and building things.
+              </p>         
+              <p>
+                Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb 
+                multi-pitch routes and get into back-country skiing one day.
+              </p>                       
+              </div>   
             </div>   
         </section>
 
@@ -341,14 +345,14 @@ const HomePage = () => {
               <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
               SpaceTau-Flask-and-MySQL-App
               </h2>   
-              <div style={{display:"flex"}}>         
-          <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340")}>
-            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
-            GitHub Link
-          </button>
-          <button class="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
-            Live Website Link
-          </button>
+          <div style={{display:"flex"}}>         
+            <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340")}>
+              <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+               GitHub Link
+            </button>
+            <button class="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
+              Live Website Link
+            </button>
           </div>
               <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
               <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"120%"}}>
@@ -437,7 +441,7 @@ const HomePage = () => {
                   </li>
                   <li>
                     The theme of this project is inspired by my interest in NASA / space exploration and Kerbal Space Program (see gameplay video below), 
-                    which has taught me much about physics and obrital mechanics in a fun way.  I've also dabbled in using C# to automate launches 
+                    which has taught me much about physics and orbital mechanics in a fun way.  I've also dabbled in using C# to automate launches 
                     in the game with kRPC scripting (remote procedure calls), and eventually plan to use Unity/ C# to create mods for the game with Visual Studio.
                   </li>
                   </ul>
@@ -456,10 +460,11 @@ const HomePage = () => {
 
 
            {/* SECTION FOR PROJECT #5 */}
-           <section id="projects3"  style={{margin:"0px", height:"800px"}}>       
+           <section id="projects3"  style={{margin:"0px", height:"1100px"}}>       
               <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
               Small Shell (smallsh) - C Unix Shell
               </h2>   
+              
               <div style={{display:"flex"}}>         
           {/* <button class="github_button">
             <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
@@ -474,8 +479,8 @@ const HomePage = () => {
           
               <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"120px", paddingBottom:"70px"}} >
                 <ReactPlayer   
-                  width={800}
-                  height={400}
+                  width={1000}
+                  height={562}
                   playing
                   url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1&frameborder=12"
                   loop="true"
@@ -524,6 +529,88 @@ const HomePage = () => {
             </div>
 
         </section>   
+
+
+
+
+           {/* SECTION FOR PROJECT #6 */}
+           <section id="projects_red"  style={{margin:"0px", height:"1100px"}}>       
+              <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
+              Hash Map Data Structure Implementation - Python
+              </h2>   
+              <div style={{display:"flex"}}>         
+            <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/HashMap-Python-Implementation")}>
+              <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+               GitHub Link
+            </button>
+            {/* <button class="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
+              Live Website Link
+            </button> */}
+          </div>
+              <div style={{display:"flex"}}>         
+          {/* <button class="github_button">
+            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            GitHub Link
+          </button> */}
+          </div>
+              <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
+              <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"300%"}}>
+              <div class="project_card" style={{marginBottom:"50px", paddingLeft:"120px"}}>     
+                <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
+                    <div>
+                        <img alt="shop_1" src={Hash_Map_Image_1} />
+                        {/* <p className="legend">Legend 1</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_1" src={Hash_Map_Image_2} />
+                        {/* <p className="legend">Legend 1</p> */}
+                    </div>
+                    <div>
+                        <img alt="shop_1" src={Hash_Map_GIF_1} />
+                        {/* <p className="legend">Legend 1</p> */}
+                    </div>
+                </Carousel>
+              </div>
+              
+
+            </div>
+              <div style={{paddingRight:"150px"}}>
+                <ul>
+                  <li>
+                    This is the portfolio project for the Oregon State University course CS 261 - Data Structures,
+                    which is allowed to be posted to a public GitHub repo. The project implements a Hash Map data
+                    structure using two distinct methods to handle table collisions - Open Addressing, and Separate Chaining.
+                  </li>
+                  <li>
+                    Open Addressing
+                    <ul>
+                      <li>
+                      In this implementation, the data structure probes for an empty spot in the HashTable's underlying dynamic array 
+                      if a collision occurs, until it finds an empty spot to insert the element in.
+                      </li>                    
+                    </ul>
+                  </li>
+                  <li>
+                  Separate Chaining
+                    <ul>
+                      <li>
+                      In this implementation, each dynamic array element is a linked list, and additional key/value pairs can be added to 
+                      the front of the linked list at each array spot in the case that keys hash to the same array index.
+                      </li>                    
+                    </ul>
+                  </li>
+                  <li>
+                  A hash map allows insertion and lookup of values in amortized constant time O(1), due to a potential O(N) resizing cost. 
+                  Resizing the table is performed in order to keep the table load factor low, which reduces the chance of collisions occurring. 
+                  In the worst case, all elements could collide in the same bucket, leading to O(N) time complexity.
+                  The load factor is expressed as n (number of elements) / m (number of buckets).
+                  </li>
+                  </ul>
+              </div>
+            </div>
+
+        </section>   
+
 
     </>
   );

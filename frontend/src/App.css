@@ -98,6 +98,16 @@ html {
   margin-bottom: 0px !important;
 }
 
+
+#projects_red {
+  background-image: linear-gradient(to top, #1f242b 0%, #432313 100%);
+  color: white; 
+  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
+  height: 1000px;
+  margin-bottom: 0px !important;
+}
+
+
 #profile{
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
   margin-top: 0px !important;
