@@ -1,4 +1,4 @@
-import { useEffect, React } from 'react';
+import { useEffect, React, useState } from 'react';
 import Shop_Image_1 from '../images/shop_1.png'
 import Shop_Image_2 from '../images/shop_2.png'
 import Shop_Image_3 from '../images/shop_3.png'
@@ -36,6 +36,30 @@ import Tent from '../images/tent.jpg'
 
 const HomePage = () => {
 
+  function useWindowSize() {
+    const [windowSize, setWindowSize] = useState({
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight
+        });
+      }
+      
+  
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup the event listener on component unmount
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    return windowSize;
+  }
+
   const youtubeOptions = {
     playerVars: {
       controls: 1,
@@ -49,6 +73,24 @@ const HomePage = () => {
       }, 130);
     };
     
+    const { width, height } = useWindowSize();
+
+    let playerWidth = width * 0.00835;
+    let playerHeight = height * 0.06;
+
+    console.log(width)
+
+    if (width < 1921) {
+      console.log("test")
+       playerWidth = width * 0.010006;
+       playerHeight = height * 0.074;
+    }
+
+  
+    if (width < 600) {
+       playerWidth = width * .5;
+       playerHeight = height * .5;
+    }
 
   return (
 <>
@@ -59,8 +101,8 @@ const HomePage = () => {
           <div className='about_me_section'>           
           <div className='player-wrapper' style={{paddingRight:"40px", paddingLeft:"30px"}} >
               <ReactPlayer   
-                width={"35.6vh"}
-                height={"63vh"}                
+                width={`${playerWidth}vw`}
+                height={`${playerHeight}vh`}      
                 playing
                 url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
                 loop="true"
