@@ -1,3 +1,29 @@
+
+/* Styles for screens smaller than 600px */
+@media (max-width: 600px) {
+
+  .navbar_name_me {
+    color: white; 
+    font-weight: 150; 
+    font-family: Segoe UI;
+    font-size: 35px; 
+    padding-right: 4vh !important;
+    text-transform: uppercase;    
+  }
+
+
+}
+
+.navbar_name_me {
+  color: white; 
+  font-weight: 150; 
+  font-family: Segoe UI;
+  font-size: 35px; 
+  padding-right: 90vh; 
+  text-transform: uppercase;    
+}
+
+
 .navbar_link {
   margin: 0px;
   padding: 0px;  

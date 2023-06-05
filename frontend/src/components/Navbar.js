@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import '../App.css'; // Import the CSS file
 import { HashLink } from 'react-router-hash-link';
 import IceCavePhoto from '../images/me_ice_cave.png'
 import { useScroll, animated } from "react-spring";
@@ -44,7 +43,7 @@ const Navbar = () => {
                 class="profile_photo_image"
               />
             </div>
-            <p style={{color:"white", fontWeight: 150, fontFamily: "Segoe UI", fontSize: "35px", paddingRight:"90vh", textTransform: "uppercase", color:"white"}}>Michael Iwanek</p>
+            <p className="navbar_name_me" >Michael Iwanek</p>
             {/* <Link className="navbar_link" to="/">Home</Link> */}
             <HashLink className="navbar_link" smooth to="./#about_me_section">
               Home
