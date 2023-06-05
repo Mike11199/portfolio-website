@@ -31,6 +31,7 @@ import GitHubLogo from '../images/github_1.png'
 import Hash_Map_Image_1 from '../images/hash_map_1.png'
 import Hash_Map_Image_2 from '../images/hash_map_2.png'
 import Hash_Map_GIF_1 from '../images/hash_map_sc.gif'
+import Tent from '../images/tent.jpg'
 
 
 const HomePage = () => {
@@ -52,14 +53,14 @@ const HomePage = () => {
   return (
 <>
         <div id="about_me_section"></div>
-        <section id="about" style={{  paddingTop:"100px", marginBottom:"0px", height:"850px"}}>   
-          <div style={{height:"40px", marginBottom:"0px"}}></div>       
+        <section id="about" style={{  paddingTop:"100px", marginBottom:"0px", height:"90vh"}}>   
+          <div style={{height:"30px", marginBottom:"0px"}}></div>       
         	<h1>About Me <span class="wave">👋</span></h1>      
           <div className='about_me_section'>           
-          <div className='player-wrapper' style={{paddingRight:"40px", paddingLeft:"70px", paddingBottom:"40px"}} >
+          <div className='player-wrapper' style={{paddingRight:"40px", paddingLeft:"30px"}} >
               <ReactPlayer   
-                width={336}
-                height={598}
+                width={"35.6vh"}
+                height={"63vh"}                
                 playing
                 url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
                 loop="true"
@@ -69,7 +70,10 @@ const HomePage = () => {
                   youtube: youtubeOptions,
                 }}
               />
-            </div>
+          </div>
+
+            <div style={{display:"flex", flexDirection:"column",  height:"100%", width:"100%"}}>
+            <div style={{display:"flex", paddingBottom:"30px"}}>
               <img
                 src={IceCavePhoto2}
                 alt="Michael Iwanek Navbar"
@@ -80,8 +84,15 @@ const HomePage = () => {
                 alt="Michael Iwanek Navbar"
                 class="profile_photo_image_body_2"
               />    
+              </div>
+              <img                    
+                src={Tent}
+                alt="Michael Iwanek Navbar"
+                class="tent_image"
+             />    
+              </div>
                      
-              <div style={{height:"400px", marginBottom:"0px", paddingRight:"14vh"}}>
+              <div style={{height:"400px", marginBottom:"0px", paddingRight:"12vh"}}>
               <p>
                 Hey there!
               </p>
@@ -102,8 +113,11 @@ const HomePage = () => {
                 Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb 
                 multi-pitch routes and get into back-country skiing one day.
               </p>                       
-              </div>   
+              </div>  
+
+  
             </div>   
+            
         </section>
 
 
