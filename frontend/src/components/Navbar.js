@@ -36,11 +36,11 @@ const Navbar = () => {
         }}
       ></animated.div>
 
-            <div class="profile_photo">
+            <div className="profile_photo">
               <img
                 src={IceCavePhoto}
                 alt="Michael Iwanek Navbar"
-                class="profile_photo_image"
+                className="profile_photo_image"
               />
             </div>
             <p className="navbar_name_me" >Michael Iwanek</p>

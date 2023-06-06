@@ -14,6 +14,14 @@
 
 }
 
+#about{
+  background-image: linear-gradient(to top, #09203f 63%, #537895 100%);
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+
 .navbar_name_me {
   color: white; 
   font-weight: 150; 
@@ -94,11 +102,6 @@ html {
   justify-content: center;
   align-items: center;
   height: 100px;
-}
-
-#about{
-  background-image: linear-gradient(to top, #09203f 63%, #537895 100%);
-  color: white;
 }
 
 #projects {
@@ -217,6 +220,8 @@ p {
 .player-wrapper {  
   position: relative;  
   z-index: 1;
+  padding-left: 15%;
+  padding-bottom: 12%;
 }
 
 

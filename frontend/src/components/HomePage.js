@@ -113,9 +113,9 @@ const HomePage = () => {
   return (
 <>
         <div id="about_me_section"></div>
-        <section id="about" style={{  paddingTop:"100px", marginBottom:"0px", height:"90vh"}}>   
+        <section id="about" >   
           <div style={{height:"30px", marginBottom:"0px"}}></div>       
-        	<h1>About Me <span class="wave">👋</span></h1>      
+        	<h1>About Me <span className="wave">👋</span></h1>      
           <div className='about_me_section'>           
           <div className='player-wrapper' style={{paddingRight:"40px", paddingLeft:"30px"}} >
               <ReactPlayer   
@@ -123,8 +123,8 @@ const HomePage = () => {
                 height={`${playerHeight*.65}px`}      
                 playing
                 url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
-                loop="true"
-                muted="true"
+                loop={true}
+                muted={true}
                 style={{zIndex:1}}
                 config={{
                   youtube: youtubeOptions,
@@ -137,18 +137,18 @@ const HomePage = () => {
               <img
                 src={IceCavePhoto2}
                 alt="Michael Iwanek Navbar"
-                class="profile_photo_image_body"
+                className="profile_photo_image_body"
               />                 
               <img                    
                 src={Heavenly_Ski_Resort_Photo}
                 alt="Michael Iwanek Navbar"
-                class="profile_photo_image_body_2"
+                className="profile_photo_image_body_2"
               />    
               </div>
               <img                    
                 src={Tent}
                 alt="Michael Iwanek Navbar"
-                class="tent_image"
+                className="tent_image"
              />    
               </div>
                      
@@ -195,17 +195,17 @@ const HomePage = () => {
             Ski & Rock Climbing E-Commerce Store
           </h2>    
           <div style={{display:"flex"}}>         
-          <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack")}>
+          <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack")}>
             <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
             GitHub Link
           </button>
-          <button class="website_button" onClick={() => handleClick("https://recreational-equipment-shop.herokuapp.com/")}>
+          <button className="website_button" onClick={() => handleClick("https://recreational-equipment-shop.herokuapp.com/")}>
             Live Website Link
           </button>
           </div>
           <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
           <div style={{margin:"0px", width:"100%"}}>
-          <div class="project_card">     
+          <div className="project_card">     
               <Carousel width="100%" infiniteLoop="true">
                     <div>
                         <img alt="shop_1" src={Shop_Image_1} />
@@ -268,24 +268,24 @@ const HomePage = () => {
 
        
         {/* SECTION FOR PROJECT #2 */}
-        <section id="profile"  style={{margin:"0px", height:"800px", width:"100%"}}>       
+        <section id="profile"  style={{margin:"0px", height:"auto", width:"100%"}}>       
           
 
           <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>
           applyYourSelf Job Application Tracker  
           </h2>   
           <div style={{display:"flex"}}>         
-          <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/applyYourSelf-Job-Tracker")}>
+          <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/applyYourSelf-Job-Tracker")}>
             <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
             GitHub Link
           </button>
-          <button class="website_button" onClick={() => handleClick("https://applyyourself-tracker-prod.herokuapp.com")}>
+          <button className="website_button" onClick={() => handleClick("https://applyyourself-tracker-prod.herokuapp.com")}>
             Live Website Link
           </button>
           </div>
           <div style={{margin:"0px", display:"flex", flexDirection: "row", width:"100%"}}>
 
-            <div class="project_card" style={{margin:"0px", width:"50%"}}>     
+            <div className="project_card" style={{margin:"0px", width:"50%"}}>     
                 <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                       <div>
                           <img alt="shop_1" src={Job_Tracker_Gif_1} />
@@ -346,23 +346,23 @@ const HomePage = () => {
 
 
         {/* SECTION FOR PROJECT #3 */}
-        <section id="projects2"  style={{margin:"0px", height:"1000px", width:"100%"}}>                 
+        <section id="projects2"  style={{margin:"0px", height:"auto", width:"100%"}}>                 
 
           <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>
           RSA & AES Encryption App - Electron.js, React.js
           </h2>   
           <div style={{display:"flex"}}>         
-          <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-361-RSA-React-App")}>
+          <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-361-RSA-React-App")}>
             <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
             GitHub Link
           </button>
-          <button class="website_button" onClick={() => handleClick("https://rsa-react-app.herokuapp.com/")}>
+          <button className="website_button" onClick={() => handleClick("https://rsa-react-app.herokuapp.com/")}>
             Live Website Link
           </button>
           </div>
           <div style={{margin:"0px", display:"flex", flexDirection: "row", width:"100%"}}>
 
-            <div class="project_card" style={{margin:"0px", width:"50%"}}>     
+            <div className="project_card" style={{margin:"0px", width:"50%"}}>     
               <Carousel width="100%" infiniteLoop="true">
                       <div>
                           <img alt="shop_1" src={RSA_Gif} />
@@ -415,22 +415,22 @@ const HomePage = () => {
 
 
         {/* SECTION FOR PROJECT #4 */}
-        <section id="profile"  style={{margin:"0px", height:"1200px"}}>       
+        <section id="profile"  style={{margin:"0px", height:"auto"}}>       
               <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
               SpaceTau-Flask-and-MySQL-App
               </h2>   
           <div style={{display:"flex"}}>         
-            <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340")}>
+            <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340")}>
               <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
                GitHub Link
             </button>
-            <button class="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
+            <button className="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
               Live Website Link
             </button>
           </div>
               <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
               <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"120%"}}>
-              <div class="project_card" style={{marginBottom:"50px"}}>     
+              <div className="project_card" style={{marginBottom:"50px"}}>     
                   <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                         <div>
                             <img alt="shop_1" src={Space_Tau_1} />
@@ -462,29 +462,14 @@ const HomePage = () => {
                         </div>
                   </Carousel>
               </div>
-          
-              {/* <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"120px", paddingBottom:"70px"}} >
-                <ReactPlayer   
-                  width={576}
-                  height={324}
-                  playing
-                  url="https://www.youtube.com/watch?v=U-nX-urr8_c?autoplay=1&modestbranding=1&frameborder=12"
-                  loop="true"
-                  muted="true"
-                  style={{zIndex:1}}
-                  config={{
-                  youtube: youtubeOptions,
-                }}
-                />
-              </div> */}
-              <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"120px", paddingBottom:"70px"}} >
+             <div className='player-wrapper' >
                 <ReactPlayer   
                   width={`${playerWidth2*.25}px`}
-                  height={`${playerHeight2*.35}px`}      
+                  height={`${playerHeight2*.28}px`}      
                   playing
                   url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1&frameborder=12"
-                  loop="true"
-                  muted="true"
+                  loop={true}
+                  muted={true}
                   style={{zIndex:1}}
                   config={{
                   youtube: youtubeOptions,
@@ -534,31 +519,31 @@ const HomePage = () => {
 
 
            {/* SECTION FOR PROJECT #5 */}
-           <section id="projects3"  style={{margin:"0px", height:"1100px"}}>       
+           <section id="projects3"  style={{margin:"0px", height:"auto"}}>       
               <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
               Small Shell (smallsh) - C Unix Shell
               </h2>   
               
               <div style={{display:"flex"}}>         
-          {/* <button class="github_button">
+          {/* <button className="github_button">
             <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
             GitHub Link
           </button> */}
           </div>
               <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
               <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"100%"}}>
-              <div class="project_card" style={{marginBottom:"50px"}}>     
+              <div className="project_card" style={{marginBottom:"50px"}}>     
             
               </div>
           
               <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"120px", paddingBottom:"70px"}} >
                 <ReactPlayer   
-                  width={`${playerWidth2*.5}px`}
+                  width={`${playerWidth2*.44}px`}
                   height={`${playerHeight2*.5}px`}      
                   playing
                   url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1&frameborder=12"
-                  loop="true"
-                  muted="true"
+                  loop={true}
+                  muted={true}
                   style={{zIndex:1}}
                   config={{
                   youtube: youtubeOptions,
@@ -608,28 +593,28 @@ const HomePage = () => {
 
 
            {/* SECTION FOR PROJECT #6 */}
-           <section id="projects_red"  style={{margin:"0px", height:"1100px"}}>       
+           <section id="projects_red"  style={{margin:"0px", height:"auto"}}>       
               <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
               Hash Map Data Structure Implementation - Python
               </h2>   
               <div style={{display:"flex"}}>         
-            <button class="github_button" onClick={() => handleClick("https://github.com/Mike11199/HashMap-Python-Implementation")}>
+            <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/HashMap-Python-Implementation")}>
               <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
                GitHub Link
             </button>
-            {/* <button class="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
+            {/* <button className="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
               Live Website Link
             </button> */}
           </div>
               <div style={{display:"flex"}}>         
-          {/* <button class="github_button">
+          {/* <button className="github_button">
             <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
             GitHub Link
           </button> */}
           </div>
               <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
               <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"300%"}}>
-              <div class="project_card" style={{marginBottom:"50px", paddingLeft:"120px"}}>     
+              <div className="project_card" style={{marginBottom:"50px", paddingLeft:"120px"}}>     
                 <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                     <div>
                         <img alt="shop_1" src={Hash_Map_Image_1} />
