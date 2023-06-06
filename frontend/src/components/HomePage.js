@@ -86,32 +86,30 @@ const HomePage = () => {
 
     console.log(width)
 
-    if (width < 1921) {
 
-      // playerWidth = width * .5;
-      // playerHeight = height * .5;
+    if (width > 1921) {
 
-      // playerWidth2 = width * 1;
-      // playerHeight2 = height * 1;
-       
-      // playerWidth3 = width * 1;
-      // playerHeight3 = height * 1;
+      playerWidth = width *.182;
+      playerHeight = height *.65;
+
+
     }
 
   
     if (width < 600) {
-       playerWidth = width * .5;
-       playerHeight = height * .5;
+       playerWidth = width * .6;
+       playerHeight = height * .35;
        
        playerWidth2 = width * .5;
        playerHeight2 = height * .25;
        
-       playerWidth3 = width * .5;
+       playerWidth3 = width * .15;
        playerHeight3 = height * .25;
     }
 
   return (
 <>
+        <div className='entire_page'>
         <div id="about_me_section"></div>
         <section id="about" >   
           <div style={{height:"30px", marginBottom:"0px"}}></div>       
@@ -119,8 +117,8 @@ const HomePage = () => {
           <div className='about_me_section'>           
           <div className='player-wrapper'>
               <ReactPlayer   
-                width={`${playerWidth*.182}px`}
-                height={`${playerHeight*.65}px`}      
+                width={`${playerWidth}px`}
+                height={`${playerHeight}px`}      
                 playing
                 url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
                 loop={true}
@@ -132,27 +130,28 @@ const HomePage = () => {
               />
           </div>
 
-            <div style={{display:"flex", flexDirection:"column",  height:"100%", width:"100%"}}>
-            <div style={{display:"flex", paddingBottom:"30px"}}>
-              <img
-                src={IceCavePhoto2}
-                alt="Michael Iwanek Navbar"
-                className="profile_photo_image_body"
-              />                 
-              <img                    
-                src={Heavenly_Ski_Resort_Photo}
-                alt="Michael Iwanek Navbar"
-                className="profile_photo_image_body_2"
-              />    
-              </div>
-              <img                    
-                src={Tent}
-                alt="Michael Iwanek Navbar"
-                className="tent_image"
-             />    
-              </div>
+          <div className="project_1_main_div">
+          <div className="about_me_images">
+                <div className="about_me_images2">
+                          <img
+                            src={IceCavePhoto2}
+                            alt="Michael Iwanek Navbar"
+                            className="profile_photo_image_body"
+                          />                 
+                          <img                    
+                            src={Heavenly_Ski_Resort_Photo}
+                            alt="Michael Iwanek Navbar"
+                            className="profile_photo_image_body_2"
+                          />    
+                </div>
+                    <img                    
+                      src={Tent}
+                      alt="Michael Iwanek Navbar"
+                      className="tent_image"
+                  />    
+          </div>
                      
-              <div className='text_description_1'>
+              <div className='about_me_text'>
               <p>
                 Hey there!
               </p>
@@ -174,7 +173,7 @@ const HomePage = () => {
                 multi-pitch routes and get into back-country skiing one day.
               </p>                       
               </div>  
-
+              </div>
   
             </div>   
             
@@ -203,65 +202,74 @@ const HomePage = () => {
             Live Website Link
           </button>
           </div>
-          <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
-          <div style={{margin:"0px", width:"100%"}}>
-          <div className="project_card">     
-              <Carousel width="100%" infiniteLoop="true">
-                    <div>
-                        <img alt="shop_1" src={Shop_Image_1} />
-                        {/* <p className="legend">Legend 1</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_2" src={Shop_Image_2} />
-                        {/* <p className="legend">Legend 2</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_3"src={Shop_Image_3} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_4"src={Shop_Image_4} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_5"src={Shop_Image_5} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_6"src={Shop_Image_6} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_6"src={Editing_Ski_Photo} />
-                        {/* <p className="legend">Legend 3</p> */}
-                    </div>
-              </Carousel>
-          </div>
-          </div>
-          <div className='text_description_1'>
-          <ul>
-            <li>
-              A complex full-stack website (REI/Amazon clone) where users can search for products, 
-              add them to a cart, and submit/pay for an order with PayPal. An Admin dashboard allows 
-              for product/inventory management, and real-time statistics/user chats.  
-            </li>
-            <li>
-              Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website, 
-              sending order info to PayPal and marking an order as paid in the MongoDB database depending 
-              on the external API response.
-            </li>
-            <li>
-              Implemented Socket.IO to allow for bi-directional client and server communication, to enable real-time messaging between a logged in admin and user. Used Redux for global state management and Bootstrap to develop React components.
-            </li>
-            <li>
-              Modeled complicated database relationships between products, orders, and users using embedded MongoDB documents.
-            </li>
-            <li>
-              Added Google OAuth2.0 Log In, decoding JWT credentials from Google, and locating the user by email in MongoDB to verify the user.
-            </li>
-          </ul> 
+          <div className="project_1_main_div">
+            
+            
+            <div style={{margin:"0px", width:"100%"}}>             
+             
+              <div className="project_card">     
+                  <Carousel width="100%" infiniteLoop="true">
+                        <div>
+                            <img alt="shop_1" src={Shop_Image_1} />
+                            {/* <p className="legend">Legend 1</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_2" src={Shop_Image_2} />
+                            {/* <p className="legend">Legend 2</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_3"src={Shop_Image_3} />
+                            {/* <p className="legend">Legend 3</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_4"src={Shop_Image_4} />
+                            {/* <p className="legend">Legend 3</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_5"src={Shop_Image_5} />
+                            {/* <p className="legend">Legend 3</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_6"src={Shop_Image_6} />
+                            {/* <p className="legend">Legend 3</p> */}
+                        </div>
+                        <div>
+                            <img alt="shop_6"src={Editing_Ski_Photo} />
+                            {/* <p className="legend">Legend 3</p> */}
+                        </div>
+                  </Carousel>
               </div>
+              </div>
+
+              <div className='text_description_1'>
+              <ul>
+                <li>
+                  A complex full-stack website (REI/Amazon clone) where users can search for products, 
+                  add them to a cart, and submit/pay for an order with PayPal. An Admin dashboard allows 
+                  for product/inventory management, and real-time statistics/user chats.  
+                </li>
+                <li>
+                  Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website, 
+                  sending order info to PayPal and marking an order as paid in the MongoDB database depending 
+                  on the external API response.
+                </li>
+                <li>
+                  Implemented Socket.IO to allow for bi-directional client and server communication, to enable real-time messaging between a logged in admin and user. Used Redux for global state management and Bootstrap to develop React components.
+                </li>
+                <li>
+                  Modeled complicated database relationships between products, orders, and users using embedded MongoDB documents.
+                </li>
+                <li>
+                  Added Google OAuth2.0 Log In, decoding JWT credentials from Google, and locating the user by email in MongoDB to verify the user.
+                </li>
+              </ul> 
+                </div>
+
+
           </div>
+
+
+
         </section>
        
 
@@ -283,7 +291,7 @@ const HomePage = () => {
             Live Website Link
           </button>
           </div>
-          <div style={{margin:"0px", display:"flex", flexDirection: "row", width:"100%"}}>
+          <div className="project_1_main_div">
 
             <div className="project_card" style={{margin:"0px", width:"50%"}}>     
                 <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
@@ -360,7 +368,7 @@ const HomePage = () => {
             Live Website Link
           </button>
           </div>
-          <div style={{margin:"0px", display:"flex", flexDirection: "row", width:"100%"}}>
+          <div className="project_1_main_div">
 
             <div className="project_card" style={{margin:"0px", width:"50%"}}>     
               <Carousel width="100%" infiniteLoop="true">
@@ -428,9 +436,9 @@ const HomePage = () => {
               Live Website Link
             </button>
           </div>
-              <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
-              <div style={{margin:"0px", display:"flex", flexDirection: "column"}}>
-              <div className="project_card" style={{marginBottom:"50px"}}>     
+             <div className="project_1_main_div">
+   
+              <div id="project_card_tau" className="project_card" style={{marginBottom:"50px"}}>     
                   <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                         <div>
                             <img alt="shop_1" src={Space_Tau_1} />
@@ -461,7 +469,7 @@ const HomePage = () => {
                             {/* <p className="legend">Legend 3</p> */}
                         </div>
                   </Carousel>
-              </div>
+          
              <div className='player-wrapper' >
                 <ReactPlayer   
                   width={`${playerWidth2*.25}px`}
@@ -530,8 +538,8 @@ const HomePage = () => {
             GitHub Link
           </button> */}
           </div>
-              <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
-              <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"100%"}}>
+          <div className="project_1_main_div">
+          <div className="project_1_main_div">
               <div className="project_card" style={{marginBottom:"50px"}}>     
             
               </div>
@@ -612,8 +620,8 @@ const HomePage = () => {
             GitHub Link
           </button> */}
           </div>
-              <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
-              <div style={{margin:"0px", display:"flex", flexDirection: "column"}}>
+              <div className="project_1_main_div">
+              <div className="">
               <div className="project_card" style={{marginBottom:"50px"}}>     
                 <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                     <div>
@@ -669,7 +677,7 @@ const HomePage = () => {
             </div>
 
         </section>   
-
+        </div>
 
     </>
   );
