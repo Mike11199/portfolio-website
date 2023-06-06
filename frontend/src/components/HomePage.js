@@ -91,23 +91,23 @@ const HomePage = () => {
       // playerWidth = width * .5;
       // playerHeight = height * .5;
 
-      //  let playerWidth2 = width * 1;
-      //  let playerHeight2 = height * 1;
+      // playerWidth2 = width * 1;
+      // playerHeight2 = height * 1;
        
-      //  let playerWidth3 = width * 1;
-      //  let playerHeight3 = height * 1;
+      // playerWidth3 = width * 1;
+      // playerHeight3 = height * 1;
     }
 
   
     if (width < 600) {
-      //  playerWidth = width * .5;
-      //  playerHeight = height * .5;
+       playerWidth = width * .5;
+       playerHeight = height * .5;
        
-      //  let playerWidth2 = width * 1;
-      //  let playerHeight2 = height * 1;
+       playerWidth2 = width * .5;
+       playerHeight2 = height * .25;
        
-      //  let playerWidth3 = width * 1;
-      //  let playerHeight3 = height * 1;
+       playerWidth3 = width * .5;
+       playerHeight3 = height * .25;
     }
 
   return (
@@ -117,7 +117,7 @@ const HomePage = () => {
           <div style={{height:"30px", marginBottom:"0px"}}></div>       
         	<h1>About Me <span className="wave">👋</span></h1>      
           <div className='about_me_section'>           
-          <div className='player-wrapper' style={{paddingRight:"40px", paddingLeft:"30px"}} >
+          <div className='player-wrapper'>
               <ReactPlayer   
                 width={`${playerWidth*.182}px`}
                 height={`${playerHeight*.65}px`}      
@@ -152,7 +152,7 @@ const HomePage = () => {
              />    
               </div>
                      
-              <div style={{height:"400px", marginBottom:"0px", paddingRight:"12vh"}}>
+              <div className='text_description_1'>
               <p>
                 Hey there!
               </p>
@@ -238,7 +238,7 @@ const HomePage = () => {
               </Carousel>
           </div>
           </div>
-          <div style={{paddingRight:"150px"}}>
+          <div className='text_description_1'>
           <ul>
             <li>
               A complex full-stack website (REI/Amazon clone) where users can search for products, 
@@ -312,7 +312,7 @@ const HomePage = () => {
             </div>
            
 
-            <div style={{paddingRight:"150px", width:"50%"}}>
+            <div className='text_description_1'>
             <ul>
               <li>
               Full-stack MERN web application that allows multiple users to track their job application history on one convenient 
@@ -384,7 +384,7 @@ const HomePage = () => {
             </div>
            
 
-            <div style={{paddingRight:"150px", width:"50%"}}>
+            <div className='text_description_1'>
             <ul>
               <li>
               Developed an Electron.js (local exe) and web application to allow a user to encrypt/decrypt text 
@@ -429,7 +429,7 @@ const HomePage = () => {
             </button>
           </div>
               <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
-              <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"120%"}}>
+              <div style={{margin:"0px", display:"flex", flexDirection: "column"}}>
               <div className="project_card" style={{marginBottom:"50px"}}>     
                   <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                         <div>
@@ -478,7 +478,7 @@ const HomePage = () => {
               </div>
               
             </div>
-              <div style={{paddingRight:"150px"}}>
+              <div className='text_description_1'>
                 <ul>
                   <li>
                     Project programmed in Flask to run Python in a back-end server environment, 
@@ -536,10 +536,10 @@ const HomePage = () => {
             
               </div>
           
-              <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"120px", paddingBottom:"70px"}} >
+              <div className='player-wrapper' >
                 <ReactPlayer   
-                  width={`${playerWidth2*.44}px`}
-                  height={`${playerHeight2*.5}px`}      
+                  width={`${playerWidth3*.44}px`}
+                  height={`${playerHeight3*.5}px`}      
                   playing
                   url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1&frameborder=12"
                   loop={true}
@@ -552,7 +552,7 @@ const HomePage = () => {
               </div>
               
             </div>
-              <div style={{paddingRight:"150px"}}>
+              <div className='text_description_1'>
                 <ul>
                   <li>
                   Programmed a shell in C similar to the BASH shell, implementing parent/child process handling 
@@ -613,8 +613,8 @@ const HomePage = () => {
           </button> */}
           </div>
               <div style={{margin:"0px", display:"flex", flexDirection: "row"}}>
-              <div style={{margin:"0px", display:"flex", flexDirection: "column", width:"300%"}}>
-              <div className="project_card" style={{marginBottom:"50px", paddingLeft:"120px"}}>     
+              <div style={{margin:"0px", display:"flex", flexDirection: "column"}}>
+              <div className="project_card" style={{marginBottom:"50px"}}>     
                 <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                     <div>
                         <img alt="shop_1" src={Hash_Map_Image_1} />
@@ -633,7 +633,7 @@ const HomePage = () => {
               
 
             </div>
-              <div style={{paddingRight:"150px"}}>
+              <div className='text_description_1'>
                 <ul>
                   <li>
                     This is the portfolio project for the Oregon State University course CS 261 - Data Structures,

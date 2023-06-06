@@ -6,12 +6,90 @@
     color: white; 
     font-weight: 150; 
     font-family: Segoe UI;
-    font-size: 35px; 
-    padding-right: 4vh !important;
+    font-size: 25px !important;
+    padding-right: 1vh !important;
+    padding-left: 2vh !important;
     text-transform: uppercase;    
   }
 
+  
 
+body {
+  width: 100% !important;
+  box-sizing: border-box;
+  position: relative;
+  line-height: 1.5;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: 'Source Sans Pro', sans-serif; 
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+  
+.text_description_1 {
+  height:"auto";
+  margin-bottom:"0px";
+}
+
+.navbar_link {
+  margin: 0px;
+  padding: 0px;  
+  display: inline-block;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: medium;
+  transition: color .3s; 
+  text-decoration: none;
+  padding: 10px !important;
+  z-index: -1;
+}
+
+
+.profile_photo_image {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50px !important;
+  margin-left: 0vh !important;
+}
+
+.navbar {
+  top:0;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background: #fefefe;
+  background: #0e0d0d;
+  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); 
+  align-items: center;
+  justify-content: center;
+  z-index: 111;
+  margin: 0px !important;
+  padding: 0px !important;
+  max-width: 600px !important;
+}
+
+.project_card {
+  padding-left: 0px !important;
+}
+
+.text_description_1 {
+  height: 400px;
+  margin-bottom: 0px;
+  padding-right: 0vh;
+}
+
+
+}
+
+.text_description_1 {
+    height:400px ;
+    margin-bottom: 0px ;
+    padding-right: 12vh;
 }
 
 #about{
@@ -66,7 +144,7 @@
 }
 
 body {
-  width: 100%;
+  width: 100% !important;
   box-sizing: border-box;
   position: relative;
   line-height: 1.5;
@@ -90,7 +168,6 @@ html {
   width: 6vh;
   height: 6vh;
   border-radius: 200px;
-
   margin-left: 2vh;
 }
 
