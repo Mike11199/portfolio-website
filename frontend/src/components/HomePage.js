@@ -75,21 +75,39 @@ const HomePage = () => {
     
     const { width, height } = useWindowSize();
 
-    let playerWidth = width * 0.00835;
-    let playerHeight = height * 0.06;
+    let playerWidth = width;
+    let playerHeight = height;
+    
+    let playerWidth2 = width;
+    let playerHeight2 = height;
+    
+    let playerWidth3 = width;
+    let playerHeight3 = height;
 
     console.log(width)
 
     if (width < 1921) {
-      console.log("test")
-       playerWidth = width * 0.010006;
-       playerHeight = height * 0.074;
+
+      // playerWidth = width * .5;
+      // playerHeight = height * .5;
+
+      //  let playerWidth2 = width * 1;
+      //  let playerHeight2 = height * 1;
+       
+      //  let playerWidth3 = width * 1;
+      //  let playerHeight3 = height * 1;
     }
 
   
     if (width < 600) {
-       playerWidth = width * .5;
-       playerHeight = height * .5;
+      //  playerWidth = width * .5;
+      //  playerHeight = height * .5;
+       
+      //  let playerWidth2 = width * 1;
+      //  let playerHeight2 = height * 1;
+       
+      //  let playerWidth3 = width * 1;
+      //  let playerHeight3 = height * 1;
     }
 
   return (
@@ -101,8 +119,8 @@ const HomePage = () => {
           <div className='about_me_section'>           
           <div className='player-wrapper' style={{paddingRight:"40px", paddingLeft:"30px"}} >
               <ReactPlayer   
-                width={`${playerWidth}vw`}
-                height={`${playerHeight}vh`}      
+                width={`${playerWidth*.182}px`}
+                height={`${playerHeight*.65}px`}      
                 playing
                 url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
                 loop="true"
@@ -461,8 +479,8 @@ const HomePage = () => {
               </div> */}
               <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"120px", paddingBottom:"70px"}} >
                 <ReactPlayer   
-                  width={576}
-                  height={324}
+                  width={`${playerWidth2*.25}px`}
+                  height={`${playerHeight2*.35}px`}      
                   playing
                   url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1&frameborder=12"
                   loop="true"
@@ -535,8 +553,8 @@ const HomePage = () => {
           
               <div className='player-wrapper' style={{paddingRight:"70px", paddingLeft:"120px", paddingBottom:"70px"}} >
                 <ReactPlayer   
-                  width={1000}
-                  height={562}
+                  width={`${playerWidth2*.5}px`}
+                  height={`${playerHeight2*.5}px`}      
                   playing
                   url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1&frameborder=12"
                   loop="true"
