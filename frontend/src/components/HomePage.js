@@ -112,57 +112,60 @@ const HomePage = () => {
 
   return (
 <>
-        <div className='entire_page'>
+<div className='entire_page'>
+        
+        
         <section id="about" >    
-        <h1>About Me <span className="wave">👋</span></h1>      
-        <div className='about_me_section'>           
-          <div className='player-wrapper'>
-              <ReactPlayer   
-                width={`${playerWidth}px`}
-                height={`${playerHeight}px`}      
-                playing
-                url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
-                loop={true}
-                muted={true}
-                style={{zIndex:1}}
-                config={{
-                  youtube: youtubeOptions,
-                }}
-              />
-          </div>
+        
+          <h1>About Me <span className="wave">👋</span></h1>      
+          <div className='about_me_section'>           
+            <div className='wrapper_rock_climbing_video'>
+                <ReactPlayer   
+                  width={`${playerWidth}px`}
+                  height={`${playerHeight}px`}      
+                  playing
+                  url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
+                  loop={true}
+                  muted={true}
+                  style={{zIndex:1}}
+                  config={{
+                    youtube: youtubeOptions,
+                  }}
+                />
+            </div>
 
-          <div className="project_1_main_div">
-          <div className="about_me_images">
-          <div className="about_me_images2">
-            <img src={IceCavePhoto2} alt="Michael Iwanek Navbar" className="profile_photo_image_body"/>                 
-            <img src={Heavenly_Ski_Resort_Photo} alt="Michael Iwanek Navbar" className="profile_photo_image_body_2"/>    
-          </div>
-            <img src={Tent} alt="Michael Iwanek Navbar" className="tent_image"/>    
-          </div>
-                     
-          <div className='about_me_text'>
-            <p>Hey there!</p>
-            <p>
-            I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for personal 
-            learning and development.  
-            </p>      
-            <p>
-            I'm currently a Computer Science student at Oregon State University in an accelerated post-baccalaureate 
-            program.  My first degree was in accounting, and after graduation I worked for about three years as a CPA 
-            in public accounting and government roles.
-            </p>     
-            <p>
-            I first discovered programming by self-teaching myself VBA to automate work tasks, and discovered how much 
-            I enjoy working through coding problems and building things.
-            </p>         
-            <p>
-            Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb 
-            multi-pitch routes and get into back-country skiing one day.
-            </p>                       
-            </div>  
-          </div>
-  
-        </div>   
+            <div className="project_1_main_div">
+            <div className="about_me_images">
+            <div className="about_me_images2">
+              <img src={IceCavePhoto2} alt="Michael Iwanek Navbar" className="profile_photo_image_body"/>                 
+              <img src={Heavenly_Ski_Resort_Photo} alt="Michael Iwanek Navbar" className="profile_photo_image_body_2"/>    
+            </div>
+              <img src={Tent} alt="Michael Iwanek Navbar" className="tent_image"/>    
+            </div>
+                      
+            <div className='about_me_text'>
+              <p>Hey there!</p>
+              <p>
+              I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for personal 
+              learning and development.  
+              </p>      
+              <p>
+              I'm currently a Computer Science student at Oregon State University in an accelerated post-baccalaureate 
+              program.  My first degree was in accounting, and after graduation I worked for about three years as a CPA 
+              in public accounting and government roles.
+              </p>     
+              <p>
+              I first discovered programming by self-teaching myself VBA to automate work tasks, and discovered how much 
+              I enjoy working through coding problems and building things.
+              </p>         
+              <p>
+              Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb 
+              multi-pitch routes and get into back-country skiing one day.
+              </p>                       
+              </div>  
+            </div>
+    
+          </div>   
             
         </section>
 
@@ -170,11 +173,11 @@ const HomePage = () => {
 
         {/* SECTION FOR PROJECT #1 */}
         <div id="projects_section"></div>
-        <section id="projects" style={{margin:"0px"}}>
+        <section className='ski_shop_section'>
         	<h1 style={{margin:"0px"}}> Projects </h1>
           <p style={{height:"auto", marginBottom:"100px"}}>
             Please see full-stack Computer Science projects I've completed below, in various programming languages.
-          </p>          
+          </p>        
           <h2 className='project_header'>Ski & Rock Climbing E-Commerce Store</h2>    
           <div className="project_buttons">         
           <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack")}>
@@ -235,68 +238,75 @@ const HomePage = () => {
 
        
         {/* SECTION FOR PROJECT #2 */}
-        <section id="profile"  style={{margin:"0px", height:"auto", width:"100%"}}>       
+        <section className='apply_yourself_section'>       
           
           <h2 className='project_header'>
           applyYourSelf Job Application Tracker  
           </h2>   
+
           <div className="project_buttons">             
-          <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/applyYourSelf-Job-Tracker")}>
-            <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
-            GitHub Link
-          </button>
-          <button className="website_button" onClick={() => handleClick("https://applyyourself-tracker-prod.herokuapp.com")}>
-            Live Website Link
-          </button>
+            <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/applyYourSelf-Job-Tracker")}>
+              <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
+              GitHub Link
+            </button>
+            <button className="website_button" onClick={() => handleClick("https://applyyourself-tracker-prod.herokuapp.com")}>
+              Live Website Link
+            </button>
           </div>
-          <div className="project_1_main_div">
 
-            <div className="project_card_apply_yourself">     
-                <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
-                      <div><img alt="tracker_1" src={Job_Tracker_Gif_1} /></div>
-                      <div><img alt="tracker_2"src={Job_Tracker_Home_Page} /></div>
-                      <div><img alt="tracker_3"src={Job_Tracker_1} /></div>
-                      <div><img alt="tracker_4"src={Job_Tracker_2} /></div>
-                      <div><img alt="tracker_5"src={Job_Tracker_3} /></div>
-                </Carousel>
-            </div>
-           
 
-            <div className='text_description_1'>
-            <ul>
-              <li>
-              Full-stack MERN web application that allows multiple users to track their job application history on one convenient 
-              website from anywhere. Allows jobs to be searched, sorted by date, name, and categorized by application status with full 
-              CRUD functionality.
-              </li> 
-              <li>
-              A dashboard shows statistical data visually via a Bar chart and Sankey chart, showing which jobs led 
-              to subsequent interviews and applications per month. Detailed notes can also be added to each job's history.               
-              </li>
-              <li>
-              Features are implemented by several REST APIs, allowing user registration and login via Express.js routes, such as google 
-              OAuth 2.0. Back-end is run on Node.js connected to a MongoDB NoSQL database, with collections mapped to various Mongoose schema 
-              for Users/Jobs. 
-              </li>
-              <li>
-              Uses JWT bearer-tokens to access restricted pages, password hashing (brypt.js), and private API routes using Axios 
-              interceptors so users can only access their own data. 
-              </li>
-              <li>
-              Added various controllers to the APIs for jobs/user routes to implement error handling, user authentication, and not-found middleware. 
-              Used Postman to test HTTP requests made with Axios by the front-end to the server and check JSON responses. Features React.js reducers/actions 
-              to update the global state (React Context) and various statistics used to generate charts (Sankey, Bar Chart, etc.).
-              </li>
-            </ul> 
-            </div>
-          </div>               
+          <div className="project_card_apply_yourself">        
+
+              <div className='carousel_apply_yourself'>  
+                    <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
+                          <div><img alt="tracker_1" src={Job_Tracker_Gif_1} /></div>
+                          <div><img alt="tracker_2"src={Job_Tracker_Home_Page} /></div>
+                          <div><img alt="tracker_3"src={Job_Tracker_1} /></div>
+                          <div><img alt="tracker_4"src={Job_Tracker_2} /></div>
+                          <div><img alt="tracker_5"src={Job_Tracker_3} /></div>
+                    </Carousel>
+                </div>
+            
+
+              <div className='text_apply_your_self'>
+                <ul>
+                  <li>
+                  Full-stack MERN web application that allows multiple users to track their job application history on one convenient 
+                  website from anywhere. Allows jobs to be searched, sorted by date, name, and categorized by application status with full 
+                  CRUD functionality.
+                  </li> 
+                  <li>
+                  A dashboard shows statistical data visually via a Bar chart and Sankey chart, showing which jobs led 
+                  to subsequent interviews and applications per month. Detailed notes can also be added to each job's history.               
+                  </li>
+                  <li>
+                  Features are implemented by several REST APIs, allowing user registration and login via Express.js routes, such as google 
+                  OAuth 2.0. Back-end is run on Node.js connected to a MongoDB NoSQL database, with collections mapped to various Mongoose schema 
+                  for Users/Jobs. 
+                  </li>
+                  <li>
+                  Uses JWT bearer-tokens to access restricted pages, password hashing (brypt.js), and private API routes using Axios 
+                  interceptors so users can only access their own data. 
+                  </li>
+                  <li>
+                  Added various controllers to the APIs for jobs/user routes to implement error handling, user authentication, and not-found middleware. 
+                  Used Postman to test HTTP requests made with Axios by the front-end to the server and check JSON responses. Features React.js reducers/actions 
+                  to update the global state (React Context) and various statistics used to generate charts (Sankey, Bar Chart, etc.).
+                  </li>
+                </ul> 
+              </div>
+
+    
+          </div>    
+
+
         </section>      
 
 
 
 
         {/* SECTION FOR PROJECT #3 */}
-        <section id="projects2"  style={{margin:"0px", height:"auto", width:"100%"}}>                           
+        <section className="rsa_section">                           
           <h2 className='project_header'>RSA & AES Encryption App - Electron.js, React.js</h2>             
          
           {/* Buttons */}
@@ -355,7 +365,7 @@ const HomePage = () => {
 
 
         {/* SECTION FOR PROJECT #4 */}
-        <section id="profile"  style={{margin:"0px", height:"auto"}}>       
+        <section className='space_tau_section' style={{margin:"0px", height:"auto"}}>       
         <h2 className='project_header'> SpaceTau-Flask-and-MySQL-App</h2>   
         <div className="project_buttons">                
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340")}>
@@ -368,32 +378,37 @@ const HomePage = () => {
           </div>
              <div className="project_1_main_div">
    
-              <div className="project_card_space_tau">     
-                  <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
-                        <div><img alt="space_tau_1" src={Space_Tau_1} /></div>
-                        <div><img alt="space_tau_2" src={Space_Tau_2} /></div>
-                        <div><img alt="space_tau_3"src={Space_Tau_3} /></div>
-                        <div><img alt="space_tau_4"src={Space_Tau_4} /></div>
-                        <div><img alt="space_tau_5"src={Space_Tau_5} /></div>
-                        <div><img alt="space_tau_6"src={Space_Tau_6} /></div>
-                        <div><img alt="space_tau_7"src={Space_Tau_7} /></div>
-                  </Carousel>
-          
-             <div className='player-wrapper' >
-                <ReactPlayer   
-                  width={`${playerWidth2*.25}px`}
-                  height={`${playerHeight2*.28}px`}      
-                  playing
-                  url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1&frameborder=12"
-                  loop={true}
-                  muted={true}
-                  style={{zIndex:1}}
-                  config={{youtube: youtubeOptions,}}
-                />
-              </div>
+            <div className="space_tau_carousel_and_video">     
+
+                <div className='space_tau_carousel' >
+                      <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
+                            <div><img alt="space_tau_1" src={Space_Tau_1} /></div>
+                            <div><img alt="space_tau_2" src={Space_Tau_2} /></div>
+                            <div><img alt="space_tau_3"src={Space_Tau_3} /></div>
+                            <div><img alt="space_tau_4"src={Space_Tau_4} /></div>
+                            <div><img alt="space_tau_5"src={Space_Tau_5} /></div>
+                            <div><img alt="space_tau_6"src={Space_Tau_6} /></div>
+                            <div><img alt="space_tau_7"src={Space_Tau_7} /></div>
+                      </Carousel>
+                </div>
+              
+                <div className='player-wrapper' >
+                    <ReactPlayer   
+                      width={`${playerWidth2*.25}px`}
+                      height={`${playerHeight2*.28}px`}      
+                      playing
+                      url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1&frameborder=12"
+                      loop={true}
+                      muted={true}
+                      style={{zIndex:1}}
+                      config={{youtube: youtubeOptions,}}
+                    />
+                  </div>
               
             </div>
-              <div className='text_description_1'>
+
+
+              <div className='space_tau_description'>
                 <ul>
                   <li>
                     Project programmed in Flask to run Python in a back-end server environment, 
@@ -421,6 +436,8 @@ const HomePage = () => {
                   </li>
                   </ul>
               </div>
+
+
             </div>
 
         </section>   
@@ -429,7 +446,7 @@ const HomePage = () => {
 
 
            {/* SECTION FOR PROJECT #5 */}
-           <section id="projects3"  style={{margin:"0px", height:"auto"}}>       
+           <section className='smallsh_section'>       
            <h2 className='project_header'>Small Shell (smallsh) - C Unix Shell</h2>   
               
            <div className="project_buttons">                 
@@ -440,7 +457,7 @@ const HomePage = () => {
           </div>
           <div className="project_card_smallsh">
 
-              <div className='video-wrapper-smallsh' >
+              <div className='video_wrapper_smallsh' >
                 <ReactPlayer   
                   width={`${playerWidth3}px`}
                   height={`${playerHeight3}px`}      
@@ -500,24 +517,17 @@ const HomePage = () => {
            {/* SECTION FOR PROJECT #6 */}
             <section id="projects_red">       
             <h2 className='project_header'>Hash Map Data Structure Implementation - Python</h2>   
+
             <div className="project_buttons">              
-            <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/HashMap-Python-Implementation")}>
-            <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
-               GitHub Link
-            </button>
-            {/* <button className="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
-              Live Website Link
-            </button> */}
-          </div>
-              <div style={{display:"flex"}}>         
-          {/* <button className="github_button">
-            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
-            GitHub Link
-          </button> */}
-          </div>
-              <div className="project_1_main_div">
-              <div className="project_card_hash_map">
-              <div>     
+              <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/HashMap-Python-Implementation")}>
+              <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
+                GitHub Link
+              </button>
+            </div>
+
+            <div className="project_card_hash_map">
+              
+              <div className='hash_map_carousel'>     
                 <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                     <div><img alt="hash_map_1" src={Hash_Map_Image_1} /></div>
                     <div><img alt="hash_map_2" src={Hash_Map_Image_2} /></div>
@@ -525,8 +535,9 @@ const HomePage = () => {
                 </Carousel>
               </div>              
 
-            </div>
-              <div className='text_description_1'>
+
+
+              <div className='hash_map_text'>
                 <ul>
                   <li>
                     This is the portfolio project for the Oregon State University course CS 261 - Data Structures,
@@ -559,11 +570,11 @@ const HomePage = () => {
                   </li>
                   </ul>
               </div>
-            </div>
 
-        </section>   
-        </div>
-
+          </div>
+ 
+        </section>    
+    </div>
     </>
   );
 }
