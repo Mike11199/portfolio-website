@@ -423,6 +423,20 @@ li {
 /* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
 
+
+  .github_button {
+    /* margin-left: 10px; */
+  }
+
+  .website_button {
+    margin-left: 10px;
+  }
+
+  #about {
+    margin-top: 0px;
+  }
+  
+
   .player-wrapper {  
     position: relative;  
     z-index: 1;
@@ -576,13 +590,6 @@ body {
 }
 
 
-.profile_photo_image {
-  width: 2vh !important;
-  height: 2vh !important;
-  border-radius: 0px !important;
-  margin-left: 0vh !important;
-}
-
 .project_card_ski_shop {
   display: flex;
   flex-direction: column;
@@ -635,14 +642,13 @@ body {
     max-width: 70%;
   }
 
-  .carousel{
+  /* .carousel{
     max-width: 70%;
   }
   .carousel-root{
     max-width: 70%;
-  }
+  } */
 
   
-
 
 }
