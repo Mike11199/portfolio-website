@@ -392,10 +392,10 @@ const HomePage = () => {
                       </Carousel>
                 </div>
               
-                <div className='player-wrapper' >
+                <div className='video_wrapper_ksp' >
                     <ReactPlayer   
-                      width={`${playerWidth2*.25}px`}
-                      height={`${playerHeight2*.28}px`}      
+                      width={`100%`}
+                      height={`100%`}      
                       playing
                       url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1&frameborder=12"
                       loop={true}
@@ -459,8 +459,8 @@ const HomePage = () => {
 
               <div className='video_wrapper_smallsh' >
                 <ReactPlayer   
-                  width={`${playerWidth3}px`}
-                  height={`${playerHeight3}px`}      
+                  width={`100%`}
+                  height={`100%`}
                   playing
                   url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1&frameborder=12"
                   loop={true}
@@ -515,7 +515,7 @@ const HomePage = () => {
 
 
            {/* SECTION FOR PROJECT #6 */}
-            <section id="projects_red">       
+            <section id="hash_map_section">       
             <h2 className='project_header'>Hash Map Data Structure Implementation - Python</h2>   
 
             <div className="project_buttons">              

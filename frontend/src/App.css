@@ -1,26 +1,39 @@
+.video_wrapper_ksp {
+  height: 394px;
+  max-width: 700px;
+  max-height: 394px;
+}
+
+ul > li > ul > li {
+  margin-top: 10px; /* Add margin to nested list items */
+}
+
 .wrapper_rock_climbing_video {
   padding-right: 40px;
 }
 
 .text_apply_your_self{
-  width: 50%;
+  padding-left: 5%;
+  width: 30%;
 }
 
 .carousel_apply_yourself {
-  width: 50%;
+  width: 60%;
 }
 
 .space_tau_description{
-  width: 50%;
+  padding-left: 5%;
+  width: 30%;
 }
 
 .hash_map_text {
-  width: 50%;
+  padding-left: 5%;
+  width: 30%;
 }
 
 
 .hash_map_carousel {
-  width: 50%;
+  width: 60%;
 }
 
 .project_card_hash_map {
@@ -44,20 +57,26 @@
 }
 
 .carousel_ski_shop{
-  width: 50%;
+  width: 60%;
 }
 
 .text_description_ski_shop{
-  width: 50%;
+  padding-left: 5%;
+  width: 30%;
 }
 
 .text_description_smallsh {
-  width: 50%;
+  padding-left: 5%;
+  width: 30%;
 }
 
 .video_wrapper_smallsh {
-  width: 50%;
-}
+  width: 60%;  
+  position: relative;
+  object-fit: contain;
+  max-width: 1080px;
+  max-height: 607px;
+ }
 
 .project_card_smallsh{  
   margin-top: 50px;
@@ -67,7 +86,7 @@
 
 
 .space_tau_carousel_and_video {
-  width: 50%;
+  width: 60%;
 }
 
 .project_card_apply_yourself {
@@ -82,7 +101,8 @@
 
 
 .text_description_rsa {
-  width: 50%;
+  padding-left: 5%;
+  width: 30%;
 }
 
 .project_card_rsa_encryption{  
@@ -92,7 +112,7 @@
 }
 
 .carousel_rsa_encryption {
-  width: 50%;  
+  width: 60%;
 }
 
 
@@ -213,7 +233,7 @@ html {
 }
 
 
-#projects_red {
+#hash_map_section {
   background-image: linear-gradient(to top, #1f242b 0%, #432313 100%);
   color: white; 
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
@@ -221,6 +241,7 @@ html {
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
+  padding-top: 40px;
 }
 
 
@@ -231,6 +252,7 @@ html {
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
+  padding-top: 40px;
 }
 
 
@@ -245,6 +267,7 @@ html {
 
 
 .apply_yourself_section{
+  padding-top: 40px;
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
   margin-top: 0px !important;
   margin: 0px;
@@ -262,18 +285,19 @@ html {
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
+  padding-top: 40px;
 }
 
 
 .space_tau_section{
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
-  margin-top: 0px !important;
+  padding-top: 40px;
   margin: 0px;
   background-image: linear-gradient(to top, #09203f 0%, #35063a 100%);
   color: white;
   padding-left: 50px;
   padding-right: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 
