@@ -101,13 +101,6 @@
   flex-direction: column;
 }
 
-#about {
-  margin-top: 30px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
-}
-
 .about_me_images {
   display: flex;
   flex-direction: column;
@@ -128,10 +121,13 @@
 #about {
   background-image: linear-gradient(to top, #09203f 63%, #537895 100%);
   color: white;
+  padding-left: 50px;
+  padding-right: 50px;
   padding-top: 100px;
   padding-bottom: 100px;
+  margin-top: 30px;
+  align-items: center;
 }
-
 
 .navbar_name_me {
   color: white; 
@@ -465,8 +461,7 @@ li {
   }
 
   .github_button {
-    margin-left: 10px;
-    margin-right: 0px;
+    margin-bottom: 0px;
   }
 
   .website_button {
@@ -476,8 +471,9 @@ li {
 
 
   .project_card_apply_yourself {
-    width:80%;
+    flex-direction: column;
     padding-left: 0px;
+    align-self: center;
   } 
 
   .about_me_text {
@@ -491,8 +487,9 @@ li {
   .about_me_images2 {
     display: flex;
     flex-direction: column;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     align-items: center;
+    gap: 20px;
   }
 
 
@@ -500,11 +497,9 @@ li {
     /* margin-left: 10px; */
   }
 
-  .website_button {
-    margin-left: 10px;
-  }
-
   #about {
+    display: flex;
+    flex-direction: column;
     margin-top: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -516,6 +511,7 @@ li {
     z-index: 1;
     padding-left: 0%;
     padding-right: 0%;  
+    padding-bottom: 30px;
   }  
 
 
@@ -526,8 +522,6 @@ li {
   .about_me_section {
     display: flex;
     flex-direction: column;
-    padding-left: 5vh;
-    padding-top: 2vh;
   }
 
 
@@ -537,17 +531,6 @@ li {
     flex-direction: column;
     height:auto;
   }
-
-  .navbar_name_me {
-    color: white; 
-    font-weight: 150; 
-    font-family: Segoe UI;
-    font-size: 15px !important;
-    padding-right: 1vh !important;
-    padding-left: 2vh !important;
-    text-transform: uppercase;    
-  }
-
 
 
   body {
@@ -570,27 +553,20 @@ li {
   }
 
   .navbar_link {
+    font-size: 12px;    
+    padding: 10px;
+  }
+
+  .profile_photo {
+    padding: 0px;
     margin: 0px;
-    font-size: 10px !important;
-    padding: 0px;  
-    display: inline-block;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    font-size: medium;
-    transition: color .3s; 
-    text-decoration: none;
-    padding: 10px !important;
-    z-index: -1;
   }
 
 
   .profile_photo_image {
-    width: 6vh;
-    height: 6vh;
-    border-radius: 50px !important;
-    margin-left: 0vh !important;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
   }
 
   .text_description_1 {
@@ -626,11 +602,6 @@ li {
     padding: 0px ;
   }
 
-  .player-wrapper {  
-    padding-bottom: 30px;
-  }
-
-
   .project_card_ski_shop {
     display: flex;
     flex-direction: column;
@@ -655,21 +626,83 @@ li {
     padding-right: 20px;
   }
 
-
-
-  .navbar_name_me {
-    color: white; 
-    font-weight: 150; 
-    font-size: 15px;
-    padding-right: 0vh;
-    padding-left: 0vh;
-  }
-
-
-
   img {
     max-width: 70%;
   }
+
+  .tent_image {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .about_me_images {
+    align-items: center;
+  }
+  
+  .wrapper_rock_climbing_video {
+    padding: 0px;
+    margin: 0px;
+    align-self: center;
+    margin-bottom: 30px;
+  }
+
+  .project_card_apply_yourself{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text_apply_your_self {
+    width: 100%;
+  }
+  
+  .carousel_apply_yourself{
+    width: 100%;
+  }
+
+  .project_buttons {
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+
+  .carousel_rsa_encryption {
+    width: 100%;
+  }
+
+  .text_description_rsa{
+    width: 100%;
+  }
+  
+  .space_tau_carousel_and_video {
+    width: 100%;
+  }
+
+  .space_tau_description {
+    width: 100%;
+  }
+
+  .text_description_smallsh{
+    width: 100%;
+  }
+
+  .hash_map_text{
+    width: 100%;
+  }
+
+  .text_description_ski_shop{
+    width: 100%;
+  }
+
+  .carousel_ski_shop{
+    width: 100%;
+  }
+
+  .hash_map_carousel {
+    width: 100%;
+  }
+
+  
 
   /* .carousel{
     max-width: 70%;
