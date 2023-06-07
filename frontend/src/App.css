@@ -575,13 +575,39 @@ body {
   /* due to increase navbar height */
 }
 
-  
-  .profile_photo_image {
-    width: 2vh !important;
-    height: 2vh !important;
-    border-radius: 0px !important;
-    margin-left: 0vh !important;
-  }
+
+.profile_photo_image {
+  width: 2vh !important;
+  height: 2vh !important;
+  border-radius: 0px !important;
+  margin-left: 0vh !important;
+}
+
+.project_card_ski_shop {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.project_card_smallsh{  
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+
+.project_card_rsa_encryption{  
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
 
   
 }
