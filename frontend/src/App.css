@@ -1,4 +1,7 @@
-
+.github_logo {
+  height: 20px;
+  width: 20px;
+}
 
 .project_card_ski_shop {
   display: flex;
@@ -217,8 +220,7 @@ html {
   background-image: linear-gradient(to top, #1f242b 0%, #432313 100%);
   color: white; 
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
-  height: 1000px;
-  margin-bottom: 0px !important;
+  height: auto;
 }
 
 

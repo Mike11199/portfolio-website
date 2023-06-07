@@ -178,7 +178,7 @@ const HomePage = () => {
           <h2 className='project_header'>Ski & Rock Climbing E-Commerce Store</h2>    
           <div style={{display:"flex"}}>         
           <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack")}>
-            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
             GitHub Link
           </button>
           <button className="website_button" onClick={() => handleClick("https://recreational-equipment-shop.herokuapp.com/")}>
@@ -242,7 +242,7 @@ const HomePage = () => {
           </h2>   
           <div style={{display:"flex"}}>         
           <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/applyYourSelf-Job-Tracker")}>
-            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
             GitHub Link
           </button>
           <button className="website_button" onClick={() => handleClick("https://applyyourself-tracker-prod.herokuapp.com")}>
@@ -302,7 +302,7 @@ const HomePage = () => {
           {/* Buttons */}
           <div style={{display:"flex"}}>         
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-361-RSA-React-App")}>
-              <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
               GitHub Link
             </button>
             <button className="website_button" onClick={() => handleClick("https://rsa-react-app.herokuapp.com/")}>
@@ -359,7 +359,7 @@ const HomePage = () => {
         <h2 className='project_header'> SpaceTau-Flask-and-MySQL-App</h2>   
           <div style={{display:"flex"}}>         
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340")}>
-              <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
                GitHub Link
             </button>
             <button className="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
@@ -502,7 +502,7 @@ const HomePage = () => {
             <h2 className='project_header'>Hash Map Data Structure Implementation - Python</h2>   
             <div style={{display:"flex"}}>         
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/HashMap-Python-Implementation")}>
-              <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+            <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
                GitHub Link
             </button>
             {/* <button className="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
