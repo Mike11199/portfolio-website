@@ -502,6 +502,7 @@ li {
 
   .about_me_text {
     padding-right: 0px;
+    padding-left: 0px;
   }
 
   .profile_photo_image_body {
@@ -679,6 +680,7 @@ li {
 
   .text_apply_your_self {
     width: 100%;
+    padding-left: 0px;
   }
   
   .carousel_apply_yourself{
@@ -696,6 +698,7 @@ li {
 
   .text_description_rsa{
     width: 100%;
+    padding-left: 0px;
   }
   
   .space_tau_carousel_and_video {
@@ -708,14 +711,17 @@ li {
 
   .text_description_smallsh{
     width: 100%;
+    padding-left: 0px;
   }
 
   .hash_map_text{
     width: 100%;
+    padding-left: 0px;
   }
 
   .text_description_ski_shop{
     width: 100%;
+    padding-left: 0px;
   }
 
   .carousel_ski_shop{
