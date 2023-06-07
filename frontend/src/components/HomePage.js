@@ -88,11 +88,14 @@ const HomePage = () => {
 
 
     if (width > 1921) {
-
       playerWidth = width *.182;
       playerHeight = height *.65;
+    }
 
-
+    
+    if (width <= 1921) {
+      playerWidth = width *.182;
+      playerHeight = height *.65;
     }
 
   
