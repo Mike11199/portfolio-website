@@ -36,12 +36,14 @@ import Tent from '../images/tent.jpg'
 
 const HomePage = () => {
 
+
   function useWindowSize() {
+    
     const [windowSize, setWindowSize] = useState({
       width: window.innerWidth,
       height: window.innerHeight
     });
-  
+
     useEffect(() => {
       function handleResize() {
         setWindowSize({
@@ -49,16 +51,14 @@ const HomePage = () => {
           height: window.innerHeight
         });
       }
-      
-  
       window.addEventListener('resize', handleResize);
-  
       // Cleanup the event listener on component unmount
       return () => window.removeEventListener('resize', handleResize);
     }, []);
   
     return windowSize;
   }
+
 
   const youtubeOptions = {
     playerVars: {
@@ -73,51 +73,49 @@ const HomePage = () => {
       }, 130);
     };
     
+
     const { width, height } = useWindowSize();
 
     let playerWidth = width;
     let playerHeight = height;
-    
     let playerWidth2 = width;
     let playerHeight2 = height;
-    
     let playerWidth3 = width;
     let playerHeight3 = height;
-
     console.log(width)
 
 
     if (width > 1921) {
       playerWidth = width *.182;
       playerHeight = height *.65;
+      playerWidth3 = width * .44;
+      playerHeight3 = height * .495;
     }
 
     
     if (width <= 1921) {
       playerWidth = width *.182;
       playerHeight = height *.65;
+      playerWidth3 = width * .42;
+      playerHeight3 = height * .49;
     }
 
   
     if (width < 600) {
        playerWidth = width * .6;
        playerHeight = height * .35;
-       
        playerWidth2 = width * .5;
        playerHeight2 = height * .25;
-       
-       playerWidth3 = width * .15;
-       playerHeight3 = height * .25;
+       playerWidth3 = width * .35;
+       playerHeight3 = height * .395;
     }
 
   return (
 <>
         <div className='entire_page'>
-        <div id="about_me_section"></div>
-        <section id="about" >   
-          <div style={{height:"30px", marginBottom:"0px"}}></div>       
-        	<h1>About Me <span className="wave">👋</span></h1>      
-          <div className='about_me_section'>           
+        <section id="about" >    
+        <h1>About Me <span className="wave">👋</span></h1>      
+        <div className='about_me_section'>           
           <div className='player-wrapper'>
               <ReactPlayer   
                 width={`${playerWidth}px`}
@@ -135,50 +133,36 @@ const HomePage = () => {
 
           <div className="project_1_main_div">
           <div className="about_me_images">
-                <div className="about_me_images2">
-                          <img
-                            src={IceCavePhoto2}
-                            alt="Michael Iwanek Navbar"
-                            className="profile_photo_image_body"
-                          />                 
-                          <img                    
-                            src={Heavenly_Ski_Resort_Photo}
-                            alt="Michael Iwanek Navbar"
-                            className="profile_photo_image_body_2"
-                          />    
-                </div>
-                    <img                    
-                      src={Tent}
-                      alt="Michael Iwanek Navbar"
-                      className="tent_image"
-                  />    
+          <div className="about_me_images2">
+            <img src={IceCavePhoto2} alt="Michael Iwanek Navbar" className="profile_photo_image_body"/>                 
+            <img src={Heavenly_Ski_Resort_Photo} alt="Michael Iwanek Navbar" className="profile_photo_image_body_2"/>    
+          </div>
+            <img src={Tent} alt="Michael Iwanek Navbar" className="tent_image"/>    
           </div>
                      
-              <div className='about_me_text'>
-              <p>
-                Hey there!
-              </p>
-              <p>
-                I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for personal 
-                learning and development.  
-              </p>      
-              <p>
-                I'm currently a Computer Science student at Oregon State University in an accelerated post-baccalaureate 
-                program.  My first degree was in accounting, and after graduation I worked for about three years as a CPA 
-                in public accounting and government roles.
-              </p>     
-              <p>
-                I first discovered programming by self-teaching myself VBA to automate work tasks, and discovered how much 
-                I enjoy working through coding problems and building things.
-              </p>         
-              <p>
-                Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb 
-                multi-pitch routes and get into back-country skiing one day.
-              </p>                       
-              </div>  
-              </div>
+          <div className='about_me_text'>
+            <p>Hey there!</p>
+            <p>
+            I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for personal 
+            learning and development.  
+            </p>      
+            <p>
+            I'm currently a Computer Science student at Oregon State University in an accelerated post-baccalaureate 
+            program.  My first degree was in accounting, and after graduation I worked for about three years as a CPA 
+            in public accounting and government roles.
+            </p>     
+            <p>
+            I first discovered programming by self-teaching myself VBA to automate work tasks, and discovered how much 
+            I enjoy working through coding problems and building things.
+            </p>         
+            <p>
+            Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb 
+            multi-pitch routes and get into back-country skiing one day.
+            </p>                       
+            </div>  
+          </div>
   
-            </div>   
+        </div>   
             
         </section>
 
@@ -190,12 +174,8 @@ const HomePage = () => {
         	<h1 style={{margin:"0px"}}> Projects </h1>
           <p style={{height:"auto", marginBottom:"100px"}}>
             Please see full-stack Computer Science projects I've completed below, in various programming languages.
-          </p>
-
-          
-          <h2 style={{marginBottom:"30px", marginTop:"100px"}}>
-            Ski & Rock Climbing E-Commerce Store
-          </h2>    
+          </p>          
+          <h2 className='project_header'>Ski & Rock Climbing E-Commerce Store</h2>    
           <div style={{display:"flex"}}>         
           <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack")}>
             <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
@@ -205,73 +185,49 @@ const HomePage = () => {
             Live Website Link
           </button>
           </div>
-          <div className="project_1_main_div">
-            
-            
-            <div style={{margin:"0px", width:"100%"}}>             
-             
-              <div className="project_card">     
+          <div className="project_card_ski_shop">
+                                       
+              <div className="carousel_ski_shop">     
                   <Carousel width="100%" infiniteLoop="true">
-                        <div>
-                            <img alt="shop_1" src={Shop_Image_1} />
-                            {/* <p className="legend">Legend 1</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_2" src={Shop_Image_2} />
-                            {/* <p className="legend">Legend 2</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_3"src={Shop_Image_3} />
-                            {/* <p className="legend">Legend 3</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_4"src={Shop_Image_4} />
-                            {/* <p className="legend">Legend 3</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_5"src={Shop_Image_5} />
-                            {/* <p className="legend">Legend 3</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_6"src={Shop_Image_6} />
-                            {/* <p className="legend">Legend 3</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_6"src={Editing_Ski_Photo} />
-                            {/* <p className="legend">Legend 3</p> */}
-                        </div>
+                        <div><img alt="shop_1" src={Shop_Image_1} /></div>
+                        <div><img alt="shop_2" src={Shop_Image_2} /></div>
+                        <div><img alt="shop_3"src={Shop_Image_3} /></div>
+                        <div><img alt="shop_4"src={Shop_Image_4} /></div>
+                        <div><img alt="shop_5"src={Shop_Image_5} /></div>
+                        <div><img alt="shop_6"src={Shop_Image_6} /></div>
+                        <div><img alt="shop_6"src={Editing_Ski_Photo} /></div>
                   </Carousel>
               </div>
+
+
+              <div className='text_description_ski_shop'>
+                <ul>
+                  <li>
+                    A complex full-stack website (REI/Amazon clone) where users can search for products, 
+                    add them to a cart, and submit/pay for an order with PayPal. An Admin dashboard allows 
+                    for product/inventory management, and real-time statistics/user chats.  
+                  </li>
+                  <li>
+                    Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website, 
+                    sending order info to PayPal and marking an order as paid in the MongoDB database depending 
+                    on the external API response.
+                  </li>
+                  <li>
+                    Implemented Socket.IO to allow for bi-directional client and server communication, to enable real-time 
+                    messaging between a logged in admin and user. Used Redux for global state management and Bootstrap to 
+                    develop React components.
+                  </li>
+                  <li>
+                    Modeled complicated database relationships between products, orders, and users using embedded MongoDB documents.
+                  </li>
+                  <li>
+                    Added Google OAuth2.0 Log In, decoding JWT credentials from Google, and locating the user by email in MongoDB 
+                    to verify the user.
+                  </li>
+                </ul> 
               </div>
 
-              <div className='text_description_1'>
-              <ul>
-                <li>
-                  A complex full-stack website (REI/Amazon clone) where users can search for products, 
-                  add them to a cart, and submit/pay for an order with PayPal. An Admin dashboard allows 
-                  for product/inventory management, and real-time statistics/user chats.  
-                </li>
-                <li>
-                  Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website, 
-                  sending order info to PayPal and marking an order as paid in the MongoDB database depending 
-                  on the external API response.
-                </li>
-                <li>
-                  Implemented Socket.IO to allow for bi-directional client and server communication, to enable real-time messaging between a logged in admin and user. Used Redux for global state management and Bootstrap to develop React components.
-                </li>
-                <li>
-                  Modeled complicated database relationships between products, orders, and users using embedded MongoDB documents.
-                </li>
-                <li>
-                  Added Google OAuth2.0 Log In, decoding JWT credentials from Google, and locating the user by email in MongoDB to verify the user.
-                </li>
-              </ul> 
-                </div>
-
-
           </div>
-
-
 
         </section>
        
@@ -281,8 +237,7 @@ const HomePage = () => {
         {/* SECTION FOR PROJECT #2 */}
         <section id="profile"  style={{margin:"0px", height:"auto", width:"100%"}}>       
           
-
-          <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>
+          <h2 className='project_header'>
           applyYourSelf Job Application Tracker  
           </h2>   
           <div style={{display:"flex"}}>         
@@ -296,29 +251,13 @@ const HomePage = () => {
           </div>
           <div className="project_1_main_div">
 
-            <div className="project_card" style={{margin:"0px", width:"50%"}}>     
+            <div className="project_card_apply_yourself">     
                 <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
-                      <div>
-                          <img alt="shop_1" src={Job_Tracker_Gif_1} />
-                          {/* <p className="legend">Legend 1</p> */}
-                      </div>
-
-                      <div>
-                          <img alt="shop_3"src={Job_Tracker_Home_Page} />
-                          {/* <p className="legend">Legend 3</p> */}
-                      </div>
-                      <div>
-                          <img alt="shop_3"src={Job_Tracker_1} />
-                          {/* <p className="legend">Legend 3</p> */}
-                      </div>
-                      <div>
-                          <img alt="shop_3"src={Job_Tracker_2} />
-                          {/* <p className="legend">Legend 3</p> */}
-                      </div>
-                      <div>
-                          <img alt="shop_3"src={Job_Tracker_3} />
-                          {/* <p className="legend">Legend 3</p> */}
-                      </div>
+                      <div><img alt="tracker_1" src={Job_Tracker_Gif_1} /></div>
+                      <div><img alt="tracker_2"src={Job_Tracker_Home_Page} /></div>
+                      <div><img alt="tracker_3"src={Job_Tracker_1} /></div>
+                      <div><img alt="tracker_4"src={Job_Tracker_2} /></div>
+                      <div><img alt="tracker_5"src={Job_Tracker_3} /></div>
                 </Carousel>
             </div>
            
@@ -357,45 +296,32 @@ const HomePage = () => {
 
 
         {/* SECTION FOR PROJECT #3 */}
-        <section id="projects2"  style={{margin:"0px", height:"auto", width:"100%"}}>                 
-
-          <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>
-          RSA & AES Encryption App - Electron.js, React.js
-          </h2>   
+        <section id="projects2"  style={{margin:"0px", height:"auto", width:"100%"}}>                           
+          <h2 className='project_header'>RSA & AES Encryption App - Electron.js, React.js</h2>             
+         
+          {/* Buttons */}
           <div style={{display:"flex"}}>         
-          <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-361-RSA-React-App")}>
-            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
-            GitHub Link
-          </button>
-          <button className="website_button" onClick={() => handleClick("https://rsa-react-app.herokuapp.com/")}>
-            Live Website Link
-          </button>
+            <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-361-RSA-React-App")}>
+              <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
+              GitHub Link
+            </button>
+            <button className="website_button" onClick={() => handleClick("https://rsa-react-app.herokuapp.com/")}>
+              Live Website Link
+            </button>
           </div>
-          <div className="project_1_main_div">
+          
+          <div className="project_card_rsa_encryption">
 
-            <div className="project_card" style={{margin:"0px", width:"50%"}}>     
+            <div className="carousel_rsa_encryption">     
               <Carousel width="100%" infiniteLoop="true">
-                      <div>
-                          <img alt="shop_1" src={RSA_Gif} />
-                          {/* <p className="legend">Legend 1</p> */}
-                      </div>
-                      <div>
-                          <img alt="shop_2" src={RSA_Image} />
-                          {/* <p className="legend">Legend 2</p> */}
-                      </div>
-                      <div>
-                          <img alt="shop_3"src={AES_Gif} />
-                          {/* <p className="legend">Legend 3</p> */}
-                      </div>
-                      <div>
-                          <img alt="shop_3"src={AES_Image} />
-                          {/* <p className="legend">Legend 3</p> */}
-                      </div>
+                      <div><img alt="rsa_1" src={RSA_Gif} /></div>
+                      <div><img alt="rsa_2" src={RSA_Image} /></div>
+                      <div><img alt="aes_1"src={AES_Gif} /></div>
+                      <div><img alt="aes_2"src={AES_Image} /></div>
               </Carousel>
-            </div>
-           
+            </div>           
 
-            <div className='text_description_1'>
+            <div className='text_description_rsa'>
             <ul>
               <li>
               Developed an Electron.js (local exe) and web application to allow a user to encrypt/decrypt text 
@@ -420,16 +346,17 @@ const HomePage = () => {
               </li>
             </ul> 
             </div>
-          </div>               
+
+          </div>  
+          
+                       
         </section>      
 
 
 
         {/* SECTION FOR PROJECT #4 */}
         <section id="profile"  style={{margin:"0px", height:"auto"}}>       
-              <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
-              SpaceTau-Flask-and-MySQL-App
-              </h2>   
+        <h2 className='project_header'> SpaceTau-Flask-and-MySQL-App</h2>   
           <div style={{display:"flex"}}>         
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340")}>
               <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
@@ -441,36 +368,15 @@ const HomePage = () => {
           </div>
              <div className="project_1_main_div">
    
-              <div id="project_card_tau" className="project_card" style={{marginBottom:"50px"}}>     
+              <div className="project_card_space_tau">     
                   <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
-                        <div>
-                            <img alt="shop_1" src={Space_Tau_1} />
-                            {/* <p className="legend">Legend 1</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_2" src={Space_Tau_2} />
-                            {/* <p className="legend">Legend 2</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_3"src={Space_Tau_3} />
-                            {/* <p className="legend">Legend 3</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_3"src={Space_Tau_4} />
-                            {/* <p className="legend">Legend 3</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_3"src={Space_Tau_5} />
-                            {/* <p className="legend">Legend 3</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_3"src={Space_Tau_6} />
-                            {/* <p className="legend">Legend 3</p> */}
-                        </div>
-                        <div>
-                            <img alt="shop_3"src={Space_Tau_7} />
-                            {/* <p className="legend">Legend 3</p> */}
-                        </div>
+                        <div><img alt="space_tau_1" src={Space_Tau_1} /></div>
+                        <div><img alt="space_tau_2" src={Space_Tau_2} /></div>
+                        <div><img alt="space_tau_3"src={Space_Tau_3} /></div>
+                        <div><img alt="space_tau_4"src={Space_Tau_4} /></div>
+                        <div><img alt="space_tau_5"src={Space_Tau_5} /></div>
+                        <div><img alt="space_tau_6"src={Space_Tau_6} /></div>
+                        <div><img alt="space_tau_7"src={Space_Tau_7} /></div>
                   </Carousel>
           
              <div className='player-wrapper' >
@@ -482,9 +388,7 @@ const HomePage = () => {
                   loop={true}
                   muted={true}
                   style={{zIndex:1}}
-                  config={{
-                  youtube: youtubeOptions,
-                }}
+                  config={{youtube: youtubeOptions,}}
                 />
               </div>
               
@@ -505,14 +409,15 @@ const HomePage = () => {
                     spacecraft and parts via an intersection table.
                   </li>
                   <li>
-                    Added constraints such as ON CASCADE DELETE to automatically allow for child rows to be deleted from a M:N relationship 
-                    and prevent database anomalies. Added foreign key (FK) constraints to prevent adding nonsensical relationships between tables,
-                    such as referencing a FK that doesn't exist.
+                    Added constraints such as ON CASCADE DELETE to automatically allow for child rows to be deleted from 
+                    a M:N relationship and prevent database anomalies. Added foreign key (FK) constraints to prevent adding 
+                    nonsensical relationships between tables, such as referencing a FK that doesn't exist.
                   </li>
                   <li>
-                    The theme of this project is inspired by my interest in NASA / space exploration and Kerbal Space Program (see gameplay video below), 
-                    which has taught me much about physics and orbital mechanics in a fun way.  I've also dabbled in using C# to automate launches 
-                    in the game with kRPC scripting (remote procedure calls), and eventually plan to use Unity/ C# to create mods for the game with Visual Studio.
+                    The theme of this project is inspired by my interest in NASA / space exploration and Kerbal Space Program 
+                    (see gameplay video below), which has taught me much about physics and orbital mechanics in a fun way.  I've 
+                    also dabbled in using C# to automate launches in the game with kRPC scripting (remote procedure calls), and 
+                    eventually plan to use Unity/ C# to create mods for the game with Visual Studio.
                   </li>
                   </ul>
               </div>
@@ -523,17 +428,9 @@ const HomePage = () => {
 
 
 
-
-
-
-
-
-
            {/* SECTION FOR PROJECT #5 */}
            <section id="projects3"  style={{margin:"0px", height:"auto"}}>       
-              <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
-              Small Shell (smallsh) - C Unix Shell
-              </h2>   
+           <h2 className='project_header'>Small Shell (smallsh) - C Unix Shell</h2>   
               
               <div style={{display:"flex"}}>         
           {/* <button className="github_button">
@@ -541,16 +438,12 @@ const HomePage = () => {
             GitHub Link
           </button> */}
           </div>
-          <div className="project_1_main_div">
-          <div className="project_1_main_div">
-              <div className="project_card" style={{marginBottom:"50px"}}>     
-            
-              </div>
-          
-              <div className='player-wrapper' >
+          <div className="project_card_smallsh">
+
+              <div className='video-wrapper-smallsh' >
                 <ReactPlayer   
-                  width={`${playerWidth3*.44}px`}
-                  height={`${playerHeight3*.5}px`}      
+                  width={`${playerWidth3}px`}
+                  height={`${playerHeight3}px`}      
                   playing
                   url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1&frameborder=12"
                   loop={true}
@@ -561,9 +454,8 @@ const HomePage = () => {
                 }}
                 />
               </div>
-              
-            </div>
-              <div className='text_description_1'>
+                          
+              <div className='text_description_smallsh'>
                 <ul>
                   <li>
                   Programmed a shell in C similar to the BASH shell, implementing parent/child process handling 
@@ -591,11 +483,13 @@ const HomePage = () => {
                   while allowing child processes to respond via custom signal handlers and sigaction structure.
                   </li>
                   <li>
-                  Parsed command line input into semantic tokens via word splitting. Implemented redirection operators '&lt;', '&gt;', and '&gt;&gt;' to 
-                  redirect STDIN and STDOUT to specific files.
+                  Parsed command line input into semantic tokens via word splitting. Implemented redirection operators 
+                  '&lt;', '&gt;', and '&gt;&gt;' to redirect STDIN and STDOUT to specific files.
                   </li>
                   </ul>
               </div>
+          
+          
             </div>
 
         </section>   
@@ -604,11 +498,9 @@ const HomePage = () => {
 
 
            {/* SECTION FOR PROJECT #6 */}
-           <section id="projects_red"  style={{margin:"0px", height:"auto"}}>       
-              <h2 style={{margin:"0px", marginTop:"0px", paddingTop:"40px", paddingBottom:"40px"}}>          
-              Hash Map Data Structure Implementation - Python
-              </h2>   
-              <div style={{display:"flex"}}>         
+            <section id="projects_red"  style={{margin:"0px", height:"auto"}}>       
+            <h2 className='project_header'>Hash Map Data Structure Implementation - Python</h2>   
+            <div style={{display:"flex"}}>         
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/HashMap-Python-Implementation")}>
               <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
                GitHub Link
@@ -624,24 +516,14 @@ const HomePage = () => {
           </button> */}
           </div>
               <div className="project_1_main_div">
-              <div className="">
-              <div className="project_card" style={{marginBottom:"50px"}}>     
+              <div className="project_card_hash_map">
+              <div>     
                 <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
-                    <div>
-                        <img alt="shop_1" src={Hash_Map_Image_1} />
-                        {/* <p className="legend">Legend 1</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_1" src={Hash_Map_Image_2} />
-                        {/* <p className="legend">Legend 1</p> */}
-                    </div>
-                    <div>
-                        <img alt="shop_1" src={Hash_Map_GIF_1} />
-                        {/* <p className="legend">Legend 1</p> */}
-                    </div>
+                    <div><img alt="hash_map_1" src={Hash_Map_Image_1} /></div>
+                    <div><img alt="hash_map_2" src={Hash_Map_Image_2} /></div>
+                    <div><img alt="hash_map_3" src={Hash_Map_GIF_1} /></div>
                 </Carousel>
-              </div>
-              
+              </div>              
 
             </div>
               <div className='text_description_1'>

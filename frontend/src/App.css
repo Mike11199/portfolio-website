@@ -1,18 +1,84 @@
 
 
-#project_card_tau {
-  width:80%;
+.project_card_ski_shop {
+  display: flex;
+  flex-direction: row;
+  padding-left: 100px;
+  padding-right: 100px;
+
 }
+
+.carousel_ski_shop{
+  width: 50%;
+}
+
+.text_description_ski_shop{
+  width: 50%;
+}
+
+.text_description_smallsh {
+  width: 50%;
+}
+
+.video-wrapper-smallsh {
+  width: 50%;
+}
+
+.project_card_smallsh{  
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  padding-right: 100px;
+  padding-left: 100px;
+  margin-bottom: 50px;
+}
+
+
+.project_card_space_tau {
+  width: 100%;
+  padding-left: 100px;
+  margin-bottom: 100px;
+}
+
+.project_card_apply_yourself {
+  width:100%;
+  padding-left: 100px;
+} 
 
 .about_me_text {
   padding-right: 100px;
 }
 
+.project_card_hash_map {
+  width:100%;
+  padding-left: 100px;
+}
+
+.text_description_rsa {
+  width: 50%;
+  padding-left: 50px;
+}
+
+.project_card_rsa_encryption{  
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
+.carousel_rsa_encryption {
+  width: 50%;  
+}
 
 
 .entire_page {
   display: flex;
   flex-direction: column;
+}
+
+#about {
+  margin-top: 30px;
 }
 
 .about_me_images {
@@ -170,8 +236,7 @@ h1 {
   padding-left: 50px;
 }
 
-h2 {
-  margin:"0px";
+.project_header {
   padding-left: 50px;
 }
 
@@ -185,6 +250,7 @@ p {
 }
 
 .about_me_section {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   padding-left: 5vh;
