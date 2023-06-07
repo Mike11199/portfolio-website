@@ -45,7 +45,7 @@ const Navbar = () => {
             </div>
             <p className="navbar_name_me" >Michael Iwanek</p>
             {/* <Link className="navbar_link" to="/">Home</Link> */}
-            <HashLink className="navbar_link" smooth to="./#about_me_section">
+            <HashLink className="navbar_link" smooth to="#top">
               Home
             </HashLink>       
             {/* <Link className="navbar_link" to="/rsa">About</Link> */}
