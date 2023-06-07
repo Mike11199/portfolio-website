@@ -498,7 +498,7 @@ const HomePage = () => {
 
 
            {/* SECTION FOR PROJECT #6 */}
-            <section id="projects_red"  style={{margin:"0px", height:"auto"}}>       
+            <section id="projects_red">       
             <h2 className='project_header'>Hash Map Data Structure Implementation - Python</h2>   
             <div style={{display:"flex"}}>         
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/HashMap-Python-Implementation")}>
