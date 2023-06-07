@@ -1,3 +1,7 @@
+.project_buttons {
+  display: flex;
+}
+
 .github_logo {
   height: 20px;
   width: 20px;
@@ -100,7 +104,7 @@
     padding-right: 100px;
 }
 
-#about{
+#about {
   background-image: linear-gradient(to top, #09203f 63%, #537895 100%);
   color: white;
   padding-top: 100px;
@@ -415,16 +419,54 @@ li {
 }
 
 
-@media (max-width: 1000px) {
-.about_me_text {
-  padding-right: 0px;
-}
-}
-
 
 /* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
 
+  
+.project_card_hash_map {
+  width:100%;
+  padding-left: 0px;
+}
+
+
+.project_card_space_tau {
+  width: 100%;
+  padding-left: 0px;
+  margin-bottom: 100px;
+}
+
+.github_button {
+  margin-left: 10px;
+  margin-right: 0px;
+}
+
+.website_button {
+  margin-left: 0px;
+  margin-right: 10;
+}
+
+  
+.project_card_apply_yourself {
+  width:80%;
+  padding-left: 0px;
+} 
+
+  .about_me_text {
+    padding-right: 0px;
+  }
+
+  .profile_photo_image_body {
+    margin-right: 0px;
+  }
+
+  .about_me_images2 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    align-items: center;
+ }
+  
 
   .github_button {
     /* margin-left: 10px; */
@@ -436,6 +478,8 @@ li {
 
   #about {
     margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
   
 
@@ -587,8 +631,7 @@ body {
   }
   
 .player-wrapper {  
-  padding-top: 200px;  
-  /* due to increase navbar height */
+  padding-bottom: 30px;
 }
 
 

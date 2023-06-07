@@ -176,7 +176,7 @@ const HomePage = () => {
             Please see full-stack Computer Science projects I've completed below, in various programming languages.
           </p>          
           <h2 className='project_header'>Ski & Rock Climbing E-Commerce Store</h2>    
-          <div style={{display:"flex"}}>         
+          <div className="project_buttons">         
           <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack")}>
             <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
             GitHub Link
@@ -240,7 +240,7 @@ const HomePage = () => {
           <h2 className='project_header'>
           applyYourSelf Job Application Tracker  
           </h2>   
-          <div style={{display:"flex"}}>         
+          <div className="project_buttons">             
           <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/applyYourSelf-Job-Tracker")}>
             <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
             GitHub Link
@@ -300,7 +300,7 @@ const HomePage = () => {
           <h2 className='project_header'>RSA & AES Encryption App - Electron.js, React.js</h2>             
          
           {/* Buttons */}
-          <div style={{display:"flex"}}>         
+          <div className="project_buttons">             
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-361-RSA-React-App")}>
             <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
               GitHub Link
@@ -357,7 +357,7 @@ const HomePage = () => {
         {/* SECTION FOR PROJECT #4 */}
         <section id="profile"  style={{margin:"0px", height:"auto"}}>       
         <h2 className='project_header'> SpaceTau-Flask-and-MySQL-App</h2>   
-          <div style={{display:"flex"}}>         
+        <div className="project_buttons">                
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340")}>
             <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
                GitHub Link
@@ -432,7 +432,7 @@ const HomePage = () => {
            <section id="projects3"  style={{margin:"0px", height:"auto"}}>       
            <h2 className='project_header'>Small Shell (smallsh) - C Unix Shell</h2>   
               
-              <div style={{display:"flex"}}>         
+           <div className="project_buttons">                 
           {/* <button className="github_button">
             <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
             GitHub Link
@@ -500,7 +500,7 @@ const HomePage = () => {
            {/* SECTION FOR PROJECT #6 */}
             <section id="projects_red">       
             <h2 className='project_header'>Hash Map Data Structure Implementation - Python</h2>   
-            <div style={{display:"flex"}}>         
+            <div className="project_buttons">              
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/HashMap-Python-Implementation")}>
             <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
                GitHub Link
