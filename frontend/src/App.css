@@ -1,7 +1,5 @@
 .video_wrapper_ksp {
-  height: 394px;
-  max-width: 700px;
-  max-height: 394px;
+  margin-bottom: 40px;
 }
 
 ul > li > ul > li {
@@ -43,7 +41,7 @@ ul > li > ul > li {
 }
 
 .project_buttons {
-  display: flex;
+  display: flex;  
 }
 
 .github_logo {
@@ -72,10 +70,7 @@ ul > li > ul > li {
 
 .video_wrapper_smallsh {
   width: 60%;  
-  position: relative;
-  object-fit: contain;
-  max-width: 1080px;
-  max-height: 607px;
+  position: relative
  }
 
 .project_card_smallsh{  
@@ -133,9 +128,9 @@ ul > li > ul > li {
 }
 
 .text_description_1 {    
-    margin-bottom: 0px ;   
-    padding-right: 100px;
-    width: 50%;
+  margin-bottom: 0px ;   
+  padding-right: 100px;
+  width: 50%;
 }
 
 #about {
@@ -469,6 +464,11 @@ li {
 /* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
 
+  p {
+    padding-left: 0px;
+  }
+  
+
 
   .project_card_hash_map {
     display: flex;
@@ -528,6 +528,8 @@ li {
     margin-top: 0px;
     padding-top: 0px;
     padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
 
@@ -690,6 +692,7 @@ li {
   .project_buttons {
     gap: 10px;
     margin-bottom: 50px;
+    justify-content: center;
   }
 
   .carousel_rsa_encryption {
@@ -738,13 +741,59 @@ li {
 
   .ski_shop_section {
     padding-top: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  ul {
+    margin-left: 0px; 
+    padding: 0px;
+  }
+
+  .apply_yourself_section {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .rsa_section {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .space_tau_section {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .smallsh_section{
+    padding-right: 40px;
+    padding-left: 40px;    
+  }
+
+  #hash_map_section {
+    padding-right: 40px;
+    padding-left: 40px; 
+  }
+
+
+  .video_wrapper_smallsh {
+    width: 100%;  
+  }
+
+  .profile_photo_image_body {
+    width: 100%;
+  }
+
+  .profile_photo_image_body_2 {
+    width: 100%;
   }
 
   /* .carousel{
     max-width: 70%;
-  }
-  .carousel-root{
-    max-width: 70%;
   } */
+
+  /* .carousel-root{
+    width: 150%;
+  }  */
   
 }

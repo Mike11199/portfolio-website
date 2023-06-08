@@ -59,7 +59,6 @@ const HomePage = () => {
     return windowSize;
   }
 
-
   const youtubeOptions = {
     playerVars: {
       controls: 1,
@@ -73,22 +72,31 @@ const HomePage = () => {
       }, 130);
     };
     
-
     const { width, height } = useWindowSize();
 
-    let playerWidth = width;
-    let playerHeight = height;
-
+    let playerWidth_Climbing;
+    let playerHeight_Climbing;
+    let playerWidth_smallsh;
+    let playerHeight_smallsh;
+    let playerWidth_space_tau;
+    let playerHeight_space_tau;
 
     if (width > 600) {
-      playerWidth = 400;
-      playerHeight = 710;
+      playerWidth_Climbing = 400;
+      playerHeight_Climbing = 710;      
+      playerWidth_smallsh = 1080;
+      playerHeight_smallsh = 607;
+      playerWidth_space_tau = 700;
+      playerHeight_space_tau = 394;
     }
-
   
     if (width <= 600) {
-       playerWidth = 250;
-       playerHeight = 450;
+      playerWidth_Climbing = 250;
+      playerHeight_Climbing = 441;
+      playerWidth_smallsh = 240;
+      playerHeight_smallsh = 135;
+      playerWidth_space_tau = 240;
+      playerHeight_space_tau = 135;
     }
 
   return (
@@ -102,8 +110,8 @@ const HomePage = () => {
           <div className='about_me_section'>           
             <div className='wrapper_rock_climbing_video'>
                 <ReactPlayer   
-                  width={playerWidth}
-                  height={playerHeight}      
+                  width={playerWidth_Climbing}
+                  height={playerHeight_Climbing}      
                   playing
                   url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
                   loop={true}
@@ -375,8 +383,8 @@ const HomePage = () => {
               
                 <div className='video_wrapper_ksp' >
                     <ReactPlayer   
-                      width={`100%`}
-                      height={`100%`}      
+                      width={playerWidth_space_tau}
+                      height={playerHeight_space_tau}      
                       playing
                       url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1&frameborder=12"
                       loop={true}
@@ -430,18 +438,19 @@ const HomePage = () => {
            <section className='smallsh_section'>       
            <h2 className='project_header'>Small Shell (smallsh) - C Unix Shell</h2>   
               
-           <div className="project_buttons">                 
+           {/* <div className="project_buttons">                  */}
           {/* <button className="github_button">
             <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
             GitHub Link
           </button> */}
-          </div>
+          {/* </div> */}
           <div className="project_card_smallsh">
+
 
               <div className='video_wrapper_smallsh' >
                 <ReactPlayer   
-                  width={`100%`}
-                  height={`100%`}
+                  width={playerWidth_smallsh}
+                  height={playerHeight_smallsh}
                   playing
                   url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1&frameborder=12"
                   loop={true}
