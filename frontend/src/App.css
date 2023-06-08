@@ -9,7 +9,7 @@ ul > li > ul > li {
 }
 
 .wrapper_rock_climbing_video {
-  padding-right: 40px;
+  padding-right: 60px;
 }
 
 .text_apply_your_self{
@@ -732,7 +732,9 @@ li {
     width: 100%;
   }
 
-  
+  #projects_section{
+    top: -120px;
+  }
 
   /* .carousel{
     max-width: 70%;

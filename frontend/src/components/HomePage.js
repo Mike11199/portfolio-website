@@ -78,36 +78,17 @@ const HomePage = () => {
 
     let playerWidth = width;
     let playerHeight = height;
-    let playerWidth2 = width;
-    let playerHeight2 = height;
-    let playerWidth3 = width;
-    let playerHeight3 = height;
-    console.log(width)
 
 
-    if (width > 1921) {
-      playerWidth = width *.182;
-      playerHeight = height *.65;
-      playerWidth3 = width * .44;
-      playerHeight3 = height * .495;
-    }
-
-    
-    if (width <= 1921) {
-      playerWidth = width *.182;
-      playerHeight = height *.65;
-      playerWidth3 = width * .42;
-      playerHeight3 = height * .49;
+    if (width > 600) {
+      playerWidth = 400;
+      playerHeight = 710;
     }
 
   
-    if (width < 600) {
-       playerWidth = width * .6;
-       playerHeight = height * .35;
-       playerWidth2 = width * .5;
-       playerHeight2 = height * .25;
-       playerWidth3 = width * .35;
-       playerHeight3 = height * .395;
+    if (width <= 600) {
+       playerWidth = 350;
+       playerHeight = 610;
     }
 
   return (
@@ -121,8 +102,8 @@ const HomePage = () => {
           <div className='about_me_section'>           
             <div className='wrapper_rock_climbing_video'>
                 <ReactPlayer   
-                  width={`${playerWidth}px`}
-                  height={`${playerHeight}px`}      
+                  width={playerWidth}
+                  height={playerHeight}      
                   playing
                   url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
                   loop={true}
