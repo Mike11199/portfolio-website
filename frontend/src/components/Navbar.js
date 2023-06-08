@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const { scrollYProgress } = useScroll({
     onChange: ({ value: { scrollYProgress } }) => {
-      console.log(scrollYProgress)
+      // console.log(scrollYProgress)
       setScrollVal(scrollYProgress * 100);
       setScrollVal2(scrollYProgress * 360);
     }
@@ -35,7 +35,7 @@ const Navbar = () => {
     return { letter: char, binaryDigits };
   });
 
-  console.log(nameInBinary)
+  // console.log(nameInBinary)
   return (
         <>
         <div className="navbar">

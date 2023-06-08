@@ -742,6 +742,7 @@ li {
   
   .space_tau_carousel_and_video {
     width: 100%;
+    align-items: center !important;
   }
 
   .space_tau_description {
@@ -843,6 +844,10 @@ li {
   display: flex;
   gap: 4px;
 }
+
+.video_wrapper_ksp {
+  align-self: center !important;
+ }
 
 
   /* .carousel{

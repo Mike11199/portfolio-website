@@ -95,8 +95,8 @@ const HomePage = () => {
       playerHeight_Climbing = 441;
       playerWidth_smallsh = 240;
       playerHeight_smallsh = 135;
-      playerWidth_space_tau = 240;
-      playerHeight_space_tau = 135;
+      playerWidth_space_tau = 280;
+      playerHeight_space_tau = 155;
     }
 
   return (
