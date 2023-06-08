@@ -1,3 +1,39 @@
+
+
+.binary_digit_row {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  left: 55vh
+}
+
+.binary_digit_divs {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.binary_digit{
+  color: rgb(64, 192, 64); /* Light green */
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.fade-in-out {
+  transition: opacity 0.5s ease-in-out;
+  width: 5px;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
 .video_wrapper_ksp {
   margin-bottom: 40px;
 }
@@ -149,8 +185,8 @@ ul > li > ul > li {
   font-weight: 150; 
   font-family: Segoe UI;
   font-size: 35px; 
-  padding-right: 90vh; 
   text-transform: uppercase;    
+  padding-right: 90vh;
 }
 
 
