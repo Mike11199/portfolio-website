@@ -87,8 +87,8 @@ const HomePage = () => {
 
   
     if (width <= 600) {
-       playerWidth = 350;
-       playerHeight = 610;
+       playerWidth = 250;
+       playerHeight = 510;
     }
 
   return (
