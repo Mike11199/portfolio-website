@@ -522,6 +522,7 @@ li {
 
   .github_button {
     margin-bottom: 0px;
+    gap: 10px;
   }
 
   .website_button {
@@ -815,6 +816,7 @@ li {
 
   .video_wrapper_smallsh {
     width: 100%;  
+    margin-bottom: 40px;
   }
 
   .profile_photo_image_body {
@@ -828,7 +830,6 @@ li {
   
 .binary_digit_row {
   position: absolute;
-  
   flex-direction: row;
   flex-wrap: wrap-reverse;
   height: 200px;
