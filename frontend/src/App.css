@@ -654,7 +654,7 @@ li {
     display: flex;
     flex-direction: column;    
     width: 100%;
-    height: 400px;
+    height: 600px;
     background: #fefefe;
     background: #0e0d0d;
     box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); 
@@ -823,6 +823,27 @@ li {
   .profile_photo_image_body_2 {
     width: 100%;
   }
+
+  
+.binary_digit_row {
+  position: absolute;
+  
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  height: 200px;
+  gap: 5px;  
+  left: 25%;
+  top: -60px;  
+  z-index: -1111;
+}
+
+
+.binary_digit_divs {
+  width: 100px;
+  display: flex;
+  gap: 4px;
+}
+
 
   /* .carousel{
     max-width: 70%;
