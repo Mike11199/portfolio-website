@@ -481,7 +481,7 @@ const HomePage = () => {
                   by the shell to resume their execution. https://linux.die.net/man/2/waitpid
                   </li>
                   <li>
-                  Parameter expansion - special shell parameters include $$ for the smallsh process ID GEDPID(3), $? for
+                  Parameter expansion - special shell parameters include $$ for the smallsh process ID GETPID(3), $? for
                    the exit status of the last foreground process, and $! for the most recent background process. 
                    Occurrences of ${} allow for variable expansion for a named environment variable.
                   </li>
