@@ -32,6 +32,8 @@ import Hash_Map_Image_1 from '../images/hash_map_1.png'
 import Hash_Map_Image_2 from '../images/hash_map_2.png'
 import Hash_Map_GIF_1 from '../images/hash_map_sc.gif'
 import Tent from '../images/tent.jpg'
+import Home_GIF from '../images/home_page_new.gif'
+
 
 
 const HomePage = () => {
@@ -180,8 +182,9 @@ const HomePage = () => {
           <div className="project_card_ski_shop">
                                        
               <div className="carousel_ski_shop">     
-                  <Carousel width="100%" infiniteLoop="true">
+                  <Carousel width="100%" infiniteLoop="true">                        
                         <div><img alt="shop_1" src={Shop_Image_1} /></div>
+                        <div><img alt="home_gif" src={Home_GIF} /></div>
                         <div><img alt="shop_2" src={Shop_Image_2} /></div>
                         <div><img alt="shop_3"src={Shop_Image_3} /></div>
                         <div><img alt="shop_4"src={Shop_Image_4} /></div>
@@ -249,8 +252,8 @@ const HomePage = () => {
               <div className='carousel_apply_yourself'>  
                     <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                           <div><img alt="tracker_1" src={Job_Tracker_Gif_1} /></div>
-                          <div><img alt="tracker_2"src={Job_Tracker_Home_Page} /></div>
-                          <div><img alt="tracker_3"src={Job_Tracker_1} /></div>
+                          <div><img alt="tracker_3"src={Job_Tracker_1} /></div>                          
+                          <div><img alt="tracker_2"src={Job_Tracker_Home_Page} /></div>                          
                           <div><img alt="tracker_4"src={Job_Tracker_2} /></div>
                           <div><img alt="tracker_5"src={Job_Tracker_3} /></div>
                     </Carousel>
