@@ -307,6 +307,9 @@ const HomePage = () => {
             <button className="website_button" onClick={() => handleClick("https://rsa-react-app.herokuapp.com/")}>
               Live Website Link
             </button>
+            <button className="video_button" onClick={() => handleClick("https://www.youtube.com/watch?v=MQKmV63Wfbk")}>
+              Video Link
+            </button>
           </div>
           
           <div className="project_card_rsa_encryption">
