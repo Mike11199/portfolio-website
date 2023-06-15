@@ -442,14 +442,16 @@ const HomePage = () => {
 
            {/* SECTION FOR PROJECT #5 */}
            <section className='smallsh_section'>       
-           <h2 className='project_header'>Small Shell (smallsh) - C Unix Shell</h2>   
-              
-           {/* <div className="project_buttons">                  */}
-          {/* <button className="github_button">
-            <img src={GitHubLogo} height="20px" width="20px" alt="github logo"></img>
-            GitHub Link
-          </button> */}
-          {/* </div> */}
+           <h2 className='project_header'>Small Shell (smallsh) - C Unix Shell</h2>                 
+           <div className="project_buttons">                
+            <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-344-Small-Shell")}>
+            <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
+               GitHub Link
+            </button>
+            {/* <button className="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
+              Live Website Link
+            </button> */}
+          </div>          
           <div className="project_card_smallsh">
 
 
