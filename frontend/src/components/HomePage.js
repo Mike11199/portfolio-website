@@ -33,6 +33,7 @@ import Hash_Map_Image_2 from '../images/hash_map_2.png'
 import Hash_Map_GIF_1 from '../images/hash_map_sc.gif'
 import Tent from '../images/tent.jpg'
 import Home_GIF from '../images/home_page_new.gif'
+import Sat_Pledge_Image from '../images/ski_shop_pledge_and_sat_image.png'
 
 
 
@@ -186,6 +187,7 @@ const HomePage = () => {
                         <div><img alt="shop_1" src={Shop_Image_1} /></div>
                         <div><img alt="home_gif" src={Home_GIF} /></div>
                         <div><img alt="shop_2" src={Shop_Image_2} /></div>
+                        <div><img alt="shop_22" src={Sat_Pledge_Image} /></div>                        
                         <div><img alt="shop_3"src={Shop_Image_3} /></div>
                         <div><img alt="shop_4"src={Shop_Image_4} /></div>
                         <div><img alt="shop_5"src={Shop_Image_5} /></div>
