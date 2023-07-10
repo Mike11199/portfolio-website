@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import IceCavePhoto from '../images/me_ice_cave.png'
 import { useScroll, animated, useSpring } from "react-spring";
 import { useState } from "react";
-import Resume_PDF from '../misc/CV_Small.pdf';
+import Resume_PDF from '../misc/CV_Michael Iwanek_7_09_2023.pdf';
 import { useEffect } from "react";
 import BinaryDigit from "./BinaryDigit";
 
