@@ -94,10 +94,25 @@ ul > li > ul > li {
   width: 30%;
 }
 
+.kotlin_carousel {
+  max-width: 350px;
+  padding-left: 200px;
+}
+.kotlin_carousel_container {
+  width: 60%;
+}
+
 
 .hash_map_carousel {
   width: 60%;
 }
+
+.kotlin_image {
+  width: 60%;
+  padding-left: 20%;
+}
+
+
 
 .project_card_hash_map {
   display: flex;
@@ -105,8 +120,11 @@ ul > li > ul > li {
   width:100%;
 }
 
+
+
+
 .project_buttons {
-  display: flex;  
+  display: flex;
 }
 
 .github_logo {
@@ -294,8 +312,19 @@ html {
 
 
 #hash_map_section {
-  background-image: linear-gradient(to top, #1f242b 0%, #432313 100%);
+  background-image: linear-gradient(to top, #000000 0%, #432313 5%, #221e16 100%);
   color: white; 
+  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
+  min-height: fit-content;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-top: 40px;
+}
+
+#kotlin_section {
+  background-image: linear-gradient(to top, #290e5b 0%, #290e5b 50%, rgb(0, 0, 0) 100%);
+  color: white;
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
   min-height: fit-content;
   padding-left: 50px;
@@ -812,6 +841,22 @@ li {
     width: 100%;
   }
 
+  .hash_map_carousel {
+    width: 100%;
+  }
+
+
+  .kotlin_carousel {
+    max-width: 500px;
+    padding-left: 0px;
+  }
+  .kotlin_carousel_container {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+
+
   #projects_section{
     top: 0px;
   }
@@ -899,7 +944,7 @@ ul > li > ul {
   list-style-position: inside;
 }
 
-  
+
 
 
 

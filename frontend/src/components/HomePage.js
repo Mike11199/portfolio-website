@@ -31,6 +31,8 @@ import GitHubLogo from '../images/github_1.png'
 import Hash_Map_Image_1 from '../images/hash_map_1.png'
 import Hash_Map_Image_2 from '../images/hash_map_2.png'
 import Hash_Map_GIF_1 from '../images/hash_map_sc.gif'
+import Sac_City_GIF_2 from '../images/sacramento_city_2.gif'
+import Android_Studio from '../images/android_studio.png'
 import Tent from '../images/tent.jpg'
 import Home_GIF from '../images/home_page_new.gif'
 import Sat_Pledge_Image from '../images/ski_shop_pledge_and_sat_image.png'
@@ -505,8 +507,7 @@ const HomePage = () => {
                   </li>
                   </ul>
               </div>
-          
-          
+
             </div>
 
         </section>   
@@ -514,7 +515,7 @@ const HomePage = () => {
 
 
 
-           {/* SECTION FOR PROJECT #6 */}
+     {/* SECTION FOR PROJECT #6 */}
             <section id="hash_map_section">       
             <h2 className='project_header'>Hash Map Data Structure Implementation - Python</h2>   
 
@@ -572,9 +573,63 @@ const HomePage = () => {
               </div>
 
           </div>
- 
-        </section>    
+        </section>
+
+
+
+     {/* SECTION FOR PROJECT #7 */}
+     <section id="kotlin_section">
+            <h2 className='project_header'>Kotlin (Jetpack Compose) - My City App</h2>
+
+            <div className="project_card_hash_map" style={{marginTop:"50px"}}>
+
+              <div className='kotlin_carousel_container'>
+                <Carousel className='kotlin_carousel' infiniteLoop="true" dynamicHeight={true} showArrows="true" showThumbs={false}>
+                    <div><img alt="hash_map_1" src={Sac_City_GIF_2} /></div>
+                </Carousel>
+              </div>
+
+              <div className='hash_map_text'>
+                <ul>
+                  <li>
+                     A project from the Oregon State University course CS 492 - Mobile Development showcasing fun things to do in Sacramento CA -
+                     my hometown.
+                    </li>
+                    <li>
+                     Programmed in Kotlin, which is a language derived from Java. Code is not allowed to be made public, but is based on the
+                     following project:
+                     </li>
+                     <ul>
+                     <li>
+                     Developer.Android - Create a My City App - https://developer.android.com/codelabs/basic-android-kotlin-compose-my-city#0
+                      </li>
+                    </ul>
+                  <li>
+                    Uses Jetpack Compose features such as data classes, composables, and LazyColumns to enable scrolling through list collections
+                    of Categories and Recommendations. Modifiers are used to style the UI. Collections of data used in the app are defined in a
+                    DataSource class, holding functions to return items.
+                  </li>
+                  <li>
+                    Makes use of the ViewModel architecture component to hold and expose the state displayed by the UI and retain it upon configuration
+                    changes.  Instead of defining routes with a NavController, the state is used to conditionally render different composable
+                    functions/screens. The UI state is defined as a data class in Kotlin which can be accessed by various composables.
+                  </li>
+                  <li>
+                    Models for various items in the app are defined in data classes, which are intended to hold data without the boilerplate code
+                    needed in Java for getter/setter functions.
+                    <ul>
+                     <li>
+                     https://www.baeldung.com/kotlin/data-classes
+                      </li>
+                    </ul>
+                  </li>
+                  </ul>
+              </div>
+          </div>
+        </section>
     </div>
+
+
     </>
   );
 }
