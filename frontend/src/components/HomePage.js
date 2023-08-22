@@ -32,10 +32,11 @@ import Hash_Map_Image_1 from '../images/hash_map_1.png'
 import Hash_Map_Image_2 from '../images/hash_map_2.png'
 import Hash_Map_GIF_1 from '../images/hash_map_sc.gif'
 import Sac_City_GIF_2 from '../images/sacramento_city_2.gif'
-import Android_Studio from '../images/android_studio.png'
 import Tent from '../images/tent.jpg'
 import Home_GIF from '../images/home_page_new.gif'
 import Sat_Pledge_Image from '../images/ski_shop_pledge_and_sat_image.png'
+import Flight_Search_GIF from '../images/flight_search_app.gif'
+
 
 
 
@@ -302,7 +303,7 @@ const HomePage = () => {
 
 
         {/* SECTION FOR PROJECT #3 */}
-        <section className="rsa_section">                           
+        <section className="rsa_section">
           <h2 className='project_header'>RSA & AES Encryption App - Electron.js, React.js</h2>             
          
           {/* Buttons */}
@@ -376,8 +377,8 @@ const HomePage = () => {
             </button>
           </div>
              <div className="project_1_main_div">
-   
-            <div className="space_tau_carousel_and_video">     
+
+            <div className="space_tau_carousel_and_video">
 
                 <div className='space_tau_carousel' >
                       <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
@@ -390,11 +391,11 @@ const HomePage = () => {
                             <div><img alt="space_tau_7"src={Space_Tau_7} /></div>
                       </Carousel>
                 </div>
-              
+
                 <div className='video_wrapper_ksp' >
-                    <ReactPlayer   
+                    <ReactPlayer
                       width={playerWidth_space_tau}
-                      height={playerHeight_space_tau}      
+                      height={playerHeight_space_tau}
                       playing
                       url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1&frameborder=12"
                       loop={true}
@@ -403,7 +404,6 @@ const HomePage = () => {
                       config={{youtube: youtubeOptions,}}
                     />
                   </div>
-              
             </div>
 
 
@@ -445,9 +445,9 @@ const HomePage = () => {
 
 
            {/* SECTION FOR PROJECT #5 */}
-           <section className='smallsh_section'>       
-           <h2 className='project_header'>Small Shell (smallsh) - C Unix Shell</h2>                 
-           <div className="project_buttons">                
+           <section className='smallsh_section'>
+           <h2 className='project_header'>Small Shell (smallsh) - C Unix Shell</h2>
+           <div className="project_buttons">
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-344-Small-Shell")}>
             <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
                GitHub Link
@@ -455,12 +455,12 @@ const HomePage = () => {
             {/* <button className="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
               Live Website Link
             </button> */}
-          </div>          
+          </div>
           <div className="project_card_smallsh">
 
 
               <div className='video_wrapper_smallsh' >
-                <ReactPlayer   
+                <ReactPlayer
                   width={playerWidth_smallsh}
                   height={playerHeight_smallsh}
                   playing
@@ -473,7 +473,6 @@ const HomePage = () => {
                 }}
                 />
               </div>
-                          
               <div className='text_description_smallsh'>
                 <ul>
                   <li>
@@ -516,10 +515,10 @@ const HomePage = () => {
 
 
      {/* SECTION FOR PROJECT #6 */}
-            <section id="hash_map_section">       
-            <h2 className='project_header'>Hash Map Data Structure Implementation - Python</h2>   
+            <section id="hash_map_section">
+            <h2 className='project_header'>Hash Map Data Structure Implementation - Python</h2>
 
-            <div className="project_buttons">              
+            <div className="project_buttons">
               <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/HashMap-Python-Implementation")}>
               <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
                 GitHub Link
@@ -527,14 +526,14 @@ const HomePage = () => {
             </div>
 
             <div className="project_card_hash_map">
-              
-              <div className='hash_map_carousel'>     
+
+              <div className='hash_map_carousel'>
                 <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                     <div><img alt="hash_map_1" src={Hash_Map_Image_1} /></div>
                     <div><img alt="hash_map_2" src={Hash_Map_Image_2} /></div>
                     <div><img alt="hash_map_3" src={Hash_Map_GIF_1} /></div>
                 </Carousel>
-              </div>              
+              </div>
 
 
 
@@ -551,7 +550,7 @@ const HomePage = () => {
                       <li>
                       In this implementation, the data structure probes for an empty spot in the HashTable's underlying dynamic array 
                       if a collision occurs, until it finds an empty spot to insert the element in.
-                      </li>                    
+                      </li>
                     </ul>
                   </li>
                   <li>
@@ -560,7 +559,7 @@ const HomePage = () => {
                       <li>
                       In this implementation, each dynamic array element is a linked list, and additional key/value pairs can be added to 
                       the front of the linked list at each array spot in the case that keys hash to the same array index.
-                      </li>                    
+                      </li>
                     </ul>
                   </li>
                   <li>
@@ -579,9 +578,22 @@ const HomePage = () => {
 
      {/* SECTION FOR PROJECT #7 */}
      <section id="kotlin_section">
-            <h2 className='project_header'>Kotlin (Jetpack Compose) - My City App</h2>
+            <h2 className='project_header'>Kotlin (Jetpack Compose) - Sacramento City and Flight Search App</h2>
+
+
+          {/* Buttons */}
+          <div className="project_buttons">
+            <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-492-Assignment-5-Flight-Search-App")}>
+            <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
+              GitHub Link
+            </button>
+            <button className="video_button" onClick={() => handleClick("https://www.youtube.com/watch?v=hwGGgglHlus")}>
+              Video Link
+            </button>
+          </div>
 
             <div className="project_card_hash_map" style={{marginTop:"50px"}}>
+
 
               <div className='kotlin_carousel_container'>
                 <Carousel className='kotlin_carousel' infiniteLoop="true" dynamicHeight={true} showArrows="true" showThumbs={false}>
@@ -589,21 +601,31 @@ const HomePage = () => {
                 </Carousel>
               </div>
 
+              <div className='kotlin_carousel_container'>
+                <Carousel className='kotlin_carousel' infiniteLoop="true" dynamicHeight={true} showArrows="true" showThumbs={false}>
+                    <div><img alt="hash_map_1" src={Flight_Search_GIF} /></div>
+                </Carousel>
+              </div>
+
               <div className='hash_map_text'>
                 <ul>
                   <li>
-                     A project from the Oregon State University course CS 492 - Mobile Development showcasing fun things to do in Sacramento CA -
-                     my hometown.
+                     These are two applications from the Oregon State University course CS 492 - Mobile Development, programmed in Kotlin,
+                     which is a language derived from Java.  These apps also use the Jetpack Compose framework for state/ UI management.
                     </li>
-                    <li>
-                     Programmed in Kotlin, which is a language derived from Java. Code is not allowed to be made public, but is based on the
-                     following project:
-                     </li>
-                     <ul>
+                    <ul>
                      <li>
-                     Developer.Android - Create a My City App - https://developer.android.com/codelabs/basic-android-kotlin-compose-my-city#0
+                     Sacramento City App - Code is NOT allowed to be posted to a public repo - showing GIF only.
+                      </li>
+                      <li>
+                     Flight Search App - This is the portfolio project and is allowed to be posted to a public repo per the Syllabus.
                       </li>
                     </ul>
+                    <li>
+                   The Flight Search App persists data using a SQLite database and the Room API, which provides abstraction to the database layer of the app.
+                   This allows us to define SQL queries in DAOs (Data Access Objects) to perform CRUD operations more easily.  Coroutines are also used so that
+                   database actions are asynchronous and don't block the main thread.
+                  </li>
                   <li>
                     Uses Jetpack Compose features such as data classes, composables, and LazyColumns to enable scrolling through list collections
                     of Categories and Recommendations. Modifiers are used to style the UI. Collections of data used in the app are defined in a
