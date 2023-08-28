@@ -46,7 +46,7 @@ const HomePage = () => {
 
 
   function useWindowSize() {
-    
+
     const [windowSize, setWindowSize] = useState({
       width: window.innerWidth,
       height: window.innerHeight
@@ -63,7 +63,7 @@ const HomePage = () => {
       // Cleanup the event listener on component unmount
       return () => window.removeEventListener('resize', handleResize);
     }, []);
-  
+
     return windowSize;
   }
 
@@ -79,7 +79,7 @@ const HomePage = () => {
         window.open(site, '_blank');
       }, 130);
     };
-    
+
     const { width, height } = useWindowSize();
 
     let playerWidth_Climbing;
@@ -91,13 +91,13 @@ const HomePage = () => {
 
     if (width > 600) {
       playerWidth_Climbing = 400;
-      playerHeight_Climbing = 710;      
+      playerHeight_Climbing = 710;
       playerWidth_smallsh = 1080;
       playerHeight_smallsh = 607;
       playerWidth_space_tau = 700;
       playerHeight_space_tau = 394;
     }
-  
+
     if (width <= 600) {
       playerWidth_Climbing = 250;
       playerHeight_Climbing = 441;
@@ -110,16 +110,15 @@ const HomePage = () => {
   return (
 <>
 <div className='entire_page'>
-        
-        
-        <section id="about" >    
-        
-          <h1>About Me <span className="wave">👋</span></h1>      
-          <div className='about_me_section'>           
+
+        <section id="about" >
+
+          <h1>About Me <span className="wave">👋</span></h1>
+          <div className='about_me_section'>
             <div className='wrapper_rock_climbing_video'>
-                <ReactPlayer   
+                <ReactPlayer
                   width={playerWidth_Climbing}
-                  height={playerHeight_Climbing}      
+                  height={playerHeight_Climbing}
                   playing
                   url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
                   loop={true}
@@ -212,46 +211,46 @@ const HomePage = () => {
                     for product/inventory management, and real-time statistics/user chats.
                   </li>
                   <li>
-                    Deployed on an AWS Elastic Container Service (ECS) cluster via AWS serverless AWS Fargate.  The front-end is served 
-                    by a Nginx reverse proxy capable of supporting 1024 threads.  Both the front end and back end are dockerized and uploaded
+                    Deployed on an AWS Elastic Container Service (ECS) cluster via serverless AWS Fargate.  The front-end is served
+                    by a Nginx reverse proxy capable of supporting 1024 threads.  Both the front/back end are dockerized and uploaded
                     to AWS ECR Elastic Container Registry.  A task definition for ECS defines ports, and allows the docker containers to communicate
                     within a VPN, with the front-end being accessible via a public IP address on port 80.
                   </li>
                   <li>
-                    Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website, 
-                    sending order info to PayPal and marking an order as paid in the MongoDB database depending 
+                    Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website,
+                    sending order info to PayPal and marking an order as paid in the MongoDB database depending
                     on the external API response.
                   </li>
                   <li>
-                    Implemented Socket.IO to allow for bi-directional client and server communication, to enable real-time 
-                    messaging between a logged in admin and user. Used Redux for global state management and Bootstrap to 
+                    Implemented Socket.IO to allow for bi-directional client and server communication, to enable real-time
+                    messaging between a logged in admin and user. Used Redux for global state management and Bootstrap to
                     develop React components.
                   </li>
                   <li>
                     Modeled complicated database relationships between products, orders, and users using embedded MongoDB documents.
                   </li>
                   <li>
-                    Added Google OAuth2.0 Log In, decoding JWT credentials from Google, and locating the user by email in MongoDB 
+                    Added Google OAuth2.0 Log In, decoding JWT credentials from Google, and locating the user by email in MongoDB
                     to verify the user.
                   </li>
-                </ul> 
+                </ul>
               </div>
 
           </div>
 
         </section>
-       
 
 
-       
+
+
         {/* SECTION FOR PROJECT #2 */}
-        <section className='apply_yourself_section'>       
-          
-          <h2 className='project_header'>
-          applyYourSelf Job Application Tracker  
-          </h2>   
+        <section className='apply_yourself_section'>
 
-          <div className="project_buttons">             
+          <h2 className='project_header'>
+          applyYourSelf Job Application Tracker
+          </h2>
+
+          <div className="project_buttons">
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/applyYourSelf-Job-Tracker")}>
               <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
               GitHub Link
@@ -262,62 +261,62 @@ const HomePage = () => {
           </div>
 
 
-          <div className="project_card_apply_yourself">        
+          <div className="project_card_apply_yourself">
 
-              <div className='carousel_apply_yourself'>  
+              <div className='carousel_apply_yourself'>
                     <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                           <div><img alt="tracker_1" src={Job_Tracker_Gif_1} /></div>
-                          <div><img alt="tracker_3"src={Job_Tracker_1} /></div>                          
-                          <div><img alt="tracker_2"src={Job_Tracker_Home_Page} /></div>                          
+                          <div><img alt="tracker_3"src={Job_Tracker_1} /></div>
+                          <div><img alt="tracker_2"src={Job_Tracker_Home_Page} /></div>
                           <div><img alt="tracker_4"src={Job_Tracker_2} /></div>
                           <div><img alt="tracker_5"src={Job_Tracker_3} /></div>
                     </Carousel>
                 </div>
-            
+
 
               <div className='text_apply_your_self'>
                 <ul>
                   <li>
-                  Full-stack MERN web application that allows multiple users to track their job application history on one convenient 
-                  website from anywhere. Allows jobs to be searched, sorted by date, name, and categorized by application status with full 
+                  Full-stack MERN web application that allows multiple users to track their job application history on one convenient
+                  website from anywhere. Allows jobs to be searched, sorted by date, name, and categorized by application status with full
                   CRUD functionality.
-                  </li> 
-                  <li>
-                  A dashboard shows statistical data visually via a Bar chart and Sankey chart, showing which jobs led 
-                  to subsequent interviews and applications per month. Detailed notes can also be added to each job's history.               
                   </li>
                   <li>
-                  Features are implemented by several REST APIs, allowing user registration and login via Express.js routes, such as google 
-                  OAuth 2.0. Back-end is run on Node.js connected to a MongoDB NoSQL database, with collections mapped to various Mongoose schema 
-                  for Users/Jobs. 
+                  A dashboard shows statistical data visually via a Bar chart and Sankey chart, showing which jobs led
+                  to subsequent interviews and applications per month. Detailed notes can also be added to each job's history.
                   </li>
                   <li>
-                  Uses JWT bearer-tokens to access restricted pages, password hashing (brypt.js), and private API routes using Axios 
-                  interceptors so users can only access their own data. 
+                  Features are implemented by several REST APIs, allowing user registration and login via Express.js routes, such as google
+                  OAuth 2.0. Back-end is run on Node.js connected to a MongoDB NoSQL database, with collections mapped to various Mongoose schema
+                  for Users/Jobs.
                   </li>
                   <li>
-                  Added various controllers to the APIs for jobs/user routes to implement error handling, user authentication, and not-found middleware. 
-                  Used Postman to test HTTP requests made with Axios by the front-end to the server and check JSON responses. Features React.js reducers/actions 
+                  Uses JWT bearer-tokens to access restricted pages, password hashing (brypt.js), and private API routes using Axios
+                  interceptors so users can only access their own data.
+                  </li>
+                  <li>
+                  Added various controllers to the APIs for jobs/user routes to implement error handling, user authentication, and not-found middleware.
+                  Used Postman to test HTTP requests made with Axios by the front-end to the server and check JSON responses. Features React.js reducers/actions
                   to update the global state (React Context) and various statistics used to generate charts (Sankey, Bar Chart, etc.).
                   </li>
-                </ul> 
+                </ul>
               </div>
 
-    
-          </div>    
+
+          </div>
 
 
-        </section>      
+        </section>
 
 
 
 
         {/* SECTION FOR PROJECT #3 */}
         <section className="rsa_section">
-          <h2 className='project_header'>RSA & AES Encryption App - Electron.js, React.js</h2>             
-         
+          <h2 className='project_header'>RSA & AES Encryption App - Electron.js, React.js</h2>
+
           {/* Buttons */}
-          <div className="project_buttons">             
+          <div className="project_buttons">
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/CS-361-RSA-React-App")}>
             <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
               GitHub Link
@@ -329,55 +328,54 @@ const HomePage = () => {
               Video Link
             </button>
           </div>
-          
+
           <div className="project_card_rsa_encryption">
 
-            <div className="carousel_rsa_encryption">     
+            <div className="carousel_rsa_encryption">
               <Carousel width="100%" infiniteLoop="true">
                       <div><img alt="rsa_1" src={RSA_Gif} /></div>
                       <div><img alt="rsa_2" src={RSA_Image} /></div>
                       <div><img alt="aes_1"src={AES_Gif} /></div>
                       <div><img alt="aes_2"src={AES_Image} /></div>
               </Carousel>
-            </div>           
+            </div>
 
             <div className='text_description_rsa'>
             <ul>
               <li>
-              Developed an Electron.js (local exe) and web application to allow a user to encrypt/decrypt text 
-              with RSA and AES encryption, using front end technologies. 
+              Developed an Electron.js (local exe) and web application to allow a user to encrypt/decrypt text
+              with RSA and AES encryption, using front end technologies.
               </li>
               <li>
-              Displayed RSA/AES keys and ciphertext as encoded in Base64, to allow for bits outside normal character encoding to be 
+              Displayed RSA/AES keys and ciphertext as encoded in Base64, to allow for bits outside normal character encoding to be
               viewable as a text string on the website.
               </li>
               <li>
-              Added tutorials to allow for a user to follow along to the website using a CLI approach and the openssl 
-              library. The library is fully compatible with the RSA encryption used by the website, allowing a user to 
-              store their private key locally, use the website to encrypt with a public key, and then use AES locally 
+              Added tutorials to allow for a user to follow along to the website using a CLI approach and the openssl
+              library. The library is fully compatible with the RSA encryption used by the website, allowing a user to
+              store their private key locally, use the website to encrypt with a public key, and then use AES locally
               with the CLI to exchange files/text. This approach is completely secure as only text encrypted by the public
-              key is exchanged over the web (the encrypted AES key). 
+              key is exchanged over the web (the encrypted AES key).
               </li>
               <li>
-              Implemented a microservice developed by another student to simulate a hybrid encryption scheme, where one uses 
-              RSA to exchange an AES key. The RSA key-pair holder sends their public key via an HTTP request to the partner's 
-              microservice, which sends back an encrypted AES key, along with random text encrypted with that AES key. These 
+              Implemented a microservice developed by another student to simulate a hybrid encryption scheme, where one uses
+              RSA to exchange an AES key. The RSA key-pair holder sends their public key via an HTTP request to the partner's
+              microservice, which sends back an encrypted AES key, along with random text encrypted with that AES key. These
               two items can then be decrypted using the website's functionality.
               </li>
-            </ul> 
+            </ul>
             </div>
 
-          </div>  
-          
-                       
-        </section>      
+          </div>
+
+        </section>
 
 
 
         {/* SECTION FOR PROJECT #4 */}
-        <section className='space_tau_section' style={{margin:"0px", height:"auto"}}>       
-        <h2 className='project_header'> SpaceTau-Flask-and-MySQL-App</h2>   
-        <div className="project_buttons">                
+        <section className='space_tau_section' style={{margin:"0px", height:"auto"}}>
+        <h2 className='project_header'> SpaceTau-Flask-and-MySQL-App</h2>
+        <div className="project_buttons">
             <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340")}>
             <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
                GitHub Link
@@ -449,7 +447,7 @@ const HomePage = () => {
 
             </div>
 
-        </section>   
+        </section>
 
 
 
@@ -519,7 +517,7 @@ const HomePage = () => {
 
             </div>
 
-        </section>   
+        </section>
 
 
 
