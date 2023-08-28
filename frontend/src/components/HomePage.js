@@ -38,6 +38,7 @@ import Sat_Pledge_Image from '../images/ski_shop_pledge_and_sat_image.png'
 import Flight_Search_GIF from '../images/flight_search_app.gif'
 import Docker_Screenshot from '../images/docker_screenshot.png'
 import AWS_ECR from '../images/AWS_ECR.png'
+import AWS_CI_CD from '../images/github_actions_yml.png'
 
 
 
@@ -199,8 +200,10 @@ const HomePage = () => {
                         <div><img alt="editing_ski_gimp_photo"src={Editing_Ski_Photo} /></div>
                         <div><img alt="docker_screenshot"src={Docker_Screenshot} /></div>
                         <div><img alt="aws_screenshot"src={AWS_ECR} /></div>
+                        <div><img alt="aws_ci_cd_github_actions"src={AWS_CI_CD} /></div>
                   </Carousel>
               </div>
+
 
 
               <div className='text_description_ski_shop'>
@@ -211,10 +214,11 @@ const HomePage = () => {
                     for product/inventory management, and real-time statistics/user chats.
                   </li>
                   <li>
-                    Deployed on an AWS Elastic Container Service (ECS) cluster via serverless AWS Fargate.  The front-end is served
-                    by a Nginx reverse proxy capable of supporting 1024 threads.  Both the front/back end are dockerized and uploaded
-                    to AWS ECR Elastic Container Registry.  A task definition for ECS defines ports, and allows the docker containers to communicate
-                    within a VPN, with the front-end being accessible via a public IP address on port 80.
+                    Deployed on an AWS Elastic Container Service (ECS) cluster via serverless AWS Fargate.  Implemented a CI/CD pipeline via a
+                    GitHub Actions .yml file which re-builds and deploys new docker images to Elastic Container Repository (ECR) for the front/back
+                    end whenever new commits are pushed.  The front-end is served by a Nginx reverse proxy capable of supporting 1024 threads.
+                    A task definition for ECS defines ports, and allows the docker containers to communicate within a VPN, with the front-end being
+                    accessible via a public IP address on port 80.
                   </li>
                   <li>
                     Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website,
