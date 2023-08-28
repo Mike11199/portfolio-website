@@ -36,6 +36,8 @@ import Tent from '../images/tent.jpg'
 import Home_GIF from '../images/home_page_new.gif'
 import Sat_Pledge_Image from '../images/ski_shop_pledge_and_sat_image.png'
 import Flight_Search_GIF from '../images/flight_search_app.gif'
+import Docker_Screenshot from '../images/docker_screenshot.png'
+import AWS_ECR from '../images/AWS_ECR.png'
 
 
 
@@ -132,36 +134,34 @@ const HomePage = () => {
             <div className="project_1_main_div">
             <div className="about_me_images">
             <div className="about_me_images2">
-              <img src={IceCavePhoto2} alt="Michael Iwanek Navbar" className="profile_photo_image_body"/>                 
-              <img src={Heavenly_Ski_Resort_Photo} alt="Michael Iwanek Navbar" className="profile_photo_image_body_2"/>    
+              <img src={IceCavePhoto2} alt="Michael Iwanek Navbar" className="profile_photo_image_body"/>
+              <img src={Heavenly_Ski_Resort_Photo} alt="Michael Iwanek Navbar" className="profile_photo_image_body_2"/>
             </div>
-              <img src={Tent} alt="Michael Iwanek Navbar" className="tent_image"/>    
+              <img src={Tent} alt="Michael Iwanek Navbar" className="tent_image"/>
             </div>
-                      
+
             <div className='about_me_text'>
               <p>Hey there!</p>
               <p>
-              I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for personal 
-              learning and development.  
-              </p>      
+              I'm Michael Iwanek and this is my portfolio website to showcase projects I've completed for personal
+              learning and development.
+              </p>
               <p>
-              I'm currently a Computer Science student at Oregon State University in an accelerated post-baccalaureate 
-              program.  My first degree was in accounting, and after graduation I worked for about three years as a CPA 
+              I'm currently a Computer Science student at Oregon State University in an accelerated post-baccalaureate
+              program.  My first degree was in accounting, and after graduation I worked for about three years as a CPA
               in public accounting and government roles.
-              </p>     
+              </p>
               <p>
-              I first discovered programming by self-teaching myself VBA to automate work tasks, and discovered how much 
+              I first discovered programming by self-teaching myself VBA to automate work tasks, and discovered how much
               I enjoy working through coding problems and building things.
-              </p>         
+              </p>
               <p>
-              Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb 
+              Outside of work and school, I enjoy rock climbing, skiing, and PC games.  I'm hoping to eventually climb
               multi-pitch routes and get into back-country skiing one day.
-              </p>                       
-              </div>  
+              </p>
+              </div>
             </div>
-    
-          </div>   
-            
+          </div>
         </section>
 
 
@@ -172,30 +172,34 @@ const HomePage = () => {
         	<h1 style={{margin:"0px"}}> Projects </h1>
           <p style={{height:"auto", marginBottom:"100px"}}>
             Please see full-stack Computer Science projects I've completed below, in various programming languages.
-          </p>        
-          <h2 className='project_header'>Ski & Rock Climbing E-Commerce Store</h2>    
-          <div className="project_buttons">         
+          </p>
+          <h2 className='project_header'>Ski & Rock Climbing E-Commerce Store</h2>
+          <div className="project_buttons">
           <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack")}>
             <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
             GitHub Link
           </button>
           <button className="website_button" onClick={() => handleClick("https://recreational-equipment-shop.herokuapp.com/")}>
-            Live Website Link
+            Website Link - Heroku
+          </button>
+          <button className="video_button" onClick={() => handleClick("http://52.53.153.100/")}>
+            Alt Link - AWS ECS
           </button>
           </div>
           <div className="project_card_ski_shop">
-                                       
-              <div className="carousel_ski_shop">     
-                  <Carousel width="100%" infiniteLoop="true">                        
+              <div className="carousel_ski_shop">
+                  <Carousel width="100%" infiniteLoop="true">
                         <div><img alt="shop_1" src={Shop_Image_1} /></div>
                         <div><img alt="home_gif" src={Home_GIF} /></div>
                         <div><img alt="shop_2" src={Shop_Image_2} /></div>
-                        <div><img alt="shop_22" src={Sat_Pledge_Image} /></div>                        
+                        <div><img alt="shop_22" src={Sat_Pledge_Image} /></div>
                         <div><img alt="shop_3"src={Shop_Image_3} /></div>
                         <div><img alt="shop_4"src={Shop_Image_4} /></div>
                         <div><img alt="shop_5"src={Shop_Image_5} /></div>
                         <div><img alt="shop_6"src={Shop_Image_6} /></div>
-                        <div><img alt="shop_6"src={Editing_Ski_Photo} /></div>
+                        <div><img alt="editing_ski_gimp_photo"src={Editing_Ski_Photo} /></div>
+                        <div><img alt="docker_screenshot"src={Docker_Screenshot} /></div>
+                        <div><img alt="aws_screenshot"src={AWS_ECR} /></div>
                   </Carousel>
               </div>
 
@@ -203,9 +207,15 @@ const HomePage = () => {
               <div className='text_description_ski_shop'>
                 <ul>
                   <li>
-                    A complex full-stack website (REI/Amazon clone) where users can search for products, 
-                    add them to a cart, and submit/pay for an order with PayPal. An Admin dashboard allows 
-                    for product/inventory management, and real-time statistics/user chats.  
+                    A complex full-stack website (REI/Amazon clone) where users can search for products,
+                    add them to a cart, and submit/pay for an order with PayPal. An Admin dashboard allows
+                    for product/inventory management, and real-time statistics/user chats.
+                  </li>
+                  <li>
+                    Deployed on an AWS Elastic Container Service (ECS) cluster via AWS serverless AWS Fargate.  The front-end is served 
+                    by a Nginx reverse proxy capable of supporting 1024 threads.  Both the front end and back end are dockerized and uploaded
+                    to AWS ECR Elastic Container Registry.  A task definition for ECS defines ports, and allows the docker containers to communicate
+                    within a VPN, with the front-end being accessible via a public IP address on port 80.
                   </li>
                   <li>
                     Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website, 
