@@ -222,7 +222,7 @@ const HomePage = () => {
                     </li>
                     <li>
                     Added an EC2 load balancer which reroutes traffic to the ECS cluster even when the IP address of it changes.  The IP address can change
-                    as a new task is created by the GitHub actions pipeline on each new push. The front-end is also served by a Nginx reverse proxy capable of supporting 1024 threads,
+                    as a new task is created by the GitHub actions pipeline on each push. The front-end is also served by a Nginx reverse proxy capable of supporting 1024 threads,
                     which is defined in a nginx.conf file ran by the docker container.
                   </li>
                   <li>
