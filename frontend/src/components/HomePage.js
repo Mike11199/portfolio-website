@@ -39,6 +39,7 @@ import Flight_Search_GIF from '../images/flight_search_app.gif'
 import Docker_Screenshot from '../images/docker_screenshot.png'
 import AWS_ECR from '../images/AWS_ECR.png'
 import AWS_CI_CD from '../images/github_actions_yml.png'
+import LOAD_BALANCER from '../images/load_balancer.png'
 
 
 
@@ -182,7 +183,7 @@ const HomePage = () => {
           <button className="website_button" onClick={() => handleClick("https://recreational-equipment-shop.herokuapp.com/")}>
             Website Link - Heroku
           </button>
-          <button className="video_button" onClick={() => handleClick("http://52.53.153.100/")}>
+          <button className="video_button" onClick={() => handleClick("http://react-ski-shop-1109515336.us-west-1.elb.amazonaws.com/")}>
             Alt Link - AWS ECS
           </button>
           </div>
@@ -201,6 +202,7 @@ const HomePage = () => {
                         <div><img alt="docker_screenshot"src={Docker_Screenshot} /></div>
                         <div><img alt="aws_screenshot"src={AWS_ECR} /></div>
                         <div><img alt="aws_ci_cd_github_actions"src={AWS_CI_CD} /></div>
+                        <div><img alt="aws_load_balancer"src={LOAD_BALANCER} /></div>
                   </Carousel>
               </div>
 
@@ -215,10 +217,13 @@ const HomePage = () => {
                   </li>
                   <li>
                     Deployed on an AWS Elastic Container Service (ECS) cluster via serverless AWS Fargate.  Implemented a CI/CD pipeline via a
-                    GitHub Actions .yml file which re-builds and deploys new docker images to Elastic Container Repository (ECR) for the front/back
-                    end whenever new commits are pushed.  The front-end is served by a Nginx reverse proxy capable of supporting 1024 threads.
-                    A task definition for ECS defines ports, and allows the docker containers to communicate within a VPN, with the front-end being
-                    accessible via a public IP address on port 80.
+                    GitHub Actions .yml file which re-builds and deploys new docker images to ECR/ECS for the front/back
+                    end.  This runs whenever new commits are pushed to the docker branch (main runs on Heroku).
+                    </li>
+                    <li>
+                    Added an EC2 load balancer which reroutes traffic to the ECS cluster even when the IP address of it changes.  The IP address can change
+                    as a new task is created by the GitHub actions pipeline on each new push. The front-end is also served by a Nginx reverse proxy capable of supporting 1024 threads,
+                    which is defined in a nginx.conf file ran by the docker container.
                   </li>
                   <li>
                     Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website,
@@ -231,11 +236,12 @@ const HomePage = () => {
                     develop React components.
                   </li>
                   <li>
-                    Modeled complicated database relationships between products, orders, and users using embedded MongoDB documents.
+                    Modeled complicated database relationships between products, orders, and users using embedded MongoDB documents.  For example, products have a many to many relationship
+                    with orders.  A product also has a one to many relationship with reviews, and a user has a one-to-many relationship with orders.
                   </li>
                   <li>
                     Added Google OAuth2.0 Log In, decoding JWT credentials from Google, and locating the user by email in MongoDB
-                    to verify the user.
+                    to verify the user.  JWT also allows for authorized/protected routes in the application so users can only access their own data.
                   </li>
                 </ul>
               </div>
