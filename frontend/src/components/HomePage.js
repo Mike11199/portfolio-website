@@ -183,8 +183,8 @@ const HomePage = () => {
           <button className="website_button" onClick={() => handleClick("https://recreational-equipment-shop.herokuapp.com/")}>
             Website Link - Heroku
           </button>
-          <button className="video_button" onClick={() => handleClick("http://react-ski-shop-1109515336.us-west-1.elb.amazonaws.com/")}>
-            Alt Link - AWS ECS
+          <button className="video_button" onClick={() => handleClick("https://alpine-peak-climbing-ski-gear.com/")}>
+            Alt Link - AWS ECS Domain
           </button>
           </div>
           <div className="project_card_ski_shop">
@@ -222,8 +222,9 @@ const HomePage = () => {
                     </li>
                     <li>
                     Added an EC2 load balancer which reroutes traffic to the ECS cluster even when the IP address of it changes.  The IP address can change
-                    as a new task is created by the GitHub actions pipeline on each push. The front-end is also served by a Nginx reverse proxy capable of supporting 1024 threads,
-                    which is defined in a nginx.conf file ran by the docker container.
+                    as a new task is created by the GitHub actions pipeline on each push.  The load balancer also redirects HTTP traffic on port 80 to HTTPS port 443.
+                    The front-end is also served by a Nginx reverse proxy capable of supporting 1024 threads, which is defined in a nginx.conf file ran by the docker container.
+                    AWS Route 53 and the AWS Certificate Manager provide an SSL certificate to the domain name backed with 2048 bit RSA encryption.
                   </li>
                   <li>
                     Used the PayPal SDK and sandbox accounts to simulate live payments of orders by the website,
