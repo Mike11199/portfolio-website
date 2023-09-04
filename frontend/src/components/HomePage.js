@@ -180,11 +180,11 @@ const HomePage = () => {
             <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
             GitHub Link
           </button>
-          <button className="website_button" onClick={() => handleClick("https://recreational-equipment-shop.herokuapp.com/")}>
-            Website Link - Heroku
+          <button className="website_button" onClick={() => handleClick("https://alpine-peak-climbing-ski-gear.com/")}>
+            Link - AWS ECS Domain
           </button>
-          <button className="video_button" onClick={() => handleClick("https://alpine-peak-climbing-ski-gear.com/")}>
-            Alt Link - AWS ECS Domain
+          <button className="video_button" onClick={() => handleClick("https://recreational-equipment-shop.herokuapp.com/")}>
+            Alt Link - Heroku (Old)
           </button>
           </div>
           <div className="project_card_ski_shop">
@@ -213,7 +213,8 @@ const HomePage = () => {
                   <li>
                     A complex full-stack website (REI/Amazon clone) where users can search for products,
                     add them to a cart, and submit/pay for an order with PayPal. An Admin dashboard allows
-                    for product/inventory management, and real-time statistics/user chats.
+                    for product/inventory management, and real-time statistics/user chats. Implemented TypeScript
+                    on the front-end, Express.js/Node.js for the server, and MongoDB (NoSQL) for the database.
                   </li>
                   <li>
                     Deployed on an AWS Elastic Container Service (ECS) cluster via serverless AWS Fargate.  Implemented a CI/CD pipeline via a
