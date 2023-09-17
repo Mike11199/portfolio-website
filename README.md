@@ -4,4 +4,6 @@ https://michael-iwanek-portfolio.herokuapp.com/
 - Added react-spring for top "progress bar" that moves as one scrolls down the page.
 
 ![image](https://github.com/Mike11199/portfolio-website/assets/91037796/10e37274-b82e-4895-8099-e4a8c6aafdb6)
+![image](https://github.com/Mike11199/portfolio-website/assets/91037796/bbef39df-8178-4b44-9b1c-4686916fb0d8)
+
 
