@@ -3,8 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import IceCavePhoto from '../images/me_ice_cave.png'
 import { useScroll, animated, useSpring } from "react-spring";
 import { useState } from "react";
-import Resume_PDF from '../misc/CV_Michael Iwanek_7_16_2023.pdf';
-import { useEffect } from "react";
+import Resume_PDF from '../misc/CV_Michael Iwanek_9_16_2023.pdf';
 import BinaryDigit from "./BinaryDigit";
 
 
@@ -25,7 +24,6 @@ const Navbar = () => {
     window.open("https://www.linkedin.com/in/michael-iwanek/", "_blank");
   };
 
-  
 
   const name = 'Michael';
 
@@ -42,8 +40,8 @@ const Navbar = () => {
           <animated.div
             style={{
               position: "absolute",
-              top: "100%", 
-              left: 0,  
+              top: "100%",
+              left: 0,
               transform: `scaleX(${scrollVal})`,
               background: "darkred",
               height: "5px",
@@ -62,10 +60,9 @@ const Navbar = () => {
           <p className="navbar_name_me" >Michael Iwanek</p>
 
 
-          
+
           <div className="binary_digit_row">
-  
-          
+
             {nameInBinary.map((item, index) => (
               <div className="binary_digit_divs" key={index}>
                 {/* {console.log(item)} */}
@@ -74,7 +71,7 @@ const Navbar = () => {
                 ))}
               </div>
             ))}
-            
+
           </div>
 
 
@@ -82,11 +79,11 @@ const Navbar = () => {
           {/* <Link className="navbar_link" to="/">Home</Link> */}
           <HashLink className="navbar_link" smooth to="#top">
             Home
-          </HashLink>       
+          </HashLink>
           {/* <Link className="navbar_link" to="/rsa">About</Link> */}
           <HashLink className="navbar_link" smooth to="./#projects_section">
             Projects
-          </HashLink>            
+          </HashLink>
           <Link className="navbar_link"to={Resume_PDF} target="_blank" rel="noopener noreferrer">Resume</Link>
           <Link className="navbar_link" onClick={handleContactClick}>Contact</Link>
         </div>
