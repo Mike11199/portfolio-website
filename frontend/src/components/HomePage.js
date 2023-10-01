@@ -700,10 +700,10 @@ const HomePage = () => {
                     <div><img alt="hash_map_1" src={unreal_destruction} /></div>
                     <div><img alt="hash_map_1" src={unreal_voronoi_uniform_fracturing} /></div>
                     <div><img alt="hash_map_1" src={unreal_debugging} /></div>
+                    <div><img alt="hash_map_1" src={unreal_dot_product_2} /></div>
+                    <div><img alt="hash_map_1" src={unreal_dot_product_1} /></div>
                     <div><img alt="hash_map_1" src={unreal_determine_hit_animation} /></div>
                     <div><img alt="hash_map_1" src={unreal_directional_hit_animation} /></div>
-                    <div><img alt="hash_map_1" src={unreal_dot_product_1} /></div>
-                    <div><img alt="hash_map_1" src={unreal_dot_product_2} /></div>
                     <div><img alt="hash_map_1" src={unreal_hit_interface} /></div>
                     <div><img alt="hash_map_1" src={unreal_treasure} /></div>
                 </Carousel>
