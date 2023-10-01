@@ -40,7 +40,16 @@ import Docker_Screenshot from '../images/docker_screenshot.png'
 import AWS_ECR from '../images/AWS_ECR.png'
 import AWS_CI_CD from '../images/github_actions_yml.png'
 import LOAD_BALANCER from '../images/load_balancer.png'
-
+import lambda_cron from '../images/lambda_cron.png'
+import unreal_destruction from '../images/destruction.gif'
+import unreal_debugging from '../images/unreal_debugging_info.png'
+import unreal_determine_hit_animation from '../images/unreal_determine_hit_animation.png'
+import unreal_directional_hit_animation from '../images/unreal_directional_hit_animation.gif'
+import unreal_dot_product_1 from '../images/unreal_dot_product_1.png'
+import unreal_dot_product_2 from '../images/unreal_dot_product_2.png'
+import unreal_hit_interface from '../images/unreal_hit_interface.png'
+import unreal_treasure from '../images/unreal_treasure.png'
+import unreal_voronoi_uniform_fracturing from '../images/unreal_voronoi_uniform_fracturing.png'
 
 
 
@@ -203,6 +212,7 @@ const HomePage = () => {
                         <div><img alt="aws_screenshot"src={AWS_ECR} /></div>
                         <div><img alt="aws_ci_cd_github_actions"src={AWS_CI_CD} /></div>
                         <div><img alt="aws_load_balancer"src={LOAD_BALANCER} /></div>
+                        <div><img alt="aws_lambdas"src={lambda_cron} /></div>
                   </Carousel>
               </div>
 
@@ -219,7 +229,8 @@ const HomePage = () => {
                   <li>
                     Deployed on an AWS Elastic Container Service (ECS) cluster via serverless AWS Fargate.  Implemented a CI/CD pipeline via a
                     GitHub Actions .yml file which re-builds and deploys new docker images to ECR/ECS for the front/back
-                    end.  This runs whenever new commits are pushed to the docker branch (main runs on Heroku).
+                    end.  This runs whenever new commits are pushed to the docker branch (main runs on Heroku).  Deployed AWS Lambdas Crons with EventBridge rules
+                    to shut the site down at midnight and restart it at 6AM (to save hosting costs).
                     </li>
                     <li>
                     Added an EC2 load balancer which reroutes traffic to the ECS cluster even when the IP address of it changes.  The IP address can change
@@ -669,9 +680,74 @@ const HomePage = () => {
               </div>
           </div>
         </section>
+
+
+   {/* SECTION FOR PROJECT #6 */}
+   <section id="hash_map_section">
+            <h2 className='project_header'>C++ Unreal Engine Project Slash</h2>
+
+            <div className="project_buttons">
+              <button className="github_button" onClick={() => handleClick("https://github.com/Mike11199/unreal-project-slash")}>
+              <img className='github_logo' src={GitHubLogo} alt="github logo"></img>
+                GitHub Link
+              </button>
+            </div>
+
+            <div className="project_card_hash_map">
+
+              <div className='hash_map_carousel'>
+                <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
+                    <div><img alt="hash_map_1" src={unreal_destruction} /></div>
+                    <div><img alt="hash_map_1" src={unreal_voronoi_uniform_fracturing} /></div>
+                    <div><img alt="hash_map_1" src={unreal_debugging} /></div>
+                    <div><img alt="hash_map_1" src={unreal_determine_hit_animation} /></div>
+                    <div><img alt="hash_map_1" src={unreal_directional_hit_animation} /></div>
+                    <div><img alt="hash_map_1" src={unreal_dot_product_1} /></div>
+                    <div><img alt="hash_map_1" src={unreal_dot_product_2} /></div>
+                    <div><img alt="hash_map_1" src={unreal_hit_interface} /></div>
+                    <div><img alt="hash_map_1" src={unreal_treasure} /></div>
+                </Carousel>
+              </div>
+
+              <div className='hash_map_text'>
+                <ul>
+                  <li>
+                    This is a project I'm doing just for fun from a Udemy course - which is still very much in progress. Though my interests are in full stack development, I've always
+                    enjoyed PC games and thought it would help my C++ / back end skills to take a deeper dive into a statically typed language.
+                  </li>
+                  <li>
+                    Used C++ object oriented programming concepts such as inheritance to implement a getHit() interface for various enemies, which is a class the actor/enemy class inherits from.  The interface
+                    defines a getHit() function, and the enemy class, being a child of the interface and actor class, can override this function.  When a weapon hits an actor, it attempts to cast that
+                    actor to the HitInterface.  If the cast is successful, we know that the enemy inherits from that interface, and the weapon can instruct the enemy through a
+                    pointer to call its getHit() function.  This allows a weapon to not have to implement a getHit() for everything it hits, as it doesn't have to "know" what it has
+                    hit.
+                  </li>
+                  <li>
+                    Used vector math in C++ to calculate the dot product between two vectors, or the angle between the impact of a weapon strike and the actor's forward vector.  By also
+                    calculating the cross product, we can use this to play the correct animation for an enemy on hit, so they stumble in a different direction depending on which side they've been
+                    attacked from.
+                  </li>
+                  <li>
+                    Created other various classes in C++ to trigger on sphere overlap events, play animations, attach items to sockets, or randomly spawn treasure when an item breaks.  Created state
+                    machines to allow characters to toggle between running/walking animations based on C++ variables we've exposed to BluePrint.  Added a box trace function for the weapon by using the
+                    box trace static function from the KismetLibrary, allowing a weapon to determine when it has overlapped with another object.
+                  </li>
+                  </ul>
+              </div>
+
+          </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
     </div>
-
-
     </>
   );
 }
