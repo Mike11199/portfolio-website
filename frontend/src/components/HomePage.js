@@ -718,9 +718,12 @@ const HomePage = () => {
                   <li>
                     Used C++ object oriented programming concepts such as inheritance to implement a getHit() interface for various enemies, which is a class the actor/enemy class inherits from.  The interface
                     defines a getHit() function, and the enemy class, being a child of the interface and actor class, can override this function.  When a weapon hits an actor, it attempts to cast that
-                    actor to the HitInterface.  If the cast is successful, we know that the enemy inherits from that interface, and the weapon can instruct the enemy through a
-                    pointer to call its getHit() function.  This allows a weapon to not have to implement a getHit() for everything it hits, as it doesn't have to "know" what it has
-                    hit.
+                    actor to the HitInterface.
+                    </li>
+                  <li>
+                    If the cast is successful, we know that the enemy inherits from that interface, and the weapon can instruct the enemy through a
+                    pointer to call its getHit() function.  This allows a weapon to not have to implement a getHit() function body for everything it could possibly hit, as it doesn't have to "know" what it has
+                    hit.  The cast also allows us to call a function that could possibly not exist on another class (returning early if the cast returns a null pointer).
                   </li>
                   <li>
                     Used vector math in C++ to calculate the dot product between two vectors, or the angle between the impact of a weapon strike and the actor's forward vector.  By also
