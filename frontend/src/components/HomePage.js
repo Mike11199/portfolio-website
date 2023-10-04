@@ -50,6 +50,8 @@ import unreal_dot_product_2 from '../images/unreal_dot_product_2.png'
 import unreal_hit_interface from '../images/unreal_hit_interface.png'
 import unreal_treasure from '../images/unreal_treasure.png'
 import unreal_voronoi_uniform_fracturing from '../images/unreal_voronoi_uniform_fracturing.png'
+import unreal_patrol from '../images/unreal_patrol.png'
+import unreal_sensing from '../images/unreal_sensing.png'
 
 
 
@@ -706,34 +708,35 @@ const HomePage = () => {
                     <div><img alt="hash_map_1" src={unreal_directional_hit_animation} /></div>
                     <div><img alt="hash_map_1" src={unreal_hit_interface} /></div>
                     <div><img alt="hash_map_1" src={unreal_treasure} /></div>
+                    <div><img alt="hash_map_1" src={unreal_patrol} /></div>
+                    <div><img alt="hash_map_1" src={unreal_sensing} /></div>
                 </Carousel>
               </div>
 
               <div className='hash_map_text'>
                 <ul>
                   <li>
-                    This is a project I'm doing just for fun from a Udemy course - which is still very much in progress. Though my interests are in full stack development, I've always
-                    enjoyed PC games and thought it would help my C++ / back end skills to take a deeper dive into a statically typed language.
+                    A project I'm doing for fun from a Udemy course - still in progress. Though my interests are in full stack development,
+                    I've always enjoyed PC games and thought it would help my C++ / back end skills to take a deeper
+                    dive into a statically typed language.
+                  </li>
+                   <li>
+                    Used vector math in C++ to calculate the dot product between two vectors, or the angle between the impact of a weapon strike and the
+                    actor's forward vector.  By also calculating the cross product, we can use this to play the correct animation for an enemy on hit,
+                    so that they stumble in the correct direction depending on which side they've been attacked from.  Added other logic to animations such
+                    as inverse kinematics, so that a character's skeleton can be correctly positioned when standing on sloped surfaces.
                   </li>
                   <li>
-                    Used C++ object oriented programming concepts such as inheritance to implement a getHit() interface for various enemies, which is a class the actor/enemy class inherits from.  The interface
-                    defines a getHit() function, and the enemy class, being a child of the interface and actor class, can override this function.  When a weapon hits an actor, it attempts to cast that
-                    actor to the HitInterface.
-                    </li>
-                  <li>
-                    If the cast is successful, we know that the enemy inherits from that interface, and the weapon can instruct the enemy through a
-                    pointer to call its getHit() function.  This allows a weapon to not have to implement a getHit() function body for everything it could possibly hit, as it doesn't have to "know" what it has
-                    hit.  The cast also allows us to call a function that could possibly not exist on another class (returning early if the cast returns a null pointer).
+                    Created other various classes in C++ to trigger on sphere overlap events, play animations, attach items to sockets, or randomly
+                    spawn treasure when an item breaks.  Created state machines to allow characters to toggle between running/walking animations
+                    based on C++ variables we've exposed to BluePrint.  Added a box trace function on weapon meshes, allowing a weapon to determine
+                    when it has overlapped with another object.
                   </li>
                   <li>
-                    Used vector math in C++ to calculate the dot product between two vectors, or the angle between the impact of a weapon strike and the actor's forward vector.  By also
-                    calculating the cross product, we can use this to play the correct animation for an enemy on hit, so they stumble in a different direction depending on which side they've been
-                    attacked from.
-                  </li>
-                  <li>
-                    Created other various classes in C++ to trigger on sphere overlap events, play animations, attach items to sockets, or randomly spawn treasure when an item breaks.  Created state
-                    machines to allow characters to toggle between running/walking animations based on C++ variables we've exposed to BluePrint.  Added a box trace function for the weapon by using the
-                    box trace static function from the KismetLibrary, allowing a weapon to determine when it has overlapped with another object.
+                    Implemented C++ inheritance by adding a HitInterface for various enemies, which an enemy class can inherit from. This allows the
+                    weapon class to call a function which could not exist on an enemy, the getHit() function, which the enemy class overrides.  If
+                    the weapon successfully casts the enemy class to that interface, we know it is a child class that implements getHit().
+                    This allows us to call getHit() from a pointer, and for a weapon to avoid needing logic for everything it could possibly hit.
                   </li>
                   </ul>
               </div>
