@@ -251,8 +251,9 @@ const HomePage = () => {
                     develop React components.
                   </li>
                   <li>
-                    Modeled complicated database relationships between products, orders, and users using embedded MongoDB documents.  For example, products have a many to many relationship
-                    with orders.  A product also has a one to many relationship with reviews, and a user has a one-to-many relationship with orders.
+                    Modeled complicated database relationships between products, orders, and users using embedded MongoDB documents.  For example, products
+                    have a many to many relationship with orders.  A product also has a one to many relationship with reviews, and a user has a one-to-many
+                    relationship with orders.
                   </li>
                   <li>
                     Added Google OAuth2.0 Log In, decoding JWT credentials from Google, and locating the user by email in MongoDB
@@ -443,27 +444,27 @@ const HomePage = () => {
               <div className='space_tau_description'>
                 <ul>
                   <li>
-                    Project programmed in Flask to run Python in a back-end server environment, 
+                    Project programmed in Flask to run Python in a back-end server environment,
                     using a Jinja templating system to render HTML and JavaScript on the front-end.
                   </li>
                   <li>
                     Implemented a MariaDB backed MySQL database and designed a schema for this in MySQL Workbench,
-                    to support relationships among the database tables.  The project serves as a web-based application 
+                    to support relationships among the database tables.  The project serves as a web-based application
                     to a fictional database system for a space launch services company.
                   </li>
                   <li>
-                    Multiple one-to-many relationships are supported, as well as a many-to-many relationship between 
+                    Multiple one-to-many relationships are supported, as well as a many-to-many relationship between
                     spacecraft and parts via an intersection table.
                   </li>
                   <li>
-                    Added constraints such as ON CASCADE DELETE to automatically allow for child rows to be deleted from 
-                    a M:N relationship and prevent database anomalies. Added foreign key (FK) constraints to prevent adding 
+                    Added constraints such as ON CASCADE DELETE to automatically allow for child rows to be deleted from
+                    a M:N relationship and prevent database anomalies. Added foreign key (FK) constraints to prevent adding
                     nonsensical relationships between tables, such as referencing a FK that doesn't exist.
                   </li>
                   <li>
-                    The theme of this project is inspired by my interest in NASA / space exploration and Kerbal Space Program 
-                    (see gameplay video below), which has taught me much about physics and orbital mechanics in a fun way.  I've 
-                    also dabbled in using C# to automate launches in the game with kRPC scripting (remote procedure calls), and 
+                    The theme of this project is inspired by my interest in NASA / space exploration and Kerbal Space Program
+                    (see gameplay video below), which has taught me much about physics and orbital mechanics in a fun way.  I've
+                    also dabbled in using C# to automate launches in the game with kRPC scripting (remote procedure calls), and
                     eventually plan to use Unity/ C# to create mods for the game with Visual Studio.
                   </li>
                   </ul>
@@ -509,32 +510,32 @@ const HomePage = () => {
               <div className='text_description_smallsh'>
                 <ul>
                   <li>
-                  Programmed a shell in C similar to the BASH shell, implementing parent/child process handling 
-                  with the Unix process API. The shell can be ran in interactive mode, repeatedly prompting the 
+                  Programmed a shell in C similar to the BASH shell, implementing parent/child process handling
+                  with the Unix process API. The shell can be ran in interactive mode, repeatedly prompting the
                   user for input, or be fed commands from a file in non-interactive mode.
                   </li>
                   <li>
-                  Features implemented include forking of child processes to allow for commands fed to the shell 
-                  to be ran in its own address space, execution of processes in the background with the "&" command, 
-                  and use of the exec() family of functions to allow the shell to execute non-built in commands 
+                  Features implemented include forking of child processes to allow for commands fed to the shell
+                  to be ran in its own address space, execution of processes in the background with the "&" command,
+                  and use of the exec() family of functions to allow the shell to execute non-built in commands
                   (searching for the command via the env path variable - https://linux.die.net/man/3/execvp).
                   </li>
                   <li>
-                  The shell repeatedly checks for background processes within the same process group and reports if any 
+                  The shell repeatedly checks for background processes within the same process group and reports if any
                   have exited along with their PID. The SIGCONT signal is sent to any stopped child background processes
                   by the shell to resume their execution. https://linux.die.net/man/2/waitpid
                   </li>
                   <li>
                   Parameter expansion - special shell parameters include $$ for the smallsh process ID GETPID(3), $? for
-                   the exit status of the last foreground process, and $! for the most recent background process. 
+                   the exit status of the last foreground process, and $! for the most recent background process.
                    Occurrences of ${} allow for variable expansion for a named environment variable.
                   </li>
                   <li>
-                  Implemented custom behavior for SIGINT and SIGSTP signals, allowing the shell to ignore these signals 
+                  Implemented custom behavior for SIGINT and SIGSTP signals, allowing the shell to ignore these signals
                   while allowing child processes to respond via custom signal handlers and sigaction structure.
                   </li>
                   <li>
-                  Parsed command line input into semantic tokens via word splitting. Implemented redirection operators 
+                  Parsed command line input into semantic tokens via word splitting. Implemented redirection operators
                   '&lt;', '&gt;', and '&gt;&gt;' to redirect STDIN and STDOUT to specific files.
                   </li>
                   </ul>
@@ -568,8 +569,6 @@ const HomePage = () => {
                 </Carousel>
               </div>
 
-
-
               <div className='hash_map_text'>
                 <ul>
                   <li>
@@ -581,7 +580,7 @@ const HomePage = () => {
                     Open Addressing
                     <ul>
                       <li>
-                      In this implementation, the data structure probes for an empty spot in the HashTable's underlying dynamic array 
+                      In this implementation, the data structure probes for an empty spot in the HashTable's underlying dynamic array
                       if a collision occurs, until it finds an empty spot to insert the element in.
                       </li>
                     </ul>
@@ -590,14 +589,14 @@ const HomePage = () => {
                   Separate Chaining
                     <ul>
                       <li>
-                      In this implementation, each dynamic array element is a linked list, and additional key/value pairs can be added to 
+                      In this implementation, each dynamic array element is a linked list, and additional key/value pairs can be added to
                       the front of the linked list at each array spot in the case that keys hash to the same array index.
                       </li>
                     </ul>
                   </li>
                   <li>
-                  A hash map allows insertion and lookup of values in amortized constant time O(1), due to a potential O(N) resizing cost. 
-                  Resizing the table is performed in order to keep the table load factor low, which reduces the chance of collisions occurring. 
+                  A hash map allows insertion and lookup of values in amortized constant time O(1), due to a potential O(N) resizing cost.
+                  Resizing the table is performed in order to keep the table load factor low, which reduces the chance of collisions occurring.
                   In the worst case, all elements could collide in the same bucket, leading to O(N) time complexity.
                   The load factor is expressed as n (number of elements) / m (number of buckets).
                   </li>
@@ -684,7 +683,7 @@ const HomePage = () => {
         </section>
 
 
-   {/* SECTION FOR PROJECT #6 */}
+   {/* SECTION FOR PROJECT #8 */}
    <section id="hash_map_section">
             <h2 className='project_header'>C++ Unreal Engine Project Slash</h2>
 
@@ -734,8 +733,8 @@ const HomePage = () => {
                   </li>
                   <li>
                     Implemented C++ inheritance by adding a HitInterface for various enemies, which an enemy class can inherit from. This allows the
-                    weapon class to call a function which could not exist on an enemy, the getHit() function, which the enemy class overrides.  If
-                    the weapon successfully casts the enemy class to that interface, we know it is a child class that implements getHit().
+                    weapon class to call a function which could not exist on an actor, the getHit() function, which the enemy class overrides.  If
+                    the weapon successfully casts an actor to that interface, we know it is a child class of the interface that implements getHit().
                     This allows us to call getHit() from a pointer, and for a weapon to avoid needing logic for everything it could possibly hit.
                   </li>
                   </ul>
@@ -743,13 +742,6 @@ const HomePage = () => {
 
           </div>
         </section>
-
-
-
-
-
-
-
 
 
 
