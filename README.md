@@ -27,7 +27,6 @@
 <br/>
 
 ## Info
-https://michael-iwanek-portfolio.herokuapp.com/
 
 - Completely custom portfolio site developed with Express.js and React.js.
 - Express.js is only needed for Heroku.  Site is entirely React.js.
