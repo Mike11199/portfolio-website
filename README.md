@@ -1,5 +1,9 @@
 ## EC2 Instance Link
+
 http://184.169.233.239/ 
+
+- If you have an errors connecting, ensure you are not on the https:// as this is not yet supported.  By default mobile opens up the http:// link as https://.  WIP installing SSL certificate on EC2.
+
 
 <br/>
 
