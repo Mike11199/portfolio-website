@@ -1,9 +1,13 @@
-## EC2 Test
+## EC2 Instance Link
 http://184.169.233.239/ 
 
 <br/>
 
 ![image](https://github.com/Mike11199/portfolio-website/assets/91037796/f81044e1-61b8-41e4-a192-5254f9a37a11)
+
+<br/>
+
+<img src="https://github.com/Mike11199/portfolio-website/assets/91037796/277720e1-f3a8-444d-86ea-1b18c76ddda3" width="400" alt="image">
 
 <br/>
 
