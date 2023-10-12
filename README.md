@@ -7,6 +7,11 @@ http://184.169.233.239/
 
 <br/>
 
+<img src="https://github.com/Mike11199/portfolio-website/assets/91037796/bd83c36f-e138-4dc6-8362-73d27c36b33d" width="1200" alt="image">
+
+<br/>
+<br/>
+
 <img src="https://github.com/Mike11199/portfolio-website/assets/91037796/277720e1-f3a8-444d-86ea-1b18c76ddda3" width="400" alt="image">
 
 <br/>
