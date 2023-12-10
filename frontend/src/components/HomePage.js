@@ -52,8 +52,6 @@ import unreal_treasure from '../images/unreal_treasure.png'
 import unreal_voronoi_uniform_fracturing from '../images/unreal_voronoi_uniform_fracturing.png'
 import unreal_patrol from '../images/unreal_patrol.png'
 import unreal_sensing from '../images/unreal_sensing.png'
-import SolarSystemFarOut from '../images/solar_system_far_out.gif'
-import EarthClouds from '../images/earth_clouds.gif'
 import Planets1 from '../images/planets_1.png'
 import Planets2 from '../images/planets_2.png'
 import EarthImage from '../images/earth.png'
@@ -766,8 +764,8 @@ const HomePage = () => {
               <div className='hash_map_carousel'>
                 <Carousel width="100%" infiniteLoop="true" dynamicHeight="true" showArrows="true">
                 <div><img alt="hash_map_1" src={Planets2} /></div>
-                <div><img alt="hash_map_1" src={EarthClouds } /></div>
-                <div><img alt="hash_map_1" src={SolarSystemFarOut } /></div>
+                <div><img alt="hash_map_1" src="https://github.com/Mike11199/GIFs/raw/main/EarthClouds_%20new.gif" /></div>
+                <div><img alt="hash_map_1" src={"https://github.com/Mike11199/CS-450-Computer-Graphics-GIFs/assets/91037796/65cbd665-51e0-4e54-9e95-4cfef91b79a0"} /></div>
                 <div><img alt="hash_map_1" src={Planets1} /></div>
                 <div><img alt="hash_map_1" src={EarthImage} /></div>
                 <div><img alt="hash_map_1" src={SolarSystemFarOut2} /></div>
