@@ -1,18 +1,18 @@
-import './App.css';
-import { Routes, Route, Navigate } from 'react-router-dom'
-import HomePage from './components/HomePage';
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import "./App.css";
+import { Routes, Route, Navigate } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<HomePage />}></Route>
-      <Route path="*" element={<Navigate to="/" />}></Route>  
-    </Routes>
-    <Footer />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="*" element={<Navigate to="/" />}></Route>
+      </Routes>
+      <Footer />
     </>
   );
 }
