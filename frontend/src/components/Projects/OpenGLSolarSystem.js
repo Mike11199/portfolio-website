@@ -1,7 +1,7 @@
 import PlanetsAlignedImage from "../../images/PlanetsAlignedImage.png";
-import AsteroidBeltPlanetsCloseUpPhoto from "../../images/planets_2.png";
-import EarthImage from "../../images/earth.png";
-import SolarSystemFarOut2 from "../../images/solar_system_far_out_2.png";
+import AsteroidBeltPlanetsCloseUpPhoto from "../../images/AsteroidBeltPlanetsCloseUpPhoto.png";
+import EarthCloudsImage from "../../images/EarthCloudsImage.png";
+import SolarSystemFarOut from "../../images/SolarSystemFarOut.png";
 
 import { Carousel } from "react-responsive-carousel";
 
@@ -14,7 +14,6 @@ const handleClick = (site) => {
 const OpenGLSolarSystem = () => {
   return (
     <>
-      {/* SECTION FOR PROJECT #7 */}
       <section id="kotlin_section">
         <h2 className="project_header">OpenGL C++ Solar System Model</h2>
 
@@ -39,7 +38,10 @@ const OpenGLSolarSystem = () => {
               showArrows="true"
             >
               <div>
-                <img alt="image_of_solar_system_jupiter_and_main_asteroid_belt" src={AsteroidBeltPlanetsCloseUpPhoto} />
+                <img
+                  alt="image_of_solar_system_jupiter_and_main_asteroid_belt"
+                  src={AsteroidBeltPlanetsCloseUpPhoto}
+                />
               </div>
               <div>
                 <img
@@ -56,13 +58,22 @@ const OpenGLSolarSystem = () => {
                 />
               </div>
               <div>
-                <img alt="close_up_of_planets_aligned_while_program_paused" src={PlanetsAlignedImage} />
+                <img
+                  alt="close_up_of_planets_aligned_while_program_paused"
+                  src={PlanetsAlignedImage}
+                />
               </div>
               <div>
-                <img alt="image_of_moon_and_earth_orbit_static_in_front_of_sun" src={EarthImage} />
+                <img
+                  alt="image_of_moon_and_earth_orbit_static_in_front_of_sun"
+                  src={EarthCloudsImage}
+                />
               </div>
               <div>
-                <img alt="image_of_solar_system_no_asteroid_belts_no_orbit_lines" src={SolarSystemFarOut2} />
+                <img
+                  alt="image_of_solar_system_no_asteroid_belts_no_orbit_lines"
+                  src={SolarSystemFarOut}
+                />
               </div>
             </Carousel>
           </div>
