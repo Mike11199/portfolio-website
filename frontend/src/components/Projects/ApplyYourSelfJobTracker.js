@@ -1,7 +1,6 @@
 import Job_Tracker_1 from "../../images/job_tracker_1.png";
 import Job_Tracker_2 from "../../images/job_tracker_2.png";
 import Job_Tracker_3 from "../../images/job_tracker_3.png";
-import Job_Tracker_Gif_1 from "../../images/apply_your_self_1.gif";
 import Job_Tracker_Home_Page from "../../images/apply_your_self_home_page.png";
 import GitHubLogo from "../../images/github_1.png";
 
@@ -57,7 +56,7 @@ const ApplyYourSelfJobTracker = () => {
               showArrows="true"
             >
               <div>
-                <img alt="tracker_1" src={Job_Tracker_Gif_1} />
+                <img alt="tracker_1" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442991/applyyourself_job_tracker_dashboard_d41cco.gif' />
               </div>
               <div>
                 <img alt="tracker_3" src={Job_Tracker_1} />

@@ -1,5 +1,3 @@
-import Sac_City_GIF_2 from "../../images/sacramento_city_2.gif";
-import Flight_Search_GIF from "../../images/flight_search_app.gif";
 import GitHubLogo from "../../images/github_1.png";
 
 import { Carousel } from "react-responsive-carousel";
@@ -56,7 +54,10 @@ const KotlinAndroidProjects = () => {
               showThumbs={false}
             >
               <div>
-                <img alt="hash_map_1" src={Sac_City_GIF_2} />
+                <img
+                  alt="sacramento_phone_view_android_app_gif"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442796/android_kotlin_sacramento_app_fdubuz.gif"
+                />
               </div>
             </Carousel>
           </div>
@@ -70,7 +71,10 @@ const KotlinAndroidProjects = () => {
               showThumbs={false}
             >
               <div>
-                <img alt="hash_map_1" src={Flight_Search_GIF} />
+                <img
+                  alt="flight_search_sql_lite_phone_view_android_app_gif"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442786/android_kotlin_flight_search_fu06fc.gif"
+                />
               </div>
             </Carousel>
           </div>

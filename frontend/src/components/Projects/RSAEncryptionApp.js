@@ -1,7 +1,5 @@
-import RSA_Gif from "../../images/rsa_encryption_1.gif";
-import AES_Gif from "../../images/aes_encryption_1.gif";
-import RSA_Image from "../../images/AESPage.png";
-import AES_Image from "../../images/RSAPage.png";
+import AESImage from "../../images/AESPage.png";
+import RSAImage from "../../images/RSAPage.png";
 import GitHubLogo from "../../images/github_1.png";
 
 import { Carousel } from "react-responsive-carousel";
@@ -56,16 +54,16 @@ const RSAEncryptionApp = () => {
           <div className="carousel_rsa_encryption">
             <Carousel width="100%" infiniteLoop="true">
               <div>
-                <img alt="rsa_1" src={RSA_Gif} />
+                <img alt="rsa_encryption_gif" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443108/encryption_react_app_rsa_zm71g8.gif' />
               </div>
               <div>
-                <img alt="rsa_2" src={RSA_Image} />
+                <img alt="rsa_encryption_image" src={RSAImage} />
               </div>
               <div>
-                <img alt="aes_1" src={AES_Gif} />
+                <img alt="aes_encryption_image" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443106/encryption_react_app_aes_iblpok.gif' />
               </div>
               <div>
-                <img alt="aes_2" src={AES_Image} />
+                <img alt="aes_encryption_gif" src={AESImage} />
               </div>
             </Carousel>
           </div>
