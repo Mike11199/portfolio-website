@@ -1,12 +1,3 @@
-import Shop_Image_1 from "../../images/shop_1.png";
-import Shop_Image_2 from "../../images/shop_2.png";
-import Shop_Image_3 from "../../images/shop_3.png";
-import Shop_Image_4 from "../../images/shop_4.png";
-import Shop_Image_5 from "../../images/shop_5.png";
-import Shop_Image_6 from "../../images/shop_6.png";
-import Editing_Ski_Photo from "../../images/editing_ski_photo_GIMP.gif";
-import Home_GIF from "../../images/home_page_new.gif";
-import Sat_Pledge_Image from "../../images/ski_shop_pledge_and_sat_image.png";
 import Docker_Screenshot from "../../images/docker_screenshot.png";
 import AWS_ECR from "../../images/AWS_ECR.png";
 import AWS_CI_CD from "../../images/github_actions_yml.png";
@@ -70,46 +61,46 @@ const AlpinePeakClimbingSkiShop = () => {
           <div className="carousel_ski_shop">
             <Carousel width="100%" infiniteLoop="true">
               <div>
-                <img alt="shop_1" src={Shop_Image_1} />
+                <img alt="login_page_photo" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441524/SkiShopLoginPage_ywkwjn.png' />
               </div>
               <div>
-                <img alt="home_gif" src={Home_GIF} />
+                <img alt="home_page_gif" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441670/SkiShopHomePage_si8vkz.gif' />
               </div>
               <div>
-                <img alt="shop_2" src={Shop_Image_2} />
+                <img alt="register_page_photo" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441747/SkiShopRegisterPage_v9osuo.png' />
               </div>
               <div>
-                <img alt="shop_22" src={Sat_Pledge_Image} />
+                <img alt="plant_trees_pledge_and_snow_satellite_tracker_photo" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442507/ski_shop_pledge_and_sat_image_xseiqy.png' />
               </div>
               <div>
-                <img alt="shop_3" src={Shop_Image_3} />
+                <img alt="home_page_static_photo" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442203/ski_shop_static_home_page_photo_u4f4vl.png' />
               </div>
               <div>
-                <img alt="shop_4" src={Shop_Image_4} />
+                <img alt="shopping_cart_photo" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442304/ski_shop_shopping_cart_photo_ov8zr3.png' />
               </div>
               <div>
-                <img alt="shop_5" src={Shop_Image_5} />
+                <img alt="admin_dashboard_product_management_page_photo" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442370/ski_shop_admin_products_dashboard_efynls.png' />
               </div>
               <div>
-                <img alt="shop_6" src={Shop_Image_6} />
+                <img alt="order_details_payment_paypal_buttons_photo" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442428/ski_shop_paypal_order_details_page_elbfo1.png' />
               </div>
               <div>
-                <img alt="editing_ski_gimp_photo" src={Editing_Ski_Photo} />
+                <img alt="editing_ski_mountaineering_login_page_photo" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441833/SkiShopPhotoEditProcessGimp_jkrj7l.gif' />
               </div>
               <div>
-                <img alt="docker_screenshot" src={Docker_Screenshot} />
+                <img alt="nginx_dockerfile_docker.yml_docker_containers_screenshot_photo" src={Docker_Screenshot} />
               </div>
               <div>
-                <img alt="aws_screenshot" src={AWS_ECR} />
+                <img alt="aws_ecs_cluster_container_task_screenshot_photo" src={AWS_ECR} />
               </div>
               <div>
-                <img alt="aws_ci_cd_github_actions" src={AWS_CI_CD} />
+                <img alt="aws_ci_cd_github_actions_yml_file_task_json_aws_screenshot_photo" src={AWS_CI_CD} />
               </div>
               <div>
-                <img alt="aws_load_balancer" src={LOAD_BALANCER} />
+                <img alt="aws_load_balancer_ecs_photo" src={LOAD_BALANCER} />
               </div>
               <div>
-                <img alt="aws_lambdas" src={lambda_cron} />
+                <img alt="aws_lambda_cron_screenshots_to_stop_and_restart_site_every_night_photo" src={lambda_cron} />
               </div>
             </Carousel>
           </div>

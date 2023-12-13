@@ -8,13 +8,9 @@ import BinaryDigit from "./BinaryDigit";
 
 const Navbar = () => {
   const [scrollVal, setScrollVal] = useState(0);
-  const [scrollVal2, setScrollVal2] = useState(0);
-
   const { scrollYProgress } = useScroll({
     onChange: ({ value: { scrollYProgress } }) => {
-      // console.log(scrollYProgress)
       setScrollVal(scrollYProgress * 100);
-      setScrollVal2(scrollYProgress * 360);
     },
   });
 

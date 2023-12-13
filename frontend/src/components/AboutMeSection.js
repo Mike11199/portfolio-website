@@ -2,11 +2,10 @@ import { useEffect, React, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import ReactPlayer from "react-player";
 
-import Heavenly_Ski_Resort_Photo from "../images/heavenly_ski_resort_me.jpg";
-import Tent from "../images/tent.jpg";
-import IceCavePhoto2 from "../images/me_ice_cave2.jpg";
+import HeavenlySkiResortPhoto from "../images/heavenly_ski_resort_me.jpg";
+import WinterCampingTentPhoto from "../images/tent.jpg";
+import DonnerTunnelSnowshoeingPhoto from "../images/me_ice_cave2.jpg";
 
-//  Will clean up this function later
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -37,8 +36,7 @@ const AboutMeSection = () => {
     playerWidthClimbing = 400;
     playerHeightClimbing = 710;
   }
-
-  if (width <= 600) {
+  else {
     playerWidthClimbing = 250;
     playerHeightClimbing = 440;
   }
@@ -77,18 +75,18 @@ const AboutMeSection = () => {
             <div className="about_me_images">
               <div className="about_me_images2">
                 <img
-                  src={IceCavePhoto2}
+                  src={HeavenlySkiResortPhoto}
                   alt="Michael Iwanek Navbar"
                   className="profile_photo_image_body"
                 />
                 <img
-                  src={Heavenly_Ski_Resort_Photo}
+                  src={DonnerTunnelSnowshoeingPhoto}
                   alt="Michael Iwanek Navbar"
                   className="profile_photo_image_body_2"
                 />
               </div>
               <img
-                src={Tent}
+                src={WinterCampingTentPhoto}
                 alt="Michael Iwanek Navbar"
                 className="tent_image"
               />
