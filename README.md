@@ -1,7 +1,7 @@
 ## Heroku Link
 
 - AWS EC2 via Domain Name
-  - http://michael-iwanek-portfolio.com  
+  - http://michael-iwanek-portfolio.com/  
 - Backup Link
   - https://michael-iwanek-portfolio.herokuapp.com/
 
