@@ -75,12 +75,12 @@ const AboutMeSection = () => {
             <div className="about_me_images">
               <div className="about_me_images2">
                 <img
-                  src={HeavenlySkiResortPhoto}
+                  src={DonnerTunnelSnowshoeingPhoto}
                   alt="Michael Iwanek Navbar"
                   className="profile_photo_image_body"
                 />
                 <img
-                  src={DonnerTunnelSnowshoeingPhoto}
+                  src={HeavenlySkiResortPhoto}
                   alt="Michael Iwanek Navbar"
                   className="profile_photo_image_body_2"
                 />
