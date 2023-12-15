@@ -1,13 +1,15 @@
 ## Heroku Link
 
-- Domain Name using AWS EC2 and Elastic IP:  michael-iwanek-portfolio.com 
-- Backup Link: https://michael-iwanek-portfolio.herokuapp.com/
+- AWS EC2 via Domain Name
+  - http://michael-iwanek-portfolio.com  
+- Backup Link
+  - https://michael-iwanek-portfolio.herokuapp.com/
 
 <img src="https://github.com/Mike11199/portfolio-website/assets/91037796/10e37274-b82e-4895-8099-e4a8c6aafdb6" width="500" alt="image">
 
 ## EC2 Instance Link
 
-- http://184.169.233.239/ 
+- Elastic IP: 54.183.166.208
 
 - If you have any errors connecting to the above EC2 link, ensure you are not on the https:// URL, as this is not yet supported.  By default Chrome on mobile strangely opens the http:// link as https://.  WIP installing SSL certificate on EC2.
 
