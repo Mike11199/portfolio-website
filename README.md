@@ -1,6 +1,7 @@
 ## Heroku Link
 
-- https://michael-iwanek-portfolio.herokuapp.com/
+- Domain Name using AWS EC2 and Elastic IP:  michael-iwanek-portfolio.com 
+- Backup Link: https://michael-iwanek-portfolio.herokuapp.com/
 
 <img src="https://github.com/Mike11199/portfolio-website/assets/91037796/10e37274-b82e-4895-8099-e4a8c6aafdb6" width="500" alt="image">
 
