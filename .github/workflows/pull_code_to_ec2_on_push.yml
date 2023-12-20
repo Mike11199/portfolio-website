@@ -21,6 +21,6 @@ jobs:
           ssh -i "private_key" -o StrictHostKeyChecking=no ec2-user@ec2-54-183-166-208.us-west-1.compute.amazonaws.com '
               cd /home/ec2-user/portfolio-website &&
               git pull &&
-              sudo npm install &&
-              sudo npm run build
+              npm install &&
+              npm run build
           '
