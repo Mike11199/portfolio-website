@@ -19,7 +19,7 @@ jobs:
           set -e  # Exit on any command failure
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -i "private_key" -o StrictHostKeyChecking=no ec2-user@ec2-54-183-166-208.us-west-1.compute.amazonaws.com '
-              cd /home/ec2-user/portfolio-website &&
+              cd /home/ec2-user/portfolio-website/frontend &&
               git pull &&
               npm install &&
               npm run build
