@@ -1,0 +1,26 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  Deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build & Deploy
+        env:
+          PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+
+        run: |
+          set -e  # Exit on any command failure
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -i "private_key" -o StrictHostKeyChecking=no ec2-user@ec2-54-183-166-208.us-west-1.compute.amazonaws.com '
+              cd /home/ec2-user/portfolio-website &&
+              git pull &&
+              sudo npm install &&
+              sudo npm run build
+          '
