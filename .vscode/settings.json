@@ -4,6 +4,7 @@
         "composables",
         "Jetpack",
         "onenote",
+        "sankey",
         "templating",
         "voronoi"
     ],
