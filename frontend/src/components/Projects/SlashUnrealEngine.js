@@ -1,16 +1,4 @@
-import unreal_destruction from "../../images/destruction.gif";
-import unreal_debugging from "../../images/unreal_debugging_info.png";
-import unreal_determine_hit_animation from "../../images/unreal_determine_hit_animation.png";
-import unreal_directional_hit_animation from "../../images/unreal_directional_hit_animation.gif";
-import unreal_dot_product_1 from "../../images/unreal_dot_product_1.png";
-import unreal_dot_product_2 from "../../images/unreal_dot_product_2.png";
-import unreal_hit_interface from "../../images/unreal_hit_interface.png";
-import unreal_treasure from "../../images/unreal_treasure.png";
-import unreal_voronoi_uniform_fracturing from "../../images/unreal_voronoi_uniform_fracturing.png";
-import unreal_patrol from "../../images/unreal_patrol.png";
-import unreal_sensing from "../../images/unreal_sensing.png";
 import GitHubLogo from "../../images/github_1.png";
-
 import { Carousel } from "react-responsive-carousel";
 
 const handleClick = (site) => {
@@ -22,7 +10,6 @@ const handleClick = (site) => {
 const SlashUnrealEngine = () => {
   return (
     <>
-      {/* SECTION FOR PROJECT #8 */}
       <section id="hash_map_section">
         <h2 className="project_header">C++ Unreal Engine Project Slash</h2>
 
@@ -51,37 +38,70 @@ const SlashUnrealEngine = () => {
               showArrows="true"
             >
               <div>
-                <img alt="hash_map_1" src={unreal_destruction} />
+                <img
+                  alt="unreal_destruction"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227399/unreal_destruction_zgdoxb.gif"
+                />
               </div>
               <div>
-                <img alt="hash_map_1" src={unreal_voronoi_uniform_fracturing} />
+                <img
+                  alt="unreal_voronoi_uniform_fracturing"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227381/unreal_voronoi_uniform_fracturing_i82ukx.png"
+                />
               </div>
               <div>
-                <img alt="hash_map_1" src={unreal_debugging} />
+                <img
+                  alt="unreal_debugging"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227368/unreal_debugging_info_gbbotb.png"
+                />
               </div>
               <div>
-                <img alt="hash_map_1" src={unreal_dot_product_2} />
+                <img
+                  alt="unreal_dot_product_math_onenote"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227353/unreal_dot_product_2_cnpc9j.png"
+                />
               </div>
               <div>
-                <img alt="hash_map_1" src={unreal_dot_product_1} />
+                <img
+                  alt="unreal_dot_product_image"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227384/unreal_dot_product_1_wu6ooj.png"
+                />
               </div>
               <div>
-                <img alt="hash_map_1" src={unreal_determine_hit_animation} />
+                <img
+                  alt="unreal_determine_hit_animation_code"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227348/unreal_determine_hit_animation_kfgni2.png"
+                />
               </div>
               <div>
-                <img alt="hash_map_1" src={unreal_directional_hit_animation} />
+                <img
+                  alt="unreal_directional_hit_animation"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227397/unreal_directional_hit_animation_gnkuyy.gif"
+                />
               </div>
               <div>
-                <img alt="hash_map_1" src={unreal_hit_interface} />
+                <img
+                  alt="unreal_hit_interface_code"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227351/unreal_hit_interface_thwvht.png"
+                />
               </div>
               <div>
-                <img alt="hash_map_1" src={unreal_treasure} />
+                <img
+                  alt="unreal_randomly_generated_treasure"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227375/unreal_treasure_fqw3zb.png"
+                />
               </div>
               <div>
-                <img alt="hash_map_1" src={unreal_patrol} />
+                <img
+                  alt="unreal_patrol_routes"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227366/unreal_patrol_zi4zqw.png"
+                />
               </div>
               <div>
-                <img alt="hash_map_1" src={unreal_sensing} />
+                <img
+                  alt="unreal_sensing_component"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227362/unreal_sensing_sa1pfs.png"
+                />
               </div>
             </Carousel>
           </div>

@@ -3,7 +3,9 @@
         "ciphertext",
         "composables",
         "Jetpack",
-        "templating"
+        "onenote",
+        "templating",
+        "voronoi"
     ],
     "workbench.colorCustomizations": {
         "terminal.foreground": "#00FD61",
