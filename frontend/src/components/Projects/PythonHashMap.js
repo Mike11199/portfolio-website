@@ -1,8 +1,4 @@
-import Hash_Map_Image_1 from "../../images/hash_map_1.png";
-import Hash_Map_Image_2 from "../../images/hash_map_2.png";
-import Hash_Map_GIF_1 from "../../images/hash_map_sc.gif";
 import GitHubLogo from "../../images/github_1.png";
-
 import { Carousel } from "react-responsive-carousel";
 
 const handleClick = (site) => {
@@ -47,13 +43,28 @@ const PythonHashMap = () => {
               showArrows="true"
             >
               <div>
-                <img alt="hash_map_1" src={Hash_Map_Image_1} />
+                <img
+                  alt="hash_map_put_function"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_put_function_yql8dr.png"
+                />
               </div>
               <div>
-                <img alt="hash_map_2" src={Hash_Map_Image_2} />
+                <img
+                  alt="hash_map_keys_buckets_diagram"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228636/hash_function_diagram_abmwcz.png"
+                />
               </div>
               <div>
-                <img alt="hash_map_3" src={Hash_Map_GIF_1} />
+                <img
+                  alt="hash_map_resize_table_function"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_resize_table_function_opqhi4.png"
+                />
+              </div>
+              <div>
+                <img
+                  alt="hash_map_separate_chaining_gif"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228131/hash_map_separate_chaining_tljado.gif"
+                />
               </div>
             </Carousel>
           </div>
