@@ -1,7 +1,4 @@
-import AESImage from "../../images/AESPage.png";
-import RSAImage from "../../images/RSAPage.png";
 import GitHubLogo from "../../images/github_1.png";
-
 import { Carousel } from "react-responsive-carousel";
 
 const handleClick = (site) => {
@@ -13,7 +10,6 @@ const handleClick = (site) => {
 const RSAEncryptionApp = () => {
   return (
     <>
-      {/* SECTION FOR PROJECT #3 */}
       <section className="rsa_section">
         <h2 className="project_header">
           RSA & AES Encryption App - Electron.js, React.js
@@ -54,16 +50,28 @@ const RSAEncryptionApp = () => {
           <div className="carousel_rsa_encryption">
             <Carousel width="100%" infiniteLoop="true">
               <div>
-                <img alt="rsa_encryption_gif" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443108/encryption_react_app_rsa_zm71g8.gif' />
+                <img
+                  alt="rsa_encryption_gif"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443108/encryption_react_app_rsa_zm71g8.gif"
+                />
               </div>
               <div>
-                <img alt="rsa_encryption_image" src={RSAImage} />
+                <img
+                  alt="rsa_encryption_image"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228815/RSAPage_fgvomf.png"
+                />
               </div>
               <div>
-                <img alt="aes_encryption_image" src='https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443106/encryption_react_app_aes_iblpok.gif' />
+                <img
+                  alt="aes_encryption_gif"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443106/encryption_react_app_aes_iblpok.gif"
+                />
               </div>
               <div>
-                <img alt="aes_encryption_gif" src={AESImage} />
+                <img
+                  alt="aes_encryption_image"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228816/AESPage_hfsbt2.png"
+                />
               </div>
             </Carousel>
           </div>
