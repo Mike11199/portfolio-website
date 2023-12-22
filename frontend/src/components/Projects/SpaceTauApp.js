@@ -1,10 +1,10 @@
-import Space_Tau_1 from "../../images/space_tau_1.png";
-import Space_Tau_2 from "../../images/space_tau_2.png";
-import Space_Tau_3 from "../../images/space_tau_3.png";
-import Space_Tau_4 from "../../images/space_tau_4.png";
-import Space_Tau_5 from "../../images/space_tau_5.png";
-import Space_Tau_6 from "../../images/space_tau_6.png";
-import Space_Tau_7 from "../../images/space_tau_7.png";
+import spaceTauHomePage from "../../images/space_tau_home_page.png";
+import spaceTauSpacecraftPage from "../../images/space_tau_spacecraft_page.png";
+import spaceTauPartsPage from "../../images/space_tau_parts_page.png";
+import spaceTauIntersectionTable from "../../images/space_tau_intersection_table.png";
+import spaceTauMissionsPage from "../../images/space_tau_missions_page.png";
+import spaceTauPlanetsPage from "../../images/space_tau_planets_page.png";
+import spaceTauERDiagram from "../../images/space_tau_mysql_er_diagram.png";
 
 import GitHubLogo from "../../images/github_button_logo.png";
 import ReactPlayer from "react-player";
@@ -40,17 +40,17 @@ function useWindowSize() {
 
 const SpaceTauApp = () => {
   const { width, height } = useWindowSize();
-  let playerWidth_space_tau;
-  let playerHeight_space_tau;
+  let playerWidthSpaceTau;
+  let playerHeightSpaceTau;
 
   if (width > 600) {
-    playerWidth_space_tau = 700;
-    playerHeight_space_tau = 394;
+    playerWidthSpaceTau = 700;
+    playerHeightSpaceTau = 395;
   }
 
   if (width <= 600) {
-    playerWidth_space_tau = 280;
-    playerHeight_space_tau = 155;
+    playerWidthSpaceTau = 280;
+    playerHeightSpaceTau = 155;
   }
 
   const youtubeOptions = {
@@ -63,7 +63,6 @@ const SpaceTauApp = () => {
 
   return (
     <>
-      {/* SECTION FOR PROJECT #4 */}
       <section
         className="space_tau_section"
         style={{ margin: "0px", height: "auto" }}
@@ -102,33 +101,33 @@ const SpaceTauApp = () => {
                 showArrows="true"
               >
                 <div>
-                  <img alt="space_tau_1" src={Space_Tau_1} />
+                  <img alt="space_tau_home_page" src={spaceTauHomePage} />
                 </div>
                 <div>
-                  <img alt="space_tau_2" src={Space_Tau_2} />
+                  <img alt="space_tau_spacecraft_page" src={spaceTauSpacecraftPage} />
                 </div>
                 <div>
-                  <img alt="space_tau_3" src={Space_Tau_3} />
+                  <img alt="space_tau_parts_page" src={spaceTauPartsPage} />
                 </div>
                 <div>
-                  <img alt="space_tau_4" src={Space_Tau_4} />
+                  <img alt="space_tau_intersection_table" src={spaceTauIntersectionTable} />
                 </div>
                 <div>
-                  <img alt="space_tau_5" src={Space_Tau_5} />
+                  <img alt="space_tau_missions_page" src={spaceTauMissionsPage} />
                 </div>
                 <div>
-                  <img alt="space_tau_6" src={Space_Tau_6} />
+                  <img alt="space_tau_planets_page" src={spaceTauPlanetsPage} />
                 </div>
                 <div>
-                  <img alt="space_tau_7" src={Space_Tau_7} />
+                  <img alt="space_tau_mysql_er_diagram" src={spaceTauERDiagram} />
                 </div>
               </Carousel>
             </div>
 
             <div className="video_wrapper_ksp">
               <ReactPlayer
-                width={playerWidth_space_tau}
-                height={playerHeight_space_tau}
+                width={playerWidthSpaceTau}
+                height={playerHeightSpaceTau}
                 playing
                 url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1&frameborder=12"
                 loop={true}
