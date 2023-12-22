@@ -1,11 +1,3 @@
-import spaceTauHomePage from "../../images/space_tau_home_page.png";
-import spaceTauSpacecraftPage from "../../images/space_tau_spacecraft_page.png";
-import spaceTauPartsPage from "../../images/space_tau_parts_page.png";
-import spaceTauIntersectionTable from "../../images/space_tau_intersection_table.png";
-import spaceTauMissionsPage from "../../images/space_tau_missions_page.png";
-import spaceTauPlanetsPage from "../../images/space_tau_planets_page.png";
-import spaceTauERDiagram from "../../images/space_tau_mysql_er_diagram.png";
-
 import GitHubLogo from "../../images/github_button_logo.png";
 import ReactPlayer from "react-player";
 import { Carousel } from "react-responsive-carousel";
@@ -101,25 +93,46 @@ const SpaceTauApp = () => {
                 showArrows="true"
               >
                 <div>
-                  <img alt="space_tau_home_page" src={spaceTauHomePage} />
+                  <img
+                    alt="space_tau_home_page"
+                    src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231364/space_tau_home_page_sm0jsp.png"
+                  />
                 </div>
                 <div>
-                  <img alt="space_tau_spacecraft_page" src={spaceTauSpacecraftPage} />
+                  <img
+                    alt="space_tau_spacecraft_page"
+                    src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231367/space_tau_spacecraft_page_nzy5ym.png"
+                  />
                 </div>
                 <div>
-                  <img alt="space_tau_parts_page" src={spaceTauPartsPage} />
+                  <img
+                    alt="space_tau_parts_page"
+                    src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231366/space_tau_parts_page_tr3sgb.png"
+                  />
                 </div>
                 <div>
-                  <img alt="space_tau_intersection_table" src={spaceTauIntersectionTable} />
+                  <img
+                    alt="space_tau_intersection_table"
+                    src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231365/space_tau_intersection_table_wtg2en.png"
+                  />
                 </div>
                 <div>
-                  <img alt="space_tau_missions_page" src={spaceTauMissionsPage} />
+                  <img
+                    alt="space_tau_missions_page"
+                    src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231365/space_tau_missions_page_lrsuo5.png"
+                  />
                 </div>
                 <div>
-                  <img alt="space_tau_planets_page" src={spaceTauPlanetsPage} />
+                  <img
+                    alt="space_tau_planets_page"
+                    src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231368/space_tau_planets_page_ulinuf.png"
+                  />
                 </div>
                 <div>
-                  <img alt="space_tau_mysql_er_diagram" src={spaceTauERDiagram} />
+                  <img
+                    alt="space_tau_mysql_er_diagram"
+                    src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231361/space_tau_mysql_er_diagram_uqkbax.png"
+                  />
                 </div>
               </Carousel>
             </div>
