@@ -2,9 +2,9 @@ import { useEffect, React, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import ReactPlayer from "react-player";
 
-import HeavenlySkiResortPhoto from "../images/heavenly_ski_resort_me.jpg";
-import WinterCampingTentPhoto from "../images/tent.jpg";
-import DonnerTunnelSnowshoeingPhoto from "../images/me_ice_cave2.jpg";
+import HeavenlySkiResortPhoto from "../images/about_me_heavenly_ski_resort.jpg";
+import WinterCampingTentPhoto from "../images/about_me_tent_snow_camping.jpg";
+import DonnerTunnelSnowshoeingPhoto from "../images/about_me_snowshoe_tunnel.jpg";
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({

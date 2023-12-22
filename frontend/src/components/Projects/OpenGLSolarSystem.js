@@ -1,8 +1,3 @@
-import PlanetsAlignedImage from "../../images/PlanetsAlignedImage.png";
-import AsteroidBeltPlanetsCloseUpPhoto from "../../images/AsteroidBeltPlanetsCloseUpPhoto.png";
-import EarthCloudsImage from "../../images/EarthCloudsImage.png";
-import SolarSystemFarOut from "../../images/SolarSystemFarOut.png";
-
 import { Carousel } from "react-responsive-carousel";
 
 const handleClick = (site) => {
@@ -39,40 +34,40 @@ const OpenGLSolarSystem = () => {
             >
               <div>
                 <img
-                  alt="image_of_solar_system_jupiter_and_main_asteroid_belt"
-                  src={AsteroidBeltPlanetsCloseUpPhoto}
+                  alt="solar_system_jupiter_and_main_asteroid_belt"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229666/AsteroidBeltPlanetsCloseUpPhoto_busxio.png"
                 />
               </div>
               <div>
                 <img
-                  alt="gif_of_earth_and_moon_in_front_of_sun"
-                  src="https://github.com/Mike11199/GIFs/raw/main/EarthClouds_%20new.gif"
+                  alt="earth_system_rotation_gif_over_10MB_cloudinary_limit"
+                  src="https://github.com/Mike11199/GIFs/blob/main/earth_rotation_clouds.gif?raw=true"
                 />
               </div>
               <div>
                 <img
-                  alt="image_of_whole_solar_system_and_both_belts_from_distance"
+                  alt="solar_system_and_both_belts_from_distance_gif"
                   src={
-                    "https://github.com/Mike11199/CS-450-Computer-Graphics-GIFs/assets/91037796/65cbd665-51e0-4e54-9e95-4cfef91b79a0"
+                    "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703230118/288668401-65cbd665-51e0-4e54-9e95-4cfef91b79a0_ysic55.gif"
                   }
                 />
               </div>
               <div>
                 <img
-                  alt="close_up_of_planets_aligned_while_program_paused"
-                  src={PlanetsAlignedImage}
+                  alt="close_up_of_planets_aligned"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229665/PlanetsAlignedImage_xaiskz.png"
                 />
               </div>
               <div>
                 <img
-                  alt="image_of_moon_and_earth_orbit_static_in_front_of_sun"
-                  src={EarthCloudsImage}
+                  alt="earth_system_static_image"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229667/EarthCloudsImage_bdpfo5.png"
                 />
               </div>
               <div>
                 <img
-                  alt="image_of_solar_system_no_asteroid_belts_no_orbit_lines"
-                  src={SolarSystemFarOut}
+                  alt="solar_system_from_distance"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229662/SolarSystemFarOut_xqjery.png"
                 />
               </div>
             </Carousel>

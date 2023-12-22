@@ -1,5 +1,4 @@
 import GitHubLogo from "../../images/github_1.png";
-
 import { Carousel } from "react-responsive-carousel";
 
 const handleClick = (site) => {
