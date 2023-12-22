@@ -1,7 +1,5 @@
-import GitHubLogo from "../../images/github_1.png";
-
+import GitHubLogo from "../../images/github_button_logo.png";
 import { useEffect, React, useState } from "react";
-import { Carousel } from "react-responsive-carousel";
 import ReactPlayer from "react-player";
 
 function useWindowSize() {

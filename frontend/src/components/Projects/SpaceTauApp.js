@@ -5,11 +5,10 @@ import Space_Tau_4 from "../../images/space_tau_4.png";
 import Space_Tau_5 from "../../images/space_tau_5.png";
 import Space_Tau_6 from "../../images/space_tau_6.png";
 import Space_Tau_7 from "../../images/space_tau_7.png";
-import GitHubLogo from "../../images/github_1.png";
 
+import GitHubLogo from "../../images/github_button_logo.png";
 import ReactPlayer from "react-player";
 import { Carousel } from "react-responsive-carousel";
-
 import { useEffect, React, useState } from "react";
 
 const handleClick = (site) => {
