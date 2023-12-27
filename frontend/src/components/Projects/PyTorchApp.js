@@ -39,9 +39,7 @@ const PyTorchApp = () => {
           <button
             className="website_button"
             onClick={() =>
-              handleClick(
-                "https://www.youtube.com/watch?v=abtdBPFu_yM"
-              )
+              handleClick("https://www.youtube.com/watch?v=abtdBPFu_yM")
             }
           >
             Video
@@ -67,6 +65,13 @@ const PyTorchApp = () => {
               dynamicHeight="true"
               showArrows="true"
             >
+              <div>
+                <img
+                  alt="cats_and_dogs_image"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703657283/cats_and_dogs_lbg2bb.png"
+                />
+              </div>
+
               <div>
                 <img
                   alt="pytorch_doggo"
@@ -113,6 +118,13 @@ const PyTorchApp = () => {
                 <img
                   alt="jupyterlab_inference_custom_script"
                   src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703649642/inference_rfjxd4.png"
+                />
+              </div>
+
+              <div>
+                <img
+                  alt="front_end_and_server_code"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703657488/front_end_and_server_tpasn8.png"
                 />
               </div>
             </Carousel>
