@@ -33,18 +33,18 @@ const PyTorchApp = () => {
               src={GitHubLogo}
               alt="github logo"
             ></img>
-            Web App
+            GitHub Repo
           </button>
 
           <button
             className="website_button"
             onClick={() =>
               handleClick(
-                "https://github.com/Mike11199/PyTorch-Image-Classification/"
+                "https://www.youtube.com/watch?v=abtdBPFu_yM"
               )
             }
           >
-            PyTorch & AWS
+            Video
           </button>
 
           <button

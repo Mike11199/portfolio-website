@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 import IceCavePhoto from "../images/profile_photo_snowshoe_tunnel.png";
 import { useScroll, animated, useSpring } from "react-spring";
 import { useState } from "react";
-import Resume_PDF from "../misc/CV_Michael Iwanek_12_18_2023.pdf";
+import Resume_PDF from "../misc/CV_Michael Iwanek_12_26_2023.pdf";
 import BinaryDigit from "./BinaryDigit";
 
 const Navbar = () => {
