@@ -11,12 +11,16 @@ import PythonHashMap from "./Projects/PythonHashMap";
 import SlashUnrealEngine from "./Projects/SlashUnrealEngine";
 import KotlinAndroidProjects from "./Projects/KotlinAndroidProjects";
 import OpenGLSolarSystem from "./Projects/OpenGLSolarSystem";
+import PyTorchApp from "./Projects/PyTorchApp";
 
 const HomePage = () => {
   return (
     <>
       <div className="entire_page">
         <AboutMeSection />
+
+        {/* Project # 10 - MERN Full Stack Job Application Tracker*/}
+        <PyTorchApp />
 
         {/* Project # 1 - MERN Full Stack Rock Climbing and Ski Shop - AWS/ECS/Lambda */}
         <AlpinePeakClimbingSkiShop />

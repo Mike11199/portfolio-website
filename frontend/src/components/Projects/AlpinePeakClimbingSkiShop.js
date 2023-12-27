@@ -1,7 +1,6 @@
 import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
 
-
 const handleClick = (site) => {
   setTimeout(function () {
     window.open(site, "_blank");
@@ -12,13 +11,8 @@ const AlpinePeakClimbingSkiShop = () => {
   return (
     <>
       {/* SECTION FOR PROJECT #1 */}
-      <div id="projects_section"></div>
+
       <section className="ski_shop_section">
-        <h1 style={{ margin: "0px" }}> Projects </h1>
-        <p style={{ height: "auto", marginBottom: "100px" }}>
-          Please see full-stack Computer Science projects I've completed below,
-          in various programming languages.
-        </p>
         <h2 className="project_header">Ski & Rock Climbing E-Commerce Store</h2>
         <div className="project_buttons">
           <button
