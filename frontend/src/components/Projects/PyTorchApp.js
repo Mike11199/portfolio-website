@@ -49,7 +49,7 @@ const PyTorchApp = () => {
               src={GitHubLogo}
               alt="github logo"
             ></img>
-            PyTorch/AWS
+            PyTorch & AWS
           </button>
 
           <button
