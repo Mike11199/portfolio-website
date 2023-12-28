@@ -68,7 +68,7 @@ const PyTorchApp = () => {
               <div>
                 <img
                   alt="cats_and_dogs_image"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703657283/cats_and_dogs_lbg2bb.png"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703805806/cats_and_dogs_ezhzka.png"
                 />
               </div>
 
