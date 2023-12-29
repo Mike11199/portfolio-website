@@ -82,14 +82,14 @@ const PyTorchApp = () => {
               <div>
                 <img
                   alt="pytorch_doggo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703649156/dog_2_jlg1ct.png"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703828564/labrador_new_ogez0w.png"
                 />
               </div>
 
               <div>
                 <img
-                  alt="pytorch_cat"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703648983/image_analysis_ugjtu6.png"
+                  alt="christmas_cat"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703829374/christmas_cat_analysis_pe8sny.png"
                 />
               </div>
 
