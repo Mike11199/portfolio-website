@@ -88,6 +88,13 @@ const PyTorchApp = () => {
 
               <div>
                 <img
+                  alt="winter_traffic"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703831262/winter_traffic_analysis_caxrhm.png"
+                />
+              </div>
+
+              <div>
+                <img
                   alt="christmas_cat"
                   src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703829554/christmas_cat_analysis_zmcti1.png"
                 />
