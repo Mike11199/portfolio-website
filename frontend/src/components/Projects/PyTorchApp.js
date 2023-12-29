@@ -74,6 +74,13 @@ const PyTorchApp = () => {
 
               <div>
                 <img
+                  alt="nat_geo_collage"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703823645/nat_geo_collage_analysis_tpnipt.png"
+                />
+              </div>
+
+              <div>
+                <img
                   alt="pytorch_doggo"
                   src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703649156/dog_2_jlg1ct.png"
                 />
