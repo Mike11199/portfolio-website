@@ -89,21 +89,7 @@ const PyTorchApp = () => {
               <div>
                 <img
                   alt="christmas_cat"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703829374/christmas_cat_analysis_pe8sny.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="drag_and_drop_image"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703648977/upload_files_image_xbbnoy.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="crosswalk_multi_bbox"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703648993/cross_walk_xg7nsw.png"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703829554/christmas_cat_analysis_zmcti1.png"
                 />
               </div>
 
