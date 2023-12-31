@@ -109,38 +109,25 @@ const PyTorchApp = () => {
 
               <div>
                 <img
-                  alt="christmas_cat"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703829554/christmas_cat_analysis_zmcti1.png"
+                  alt="jupyterlab_model_load_weights"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000182/jupyter_notebook_screenshot_bear_oy8vzh.png"
                 />
               </div>
 
               <div>
                 <img
                   alt="aws_lambda_model_invoker"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703649641/lambda_invoke_model_vwiqbd.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="jupyterlab_test_of_model"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703649641/jupyter_notebook_cgnrea.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="jupyterlab_inference_custom_script"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703649642/inference_rfjxd4.png"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703998674/clean_lambda_invoker_xkcjrm.png"
                 />
               </div>
 
               <div>
                 <img
                   alt="front_end_and_server_code"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703657488/front_end_and_server_tpasn8.png"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000819/typescript_new_if4it7.png"
                 />
               </div>
+
             </Carousel>
           </div>
 
