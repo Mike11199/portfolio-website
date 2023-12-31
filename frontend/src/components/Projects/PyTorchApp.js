@@ -88,6 +88,13 @@ const PyTorchApp = () => {
 
               <div>
                 <img
+                  alt="pytorch_home_page"
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703993902/pytorch_home_page_ctk08h.png"
+                />
+              </div>
+
+              <div>
+                <img
                   alt="pytorch_doggo"
                   src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703828564/labrador_new_ogez0w.png"
                 />
