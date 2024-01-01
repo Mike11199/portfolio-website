@@ -77,12 +77,12 @@ const AboutMeSection = () => {
                 <img
                   src={DonnerTunnelSnowshoeingPhoto}
                   alt="Michael Iwanek Navbar"
-                  className="profile_photo_image_body"
+                  className="about_me_snowshoeing_photo"
                 />
                 <img
                   src={HeavenlySkiResortPhoto}
                   alt="Michael Iwanek Navbar"
-                  className="profile_photo_image_body_2"
+                  className="about_me_ski_photo"
                 />
               </div>
               <img
