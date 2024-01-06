@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface BinaryDigitProps {
   content: string;
 }
 
 const BinaryDigit = ({ content }: BinaryDigitProps) => {
-
-  const randomTime = Math.floor(Math.random() * 5000) + 2000;
   const [isVisible, setIsVisible] = useState(true);
 
-  setTimeout(() => {
-    setIsVisible(!isVisible);
-  }, randomTime);
+  useEffect(() => {
+    const randomTime = Math.random() * 5000 + 50;
+
+    const timer = setTimeout(() => {
+      setIsVisible(!isVisible);
+    }, randomTime);
+
+    return () => clearTimeout(timer);
+  }, [isVisible]);
 
   return (
     <div className={`fade-in-out ${isVisible ? "visible" : "hidden"}`}>
