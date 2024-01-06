@@ -10,7 +10,7 @@
 ## EC2 Instance Link
 
 - Elastic IP
-  - http://54.183.166.208/ 
+  - http://54.183.166.208/
   - This is HTTP unlike the AWS EC2/Heroku links.
 
 <br/>

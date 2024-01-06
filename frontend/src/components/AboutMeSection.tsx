@@ -93,7 +93,7 @@ const AboutMeSection = () => {
             </div>
 
             <div className="about_me_text">
-              <p>Hey there!</p>
+              <p>Hello!</p>
               <p>
                 I'm Michael Iwanek and this is my portfolio website to showcase
                 projects I've completed for personal learning and development.
