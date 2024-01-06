@@ -1,6 +1,6 @@
 import { Carousel } from "react-responsive-carousel";
 
-const handleClick = (site) => {
+const handleClick = (site: string) => {
   setTimeout(function () {
     window.open(site, "_blank");
   }, 130);
@@ -28,9 +28,9 @@ const OpenGLSolarSystem = () => {
           <div className="hash_map_carousel">
             <Carousel
               width="100%"
-              infiniteLoop="true"
-              dynamicHeight="true"
-              showArrows="true"
+              infiniteLoop={true}
+              dynamicHeight={true}
+              showArrows={true}
             >
               <div>
                 <img

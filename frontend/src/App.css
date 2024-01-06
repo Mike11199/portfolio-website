@@ -916,3 +916,16 @@ li {
     list-style-position: inside;
   }
 }
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4f1616; /* Dark mode scrollbar thumb color */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #3d3939; /* Dark mode scrollbar track color */
+}

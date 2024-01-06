@@ -1,7 +1,7 @@
 import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
 
-const handleClick = (site) => {
+const handleClick = (site: string) => {
   setTimeout(function () {
     window.open(site, "_blank");
   }, 130);
@@ -45,9 +45,9 @@ const ApplyYourSelfJobTracker = () => {
           <div className="carousel_apply_yourself">
             <Carousel
               width="100%"
-              infiniteLoop="true"
-              dynamicHeight="true"
-              showArrows="true"
+              infiniteLoop={true}
+              dynamicHeight={true}
+              showArrows={true}
             >
               <div>
                 <img

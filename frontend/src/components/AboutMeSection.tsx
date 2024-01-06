@@ -1,4 +1,4 @@
-import { useEffect, React, useState } from "react";
+import { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import ReactPlayer from "react-player";
 
@@ -27,7 +27,7 @@ function useWindowSize() {
 }
 
 const AboutMeSection = () => {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
 
   let playerWidthClimbing;
   let playerHeightClimbing;

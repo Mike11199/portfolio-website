@@ -1,7 +1,7 @@
 import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
 
-const handleClick = (site) => {
+const handleClick = (site: string) => {
   setTimeout(function () {
     window.open(site, "_blank");
   }, 130);
@@ -48,7 +48,7 @@ const RSAEncryptionApp = () => {
 
         <div className="project_card_rsa_encryption">
           <div className="carousel_rsa_encryption">
-            <Carousel width="100%" infiniteLoop="true">
+            <Carousel width="100%" infiniteLoop={true}>
               <div>
                 <img
                   alt="rsa_encryption_gif"

@@ -1,7 +1,7 @@
 import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
 
-const handleClick = (site) => {
+const handleClick = (site: string) => {
   setTimeout(function () {
     window.open(site, "_blank");
   }, 130);
@@ -10,8 +10,6 @@ const handleClick = (site) => {
 const AlpinePeakClimbingSkiShop = () => {
   return (
     <>
-      {/* SECTION FOR PROJECT #1 */}
-
       <section className="ski_shop_section">
         <h2 className="project_header">Ski & Rock Climbing E-Commerce Store</h2>
         <div className="project_buttons">
@@ -49,7 +47,7 @@ const AlpinePeakClimbingSkiShop = () => {
         </div>
         <div className="project_card_ski_shop">
           <div className="carousel_ski_shop">
-            <Carousel width="100%" infiniteLoop="true">
+            <Carousel width="100%" infiniteLoop={true}>
               <div>
                 <img
                   alt="login_page_photo"

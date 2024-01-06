@@ -1,9 +1,9 @@
 import GitHubLogo from "../../images/github_button_logo.png";
 import ReactPlayer from "react-player";
 import { Carousel } from "react-responsive-carousel";
-import { useEffect, React, useState } from "react";
+import { useEffect, useState } from "react";
 
-const handleClick = (site) => {
+const handleClick = (site: string) => {
   setTimeout(function () {
     window.open(site, "_blank");
   }, 130);
@@ -31,7 +31,7 @@ function useWindowSize() {
 }
 
 const SpaceTauApp = () => {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
   let playerWidthSpaceTau;
   let playerHeightSpaceTau;
 
@@ -88,9 +88,9 @@ const SpaceTauApp = () => {
             <div className="space_tau_carousel">
               <Carousel
                 width="100%"
-                infiniteLoop="true"
-                dynamicHeight="true"
-                showArrows="true"
+                infiniteLoop={true}
+                dynamicHeight={true}
+                showArrows={true}
               >
                 <div>
                   <img

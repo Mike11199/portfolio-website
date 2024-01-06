@@ -1,7 +1,7 @@
 import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
 
-const handleClick = (site) => {
+const handleClick = (site: string) => {
   setTimeout(function () {
     window.open(site, "_blank");
   }, 130);
@@ -47,9 +47,9 @@ const KotlinAndroidProjects = () => {
           <div className="kotlin_carousel_container">
             <Carousel
               className="kotlin_carousel"
-              infiniteLoop="true"
+              infiniteLoop={true}
               dynamicHeight={true}
-              showArrows="true"
+              showArrows={true}
               showThumbs={false}
             >
               <div>
@@ -58,15 +58,16 @@ const KotlinAndroidProjects = () => {
                   src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442796/android_kotlin_sacramento_app_fdubuz.gif"
                 />
               </div>
+              <div></div>
             </Carousel>
           </div>
 
           <div className="kotlin_carousel_container">
             <Carousel
               className="kotlin_carousel"
-              infiniteLoop="true"
+              infiniteLoop={true}
               dynamicHeight={true}
-              showArrows="true"
+              showArrows={true}
               showThumbs={false}
             >
               <div>
@@ -75,6 +76,7 @@ const KotlinAndroidProjects = () => {
                   src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442786/android_kotlin_flight_search_fu06fc.gif"
                 />
               </div>
+              <div></div>
             </Carousel>
           </div>
 

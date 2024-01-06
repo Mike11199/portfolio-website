@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import IceCavePhoto from "../images/profile_photo_snowshoe_tunnel.png";
-import { useScroll, animated, useSpring } from "react-spring";
-import { useState } from "react";
+import { useScroll, animated } from '@react-spring/web';
 import Resume_PDF from "../misc/CV_Michael Iwanek_12_30_2023.pdf";
 import BinaryDigit from "./BinaryDigit";
+import { useState } from "react";
 
 const Navbar = () => {
   const [scrollVal, setScrollVal] = useState(0);
-  const { scrollYProgress } = useScroll({
+  useScroll({
     onChange: ({ value: { scrollYProgress } }) => {
       setScrollVal(scrollYProgress * 100);
     },
   });
+
 
   const handleContactClick = () => {
     window.open("https://www.linkedin.com/in/michael-iwanek/", "_blank");
@@ -35,7 +36,7 @@ const Navbar = () => {
             position: "absolute",
             top: "100%",
             left: 0,
-            transform: `scaleX(${scrollVal})`,
+            transform: `scaleX(${scrollVal })`,
             background: "darkred",
             height: "5px",
             width: "2%",
@@ -78,7 +79,7 @@ const Navbar = () => {
         >
           Resume
         </Link>
-        <Link className="navbar_link" onClick={handleContactClick}>
+        <Link to="/" className="navbar_link" onClick={handleContactClick}>
           Contact
         </Link>
       </div>

@@ -1,5 +1,5 @@
 import GitHubLogo from "../../images/github_button_logo.png";
-import { useEffect, React, useState } from "react";
+import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 
 function useWindowSize() {
@@ -31,43 +31,30 @@ const youtubeOptions = {
   },
 };
 
-const handleClick = (site) => {
+const handleClick = (site: string) => {
   setTimeout(function () {
     window.open(site, "_blank");
   }, 130);
 };
 
 const SmallShellProject = () => {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
 
-  let playerWidth_Climbing;
-  let playerHeight_Climbing;
-  let playerWidth_smallsh;
-  let playerHeight_smallsh;
-  let playerWidth_space_tau;
-  let playerHeight_space_tau;
+  let playerWidthSmallShell = 1080;
+  let playerHeightSmallShell = 610;
 
   if (width > 600) {
-    playerWidth_Climbing = 400;
-    playerHeight_Climbing = 710;
-    playerWidth_smallsh = 1080;
-    playerHeight_smallsh = 607;
-    playerWidth_space_tau = 700;
-    playerHeight_space_tau = 394;
+    playerWidthSmallShell = 1080;
+    playerHeightSmallShell = 610;
   }
 
   if (width <= 600) {
-    playerWidth_Climbing = 250;
-    playerHeight_Climbing = 441;
-    playerWidth_smallsh = 240;
-    playerHeight_smallsh = 135;
-    playerWidth_space_tau = 280;
-    playerHeight_space_tau = 155;
+    playerWidthSmallShell = 240;
+    playerHeightSmallShell = 135;
   }
 
   return (
     <>
-      {/* SECTION FOR PROJECT #5 */}
       <section className="smallsh_section">
         <h2 className="project_header">Small Shell (smallsh) - C Unix Shell</h2>
         <div className="project_buttons">
@@ -84,15 +71,12 @@ const SmallShellProject = () => {
             ></img>
             GitHub Link
           </button>
-          {/* <button className="website_button" onClick={() => handleClick("https://spacetau.herokuapp.com/")}>
-              Live Website Link
-            </button> */}
         </div>
         <div className="project_card_smallsh">
           <div className="video_wrapper_smallsh">
             <ReactPlayer
-              width={playerWidth_smallsh}
-              height={playerHeight_smallsh}
+              width={playerWidthSmallShell}
+              height={playerHeightSmallShell}
               playing
               url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1&frameborder=12"
               loop={true}
