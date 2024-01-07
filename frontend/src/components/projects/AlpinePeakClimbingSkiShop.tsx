@@ -38,7 +38,7 @@ const AlpinePeakClimbingSkiShop = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_description_ski_shop">
+          <div className="text_wrapper">
             <ul>
               <li>
                 A complex full-stack website (e.g - REI/Amazon clone) where

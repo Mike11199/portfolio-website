@@ -38,7 +38,7 @@ const ApplyYourSelfJobTracker = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_apply_your_self">
+          <div className="text_wrapper">
             <ul>
               <li>
                 Full-stack MERN web application that allows multiple users to

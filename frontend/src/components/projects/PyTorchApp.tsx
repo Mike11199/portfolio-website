@@ -7,7 +7,7 @@ import { PyTorchImages } from "../../images/imageData.json";
 const PyTorchApp = () => {
   return (
     <>
-      <section id="hash_map_section">
+      <section className="hash_map_section">
         <div id="projects_section"></div>
         <h1 style={{ margin: "0px" }}> Projects </h1>
         <p style={{ height: "auto", marginBottom: "100px" }}>
@@ -51,7 +51,7 @@ const PyTorchApp = () => {
           </div>
 
           {/* Text Description */}
-          <div className="hash_map_text">
+          <div className="text_wrapper">
             <ul>
               <li>
                 A full stack project involving a deployed PyTorch

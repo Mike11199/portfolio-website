@@ -35,8 +35,7 @@ const AboutMeSection = () => {
   if (width > 600) {
     playerWidthClimbing = 400;
     playerHeightClimbing = 710;
-  }
-  else {
+  } else {
     playerWidthClimbing = 250;
     playerHeightClimbing = 440;
   }
@@ -92,7 +91,7 @@ const AboutMeSection = () => {
               />
             </div>
 
-            <div className="about_me_text">
+            <div className="text_wrapper_about_me">
               <p>Hello!</p>
               <p>
                 I'm Michael Iwanek and this is my portfolio website to showcase

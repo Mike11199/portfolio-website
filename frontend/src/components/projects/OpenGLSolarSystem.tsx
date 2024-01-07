@@ -6,7 +6,7 @@ import { solarSystemImages } from "../../images/imageData.json";
 const OpenGLSolarSystem = () => {
   return (
     <>
-      <section id="kotlin_section">
+      <section className="kotlin_section">
         <h2 className="project_header">OpenGL C++ Solar System Model</h2>
 
         {/* Buttons */}
@@ -32,7 +32,7 @@ const OpenGLSolarSystem = () => {
           </div>
 
           {/* Text Description */}
-          <div className="hash_map_text">
+          <div className="text_wrapper">
             <ul>
               <li>
                 A Solar System model coded in C++ using OpenGL, featuring GLSL

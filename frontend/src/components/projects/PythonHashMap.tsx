@@ -6,7 +6,7 @@ import { hashMapImages } from "../../images/imageData.json";
 const PythonHashMap = () => {
   return (
     <>
-      <section id="hash_map_section">
+      <section className="hash_map_section">
         <h2 className="project_header">
           Hash Map Data Structure Implementation - Python
         </h2>
@@ -32,7 +32,7 @@ const PythonHashMap = () => {
           </div>
 
           {/* Text Description */}
-          <div className="hash_map_text">
+          <div className="text_wrapper">
             <ul>
               <li>
                 This is the portfolio project for the Oregon State University

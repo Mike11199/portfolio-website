@@ -5,7 +5,7 @@ import ButtonLink from "../utils/ButtonLink";
 const KotlinAndroidProjects = () => {
   return (
     <>
-      <section id="kotlin_section">
+      <section className="kotlin_section">
         <h2 className="project_header">
           Kotlin (Jetpack Compose) - Sacramento City and Flight Search App
         </h2>
@@ -63,7 +63,7 @@ const KotlinAndroidProjects = () => {
           </div>
 
           {/* Text Description  */}
-          <div className="hash_map_text">
+          <div className="text_wrapper">
             <ul>
               <li>
                 These are two applications from the Oregon State University

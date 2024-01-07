@@ -102,7 +102,7 @@ const SpaceTauApp = () => {
           </div>
 
           {/* Text Description */}
-          <div className="space_tau_description">
+          <div className="text_wrapper">
             <ul>
               <li>
                 Project programmed in Flask to run Python in a back-end server

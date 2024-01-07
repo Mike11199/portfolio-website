@@ -1,3 +1,48 @@
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4f1616; /* Dark mode scrollbar thumb color */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #3d3939; /* Dark mode scrollbar track color */
+}
+
+.text_wrapper {
+  width: 30%;
+  height: fit-content;
+  margin-left: 5%;
+  margin-right: 2%;
+  display: flex;
+  justify-content: center;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  padding-top: 2rem;
+  margin-bottom: 5rem;
+  background: #191c29;
+  border-radius: 6px;
+  border: 2px solid rgba(56, 128, 62, 0.849);
+  color: rgb(25, 212, 88);
+  background-image: linear-gradient(#000000, #111e2b 30%, #000000);
+}
+
+.text_wrapper_about_me {
+  height: fit-content;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  margin-left: 1rem;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  background: #191c29;
+  border-radius: 6px;
+  border: 2px solid rgba(56, 128, 62, 0.849);
+  color: rgb(25, 212, 88);
+  background-image: linear-gradient(#000000, #111e2b 30%, #000000);
+}
+
 .video_button {
   font-family: "Segoe UI";
   font-weight: 500;
@@ -84,11 +129,6 @@ ul > li > ul > li {
 }
 
 .space_tau_description {
-  padding-left: 5%;
-  width: 30%;
-}
-
-.hash_map_text {
   padding-left: 5%;
   width: 30%;
 }
@@ -260,6 +300,7 @@ ul > li > ul > li {
 }
 
 body {
+  background: #212534;
   width: 100% !important;
   box-sizing: border-box;
   position: relative;
@@ -285,6 +326,7 @@ html {
   height: 6vh;
   border-radius: 200px;
   margin-left: 2vh;
+  margin-right: 3vh;
 }
 
 .bottom_footer {
@@ -296,7 +338,7 @@ html {
   height: 100px;
 }
 
-#hash_map_section {
+.hash_map_section {
   background-image: linear-gradient(
     to top,
     #000000 0%,
@@ -312,7 +354,7 @@ html {
   padding-top: 40px;
 }
 
-#kotlin_section {
+.kotlin_section {
   background-image: linear-gradient(
     to top,
     #290e5b 0%,
@@ -321,7 +363,7 @@ html {
   );
   color: white;
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
-  min-height: fit-content;
+  min-height: auto;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
@@ -378,11 +420,6 @@ html {
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 100px;
-}
-
-p {
-  margin: "0px";
-  padding-left: 50px;
 }
 
 .project_card {
@@ -474,7 +511,6 @@ p {
 
 ul {
   list-style-type: square;
-  margin-left: 20px;
   height: auto;
 }
 
@@ -561,6 +597,7 @@ li {
     flex-direction: column;
     width: 100%;
     padding-left: 0px;
+    padding-right: 0px;
   }
 
   .project_card_space_tau {
@@ -616,8 +653,8 @@ li {
     margin-top: 0px;
     padding-top: 20px;
     padding-bottom: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .player-wrapper {
@@ -645,6 +682,7 @@ li {
   }
 
   body {
+    background: #212534;
     width: 100% !important;
     box-sizing: border-box;
     position: relative;
@@ -715,16 +753,12 @@ li {
   .project_card_ski_shop {
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   .project_card_smallsh {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
     margin-bottom: 10px;
   }
 
@@ -732,8 +766,6 @@ li {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   img {
@@ -838,8 +870,8 @@ li {
 
   .ski_shop_section {
     padding-top: 40px;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   ul {
@@ -848,28 +880,44 @@ li {
   }
 
   .apply_yourself_section {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   .rsa_section {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   .space_tau_section {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   .smallsh_section {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
-  #hash_map_section {
-    padding-right: 40px;
-    padding-left: 40px;
+  .hash_map_section {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .kotlin_section {
+    background-image: linear-gradient(
+      to top,
+      #290e5b 0%,
+      #290e5b 50%,
+      rgb(0, 0, 0) 100%
+    );
+    color: white;
+    box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
+    min-height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    padding-top: 40px;
   }
 
   .video_wrapper_smallsh {
@@ -906,6 +954,17 @@ li {
     align-self: center !important;
   }
 
+  li {
+    list-style-position: inside;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  p {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
   ul > li > ul > li {
     margin-top: 10px;
     padding-left: 20px;
@@ -915,17 +974,34 @@ li {
   ul > li > ul {
     list-style-position: inside;
   }
-}
 
-::-webkit-scrollbar {
-  width: 14px;
-}
+  .text_wrapper {
+    width: 100%;
+    height: fit-content;
+    margin-left: 0%;
+    margin-right: 0%;
+    display: flex;
+    justify-content: center;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    padding-top: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 0%;
+    margin-right: 0%;
+    display: flex;
+    justify-content: center;
 
-::-webkit-scrollbar-thumb {
-  background-color: #4f1616; /* Dark mode scrollbar thumb color */
-  border-radius: 6px;
-}
+  }
 
-::-webkit-scrollbar-track {
-  background-color: #3d3939; /* Dark mode scrollbar track color */
+  .text_wrapper_about_me {
+    width: 100%;
+    height: fit-content;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    padding-top: 30px;
+    margin-left: 0rem;
+    padding-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }

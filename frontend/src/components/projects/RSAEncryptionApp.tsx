@@ -38,7 +38,7 @@ const RSAEncryptionApp = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_description_rsa">
+          <div className="text_wrapper">
             <ul>
               <li>
                 Developed an Electron.js (local exe) and web application to
@@ -71,7 +71,7 @@ const RSAEncryptionApp = () => {
               </li>
             </ul>
           </div>
-        </div>
+         </div>
       </section>
     </>
   );

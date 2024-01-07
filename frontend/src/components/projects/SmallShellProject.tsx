@@ -77,7 +77,7 @@ const SmallShellProject = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_description_smallsh">
+          <div className="text_wrapper">
             <ul>
               <li>
                 Programmed a shell in C similar to the BASH shell, implementing

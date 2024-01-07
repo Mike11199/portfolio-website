@@ -6,7 +6,7 @@ import { unrealEngineImages } from "../../images/imageData.json";
 const SlashUnrealEngine = () => {
   return (
     <>
-      <section id="hash_map_section">
+      <section className="hash_map_section">
         <h2 className="project_header">C++ Unreal Engine Project Slash</h2>
 
         {/* Buttons */}
@@ -30,7 +30,7 @@ const SlashUnrealEngine = () => {
           </div>
 
           {/* Text Description */}
-          <div className="hash_map_text">
+          <div className="text_wrapper">
             <ul>
               <li>
                 A project I'm doing for fun from a Udemy course - still in
