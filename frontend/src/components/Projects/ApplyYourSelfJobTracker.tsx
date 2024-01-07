@@ -1,11 +1,6 @@
-import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
-
-const handleClick = (site: string) => {
-  setTimeout(function () {
-    window.open(site, "_blank");
-  }, 130);
-};
+import GitHubButton from "../utils/GitHubButton";
+import ButtonLink from "../utils/ButtonLink";
 
 const ApplyYourSelfJobTracker = () => {
   return (
@@ -15,30 +10,16 @@ const ApplyYourSelfJobTracker = () => {
           applyYourSelf Job Application Tracker
         </h2>
 
+        {/* Buttons */}
         <div className="project_buttons">
-          <button
-            className="github_button"
-            onClick={() =>
-              handleClick(
-                "https://github.com/Mike11199/applyYourSelf-Job-Tracker"
-              )
-            }
-          >
-            <img
-              className="github_logo"
-              src={GitHubLogo}
-              alt="github logo"
-            ></img>
-            GitHub Link
-          </button>
-          <button
-            className="website_button"
-            onClick={() =>
-              handleClick("https://applyyourself-tracker-prod.herokuapp.com")
-            }
-          >
-            Live Website Link
-          </button>
+          <GitHubButton
+            URL={"https://github.com/Mike11199/applyYourSelf-Job-Tracker"}
+          />
+          <ButtonLink
+            URL={"https://applyyourself-tracker-prod.herokuapp.com"}
+            variant={"blue"}
+            buttonText={"Live Website Link"}
+          />
         </div>
 
         <div className="project_card_apply_yourself">

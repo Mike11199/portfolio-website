@@ -1,37 +1,19 @@
-import GitHubLogo from "../../images/github_button_logo.png";
+import GitHubButton from "../utils/GitHubButton";
 import { Carousel } from "react-responsive-carousel";
-
-const handleClick = (site: string) => {
-  setTimeout(function () {
-    window.open(site, "_blank");
-  }, 130);
-};
 
 const PythonHashMap = () => {
   return (
     <>
-      {/* SECTION FOR PROJECT #6 */}
       <section id="hash_map_section">
         <h2 className="project_header">
           Hash Map Data Structure Implementation - Python
         </h2>
 
+        {/* Buttons */}
         <div className="project_buttons">
-          <button
-            className="github_button"
-            onClick={() =>
-              handleClick(
-                "https://github.com/Mike11199/HashMap-Python-Implementation"
-              )
-            }
-          >
-            <img
-              className="github_logo"
-              src={GitHubLogo}
-              alt="github logo"
-            ></img>
-            GitHub Link
-          </button>
+          <GitHubButton
+            URL={"https://github.com/Mike11199/HashMap-Python-Implementation"}
+          />
         </div>
 
         <div className="project_card_hash_map">

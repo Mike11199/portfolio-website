@@ -1,11 +1,6 @@
-import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
-
-const handleClick = (site: string) => {
-  setTimeout(function () {
-    window.open(site, "_blank");
-  }, 130);
-};
+import GitHubButton from "../utils/GitHubButton";
+import ButtonLink from "../utils/ButtonLink";
 
 const KotlinAndroidProjects = () => {
   return (
@@ -18,29 +13,16 @@ const KotlinAndroidProjects = () => {
 
         {/* Buttons */}
         <div className="project_buttons">
-          <button
-            className="github_button"
-            onClick={() =>
-              handleClick(
-                "https://github.com/Mike11199/CS-492-Assignment-5-Flight-Search-App"
-              )
+          <GitHubButton
+            URL={
+              "https://github.com/Mike11199/CS-492-Assignment-5-Flight-Search-App"
             }
-          >
-            <img
-              className="github_logo"
-              src={GitHubLogo}
-              alt="github logo"
-            ></img>
-            GitHub Link
-          </button>
-          <button
-            className="video_button"
-            onClick={() =>
-              handleClick("https://www.youtube.com/watch?v=hwGGgglHlus")
-            }
-          >
-            Video Link
-          </button>
+          />
+          <ButtonLink
+            URL={"https://www.youtube.com/watch?v=hwGGgglHlus"}
+            variant={"red"}
+            buttonText={"Video Link"}
+          />
         </div>
 
         <div className="project_card_hash_map" style={{ marginTop: "50px" }}>

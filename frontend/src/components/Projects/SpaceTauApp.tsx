@@ -1,13 +1,8 @@
-import GitHubLogo from "../../images/github_button_logo.png";
 import ReactPlayer from "react-player";
 import { Carousel } from "react-responsive-carousel";
 import { useEffect, useState } from "react";
-
-const handleClick = (site: string) => {
-  setTimeout(function () {
-    window.open(site, "_blank");
-  }, 130);
-};
+import GitHubButton from "../utils/GitHubButton";
+import ButtonLink from "../utils/ButtonLink";
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
@@ -60,29 +55,21 @@ const SpaceTauApp = () => {
         style={{ margin: "0px", height: "auto" }}
       >
         <h2 className="project_header"> SpaceTau-Flask-and-MySQL-App</h2>
+
+        {/* Buttons */}
         <div className="project_buttons">
-          <button
-            className="github_button"
-            onClick={() =>
-              handleClick(
-                "https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340"
-              )
+          <GitHubButton
+            URL={
+              "https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340"
             }
-          >
-            <img
-              className="github_logo"
-              src={GitHubLogo}
-              alt="github logo"
-            ></img>
-            GitHub Link
-          </button>
-          <button
-            className="website_button"
-            onClick={() => handleClick("https://spacetau.herokuapp.com/")}
-          >
-            Live Website Link
-          </button>
+          />
+          <ButtonLink
+            URL={"https://spacetau.herokuapp.com/"}
+            variant={"blue"}
+            buttonText={"Live Website Link"}
+          />
         </div>
+
         <div className="project_1_main_div">
           <div className="space_tau_carousel_and_video">
             <div className="space_tau_carousel">

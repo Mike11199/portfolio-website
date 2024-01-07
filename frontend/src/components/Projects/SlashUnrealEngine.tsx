@@ -1,11 +1,5 @@
-import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
-
-const handleClick = (site: string) => {
-  setTimeout(function () {
-    window.open(site, "_blank");
-  }, 130);
-};
+import GitHubButton from "../utils/GitHubButton";
 
 const SlashUnrealEngine = () => {
   return (
@@ -13,20 +7,11 @@ const SlashUnrealEngine = () => {
       <section id="hash_map_section">
         <h2 className="project_header">C++ Unreal Engine Project Slash</h2>
 
+        {/* Buttons */}
         <div className="project_buttons">
-          <button
-            className="github_button"
-            onClick={() =>
-              handleClick("https://github.com/Mike11199/unreal-project-slash")
-            }
-          >
-            <img
-              className="github_logo"
-              src={GitHubLogo}
-              alt="github logo"
-            ></img>
-            GitHub Link
-          </button>
+          <GitHubButton
+            URL={"https://github.com/Mike11199/unreal-project-slash"}
+          />
         </div>
 
         <div className="project_card_hash_map">

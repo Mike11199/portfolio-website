@@ -1,11 +1,6 @@
-import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
-
-const handleClick = (site: string) => {
-  setTimeout(function () {
-    window.open(site, "_blank");
-  }, 130);
-};
+import GitHubButton from "../utils/GitHubButton";
+import ButtonLink from "../utils/ButtonLink";
 
 const RSAEncryptionApp = () => {
   return (
@@ -17,33 +12,19 @@ const RSAEncryptionApp = () => {
 
         {/* Buttons */}
         <div className="project_buttons">
-          <button
-            className="github_button"
-            onClick={() =>
-              handleClick("https://github.com/Mike11199/CS-361-RSA-React-App")
-            }
-          >
-            <img
-              className="github_logo"
-              src={GitHubLogo}
-              alt="github logo"
-            ></img>
-            GitHub Link
-          </button>
-          <button
-            className="website_button"
-            onClick={() => handleClick("https://rsa-react-app.herokuapp.com/")}
-          >
-            Live Website Link
-          </button>
-          <button
-            className="video_button"
-            onClick={() =>
-              handleClick("https://www.youtube.com/watch?v=MQKmV63Wfbk")
-            }
-          >
-            Video Link
-          </button>
+          <GitHubButton
+            URL={"https://github.com/Mike11199/CS-361-RSA-React-App"}
+          />
+          <ButtonLink
+            URL={"https://rsa-react-app.herokuapp.com/"}
+            variant={"blue"}
+            buttonText={"Live Website Link"}
+          />
+          <ButtonLink
+            URL={"https://www.youtube.com/watch?v=MQKmV63Wfbk"}
+            variant={"red"}
+            buttonText={"Video Link"}
+          />
         </div>
 
         <div className="project_card_rsa_encryption">

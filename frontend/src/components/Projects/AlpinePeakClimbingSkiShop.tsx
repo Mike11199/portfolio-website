@@ -1,50 +1,32 @@
-import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
-
-const handleClick = (site: string) => {
-  setTimeout(function () {
-    window.open(site, "_blank");
-  }, 130);
-};
+import GitHubButton from "../utils/GitHubButton";
+import ButtonLink from "../utils/ButtonLink";
 
 const AlpinePeakClimbingSkiShop = () => {
   return (
     <>
       <section className="ski_shop_section">
         <h2 className="project_header">Ski & Rock Climbing E-Commerce Store</h2>
+
+        {/* Buttons */}
         <div className="project_buttons">
-          <button
-            className="github_button"
-            onClick={() =>
-              handleClick(
-                "https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack"
-              )
+          <GitHubButton
+            URL={
+              "https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack"
             }
-          >
-            <img
-              className="github_logo"
-              src={GitHubLogo}
-              alt="github logo"
-            ></img>
-            GitHub Link
-          </button>
-          <button
-            className="website_button"
-            onClick={() =>
-              handleClick("https://alpine-peak-climbing-ski-gear.com/")
-            }
-          >
-            Link - AWS ECS Domain
-          </button>
-          <button
-            className="video_button"
-            onClick={() =>
-              handleClick("https://recreational-equipment-shop.herokuapp.com/")
-            }
-          >
-            Alt Link - Heroku (Old)
-          </button>
+          />
+          <ButtonLink
+            URL={"https://alpine-peak-climbing-ski-gear.com/"}
+            variant={"blue"}
+            buttonText={"Link - AWS ECS Domain"}
+          />
+          <ButtonLink
+            URL={"https://recreational-equipment-shop.herokuapp.com/"}
+            variant={"red"}
+            buttonText={"Alt Link - Heroku (Old)"}
+          />
         </div>
+
         <div className="project_card_ski_shop">
           <div className="carousel_ski_shop">
             <Carousel width="100%" infiniteLoop={true}>

@@ -1,15 +1,15 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import AboutMeSection from "./AboutMeSection";
-import AlpinePeakClimbingSkiShop from "./Projects/AlpinePeakClimbingSkiShop";
-import ApplyYourSelfJobTracker from "./Projects/ApplyYourSelfJobTracker";
-import RSAEncryptionApp from "./Projects/RSAEncryptionApp";
-import SpaceTauApp from "./Projects/SpaceTauApp";
-import SmallShellProject from "./Projects/SmallShellProject";
-import PythonHashMap from "./Projects/PythonHashMap";
-import SlashUnrealEngine from "./Projects/SlashUnrealEngine";
-import KotlinAndroidProjects from "./Projects/KotlinAndroidProjects";
-import OpenGLSolarSystem from "./Projects/OpenGLSolarSystem";
-import PyTorchApp from "./Projects/PyTorchApp";
+import AlpinePeakClimbingSkiShop from "./projects/AlpinePeakClimbingSkiShop";
+import ApplyYourSelfJobTracker from "./projects/ApplyYourSelfJobTracker";
+import RSAEncryptionApp from "./projects/RSAEncryptionApp";
+import SpaceTauApp from "./projects/SpaceTauApp";
+import SmallShellProject from "./projects/SmallShellProject";
+import PythonHashMap from "./projects/PythonHashMap";
+import SlashUnrealEngine from "./projects/SlashUnrealEngine";
+import KotlinAndroidProjects from "./projects/KotlinAndroidProjects";
+import OpenGLSolarSystem from "./projects/OpenGLSolarSystem";
+import PyTorchApp from "./projects/PyTorchApp";
 
 const HomePage = () => {
   return (

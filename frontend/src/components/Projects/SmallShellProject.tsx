@@ -1,6 +1,6 @@
-import GitHubLogo from "../../images/github_button_logo.png";
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
+import GitHubButton from "../utils/GitHubButton";
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
@@ -31,12 +31,6 @@ const youtubeOptions = {
   },
 };
 
-const handleClick = (site: string) => {
-  setTimeout(function () {
-    window.open(site, "_blank");
-  }, 130);
-};
-
 const SmallShellProject = () => {
   const { width } = useWindowSize();
 
@@ -57,21 +51,14 @@ const SmallShellProject = () => {
     <>
       <section className="smallsh_section">
         <h2 className="project_header">Small Shell (smallsh) - C Unix Shell</h2>
+
+        {/* Buttons */}
         <div className="project_buttons">
-          <button
-            className="github_button"
-            onClick={() =>
-              handleClick("https://github.com/Mike11199/CS-344-Small-Shell")
-            }
-          >
-            <img
-              className="github_logo"
-              src={GitHubLogo}
-              alt="github logo"
-            ></img>
-            GitHub Link
-          </button>
+          <GitHubButton
+            URL={"https://github.com/Mike11199/CS-344-Small-Shell"}
+          />
         </div>
+
         <div className="project_card_smallsh">
           <div className="video_wrapper_smallsh">
             <ReactPlayer

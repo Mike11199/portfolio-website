@@ -1,11 +1,6 @@
-import GitHubLogo from "../../images/github_button_logo.png";
 import { Carousel } from "react-responsive-carousel";
-
-const handleClick = (site: string) => {
-  setTimeout(function () {
-    window.open(site, "_blank");
-  }, 130);
-};
+import GitHubButton from "../utils/GitHubButton";
+import ButtonLink from "../utils/ButtonLink";
 
 const PyTorchApp = () => {
   return (
@@ -19,42 +14,25 @@ const PyTorchApp = () => {
         </p>
         <h2 className="project_header">PyTorch Image Classification Website</h2>
 
+        {/* Buttons */}
         <div className="project_buttons">
-          <button
-            className="github_button"
-            onClick={() =>
-              handleClick(
-                "https://github.com/Mike11199/PyTorch-Image-Classification-TypeScript/tree/main"
-              )
+          <GitHubButton
+            URL={
+              "https://github.com/Mike11199/PyTorch-Image-Classification-TypeScript"
             }
-          >
-            <img
-              className="github_logo"
-              src={GitHubLogo}
-              alt="github logo"
-            ></img>
-            GitHub Repo
-          </button>
-
-          <button
-            className="website_button"
-            onClick={() =>
-              handleClick("https://www.youtube.com/watch?v=abtdBPFu_yM")
+          />
+          <ButtonLink
+            URL={"https://www.youtube.com/watch?v=abtdBPFu_yM"}
+            variant={"blue"}
+            buttonText={"Video"}
+          />
+          <ButtonLink
+            URL={
+              "https://pytorch-image-model-aws-app-727fe8e23222.herokuapp.com/"
             }
-          >
-            Video
-          </button>
-
-          <button
-            className="video_button"
-            onClick={() =>
-              handleClick(
-                "https://pytorch-image-model-aws-app-727fe8e23222.herokuapp.com/"
-              )
-            }
-          >
-            Live Website
-          </button>
+            variant={"red"}
+            buttonText={"Live Website"}
+          />
         </div>
 
         <div className="project_card_hash_map">
