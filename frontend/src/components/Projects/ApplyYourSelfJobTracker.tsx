@@ -1,6 +1,30 @@
 import { Carousel } from "react-responsive-carousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
+import ImagesList from "../utils/ImageList";
+
+const imageArray = [
+  {
+    alt: "job_tracker_dashboard_gif",
+    src: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442991/applyyourself_job_tracker_dashboard_d41cco.gif",
+  },
+  {
+    alt: "job_tracker_jobs_list_page",
+    src: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229239/job_tracker_jobs_list_page_ajkrac.png",
+  },
+  {
+    alt: "job_tracker_edit_job_notes_page",
+    src: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229142/job_tracker_edit_job_notes_page_z16jds.png",
+  },
+  {
+    alt: "job_tracker_home_page",
+    src: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229277/apply_your_self_home_page_r5kfc3.png",
+  },
+  {
+    alt: "job_tracker_sankey_chart_page",
+    src: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229331/job_tracker_sankey_chart_qntmvc.png",
+  },
+];
 
 const ApplyYourSelfJobTracker = () => {
   return (
@@ -30,36 +54,7 @@ const ApplyYourSelfJobTracker = () => {
               dynamicHeight={true}
               showArrows={true}
             >
-              <div>
-                <img
-                  alt="job_tracker_dashboard_gif"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442991/applyyourself_job_tracker_dashboard_d41cco.gif"
-                />
-              </div>
-              <div>
-                <img
-                  alt="job_tracker_jobs_list_page"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229239/job_tracker_jobs_list_page_ajkrac.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="job_tracker_edit_job_notes_page"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229142/job_tracker_edit_job_notes_page_z16jds.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="job_tracker_home_page"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229277/apply_your_self_home_page_r5kfc3.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="job_tracker_sankey_chart_page"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229331/job_tracker_sankey_chart_qntmvc.png"
-                />
-              </div>
+              {ImagesList(imageArray)}
             </Carousel>
           </div>
 
