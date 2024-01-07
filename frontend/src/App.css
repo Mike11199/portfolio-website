@@ -355,9 +355,15 @@ html {
 }
 
 .smallsh_section {
-  background-image: linear-gradient(to top, #09203f 0%, #0b362a 100%);
+  background-image: linear-gradient(
+    to top,
+    #000000 0%,
+    #174d32 5%,
+    #162219 100%
+  );
   color: white;
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
+  min-height: fit-content;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
@@ -374,21 +380,31 @@ html {
 }
 
 .apply_yourself_section {
-  padding-top: 40px;
-  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
-  margin-top: 0px !important;
-  margin: 0px;
-  background-image: linear-gradient(to top, #09203f 0%, #35063a 100%);
+  background-image: linear-gradient(
+    to top,
+    #000000 0%,
+    #1e254e 5%,
+    #221e16 100%
+  );
   color: white;
+  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
+  min-height: fit-content;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
+  padding-top: 40px;
 }
 
 .rsa_section {
-  background-color: black;
+  background-image: linear-gradient(
+    to top,
+    #000000 0%,
+    #3a2610 5%,
+    #221e16 80%
+  );
   color: white;
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
+  min-height: fit-content;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
@@ -396,14 +412,19 @@ html {
 }
 
 .space_tau_section {
-  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
-  padding-top: 40px;
-  margin: 0px;
-  background-image: linear-gradient(to top, #09203f 0%, #35063a 100%);
+  background-image: linear-gradient(
+    to top,
+    #000000 0%,
+    #1f2d53 5%,
+    #221e16 80%
+  );
   color: white;
+  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
+  min-height: fit-content;
   padding-left: 50px;
   padding-right: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
+  padding-top: 40px;
 }
 
 .project_card {
