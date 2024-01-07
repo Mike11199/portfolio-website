@@ -7,7 +7,7 @@ interface Image {
 const ImagesList = (images: Image[]) => (
   images.map((image, index) => (
     <div key={index}>
-      <img alt={image.alt} src={image.src} />
+      <img loading="lazy" alt={image.alt} src={image.src} />
     </div>
   ))
 );
