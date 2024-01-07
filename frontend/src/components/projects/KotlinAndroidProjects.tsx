@@ -1,4 +1,3 @@
-import { Carousel } from "react-responsive-carousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 
@@ -24,43 +23,21 @@ const KotlinAndroidProjects = () => {
           />
         </div>
 
-        {/* Two Carousels - Side by Side Phone GIFs */}
+        {/* Side by Side Phone GIFs */}
         <div className="project_card_hash_map" style={{ marginTop: "50px" }}>
           <div className="kotlin_carousel_container">
-            <Carousel
-              showIndicators={false}
-              className="kotlin_carousel"
-              infiniteLoop={true}
-              dynamicHeight={true}
-              showArrows={true}
-              showThumbs={false}
-            >
-              <div>
                 <img
+                  className="kotlin_image"
                   alt="sacramento_phone_view_android_app_gif"
                   src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442796/android_kotlin_sacramento_app_fdubuz.gif"
                 />
-              </div>
-              <div></div>
-            </Carousel>
           </div>
-
           <div className="kotlin_carousel_container">
-            <Carousel
-              className="kotlin_carousel"
-              infiniteLoop={true}
-              dynamicHeight={true}
-              showArrows={true}
-              showThumbs={false}
-            >
-              <div>
                 <img
+                  className="kotlin_image"
                   alt="flight_search_sql_lite_phone_view_android_app_gif"
                   src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442786/android_kotlin_flight_search_fu06fc.gif"
                 />
-              </div>
-              <div></div>
-            </Carousel>
           </div>
 
           {/* Text Description  */}

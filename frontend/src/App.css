@@ -971,8 +971,6 @@ li {
     margin-right: 0%;
     display: flex;
     justify-content: center;
-    max-height: 600px;
-    overflow-y: scroll;
   }
 
   .text_wrapper_about_me {
