@@ -11,6 +11,10 @@
   background-color: #3d3939; /* Dark mode scrollbar track color */
 }
 
+li {
+  list-style-position: inside;
+}
+
 .text_wrapper {
   width: 30%;
   height: fit-content;
@@ -26,7 +30,7 @@
   border-radius: 6px;
   border: 2px solid rgba(56, 128, 62, 0.849);
   color: rgb(25, 212, 88);
-  background-image: linear-gradient(#000000, #111e2b 30%, #000000);
+  background-image: linear-gradient(#000000, #000000, #000000);
 }
 
 .text_wrapper_about_me {
@@ -40,7 +44,7 @@
   border-radius: 6px;
   border: 2px solid rgba(56, 128, 62, 0.849);
   color: rgb(25, 212, 88);
-  background-image: linear-gradient(#000000, #111e2b 30%, #000000);
+  background-image: linear-gradient(#000000, #000000, #000000);
 }
 
 .video_button {
@@ -174,16 +178,6 @@ ul > li > ul > li {
   width: 60%;
 }
 
-.text_description_ski_shop {
-  padding-left: 5%;
-  width: 30%;
-}
-
-.text_description_smallsh {
-  padding-left: 5%;
-  width: 30%;
-}
-
 .video_wrapper_smallsh {
   width: 60%;
   position: relative;
@@ -207,11 +201,6 @@ ul > li > ul > li {
 
 .about_me_text {
   padding-right: 100px;
-}
-
-.text_description_rsa {
-  padding-left: 5%;
-  width: 30%;
 }
 
 .project_card_rsa_encryption {
@@ -238,12 +227,6 @@ ul > li > ul > li {
   display: flex;
   flex-direction: row;
   padding-bottom: 50px;
-}
-
-.text_description_1 {
-  margin-bottom: 0px;
-  padding-right: 100px;
-  width: 50%;
 }
 
 #about {
@@ -696,11 +679,6 @@ li {
     height: 100%;
   }
 
-  .text_description_1 {
-    height: "auto";
-    margin-bottom: "0px";
-  }
-
   .navbar_link {
     font-size: 12px;
     padding: 10px;
@@ -716,11 +694,6 @@ li {
     height: 100px;
     border-radius: 50%;
     margin-top: 110px;
-  }
-
-  .text_description_1 {
-    margin-bottom: 0px;
-    padding-right: 0vh;
   }
 
   .navbar_name_me {
@@ -814,11 +787,6 @@ li {
     width: 100%;
   }
 
-  .text_description_rsa {
-    width: 100%;
-    padding-left: 0px;
-  }
-
   .space_tau_carousel_and_video {
     width: 100%;
     align-items: center !important;
@@ -828,17 +796,7 @@ li {
     width: 100%;
   }
 
-  .text_description_smallsh {
-    width: 100%;
-    padding-left: 0px;
-  }
-
   .hash_map_text {
-    width: 100%;
-    padding-left: 0px;
-  }
-
-  .text_description_ski_shop {
     width: 100%;
     padding-left: 0px;
   }
@@ -851,14 +809,11 @@ li {
     width: 100%;
   }
 
-  .hash_map_carousel {
-    width: 100%;
-  }
-
   .kotlin_carousel {
     max-width: 500px;
     padding-left: 0px;
   }
+
   .kotlin_carousel_container {
     width: 100%;
     margin-bottom: 40px;
