@@ -1,6 +1,8 @@
 import { Carousel } from "react-responsive-carousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
+import ImagesList from "../utils/ImageList";
+import { PyTorchImages } from "../../images/imageData.json";
 
 const PyTorchApp = () => {
   return (
@@ -35,6 +37,7 @@ const PyTorchApp = () => {
           />
         </div>
 
+        {/* Image Carousel */}
         <div className="project_card_hash_map">
           <div className="hash_map_carousel">
             <Carousel
@@ -43,71 +46,11 @@ const PyTorchApp = () => {
               dynamicHeight={true}
               showArrows={true}
             >
-              <div>
-                <img
-                  alt="cats_and_dogs_image"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703822238/cats_and_dogs_lnwfi9.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="nat_geo_collage"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703823645/nat_geo_collage_analysis_tpnipt.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="new_york_traffic"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703832095/traffic_analysis_mcwwdg.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="pytorch_home_page"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703993902/pytorch_home_page_ctk08h.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="pytorch_doggo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703828564/labrador_new_ogez0w.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="winter_traffic"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703831262/winter_traffic_analysis_caxrhm.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="jupyterlab_model_load_weights"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000182/jupyter_notebook_screenshot_bear_oy8vzh.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="aws_lambda_model_invoker"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703998674/clean_lambda_invoker_xkcjrm.png"
-                />
-              </div>
-
-              <div>
-                <img
-                  alt="front_end_and_server_code"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000819/typescript_new_if4it7.png"
-                />
-              </div>
+              {ImagesList(PyTorchImages)}
             </Carousel>
           </div>
 
+          {/* Text Description */}
           <div className="hash_map_text">
             <ul>
               <li>

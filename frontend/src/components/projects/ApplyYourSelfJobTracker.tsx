@@ -2,29 +2,7 @@ import { Carousel } from "react-responsive-carousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
-
-const imageArray = [
-  {
-    alt: "job_tracker_dashboard_gif",
-    src: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442991/applyyourself_job_tracker_dashboard_d41cco.gif",
-  },
-  {
-    alt: "job_tracker_jobs_list_page",
-    src: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229239/job_tracker_jobs_list_page_ajkrac.png",
-  },
-  {
-    alt: "job_tracker_edit_job_notes_page",
-    src: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229142/job_tracker_edit_job_notes_page_z16jds.png",
-  },
-  {
-    alt: "job_tracker_home_page",
-    src: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229277/apply_your_self_home_page_r5kfc3.png",
-  },
-  {
-    alt: "job_tracker_sankey_chart_page",
-    src: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229331/job_tracker_sankey_chart_qntmvc.png",
-  },
-];
+import { applyYourSelfImages } from "../../images/imageData.json";
 
 const ApplyYourSelfJobTracker = () => {
   return (
@@ -46,6 +24,7 @@ const ApplyYourSelfJobTracker = () => {
           />
         </div>
 
+        {/* Image Carousel */}
         <div className="project_card_apply_yourself">
           <div className="carousel_apply_yourself">
             <Carousel
@@ -54,10 +33,11 @@ const ApplyYourSelfJobTracker = () => {
               dynamicHeight={true}
               showArrows={true}
             >
-              {ImagesList(imageArray)}
+              {ImagesList(applyYourSelfImages)}
             </Carousel>
           </div>
 
+          {/* Text Description */}
           <div className="text_apply_your_self">
             <ul>
               <li>

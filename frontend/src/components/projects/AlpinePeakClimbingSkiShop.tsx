@@ -1,6 +1,8 @@
 import { Carousel } from "react-responsive-carousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
+import ImagesList from "../utils/ImageList";
+import { alpinePeakClimbingSkiShopImages } from '../../images/imageData.json';
 
 const AlpinePeakClimbingSkiShop = () => {
   return (
@@ -27,96 +29,15 @@ const AlpinePeakClimbingSkiShop = () => {
           />
         </div>
 
+        {/* Image Carousel */}
         <div className="project_card_ski_shop">
           <div className="carousel_ski_shop">
             <Carousel width="100%" infiniteLoop={true}>
-              <div>
-                <img
-                  alt="login_page_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441524/SkiShopLoginPage_ywkwjn.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="home_page_gif"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441670/SkiShopHomePage_si8vkz.gif"
-                />
-              </div>
-              <div>
-                <img
-                  alt="register_page_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441747/SkiShopRegisterPage_v9osuo.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="plant_trees_pledge_and_snow_satellite_tracker_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442507/ski_shop_pledge_and_sat_image_xseiqy.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="home_page_static_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442203/ski_shop_static_home_page_photo_u4f4vl.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="shopping_cart_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442304/ski_shop_shopping_cart_photo_ov8zr3.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="admin_dashboard_product_management_page_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442370/ski_shop_admin_products_dashboard_efynls.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="order_details_payment_paypal_buttons_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442428/ski_shop_paypal_order_details_page_elbfo1.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="editing_ski_mountaineering_login_page_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441833/SkiShopPhotoEditProcessGimp_jkrj7l.gif"
-                />
-              </div>
-              <div>
-                <img
-                  alt="nginx_dockerfile_docker.yml_docker_containers_screenshot_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226162/docker_nginx_code_w5e7ei.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="aws_ecs_cluster_container_task_screenshot_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_aws_ecr_w0gtma.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="aws_ci_cd_github_actions_yml_file_task_json_aws_screenshot_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226472/alpine_peak_github_actions_yml_jqoioi.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="aws_load_balancer_ecs_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_load_balancer_hhrakr.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="aws_lambda_cron_screenshots_to_stop_and_restart_site_every_night_photo"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226735/lambda_cron_pac3zd.png"
-                />
-              </div>
+              {ImagesList(alpinePeakClimbingSkiShopImages)}
             </Carousel>
           </div>
 
+          {/* Text Description */}
           <div className="text_description_ski_shop">
             <ul>
               <li>

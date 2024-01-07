@@ -1,6 +1,8 @@
 import { Carousel } from "react-responsive-carousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
+import ImagesList from "../utils/ImageList";
+import { rsaEncryptionImages } from "../../images/imageData.json";
 
 const RSAEncryptionApp = () => {
   return (
@@ -27,36 +29,15 @@ const RSAEncryptionApp = () => {
           />
         </div>
 
+        {/* Image Carousel */}
         <div className="project_card_rsa_encryption">
           <div className="carousel_rsa_encryption">
             <Carousel width="100%" infiniteLoop={true}>
-              <div>
-                <img
-                  alt="rsa_encryption_gif"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443108/encryption_react_app_rsa_zm71g8.gif"
-                />
-              </div>
-              <div>
-                <img
-                  alt="rsa_encryption_image"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228815/RSAPage_fgvomf.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="aes_encryption_gif"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443106/encryption_react_app_aes_iblpok.gif"
-                />
-              </div>
-              <div>
-                <img
-                  alt="aes_encryption_image"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228816/AESPage_hfsbt2.png"
-                />
-              </div>
+              {ImagesList(rsaEncryptionImages)}
             </Carousel>
           </div>
 
+          {/* Text Description */}
           <div className="text_description_rsa">
             <ul>
               <li>

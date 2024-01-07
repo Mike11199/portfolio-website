@@ -5,7 +5,6 @@ import ButtonLink from "../utils/ButtonLink";
 const KotlinAndroidProjects = () => {
   return (
     <>
-      {/* SECTION FOR PROJECT #7 */}
       <section id="kotlin_section">
         <h2 className="project_header">
           Kotlin (Jetpack Compose) - Sacramento City and Flight Search App
@@ -25,6 +24,7 @@ const KotlinAndroidProjects = () => {
           />
         </div>
 
+        {/* Two Carousels - Side by Side Phone GIFs */}
         <div className="project_card_hash_map" style={{ marginTop: "50px" }}>
           <div className="kotlin_carousel_container">
             <Carousel
@@ -62,6 +62,7 @@ const KotlinAndroidProjects = () => {
             </Carousel>
           </div>
 
+          {/* Text Description  */}
           <div className="hash_map_text">
             <ul>
               <li>

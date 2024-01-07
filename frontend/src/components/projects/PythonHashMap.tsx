@@ -1,5 +1,7 @@
 import GitHubButton from "../utils/GitHubButton";
 import { Carousel } from "react-responsive-carousel";
+import ImagesList from "../utils/ImageList";
+import { hashMapImages } from "../../images/imageData.json";
 
 const PythonHashMap = () => {
   return (
@@ -16,6 +18,7 @@ const PythonHashMap = () => {
           />
         </div>
 
+        {/* Image Carousel */}
         <div className="project_card_hash_map">
           <div className="hash_map_carousel">
             <Carousel
@@ -24,33 +27,11 @@ const PythonHashMap = () => {
               dynamicHeight={true}
               showArrows={true}
             >
-              <div>
-                <img
-                  alt="hash_map_put_function"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_put_function_yql8dr.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="hash_map_keys_buckets_diagram"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228636/hash_function_diagram_abmwcz.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="hash_map_resize_table_function"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_resize_table_function_opqhi4.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="hash_map_separate_chaining_gif"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228131/hash_map_separate_chaining_tljado.gif"
-                />
-              </div>
+              {ImagesList(hashMapImages)}
             </Carousel>
           </div>
 
+          {/* Text Description */}
           <div className="hash_map_text">
             <ul>
               <li>

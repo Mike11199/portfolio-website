@@ -1,5 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
 import ButtonLink from "../utils/ButtonLink";
+import ImagesList from "../utils/ImageList";
+import { solarSystemImages } from "../../images/imageData.json";
 
 const OpenGLSolarSystem = () => {
   return (
@@ -16,6 +18,7 @@ const OpenGLSolarSystem = () => {
           />
         </div>
 
+        {/* Image Carousel */}
         <div className="project_card_hash_map">
           <div className="hash_map_carousel">
             <Carousel
@@ -24,47 +27,11 @@ const OpenGLSolarSystem = () => {
               dynamicHeight={true}
               showArrows={true}
             >
-              <div>
-                <img
-                  alt="solar_system_jupiter_and_main_asteroid_belt"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229666/AsteroidBeltPlanetsCloseUpPhoto_busxio.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="earth_system_rotation_gif_over_10MB_cloudinary_limit"
-                  src="https://github.com/Mike11199/GIFs/blob/main/earth_rotation_clouds.gif?raw=true"
-                />
-              </div>
-              <div>
-                <img
-                  alt="solar_system_and_both_belts_from_distance_gif"
-                  src={
-                    "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703230118/288668401-65cbd665-51e0-4e54-9e95-4cfef91b79a0_ysic55.gif"
-                  }
-                />
-              </div>
-              <div>
-                <img
-                  alt="close_up_of_planets_aligned"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229665/PlanetsAlignedImage_xaiskz.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="earth_system_static_image"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229667/EarthCloudsImage_bdpfo5.png"
-                />
-              </div>
-              <div>
-                <img
-                  alt="solar_system_from_distance"
-                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229662/SolarSystemFarOut_xqjery.png"
-                />
-              </div>
+              {ImagesList(solarSystemImages)}
             </Carousel>
           </div>
 
+          {/* Text Description */}
           <div className="hash_map_text">
             <ul>
               <li>

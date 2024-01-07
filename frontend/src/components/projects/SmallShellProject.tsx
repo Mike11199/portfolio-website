@@ -59,6 +59,7 @@ const SmallShellProject = () => {
           />
         </div>
 
+        {/* Embedded YouTube Video */}
         <div className="project_card_smallsh">
           <div className="video_wrapper_smallsh">
             <ReactPlayer
@@ -74,6 +75,8 @@ const SmallShellProject = () => {
               }}
             />
           </div>
+
+          {/* Text Description */}
           <div className="text_description_smallsh">
             <ul>
               <li>
