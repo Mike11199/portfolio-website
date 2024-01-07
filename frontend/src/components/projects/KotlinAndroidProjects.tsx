@@ -28,6 +28,7 @@ const KotlinAndroidProjects = () => {
         <div className="project_card_hash_map" style={{ marginTop: "50px" }}>
           <div className="kotlin_carousel_container">
             <Carousel
+              showIndicators={false}
               className="kotlin_carousel"
               infiniteLoop={true}
               dynamicHeight={true}

@@ -22,6 +22,7 @@ const PythonHashMap = () => {
         <div className="project_card_hash_map">
           <div className="hash_map_carousel">
             <Carousel
+              showIndicators={false}
               width="100%"
               infiniteLoop={true}
               dynamicHeight={true}

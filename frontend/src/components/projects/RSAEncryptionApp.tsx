@@ -32,7 +32,7 @@ const RSAEncryptionApp = () => {
         {/* Image Carousel */}
         <div className="project_card_rsa_encryption">
           <div className="carousel_rsa_encryption">
-            <Carousel width="100%" infiniteLoop={true}>
+            <Carousel width="100%" infiniteLoop={true} showIndicators={false}>
               {ImagesList(rsaEncryptionImages)}
             </Carousel>
           </div>

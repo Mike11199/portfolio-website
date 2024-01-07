@@ -32,7 +32,7 @@ const AlpinePeakClimbingSkiShop = () => {
         {/* Image Carousel */}
         <div className="project_card_ski_shop">
           <div className="carousel_ski_shop">
-            <Carousel width="100%" infiniteLoop={true}>
+            <Carousel width="100%" infiniteLoop={true} showIndicators={false}>
               {ImagesList(alpinePeakClimbingSkiShopImages)}
             </Carousel>
           </div>

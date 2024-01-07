@@ -32,6 +32,7 @@ const ApplyYourSelfJobTracker = () => {
               infiniteLoop={true}
               dynamicHeight={true}
               showArrows={true}
+              showIndicators={false}
             >
               {ImagesList(applyYourSelfImages)}
             </Carousel>

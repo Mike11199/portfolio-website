@@ -77,6 +77,7 @@ const SpaceTauApp = () => {
           <div className="space_tau_carousel_and_video">
             <div className="space_tau_carousel">
               <Carousel
+                showIndicators={false}
                 width="100%"
                 infiniteLoop={true}
                 dynamicHeight={true}
