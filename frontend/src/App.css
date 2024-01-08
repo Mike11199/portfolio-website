@@ -657,10 +657,6 @@ li {
     flex-direction: column;
   }
 
-  img {
-    max-width: 70%;
-  }
-
   .tent_image {
     width: 100%;
     padding: 0px;
