@@ -11,13 +11,11 @@ const Navbar = () => {
   const ProfilePhotoWithName = () => {
     return (
       <div className={styles.navbarLogoNameContainer}>
-        <div className={styles.profilePhotoDiv}>
-          <img
-            src={IceCavePhoto}
-            alt="Michael Iwanek Navbar"
-            className={styles.profilePhotoImage}
-          />
-        </div>
+        <img
+          src={IceCavePhoto}
+          alt="Michael Iwanek Navbar"
+          className={styles.profilePhotoImage}
+        />
         <p className={styles.navbarFullName}>Michael Iwanek</p>
       </div>
     );
@@ -78,14 +76,12 @@ const Navbar = () => {
     });
 
     return (
-      <div className={styles.navbarElementContainer}>
-        <div className={styles.binaryDigitIndividualContainer}>
-          {nameInBinary.flatMap((item, index) =>
-            item.binaryDigits.map((binary, innerIndex) => (
-              <BinaryDigit key={`${index}-${innerIndex}`} content={binary} />
-            ))
-          )}
-        </div>
+      <div className={styles.binaryDigitIndividualContainer}>
+        {nameInBinary.flatMap((item, index) =>
+          item.binaryDigits.map((binary, innerIndex) => (
+            <BinaryDigit key={`${index}-${innerIndex}`} content={binary} />
+          ))
+        )}
       </div>
     );
   };

@@ -29,6 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: fit-content;
   width: 30%;
   height: 100%;
   overflow: hidden;
@@ -41,6 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   flex-wrap: nowrap;
 }
 
@@ -61,13 +63,16 @@
   color: white;
   display: flex;
   flex-wrap: nowrap;
+  max-width: fit-content;
   font-weight: 150;
   font-family: Segoe UI;
   font-size: 35px;
   text-transform: uppercase;
+  margin-right: 50px;
 }
 
 .binaryDigitIndividualContainer {
+  flex: 1; /* fill the remaining space */
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -94,17 +99,24 @@
   color: #0062b9;
 }
 
-@media (max-width: 600px) {
-  .profilePhotoDiv {
-    padding: 0px;
-    margin: 0px;
+@media (max-width: 1400px) {
+  .navbarFullName {
+    font-size: 25px;
   }
+  .navbarLink {
+    font-size: 12px;
+  }
+}
 
+@media (max-width: 600px) {
   .profilePhotoImage {
-    width: 100px;
-    height: 100px;
+    margin-left: 0vh;
+    margin-right: 0vh;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin-top: 110px;
+    margin-bottom: 20px;
   }
 
   .navbar {
@@ -127,6 +139,7 @@
     text-transform: uppercase;
     padding-right: 0vh;
     padding-left: 0vh;
+    margin: 0px;
   }
 
   .binaryDigitIndividualContainer {
@@ -160,6 +173,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
   }
 
   .navbarElementContainerLinks {
