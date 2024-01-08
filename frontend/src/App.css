@@ -792,8 +792,18 @@ li {
   }
 
   .video_wrapper_smallsh {
+    display: flex;
+    justify-content: center;
     width: 100%;
     margin-bottom: 40px;
+  }
+
+  .project_header {
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
   }
 
   .about_me_snowshoeing_photo {
@@ -805,7 +815,9 @@ li {
   }
 
   .video_wrapper_ksp {
-    align-self: center !important;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   li {

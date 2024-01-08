@@ -183,4 +183,8 @@
     flex-direction: column;
     margin-bottom: 40px;
   }
+
+  .myAnimatedDiv {
+    display: none;
+  }
 }

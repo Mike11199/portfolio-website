@@ -66,7 +66,7 @@ const SmallShellProject = () => {
               width={playerWidthSmallShell}
               height={playerHeightSmallShell}
               playing
-              url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1&frameborder=12"
+              url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1"
               loop={true}
               muted={true}
               style={{ zIndex: 1 }}

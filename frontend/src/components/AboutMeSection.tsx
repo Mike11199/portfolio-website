@@ -60,7 +60,7 @@ const AboutMeSection = () => {
               width={playerWidthClimbing}
               height={playerHeightClimbing}
               playing
-              url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1&frameborder=12"
+              url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1"
               loop={true}
               muted={true}
               style={{ zIndex: 1 }}

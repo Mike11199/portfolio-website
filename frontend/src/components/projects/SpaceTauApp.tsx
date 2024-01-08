@@ -93,7 +93,7 @@ const SpaceTauApp = () => {
                 width={playerWidthSpaceTau}
                 height={playerHeightSpaceTau}
                 playing
-                url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1&frameborder=12"
+                url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1"
                 loop={true}
                 muted={true}
                 style={{ zIndex: 1 }}
