@@ -37,6 +37,7 @@
 }
 
 .navbarLogoNameContainer {
+  min-width: fit-content;
   height: 100%;
   width: 25%;
   display: flex;
@@ -63,7 +64,7 @@
   color: white;
   display: flex;
   flex-wrap: nowrap;
-  max-width: fit-content;
+  min-width: fit-content;
   font-weight: 150;
   font-family: Segoe UI;
   font-size: 35px;
