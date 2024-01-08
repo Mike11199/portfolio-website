@@ -1,87 +1,102 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import IceCavePhoto from "../images/profile_photo_snowshoe_tunnel.png";
-import { useScroll, animated } from '@react-spring/web';
+import { useScroll, animated, useSpring } from "@react-spring/web";
 import Resume_PDF from "../misc/CV_Michael Iwanek_12_30_2023.pdf";
 import BinaryDigit from "./BinaryDigit";
 import { useState } from "react";
+import styles from "./styles/Navbar.module.css";
 
 const Navbar = () => {
-  const [scrollVal, setScrollVal] = useState(0);
-  useScroll({
-    onChange: ({ value: { scrollYProgress } }) => {
-      setScrollVal(scrollYProgress * 100);
-    },
-  });
-
-
-  const handleContactClick = () => {
-    window.open("https://www.linkedin.com/in/michael-iwanek/", "_blank");
-  };
-
-  const name = "Michael";
-
-  const nameInBinary = name.split("").map((char) => {
-    const charCode = char.charCodeAt(0);
-    const binaryDigits = charCode.toString(2).padStart(8, "0").split("");
-    return { letter: char, binaryDigits };
-  });
-
-  // console.log(nameInBinary)
-  return (
-    <>
-      <div className="navbar">
-        <animated.div
-          style={{
-            position: "absolute",
-            top: "100%",
-            left: 0,
-            transform: `scaleX(${scrollVal })`,
-            background: "darkred",
-            height: "5px",
-            width: "2%",
-          }}
-        ></animated.div>
-
-        <div className="profile_photo">
+  const ProfilePhotoWithName = () => {
+    return (
+      <div className={styles.navbarLogoNameContainer}>
+        <div className={styles.profilePhotoDiv}>
           <img
             src={IceCavePhoto}
             alt="Michael Iwanek Navbar"
-            className="profile_photo_image"
+            className={styles.profilePhotoImage}
           />
         </div>
-        <p className="navbar_name_me">Michael Iwanek</p>
+        <p className={styles.navbarFullName}>Michael Iwanek</p>
+      </div>
+    );
+  };
 
-        <div className="binary_digit_row">
-          {nameInBinary.map((item, index) => (
-            <div className="binary_digit_divs" key={index}>
-              {/* {console.log(item)} */}
-              {item.binaryDigits.map((binary, innerIndex) => (
-                <BinaryDigit key={innerIndex} content={binary} />
-              ))}
-            </div>
-          ))}
-        </div>
+  const AnimatedScrollBar = () => {
+    const [scrollVal, setScrollVal] = useState(0);
+    useScroll({
+      onChange: ({ value: { scrollYProgress } }) => {
+        setScrollVal(scrollYProgress * 100);
+      },
+    });
 
-        {/* <Link className="navbar_link" to="/">Home</Link> */}
-        <HashLink className="navbar_link" smooth to="#top">
+    const animatedStyle = useSpring({
+      transform: `scaleX(${scrollVal})`,
+    });
+
+    return (
+      <>
+        <animated.div className={styles.myAnimatedDiv} style={animatedStyle} />
+      </>
+    );
+  };
+
+  const SiteNavLinks = () => {
+    const handleContactClick = () => {
+      window.open("https://www.linkedin.com/in/michael-iwanek/", "_blank");
+    };
+
+    return (
+      <div className={styles.navbarElementContainerLinks}>
+        <HashLink className={styles.navbarLink} smooth to="#top">
           Home
         </HashLink>
-        {/* <Link className="navbar_link" to="/rsa">About</Link> */}
-        <HashLink className="navbar_link" smooth to="./#projects_section">
+        <HashLink className={styles.navbarLink} smooth to="./#projects_section">
           Projects
         </HashLink>
         <Link
-          className="navbar_link"
+          className={styles.navbarLink}
           to={Resume_PDF}
           target="_blank"
           rel="noopener noreferrer"
         >
           Resume
         </Link>
-        <Link to="/" className="navbar_link" onClick={handleContactClick}>
+        <Link to="/" className={styles.navbarLink} onClick={handleContactClick}>
           Contact
         </Link>
+      </div>
+    );
+  };
+
+  const NameInBinaryDigits = () => {
+    const nameInBinary = "Michael".split("").map((char) => {
+      const charCode = char.charCodeAt(0);
+      const binaryDigits = charCode.toString(2).padStart(8, "0").split("");
+      return { letter: char, binaryDigits };
+    });
+
+    return (
+      <div className={styles.navbarElementContainer}>
+        <div className={styles.binaryDigitIndividualContainer}>
+          {nameInBinary.flatMap((item, index) =>
+            item.binaryDigits.map((binary, innerIndex) => (
+              <BinaryDigit key={`${index}-${innerIndex}`} content={binary} />
+            ))
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <>
+      <div className={styles.navbar}>
+        <AnimatedScrollBar />
+        <ProfilePhotoWithName />
+        <NameInBinaryDigits />
+        <SiteNavLinks />
       </div>
     </>
   );

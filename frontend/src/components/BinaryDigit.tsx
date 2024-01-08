@@ -19,7 +19,7 @@ const BinaryDigit = ({ content }: BinaryDigitProps) => {
 
   return (
     <div className={`fade-in-out ${isVisible ? "visible" : "hidden"}`}>
-      <p className="binary_digit">{content}</p>
+      <p className="binaryDigit">{content}</p>
     </div>
   );
 };

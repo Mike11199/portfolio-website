@@ -11,6 +11,12 @@
   background-color: #3d3939; /* Dark mode scrollbar track color */
 }
 
+.binaryDigit {
+  color: rgb(64, 192, 64); /* Light green */
+  font-weight: 400;
+  font-size: 18px;
+}
+
 .text_wrapper {
   width: 30%;
   height: fit-content;
@@ -71,27 +77,6 @@
 
 .video_button:active {
   transform: scale(0.9);
-}
-
-.binary_digit_row {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  left: 55vh;
-}
-
-.binary_digit_divs {
-  width: 100px;
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
-}
-
-.binary_digit {
-  color: rgb(64, 192, 64); /* Light green */
-  font-weight: 400;
-  font-size: 18px;
 }
 
 .fade-in-out {
@@ -241,48 +226,6 @@ ul > li > ul > li {
   align-items: center;
 }
 
-.navbar_name_me {
-  color: white;
-  font-weight: 150;
-  font-family: Segoe UI;
-  font-size: 35px;
-  text-transform: uppercase;
-  padding-right: 90vh;
-}
-
-.navbar_link {
-  margin: 0px;
-  padding: 0px;
-  display: inline-block;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  font-size: medium;
-  transition: color 0.3s;
-  text-decoration: none;
-  padding: 20px;
-  z-index: -1;
-}
-
-.navbar_link:hover {
-  color: #0062b9;
-}
-
-.navbar {
-  top: 0;
-  position: fixed;
-  display: flex;
-  width: 100%;
-  height: 100px;
-  background: #fefefe;
-  background: #0e0d0d;
-  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
-  align-items: center;
-  justify-content: center;
-  z-index: 111;
-}
-
 body {
   background: #212534;
   width: 100% !important;
@@ -303,14 +246,6 @@ html {
   margin: 0px;
   padding: 0px;
   scroll-behavior: smooth;
-}
-
-.profile_photo_image {
-  width: 6vh;
-  height: 6vh;
-  border-radius: 200px;
-  margin-left: 2vh;
-  margin-right: 3vh;
 }
 
 .bottom_footer {
@@ -704,50 +639,6 @@ li {
     height: 100%;
   }
 
-  .navbar_link {
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  .profile_photo {
-    padding: 0px;
-    margin: 0px;
-  }
-
-  .profile_photo_image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-top: 110px;
-  }
-
-  .navbar_name_me {
-    color: white;
-    font-weight: 150;
-    font-family: Segoe UI;
-    font-size: 25px;
-    text-transform: uppercase;
-    padding-right: 0vh;
-    padding-left: 0vh;
-  }
-
-  .navbar {
-    top: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 550px;
-    background: #fefefe;
-    background: #0e0d0d;
-    box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: center;
-    z-index: 111;
-    margin: 0px;
-    padding: 0px;
-  }
-
   .project_card_ski_shop {
     display: flex;
     flex-direction: column;
@@ -911,23 +802,6 @@ li {
 
   .about_me_ski_photo {
     width: 100%;
-  }
-
-  .binary_digit_row {
-    position: absolute;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-    height: 200px;
-    gap: 5px;
-    left: 25%;
-    top: -60px;
-    z-index: -1111;
-  }
-
-  .binary_digit_divs {
-    width: 100px;
-    display: flex;
-    gap: 4px;
   }
 
   .video_wrapper_ksp {
