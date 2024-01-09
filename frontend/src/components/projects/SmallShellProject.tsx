@@ -23,29 +23,24 @@ function useWindowSize() {
   return windowSize;
 }
 
-const youtubeOptions = {
-  playerVars: {
-    controls: 1,
-    showinfo: 0,
-    playsinline: 1,
-  },
-};
-
 const SmallShellProject = () => {
   const { width } = useWindowSize();
 
   let playerWidthSmallShell = 1080;
   let playerHeightSmallShell = 610;
 
-  if (width > 600) {
-    playerWidthSmallShell = 1080;
-    playerHeightSmallShell = 610;
+  if (width <= 600) {
+    playerWidthSmallShell = 280;
+    playerHeightSmallShell = 160;
   }
 
-  if (width <= 600) {
-    playerWidthSmallShell = 240;
-    playerHeightSmallShell = 135;
-  }
+  const youtubeOptions = {
+    playerVars: {
+      controls: 1,
+      showinfo: 0,
+      playsinline: 1,
+    },
+  };
 
   return (
     <>

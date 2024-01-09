@@ -29,17 +29,12 @@ function useWindowSize() {
 
 const SpaceTauApp = () => {
   const { width } = useWindowSize();
-  let playerWidthSpaceTau;
-  let playerHeightSpaceTau;
-
-  if (width > 600) {
-    playerWidthSpaceTau = 700;
-    playerHeightSpaceTau = 395;
-  }
+  let playerWidthSpaceTau = 700;
+  let playerHeightSpaceTau = 395;
 
   if (width <= 600) {
     playerWidthSpaceTau = 280;
-    playerHeightSpaceTau = 155;
+    playerHeightSpaceTau = 160;
   }
 
   const youtubeOptions = {
