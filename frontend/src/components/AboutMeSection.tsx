@@ -2,10 +2,6 @@ import { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import ReactPlayer from "react-player";
 
-import HeavenlySkiResortPhoto from "../images/about_me_heavenly_ski_resort.jpg";
-import WinterCampingTentPhoto from "../images/about_me_tent_snow_camping.jpg";
-import DonnerTunnelSnowshoeingPhoto from "../images/about_me_snowshoe_tunnel.jpg";
-
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -74,18 +70,18 @@ const AboutMeSection = () => {
             <div className="about_me_images">
               <div className="about_me_images2">
                 <img
-                  src={DonnerTunnelSnowshoeingPhoto}
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/about_me_snowshoe_tunnel_qtqonc.jpg"
                   alt="Michael Iwanek Navbar"
                   className="about_me_snowshoeing_photo"
                 />
                 <img
-                  src={HeavenlySkiResortPhoto}
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864636/about_me_heavenly_ski_resort_bu4bzj.jpg"
                   alt="Michael Iwanek Navbar"
                   className="about_me_ski_photo"
                 />
               </div>
               <img
-                src={WinterCampingTentPhoto}
+                src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/about_me_tent_snow_camping_qvoznf.jpg"
                 alt="Michael Iwanek Navbar"
                 className="tent_image"
               />

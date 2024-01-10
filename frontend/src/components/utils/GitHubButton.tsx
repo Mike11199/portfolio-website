@@ -1,4 +1,4 @@
-import GitHubLogo from "../../images/github_button_logo.png";
+import GitHubLogo from "../../images/githubButtonLogo.png";
 
 interface GitHubButtonProps {
   URL: string;
