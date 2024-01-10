@@ -1,6 +1,7 @@
 import { useBrowserWindowDimensions } from "./utils/Functions";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ReactVideoPlayer from "./utils/ReactVideoPlayer";
+import styles from "./styles/AboutMeSection.module.css";
 
 const AboutMeSection = () => {
   const { width } = useBrowserWindowDimensions();
@@ -19,10 +20,10 @@ const AboutMeSection = () => {
         <h1>
           About Me <span className="wave">👋</span>
         </h1>
-        <div className="about_me_section">
+        <div className={styles.aboutMeSection}>
           {/* Rock Climbing Video - Vent5 */}
           <ReactVideoPlayer
-            className={"videoWrapperRockClimbing"}
+            className={styles.videoWrapperRockClimbing}
             width={playerWidthClimbing}
             height={playerHeightClimbing}
             URL={
@@ -30,30 +31,32 @@ const AboutMeSection = () => {
             }
           />
 
-          <div className="project_1_main_div">
+          <div className={styles.aboutMeImagesAndTextWrapper}>
             {/* Images of Self */}
-            <div className="about_me_images">
-              <div className="about_me_images2">
+            <div className={styles.aboutMeImages}>
+              <div className={styles.aboutMeImagesFirstRow}>
                 <img
                   src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/about_me_snowshoe_tunnel_qtqonc.jpg"
                   alt="Michael Iwanek Navbar"
-                  className="about_me_snowshoeing_photo"
+                  className={styles.aboutMeSnowshoeingPhoto}
                 />
                 <img
                   src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864636/about_me_heavenly_ski_resort_bu4bzj.jpg"
                   alt="Michael Iwanek Navbar"
-                  className="about_me_ski_photo"
+                  className={styles.aboutMeSkiingPhoto}
                 />
               </div>
-              <img
-                src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/about_me_tent_snow_camping_qvoznf.jpg"
-                alt="Michael Iwanek Navbar"
-                className="tent_image"
-              />
+              <div className="aboutMeImagesSecondRow">
+                <img
+                  src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/about_me_tent_snow_camping_qvoznf.jpg"
+                  alt="Michael Iwanek Navbar"
+                  className={styles.tentImage}
+                />
+              </div>
             </div>
 
             {/* Self Text Intro */}
-            <div className="text_wrapper_about_me">
+            <div className={styles.textWrapperAboutMe}>
               <p>Hello!</p>
               <p>
                 I'm Michael Iwanek and this is my portfolio website to showcase
