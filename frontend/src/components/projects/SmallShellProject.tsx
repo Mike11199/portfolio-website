@@ -1,6 +1,6 @@
-import ReactPlayer from "react-player";
 import GitHubButton from "../utils/GitHubButton";
 import { useBrowserWindowDimensions } from "../utils/Functions";
+import ReactVideoPlayer from "../utils/ReactVideoPlayer";
 
 const SmallShellProject = () => {
   const { width } = useBrowserWindowDimensions();
@@ -12,14 +12,6 @@ const SmallShellProject = () => {
     playerWidthSmallShell = 280;
     playerHeightSmallShell = 160;
   }
-
-  const youtubeOptions = {
-    playerVars: {
-      controls: 1,
-      showinfo: 0,
-      playsinline: 1,
-    },
-  };
 
   return (
     <>
@@ -35,20 +27,14 @@ const SmallShellProject = () => {
 
         {/* Embedded YouTube Video */}
         <div className="project_card_smallsh">
-          <div className="video_wrapper_smallsh">
-            <ReactPlayer
-              width={playerWidthSmallShell}
-              height={playerHeightSmallShell}
-              playing
-              url="https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1"
-              loop={true}
-              muted={true}
-              style={{ zIndex: 1 }}
-              config={{
-                youtube: youtubeOptions,
-              }}
-            />
-          </div>
+          <ReactVideoPlayer
+            className={"videoWrapperSmallShell"}
+            width={playerWidthSmallShell}
+            height={playerHeightSmallShell}
+            URL={
+              "https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1"
+            }
+          />
 
           {/* Text Description */}
           <div className="text_wrapper">

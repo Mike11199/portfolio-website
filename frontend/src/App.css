@@ -92,7 +92,7 @@
   opacity: 0;
 }
 
-.video_wrapper_ksp {
+.videoWrapperKSP {
   margin-bottom: 40px;
 }
 
@@ -105,7 +105,7 @@ ul > li > ul > li {
   list-style-type: circle;
 }
 
-.wrapper_rock_climbing_video {
+.videoWrapperRockClimbing {
   padding-right: 60px;
 }
 
@@ -164,7 +164,7 @@ ul > li > ul > li {
   width: 60%;
 }
 
-.video_wrapper_smallsh {
+.videoWrapperSmallShell {
   width: 60%;
   position: relative;
 }
@@ -667,7 +667,7 @@ li {
     align-items: center;
   }
 
-  .wrapper_rock_climbing_video {
+  .videoWrapperRockClimbing {
     padding: 0px;
     margin: 0px;
     align-self: center;
@@ -787,7 +787,7 @@ li {
     padding-top: 40px;
   }
 
-  .video_wrapper_smallsh {
+  .videoWrapperSmallShell {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -810,7 +810,7 @@ li {
     width: 100%;
   }
 
-  .video_wrapper_ksp {
+  .videoWrapperKSP {
     display: flex;
     justify-content: center;
     width: 100%;

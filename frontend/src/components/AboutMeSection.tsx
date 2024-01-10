@@ -1,30 +1,17 @@
 import { useBrowserWindowDimensions } from "./utils/Functions";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import ReactPlayer from "react-player";
-
-
+import ReactVideoPlayer from "./utils/ReactVideoPlayer";
 
 const AboutMeSection = () => {
   const { width } = useBrowserWindowDimensions();
 
-  let playerWidthClimbing;
-  let playerHeightClimbing;
+  let playerWidthClimbing = 400;
+  let playerHeightClimbing = 710;
 
-  if (width > 600) {
-    playerWidthClimbing = 400;
-    playerHeightClimbing = 710;
-  } else {
+  if (width <= 600) {
     playerWidthClimbing = 250;
     playerHeightClimbing = 440;
   }
-
-  const youtubeOptions = {
-    playerVars: {
-      controls: 1,
-      showinfo: 0,
-      playsinline: 1,
-    },
-  };
 
   return (
     <>
@@ -33,22 +20,18 @@ const AboutMeSection = () => {
           About Me <span className="wave">👋</span>
         </h1>
         <div className="about_me_section">
-          <div className="wrapper_rock_climbing_video">
-            <ReactPlayer
-              width={playerWidthClimbing}
-              height={playerHeightClimbing}
-              playing
-              url="https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1"
-              loop={true}
-              muted={true}
-              style={{ zIndex: 1 }}
-              config={{
-                youtube: youtubeOptions,
-              }}
-            />
-          </div>
+          {/* Rock Climbing Video - Vent5 */}
+          <ReactVideoPlayer
+            className={"videoWrapperRockClimbing"}
+            width={playerWidthClimbing}
+            height={playerHeightClimbing}
+            URL={
+              "https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1"
+            }
+          />
 
           <div className="project_1_main_div">
+            {/* Images of Self */}
             <div className="about_me_images">
               <div className="about_me_images2">
                 <img
@@ -69,6 +52,7 @@ const AboutMeSection = () => {
               />
             </div>
 
+            {/* Self Text Intro */}
             <div className="text_wrapper_about_me">
               <p>Hello!</p>
               <p>

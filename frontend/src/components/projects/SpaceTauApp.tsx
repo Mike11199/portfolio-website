@@ -1,4 +1,4 @@
-import ReactPlayer from "react-player";
+import ReactVideoPlayer from "../utils/ReactVideoPlayer";
 import { Carousel } from "react-responsive-carousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
@@ -15,14 +15,6 @@ const SpaceTauApp = () => {
     playerWidthSpaceTau = 280;
     playerHeightSpaceTau = 160;
   }
-
-  const youtubeOptions = {
-    playerVars: {
-      controls: 1,
-      showinfo: 0,
-      playsinline: 1,
-    },
-  };
 
   return (
     <>
@@ -62,18 +54,14 @@ const SpaceTauApp = () => {
             </div>
 
             {/* Embedded YouTube Video */}
-            <div className="video_wrapper_ksp">
-              <ReactPlayer
-                width={playerWidthSpaceTau}
-                height={playerHeightSpaceTau}
-                playing
-                url="https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1"
-                loop={true}
-                muted={true}
-                style={{ zIndex: 1 }}
-                config={{ youtube: youtubeOptions }}
-              />
-            </div>
+            <ReactVideoPlayer
+              className={"videoWrapperKSP"}
+              width={playerWidthSpaceTau}
+              height={playerHeightSpaceTau}
+              URL={
+                "https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1"
+              }
+            />
           </div>
 
           {/* Text Description */}
