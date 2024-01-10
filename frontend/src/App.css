@@ -17,6 +17,12 @@
   font-size: 18px;
 }
 
+.spaceTauMainContainer {
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
 .text_wrapper {
   width: 30%;
   height: fit-content;
@@ -740,5 +746,10 @@ li {
     margin-right: 0%;
     display: flex;
     justify-content: center;
+  }
+
+  .spaceTauMainContainer {
+    flex-direction: column;
+    height: auto;
   }
 }

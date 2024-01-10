@@ -39,7 +39,7 @@ const SpaceTauApp = () => {
         </div>
 
         {/* Image Carousel */}
-        <div className="project_1_main_div">
+        <div className="spaceTauMainContainer">
           <div className="space_tau_carousel_and_video">
             <div className="space_tau_carousel">
               <Carousel
