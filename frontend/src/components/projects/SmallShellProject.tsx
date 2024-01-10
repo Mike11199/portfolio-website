@@ -1,30 +1,9 @@
-import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import GitHubButton from "../utils/GitHubButton";
-
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    window.addEventListener("resize", handleResize);
-    // Cleanup the event listener on component unmount
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowSize;
-}
+import { useBrowserWindowDimensions } from "../utils/Functions";
 
 const SmallShellProject = () => {
-  const { width } = useWindowSize();
+  const { width } = useBrowserWindowDimensions();
 
   let playerWidthSmallShell = 1080;
   let playerHeightSmallShell = 610;

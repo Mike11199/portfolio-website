@@ -1,34 +1,13 @@
 import ReactPlayer from "react-player";
 import { Carousel } from "react-responsive-carousel";
-import { useEffect, useState } from "react";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { spaceTauImages } from "../../images/imageData.json";
-
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    window.addEventListener("resize", handleResize);
-    // Cleanup the event listener on component unmount
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowSize;
-}
+import { useBrowserWindowDimensions } from "../utils/Functions";
 
 const SpaceTauApp = () => {
-  const { width } = useWindowSize();
+  const { width } = useBrowserWindowDimensions();
   let playerWidthSpaceTau = 700;
   let playerHeightSpaceTau = 395;
 

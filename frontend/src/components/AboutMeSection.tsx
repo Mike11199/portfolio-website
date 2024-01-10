@@ -1,29 +1,11 @@
-import { useEffect, useState } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { useBrowserWindowDimensions } from "./utils/Functions";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ReactPlayer from "react-player";
 
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
 
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowSize;
-}
 
 const AboutMeSection = () => {
-  const { width } = useWindowSize();
+  const { width } = useBrowserWindowDimensions();
 
   let playerWidthClimbing;
   let playerHeightClimbing;
