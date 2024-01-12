@@ -16,10 +16,10 @@ const SmallShellProject = () => {
   return (
     <>
       <section className="smallsh_section">
-        <h2 className="project_header">Small Shell (smallsh) - C Unix Shell</h2>
+        <h2 className="projectHeaderText">Small Shell (smallsh) - C Unix Shell</h2>
 
         {/* Buttons */}
-        <div className="project_buttons">
+        <div className="projectButtons">
           <GitHubButton
             URL={"https://github.com/Mike11199/CS-344-Small-Shell"}
           />
@@ -37,7 +37,7 @@ const SmallShellProject = () => {
           />
 
           {/* Text Description */}
-          <div className="text_wrapper">
+          <div className="textWrapper">
             <ul>
               <li>
                 Programmed a shell in C similar to the BASH shell, implementing

@@ -49,7 +49,7 @@ const Navbar = () => {
         <HashLink className={styles.navbarLink} smooth to="#top">
           Home
         </HashLink>
-        <HashLink className={styles.navbarLink} smooth to="./#projects_section">
+        <HashLink className={styles.navbarLink} smooth to="./#projectsDivScrollToSection">
           Projects
         </HashLink>
         <Link

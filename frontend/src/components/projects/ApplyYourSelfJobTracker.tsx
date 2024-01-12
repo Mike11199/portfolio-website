@@ -8,12 +8,12 @@ const ApplyYourSelfJobTracker = () => {
   return (
     <>
       <section className="apply_yourself_section">
-        <h2 className="project_header">
+        <h2 className="projectHeaderText">
           applyYourSelf Job Application Tracker
         </h2>
 
         {/* Buttons */}
-        <div className="project_buttons">
+        <div className="projectButtons">
           <GitHubButton
             URL={"https://github.com/Mike11199/applyYourSelf-Job-Tracker"}
           />
@@ -39,7 +39,7 @@ const ApplyYourSelfJobTracker = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_wrapper">
+          <div className="textWrapper">
             <ul>
               <li>
                 Full-stack MERN web application that allows multiple users to

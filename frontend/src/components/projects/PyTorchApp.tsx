@@ -3,21 +3,22 @@ import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { PyTorchImages } from "../../images/imageData.json";
+import  styles  from "../styles/PyTorchApp.module.css"
 
 const PyTorchApp = () => {
   return (
     <>
-      <section className="hash_map_section">
-        <div id="projects_section"></div>
-        <h1 style={{ margin: "0px" }}> Projects </h1>
-        <p style={{ height: "auto", marginBottom: "100px" }}>
+      <section className={styles.pyTorchOuterContainer}>
+        <div id="projectsDivScrollToSection"></div>
+        <h1 className={styles.projectsHeader}> Projects </h1>
+        <p className={styles.projectsParagraph}>
           Please see full-stack Computer Science projects I've completed below,
           in various programming languages.
         </p>
-        <h2 className="project_header">PyTorch Image Classification Website</h2>
+        <h2 className="projectHeaderTagText">PyTorch Image Classification Website</h2>
 
         {/* Buttons */}
-        <div className="project_buttons">
+        <div className="projectButtons">
           <GitHubButton
             URL={
               "https://github.com/Mike11199/PyTorch-Image-Classification-TypeScript"
@@ -38,8 +39,8 @@ const PyTorchApp = () => {
         </div>
 
         {/* Image Carousel */}
-        <div className="project_card_hash_map">
-          <div className="hash_map_carousel">
+        <div className={styles.pyTorchCarouselAndDescriptionContainer}>
+          <div className={styles.pyTorchCarouselContainer}>
             <Carousel
               showIndicators={false}
               width="100%"
@@ -52,7 +53,7 @@ const PyTorchApp = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_wrapper">
+          <div className="textWrapper">
             <ul>
               <li>
                 A full stack project involving a deployed PyTorch

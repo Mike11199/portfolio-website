@@ -7,12 +7,12 @@ const PythonHashMap = () => {
   return (
     <>
       <section className="hash_map_section">
-        <h2 className="project_header">
+        <h2 className="projectHeaderText">
           Hash Map Data Structure Implementation - Python
         </h2>
 
         {/* Buttons */}
-        <div className="project_buttons">
+        <div className="projectButtons">
           <GitHubButton
             URL={"https://github.com/Mike11199/HashMap-Python-Implementation"}
           />
@@ -33,7 +33,7 @@ const PythonHashMap = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_wrapper">
+          <div className="textWrapper">
             <ul>
               <li>
                 This is the portfolio project for the Oregon State University

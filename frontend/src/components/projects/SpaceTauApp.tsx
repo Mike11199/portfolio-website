@@ -22,10 +22,10 @@ const SpaceTauApp = () => {
         className="space_tau_section"
         style={{ margin: "0px", height: "auto" }}
       >
-        <h2 className="project_header"> SpaceTau-Flask-and-MySQL-App</h2>
+        <h2 className="projectHeaderText"> SpaceTau-Flask-and-MySQL-App</h2>
 
         {/* Buttons */}
-        <div className="project_buttons">
+        <div className="projectButtons">
           <GitHubButton
             URL={
               "https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340"
@@ -65,7 +65,7 @@ const SpaceTauApp = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_wrapper">
+          <div className="textWrapper">
             <ul>
               <li>
                 Project programmed in Flask to run Python in a back-end server

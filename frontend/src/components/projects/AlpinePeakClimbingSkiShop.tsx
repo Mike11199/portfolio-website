@@ -8,10 +8,10 @@ const AlpinePeakClimbingSkiShop = () => {
   return (
     <>
       <section className="ski_shop_section">
-        <h2 className="project_header">Ski & Rock Climbing E-Commerce Store</h2>
+        <h2 className="projectHeaderText">Ski & Rock Climbing E-Commerce Store</h2>
 
         {/* Buttons */}
-        <div className="project_buttons">
+        <div className="projectButtons">
           <GitHubButton
             URL={
               "https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack"
@@ -38,7 +38,7 @@ const AlpinePeakClimbingSkiShop = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_wrapper">
+          <div className="textWrapper">
             <ul>
               <li>
                 A complex full-stack website (e.g - REI/Amazon clone) where

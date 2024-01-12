@@ -7,10 +7,10 @@ const OpenGLSolarSystem = () => {
   return (
     <>
       <section className="kotlin_section">
-        <h2 className="project_header">OpenGL C++ Solar System Model</h2>
+        <h2 className="projectHeaderText">OpenGL C++ Solar System Model</h2>
 
         {/* Buttons */}
-        <div className="project_buttons">
+        <div className="projectButtons">
           <ButtonLink
             URL={"https://www.youtube.com/watch?v=ZvKFpJYDZkw"}
             variant={"red"}
@@ -33,7 +33,7 @@ const OpenGLSolarSystem = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_wrapper">
+          <div className="textWrapper">
             <ul>
               <li>
                 A Solar System model coded in C++ using OpenGL, featuring GLSL

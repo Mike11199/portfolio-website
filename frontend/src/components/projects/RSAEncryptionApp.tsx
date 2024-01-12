@@ -8,12 +8,12 @@ const RSAEncryptionApp = () => {
   return (
     <>
       <section className="rsa_section">
-        <h2 className="project_header">
+        <h2 className="projectHeaderText">
           RSA & AES Encryption App - Electron.js, React.js
         </h2>
 
         {/* Buttons */}
-        <div className="project_buttons">
+        <div className="projectButtons">
           <GitHubButton
             URL={"https://github.com/Mike11199/CS-361-RSA-React-App"}
           />
@@ -38,7 +38,7 @@ const RSAEncryptionApp = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_wrapper">
+          <div className="textWrapper">
             <ul>
               <li>
                 Developed an Electron.js (local exe) and web application to

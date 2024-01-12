@@ -5,12 +5,12 @@ const KotlinAndroidProjects = () => {
   return (
     <>
       <section className="kotlin_section">
-        <h2 className="project_header">
+        <h2 className="projectHeaderText">
           Kotlin (Jetpack Compose) - Sacramento City and Flight Search App
         </h2>
 
         {/* Buttons */}
-        <div className="project_buttons">
+        <div className="projectButtons">
           <GitHubButton
             URL={
               "https://github.com/Mike11199/CS-492-Assignment-5-Flight-Search-App"
@@ -41,7 +41,7 @@ const KotlinAndroidProjects = () => {
           </div>
 
           {/* Text Description  */}
-          <div className="text_wrapper">
+          <div className="textWrapper">
             <ul>
               <li>
                 These are two applications from the Oregon State University

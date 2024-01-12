@@ -7,10 +7,10 @@ const SlashUnrealEngine = () => {
   return (
     <>
       <section className="hash_map_section">
-        <h2 className="project_header">C++ Unreal Engine Project Slash</h2>
+        <h2 className="projectHeaderText">C++ Unreal Engine Project Slash</h2>
 
         {/* Buttons */}
-        <div className="project_buttons">
+        <div className="projectButtons">
           <GitHubButton
             URL={"https://github.com/Mike11199/unreal-project-slash"}
           />
@@ -31,7 +31,7 @@ const SlashUnrealEngine = () => {
           </div>
 
           {/* Text Description */}
-          <div className="text_wrapper">
+          <div className="textWrapper">
             <ul>
               <li>
                 A project I'm doing for fun from a Udemy course - still in
