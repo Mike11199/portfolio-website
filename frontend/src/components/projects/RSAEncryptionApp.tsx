@@ -32,7 +32,12 @@ const RSAEncryptionApp = () => {
         {/* Image Carousel */}
         <div className="project_card_rsa_encryption">
           <div className="carousel_rsa_encryption">
-            <Carousel width="100%" infiniteLoop={true} showIndicators={false}>
+            <Carousel
+              width="100%"
+              infiniteLoop={true}
+              showIndicators={false}
+              dynamicHeight={true}
+            >
               {ImagesList(rsaEncryptionImages)}
             </Carousel>
           </div>
@@ -71,7 +76,7 @@ const RSAEncryptionApp = () => {
               </li>
             </ul>
           </div>
-         </div>
+        </div>
       </section>
     </>
   );
