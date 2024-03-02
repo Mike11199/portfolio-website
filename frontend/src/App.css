@@ -1,3 +1,13 @@
+.player-wrapper {
+  width: 100%;
+  position: absolute;
+}
+
+.react-player {
+  width: 100%;
+  position: absolute;
+}
+
 ::-webkit-scrollbar {
   width: 14px;
 }
@@ -84,7 +94,10 @@
 }
 
 .videoWrapperKSP {
+  display: flex;
   margin-bottom: 40px;
+  width: 75%;
+  height: 40vh;
 }
 
 ul > li > ul {
@@ -153,6 +166,7 @@ ul > li > ul > li {
 
 .videoWrapperSmallShell {
   width: 60%;
+  display: flex;
   position: relative;
 }
 
@@ -160,6 +174,7 @@ ul > li > ul > li {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
+  margin-bottom: 100px;
 }
 
 .space_tau_carousel_and_video {
@@ -731,3 +746,5 @@ li {
     height: auto;
   }
 }
+
+

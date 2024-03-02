@@ -4,17 +4,8 @@ import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { spaceTauImages } from "../../images/imageData.json";
-import { useBrowserWindowDimensions } from "../utils/Functions";
 
 const SpaceTauApp = () => {
-  const { width } = useBrowserWindowDimensions();
-  let playerWidthSpaceTau = 700;
-  let playerHeightSpaceTau = 395;
-
-  if (width <= 600) {
-    playerWidthSpaceTau = 280;
-    playerHeightSpaceTau = 160;
-  }
 
   return (
     <>
@@ -54,14 +45,13 @@ const SpaceTauApp = () => {
             </div>
 
             {/* Embedded YouTube Video */}
+            <div className="videoWrapperKSP">
             <ReactVideoPlayer
-              className={"videoWrapperKSP"}
-              width={playerWidthSpaceTau}
-              height={playerHeightSpaceTau}
               URL={
                 "https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1"
               }
             />
+            </div>
           </div>
 
           {/* Text Description */}

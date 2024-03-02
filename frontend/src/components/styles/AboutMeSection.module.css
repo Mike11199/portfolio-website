@@ -1,11 +1,13 @@
 .aboutMeImagesFirstRow {
   display: flex;
   flex-direction: row;
-  padding-bottom: 50px;
+  gap: 1rem;
 }
 
 .textWrapperAboutMe {
   height: fit-content;
+  max-height: 50vh;
+  overflow: auto;
   padding-right: 3rem;
   padding-left: 3rem;
   margin-left: 1rem;
@@ -27,11 +29,13 @@
 .aboutMeImages {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  gap: 2rem;
 }
 
 .tentImage {
   border-radius: 50px;
-  width: 57%;
+  width: 100%;
   object-fit: cover;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
@@ -52,64 +56,69 @@
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-.videoWrapperRockClimbing {
-  padding-right: 60px;
-}
-
 .aboutMeImagesAndTextWrapper {
   margin: 0px;
   display: flex;
   flex-direction: row;
+  gap: 5rem;
 }
 
-@media (max-width: 1400px) {
+.aboutMeVideoWrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width: 1650px) {
+
+  .textWrapperAboutMe {
+    max-height: 30vh;
+  }
+}
+
+@media (max-width: 1000px) {
+
   .aboutMeImagesFirstRow {
     flex-direction: column;
-    padding: 0px;
-    align-items: center;
-    gap: 20px;
   }
 
-  .tentImage {
-    align-items: center;
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-  }
-  .aboutMeSnowshoeingPhoto {
-    margin-right: 0px;
-    width: 65%;
-  }
+.aboutMeSnowshoeingPhoto {
+  border-radius: 50px;
+  width: 100%;
+}
 
-  .aboutMeSnowshoeingPhoto {
-    margin-right: 0px;
-    width: 65%;
-  }
+.aboutMeSkiingPhoto {
+  border-radius: 50px;
+  width: 100%;
+}
 
-  .aboutMeSkiingPhoto {
-    width: 65%;
-    padding-bottom: 20px;
-  }
+.textWrapperAboutMe {
+  max-height: 50vh;
+}
+
 }
 
 @media (max-width: 600px) {
   .aboutMeImagesFirstRow {
     flex-direction: column;
-    padding-bottom: 20px;
     align-items: center;
-    gap: 20px;
+  }
+
+  .aboutMeImagesAndTextWrapper {
+    gap: 2rem;
   }
 
   .textWrapperAboutMe {
     width: 100%;
     padding-right: 0rem;
     padding-left: 0rem;
-    padding-left: 0rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     margin-left: 0rem;
     margin-top: 50px;
     margin-bottom: 50px;
+    max-height: none;
   }
 
   .aboutMeSection {
@@ -139,7 +148,6 @@
     padding: 0px;
     margin: 0px;
     align-self: center;
-    margin-bottom: 30px;
   }
 
   .aboutMeImagesAndTextWrapper {
@@ -147,5 +155,10 @@
     display: flex;
     flex-direction: column;
     height: auto;
+  }
+
+  .aboutMeVideoWrapper {
+    display: flex;
+    height: 40vh;
   }
 }

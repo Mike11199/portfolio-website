@@ -1,18 +1,8 @@
-import { useBrowserWindowDimensions } from "./utils/Functions";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ReactVideoPlayer from "./utils/ReactVideoPlayer";
 import styles from "./styles/AboutMeSection.module.css";
 
 const AboutMeSection = () => {
-  const { width } = useBrowserWindowDimensions();
-
-  let playerWidthClimbing = 400;
-  let playerHeightClimbing = 710;
-
-  if (width <= 600) {
-    playerWidthClimbing = 250;
-    playerHeightClimbing = 440;
-  }
 
   return (
     <>
@@ -21,15 +11,15 @@ const AboutMeSection = () => {
           About Me <span className="wave">👋</span>
         </h1>
         <div className={styles.aboutMeSection}>
-          <ReactVideoPlayer
-            className={styles.videoWrapperRockClimbing}
-            width={playerWidthClimbing}
-            height={playerHeightClimbing}
-            URL={
-              "https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1"
-            }
-          />
+
           <div className={styles.aboutMeImagesAndTextWrapper}>
+          <div className={styles.aboutMeVideoWrapper}>
+            <ReactVideoPlayer
+              URL={
+                "https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1"
+              }
+            />
+          </div>
             <AboutMeImagesContainer />
             <AboutMeTextContainer />
           </div>

@@ -2,31 +2,22 @@ import ReactPlayer from "react-player";
 
 interface ReactPlayerProps {
   URL: string;
-  width: number;
-  height: number;
-  className?: string;
 }
 
 /**
  * React video player to embed a video on the website from YouTube.
  * @param {string} URL - The URL of the video.
- * @param {number} width - The width of the video player.
- * @param {number} height - The height of the video player.
- * @param {string} className - Classname for div that surrounds the video as a wrapper.
  * @returns {JSX.Element} The React element representing the video player.
  */
 const ReactVideoPlayer = ({
   URL,
-  width,
-  height,
-  className,
-}: ReactPlayerProps) => {
+  }: ReactPlayerProps) => {
   return (
-    <div className={`${className}`}>
+    <div className='player-wrapper'>
       <ReactPlayer
-        width={width}
-        height={height}
         playing
+        width='100%'
+        height='100%'
         url={URL}
         loop={true}
         muted={true}
