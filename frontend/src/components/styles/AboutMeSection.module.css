@@ -69,14 +69,6 @@
   height: 100%;
 }
 
-
-@media (max-width: 1650px) {
-
-  .textWrapperAboutMe {
-    max-height: 30vh;
-  }
-}
-
 @media (max-width: 1000px) {
 
   .aboutMeImagesFirstRow {
