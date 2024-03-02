@@ -8,7 +8,11 @@ const SmallShellProject = () => {
   let playerWidthSmallShell = 1080;
   let playerHeightSmallShell = 610;
 
-  if (width <= 600) {
+  if (width <= 1400) {
+    playerWidthSmallShell = 750;
+    playerHeightSmallShell = 400;
+  }
+  else if (width <= 600) {
     playerWidthSmallShell = 280;
     playerHeightSmallShell = 160;
   }

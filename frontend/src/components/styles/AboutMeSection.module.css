@@ -62,6 +62,36 @@
   flex-direction: row;
 }
 
+@media (max-width: 1400px) {
+  .aboutMeImagesFirstRow {
+    flex-direction: column;
+    padding: 0px;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .tentImage {
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .aboutMeSnowshoeingPhoto {
+    margin-right: 0px;
+    width: 65%;
+  }
+
+  .aboutMeSnowshoeingPhoto {
+    margin-right: 0px;
+    width: 65%;
+  }
+
+  .aboutMeSkiingPhoto {
+    width: 65%;
+    padding-bottom: 20px;
+  }
+}
+
 @media (max-width: 600px) {
   .aboutMeImagesFirstRow {
     flex-direction: column;

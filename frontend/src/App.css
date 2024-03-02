@@ -28,6 +28,8 @@
   justify-content: center;
   width: 30%;
   height: fit-content;
+  max-height: 50vh;
+  overflow: auto;
   margin-left: 5%;
   margin-right: 3%;
   margin-bottom: 3%;
@@ -721,6 +723,7 @@ li {
     height: fit-content;
     padding: 0;
     margin: 0;
+    max-height: none;
   }
 
   .spaceTauMainContainer {
