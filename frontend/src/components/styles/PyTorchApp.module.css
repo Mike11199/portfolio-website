@@ -56,4 +56,8 @@
   .pyTorchCarouselContainer {
     width: 100%;
   }
+
+  .projectHeaderText {
+    text-align: center;
+  }
 }

@@ -3,7 +3,7 @@ import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { PyTorchImages } from "../../images/imageData.json";
-import  styles  from "../styles/PyTorchApp.module.css"
+import styles from "../styles/PyTorchApp.module.css";
 
 const PyTorchApp = () => {
   return (
@@ -15,7 +15,9 @@ const PyTorchApp = () => {
           Please see full-stack Computer Science projects I've completed below,
           in various programming languages.
         </p>
-        <h2 className="projectHeaderTagText">PyTorch Image Classification Website</h2>
+        <h2 className={styles.projectHeaderText}>
+          PyTorch Image Classification Website - Python/TypeScript
+        </h2>
 
         {/* Buttons */}
         <div className="projectButtons">
@@ -66,7 +68,8 @@ const PyTorchApp = () => {
                 it to accept HTTP requests and process images according to a
                 custom inference.py script I've written. This script loads an
                 image as a NumPy array into the Torch model and returns its
-                predictions as a JSON object.
+                predictions as a JSON object. The model was developed and
+                deployed using a Sagemaker/Jupyter Lab Notebook in Python.
               </li>
               <li>
                 The model is invoked by an AWS Lambda which directly sends the

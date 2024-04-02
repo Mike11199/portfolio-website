@@ -9,7 +9,7 @@ const ApplyYourSelfJobTracker = () => {
     <>
       <section className="apply_yourself_section">
         <h2 className="projectHeaderText">
-          applyYourSelf Job Application Tracker
+          applyYourSelf Job Application Tracker - MERN
         </h2>
 
         {/* Buttons */}

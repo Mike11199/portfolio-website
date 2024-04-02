@@ -2,13 +2,15 @@ import { Carousel } from "react-responsive-carousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
-import { alpinePeakClimbingSkiShopImages } from '../../images/imageData.json';
+import { alpinePeakClimbingSkiShopImages } from "../../images/imageData.json";
 
 const AlpinePeakClimbingSkiShop = () => {
   return (
     <>
       <section className="ski_shop_section">
-        <h2 className="projectHeaderText">Ski & Rock Climbing E-Commerce Store</h2>
+        <h2 className="projectHeaderText">
+          Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/ PostgreSQL)
+        </h2>
 
         {/* Buttons */}
         <div className="projectButtons">
@@ -32,7 +34,12 @@ const AlpinePeakClimbingSkiShop = () => {
         {/* Image Carousel */}
         <div className="project_card_ski_shop">
           <div className="carousel_ski_shop">
-            <Carousel width="100%" infiniteLoop={true} showIndicators={false} dynamicHeight={true}>
+            <Carousel
+              width="100%"
+              infiniteLoop={true}
+              showIndicators={false}
+              dynamicHeight={true}
+            >
               {ImagesList(alpinePeakClimbingSkiShopImages)}
             </Carousel>
           </div>
@@ -43,22 +50,29 @@ const AlpinePeakClimbingSkiShop = () => {
               <li>
                 A complex full-stack website (e.g - REI/Amazon clone) where
                 users can search for products, add them to a cart, and
-                submit/pay for an order with a mock PayPal account. An Admin
-                dashboard allows for product/inventory management, and real-time
-                user chats with Socket.IO. Implemented TypeScript on the
-                front-end, Express.js/Node.js for the server, and MongoDB
-                (NoSQL) for the database.
+                submit/pay for an order with a mock PayPal account. An admin
+                dashboard allows for CRUD operations on users, products, and
+                orders without directly editing the PostgreSQL database.
+              </li>
+              <li>
+                Implemented TypeScript and Redux for global state management on
+                the front end. A .NET/C# API uses Entity Framework Core and JWT
+                authentication to communicate with a PostgreSQL relational
+                database hosted on AWS RDS. A secondary Express.js
+                API/microservice uses Socket.io to enable bi-directional
+                communication between admins and clients - for order help via a
+                chat button.
               </li>
               <li>
                 Deployed on an AWS Elastic Container Service (ECS) cluster via
                 serverless AWS Fargate. Implemented a CI/CD pipeline via a
-                GitHub Actions .yml file which re-builds and deploys new docker
-                images to ECR/ECS for the front/back end. This runs whenever new
-                commits are pushed to the docker branch (main runs on Heroku).
-                Deployed AWS Lambda Crons with EventBridge rules to shut the
-                site down between 1AM-6AM (to save hosting costs). Added another
-                EventBridge Lambda which publishes to an SNS Topic, to notify me
-                via email if a container crashes.
+                GitHub Actions .yml file which re-builds and deploys three
+                docker images to ECR/ECS for the front/back end/express.js
+                microservice. This runs whenever new commits are pushed to the
+                docker branch. Deployed Python AWS Lambda Crons with EventBridge
+                rules to shut the site down between 1AM-6AM (to save hosting
+                costs). Added another EventBridge Lambda which publishes to an
+                SNS Topic, to notify me via email if a container crashes.
               </li>
               <li>
                 Added an EC2 load balancer to redirect HTTP traffic on port 80
@@ -71,21 +85,19 @@ const AlpinePeakClimbingSkiShop = () => {
               <li>
                 Used the PayPal SDK and sandbox accounts to simulate live
                 payments of orders by the website, sending order info to PayPal
-                and marking an order as paid in the MongoDB database depending
-                on the external API response.
-              </li>
-              <li>
-                Implemented Socket.IO to allow for bi-directional client and
-                server communication, to enable real-time messaging between a
-                logged in admin and user. Used Redux for global state management
-                and Bootstrap to develop React components.
+                and marking an order as paid in the PostgreSQL database
+                depending on the external API response.
               </li>
               <li>
                 Modeled complicated database relationships between products,
-                orders, and users using embedded MongoDB documents. For example,
-                products have a many to many relationship with orders. A product
-                also has a one to many relationship with reviews, and a user has
-                a one-to-many relationship with orders.
+                orders, and users intersection tables and many-to-many
+                relationships in PostgreSQL documents. For example, products
+                have a many to many relationship with orders. A product also has
+                a one to many relationship with reviews, and a user has a
+                one-to-many relationship with orders. Used pgAdmin to access the
+                database, EF core db-scaffold, and db migrations during
+                development to update tables with code-first and database-first
+                methods.
               </li>
               <li>
                 Added Google OAuth2.0 Log In, decoding JWT credentials from
