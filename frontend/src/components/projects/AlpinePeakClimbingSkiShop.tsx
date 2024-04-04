@@ -70,10 +70,10 @@ const AlpinePeakClimbingSkiShop = () => {
                 GitHub Actions .yml file which re-builds and deploys three
                 docker images to ECR/ECS for the front/backend/express.js
                 microservice. This runs whenever new commits are pushed to the
-                default branch. Deployed Python AWS Lambda Crons with EventBridge
-                rules to shut the site down between 1AM-6AM (to save hosting
-                costs). Added another EventBridge Lambda which publishes to an
-                SNS Topic, to notify me via email if a container crashes.
+                default branch. Deployed Python AWS Lambda Crons with
+                EventBridge rules to shut the site down between 1AM-6AM (to save
+                hosting costs). Added another EventBridge Lambda which publishes
+                to an SNS Topic, to notify me via email if a container crashes.
               </li>
               <li>
                 Added an EC2 load balancer to redirect HTTP traffic on port 80
@@ -92,14 +92,15 @@ const AlpinePeakClimbingSkiShop = () => {
               <li>
                 Modeled complicated database relationships between products,
                 orders, and users with intersection tables and many-to-many
-                relationships in PostgreSQL. For example, products have a many
-                to many relationship with orders. A product also has a one to
-                many relationship with reviews, and a user has a one-to-many
-                relationship with orders. Used pgAdmin to access the database,
-                and EF core commands such as db-scaffold to generate C# models
-                and classes from tables (database first). Also used EF core
-                database migrations to push database updates after only editing
-                C# models (code first).
+                relationships in PostgreSQL. For example, products have a
+                many-to-many relationship with orders. A product also has a
+                one-to-many relationship with reviews, and a user has a
+                one-to-many relationship with orders. Used pgAdmin to interact
+                with the database via SQL, and EF core commands such as
+                db-scaffold to generate C# models and classes from tables
+                (database first). Also used EF core database migrations to push
+                database table updates after only editing C# models (code
+                first).
               </li>
               <li>
                 Implemented resource based authorization via C# JSON web token
