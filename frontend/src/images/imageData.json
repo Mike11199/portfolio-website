@@ -1,258 +1,266 @@
 {
-    "PyTorchImages": [
-        {
-          "alt": "cats_and_dogs_image",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703822238/cats_and_dogs_lnwfi9.png"
-        },
-        {
-          "alt": "nat_geo_collage",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703823645/nat_geo_collage_analysis_tpnipt.png"
-        },
-        {
-          "alt": "new_york_traffic",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703832095/traffic_analysis_mcwwdg.png"
-        },
-        {
-          "alt": "pytorch_home_page",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703993902/pytorch_home_page_ctk08h.png"
-        },
-        {
-          "alt": "pytorch_doggo",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703828564/labrador_new_ogez0w.png"
-        },
-        {
-          "alt": "winter_traffic",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703831262/winter_traffic_analysis_caxrhm.png"
-        },
-        {
-          "alt": "jupyterlab_model_load_weights",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000182/jupyter_notebook_screenshot_bear_oy8vzh.png"
-        },
-        {
-          "alt": "aws_lambda_model_invoker",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703998674/clean_lambda_invoker_xkcjrm.png"
-        },
-        {
-          "alt": "front_end_and_server_code",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000819/typescript_new_if4it7.png"
-        }
-      ],
-    "alpinePeakClimbingSkiShopImages": [
-        {
-            "alt": "login_page_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441524/SkiShopLoginPage_ywkwjn.png"
-        },
-        {
-            "alt": "home_page_gif",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441670/SkiShopHomePage_si8vkz.gif"
-        },
-        {
-            "alt": "register_page_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441747/SkiShopRegisterPage_v9osuo.png"
-        },
-        {
-            "alt": "plant_trees_pledge_and_snow_satellite_tracker_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442507/ski_shop_pledge_and_sat_image_xseiqy.png"
-        },
-        {
-            "alt": "home_page_static_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442203/ski_shop_static_home_page_photo_u4f4vl.png"
-        },
-        {
-            "alt": "shopping_cart_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442304/ski_shop_shopping_cart_photo_ov8zr3.png"
-        },
-        {
-            "alt": "admin_dashboard_product_management_page_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442370/ski_shop_admin_products_dashboard_efynls.png"
-        },
-        {
-            "alt": "order_details_payment_paypal_buttons_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442428/ski_shop_paypal_order_details_page_elbfo1.png"
-        },
-        {
-            "alt": "editing_ski_mountaineering_login_page_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441833/SkiShopPhotoEditProcessGimp_jkrj7l.gif"
-        },
-        {
-            "alt": "nginx_dockerfile_docker.yml_docker_containers_screenshot_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226162/docker_nginx_code_w5e7ei.png"
-        },
-        {
-            "alt": "aws_ecs_cluster_container_task_screenshot_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_aws_ecr_w0gtma.png"
-        },
-        {
-            "alt": "aws_ci_cd_github_actions_yml_file_task_json_aws_screenshot_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226472/alpine_peak_github_actions_yml_jqoioi.png"
-        },
-        {
-            "alt": "aws_load_balancer_ecs_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_load_balancer_hhrakr.png"
-        },
-        {
-            "alt": "aws_lambda_cron_screenshots_to_stop_and_restart_site_every_night_photo",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226735/lambda_cron_pac3zd.png"
-        }
-    ],
-    "applyYourSelfImages": [
-        {
-            "alt": "job_tracker_dashboard_gif",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442991/applyyourself_job_tracker_dashboard_d41cco.gif"
-        },
-        {
-            "alt": "job_tracker_jobs_list_page",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229239/job_tracker_jobs_list_page_ajkrac.png"
-        },
-        {
-            "alt": "job_tracker_edit_job_notes_page",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229142/job_tracker_edit_job_notes_page_z16jds.png"
-        },
-        {
-            "alt": "job_tracker_home_page",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229277/apply_your_self_home_page_r5kfc3.png"
-        },
-        {
-            "alt": "job_tracker_sankey_chart_page",
-            "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229331/job_tracker_sankey_chart_qntmvc.png"
-        }
-    ],
-    "rsaEncryptionImages": [
-        {
-          "alt": "rsa_encryption_gif",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443108/encryption_react_app_rsa_zm71g8.gif"
-        },
-        {
-          "alt": "rsa_encryption_image",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228815/RSAPage_fgvomf.png"
-        },
-        {
-          "alt": "aes_encryption_gif",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443106/encryption_react_app_aes_iblpok.gif"
-        },
-        {
-          "alt": "aes_encryption_image",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228816/AESPage_hfsbt2.png"
-        }
-      ],
-      "solarSystemImages": [
-        {
-          "alt": "solar_system_jupiter_and_main_asteroid_belt",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229666/AsteroidBeltPlanetsCloseUpPhoto_busxio.png"
-        },
-        {
-          "alt": "earth_system_rotation_gif_over_10MB_cloudinary_limit",
-          "src": "https://github.com/Mike11199/GIFs/blob/main/earth_rotation_clouds.gif?raw=true"
-        },
-        {
-          "alt": "solar_system_and_both_belts_from_distance_gif",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703230118/288668401-65cbd665-51e0-4e54-9e95-4cfef91b79a0_ysic55.gif"
-        },
-        {
-          "alt": "close_up_of_planets_aligned",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229665/PlanetsAlignedImage_xaiskz.png"
-        },
-        {
-          "alt": "earth_system_static_image",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229667/EarthCloudsImage_bdpfo5.png"
-        },
-        {
-          "alt": "solar_system_from_distance",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229662/SolarSystemFarOut_xqjery.png"
-        }
-      ],
-      "unrealEngineImages": [
-        {
-          "alt": "unreal_destruction",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227399/unreal_destruction_zgdoxb.gif"
-        },
-        {
-          "alt": "unreal_voronoi_uniform_fracturing",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227381/unreal_voronoi_uniform_fracturing_i82ukx.png"
-        },
-        {
-          "alt": "unreal_debugging",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227368/unreal_debugging_info_gbbotb.png"
-        },
-        {
-          "alt": "unreal_dot_product_math_onenote",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227353/unreal_dot_product_2_cnpc9j.png"
-        },
-        {
-          "alt": "unreal_dot_product_image",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227384/unreal_dot_product_1_wu6ooj.png"
-        },
-        {
-          "alt": "unreal_determine_hit_animation_code",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227348/unreal_determine_hit_animation_kfgni2.png"
-        },
-        {
-          "alt": "unreal_directional_hit_animation",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227397/unreal_directional_hit_animation_gnkuyy.gif"
-        },
-        {
-          "alt": "unreal_hit_interface_code",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227351/unreal_hit_interface_thwvht.png"
-        },
-        {
-          "alt": "unreal_randomly_generated_treasure",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227375/unreal_treasure_fqw3zb.png"
-        },
-        {
-          "alt": "unreal_patrol_routes",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227366/unreal_patrol_zi4zqw.png"
-        },
-        {
-          "alt": "unreal_sensing_component",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227362/unreal_sensing_sa1pfs.png"
-        }
-      ],
-      "spaceTauImages": [
-        {
-          "alt": "space_tau_home_page",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231364/space_tau_home_page_sm0jsp.png"
-        },
-        {
-          "alt": "space_tau_spacecraft_page",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231367/space_tau_spacecraft_page_nzy5ym.png"
-        },
-        {
-          "alt": "space_tau_parts_page",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231366/space_tau_parts_page_tr3sgb.png"
-        },
-        {
-          "alt": "space_tau_intersection_table",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231365/space_tau_intersection_table_wtg2en.png"
-        },
-        {
-          "alt": "space_tau_missions_page",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231365/space_tau_missions_page_lrsuo5.png"
-        },
-        {
-          "alt": "space_tau_planets_page",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231368/space_tau_planets_page_ulinuf.png"
-        },
-        {
-          "alt": "space_tau_mysql_er_diagram",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231361/space_tau_mysql_er_diagram_uqkbax.png"
-        }
-      ],
-      "hashMapImages": [
-        {
-          "alt": "hash_map_put_function",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_put_function_yql8dr.png"
-        },
-        {
-          "alt": "hash_map_keys_buckets_diagram",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228636/hash_function_diagram_abmwcz.png"
-        },
-        {
-          "alt": "hash_map_resize_table_function",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_resize_table_function_opqhi4.png"
-        },
-        {
-          "alt": "hash_map_separate_chaining_gif",
-          "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228131/hash_map_separate_chaining_tljado.gif"
-        }
-      ]
+  "PyTorchImages": [
+    {
+      "alt": "cats_and_dogs_image",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703822238/cats_and_dogs_lnwfi9.png"
+    },
+    {
+      "alt": "nat_geo_collage",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703823645/nat_geo_collage_analysis_tpnipt.png"
+    },
+    {
+      "alt": "new_york_traffic",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703832095/traffic_analysis_mcwwdg.png"
+    },
+    {
+      "alt": "pytorch_home_page",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703993902/pytorch_home_page_ctk08h.png"
+    },
+    {
+      "alt": "pytorch_doggo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703828564/labrador_new_ogez0w.png"
+    },
+    {
+      "alt": "winter_traffic",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703831262/winter_traffic_analysis_caxrhm.png"
+    },
+    {
+      "alt": "jupyterlab_model_load_weights",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000182/jupyter_notebook_screenshot_bear_oy8vzh.png"
+    },
+    {
+      "alt": "aws_lambda_model_invoker",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703998674/clean_lambda_invoker_xkcjrm.png"
+    },
+    {
+      "alt": "front_end_and_server_code",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000819/typescript_new_if4it7.png"
+    }
+  ],
+  "alpinePeakClimbingSkiShopImages": [
+    {
+      "alt": "login_page_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441524/SkiShopLoginPage_ywkwjn.png"
+    },
+    {
+      "alt": "home_page_gif",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441670/SkiShopHomePage_si8vkz.gif"
+    },
+    {
+      "alt": "dotnet_api_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1712202640/ski_shop_dotnet_api_jotwiq.png"
+    },
+    {
+      "alt": "pgadmin_postgresql_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1712202638/ski_shop_postgresql_zk8std.png"
+    },
+    {
+      "alt": "register_page_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441747/SkiShopRegisterPage_v9osuo.png"
+    },
+    {
+      "alt": "plant_trees_pledge_and_snow_satellite_tracker_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442507/ski_shop_pledge_and_sat_image_xseiqy.png"
+    },
+    {
+      "alt": "home_page_static_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442203/ski_shop_static_home_page_photo_u4f4vl.png"
+    },
+    {
+      "alt": "shopping_cart_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442304/ski_shop_shopping_cart_photo_ov8zr3.png"
+    },
+    {
+      "alt": "admin_dashboard_product_management_page_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442370/ski_shop_admin_products_dashboard_efynls.png"
+    },
+    {
+      "alt": "order_details_payment_paypal_buttons_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442428/ski_shop_paypal_order_details_page_elbfo1.png"
+    },
+    {
+      "alt": "editing_ski_mountaineering_login_page_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441833/SkiShopPhotoEditProcessGimp_jkrj7l.gif"
+    },
+    {
+      "alt": "nginx_dockerfile_docker.yml_docker_containers_screenshot_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226162/docker_nginx_code_w5e7ei.png"
+    },
+    {
+      "alt": "aws_ecs_cluster_container_task_screenshot_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_aws_ecr_w0gtma.png"
+    },
+    {
+      "alt": "aws_ci_cd_github_actions_yml_file_task_json_aws_screenshot_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226472/alpine_peak_github_actions_yml_jqoioi.png"
+    },
+    {
+      "alt": "aws_load_balancer_ecs_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_load_balancer_hhrakr.png"
+    },
+    {
+      "alt": "aws_lambda_cron_screenshots_to_stop_and_restart_site_every_night_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226735/lambda_cron_pac3zd.png"
+    }
+  ],
+  "applyYourSelfImages": [
+    {
+      "alt": "job_tracker_dashboard_gif",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442991/applyyourself_job_tracker_dashboard_d41cco.gif"
+    },
+    {
+      "alt": "job_tracker_jobs_list_page",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229239/job_tracker_jobs_list_page_ajkrac.png"
+    },
+    {
+      "alt": "job_tracker_edit_job_notes_page",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229142/job_tracker_edit_job_notes_page_z16jds.png"
+    },
+    {
+      "alt": "job_tracker_home_page",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229277/apply_your_self_home_page_r5kfc3.png"
+    },
+    {
+      "alt": "job_tracker_sankey_chart_page",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229331/job_tracker_sankey_chart_qntmvc.png"
+    }
+  ],
+  "rsaEncryptionImages": [
+    {
+      "alt": "rsa_encryption_gif",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443108/encryption_react_app_rsa_zm71g8.gif"
+    },
+    {
+      "alt": "rsa_encryption_image",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228815/RSAPage_fgvomf.png"
+    },
+    {
+      "alt": "aes_encryption_gif",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443106/encryption_react_app_aes_iblpok.gif"
+    },
+    {
+      "alt": "aes_encryption_image",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228816/AESPage_hfsbt2.png"
+    }
+  ],
+  "solarSystemImages": [
+    {
+      "alt": "solar_system_jupiter_and_main_asteroid_belt",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229666/AsteroidBeltPlanetsCloseUpPhoto_busxio.png"
+    },
+    {
+      "alt": "earth_system_rotation_gif_over_10MB_cloudinary_limit",
+      "src": "https://github.com/Mike11199/GIFs/blob/main/earth_rotation_clouds.gif?raw=true"
+    },
+    {
+      "alt": "solar_system_and_both_belts_from_distance_gif",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703230118/288668401-65cbd665-51e0-4e54-9e95-4cfef91b79a0_ysic55.gif"
+    },
+    {
+      "alt": "close_up_of_planets_aligned",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229665/PlanetsAlignedImage_xaiskz.png"
+    },
+    {
+      "alt": "earth_system_static_image",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229667/EarthCloudsImage_bdpfo5.png"
+    },
+    {
+      "alt": "solar_system_from_distance",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229662/SolarSystemFarOut_xqjery.png"
+    }
+  ],
+  "unrealEngineImages": [
+    {
+      "alt": "unreal_destruction",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227399/unreal_destruction_zgdoxb.gif"
+    },
+    {
+      "alt": "unreal_voronoi_uniform_fracturing",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227381/unreal_voronoi_uniform_fracturing_i82ukx.png"
+    },
+    {
+      "alt": "unreal_debugging",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227368/unreal_debugging_info_gbbotb.png"
+    },
+    {
+      "alt": "unreal_dot_product_math_onenote",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227353/unreal_dot_product_2_cnpc9j.png"
+    },
+    {
+      "alt": "unreal_dot_product_image",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227384/unreal_dot_product_1_wu6ooj.png"
+    },
+    {
+      "alt": "unreal_determine_hit_animation_code",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227348/unreal_determine_hit_animation_kfgni2.png"
+    },
+    {
+      "alt": "unreal_directional_hit_animation",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227397/unreal_directional_hit_animation_gnkuyy.gif"
+    },
+    {
+      "alt": "unreal_hit_interface_code",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227351/unreal_hit_interface_thwvht.png"
+    },
+    {
+      "alt": "unreal_randomly_generated_treasure",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227375/unreal_treasure_fqw3zb.png"
+    },
+    {
+      "alt": "unreal_patrol_routes",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227366/unreal_patrol_zi4zqw.png"
+    },
+    {
+      "alt": "unreal_sensing_component",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227362/unreal_sensing_sa1pfs.png"
+    }
+  ],
+  "spaceTauImages": [
+    {
+      "alt": "space_tau_home_page",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231364/space_tau_home_page_sm0jsp.png"
+    },
+    {
+      "alt": "space_tau_spacecraft_page",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231367/space_tau_spacecraft_page_nzy5ym.png"
+    },
+    {
+      "alt": "space_tau_parts_page",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231366/space_tau_parts_page_tr3sgb.png"
+    },
+    {
+      "alt": "space_tau_intersection_table",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231365/space_tau_intersection_table_wtg2en.png"
+    },
+    {
+      "alt": "space_tau_missions_page",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231365/space_tau_missions_page_lrsuo5.png"
+    },
+    {
+      "alt": "space_tau_planets_page",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231368/space_tau_planets_page_ulinuf.png"
+    },
+    {
+      "alt": "space_tau_mysql_er_diagram",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231361/space_tau_mysql_er_diagram_uqkbax.png"
+    }
+  ],
+  "hashMapImages": [
+    {
+      "alt": "hash_map_put_function",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_put_function_yql8dr.png"
+    },
+    {
+      "alt": "hash_map_keys_buckets_diagram",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228636/hash_function_diagram_abmwcz.png"
+    },
+    {
+      "alt": "hash_map_resize_table_function",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_resize_table_function_opqhi4.png"
+    },
+    {
+      "alt": "hash_map_separate_chaining_gif",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228131/hash_map_separate_chaining_tljado.gif"
+    }
+  ]
 }
