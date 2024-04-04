@@ -9,7 +9,8 @@ const AlpinePeakClimbingSkiShop = () => {
     <>
       <section className="ski_shop_section">
         <h2 className="projectHeaderText">
-          Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/ PostgreSQL)
+          Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/
+          PostgreSQL)
         </h2>
 
         {/* Buttons */}
@@ -49,8 +50,8 @@ const AlpinePeakClimbingSkiShop = () => {
             <ul>
               <li>
                 A complex full-stack website (e.g - REI/Amazon clone) where
-                users can search for products, add them to a cart, and
-                submit/pay for an order with a mock PayPal account. An admin
+                users can search for and review products, add them to a cart,
+                and submit/pay for an order with a mock PayPal account. An admin
                 dashboard allows for CRUD operations on users, products, and
                 orders without directly editing the PostgreSQL database.
               </li>
@@ -67,9 +68,9 @@ const AlpinePeakClimbingSkiShop = () => {
                 Deployed on an AWS Elastic Container Service (ECS) cluster via
                 serverless AWS Fargate. Implemented a CI/CD pipeline via a
                 GitHub Actions .yml file which re-builds and deploys three
-                docker images to ECR/ECS for the front/back end/express.js
+                docker images to ECR/ECS for the front/backend/express.js
                 microservice. This runs whenever new commits are pushed to the
-                docker branch. Deployed Python AWS Lambda Crons with EventBridge
+                default branch. Deployed Python AWS Lambda Crons with EventBridge
                 rules to shut the site down between 1AM-6AM (to save hosting
                 costs). Added another EventBridge Lambda which publishes to an
                 SNS Topic, to notify me via email if a container crashes.
@@ -90,20 +91,28 @@ const AlpinePeakClimbingSkiShop = () => {
               </li>
               <li>
                 Modeled complicated database relationships between products,
-                orders, and users intersection tables and many-to-many
-                relationships in PostgreSQL documents. For example, products
-                have a many to many relationship with orders. A product also has
-                a one to many relationship with reviews, and a user has a
-                one-to-many relationship with orders. Used pgAdmin to access the
-                database, EF core db-scaffold, and db migrations during
-                development to update tables with code-first and database-first
-                methods.
+                orders, and users with intersection tables and many-to-many
+                relationships in PostgreSQL. For example, products have a many
+                to many relationship with orders. A product also has a one to
+                many relationship with reviews, and a user has a one-to-many
+                relationship with orders. Used pgAdmin to access the database,
+                and EF core commands such as db-scaffold to generate C# models
+                and classes from tables (database first). Also used EF core
+                database migrations to push database updates after only editing
+                C# models (code first).
               </li>
               <li>
-                Added Google OAuth2.0 Log In, decoding JWT credentials from
-                Google, and locating the user by email in MongoDB to verify the
-                user. JWT also allows for authorized/protected routes in the
-                application so users can only access their own data.
+                Implemented resource based authorization via C# JSON web token
+                (JWT) middleware in the API, so users can only access their own
+                data. The JWT contains user data in its payload which is hashed
+                via the HmacSha256Signature cryptographic algorithm - using a
+                symmetric key only known by the API. This allows the API to pull
+                information from the JWT with confidence that it is not spoofed,
+                as any spoofing would lead to a different JWT signature than
+                what the API would expect from a certain payload. Google
+                OAuth2.0 is also incorporated into the application using JWT
+                security, allowing a user to login conveniently with their
+                google account after being registered.
               </li>
             </ul>
           </div>
