@@ -187,10 +187,6 @@ ul > li > ul > li {
   flex-direction: row;
 }
 
-.about_me_text {
-  padding-right: 100px;
-}
-
 .project_card_rsa_encryption {
   margin-top: 20px;
   display: flex;
@@ -517,13 +513,6 @@ li {
     flex-direction: column;
     padding-left: 0px;
     align-self: center;
-  }
-
-  .about_me_text {
-    padding-top: 50px;
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-bottom: 50px;
   }
 
   #about {

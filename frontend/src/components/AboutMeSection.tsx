@@ -3,7 +3,6 @@ import ReactVideoPlayer from "./utils/ReactVideoPlayer";
 import styles from "./styles/AboutMeSection.module.css";
 
 const AboutMeSection = () => {
-
   return (
     <>
       <section id="about">
@@ -11,15 +10,14 @@ const AboutMeSection = () => {
           About Me <span className="wave">👋</span>
         </h1>
         <div className={styles.aboutMeSection}>
-
           <div className={styles.aboutMeImagesAndTextWrapper}>
-          <div className={styles.aboutMeVideoWrapper}>
-            <ReactVideoPlayer
-              URL={
-                "https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1"
-              }
-            />
-          </div>
+            <div className={styles.aboutMeVideoWrapper}>
+              <ReactVideoPlayer
+                URL={
+                  "https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1"
+                }
+              />
+            </div>
             <AboutMeImagesContainer />
             <AboutMeTextContainer />
           </div>
@@ -60,19 +58,25 @@ const AboutMeTextContainer = () => {
     <div className={styles.textWrapperAboutMe}>
       <p>Hello!</p>
       <p>
-        I'm Michael Iwanek and this is my portfolio website to showcase projects
-        I've completed for personal learning and development.
+        I'm Michael Iwanek - and this is my portfolio website to showcase
+        projects I've completed for personal learning and development. I've
+        worked on these applications to keep my skills current, further practice
+        what I've learned in my career, and sometimes to make something
+        interesting for fun as well.
       </p>
       <p>
-        I'm currently a Computer Science student at Oregon State University in
-        an accelerated post-baccalaureate program. My first degree was in
-        accounting, and after graduation I worked for about three years as a CPA
-        in public accounting and government roles.
+        I'm currently employed as a full stack software engineer, and am a
+        recent graduate from Oregon State University - where I obtained a B.S in
+        Computer Science through an accelerated post-bacc program. My first
+        degree was in accounting, and I successfully switched careers after four
+        years as a CPA in public accounting and government roles.
       </p>
       <p>
         I first discovered programming by self-teaching myself VBA to automate
         work tasks, and discovered how much I enjoy working through coding
-        problems and building things.
+        problems and building things. I currently work on full stack
+        applications using languages such as C#/.NET, Python, TypeScript,
+        PostgreSQL, and others as needed for various projects.
       </p>
       <p>
         Outside of work and school, I enjoy rock climbing, skiing, and PC games.
