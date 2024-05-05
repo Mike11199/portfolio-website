@@ -752,7 +752,7 @@ li {
     position: relative;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 10rem;
+    margin-bottom: 2rem;
   }
 
   .carousel-button {
