@@ -18,7 +18,6 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  padding: 0;
 }
 
 #projectsDivScrollToSection {
@@ -29,12 +28,12 @@
 }
 
 .projectsHeader {
-  margin: 0px;
+  margin-top: 3rem;
 }
 
 .projectsParagraph {
   height: auto;
-  margin-bottom: 100px;
+  margin-bottom: 6rem;
 }
 
 .pyTorchCarouselContainer {
@@ -42,6 +41,10 @@
 }
 
 @media (max-width: 600px) {
+  .projectsHeader {
+    margin-top: 6rem;
+  }
+
   .pyTorchOuterContainer {
     padding-right: 20px;
     padding-left: 20px;
