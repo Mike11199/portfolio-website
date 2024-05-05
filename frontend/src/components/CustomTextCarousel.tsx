@@ -39,7 +39,7 @@ const CustomTextCarousel: React.FC<CustomTextCarouselProps> = ({
             <FontAwesomeIcon icon={faArrowUp} size="sm" />
           </button>
           <div
-            className="textWrapper"
+            className="textWrapperMobile"
             style={{ height: "fit-content", minHeight: heightProp }}
           >
             <ul>

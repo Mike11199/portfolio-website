@@ -1,6 +1,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ReactVideoPlayer from "./utils/ReactVideoPlayer";
 import styles from "./styles/AboutMeSection.module.css";
+import { TypeAnimation } from 'react-type-animation';
 
 const AboutMeSection = () => {
   return (
@@ -56,7 +57,15 @@ const AboutMeImagesContainer = () => {
 const AboutMeTextContainer = () => {
   return (
     <div className={styles.textWrapperAboutMe}>
-      <p>Hello!</p>
+                  <p>
+    <TypeAnimation
+  cursor={true} // omit the default css typing animation class
+  speed={{type: "keyStrokeDelayInMs", value: 1500}}
+  sequence={[
+    "Hello!"
+  ]}
+/>
+</p>
       <p>
         I'm Michael Iwanek - and this is my portfolio website to showcase
         projects I've completed for personal learning and development.
@@ -64,7 +73,7 @@ const AboutMeTextContainer = () => {
       <p>
         I'm currently employed as a full stack software engineer, and am a
         recent graduate from Oregon State University - where I obtained a B.S in
-        Computer Science through an accelerated post-bacc program. My original
+        Computer Science through an accelerated post-bacc program. My first
         degree was in accounting, and I successfully switched careers after four
         years as a CPA in public accounting and government roles.
       </p>
@@ -76,7 +85,7 @@ const AboutMeTextContainer = () => {
         PostgreSQL, and others as needed for various projects.
       </p>
       <p>
-        Outside of work and school, I enjoy rock climbing, skiing, and PC/video games.
+        Outside of work and school, I enjoy rock climbing, skiing, and PC games.
         I'm hoping to eventually climb multi-pitch routes and get into
         back-country skiing one day.
       </p>

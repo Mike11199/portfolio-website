@@ -2,19 +2,23 @@
   color: white;
   box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
   min-height: fit-content;
-  padding: 50px;
   background-image: linear-gradient(
     to top,
     #000000 0%,
     #432313 5%,
     #221e16 100%
   );
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
 }
 
 .pyTorchCarouselAndDescriptionContainer {
   display: flex;
   flex-direction: row;
   width: 100%;
+  justify-content: space-between;
+  padding: 0;
 }
 
 #projectsDivScrollToSection {
