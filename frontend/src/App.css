@@ -566,7 +566,6 @@ li {
     z-index: 1;
     padding-left: 0%;
     padding-right: 0%;
-    padding-bottom: 30px;
   }
 
   li {
@@ -632,8 +631,12 @@ li {
   }
 
   .space_tau_carousel_and_video {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     width: 100%;
     align-items: center !important;
+    margin: 0;
   }
 
   .space_tau_description {
@@ -734,6 +737,7 @@ li {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-bottom: 0px;
   }
 
   li {
