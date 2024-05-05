@@ -1,3 +1,9 @@
+## Summary
+
+- Completely custom portfolio site developed with React.js.
+- Hosted on an AWS EC2 instance (t2.micro/Linux) via a Nginx web server/reverse proxy.
+- Set up an application load balancer to enable HTTPS for the site.
+
 ## Website Links
 
 - AWS EC2 and Application Load Balancer for HTTPS
@@ -5,7 +11,7 @@
 - Backup Link
   - https://michael-iwanek-portfolio.herokuapp.com/
 
-<img src="https://github.com/Mike11199/portfolio-website/assets/91037796/10e37274-b82e-4895-8099-e4a8c6aafdb6" width="500" alt="image">
+<img src="https://github.com/Mike11199/portfolio-website/assets/91037796/0ed251f5-956b-472b-acf1-334e03d1cb8d" width="500" alt="image">
 
 ## EC2 Instance Link
 
@@ -24,17 +30,18 @@
 <br/>
 <br/>
 
+- Nginx web server/reverse proxy configuration, which serves the front end files on the EC2 instance.
+
 <img src="https://github.com/Mike11199/portfolio-website/assets/91037796/277720e1-f3a8-444d-86ea-1b18c76ddda3" width="400" alt="image">
 
 <br/>
 
 ## Info
-
-- Completely custom portfolio site developed with Express.js and React.js.
 - Express.js is only needed for Heroku.  Site is entirely React.js.
 - Added react-spring for top "progress bar" that moves as one scrolls down the page.
 
-![image](https://github.com/Mike11199/portfolio-website/assets/91037796/10e37274-b82e-4895-8099-e4a8c6aafdb6)
+<img src="https://github.com/Mike11199/portfolio-website/assets/91037796/0ed251f5-956b-472b-acf1-334e03d1cb8d" width="500" alt="image">
+
 ![image](https://github.com/Mike11199/portfolio-website/assets/91037796/bbef39df-8178-4b44-9b1c-4686916fb0d8)
 
 
