@@ -145,20 +145,20 @@
   ],
   "solarSystemImages": [
     {
-      "alt": "solar_system_jupiter_and_main_asteroid_belt",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229666/AsteroidBeltPlanetsCloseUpPhoto_busxio.png"
-    },
-    {
-      "alt": "earth_system_rotation_gif_over_10MB_cloudinary_limit",
-      "src": "https://github.com/Mike11199/GIFs/blob/main/earth_rotation_clouds.gif?raw=true"
-    },
-    {
       "alt": "solar_system_and_both_belts_from_distance_gif",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1714882986/solarSystemOrbits2_ctpp5r.gif"
     },
     {
       "alt": "solar_system_and_both_belts_from_distance_gif2",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1714884993/solarSystemOrbits4_ipcemf.gif"
+    },
+    {
+      "alt": "earth_system_rotation_gif_over_10MB_cloudinary_limit",
+      "src": "https://github.com/Mike11199/GIFs/blob/main/earth_rotation_clouds.gif?raw=true"
+    },
+    {
+      "alt": "solar_system_jupiter_and_main_asteroid_belt",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229666/AsteroidBeltPlanetsCloseUpPhoto_busxio.png"
     },
     {
       "alt": "close_up_of_planets_aligned",
