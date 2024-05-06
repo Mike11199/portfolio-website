@@ -2,15 +2,15 @@
   "PyTorchImages": [
     {
       "alt": "cats_and_dogs_image",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703822238/cats_and_dogs_lnwfi9.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1714964761/pytorch_cats_and_dogs_optimized_pnjfoc.webp"
     },
     {
       "alt": "nat_geo_collage",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703823645/nat_geo_collage_analysis_tpnipt.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1714965850/pytorch_nat_geo_collage_optimized_ifmp6b.webp"
     },
     {
       "alt": "new_york_traffic",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703832095/traffic_analysis_mcwwdg.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1714966409/new_york_traffic_optimized_qrjwjo.webp"
     },
     {
       "alt": "pytorch_home_page",
@@ -18,11 +18,11 @@
     },
     {
       "alt": "pytorch_doggo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703828564/labrador_new_ogez0w.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1714967675/pytorch_labrador_optimized_zjb2hm.webp"
     },
     {
       "alt": "winter_traffic",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703831262/winter_traffic_analysis_caxrhm.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1714967378/winter_traffic_optimized_hkd0bo.webp"
     },
     {
       "alt": "jupyterlab_model_load_weights",
