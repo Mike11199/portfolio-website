@@ -780,7 +780,6 @@ li {
     display: flex;
     justify-content: center;
     overflow: auto;
-    padding: 2rem 2rem;
     background: #191c29;
     border-radius: 6px;
     border: 2px solid rgba(56, 128, 62, 0.849);

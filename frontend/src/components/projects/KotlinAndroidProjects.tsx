@@ -81,7 +81,7 @@ const KotlinAndroidProjects = () => {
           {/* Text Description  */}
           <CustomTextCarousel
             descriptionList={kotlinAndroidProjectsDescriptionText}
-            heightProp={"65vh"}
+            heightProp={"60vh"}
           />
         </div>
       </section>

@@ -99,7 +99,7 @@ const PyTorchApp = () => {
           {/* Text Description */}
           <CustomTextCarousel
             descriptionList={pyTorchProjectDescriptionText}
-            heightProp={"65vh"}
+            heightProp={"60vh"}
           />
         </div>
       </section>

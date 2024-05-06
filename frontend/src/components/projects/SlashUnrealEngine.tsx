@@ -74,7 +74,7 @@ const SlashUnrealEngine = () => {
           {/* Text Description */}
           <CustomTextCarousel
             descriptionList={slashUnrealEngineProjectsDescriptionText}
-            heightProp={"65vh"}
+            heightProp={"60vh"}
           />
         </div>
       </section>
