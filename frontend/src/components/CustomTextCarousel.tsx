@@ -42,9 +42,14 @@ const CustomTextCarousel: React.FC<CustomTextCarouselProps> = ({
             className="textWrapperMobile"
             style={{ height: "fit-content", minHeight: heightProp }}
           >
+            <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
             <ul>
               <li>{descriptionList[currentIndex]}</li>
             </ul>
+            <div style={{textAlign: "center", marginBottom: "1rem"}}>
+            {currentIndex + 1} / {totalChildren}
+            </div>
+            </div>
           </div>
           <button onClick={goToNext} className="carousel-button bottom-button">
             <FontAwesomeIcon icon={faArrowDown} size="sm" />

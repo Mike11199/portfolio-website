@@ -539,6 +539,8 @@ li {
   }
 
   li {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     overflow-wrap: anywhere;
   }
 
@@ -730,16 +732,6 @@ li {
 
   ul > li > ul {
     list-style-position: inside;
-  }
-
-  .textWrapper {
-    align-items: start;
-    flex-direction: column;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    justify-content: space-between;
-    flex-grow: 1;
   }
 
   .spaceTauMainContainer {
