@@ -28,7 +28,7 @@ const OpenGLSolarSystem = () => {
     Kuiper Belt beyond Neptune, added 8 Planets, Pluto, 4 Moons, and
     a Galaxy Skybox with vertex and fragment shaders.`,
 
-    `Added equirectangular projection cloud textures to Earth byp
+    `Added equirectangular projection cloud textures to Earth by
     blending two vec4 (rgba) textures together in the fragment
     shader. Used a vec2 variable to translate the clouds over the
     Earth's surface using a sinusoidal function applied to the
