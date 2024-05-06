@@ -108,7 +108,7 @@ const AlpinePeakClimbingSkiShop = () => {
           {/* Text Description */}
           <CustomTextCarousel
             descriptionList={AlpinePeakProjectDescriptionText}
-            heightProp={"65vh"}
+            heightProp={"60vh"}
           />
         </div>
       </section>
