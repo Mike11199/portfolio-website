@@ -19,17 +19,16 @@ const AlpinePeakClimbingSkiShop = () => {
           hosted on AWS RDS. A secondary Express.js API/microservice uses
           Socket.io to enable bi-directional communication between admins and
           clients - for order help via a chat button.`,
-
     `Deployed on an AWS Elastic Container Service (ECS) cluster via
           serverless AWS Fargate. Implemented a CI/CD pipeline via a GitHub
           Actions .yml file which re-builds and deploys three docker images to
-          ECR/ECS for the front/backend/express.js microservice. This runs
-          whenever new commits are pushed to the default branch. Deployed Python
+          ECR/ECS for the front end/.NET backend/express.js microservice. This runs
+          whenever new commits are pushed to the default branch.`,
+    `Deployed Python
           AWS Lambda Crons with EventBridge rules to shut the site down between
-          1AM-6AM (to save hosting costs). Added another EventBridge Lambda
+          1AM-6AM (to save hosting costs). Added an EventBridge Lambda
           which publishes to an SNS Topic, to notify me via email if a container
           crashes.`,
-
     `Added an EC2 load balancer to redirect HTTP traffic on port 80 to
           HTTPS port 443. The front-end is served by a Nginx reverse proxy,
           which is defined in a nginx.conf file ran by the docker container. AWS
@@ -40,22 +39,24 @@ const AlpinePeakClimbingSkiShop = () => {
           order as paid in the PostgreSQL database depending on the external API
           response.`,
     `Modeled complicated database relationships between products, orders,
-          and users with intersection tables and many-to-many relationships in
-          PostgreSQL. For example, products have a many-to-many relationship
-          with orders. A product also has a one-to-many relationship with
-          reviews, and a user has a one-to-many relationship with orders. Used
-          pgAdmin to interact with the database via SQL, and EF core commands
-          such as db-scaffold to generate C# models and classes from tables
-          (database first). Also used EF core database migrations to push
-          database table updates after only editing C# models (code first).`,
+          and users with intersection tables and many-to-many (M:N) relationships in
+          PostgreSQL. For example, products have a (M:N) relationship
+          with orders. A product also has a one-to-many (1:M) relationship with
+          reviews, and a user has a (1:M) relationship with orders.`,
+    `Managed the PostgreSQL database via both code first and database first
+         approaches.  Initially used Entity Framework (EF core) via commands such as db-scaffold
+        to generate C# models and classes from tables (database first).
+         Then later used EF core database migrations to dynamically generate SQL to make
+         database table updates, after only editing C# models (code first).`,
     `Implemented resource based authorization via C# JSON web token (JWT)
-          middleware in the API, so users can only access their own data. The
-          JWT contains user data in its payload which is hashed via the
+          middleware in the API, so that users can only access their own data. The
+          JWT contains user data in its payload, which is hashed via the
           HmacSha256Signature cryptographic algorithm - using a symmetric key
           only known by the API. This allows the API to pull information from
           the JWT with confidence that it is not spoofed, as any spoofing would
           lead to a different JWT signature than what the API would expect from
-          a certain payload. Google OAuth2.0 is also incorporated into the
+          a certain payload.`,
+      `Google OAuth2.0 is also incorporated into the
           application using JWT security, allowing a user to login conveniently
           with their google account after being registered.`,
   ];
