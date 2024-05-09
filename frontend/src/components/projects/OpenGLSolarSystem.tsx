@@ -76,7 +76,7 @@ const OpenGLSolarSystem = () => {
           {/* Text Description */}
           <CustomTextCarousel
             descriptionList={openGLSolarSystemProjectDescriptionText}
-            heightProp={"60vh"}
+            heightProp={"62vh"}
           />
         </div>
       </section>

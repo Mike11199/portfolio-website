@@ -79,7 +79,7 @@ const ApplyYourSelfJobTracker = () => {
 
           <CustomTextCarousel
             descriptionList={ApplyYourSelfProjectDescriptionText}
-            heightProp={"60vh"}
+            heightProp={"62vh"}
           />
         </div>
       </section>

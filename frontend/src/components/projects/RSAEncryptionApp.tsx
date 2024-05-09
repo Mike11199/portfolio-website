@@ -79,7 +79,7 @@ const RSAEncryptionApp = () => {
 
           <CustomTextCarousel
             descriptionList={rSAEncryptionProjectDescriptionText}
-            heightProp={"60vh"}
+            heightProp={"62vh"}
           />
         </div>
       </section>

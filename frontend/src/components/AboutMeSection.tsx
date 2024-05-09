@@ -62,7 +62,7 @@ const AboutMeTextContainer = () => {
   cursor={true} // omit the default css typing animation class
   speed={{type: "keyStrokeDelayInMs", value: 750}}
   sequence={[
-    "Hello!"
+    "Hello! "
   ]}
 />
 </p>

@@ -90,7 +90,7 @@ const SpaceTauApp = () => {
           {/* Text Description */}
           <CustomTextCarousel
             descriptionList={spaceTauProjectDescriptionText}
-            heightProp={"60vh"}
+            heightProp={"62vh"}
           />
         </div>
       </section>

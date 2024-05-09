@@ -68,7 +68,7 @@ const PythonHashMap = () => {
           {/* Text Description */}
           <CustomTextCarousel
             descriptionList={pythonHashMapProjectDescriptionText}
-            heightProp={"60vh"}
+            heightProp={"62vh"}
           />
         </div>
       </section>

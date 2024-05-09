@@ -60,7 +60,7 @@ const SmallShellProject = () => {
 
           <CustomTextCarousel
             descriptionList={smallShellProjectDescriptionText}
-            heightProp={"60vh"}
+            heightProp={"62vh"}
           />
         </div>
       </section>
