@@ -70,6 +70,11 @@
   font-size: 35px;
   text-transform: uppercase;
   margin-right: 50px;
+  cursor: pointer;
+}
+
+.navbarFullName:active {
+  transform: scale(0.98);
 }
 
 .binaryDigitIndividualContainer {
@@ -98,6 +103,10 @@
 
 .navbarLink:hover {
   color: #0062b9;
+}
+
+.navbarLink:active {
+  transform: scale(0.98);
 }
 
 @media (max-width: 1400px) {

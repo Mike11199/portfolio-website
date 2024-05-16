@@ -15,7 +15,10 @@ const Navbar = () => {
           alt="Michael Iwanek Navbar"
           className={styles.profilePhotoImage}
         />
-        <p className={styles.navbarFullName}>Michael Iwanek</p>
+        <p 
+        onClick={()=> window.location.href = '/'}
+        className={styles.navbarFullName}>
+          Michael Iwanek</p>
       </div>
     );
   };
