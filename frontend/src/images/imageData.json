@@ -183,16 +183,20 @@
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227381/unreal_voronoi_uniform_fracturing_i82ukx.png"
     },
     {
-      "alt": "unreal_debugging",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227368/unreal_debugging_info_gbbotb.png"
+      "alt": "enemy_class_code",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723436343/EnemyClass_svhbdd.png"
+    },
+    {
+      "alt": "unreal_open_world",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723438587/open_world_ukft22.png"
     },
     {
       "alt": "unreal_dot_product_math_onenote",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227353/unreal_dot_product_2_cnpc9j.png"
     },
     {
-      "alt": "unreal_dot_product_image",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227384/unreal_dot_product_1_wu6ooj.png"
+      "alt": "open_world_lake",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723436553/OpenWorld1_up57rx.png"
     },
     {
       "alt": "unreal_determine_hit_animation_code",
@@ -203,8 +207,8 @@
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227397/unreal_directional_hit_animation_gnkuyy.gif"
     },
     {
-      "alt": "unreal_hit_interface_code",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227351/unreal_hit_interface_thwvht.png"
+      "alt": "unreal_weapon_class_code",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723438206/weapon_code_f7vb5s.png"
     },
     {
       "alt": "unreal_randomly_generated_treasure",
@@ -217,6 +221,10 @@
     {
       "alt": "unreal_sensing_component",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227362/unreal_sensing_sa1pfs.png"
+    },
+    {
+      "alt": "unreal_insect_enemy",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723438759/insect_enemy_kdixhz.png"
     }
   ],
   "spaceTauImages": [
