@@ -78,7 +78,7 @@ const PyTorchApp = () => {
               "https://pytorch-image-model-aws-app-727fe8e23222.herokuapp.com/"
             }
             variant={"red"}
-            buttonText={"Alt Heroku/SageMaker (Old)"}
+            buttonText={"Alt Heroku (Old)"}
           />
         </div>
 
