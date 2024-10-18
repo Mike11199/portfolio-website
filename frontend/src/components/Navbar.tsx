@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useScroll, animated, useSpring } from "@react-spring/web";
-import Resume_PDF from "../misc/CV_Michael Iwanek_04_25_2024.pdf";
+import resumePdf  from "../misc/CV_Michael Iwanek_10_17_2024_1.pdf";
 import BinaryDigit from "./BinaryDigit";
 import { useState } from "react";
 import styles from "./styles/Navbar.module.css";
@@ -57,7 +57,7 @@ const Navbar = () => {
         </HashLink>
         <Link
           className={styles.navbarLink}
-          to={Resume_PDF}
+          to={resumePdf}
           target="_blank"
           rel="noopener noreferrer"
         >
