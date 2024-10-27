@@ -1,8 +1,8 @@
 ## Summary
 
-- Completely custom portfolio site developed with React.js.
+- Completely custom portfolio site developed with TypeScript.
 - Hosted on an AWS EC2 instance (t2.micro/Linux) via a Nginx web server/reverse proxy.
-- Set up an application load balancer to enable HTTPS for the site.
+- Provisioned the instance with an EC2 Load Balancer to enable HTTPS, and configured domain routing via Route 53.
 
 ## Website Links
 
@@ -13,11 +13,7 @@
 
 <img src="https://github.com/Mike11199/portfolio-website/assets/91037796/0ed251f5-956b-472b-acf1-334e03d1cb8d" width="500" alt="image">
 
-## EC2 Instance Link
-
-- Elastic IP
-  - http://54.183.166.208/
-  - This is HTTP unlike the AWS EC2/Heroku links.
+## EC2 Instance
 
 <br/>
 
