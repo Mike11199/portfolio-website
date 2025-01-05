@@ -9,17 +9,19 @@ import { useWindowWidth } from "@react-hook/window-size";
 
 const PyTorchApp = () => {
   const pyTorchProjectDescriptionText = [
-    `A full stack project involving a deployed PyTorch
-    fasterrcnn_resnet50_fpn_v2 computer vision model. A TypeScript
-    website/server can be used to upload images or provide the URL
-    of an image to run computer vision analytics on.`,
+    `A full stack machine learning project involving multiple deployed PyTorch
+    computer vision models.  A user can choose between a mask-rcnn (Instance Segmentation)
+    model, giving near pixel accurate detection, or fast-rcnn (only bounding boxes). A TypeScript
+    site can be used to upload images or provide the URL
+    of an image to run computer vision analytics on.  Bounding boxes and masks
+    produced by the neural network can be dynamically resized by the user.`,
 
     `The model is deployed to to an AWS EC2 instance, where a Java Spring Boot
     API handles requests from the front end and sends binary image data to a
     Flask microservice.  The Flask app runs a custom inference.py script I've
     written which invokes the model. This script loads an
     image as a NumPy array into the Torch model and returns its
-    predictions as a JSON object.`,
+    predictions as a JSON object.  Masks are returned as an array of binary values.`,
 
     `The Java Spring Boot API takes multi-part-form data from the front end to
     route to the Flask microservice. From the UI, a user can upload an URL of an image
@@ -58,7 +60,8 @@ const PyTorchApp = () => {
           in various programming languages.
         </p>
         <h2 className={styles.projectHeaderText}>
-          PyTorch Image Classification Website - Java Spring Boot/Flask/TypeScript
+          PyTorch Image Classification Website - Java Spring
+          Boot/Flask/TypeScript
         </h2>
 
         {/* Buttons */}
@@ -69,17 +72,19 @@ const PyTorchApp = () => {
             }
           />
           <ButtonLink
-            URL={"https://machine-learning-projects.com/image-classification-resnet"}
+            URL={
+              "https://machine-learning-projects.com/image-classification-resnet"
+            }
             variant={"blue"}
             buttonText={"AWS EC2 (Java/Flask)"}
           />
-          <ButtonLink
+          {/* <ButtonLink
             URL={
               "https://pytorch-image-model-aws-app-727fe8e23222.herokuapp.com/"
             }
             variant={"red"}
             buttonText={"Alt Heroku (Old)"}
-          />
+          /> */}
         </div>
 
         {/* Image Carousel */}
