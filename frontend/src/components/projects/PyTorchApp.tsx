@@ -73,7 +73,7 @@ const PyTorchApp = () => {
           />
           <ButtonLink
             URL={
-              "https://machine-learning-projects.com/image-classification-resnet"
+              "https://machine-learning-projects.com/image-classification-mask-resnet"
             }
             variant={"blue"}
             buttonText={"AWS EC2 (Java/Flask)"}
