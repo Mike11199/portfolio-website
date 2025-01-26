@@ -224,7 +224,7 @@ ul > li > ul > li {
 }
 
 body {
-  background: #212534;
+  background: #000000;
   width: 100% !important;
   box-sizing: border-box;
   position: relative;
@@ -238,11 +238,16 @@ body {
   height: 100%;
 }
 
+#root {
+  background: #000000;
+}
+
 html {
   width: 100%;
   margin: 0px;
   padding: 0px;
   scroll-behavior: smooth;
+  background: #000000;
 }
 
 .bottom_footer {
