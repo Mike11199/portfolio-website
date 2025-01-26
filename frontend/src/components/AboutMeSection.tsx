@@ -27,11 +27,11 @@ const AboutMeText = [
 const AboutMeSection = () => {
   return (
     <>
-      <section id="about">
+      <section id={styles.aboutMeSection}>
         <h1>
           About Me <span className="wave">👋</span>
         </h1>
-        <div className={styles.aboutMeSection}>
+        <div className={styles.aboutMeContainer} >
           <div className={styles.aboutMeImagesAndTextWrapper}>
             <div className={styles.aboutMeVideoWrapper}>
               <ReactVideoPlayer

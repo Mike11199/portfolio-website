@@ -223,17 +223,6 @@ ul > li > ul > li {
   flex-direction: column;
 }
 
-#about {
-  background-image: linear-gradient(to top, #09203f 63%, #385266 100%);
-  color: white;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  margin-top: 30px;
-  align-items: center;
-}
-
 body {
   background: #212534;
   width: 100% !important;
@@ -267,39 +256,46 @@ html {
 
 .hash_map_section {
   background-image: linear-gradient(
-    to top,
     #000000 0%,
-    #432313 5%,
-    #221e16 100%
+    #432313 55%,
+    #000000 100%
   );
   color: white;
-  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
   min-height: fit-content;
   padding: 3rem;
 }
 
 .kotlin_section {
   background-image: linear-gradient(
-    to top,
-    #290e5b 0%,
-    #290e5b 50%,
-    rgb(0, 0, 0) 100%
+    #000000 0%,
+    #1a052e 15%,
+    #0b0213 85%,
+    #000000 100%
   );
   color: white;
-  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
+  min-height: auto;
+  padding: 3rem;
+}
+
+.solar_system_section {
+  background-image: linear-gradient(
+    #000000 0%,
+    #1a052e 15%,
+    #0b0213 85%,
+    #23073b 100%
+  );
+  color: white;
   min-height: auto;
   padding: 3rem;
 }
 
 .smallsh_section {
   background-image: linear-gradient(
-    to top,
     #000000 0%,
-    #174d32 5%,
-    #162219 100%
+    #072e1b 80%,
+    #000000 100%
   );
   color: white;
-  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
   min-height: fit-content;
   padding: 3rem;
 }
@@ -307,7 +303,6 @@ html {
 .ski_shop_section {
   background-color: black;
   color: white;
-  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
   padding-left: 3rem;
   padding-right: 3rem;
   padding-bottom: 3rem;
@@ -315,39 +310,35 @@ html {
 
 .apply_yourself_section {
   background-image: linear-gradient(
-    to top,
     #000000 0%,
-    #1e254e 5%,
-    #221e16 100%
+    #1a052e 15%,
+    #0b0213 85%,
+    #000000 100%
   );
   color: white;
-  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
   min-height: fit-content;
   padding: 3rem;
 }
 
 .rsa_section {
   background-image: linear-gradient(
-    to top,
     #000000 0%,
-    #3a2610 5%,
-    #221e16 80%
+    #432313 55%,
+    #000000 100%
   );
   color: white;
-  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
   min-height: fit-content;
   padding: 3rem;
 }
 
 .space_tau_section {
   background-image: linear-gradient(
-    to top,
     #000000 0%,
-    #1f2d53 5%,
-    #221e16 80%
+    #031e42 35%,
+    #132b3d 55%,
+    #000000 100%
   );
   color: white;
-  box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
   min-height: fit-content;
   padding: 3rem;
 }
@@ -516,17 +507,6 @@ li {
     align-self: center;
   }
 
-  #about {
-    background-image: linear-gradient(to top, #09203f 63%, #385266 100%);
-    display: flex;
-    flex-direction: column;
-    margin-top: 0px;
-    padding-top: 20px;
-    padding-bottom: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
   .player-wrapper {
     position: relative;
     z-index: 1;
@@ -672,14 +652,16 @@ li {
   }
 
   .kotlin_section {
-    background-image: linear-gradient(
-      to top,
-      #290e5b 0%,
-      #290e5b 50%,
-      rgb(0, 0, 0) 100%
-    );
     color: white;
-    box-shadow: 0px -15px 50px rgba(0, 0, 0, 1);
+    min-height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    padding-top: 40px;
+  }
+
+  .solar_system_section {
+    color: white;
     min-height: auto;
     padding-left: 20px;
     padding-right: 20px;

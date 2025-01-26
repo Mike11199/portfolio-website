@@ -1,9 +1,26 @@
+#aboutMeSection {
+  background-image: linear-gradient(
+    #000000 0%,
+    #031e42 15%,
+    #132b3d 55%,
+    #000000 100%
+  );
+  color: white;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-top: 30px;
+  align-items: center;
+}
+
 .aboutMeImagesFirstRow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+/* unused */
 .textWrapperAboutMe {
   height: fit-content;
   max-height: 50vh;
@@ -20,7 +37,7 @@
   width: 100%;
 }
 
-.aboutMeSection {
+.aboutMeContainer {
   margin-top: 20px;
   display: flex;
   flex-direction: row;
@@ -44,7 +61,6 @@
   border-radius: 50px;
   width: 43%;
   height: 100%;
-
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -91,6 +107,21 @@
 }
 
 @media (max-width: 600px) {
+  #aboutMeSection {
+    background-image: linear-gradient(
+      #031e42 10%,
+      #031e42 55%,
+      #000000 100%
+    );
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .aboutMeImagesFirstRow {
     flex-direction: column;
     align-items: center;
@@ -100,6 +131,7 @@
     gap: 2rem;
   }
 
+  /* unused */
   .textWrapperAboutMe {
     width: 100%;
     padding-right: 0rem;
@@ -113,7 +145,7 @@
     max-height: none;
   }
 
-  .aboutMeSection {
+  .aboutMeContainer {
     flex-direction: column;
   }
 

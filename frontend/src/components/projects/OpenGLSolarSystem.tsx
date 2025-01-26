@@ -44,7 +44,7 @@ const OpenGLSolarSystem = () => {
 
   return (
     <>
-      <section className="kotlin_section">
+      <section className="solar_system_section">
         <h2 className="projectHeaderText">OpenGL C++ Solar System Model</h2>
 
         {/* Buttons */}
