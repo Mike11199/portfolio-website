@@ -17,6 +17,7 @@ const ButtonLink = ({ URL, variant = "blue", buttonText }: ButtonLinkProps) => {
       <button
         className={`${variant === "red" ? "video_button" : "website_button"}`}
         onClick={() => handleClick(URL)}
+        title={URL}
       >
         {buttonText}
       </button>

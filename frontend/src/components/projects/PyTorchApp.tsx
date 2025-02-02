@@ -76,7 +76,7 @@ const PyTorchApp = () => {
               "https://machine-learning-projects.com/image-classification-mask-resnet"
             }
             variant={"blue"}
-            buttonText={"AWS EC2 (Java/Flask)"}
+            buttonText={"Live Link - AWS EC2"}
           />
           {/* <ButtonLink
             URL={

@@ -81,12 +81,7 @@ const AlpinePeakClimbingSkiShop = () => {
           <ButtonLink
             URL={"https://alpine-peak-climbing-ski-gear.com/"}
             variant={"blue"}
-            buttonText={"Link - AWS ECS Domain"}
-          />
-          <ButtonLink
-            URL={"https://recreational-equipment-shop.herokuapp.com/"}
-            variant={"red"}
-            buttonText={"Alt Link - Heroku (Old)"}
+            buttonText={"Live Link - AWS ECS"}
           />
         </div>
 

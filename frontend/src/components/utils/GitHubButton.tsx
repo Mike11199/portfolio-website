@@ -14,7 +14,11 @@ const GitHubButton = ({ URL }: GitHubButtonProps) => {
 
   return (
     <>
-      <button className="github_button" onClick={() => handleClick(URL)}>
+      <button
+        className="github_button"
+        onClick={() => handleClick(URL)}
+        title={URL}
+      >
         <img className="github_logo" src={GitHubLogo} alt="github logo"></img>
         GitHub Repo
       </button>
