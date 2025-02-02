@@ -44,7 +44,7 @@ const CustomTextCarousel: React.FC<CustomTextCarouselProps> = ({
           >
             <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
             <ul>
-              <li>{descriptionList[currentIndex]}</li>
+              <li className="listTextItem">{descriptionList[currentIndex]}</li>
             </ul>
             <div style={{textAlign: "center", marginBottom: "1rem"}}>
             {currentIndex + 1} / {totalChildren}

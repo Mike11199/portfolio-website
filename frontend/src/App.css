@@ -70,6 +70,15 @@
   opacity: 0.6 !important;
 }
 
+.carousel.carousel-slider {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 0.5rem !important;
+}
+
+.carousel .thumb {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 0.25rem !important;
+}
 
 
 .normal-text-desktop-view {
@@ -195,7 +204,7 @@ ul > li > ul {
 }
 
 ul > li > ul > li {
-  margin-top: 10px; /* Add margin to nested list items */
+  margin-top: 10px;
   list-style-type: circle;
 }
 
@@ -486,9 +495,6 @@ ul {
   height: auto;
 }
 
-li {
-  height: auto;
-}
 
 .github_button {
   font-family: "Segoe UI";
@@ -604,9 +610,8 @@ li {
     padding-right: 0%;
   }
 
-  li {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  .listTextItem {
+    margin-top: 2rem;
     overflow-wrap: anywhere;
   }
 
