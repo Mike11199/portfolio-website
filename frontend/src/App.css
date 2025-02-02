@@ -578,6 +578,8 @@ li {
     gap: 10px;
     margin-bottom: 2rem;
     justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .carousel_rsa_encryption {
@@ -587,10 +589,9 @@ li {
   .space_tau_carousel_and_video {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
     width: 100%;
-    align-items: center !important;
-    margin: 0;
+    align-items: center;
+    gap: 2rem;
   }
 
   .space_tau_description {
@@ -623,8 +624,8 @@ li {
 
   .ski_shop_section {
     padding-top: 40px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 
   ul {
@@ -633,35 +634,35 @@ li {
   }
 
   .apply_yourself_section {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 
   .rsa_section {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 
   .space_tau_section {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 
   .smallsh_section {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 
   .hash_map_section {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
   }
 
   .kotlin_section {
     color: white;
     min-height: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
     padding-bottom: 50px;
     padding-top: 40px;
   }
@@ -669,8 +670,8 @@ li {
   .solar_system_section {
     color: white;
     min-height: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
     padding-bottom: 50px;
     padding-top: 40px;
   }
@@ -678,8 +679,13 @@ li {
   .videoWrapperSmallShell {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
+    border-radius: 1rem;
+    width: 90%;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 30vh;
   }
 
   .projectHeaderText {
@@ -693,8 +699,12 @@ li {
   .videoWrapperKSP {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 92%;
     margin-bottom: 0px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    height: 28vh;
   }
 
   li {
@@ -750,6 +760,8 @@ li {
 
   .text-carousel-content {
     margin-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .textWrapperMobile {
