@@ -8,10 +8,8 @@
 
 - AWS EC2 and Application Load Balancer for HTTPS
   - https://michael-iwanek-portfolio.com/
-- Backup Link
-  - https://michael-iwanek-portfolio.herokuapp.com/
 
-<img src="https://github.com/Mike11199/portfolio-website/assets/91037796/0ed251f5-956b-472b-acf1-334e03d1cb8d" width="500" alt="image">
+<img src="https://github.com/user-attachments/assets/d1bb50f7-033c-42f7-984a-d11d613336ba" width="1000" alt="image">
 
 ## EC2 Instance
 
@@ -32,12 +30,12 @@
 
 <br/>
 
-## Info
-- Express.js is only needed for Heroku.  Site is entirely React.js.
-- Added react-spring for top "progress bar" that moves as one scrolls down the page.
+## Screenshots
+- Top of page - desktop view.
+<img src="https://github.com/user-attachments/assets/d1bb50f7-033c-42f7-984a-d11d613336ba" width="1000" alt="image">
 
-<img src="https://github.com/Mike11199/portfolio-website/assets/91037796/0ed251f5-956b-472b-acf1-334e03d1cb8d" width="500" alt="image">
-
-![image](https://github.com/Mike11199/portfolio-website/assets/91037796/bbef39df-8178-4b44-9b1c-4686916fb0d8)
+- Site is fully mobile responsive.
+  
+![image](https://github.com/user-attachments/assets/3334b58a-1407-46ae-abed-ff0d9d53d394)
 
 
