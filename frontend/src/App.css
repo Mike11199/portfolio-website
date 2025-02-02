@@ -194,9 +194,11 @@
 
 .videoWrapperKSP {
   display: flex;
-  margin-bottom: 40px;
   width: 75%;
   height: 40vh;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 ul > li > ul {
@@ -275,6 +277,9 @@ ul > li > ul > li {
   width: 60%;
   display: flex;
   position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .project_card_smallsh {
