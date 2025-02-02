@@ -1,3 +1,77 @@
+.carousel-status {
+  color: rgb(35, 168, 41) !important;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  margin-right: 2rem;
+  border-radius: 0.25rem;
+}
+
+/* 1. NEXT arrow normal state */
+.carousel .control-next.control-arrow:before {
+  border-left: 10px solid rgb(35, 168, 41) !important;
+}
+
+/* 2. NEXT arrow hover state */
+.carousel .control-next.control-arrow:hover:before {
+  border-left: 10px solid rgb(35, 168, 41) !important;
+}
+
+/* 3. PREV arrow normal state */
+.carousel .control-prev.control-arrow:before {
+  border-right: 10px solid rgb(35, 168, 41) !important;
+}
+
+/* 4. PREV arrow hover state */
+.carousel .control-prev.control-arrow:hover:before {
+  border-right: 10px solid rgb(35, 168, 41) !important;
+}
+
+
+.carousel .thumb,
+.carousel .thumb:focus,
+.carousel .thumb:active,
+.carousel .thumb:hover {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+.carousel .thumb.selected {
+  border: 2px solid rgb(13, 70, 13) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+/* 1. NEXT button normal */
+.carousel .control-arrow.control-next {
+  background: #000 !important;
+  opacity: 0.4 !important;
+}
+
+/* 2. NEXT button hover */
+.carousel .control-arrow.control-next:hover {
+  background: #000 !important;
+  opacity: 0.6 !important;
+}
+
+
+/* 1. PREV button normal */
+.carousel .control-arrow.control-prev {
+  background: #000 !important;
+  opacity: 0.4 !important;
+}
+
+/* 2. PREV button hover */
+.carousel .control-arrow.control-prev:hover {
+  background: #000 !important;
+  opacity: 0.6 !important;
+}
+
+
+
 .normal-text-desktop-view {
   display: flex;
   width: 35%;
@@ -8,6 +82,7 @@
   color: rgb(25, 212, 88);
   background-image: linear-gradient(#000000, #000000, #000000);
   max-height: 50vh;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .textWrapperDesktop {
@@ -761,6 +836,7 @@ li {
     font-size: x-large;
     border-radius: 6px;
     border: 2px solid rgba(56, 128, 62, 0.849);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   }
 
   .normal-text-desktop-view {
@@ -782,5 +858,7 @@ li {
     border: 2px solid rgba(56, 128, 62, 0.849);
     color: rgb(25, 212, 88);
     background-image: linear-gradient(#000000, #000000, #000000);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   }
+
 }
