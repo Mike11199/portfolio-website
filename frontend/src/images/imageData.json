@@ -237,6 +237,10 @@
   ],
   "spaceTauImages": [
     {
+      "alt": "space_tau_intersection_table",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231365/space_tau_intersection_table_wtg2en.png"
+    },
+    {
       "alt": "space_tau_home_page",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231364/space_tau_home_page_sm0jsp.png"
     },
@@ -247,10 +251,6 @@
     {
       "alt": "space_tau_parts_page",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231366/space_tau_parts_page_tr3sgb.png"
-    },
-    {
-      "alt": "space_tau_intersection_table",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703231365/space_tau_intersection_table_wtg2en.png"
     },
     {
       "alt": "space_tau_missions_page",
