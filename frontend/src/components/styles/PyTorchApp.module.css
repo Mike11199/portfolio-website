@@ -39,7 +39,11 @@
 
 @media (max-width: 600px) {
   .projectsHeader {
-    margin-top: 6rem;
+    margin-top: 0rem;
+  }
+
+  .projectsParagraph {
+    text-align: center;
   }
 
   .pyTorchOuterContainer {
