@@ -73,14 +73,19 @@ const AlpinePeakClimbingSkiShop = () => {
           </h3>
 
           <div className={"devIconsContainer"}>
-            <img
+          <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
               alt=".NET logo"
               style={{ width: "3.5rem", height: "auto" }}
             />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg"
+
+              alt="docker logo"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original-wordmark.svg"
-              alt=".NET logo"
+              alt="socket-io logo"
               style={{
                 width: "3.5rem",
                 height: "auto",
@@ -95,16 +100,18 @@ const AlpinePeakClimbingSkiShop = () => {
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg"
               style={{ width: "3.5rem", height: "auto" }}
+              alt="postgresql logo"
             />
 
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
               style={{ width: "3.5rem", height: "auto" }}
+              alt="csharp logo"
             />
 
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-              alt="TypeScript logo"
+              alt="typescript logo"
               style={{ width: "3.5rem", height: "auto" }}
             />
           </div>
