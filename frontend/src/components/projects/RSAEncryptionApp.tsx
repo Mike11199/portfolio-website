@@ -5,7 +5,7 @@ import ImagesList from "../utils/ImageList";
 import { rsaEncryptionImages } from "../../images/imageData.json";
 import CustomTextCarousel from "../CustomTextCarousel";
 import { useWindowWidth } from "@react-hook/window-size";
-import OpenSSLLogo from "./OpenSSL_logo.svg";
+import OpenSSLLogo from "./openssl_logo.svg";
 
 
 const RSAEncryptionApp = () => {
