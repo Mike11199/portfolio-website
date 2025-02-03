@@ -39,10 +39,7 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarousel> = ({
           <button onClick={goToPrevious} className="carousel-button top-button">
             <FontAwesomeIcon icon={faArrowUp} size="sm" />
           </button>
-          <div
-            className="textWrapperMobile"
-            style={{ height: heightProp }}
-          >
+          <div className="textWrapperMobile" style={{ height: heightProp }}>
             <div
               style={{
                 display: "flex",
@@ -89,10 +86,9 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarousel> = ({
               sequence={["Hello! "]}
             />
           </div>
-
-          {descriptionList.map((x) => (
-            <p>{x}</p>
-          ))}
+          {descriptionList.map((text) => (
+            <p key={text}>{text}</p>
+        ))}
         </div>
       </div>
     );
