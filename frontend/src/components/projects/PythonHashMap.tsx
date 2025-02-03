@@ -37,15 +37,36 @@ const PythonHashMap = () => {
   return (
     <>
       <section className="hash_map_section">
-        <h2 className="projectHeaderText">
-          Hash Map Data Structure Implementation - Python
-        </h2>
+        <div className={"projectHeaderTextContainer"}>
+          <h3 className="projectHeaderText">
+            Hash Map Data Structure Implementation - Python
+          </h3>
 
-        {/* Buttons */}
-        <div className="projectButtons">
-          <GitHubButton
-            URL={"https://github.com/Mike11199/HashMap-Python-Implementation"}
-          />
+          <div className={"devIconsContainer"}>
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
+              alt="python logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytest/pytest-original-wordmark.svg"
+              alt="pytest logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+          </div>
+
+          {/* Buttons */}
+          <div className="projectButtons">
+            <GitHubButton
+              URL={"https://github.com/Mike11199/HashMap-Python-Implementation"}
+            />
+          </div>
         </div>
 
         {/* Image Carousel */}

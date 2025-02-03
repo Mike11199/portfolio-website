@@ -45,13 +45,35 @@ const SlashUnrealEngine = () => {
   return (
     <>
       <section className="hash_map_section">
-        <h2 className="projectHeaderText">C++ Unreal Engine Project Slash</h2>
+        <div className={"projectHeaderTextContainer"}>
+          <h3 className="projectHeaderText">C++ Unreal Engine Project Slash</h3>
 
-        {/* Buttons */}
-        <div className="projectButtons">
-          <GitHubButton
-            URL={"https://github.com/Mike11199/unreal-project-slash"}
-          />
+          <div className={"devIconsContainer"}>
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+              alt="c++ logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original-wordmark.svg"
+              alt="unreal engine logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+                filter: "invert(100%) brightness(200%)",
+              }}
+            />
+          </div>
+
+          {/* Buttons */}
+          <div className="projectButtons">
+            <GitHubButton
+              URL={"https://github.com/Mike11199/unreal-project-slash"}
+            />
+          </div>
         </div>
 
         {/* Image Carousel */}

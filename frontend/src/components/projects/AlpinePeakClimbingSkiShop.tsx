@@ -56,7 +56,7 @@ const AlpinePeakClimbingSkiShop = () => {
           the JWT with confidence that it is not spoofed, as any spoofing would
           lead to a different JWT signature than what the API would expect from
           a certain payload.`,
-      `Google OAuth2.0 is also incorporated into the
+    `Google OAuth2.0 is also incorporated into the
           application using JWT security, allowing a user to login conveniently
           with their google account after being registered.`,
   ];
@@ -66,23 +66,62 @@ const AlpinePeakClimbingSkiShop = () => {
   return (
     <>
       <section className="ski_shop_section">
-        <h2 className="projectHeaderText">
-          Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/
-          PostgreSQL)
-        </h2>
+        <div className={"projectHeaderTextContainer"}>
+          <h3 className="projectHeaderText">
+            Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/
+            PostgreSQL)
+          </h3>
 
-        {/* Buttons */}
-        <div className="projectButtons">
-          <GitHubButton
-            URL={
-              "https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack"
-            }
-          />
-          <ButtonLink
-            URL={"https://alpine-peak-climbing-ski-gear.com/"}
-            variant={"blue"}
-            buttonText={"Live Link - AWS ECS"}
-          />
+          <div className={"devIconsContainer"}>
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+              alt=".NET logo"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original-wordmark.svg"
+              alt=".NET logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+                filter: "brightness(0) invert(1)",
+              }}
+            />
+            <img
+              style={{ width: "3.5rem", height: "auto" }}
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+              alt="aws logo"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+              alt="TypeScript logo"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+          </div>
+
+          {/* Buttons */}
+          <div className="projectButtons">
+            <GitHubButton
+              URL={
+                "https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack"
+              }
+            />
+            <ButtonLink
+              URL={"https://alpine-peak-climbing-ski-gear.com/"}
+              variant={"blue"}
+              buttonText={"Live Link - AWS ECS"}
+            />
+          </div>
         </div>
 
         {/* Image Carousel */}

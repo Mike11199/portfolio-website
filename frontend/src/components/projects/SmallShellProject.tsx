@@ -35,15 +35,36 @@ const SmallShellProject = () => {
   return (
     <>
       <section className="smallsh_section">
-        <h2 className="projectHeaderText">
-          Small Shell (smallsh) - C Unix Shell
-        </h2>
+        <div className={"projectHeaderTextContainer"}>
+          <h3 className="projectHeaderText">
+            Small Shell (smallsh) - C Unix Shell
+          </h3>
 
-        {/* Buttons */}
-        <div className="projectButtons">
-          <GitHubButton
-            URL={"https://github.com/Mike11199/CS-344-Small-Shell"}
-          />
+        <div className={"devIconsContainer"}>
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+              alt="linux logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+              alt="c logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+          </div>
+
+          {/* Buttons */}
+          <div className="projectButtons">
+            <GitHubButton
+              URL={"https://github.com/Mike11199/CS-344-Small-Shell"}
+            />
+          </div>
         </div>
 
         {/* Embedded YouTube Video */}

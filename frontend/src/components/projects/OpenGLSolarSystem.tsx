@@ -45,15 +45,36 @@ const OpenGLSolarSystem = () => {
   return (
     <>
       <section className="solar_system_section">
-        <h2 className="projectHeaderText">OpenGL C++ Solar System Model</h2>
+        <div className={"projectHeaderTextContainer"}>
+          <h3 className="projectHeaderText">OpenGL C++ Solar System Model</h3>
 
-        {/* Buttons */}
-        <div className="projectButtons">
-          <ButtonLink
-            URL={"https://www.youtube.com/watch?v=ZvKFpJYDZkw"}
-            variant={"red"}
-            buttonText={"Video Link"}
-          />
+          <div className={"devIconsContainer"}>
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+              alt="c++ logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opengl/opengl-plain.svg"
+              alt="opengl logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+          </div>
+
+          {/* Buttons */}
+          <div className="projectButtons">
+            <ButtonLink
+              URL={"https://www.youtube.com/watch?v=ZvKFpJYDZkw"}
+              variant={"red"}
+              buttonText={"Video Link"}
+            />
+          </div>
         </div>
 
         {/* Image Carousel */}

@@ -43,20 +43,61 @@ const SpaceTauApp = () => {
         className="space_tau_section"
         style={{ margin: "0px", height: "auto" }}
       >
-        <h2 className="projectHeaderText"> SpaceTau-Flask-and-MySQL-App</h2>
+        <div className={"projectHeaderTextContainer"}>
+          <h3 className="projectHeaderText"> SpaceTau-Flask-and-MySQL-App</h3>
 
-        {/* Buttons */}
-        <div className="projectButtons">
-          <GitHubButton
-            URL={
-              "https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340"
-            }
-          />
-          <ButtonLink
-            URL={"https://spacetau.herokuapp.com/"}
-            variant={"blue"}
-            buttonText={"Live Website Link"}
-          />
+          <div className={"devIconsContainer"}>
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+              alt="mysql logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
+              alt="python logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original-wordmark.svg"
+              alt="mariadb logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg"
+              alt="flask logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+                filter: "brightness(0) invert(1)",
+              }}
+            />
+          </div>
+
+          {/* Buttons */}
+          <div className="projectButtons">
+            <GitHubButton
+              URL={
+                "https://github.com/Mike11199/SpaceTau-Flask-and-MySQL-App-CS340"
+              }
+            />
+            <ButtonLink
+              URL={"https://spacetau.herokuapp.com/"}
+              variant={"blue"}
+              buttonText={"Live Website Link"}
+            />
+          </div>
         </div>
 
         {/* Image Carousel */}

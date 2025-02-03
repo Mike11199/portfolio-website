@@ -43,22 +43,61 @@ const KotlinAndroidProjects = () => {
   return (
     <>
       <section className="kotlin_section">
-        <h2 className="projectHeaderText">
-          Kotlin (Jetpack Compose) - Sacramento City and Flight Search App
-        </h2>
+        <div className={"projectHeaderTextContainer"}>
+          <h3 className="projectHeaderText">
+            Kotlin (Jetpack Compose) - Sacramento City and Flight Search App
+          </h3>
 
-        {/* Buttons */}
-        <div className="projectButtons">
-          <GitHubButton
-            URL={
-              "https://github.com/Mike11199/CS-492-Assignment-5-Flight-Search-App"
-            }
-          />
-          <ButtonLink
-            URL={"https://www.youtube.com/watch?v=hwGGgglHlus"}
-            variant={"red"}
-            buttonText={"Video Link"}
-          />
+          <div className={"devIconsContainer"}>
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg"
+              alt="android studio logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-plain-wordmark.svg"
+              alt="kotlin logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
+              alt="java logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jetpackcompose/jetpackcompose-original-wordmark.svg"
+              alt="jetpack compose logo"
+              style={{
+                width: "3.5rem",
+                height: "auto",
+              }}
+            />
+          </div>
+
+          {/* Buttons */}
+          <div className="projectButtons">
+            <GitHubButton
+              URL={
+                "https://github.com/Mike11199/CS-492-Assignment-5-Flight-Search-App"
+              }
+            />
+            <ButtonLink
+              URL={"https://www.youtube.com/watch?v=hwGGgglHlus"}
+              variant={"red"}
+              buttonText={"Video Link"}
+            />
+          </div>
         </div>
 
         {/* Side by Side Phone GIFs */}

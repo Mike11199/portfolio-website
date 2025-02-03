@@ -59,33 +59,65 @@ const PyTorchApp = () => {
           Please see full-stack Computer Science projects I've completed below,
           in various programming languages.
         </p>
-        <h2 className={styles.projectHeaderText}>
-          PyTorch Image Classification Website - Java Spring
-          Boot/Flask/TypeScript
-        </h2>
+        <div className={styles.projectHeaderTextContainer}>
+          <h3 className={styles.projectHeaderText}>
+            PyTorch Image Classification Website - Java Spring
+            Boot/Flask/TypeScript
+          </h3>
+          <div className={styles.devIconsContainer}>
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
+              alt="java logo"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+            <img
+              style={{ width: "3.5rem", height: "auto" }}
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+              alt="aws logo"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+              alt="python logo"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+            <img
+              alt="nginx logo"
+              style={{ width: "3.5rem", height: "auto" }}
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+              alt="typescript logo"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg"
+              alt="spring boot logo"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-plain-wordmark.svg"
+              alt="pytorch logo"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+          </div>
+          <div className="projectButtons">
+            <GitHubButton
+              URL={
+                "https://github.com/Mike11199/PyTorch-Image-Classification-Java-Flask-TypeScript"
+              }
+            />
+            <ButtonLink
+              URL={
+                "https://machine-learning-projects.com/image-classification-mask-resnet"
+              }
+              variant={"blue"}
+              buttonText={"Live Link - AWS EC2"}
+            />
+          </div>
+        </div>
 
         {/* Buttons */}
-        <div className="projectButtons">
-          <GitHubButton
-            URL={
-              "https://github.com/Mike11199/PyTorch-Image-Classification-Java-Flask-TypeScript"
-            }
-          />
-          <ButtonLink
-            URL={
-              "https://machine-learning-projects.com/image-classification-mask-resnet"
-            }
-            variant={"blue"}
-            buttonText={"Live Link - AWS EC2"}
-          />
-          {/* <ButtonLink
-            URL={
-              "https://pytorch-image-model-aws-app-727fe8e23222.herokuapp.com/"
-            }
-            variant={"red"}
-            buttonText={"Alt Heroku (Old)"}
-          /> */}
-        </div>
 
         {/* Image Carousel */}
         <div className={styles.pyTorchCarouselAndDescriptionContainer}>

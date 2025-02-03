@@ -38,25 +38,59 @@ const RSAEncryptionApp = () => {
   return (
     <>
       <section className="rsa_section">
-        <h2 className="projectHeaderText">
-          RSA & AES Encryption App - Electron.js, React.js
-        </h2>
+        <div className={"projectHeaderTextContainer"}>
+          <h3 className="projectHeaderText">
+            RSA & AES Encryption App - Electron.js, React.js
+          </h3>
 
-        {/* Buttons */}
-        <div className="projectButtons">
-          <GitHubButton
-            URL={"https://github.com/Mike11199/CS-361-RSA-React-App"}
-          />
-          <ButtonLink
-            URL={"https://rsa-react-app.herokuapp.com/"}
-            variant={"blue"}
-            buttonText={"Live Website Link"}
-          />
-          <ButtonLink
-            URL={"https://www.youtube.com/watch?v=MQKmV63Wfbk"}
-            variant={"red"}
-            buttonText={"Video Link"}
-          />
+          <div className={"devIconsContainer"}>
+            <div
+              style={{
+                position: "relative",
+                width: "4rem",
+                height: "4rem",
+                borderRadius: "50%",
+                backgroundColor: "#222",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg"
+                alt="electron.js logo"
+                style={{
+                  width: "3rem",
+                  height: "auto",
+                  position: "relative",
+                  zIndex: 1,
+                }}
+              />
+            </div>
+
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
+              alt="React logo"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+          </div>
+
+          {/* Buttons */}
+          <div className="projectButtons">
+            <GitHubButton
+              URL={"https://github.com/Mike11199/CS-361-RSA-React-App"}
+            />
+            <ButtonLink
+              URL={"https://rsa-react-app.herokuapp.com/"}
+              variant={"blue"}
+              buttonText={"Live Website Link"}
+            />
+            <ButtonLink
+              URL={"https://www.youtube.com/watch?v=MQKmV63Wfbk"}
+              variant={"red"}
+              buttonText={"Video Link"}
+            />
+          </div>
         </div>
 
         {/* Image Carousel */}
