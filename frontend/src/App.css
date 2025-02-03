@@ -333,6 +333,7 @@ ul > li > ul > li {
 .entire_page {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 
 body {
@@ -941,4 +942,8 @@ ul {
     gap: 2rem;
     justify-content: center;
   }
+
+.entire_page {
+  gap: 0rem;
+}
 }
