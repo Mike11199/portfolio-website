@@ -169,6 +169,7 @@
   background-color: rgb(104, 18, 18);
   transition: background-color 0.17s ease, color 0.17s ease;
   margin-bottom: 30px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .video_button:hover {
@@ -523,6 +524,7 @@ ul {
   color: #fff;
   background-color: #24292e;
   transition: background-color 0.17s ease, color 0.17s ease;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .github_button:hover {
@@ -551,6 +553,7 @@ ul {
   color: #fff;
   background-color: rgb(36, 43, 121);
   transition: background-color 0.17s ease, color 0.17s ease;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .website_button:hover {
