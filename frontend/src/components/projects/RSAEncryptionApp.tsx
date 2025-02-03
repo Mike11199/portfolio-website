@@ -5,6 +5,8 @@ import ImagesList from "../utils/ImageList";
 import { rsaEncryptionImages } from "../../images/imageData.json";
 import CustomTextCarousel from "../CustomTextCarousel";
 import { useWindowWidth } from "@react-hook/window-size";
+import OpenSSLLogo from "./OpenSSL_logo.svg";
+
 
 const RSAEncryptionApp = () => {
   const rSAEncryptionProjectDescriptionText = [
@@ -44,6 +46,21 @@ const RSAEncryptionApp = () => {
           </h3>
 
           <div className={"devIconsContainer"}>
+          <div
+              style={{
+                position: "relative",
+                width: "4rem",
+                height: "4rem",
+                borderRadius: "50%",
+                backgroundColor: "#8b8a8a",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: '5px 2px 10px rgba(0, 0, 0, 0.4)',
+              }}
+            >
+          <img src={OpenSSLLogo} alt="OpenSSL logo" style={{ width: "3.5rem", height: "auto" }} />
+          </div>
             <div
               style={{
                 position: "relative",
@@ -54,6 +71,7 @@ const RSAEncryptionApp = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                boxShadow: '5px 2px 10px rgba(0, 0, 0, 0.4)',
               }}
             >
               <img
@@ -122,3 +140,5 @@ const RSAEncryptionApp = () => {
 };
 
 export default RSAEncryptionApp;
+
+

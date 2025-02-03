@@ -49,6 +49,11 @@ const ApplyYourSelfJobTracker = () => {
 
           <div className={"devIconsContainer"}>
             <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original-wordmark.svg"
+              alt="mongoose logo"
+              style={{ width: "3.5rem", height: "auto" }}
+            />
+            <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg"
               alt="MongoDB logo"
               style={{ width: "3.5rem", height: "auto" }}
@@ -69,7 +74,7 @@ const ApplyYourSelfJobTracker = () => {
             />
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
-              alt="Node.js logo"
+              alt="node.js logo"
               style={{ width: "3.5rem", height: "auto" }}
             />
           </div>
