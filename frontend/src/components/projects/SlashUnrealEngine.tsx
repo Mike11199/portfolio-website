@@ -44,7 +44,7 @@ const SlashUnrealEngine = () => {
   const windowWidth = useWindowWidth();
   return (
     <>
-      <section className="hash_map_section">
+      <section className="unreal_section">
         <div className={"projectHeaderTextContainer"}>
           <h3 className="projectHeaderText">C++ Unreal Engine Project Slash</h3>
 

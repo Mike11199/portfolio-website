@@ -62,7 +62,7 @@ const PyTorchApp = () => {
         <div className={styles.projectHeaderTextContainer}>
           <h3 className={styles.projectHeaderText}>
             PyTorch Image Classification Website - Java Spring
-            Boot/Flask/TypeScript
+            Boot/ Flask/ TypeScript
           </h3>
           <div className={styles.devIconsContainer}>
             <img
