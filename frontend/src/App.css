@@ -29,13 +29,12 @@
 
 .projectHeaderText {
   color: rgb(17, 167, 67);
-  border-radius: 1rem;
+  margin: 0px;
 }
 
 .projectHeaderTextContainer {
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 1rem;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
   margin-top: 5rem;
   margin-bottom: 2rem;
@@ -75,7 +74,6 @@
   opacity: 0.6 !important;
 }
 
-
 /* 1. PREV button normal */
 .carousel .control-arrow.control-prev {
   background: #000 !important;
@@ -97,7 +95,6 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
   border-radius: 0.25rem !important;
 }
-
 
 .normal-text-desktop-view {
   display: flex;
@@ -176,21 +173,18 @@
   display: inline-block;
   outline: none;
   cursor: pointer;
-  border-radius: 3px;
   font-size: 14px;
   line-height: 16px;
   padding: 2px 16px;
-  min-width: 96px;
-  min-height: 38px;
   border: none;
   color: #fff;
-  background-color: rgb(104, 18, 18);
+  background-color: rgb(77, 13, 13);
   transition: background-color 0.17s ease, color 0.17s ease;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .video_button:hover {
-  background-color: rgb(73, 12, 12);
+  background-color: rgb(104, 18, 18);
 }
 
 .video_button:active {
@@ -545,7 +539,6 @@ ul {
   height: auto;
 }
 
-
 .github_button {
   font-family: "Segoe UI";
   font-weight: 500;
@@ -558,20 +551,16 @@ ul {
   justify-content: center;
   outline: none;
   cursor: pointer;
-  border-radius: 3px;
   font-size: 14px;
-  line-height: 16px;
-  min-width: 96px;
-  min-height: 38px;
   border: none;
   color: #fff;
-  background-color: #24292e;
+  background-color: #191d20;
   transition: background-color 0.17s ease, color 0.17s ease;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .github_button:hover {
-  background-color: rgb(46, 46, 46);
+  background-color: #202529;
 }
 
 .github_button:active {
@@ -586,21 +575,17 @@ ul {
   display: inline-block;
   outline: none;
   cursor: pointer;
-  border-radius: 3px;
   font-size: 14px;
-  line-height: 16px;
   padding: 2px 16px;
-  min-width: 96px;
-  min-height: 38px;
   border: none;
   color: #fff;
-  background-color: rgb(36, 43, 121);
+  background-color: rgb(24, 29, 85);
   transition: background-color 0.17s ease, color 0.17s ease;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .website_button:hover {
-  background-color: rgb(38, 43, 102);
+  background-color: rgb(31, 37, 109);
 }
 
 .website_button:active {
@@ -630,22 +615,6 @@ ul {
     width: 100%;
     padding-left: 0px;
     margin-bottom: 100px;
-  }
-
-  .github_button {
-    margin-bottom: 0px;
-    gap: 10px;
-  }
-
-  .website_button {
-    margin-left: 0px;
-    margin-right: 10;
-  }
-
-  .video_button {
-    margin-left: 0px;
-    margin-right: 10;
-    margin-bottom: 0px;
   }
 
   .project_card_apply_yourself {
@@ -716,10 +685,10 @@ ul {
 
   .projectButtons {
     gap: 10px;
-    margin-bottom: 2rem;
     justify-content: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    width: 100%;
   }
 
   .carousel_rsa_encryption {
@@ -926,7 +895,7 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 2rem;
     margin: 1rem;
     margin-bottom: 3rem;
     margin-top: 2rem;
@@ -943,7 +912,23 @@ ul {
     justify-content: center;
   }
 
-.entire_page {
-  gap: 0rem;
-}
+  .entire_page {
+    gap: 0rem;
+  }
+
+  .github_button {
+    width: 100%;
+    border-radius: 0px;
+    gap: 10px;
+  }
+
+  .website_button {
+    width: 100%;
+    border-radius: 0px;
+  }
+
+  .video_button {
+    width: 100%;
+    border-radius: 0px;
+  }
 }
