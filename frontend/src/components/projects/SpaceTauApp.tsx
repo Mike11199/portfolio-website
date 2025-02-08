@@ -122,7 +122,7 @@ const SpaceTauApp = () => {
             <div className="videoWrapperKSP">
               <ReactVideoPlayer
                 URL={
-                  "https://www.youtube.com/watch?v=PLZhliJe3Wk?autoplay=1&modestbranding=1"
+                  "https://www.youtube.com/watch?v=wl0nVNRrcf0?autoplay=1&modestbranding=1"
                 }
               />
             </div>
