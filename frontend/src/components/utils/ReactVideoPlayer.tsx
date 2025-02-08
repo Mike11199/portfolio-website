@@ -2,6 +2,7 @@ import ReactPlayer from "react-player";
 
 interface ReactPlayerProps {
   URL: string;
+  controls?: boolean;
 }
 
 /**
@@ -9,15 +10,25 @@ interface ReactPlayerProps {
  * @param {string} URL - The URL of the video.
  * @returns {JSX.Element} The React element representing the video player.
  */
-const ReactVideoPlayer = ({
-  URL,
-  }: ReactPlayerProps) => {
+const ReactVideoPlayer = ({ URL, controls = true }: ReactPlayerProps) => {
+
+  console.log(URL)
+  console.log(controls)
+
+  const youtubeOptions = {
+    playerVars: {
+      controls: controls ? 1 : 0,
+      showinfo: 0,
+      playsinline: 1,
+    },
+  };
+
   return (
-    <div className='player-wrapper'>
+    <div className="player-wrapper">
       <ReactPlayer
         playing
-        width='100%'
-        height='100%'
+        width="100%"
+        height="100%"
         url={URL}
         loop={true}
         muted={true}
@@ -30,12 +41,5 @@ const ReactVideoPlayer = ({
   );
 };
 
-const youtubeOptions = {
-  playerVars: {
-    controls: 1,
-    showinfo: 0,
-    playsinline: 1,
-  },
-};
 
 export default ReactVideoPlayer;

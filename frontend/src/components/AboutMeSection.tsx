@@ -38,6 +38,7 @@ const AboutMeSection = () => {
                 URL={
                   "https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1"
                 }
+                controls={false}
               />
             </div>
             <AboutMeImagesContainer />
