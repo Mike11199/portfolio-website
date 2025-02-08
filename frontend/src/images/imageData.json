@@ -5,28 +5,28 @@
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738994257/mask_rcnn_new_page_layout_optimized_hqaap0.gif"
     },
     {
+      "alt": "new_york_traffic_mask_only",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995501/traffic_new_1_imioqt.png"
+    },
+    {
+      "alt": "new_york_traffic",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995534/traffic_new_2_pjlmap.png"
+    },
+    {
       "alt": "winter_traffic",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738994840/winter_traffic_new_2_hlgo1d.png"
     },
     {
-      "alt": "new_york_traffic",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1736117016/mask_rcnn_traffic_piil9s.png"
-    },
-    {
-      "alt": "new_york_traffic_mask_only",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1736117016/mask_only_rcnn_traffic_sfyny8.png"
-    },
-    {
-      "alt": "nat_geo_collage",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1714965850/pytorch_nat_geo_collage_optimized_ifmp6b.webp"
+      "alt": "pytorch_doggo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995445/new_dog_v4lcyn.png"
     },
     {
       "alt": "pytorch_home_page",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703993902/pytorch_home_page_ctk08h.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995774/fast_rcnn_page_aykfi7.png"
     },
     {
-      "alt": "pytorch_doggo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1736118182/dog_mask_rcnn_qe0zhv.png"
+      "alt": "nat_geo_collage",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738996012/nat_geo_collage_new_tu7gsv.png"
     },
     {
       "alt": "jupyterlab_model_load_weights",
