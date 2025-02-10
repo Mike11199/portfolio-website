@@ -267,6 +267,10 @@
   ],
   "hashMapImages": [
     {
+      "alt": "hash_map_separate_chaining_gif",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228131/hash_map_separate_chaining_tljado.gif"
+    },
+    {
       "alt": "hash_map_put_function",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_put_function_yql8dr.png"
     },
@@ -277,10 +281,6 @@
     {
       "alt": "hash_map_resize_table_function",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_resize_table_function_opqhi4.png"
-    },
-    {
-      "alt": "hash_map_separate_chaining_gif",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228131/hash_map_separate_chaining_tljado.gif"
     }
   ]
 }
