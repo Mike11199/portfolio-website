@@ -65,7 +65,7 @@ const CustomTextCarousel: React.FC<CustomTextCarouselProps> = ({
         <div className="textWrapperDesktop">
           <ul style={{display: "flex", gap: "2rem", flexDirection: "column"}}>
             {descriptionList.map((x) => (
-              <li key={x}>{x}</li>
+              <li key={x}><span>{x}</span></li>
             ))}
           </ul>
         </div>

@@ -12,9 +12,6 @@ interface ReactPlayerProps {
  */
 const ReactVideoPlayer = ({ URL, controls = true }: ReactPlayerProps) => {
 
-  console.log(URL)
-  console.log(controls)
-
   const youtubeOptions = {
     playerVars: {
       controls: controls ? 1 : 0,

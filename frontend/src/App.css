@@ -1,3 +1,23 @@
+html {
+  cursor: url("./images/dark_cursor_small.png"), auto;
+}
+
+a,
+button,
+[role="button"] {
+  cursor: url("./images/dark_pointer_small.png"), pointer;
+}
+
+p,
+input,
+span,
+textarea,
+h1,
+h3,
+h2 {
+  cursor: url("./images/dark_text_cursor_18px.png"), text;
+}
+
 .carousel-status {
   color: rgb(35, 168, 41) !important;
   background-color: rgba(0, 0, 0, 0.2);
@@ -5,6 +25,14 @@
   font-weight: 500 !important;
   margin-right: 2rem;
   border-radius: 0.25rem;
+}
+
+.carousel .control-next {
+  cursor: url("./images/dark_pointer_small.png"), pointer !important;
+}
+
+.carousel .control-prev {
+  cursor: url("./images/dark_pointer_small.png"), pointer !important;
 }
 
 /* 1. NEXT arrow normal state */
@@ -172,7 +200,7 @@
   height: 50px;
   display: inline-block;
   outline: none;
-  cursor: pointer;
+  cursor: url("./images/dark_pointer_small.png"), pointer;
   font-size: 14px;
   line-height: 16px;
   padding: 2px 16px;
@@ -550,7 +578,7 @@ ul {
   height: 50px;
   justify-content: center;
   outline: none;
-  cursor: pointer;
+  cursor: url("./images/dark_pointer_small.png"), pointer;
   font-size: 14px;
   border: none;
   color: #fff;
@@ -574,7 +602,7 @@ ul {
   height: 50px;
   display: inline-block;
   outline: none;
-  cursor: pointer;
+  cursor: url("./images/dark_pointer_small.png"), pointer;
   font-size: 14px;
   padding: 2px 16px;
   border: none;
@@ -859,7 +887,6 @@ ul {
     display: block;
     width: 100%;
     padding: 10px;
-    cursor: pointer;
     background-color: #000000;
     border: none;
     color: rgb(25, 212, 88);
