@@ -37,7 +37,7 @@
   margin-bottom: 4rem;
 }
 
-#projectsDivScrollToSection {
+#projects {
   display: block;
   position: relative;
   visibility: hidden;
@@ -83,7 +83,7 @@
     margin-bottom: 1rem;
   }
 
-  #projectsDivScrollToSection {
+  #projects {
     top: 0px;
   }
 

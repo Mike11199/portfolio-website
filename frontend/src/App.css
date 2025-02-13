@@ -1,5 +1,11 @@
 html {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+  background: #000000;
   cursor: url("./images/dark_cursor_small.png"), auto;
+  scroll-padding-top: 75px;
 }
 
 a,
@@ -374,14 +380,6 @@ body {
 }
 
 #root {
-  background: #000000;
-}
-
-html {
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  scroll-behavior: smooth;
   background: #000000;
 }
 
@@ -958,4 +956,8 @@ ul {
     width: 100%;
     border-radius: 0px;
   }
+  html {
+    scroll-padding-top: 50px;
+  }
 }
+

@@ -53,7 +53,7 @@ const PyTorchApp = () => {
   return (
     <>
       <section className={styles.pyTorchOuterContainer}>
-        <div id="projectsDivScrollToSection"></div>
+        <div id="projects"></div>
         <h1 className={styles.projectsHeader}> Projects </h1>
         <p className={styles.projectsParagraph}>
           Please see full-stack Computer Science projects I've completed below,
@@ -61,8 +61,8 @@ const PyTorchApp = () => {
         </p>
         <div className={styles.projectHeaderTextContainer}>
           <h3 className={styles.projectHeaderText}>
-            PyTorch Image Classification Website - Java Spring
-            Boot/ Flask/ TypeScript
+            PyTorch Image Classification Website - Java Spring Boot/ Flask/
+            TypeScript
           </h3>
           <div className={styles.devIconsContainer}>
             <img
