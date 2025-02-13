@@ -36,7 +36,7 @@ const AboutMeSection = () => {
             <div className={styles.aboutMeVideoWrapper}>
               <ReactVideoPlayer
                 URL={
-                  "https://www.youtube.com/shorts/R_NyGXwE6vY?autoplay=1&modestbranding=1"
+                  "https://www.youtube.com/shorts/tDcxweOlAns?autoplay=1&modestbranding=1"
                 }
                 controls={false}
               />
