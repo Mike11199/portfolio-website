@@ -1,6 +1,10 @@
 {
   "PyTorchImages": [
     {
+      "alt": "new_york_traffic_gif",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1740892012/pytorch_trraffic_a1r5fm.gif"
+    },
+    {
       "alt": "cats_and_dogs_gif_mask_rcnn",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738994257/mask_rcnn_new_page_layout_optimized_hqaap0.gif"
     },
