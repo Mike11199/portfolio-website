@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useScroll, animated, useSpring } from "@react-spring/web";
-import resumePdf  from "../misc/CV_Michael Iwanek_10_17_2024_1.pdf";
+import resumePdf  from "../misc/CV_Michael Iwanek.pdf";  // 04_12_2025
 import BinaryDigit from "./BinaryDigit";
 import { useState } from "react";
 import styles from "./styles/Navbar.module.css";
