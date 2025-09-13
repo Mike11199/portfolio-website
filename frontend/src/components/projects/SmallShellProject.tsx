@@ -50,7 +50,7 @@ const SmallShellProject = () => {
               }}
             />
             <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+              src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"
               alt="c logo"
               style={{
                 width: "3.5rem",
