@@ -64,12 +64,17 @@ jobs:
           aws ecr describe-repositories --repository-names "${{ env.ECR_REPOSITORY }}" >/dev/null 2>&1 || \
             aws ecr create-repository --repository-name "${{ env.ECR_REPOSITORY }}" >/dev/null
 
-      - name: Build and push React/nginx image
+      - name: Build React/nginx image
         run: |
           REGISTRY="${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}"
           IMAGE_TAG="${{ github.sha }}"
           docker build --file frontend/Dockerfile \
             --tag "$REGISTRY:$IMAGE_TAG" .
+
+      - name: Push React/nginx image to ECR
+        run: |
+          REGISTRY="${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}"
+          IMAGE_TAG="${{ github.sha }}"
           docker push "$REGISTRY:$IMAGE_TAG"
 
   cdk-deploy:
