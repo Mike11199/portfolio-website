@@ -164,7 +164,8 @@ class PortfolioStack(Stack):
                     ),
                     on_demand_base_capacity=0,
                     on_demand_percentage_above_base_capacity=0,
-                    spot_max_price="0.02",
+                    # No max_price cap = uses On-Demand price as ceiling (~$0.011/hr for t3.micro).
+                    # Safer than $0.02 bid: no artificial evictions during demand spikes; still cheap since Spot market stays well below On-Demand most of the time.
                 ),
             ),
         )
