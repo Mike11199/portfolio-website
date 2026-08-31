@@ -23,3 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 .vscode
 /.vscode
+
+# Python/CDK generated files
+cdk/.venv/
+cdk/cdk.out/
+cdk/.pytest_cache/
+**/__pycache__/
+*.pyc

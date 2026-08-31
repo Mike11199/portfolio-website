@@ -1,4 +1,6 @@
-# Notes
+# DEPRECATED — replaced by CDK. See `cdk/` for the current ECS deployment config.
+
+## Notes (historical)
 
 - This nginx config file goes in the `nginx` folder in the EC2/Linux root directory.
 - Go to the root directory with `cd /`.  You can also go to user's home directory `/home/ec2-user` by using `cd` with no args.
