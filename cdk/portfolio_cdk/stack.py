@@ -3,6 +3,8 @@
 from aws_cdk import (
     CfnParameter,
     Duration,
+    Fn,
+    RemovalPolicy,
     Stack,
     Tags,
     aws_autoscaling as autoscaling,
@@ -10,6 +12,7 @@ from aws_cdk import (
     aws_ecs as ecs,
     aws_elasticloadbalancingv2 as elbv2,
     aws_iam as iam,
+    aws_route53 as route53,
 )
 from constructs import Construct
 
@@ -21,6 +24,30 @@ class PortfolioStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         image_tag = CfnParameter(self, "ImageTag", default="latest").value_as_string
+
+        alias_record = route53.CfnRecordSet(
+            self,
+            "PortfolioAliasRecordResource",
+            hosted_zone_id=Fn.import_value("SharedPortfolioHostedZoneId"),
+            name=f"{existing_resources.PRODUCTION_HOST}.",
+            type="A",
+            alias_target=route53.CfnRecordSet.AliasTargetProperty(
+                dns_name=Fn.join(
+                    "",
+                    [
+                        "dualstack.",
+                        Fn.import_value("SharedLoadBalancerDnsName"),
+                        ".",
+                    ],
+                ),
+                hosted_zone_id=Fn.import_value(
+                    "SharedLoadBalancerCanonicalHostedZoneId"
+                ),
+                evaluate_target_health=True,
+            ),
+        )
+        alias_record.override_logical_id("PortfolioAliasRecord")
+        alias_record.apply_removal_policy(RemovalPolicy.RETAIN)
 
         vpc = ec2.Vpc.from_vpc_attributes(
             self,

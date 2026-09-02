@@ -51,9 +51,44 @@ def test_routes_portfolio_host_through_shared_listener():
         cloudformation, "AWS::ElasticLoadBalancingV2::TargetGroup"
     )[0]["Properties"]
 
-    assert listener_rule["Priority"] == 15
+    assert listener_rule["ListenerArn"] == (
+        "arn:aws:elasticloadbalancing:us-west-1:456461478565:listener/app/"
+        "consolidated-load-balancer/cebd4e468e9c8526/119a0202f44da309"
+    )
+    assert listener_rule["Priority"] == 2
     assert listener_rule["Conditions"][0]["HostHeaderConfig"]["Values"] == [
         "michael-iwanek-portfolio.com"
     ]
     assert target_group["HealthCheckPath"] == "/health"
     assert target_group["TargetType"] == "ip"
+
+
+def test_owns_retained_root_alias_using_shared_exports():
+    cloudformation = template()
+    records = resources(cloudformation, "AWS::Route53::RecordSet")
+
+    assert len(records) == 1
+    alias = cloudformation["Resources"]["PortfolioAliasRecord"]
+    assert alias["DeletionPolicy"] == "Retain"
+    assert alias["UpdateReplacePolicy"] == "Retain"
+    assert alias["Properties"] == {
+        "Name": "michael-iwanek-portfolio.com.",
+        "Type": "A",
+        "HostedZoneId": {"Fn::ImportValue": "SharedPortfolioHostedZoneId"},
+        "AliasTarget": {
+            "DNSName": {
+                "Fn::Join": [
+                    "",
+                    [
+                        "dualstack.",
+                        {"Fn::ImportValue": "SharedLoadBalancerDnsName"},
+                        ".",
+                    ],
+                ]
+            },
+            "HostedZoneId": {
+                "Fn::ImportValue": "SharedLoadBalancerCanonicalHostedZoneId"
+            },
+            "EvaluateTargetHealth": True,
+        },
+    }

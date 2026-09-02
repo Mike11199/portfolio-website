@@ -3,6 +3,8 @@
 - Completely custom portfolio site developed with TypeScript.
 - Hosted on an AWS EC2 instance (t2.micro/Linux) via a Nginx web server/reverse proxy.
 - Provisioned the instance with an EC2 Load Balancer to enable HTTPS, and configured domain routing via Route 53.
+- The site is managed by a CDK deployed by a GitHub Actions pipeline (previously manual EC2):
+  - [cdk readme](cdk/README.md)
 
 ## Website Links
 

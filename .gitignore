@@ -30,3 +30,6 @@ cdk/cdk.out/
 cdk/.pytest_cache/
 **/__pycache__/
 *.pyc
+
+# Local migration plan
+/MIGRATION_README.md
