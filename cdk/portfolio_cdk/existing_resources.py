@@ -16,7 +16,7 @@ SHARED_HTTPS_LISTENER_ARN = (
     "consolidated-load-balancer/cebd4e468e9c8526/119a0202f44da309"
 )
 PRODUCTION_HOST = "michael-iwanek-portfolio.com"
-# Listener priorities: Alpine Peak 1, Portfolio 2, Machine Learning 10.
+# Listener priorities: Alpine Peak 1, Portfolio 2, Machine Learning 3.
 LISTENER_RULE_PRIORITY = 2
 
 ECR_REPOSITORY = "portfolio-website"
