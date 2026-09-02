@@ -105,5 +105,6 @@ jobs:
         run: |
           uv sync --frozen --group dev
           cdk deploy PortfolioStack \
+            --revert-drift \
             --require-approval never \
             --parameters ImageTag="${{ github.sha }}"
