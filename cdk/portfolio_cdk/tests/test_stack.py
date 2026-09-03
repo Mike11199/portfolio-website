@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 from unittest.mock import patch
 
@@ -53,6 +54,9 @@ def test_repository_stack_retains_live_repository_and_exports_uri():
     assert repository["Type"] == "AWS::ECR::Repository"
     assert repository["DeletionPolicy"] == "Retain"
     assert repository["UpdateReplacePolicy"] == "Retain"
+    lifecycle_policy = json.loads(
+        repository["Properties"].pop("LifecyclePolicy")["LifecyclePolicyText"]
+    )
     assert repository["Properties"] == {
         "RepositoryName": "portfolio-website",
         "ImageTagMutability": "MUTABLE",
@@ -63,6 +67,29 @@ def test_repository_stack_retains_live_repository_and_exports_uri():
         "Value": {"Fn::GetAtt": ["PortfolioRepository", "RepositoryUri"]},
         "Export": {"Name": "PortfolioRepositoryUri"},
     }
+    assert lifecycle_policy["rules"] == [
+        {
+            "rulePriority": 1,
+            "description": "Keep the three most recent release images",
+            "selection": {
+                "tagStatus": "tagged",
+                "countType": "imageCountMoreThan",
+                "countNumber": 3,
+            },
+            "action": {"type": "expire"},
+        },
+        {
+            "rulePriority": 2,
+            "description": "Expire untagged images after one day",
+            "selection": {
+                "tagStatus": "untagged",
+                "countType": "sinceImagePushed",
+                "countUnit": "days",
+                "countNumber": 1,
+            },
+            "action": {"type": "expire"},
+        },
+    ]
 
 
 def import_values(value) -> list[str]:

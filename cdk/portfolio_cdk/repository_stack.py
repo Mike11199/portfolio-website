@@ -1,5 +1,7 @@
 """Retained ECR repository owned separately from the application stack."""
 
+import json
+
 from aws_cdk import CfnOutput, RemovalPolicy, Stack, aws_ecr as ecr
 from constructs import Construct
 
@@ -20,6 +22,35 @@ class RepositoryStack(Stack):
             ),
             encryption_configuration=ecr.CfnRepository.EncryptionConfigurationProperty(
                 encryption_type="AES256"
+            ),
+            lifecycle_policy=ecr.CfnRepository.LifecyclePolicyProperty(
+                lifecycle_policy_text=json.dumps(
+                    {
+                        "rules": [
+                            {
+                                "rulePriority": 1,
+                                "description": "Keep the three most recent release images",
+                                "selection": {
+                                    "tagStatus": "tagged",
+                                    "countType": "imageCountMoreThan",
+                                    "countNumber": 3,
+                                },
+                                "action": {"type": "expire"},
+                            },
+                            {
+                                "rulePriority": 2,
+                                "description": "Expire untagged images after one day",
+                                "selection": {
+                                    "tagStatus": "untagged",
+                                    "countType": "sinceImagePushed",
+                                    "countUnit": "days",
+                                    "countNumber": 1,
+                                },
+                                "action": {"type": "expire"},
+                            },
+                        ]
+                    }
+                )
             ),
         )
         repository.override_logical_id("PortfolioRepository")
