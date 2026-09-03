@@ -73,6 +73,7 @@ def test_repository_stack_retains_live_repository_and_exports_uri():
             "description": "Keep the three most recent release images",
             "selection": {
                 "tagStatus": "tagged",
+                "tagPatternList": ["*"],
                 "countType": "imageCountMoreThan",
                 "countNumber": 3,
             },

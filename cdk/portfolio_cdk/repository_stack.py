@@ -32,6 +32,7 @@ class RepositoryStack(Stack):
                                 "description": "Keep the three most recent release images",
                                 "selection": {
                                     "tagStatus": "tagged",
+                                    "tagPatternList": ["*"],
                                     "countType": "imageCountMoreThan",
                                     "countNumber": 3,
                                 },
