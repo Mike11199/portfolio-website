@@ -1,3 +1,4 @@
+from pathlib import Path
 from unittest.mock import patch
 
 from aws_cdk import App, Fn
@@ -30,6 +31,19 @@ def test_application_stack_depends_on_repository_stack():
     import app as cdk_app
 
     assert cdk_app.repository_stack in cdk_app.portfolio_stack.dependencies
+
+
+def test_application_deploy_excludes_the_already_deployed_repository_stack():
+    """Image parameters must be sent only to the application stack."""
+    workflow = (
+        Path(__file__).parents[3] / ".github/workflows/deploy-cdk-ecs-ec2.yml"
+    ).read_text()
+    application_deploy = workflow[workflow.index("cdk deploy PortfolioStack") :]
+
+    assert "--exclusively" in application_deploy
+    assert application_deploy.index("--exclusively") < application_deploy.index(
+        "--parameters"
+    )
 
 
 def test_repository_stack_retains_live_repository_and_exports_uri():
