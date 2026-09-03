@@ -52,9 +52,11 @@ class PortfolioStack(Stack):
         vpc = ec2.Vpc.from_vpc_attributes(
             self,
             "SharedVpc",
-            vpc_id=existing_resources.VPC_ID,
-            availability_zones=list(existing_resources.AVAILABILITY_ZONES),
-            public_subnet_ids=list(existing_resources.PUBLIC_SUBNET_IDS),
+            vpc_id=Fn.import_value("SharedVpcId"),
+            availability_zones=[
+                Fn.import_value("SharedPublicSubnet1AvailabilityZone")
+            ],
+            public_subnet_ids=[Fn.import_value("SharedPublicSubnet1Id")],
         )
 
         cluster = ecs.Cluster(
@@ -81,9 +83,8 @@ class PortfolioStack(Stack):
             network_mode=ecs.NetworkMode.AWS_VPC,
         )
 
-        image_uri = (
-            f"{Stack.of(self).account}.dkr.ecr.{Stack.of(self).region}.amazonaws.com/"
-            f"{existing_resources.ECR_REPOSITORY}:{image_tag}"
+        image_uri = Fn.join(
+            "", [Fn.import_value("PortfolioRepositoryUri"), ":", image_tag]
         )
         task_definition.add_container(
             "NginxContainer",
@@ -109,7 +110,7 @@ class PortfolioStack(Stack):
         alb_security_group = ec2.SecurityGroup.from_security_group_id(
             self,
             "SharedAlbSecurityGroup",
-            existing_resources.SHARED_ALB_SECURITY_GROUP_ID,
+            Fn.import_value("SharedAlbSecurityGroupId"),
             mutable=False,
         )
         service.connections.allow_from(
@@ -136,11 +137,12 @@ class PortfolioStack(Stack):
                 timeout=Duration.seconds(10),
             ),
         )
+        target_group.node.default_child.apply_removal_policy(RemovalPolicy.RETAIN)
 
         listener_rule = elbv2.CfnListenerRule(
             self,
             "PortfolioListenerRule",
-            listener_arn=existing_resources.SHARED_HTTPS_LISTENER_ARN,
+            listener_arn=Fn.import_value("SharedHttpsListenerArn"),
             priority=existing_resources.LISTENER_RULE_PRIORITY,
             conditions=[
                 {
@@ -154,6 +156,7 @@ class PortfolioStack(Stack):
                 {"type": "forward", "targetGroupArn": target_group.target_group_arn}
             ],
         )
+        listener_rule.apply_removal_policy(RemovalPolicy.RETAIN)
 
         instance_role = iam.Role(
             self,

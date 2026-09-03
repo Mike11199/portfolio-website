@@ -1,13 +1,13 @@
-from aws_cdk import App, Environment
+from aws_cdk import App
 
-from portfolio_cdk.existing_resources import AWS_ACCOUNT_ID, AWS_REGION
+from portfolio_cdk.repository_stack import RepositoryStack
 from portfolio_cdk.stack import PortfolioStack
 
 
 app = App()
-PortfolioStack(
-    app,
-    "PortfolioStack",
-    env=Environment(account=AWS_ACCOUNT_ID, region=AWS_REGION),
+repository_stack = RepositoryStack(
+    app, "PortfolioRepositoryStack", analytics_reporting=False
 )
+portfolio_stack = PortfolioStack(app, "PortfolioStack")
+portfolio_stack.add_stack_dependency(repository_stack)
 app.synth()
