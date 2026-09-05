@@ -33,10 +33,10 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarousel> = ({
     return (
       <div
         className="carousel-container"
-        style={{ height: heightProp, marginBottom: "12rem" }}
+        style={{ height: "auto" }}
       >
         <div className="text-carousel-content">
-          <button onClick={goToPrevious} className="carousel-button top-button">
+          <button aria-label="Previous introduction paragraph" onClick={goToPrevious} className="carousel-button top-button">
             <FontAwesomeIcon icon={faArrowUp} size="sm" />
           </button>
           <div className="textWrapperMobile" style={{ height: heightProp }}>
@@ -64,7 +64,7 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarousel> = ({
               </div>
             </div>
           </div>
-          <button onClick={goToNext} className="carousel-button bottom-button">
+          <button aria-label="Next introduction paragraph" onClick={goToNext} className="carousel-button bottom-button">
             <FontAwesomeIcon icon={faArrowDown} size="sm" />
           </button>
         </div>
@@ -76,7 +76,6 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarousel> = ({
     return (
       <div
         className="normal-text-desktop-view"
-        style={{ width: "100%", height: "fit-content", maxHeight: "60vh" }}
       >
         <div className="textWrapperDesktop" style={{ width: "100%" }}>
           <div style={{ marginBottom: "1.25rem" }}>

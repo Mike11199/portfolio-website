@@ -2,6 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ReactVideoPlayer from "./utils/ReactVideoPlayer";
 import styles from "./styles/AboutMeSection.module.css";
 import AboutMeTextCarousel from "./AboutMeTextCarousel";
+import CodeDemo from "./CodeDemo";
 
 const AboutMeText = [
   `I'm Michael Iwanek - and this is my portfolio website to showcase
@@ -33,6 +34,7 @@ const AboutMeSection = () => {
         </h1>
         <div className={styles.aboutMeContainer} >
           <div className={styles.aboutMeImagesAndTextWrapper}>
+            <div className={styles.mediaGroup}>
             <div className={styles.aboutMeVideoWrapper}>
               <ReactVideoPlayer
                 URL={
@@ -41,8 +43,14 @@ const AboutMeSection = () => {
                 controls={false}
               />
             </div>
-            <AboutMeImagesContainer />
-            <AboutMeTextContainer />
+            <AboutMeImagesContainer blackContainer={true} />
+            </div>
+            <div className={styles.codeDemo}>
+              <CodeDemo />
+            </div>
+            <div className={styles.introduction}>
+              <AboutMeTextContainer />
+            </div>
           </div>
         </div>
       </section>
@@ -50,25 +58,25 @@ const AboutMeSection = () => {
   );
 };
 
-const AboutMeImagesContainer = () => {
+const AboutMeImagesContainer = ({ blackContainer = false }: { blackContainer?: boolean }) => {
   return (
-    <div className={styles.aboutMeImages}>
+    <div className={`${styles.aboutMeImages}${blackContainer ? ` ${styles.photoPanel}` : ""}`}>
       <div className={styles.aboutMeImagesFirstRow}>
         <img
           src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/about_me_snowshoe_tunnel_qtqonc.jpg"
-          alt="Michael Iwanek Navbar"
+          alt="Michael snowshoeing in an ice tunnel"
           className={styles.aboutMeSnowshoeingPhoto}
         />
         <img
           src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864636/about_me_heavenly_ski_resort_bu4bzj.jpg"
-          alt="Michael Iwanek Navbar"
+          alt="Michael skiing at Heavenly"
           className={styles.aboutMeSkiingPhoto}
         />
       </div>
       <div className="aboutMeImagesSecondRow">
         <img
           src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/about_me_tent_snow_camping_qvoznf.jpg"
-          alt="Michael Iwanek Navbar"
+          alt="Tent at a snowy campsite"
           className={styles.tentImage}
         />
       </div>

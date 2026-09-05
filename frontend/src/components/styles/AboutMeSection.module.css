@@ -1,194 +1,242 @@
 #aboutMeSection {
-  background-image: linear-gradient(
-    #000000 0%,
-    #031e42 15%,
-    #132b3d 55%,
-    #000000 100%
-  );
   color: white;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  margin-top: 30px;
-  align-items: center;
-}
-
-.aboutMeImagesFirstRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-/* unused */
-.textWrapperAboutMe {
-  height: fit-content;
-  max-height: 50vh;
-  overflow: auto;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background: #191c29;
-  border-radius: 6px;
-  border: 2px solid rgba(56, 128, 62, 0.849);
-  color: rgb(25, 212, 88);
-  background-image: linear-gradient(#000000, #000000, #000000);
-  width: 100%;
+  background-image: linear-gradient(#000000 0%, #031e42 15%, #132b3d 55%, #000000 100%);
+  padding: 130px clamp(1rem, 4vw, 3rem) 3rem;
 }
 
 .aboutMeContainer {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-}
-
-.aboutMeImages {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 2rem;
-}
-
-.tentImage {
-  border-radius: 1rem;
-  width: 100%;
-  object-fit: cover;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-
-.aboutMeSnowshoeingPhoto {
-  border-radius: 1rem;
-  width: 43%;
-  height: 100%;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-
-.aboutMeSkiingPhoto {
-  border-radius: 1rem;
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 1.5rem;
 }
 
 .aboutMeImagesAndTextWrapper {
-  margin: 0px;
-  display: flex;
-  flex-direction: row;
-  gap: 5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  width: 100%;
 }
 
+.mediaGroup {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+/* The photos size the grid row; the player fills it without imposing a height. */
 .aboutMeVideoWrapper {
-  display: flex;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #000;
+  border-radius: 1rem;
+}
+
+.aboutMeVideoWrapper > :global(.player-wrapper) {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 1rem;
-  overflow: hidden;
-  background-color: #000000;
 }
 
-@media (max-width: 1000px) {
-  .aboutMeImagesFirstRow {
-    flex-direction: column;
-    gap: 2rem;
+.aboutMeImages {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.aboutMeImagesFirstRow {
+  display: grid;
+  /* Original image ratios: 1080/1350 and 1285/1285. Equal heights, no cropping. */
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.aboutMeSnowshoeingPhoto,
+.aboutMeSkiingPhoto,
+.tentImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.introduction {
+  min-width: 0;
+}
+
+.introduction :global(.normal-text-desktop-view) {
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 560px;
+  margin: 0;
+}
+
+.introduction :global(.textWrapperDesktop) {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.introduction :global(.carousel-container) {
+  margin: 0;
+}
+
+.introduction :global(.text-carousel-content) {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .aboutMeImagesAndTextWrapper {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .aboutMeSnowshoeingPhoto {
-    width: 100%;
+  .introduction {
+    grid-row: 1;
   }
 
-  .aboutMeSkiingPhoto {
-    width: 100%;
-  }
-
-  .textWrapperAboutMe {
-    max-height: 50vh;
+  .introduction :global(.normal-text-desktop-view) {
+    max-height: none;
   }
 }
 
 @media (max-width: 600px) {
   #aboutMeSection {
-    background-image: linear-gradient(
-      #031e42 10%,
-      #031e42 55%,
-      #000000 100%
-    );
-    display: flex;
-    flex-direction: column;
-    margin-top: 0px;
-    padding-top: 20px;
-    padding-bottom: 40px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-top: 1.5rem;
   }
 
-  .aboutMeImagesFirstRow {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .aboutMeImagesAndTextWrapper {
-    gap: 2rem;
-  }
-
-  /* unused */
-  .textWrapperAboutMe {
-    width: 100%;
-    padding-right: 0rem;
-    padding-left: 0rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-left: 0rem;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 0px;
-    max-height: none;
-  }
-
-  .aboutMeContainer {
-    flex-direction: column;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  .aboutMeImages {
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .tentImage {
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-  }
-
-  .aboutMeSnowshoeingPhoto {
-    margin-right: 0px;
-    width: 100%;
-  }
-
-  .aboutMeSkiingPhoto {
-    width: 100%;
-  }
-
-  .aboutMeImagesAndTextWrapper {
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-    align-items: center;
+  .mediaGroup {
+    display: contents;
   }
 
   .aboutMeVideoWrapper {
-    justify-content: center;
-    height: 50vh;
-    width: 93%;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    grid-row: 1;
   }
+
+  .introduction {
+    grid-row: 2;
+  }
+
+  .aboutMeImages {
+    grid-row: 3;
+  }
+
+  .aboutMeVideoWrapper {
+    height: clamp(240px, 45svh, 360px);
+    aspect-ratio: auto;
+  }
+}
+
+/* Optional frame; the natural photo layout and proportions remain unchanged. */
+.photoPanel {
+  padding: 1.5rem;
+  gap: 1.5rem;
+  background: #000;
+  border-radius: 1rem;
+}
+
+.photoPanel img {
+  border-radius: 0;
+}
+
+.photoPanel .aboutMeImagesFirstRow {
+  gap: 1.5rem;
+}
+
+/* Side-by-side media shares one frame and one inset around all visible content. */
+@media (min-width: 601px) {
+  .mediaGroup {
+    padding: 1.5rem;
+    /* Fit the 9:16 video to the natural collage height, including its 24px gap.
+       Photo height = (width - gap) / 1.8 + gap + width * 976 / 2016. */
+    grid-template-columns: minmax(0, 1fr) minmax(0, calc((100% - 1.875rem) / 1.5848214286));
+    background: #000;
+    border-radius: 1rem;
+  }
+
+  .mediaGroup .photoPanel {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .mediaGroup .aboutMeVideoWrapper {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 901px) {
+  .aboutMeImagesAndTextWrapper {
+    /* This media width caps the portrait video near 560px without distorting
+       the photos or changing the shared 24px padding and gaps. */
+    grid-template-columns: minmax(0, min(65%, 915px)) minmax(0, 1fr);
+  }
+}
+
+
+
+@media (min-width: 901px) {
+  .introduction :global(.normal-text-desktop-view) {
+    max-height: 560px;
+  }
+}
+
+.codeDemo {
+  min-width: 0;
+}
+
+.codeDemo > section {
+  margin-top: 0;
+}
+
+@media (min-width: 1400px) {
+  .aboutMeImagesAndTextWrapper {
+    grid-template-columns: minmax(0, min(42%, 915px)) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  /* The natural media height sets the row; both neighboring panels fill it. */
+  .codeDemo,
+  .introduction {
+    position: relative;
+    align-self: stretch;
+    min-height: 0;
+  }
+
+  .codeDemo > section,
+  .introduction :global(.normal-text-desktop-view) {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    max-height: none;
+    box-sizing: border-box;
+  }
+
+  .codeDemo > section {
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+  }
+
+  .codeDemo pre {
+    height: auto;
+    min-height: 0;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1399px) {
+  .mediaGroup { grid-column: 1; grid-row: 1 / span 2; }
+  .introduction { grid-column: 2; grid-row: 1; }
+  .codeDemo { grid-column: 2; grid-row: 2; }
+}
+
+@media (max-width: 900px) {
+  .codeDemo { display: none; }
+}
+
+@media (max-width: 600px) {
+  .codeDemo { grid-row: 3; }
+  .aboutMeImages { grid-row: 4; }
 }
