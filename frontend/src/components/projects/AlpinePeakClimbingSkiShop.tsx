@@ -1,4 +1,4 @@
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "../utils/ProjectImageCarousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
@@ -140,7 +140,6 @@ const AlpinePeakClimbingSkiShop = () => {
               width="100%"
               infiniteLoop={true}
               showIndicators={false}
-              dynamicHeight={true}
               showThumbs={windowWidth > 600}
             >
               {ImagesList(alpinePeakClimbingSkiShopImages)}

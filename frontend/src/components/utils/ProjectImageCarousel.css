@@ -1,0 +1,49 @@
+/* Only the selected image determines the viewport, even with taller offscreen slides. */
+.project-image-carousel .carousel-slider .slider-wrapper {
+  aspect-ratio: var(--project-image-ratio);
+  height: auto;
+}
+
+.project-image-carousel .carousel-slider .slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Spacing belongs outside the frame, not between its controls and image. */
+.project-image-carousel .carousel-slider .slide {
+  padding: 0;
+}
+
+/* Keep the fade handler's negative-z-index slides above the section background. */
+.project-image-carousel .carousel-slider {
+  isolation: isolate;
+}
+
+@media (max-width: 600px) {
+  .project-image-carousel--mobile-padded {
+    padding-inline: 5%;
+  }
+}
+
+/* A stable frame with contained images: no cropping or height changes between slides. */
+.project-image-carousel--fixed .carousel-slider .slider-wrapper {
+  aspect-ratio: auto;
+  height: var(--project-image-height);
+  background: #000;
+}
+
+.project-image-carousel--fixed .carousel-slider .slider,
+.project-image-carousel--fixed .carousel-slider .slide,
+.project-image-carousel--fixed .carousel-slider .slide > div,
+.project-image-carousel--fixed .carousel-slider .slide img {
+  height: 100%;
+}
+
+.project-image-carousel--fixed .carousel-slider .slide img {
+  object-fit: contain;
+}
+
+.project-image-carousel--fixed .carousel-slider .slider {
+  isolation: isolate;
+}

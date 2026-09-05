@@ -1,4 +1,4 @@
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "../utils/ProjectImageCarousel";
 import GitHubButton from "../utils/GitHubButton";
 import ImagesList from "../utils/ImageList";
 import { unrealEngineImages } from "../../images/imageData.json";
@@ -85,7 +85,6 @@ const SlashUnrealEngine = () => {
               showIndicators={false}
               width="100%"
               infiniteLoop={true}
-              dynamicHeight={true}
               showArrows={true}
               showThumbs={windowWidth > 600}
             >

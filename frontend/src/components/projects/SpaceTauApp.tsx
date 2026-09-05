@@ -1,5 +1,5 @@
 import ReactVideoPlayer from "../utils/ReactVideoPlayer";
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "../utils/ProjectImageCarousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
@@ -110,7 +110,6 @@ const SpaceTauApp = () => {
                 showIndicators={false}
                 width="100%"
                 infiniteLoop={true}
-                dynamicHeight={true}
                 showArrows={true}
                 showThumbs={windowWidth > 600}
               >

@@ -1,4 +1,4 @@
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "../utils/ProjectImageCarousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
@@ -122,13 +122,12 @@ const PyTorchApp = () => {
         {/* Image Carousel */}
         <div className={styles.pyTorchCarouselAndDescriptionContainer}>
           <div className={styles.pyTorchCarouselContainer}>
-            <Carousel
+            <Carousel fixedHeight="clamp(220px, 50vw, 500px)"
               swipeable={false}
               emulateTouch={false}
               showIndicators={false}
               width="100%"
               infiniteLoop={true}
-              dynamicHeight={true}
               showArrows={true}
               showThumbs={windowWidth > 600}
             >

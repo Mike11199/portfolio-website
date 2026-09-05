@@ -1,4 +1,4 @@
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "../utils/ProjectImageCarousel";
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
@@ -100,7 +100,6 @@ const ApplyYourSelfJobTracker = () => {
               emulateTouch={false}
               width="100%"
               infiniteLoop={true}
-              dynamicHeight={true}
               showArrows={true}
               showIndicators={false}
               showThumbs={windowWidth > 600}

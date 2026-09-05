@@ -1,4 +1,4 @@
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "../utils/ProjectImageCarousel";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { solarSystemImages } from "../../images/imageData.json";
@@ -86,7 +86,6 @@ const OpenGLSolarSystem = () => {
               showIndicators={false}
               width="100%"
               infiniteLoop={true}
-              dynamicHeight={true}
               showArrows={true}
               showThumbs={windowWidth > 600}
             >
