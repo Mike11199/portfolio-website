@@ -2,6 +2,15 @@ import { useState } from "react";
 import { codeExamples } from "./examples";
 import styles from "./CodeDemo.module.css";
 
+const languageIcons: Record<string, string> = {
+  Python: "python/python-original.svg",
+  "C#": "csharp/csharp-original.svg",
+  TypeScript: "typescript/typescript-original.svg",
+  PostgreSQL: "postgresql/postgresql-original.svg",
+  "GitLab CI": "gitlab/gitlab-original.svg",
+  Docker: "docker/docker-original.svg",
+};
+
 // These curated snippets are displayed as text, never evaluated in the browser.
 const keywords = /^(using|var|let|new|const|async|await|from|import|def|lambda|return|interface|function|typeof|throw)$/;
 const sqlKeywords = /^(PREPARE|AS|WITH|SELECT|FROM|WHERE|CROSS|JOIN|ORDER|BY|LIMIT|EXECUTE|WORKDIR|COPY|RUN|EXPOSE|CMD)$/;
@@ -33,6 +42,13 @@ const CodeDemo = () => {
           {codeExamples.map((item, index) => (
             <button key={item.language} type="button" aria-pressed={active === index}
               onClick={() => setActive(index)}>
+              <img
+                className={styles.languageIcon}
+                src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${languageIcons[item.language]}`}
+                alt=""
+                width={18}
+                height={18}
+              />
               {item.language}
             </button>
           ))}
