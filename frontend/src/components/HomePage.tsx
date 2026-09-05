@@ -1,7 +1,6 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import AboutMeSection from "./AboutMeSection";
 import AlpinePeakClimbingSkiShop from "./projects/AlpinePeakClimbingSkiShop";
-import ApplyYourSelfJobTracker from "./projects/ApplyYourSelfJobTracker";
 import RSAEncryptionApp from "./projects/RSAEncryptionApp";
 import SpaceTauApp from "./projects/SpaceTauApp";
 import SmallShellProject from "./projects/SmallShellProject";
@@ -24,7 +23,6 @@ const HomePage = () => {
         <AlpinePeakClimbingSkiShop />
 
         {/* Project # 2 - MERN Full Stack Job Application Tracker*/}
-        <ApplyYourSelfJobTracker />
 
         {/* Project # 3 - Electron.js and React RSA and AES Encryption App - */}
         <RSAEncryptionApp />
