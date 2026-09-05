@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { useScroll, animated, useSpring } from "@react-spring/web";
+import { useScroll, animated } from "@react-spring/web";
 import resumePdf  from "../misc/CV_Michael Iwanek.pdf";  // 04_12_2025
 import BinaryDigit from "./BinaryDigit";
-import { useState } from "react";
 import styles from "./styles/Navbar.module.css";
 
 const Navbar = () => {
@@ -24,20 +23,14 @@ const Navbar = () => {
   };
 
   const AnimatedScrollBar = () => {
-    const [scrollVal, setScrollVal] = useState(0);
-    useScroll({
-      onChange: ({ value: { scrollYProgress } }) => {
-        setScrollVal(scrollYProgress * 100);
-      },
-    });
-
-    const animatedStyle = useSpring({
-      transform: `scaleX(${scrollVal})`,
-    });
+    const { scrollYProgress } = useScroll();
 
     return (
       <>
-        <animated.div className={styles.myAnimatedDiv} style={animatedStyle} />
+        <animated.div
+          className={styles.myAnimatedDiv}
+          style={{ transform: scrollYProgress.to((value) => `scaleX(${value})`) }}
+        />
       </>
     );
   };
