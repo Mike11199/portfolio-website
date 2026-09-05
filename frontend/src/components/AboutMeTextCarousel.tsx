@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import "../App.css";
+import styles from "./styles/AboutMeTextCarousel.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { useWindowWidth } from "@react-hook/window-size";
@@ -15,6 +16,16 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarousel> = ({
   heightProp,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const hexDump = useMemo(() => {
+    const bytes = new TextEncoder().encode(descriptionList.join("\n\n"));
+    const rows: string[] = [];
+    for (let offset = 0; offset < bytes.length; offset += 16) {
+      const hex = Array.from(bytes.slice(offset, offset + 16),
+        byte => byte.toString(16).padStart(2, "0")).join(" ");
+      rows.push(`0x${offset.toString(16).padStart(4, "0")}  ${hex}`);
+    }
+    return rows.join("\n");
+  }, [descriptionList]);
   const totalChildren = descriptionList?.length;
   const windowWidth = useWindowWidth();
   const isMobileView = windowWidth <= 600;
@@ -77,7 +88,8 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarousel> = ({
       <div
         className="normal-text-desktop-view"
       >
-        <div className="textWrapperDesktop" style={{ width: "100%" }}>
+        <div className={`textWrapperDesktop ${styles.desktopText}`} style={{ width: "100%" }}>
+          <div className={styles.bio}>
           <div style={{ marginBottom: "1.25rem" }}>
             <TypeAnimation
               cursor={true}
@@ -85,9 +97,17 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarousel> = ({
               sequence={["Hello! "]}
             />
           </div>
+          <div className={styles.divider} aria-hidden="true">about_me.txt</div>
           {descriptionList.map((text) => (
             <p key={text}>{text}</p>
         ))}
+          </div>
+          <div className={styles.hexFooter} aria-hidden="true">
+            <div className={styles.hexContent}>
+              <div className={styles.divider}>end of file<span className={styles.cursor}>?</span></div>
+              <pre>{hexDump}</pre>
+            </div>
+          </div>
         </div>
       </div>
     );
