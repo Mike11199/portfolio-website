@@ -103,7 +103,7 @@ const KotlinAndroidProjects = () => {
 
         <ProjectSection
           media={
-            <ProjectMediaFrame paired background="transparent">
+            <ProjectMediaFrame paired>
               <img
               alt="sacramento_phone_view_android_app_gif"
               src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442796/android_kotlin_sacramento_app_fdubuz.gif"

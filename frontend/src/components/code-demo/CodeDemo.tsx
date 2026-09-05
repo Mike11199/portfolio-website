@@ -1,16 +1,19 @@
 import { useState } from "react";
-import { codeExamples } from "./codeExamples";
+import { codeExamples } from "./examples";
 import styles from "./CodeDemo.module.css";
 
 // These curated snippets are displayed as text, never evaluated in the browser.
-const keywords = /^(using|var|new|const|async|await|from|import|def|lambda|return)$/;
-const controls = /^(foreach|in|for|of|if)$/;
-const types = /^(System|Console|Promise)$/;
-const highlight = (code: string) => code.split(/(#[^\n]*|\$?f?"[^"\n]*"|`[^`]*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g)
+const keywords = /^(using|var|let|new|const|async|await|from|import|def|lambda|return|interface|function|typeof|throw)$/;
+const sqlKeywords = /^(PREPARE|AS|WITH|SELECT|FROM|WHERE|CROSS|JOIN|ORDER|BY|LIMIT|EXECUTE|WORKDIR|COPY|RUN|EXPOSE|CMD)$/;
+const yamlKeys = /^(steps|name|id|uses|env|run|working|directory|stages|stage|default|tags|variables|build|deploy|script|rules|resource_group)$/;
+const controls = /^(foreach|in|for|of|if|try|catch|continue)$/;
+const types = /^(System|Console|Promise|BoundingBox|string|number|unknown|boolean|void|bigint)$/;
+const highlight = (code: string) => code.split(/(--[^\n]*|\/\/[^\n]*|#[^\n]*|\$?f?"[^"\n]*"|`[^`]*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g)
   .map((token, index, tokens) => {
-    const kind = token.startsWith("#") ? "comment"
+    const kind = (token.startsWith("#") || token.startsWith("//") || token.startsWith("--")) ? "comment"
       : /^(\$?f?"|`)/.test(token) ? "string"
-      : keywords.test(token) ? "keyword"
+      : (keywords.test(token) || sqlKeywords.test(token)) ? "keyword"
+      : yamlKeys.test(token) ? "symbol"
       : controls.test(token) ? "control"
       : types.test(token) ? "type"
       : /^\d/.test(token) ? "number"
@@ -35,7 +38,6 @@ const CodeDemo = () => {
           ))}
         </div>
       </div>
-      <div className={styles.filename}>Code demo · {example.file}</div>
       <pre className={styles.editor} tabIndex={0} aria-label={`${example.language} example`}><code>{highlight(example.code)}</code></pre>
       <div className={styles.terminal}>
         <div className={styles.terminalTitle}>TERMINAL</div>

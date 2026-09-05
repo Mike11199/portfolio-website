@@ -2,7 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ReactVideoPlayer from "./utils/ReactVideoPlayer";
 import styles from "./styles/AboutMeSection.module.css";
 import AboutMeTextCarousel from "./AboutMeTextCarousel";
-import CodeDemo from "./CodeDemo";
+import CodeDemo from "./code-demo/CodeDemo";
 
 const AboutMeText = [
   `I'm Michael Iwanek - and this is my portfolio website to showcase
