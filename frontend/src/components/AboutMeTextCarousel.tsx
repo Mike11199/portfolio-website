@@ -40,7 +40,7 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarousel> = ({
     );
   };
 
-  const TextCarouselForMobileView = () => {
+  if (isMobileView) {
     return (
       <div
         className="carousel-container"
@@ -81,43 +81,34 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarousel> = ({
         </div>
       </div>
     );
-  };
+  }
 
-  const TextWrapperForDesktopView = () => {
-    return (
-      <div
-        className="normal-text-desktop-view"
-      >
-        <div className={`textWrapperDesktop ${styles.desktopText}`} style={{ width: "100%" }}>
-          <div className={styles.bio}>
-          <div style={{ marginBottom: "1.25rem" }}>
-            <TypeAnimation
-              cursor={true}
-              speed={{ type: "keyStrokeDelayInMs", value: 750 }}
-              sequence={["Hello! "]}
-            />
-          </div>
-          <div className={styles.divider} aria-hidden="true">about_me.txt</div>
-          {descriptionList.map((text) => (
-            <p key={text}>{text}</p>
-        ))}
-          </div>
-          <div className={styles.hexFooter} aria-hidden="true">
-            <div className={styles.hexContent}>
-              <div className={styles.divider}>end of file<span className={styles.cursor}>?</span></div>
-              <pre>{hexDump}</pre>
-            </div>
+  return (
+    <div
+      className="normal-text-desktop-view"
+    >
+      <div className={`textWrapperDesktop ${styles.desktopText}`} style={{ width: "100%" }}>
+        <div className={styles.bio}>
+        <div style={{ marginBottom: "1.25rem" }}>
+          <TypeAnimation
+            cursor={true}
+            speed={{ type: "keyStrokeDelayInMs", value: 750 }}
+            sequence={["Hello! "]}
+          />
+        </div>
+        <div className={styles.divider} aria-hidden="true">about_me.txt</div>
+        {descriptionList.map((text) => (
+          <p key={text}>{text}</p>
+      ))}
+        </div>
+        <div className={styles.hexFooter} aria-hidden="true">
+          <div className={styles.hexContent}>
+            <div className={styles.divider}>end of file<span className={styles.cursor}>?</span></div>
+            <pre>{hexDump}</pre>
           </div>
         </div>
       </div>
-    );
-  };
-
-  return (
-    <>
-      {isMobileView && <TextCarouselForMobileView />}
-      {!isMobileView && <TextWrapperForDesktopView />}
-    </>
+    </div>
   );
 };
 

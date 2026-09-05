@@ -28,7 +28,7 @@ const CustomTextCarousel: React.FC<CustomTextCarouselProps> = ({
     );
   };
 
-  const TextCarouselForMobileView = () => {
+  if (isMobileView) {
     return (
       <div
         className="carousel-container"
@@ -57,27 +57,18 @@ const CustomTextCarousel: React.FC<CustomTextCarouselProps> = ({
         </div>
       </div>
     );
-  };
-
-  const TextWrapperForDesktopView = () => {
-    return (
-      <div className="normal-text-desktop-view">
-        <div className="textWrapperDesktop">
-          <ul style={{display: "flex", gap: "2rem", flexDirection: "column"}}>
-            {descriptionList.map((x) => (
-              <li key={x}><span>{x}</span></li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    );
-  };
+  }
 
   return (
-    <>
-      {isMobileView && <TextCarouselForMobileView />}
-      {!isMobileView && <TextWrapperForDesktopView />}
-    </>
+    <div className="normal-text-desktop-view">
+      <div className="textWrapperDesktop">
+        <ul style={{display: "flex", gap: "2rem", flexDirection: "column"}}>
+          {descriptionList.map((x) => (
+            <li key={x}><span>{x}</span></li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 
