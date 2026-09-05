@@ -192,13 +192,6 @@ h2 {
   font-size: 18px;
 }
 
-.spaceTauMainContainer {
-  margin: 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .video_button {
   font-family: "Segoe UI";
   font-weight: 500;
@@ -238,15 +231,6 @@ h2 {
   opacity: 0;
 }
 
-.videoWrapperKSP {
-  display: flex;
-  width: 75%;
-  height: 40vh;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-
 ul > li > ul {
   padding-left: 20px;
 }
@@ -254,49 +238,6 @@ ul > li > ul {
 ul > li > ul > li {
   margin-top: 10px;
   list-style-type: circle;
-}
-
-.text_apply_your_self {
-  padding-left: 5%;
-  width: 30%;
-}
-
-.carousel_apply_yourself {
-  width: 60%;
-}
-
-.space_tau_description {
-  padding-left: 5%;
-  width: 30%;
-}
-
-.kotlin_carousel {
-  max-width: 350px;
-  padding-left: 170px;
-}
-
-.kotlin_carousel_container {
-  width: 30%;
-  padding-bottom: 3rem;
-  justify-content: center;
-  display: flex;
-}
-
-.hash_map_carousel {
-  width: 60%;
-}
-
-.kotlin_image {
-  width: 60%;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 1.25rem;
-}
-
-.project_card_hash_map {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
 }
 
 .projectButtons {
@@ -307,55 +248,6 @@ ul > li > ul > li {
 .github_logo {
   height: 20px;
   width: 20px;
-}
-
-.project_card_ski_shop {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.carousel_ski_shop {
-  width: 60%;
-}
-
-.videoWrapperSmallShell {
-  width: 60%;
-  display: flex;
-  position: relative;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-
-.project_card_smallsh {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 100px;
-  justify-content: space-between;
-}
-
-.space_tau_carousel_and_video {
-  width: 60%;
-}
-
-.project_card_apply_yourself {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.project_card_rsa_encryption {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.carousel_rsa_encryption {
-  width: 60%;
 }
 
 .entire_page {
@@ -624,31 +516,6 @@ ul {
     padding-left: 0px;
   }
 
-  .kotlin_image {
-    width: 65%;
-    border-radius: 0.75rem;
-  }
-
-  .project_card_hash_map {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .project_card_space_tau {
-    width: 100%;
-    padding-left: 0px;
-    margin-bottom: 100px;
-  }
-
-  .project_card_apply_yourself {
-    flex-direction: column;
-    padding-left: 0px;
-    align-self: center;
-  }
-
   .player-wrapper {
     position: relative;
     z-index: 1;
@@ -676,85 +543,12 @@ ul {
     height: 100%;
   }
 
-  .project_card_ski_shop {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .project_card_smallsh {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-
-  .project_card_rsa_encryption {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .project_card_apply_yourself {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .text_apply_your_self {
-    width: 100%;
-    padding-left: 0px;
-  }
-
-  .carousel_apply_yourself {
-    width: 100%;
-  }
-
   .projectButtons {
     gap: 10px;
     justify-content: center;
     padding-left: 0rem;
     padding-right: 0rem;
     width: 100%;
-  }
-
-  .carousel_rsa_encryption {
-    width: 100%;
-  }
-
-  .space_tau_carousel_and_video {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .space_tau_description {
-    width: 100%;
-  }
-
-  .hash_map_text {
-    width: 100%;
-    padding-left: 0px;
-  }
-
-  .carousel_ski_shop {
-    width: 100%;
-  }
-
-  .hash_map_carousel {
-    width: 100%;
-  }
-
-  .kotlin_carousel {
-    max-width: 500px;
-    padding-left: 0px;
-  }
-
-  .kotlin_carousel_container {
-    width: 100%;
-    margin-bottom: 40px;
-    padding-bottom: 0;
   }
 
   .ski_shop_section {
@@ -816,35 +610,12 @@ ul {
     padding-top: 40px;
   }
 
-  .videoWrapperSmallShell {
-    display: flex;
-    justify-content: center;
-    border-radius: 1rem;
-    width: 90%;
-    overflow: hidden;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-    margin-left: 1rem;
-    margin-right: 1rem;
-    height: 30vh;
-  }
-
   .projectHeaderText {
     text-align: center;
   }
 
   h1 {
     text-align: center;
-  }
-
-  .videoWrapperKSP {
-    display: flex;
-    justify-content: center;
-    width: 92%;
-    margin-bottom: 0px;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-    height: 28vh;
   }
 
   li {
@@ -866,11 +637,6 @@ ul {
 
   ul > li > ul {
     list-style-position: inside;
-  }
-
-  .spaceTauMainContainer {
-    flex-direction: column;
-    height: auto;
   }
 
   .carousel-container {
@@ -961,3 +727,23 @@ ul {
   }
 }
 
+
+/* Shared gutters belong to the section, not its images or description. */
+section.portfolio-project {
+  padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+.portfolio-project .projectHeaderTextContainer,
+.portfolio-project .devIconsContainer,
+.portfolio-project .projectButtons {
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+.portfolio-project .projectHeaderTextContainer {
+  margin-inline: 0;
+}
+
+.portfolio-project .projectHeaderText {
+  overflow-wrap: anywhere;
+}

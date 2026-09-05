@@ -4,7 +4,8 @@ import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { spaceTauImages } from "../../images/imageData.json";
-import CustomTextCarousel from "../CustomTextCarousel";
+import ProjectSection from "./ProjectSection";
+import ProjectMediaFrame from "./ProjectMediaFrame";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const SpaceTauApp = () => {
@@ -40,7 +41,7 @@ const SpaceTauApp = () => {
   return (
     <>
       <section
-        className="space_tau_section"
+        className="portfolio-project space_tau_section"
         style={{ margin: "0px", height: "auto" }}
       >
         <div className={"projectHeaderTextContainer"}>
@@ -100,11 +101,11 @@ const SpaceTauApp = () => {
           </div>
         </div>
 
-        {/* Image Carousel */}
-        <div className="spaceTauMainContainer">
-          <div className="space_tau_carousel_and_video">
-            <div className="space_tau_carousel">
-              <Carousel
+        <ProjectSection
+          media={
+            <Carousel
+              fixedHeight="var(--project-panel-height)"
+              mobilePadding={false}
                 swipeable={false}
                 emulateTouch={false}
                 showIndicators={false}
@@ -115,24 +116,14 @@ const SpaceTauApp = () => {
               >
                 {ImagesList(spaceTauImages)}
               </Carousel>
-            </div>
-
-            {/* Embedded YouTube Video */}
-            <div className="videoWrapperKSP">
-              <ReactVideoPlayer
+          }
+          description={spaceTauProjectDescriptionText}
+          supplementalMedia={<ProjectMediaFrame><ReactVideoPlayer
                 URL={
                   "https://www.youtube.com/watch?v=wl0nVNRrcf0?autoplay=1&modestbranding=1"
                 }
-              />
-            </div>
-          </div>
-
-          {/* Text Description */}
-          <CustomTextCarousel
-            descriptionList={spaceTauProjectDescriptionText}
-            heightProp={"62vh"}
-          />
-        </div>
+              /></ProjectMediaFrame>}
+        />
       </section>
     </>
   );

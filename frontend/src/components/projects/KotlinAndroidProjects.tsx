@@ -1,6 +1,7 @@
 import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
-import CustomTextCarousel from "../CustomTextCarousel";
+import ProjectSection from "./ProjectSection";
+import ProjectMediaFrame from "./ProjectMediaFrame";
 
 const KotlinAndroidProjects = () => {
   const kotlinAndroidProjectsDescriptionText = [
@@ -42,7 +43,7 @@ const KotlinAndroidProjects = () => {
   ];
   return (
     <>
-      <section className="kotlin_section">
+      <section className="portfolio-project kotlin_section">
         <div className={"projectHeaderTextContainer"}>
           <h3 className="projectHeaderText">
             Kotlin (Jetpack Compose) - Sacramento City and Flight Search App
@@ -100,29 +101,21 @@ const KotlinAndroidProjects = () => {
           </div>
         </div>
 
-        {/* Side by Side Phone GIFs */}
-        <div className="project_card_hash_map" style={{ marginTop: "50px" }}>
-          <div className="kotlin_carousel_container">
-            <img
-              className="kotlin_image"
+        <ProjectSection
+          media={
+            <ProjectMediaFrame paired background="transparent">
+              <img
               alt="sacramento_phone_view_android_app_gif"
               src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442796/android_kotlin_sacramento_app_fdubuz.gif"
             />
-          </div>
-          <div className="kotlin_carousel_container">
-            <img
-              className="kotlin_image"
+              <img
               alt="flight_search_sql_lite_phone_view_android_app_gif"
               src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442786/android_kotlin_flight_search_fu06fc.gif"
             />
-          </div>
-
-          {/* Text Description  */}
-          <CustomTextCarousel
-            descriptionList={kotlinAndroidProjectsDescriptionText}
-            heightProp={"62vh"}
-          />
-        </div>
+            </ProjectMediaFrame>
+          }
+          description={kotlinAndroidProjectsDescriptionText}
+        />
       </section>
     </>
   );

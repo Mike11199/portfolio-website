@@ -2,7 +2,7 @@ import GitHubButton from "../utils/GitHubButton";
 import Carousel from "../utils/ProjectImageCarousel";
 import ImagesList from "../utils/ImageList";
 import { hashMapImages } from "../../images/imageData.json";
-import CustomTextCarousel from "../CustomTextCarousel";
+import ProjectSection from "./ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const PythonHashMap = () => {
@@ -36,7 +36,7 @@ const PythonHashMap = () => {
 
   return (
     <>
-      <section className="hash_map_section">
+      <section className="portfolio-project hash_map_section">
         <div className={"projectHeaderTextContainer"}>
           <h3 className="projectHeaderText">
             Hash Map Data Structure Implementation - Python
@@ -69,10 +69,11 @@ const PythonHashMap = () => {
           </div>
         </div>
 
-        {/* Image Carousel */}
-        <div className="project_card_hash_map">
-          <div className="hash_map_carousel">
+        <ProjectSection
+          media={
             <Carousel
+              fixedHeight="var(--project-panel-height)"
+              mobilePadding={false}
               swipeable={false}
               emulateTouch={false}
               showIndicators={false}
@@ -83,14 +84,9 @@ const PythonHashMap = () => {
             >
               {ImagesList(hashMapImages)}
             </Carousel>
-          </div>
-
-          {/* Text Description */}
-          <CustomTextCarousel
-            descriptionList={pythonHashMapProjectDescriptionText}
-            heightProp={"62vh"}
-          />
-        </div>
+          }
+          description={pythonHashMapProjectDescriptionText}
+        />
       </section>
     </>
   );

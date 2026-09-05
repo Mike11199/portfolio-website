@@ -4,7 +4,7 @@ import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { PyTorchImages } from "../../images/imageData.json";
 import styles from "../styles/PyTorchApp.module.css";
-import CustomTextCarousel from "../CustomTextCarousel";
+import ProjectSection from "./ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const PyTorchApp = () => {
@@ -52,7 +52,7 @@ const PyTorchApp = () => {
 
   return (
     <>
-      <section className={styles.pyTorchOuterContainer}>
+      <section className={`portfolio-project ${styles.pyTorchOuterContainer}`}>
         <div id="projects"></div>
         <h1 className={styles.projectsHeader}> Projects </h1>
         <p className={styles.projectsParagraph}>
@@ -117,14 +117,11 @@ const PyTorchApp = () => {
           </div>
         </div>
 
-        {/* Buttons */}
-
-        {/* Image Carousel */}
-        <div className={styles.pyTorchCarouselAndDescriptionContainer}>
-          <div className={styles.pyTorchCarouselContainer}>
-            <Carousel fixedHeight="clamp(220px, 50vw, 500px)"
-              swipeable={false}
-              emulateTouch={false}
+        <ProjectSection
+          media={
+            <Carousel
+              fixedHeight="var(--project-panel-height)"
+              mobilePadding={false}
               showIndicators={false}
               width="100%"
               infiniteLoop={true}
@@ -133,14 +130,9 @@ const PyTorchApp = () => {
             >
               {ImagesList(PyTorchImages)}
             </Carousel>
-          </div>
-
-          {/* Text Description */}
-          <CustomTextCarousel
-            descriptionList={pyTorchProjectDescriptionText}
-            heightProp={"62vh"}
-          />
-        </div>
+          }
+          description={pyTorchProjectDescriptionText}
+        />
       </section>
     </>
   );

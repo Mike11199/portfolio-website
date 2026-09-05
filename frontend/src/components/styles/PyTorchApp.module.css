@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-top: 5rem;
 }
@@ -29,13 +29,6 @@
   padding-right: 3rem;
   padding-bottom: 3rem;
 }
-.pyTorchCarouselAndDescriptionContainer {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-  margin-bottom: 4rem;
-}
 
 #projects {
   display: block;
@@ -46,7 +39,7 @@
 .devIconsContainer {
   display: flex;
   gap: 2rem;
-  overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .projectsHeader {
@@ -56,10 +49,6 @@
 .projectsParagraph {
   height: auto;
   margin-bottom: 6rem;
-}
-
-.pyTorchCarouselContainer {
-  width: 60%;
 }
 
 @media (max-width: 600px) {
@@ -72,23 +61,12 @@
   }
 
   .pyTorchOuterContainer {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-
-  .pyTorchCarouselAndDescriptionContainer {
-    flex-direction: column;
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   #projects {
     top: 0px;
-  }
-
-  .pyTorchCarouselContainer {
-    width: 100%;
   }
 
   .projectHeaderText {
@@ -101,9 +79,9 @@
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    margin: 1rem;
+    margin: 0;
     text-align: center;
-    overflow: hidden;
+    flex-wrap: wrap;
     word-wrap: break-word;
     margin-bottom: 3rem;
     margin-top: 2rem;

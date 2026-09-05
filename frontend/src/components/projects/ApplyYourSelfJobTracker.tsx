@@ -3,7 +3,7 @@ import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { applyYourSelfImages } from "../../images/imageData.json";
-import CustomTextCarousel from "../CustomTextCarousel";
+import ProjectSection from "./ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const ApplyYourSelfJobTracker = () => {
@@ -41,7 +41,7 @@ const ApplyYourSelfJobTracker = () => {
 
   return (
     <>
-      <section className="apply_yourself_section">
+      <section className="portfolio-project apply_yourself_section">
         <div className={"projectHeaderTextContainer"}>
           <h3 className="projectHeaderText">
             applyYourSelf Job Application Tracker - MERN
@@ -92,10 +92,11 @@ const ApplyYourSelfJobTracker = () => {
           </div>
         </div>
 
-        {/* Image Carousel */}
-        <div className="project_card_apply_yourself">
-          <div className="carousel_apply_yourself">
+        <ProjectSection
+          media={
             <Carousel
+              fixedHeight="var(--project-panel-height)"
+              mobilePadding={false}
               swipeable={false}
               emulateTouch={false}
               width="100%"
@@ -106,15 +107,9 @@ const ApplyYourSelfJobTracker = () => {
             >
               {ImagesList(applyYourSelfImages)}
             </Carousel>
-          </div>
-
-          {/* Text Description */}
-
-          <CustomTextCarousel
-            descriptionList={ApplyYourSelfProjectDescriptionText}
-            heightProp={"62vh"}
-          />
-        </div>
+          }
+          description={ApplyYourSelfProjectDescriptionText}
+        />
       </section>
     </>
   );

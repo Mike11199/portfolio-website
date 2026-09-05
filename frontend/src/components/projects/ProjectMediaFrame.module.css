@@ -1,0 +1,26 @@
+.frame {
+  height: var(--project-panel-height);
+  min-width: 0;
+  overflow: hidden;
+  background: #000;
+  border-radius: 0.5rem;
+}
+
+.frame > :global(.player-wrapper) {
+  height: 100%;
+  width: 100%;
+}
+
+.paired {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.paired img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+}

@@ -3,7 +3,7 @@ import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { alpinePeakClimbingSkiShopImages } from "../../images/imageData.json";
-import CustomTextCarousel from "../CustomTextCarousel";
+import ProjectSection from "./ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const AlpinePeakClimbingSkiShop = () => {
@@ -65,7 +65,7 @@ const AlpinePeakClimbingSkiShop = () => {
 
   return (
     <>
-      <section className="ski_shop_section">
+      <section className="portfolio-project ski_shop_section">
         <div className={"projectHeaderTextContainer"}>
           <h3 className="projectHeaderText">
             Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/
@@ -131,10 +131,11 @@ const AlpinePeakClimbingSkiShop = () => {
           </div>
         </div>
 
-        {/* Image Carousel */}
-        <div className="project_card_ski_shop">
-          <div className="carousel_ski_shop">
+        <ProjectSection
+          media={
             <Carousel
+              fixedHeight="var(--project-panel-height)"
+              mobilePadding={false}
               swipeable={false}
               emulateTouch={false}
               width="100%"
@@ -144,14 +145,9 @@ const AlpinePeakClimbingSkiShop = () => {
             >
               {ImagesList(alpinePeakClimbingSkiShopImages)}
             </Carousel>
-          </div>
-
-          {/* Text Description */}
-          <CustomTextCarousel
-            descriptionList={AlpinePeakProjectDescriptionText}
-            heightProp={"62vh"}
-          />
-        </div>
+          }
+          description={AlpinePeakProjectDescriptionText}
+        />
       </section>
     </>
   );

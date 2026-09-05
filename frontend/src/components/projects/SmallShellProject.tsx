@@ -1,6 +1,7 @@
 import GitHubButton from "../utils/GitHubButton";
 import ReactVideoPlayer from "../utils/ReactVideoPlayer";
-import CustomTextCarousel from "../CustomTextCarousel";
+import ProjectSection from "./ProjectSection";
+import ProjectMediaFrame from "./ProjectMediaFrame";
 
 const SmallShellProject = () => {
   const smallShellProjectDescriptionText = [
@@ -34,7 +35,7 @@ const SmallShellProject = () => {
 
   return (
     <>
-      <section className="smallsh_section">
+      <section className="portfolio-project smallsh_section">
         <div className={"projectHeaderTextContainer"}>
           <h3 className="projectHeaderText">
             Small Shell (smallsh) - C Unix Shell
@@ -67,23 +68,18 @@ const SmallShellProject = () => {
           </div>
         </div>
 
-        {/* Embedded YouTube Video */}
-        <div className="project_card_smallsh">
-          <div className="videoWrapperSmallShell">
-            <ReactVideoPlayer
+        <ProjectSection
+          media={
+            <ProjectMediaFrame>
+              <ReactVideoPlayer
               URL={
                 "https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1"
               }
             />
-          </div>
-
-          {/* Text Description */}
-
-          <CustomTextCarousel
-            descriptionList={smallShellProjectDescriptionText}
-            heightProp={"62vh"}
-          />
-        </div>
+            </ProjectMediaFrame>
+          }
+          description={smallShellProjectDescriptionText}
+        />
       </section>
     </>
   );

@@ -3,7 +3,7 @@ import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { rsaEncryptionImages } from "../../images/imageData.json";
-import CustomTextCarousel from "../CustomTextCarousel";
+import ProjectSection from "./ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 import OpenSSLLogo from "./openssl_logo.svg";
 
@@ -39,7 +39,7 @@ const RSAEncryptionApp = () => {
 
   return (
     <>
-      <section className="rsa_section">
+      <section className="portfolio-project rsa_section">
         <div className={"projectHeaderTextContainer"}>
           <h3 className="projectHeaderText">
             RSA & AES Encryption App - Electron.js, React.js
@@ -111,10 +111,11 @@ const RSAEncryptionApp = () => {
           </div>
         </div>
 
-        {/* Image Carousel */}
-        <div className="project_card_rsa_encryption">
-          <div className="carousel_rsa_encryption">
+        <ProjectSection
+          media={
             <Carousel
+              fixedHeight="var(--project-panel-height)"
+              mobilePadding={false}
               swipeable={false}
               emulateTouch={false}
               width="100%"
@@ -124,15 +125,9 @@ const RSAEncryptionApp = () => {
             >
               {ImagesList(rsaEncryptionImages)}
             </Carousel>
-          </div>
-
-          {/* Text Description */}
-
-          <CustomTextCarousel
-            descriptionList={rSAEncryptionProjectDescriptionText}
-            heightProp={"62vh"}
-          />
-        </div>
+          }
+          description={rSAEncryptionProjectDescriptionText}
+        />
       </section>
     </>
   );

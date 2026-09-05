@@ -2,7 +2,7 @@ import Carousel from "../utils/ProjectImageCarousel";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { solarSystemImages } from "../../images/imageData.json";
-import CustomTextCarousel from "../CustomTextCarousel";
+import ProjectSection from "./ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const OpenGLSolarSystem = () => {
@@ -44,7 +44,7 @@ const OpenGLSolarSystem = () => {
 
   return (
     <>
-      <section className="solar_system_section">
+      <section className="portfolio-project solar_system_section">
         <div className={"projectHeaderTextContainer"}>
           <h3 className="projectHeaderText">OpenGL C++ Solar System Model</h3>
 
@@ -77,10 +77,11 @@ const OpenGLSolarSystem = () => {
           </div>
         </div>
 
-        {/* Image Carousel */}
-        <div className="project_card_hash_map">
-          <div className="hash_map_carousel">
+        <ProjectSection
+          media={
             <Carousel
+              fixedHeight="var(--project-panel-height)"
+              mobilePadding={false}
               swipeable={false}
               emulateTouch={false}
               showIndicators={false}
@@ -91,14 +92,9 @@ const OpenGLSolarSystem = () => {
             >
               {ImagesList(solarSystemImages)}
             </Carousel>
-          </div>
-
-          {/* Text Description */}
-          <CustomTextCarousel
-            descriptionList={openGLSolarSystemProjectDescriptionText}
-            heightProp={"62vh"}
-          />
-        </div>
+          }
+          description={openGLSolarSystemProjectDescriptionText}
+        />
       </section>
     </>
   );

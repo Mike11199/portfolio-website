@@ -2,7 +2,7 @@ import Carousel from "../utils/ProjectImageCarousel";
 import GitHubButton from "../utils/GitHubButton";
 import ImagesList from "../utils/ImageList";
 import { unrealEngineImages } from "../../images/imageData.json";
-import CustomTextCarousel from "../CustomTextCarousel";
+import ProjectSection from "./ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const SlashUnrealEngine = () => {
@@ -44,7 +44,7 @@ const SlashUnrealEngine = () => {
   const windowWidth = useWindowWidth();
   return (
     <>
-      <section className="unreal_section">
+      <section className="portfolio-project unreal_section">
         <div className={"projectHeaderTextContainer"}>
           <h3 className="projectHeaderText">C++ Unreal Engine Project Slash</h3>
 
@@ -76,10 +76,11 @@ const SlashUnrealEngine = () => {
           </div>
         </div>
 
-        {/* Image Carousel */}
-        <div className="project_card_hash_map">
-          <div className="hash_map_carousel">
+        <ProjectSection
+          media={
             <Carousel
+              fixedHeight="var(--project-panel-height)"
+              mobilePadding={false}
               swipeable={false}
               emulateTouch={false}
               showIndicators={false}
@@ -90,14 +91,9 @@ const SlashUnrealEngine = () => {
             >
               {ImagesList(unrealEngineImages)}
             </Carousel>
-          </div>
-
-          {/* Text Description */}
-          <CustomTextCarousel
-            descriptionList={slashUnrealEngineProjectsDescriptionText}
-            heightProp={"62vh"}
-          />
-        </div>
+          }
+          description={slashUnrealEngineProjectsDescriptionText}
+        />
       </section>
     </>
   );
