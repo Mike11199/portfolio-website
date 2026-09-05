@@ -11,7 +11,17 @@
   min-width: 0;
 }
 
+@media (min-width: 601px) {
+  .description,
+  .descriptionList > li {
+    font-size: 0.9rem;
+  }
+}
+
 .description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   box-sizing: border-box;
   min-width: 0;
   height: var(--project-panel-height);
@@ -30,6 +40,7 @@
 }
 
 .descriptionList {
+  flex-shrink: 0;
   display: grid;
   gap: 1.5rem;
   margin: 0;

@@ -1,57 +1,22 @@
-.divider {
+.desktopText,
+.mobileText {
   display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  color: #287441;
-  font: 12px/1.6 Consolas, monospace;
-  user-select: none;
+  flex-direction: column;
 }
 
-.divider::after {
-  content: "";
-  flex: 1;
-  border-top: 1px solid #163f25;
+.mobileText {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  padding: 1rem;
 }
 
-.hexFooter { display: none; }
-
-@media (min-width: 1400px) {
-  .desktopText {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .bio {
-    flex: 0 0 auto;
-    display: flow-root;
-  }
-
-  /* Absolute contents cannot increase the footer's size or create scrolling. */
-  .hexFooter {
-    display: block;
-    position: relative;
-    flex: 1 1 0;
-    min-height: 0;
-    overflow: hidden;
-    user-select: none;
-    pointer-events: none;
-  }
-
-  .hexContent {
-    position: absolute;
-    inset: 0;
-    padding-top: 0.5rem;
-  }
-
-  .hexContent pre {
-    margin: 0.65rem 0 0;
-    color: #235b35;
-    font: 12px/1.8 Consolas, monospace;
-  }
+.mobileText p {
+  padding-inline: 0;
 }
 
-.cursor { animation: blink 2s step-end infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) {
-  .cursor { animation: none; }
+.bio {
+  flex: 0 0 auto;
+  display: flow-root;
 }

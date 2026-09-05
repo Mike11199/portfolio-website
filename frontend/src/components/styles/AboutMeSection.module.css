@@ -68,6 +68,13 @@
   min-width: 0;
 }
 
+@media (min-width: 601px) {
+  .introduction :global(.textWrapperDesktop),
+  .introduction :global(.textWrapperDesktop) p {
+    font-size: 0.9rem;
+  }
+}
+
 .introduction :global(.normal-text-desktop-view) {
   box-sizing: border-box;
   width: 100%;
