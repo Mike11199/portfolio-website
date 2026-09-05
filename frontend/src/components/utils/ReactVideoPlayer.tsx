@@ -1,6 +1,11 @@
 import { useState } from "react";
 import styles from "./ReactVideoPlayer.module.css";
-import ReactPlayer from "react-player";
+import ReactPlayerImport from "react-player";
+
+// Vite 8 can expose react-player v2's CommonJS default as a nested export.
+const ReactPlayer = (
+  ReactPlayerImport as typeof ReactPlayerImport & { default?: typeof ReactPlayerImport }
+).default ?? ReactPlayerImport;
 
 interface ReactPlayerProps {
   URL: string;
