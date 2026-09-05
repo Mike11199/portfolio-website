@@ -55,5 +55,25 @@
   .demo button { padding-inline: 0.5rem; font-size: 12px; }
 }
 
-.editor::-webkit-scrollbar-thumb { background: #424242; border-radius: 0; }
-.editor::-webkit-scrollbar-track { background: #080808; }
+.languages,
+.editor,
+.terminal {
+  min-width: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #424242 #080808;
+}
+
+.demo ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.demo ::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 3px;
+}
+
+.demo ::-webkit-scrollbar-track,
+.demo ::-webkit-scrollbar-corner {
+  background: #080808;
+}

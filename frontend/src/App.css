@@ -376,7 +376,23 @@ body {
   padding: 3rem;
 }
 
-.space_tau_section {
+.ksp_scripting_section .projectHeaderTextContainer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .ksp_scripting_section .projectHeaderTextContainer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ksp_scripting_section .devIconsContainer {
+    justify-self: center;
+  }
+}
+
+.ksp_scripting_section {
   background-image: linear-gradient(
     #000000 0%,
     #201031 15%,
@@ -557,7 +573,7 @@ ul {
     padding-left: 0px;
   }
 
-  .space_tau_section {
+  .ksp_scripting_section {
     padding-right: 0px;
     padding-left: 0px;
   }

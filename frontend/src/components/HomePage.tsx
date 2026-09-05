@@ -2,7 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import AboutMeSection from "./AboutMeSection";
 import AlpinePeakClimbingSkiShop from "./projects/AlpinePeakClimbingSkiShop";
 import RSAEncryptionApp from "./projects/RSAEncryptionApp";
-import SpaceTauApp from "./projects/SpaceTauApp";
+import KspScripting from "./projects/KspScripting";
 import SmallShellProject from "./projects/SmallShellProject";
 import PythonHashMap from "./projects/PythonHashMap";
 import SlashUnrealEngine from "./projects/SlashUnrealEngine";
@@ -27,8 +27,8 @@ const HomePage = () => {
         {/* Project # 3 - Electron.js and React RSA and AES Encryption App - */}
         <RSAEncryptionApp />
 
-        {/* Project # 4 - Space Tau MySQL / Flask and Jinja Database Management App - */}
-        <SpaceTauApp />
+        {/* Project # 4 - C# KSP scripting with kRPC */}
+        <KspScripting />
 
         {/* Project # 5 - Small Shell Programmed in C - */}
         <SmallShellProject />
