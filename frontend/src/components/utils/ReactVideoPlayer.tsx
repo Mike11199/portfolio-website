@@ -1,8 +1,11 @@
+import { useState } from "react";
+import styles from "./ReactVideoPlayer.module.css";
 import ReactPlayer from "react-player";
 
 interface ReactPlayerProps {
   URL: string;
   controls?: boolean;
+  loadingIndicator?: boolean;
 }
 
 /**
@@ -10,7 +13,10 @@ interface ReactPlayerProps {
  * @param {string} URL - The URL of the video.
  * @returns {JSX.Element} The React element representing the video player.
  */
-const ReactVideoPlayer = ({ URL, controls = true }: ReactPlayerProps) => {
+const ReactVideoPlayer = ({ URL, controls = true, loadingIndicator = false }: ReactPlayerProps) => {
+
+  const [settledUrl, setSettledUrl] = useState<string | null>(null);
+  const isLoading = loadingIndicator && settledUrl !== URL;
 
   const youtubeOptions = {
     playerVars: {
@@ -21,9 +27,11 @@ const ReactVideoPlayer = ({ URL, controls = true }: ReactPlayerProps) => {
   };
 
   return (
-    <div className="player-wrapper">
+    <div className={`player-wrapper ${loadingIndicator ? styles.frame : ""}`} aria-busy={isLoading}>
       <ReactPlayer
         playing
+        onPlay={() => setSettledUrl(URL)}
+        onError={() => setSettledUrl(URL)}
         width="100%"
         height="100%"
         url={URL}
@@ -34,6 +42,11 @@ const ReactVideoPlayer = ({ URL, controls = true }: ReactPlayerProps) => {
           youtube: youtubeOptions,
         }}
       />
+      {isLoading && (
+        <div className={styles.loading} role="status" aria-label="Loading climbing video">
+          <span className={styles.spinner} aria-hidden="true" />
+        </div>
+      )}
     </div>
   );
 };

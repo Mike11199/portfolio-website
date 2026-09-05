@@ -37,6 +37,7 @@ const AboutMeSection = () => {
             <div className={styles.mediaGroup}>
             <div className={styles.aboutMeVideoWrapper}>
               <ReactVideoPlayer
+                loadingIndicator
                 URL={
                   "https://www.youtube.com/shorts/tDcxweOlAns?autoplay=1&modestbranding=1"
                 }
