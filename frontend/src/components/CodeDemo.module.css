@@ -3,17 +3,17 @@
   margin-top: 1.5rem;
   overflow: hidden;
   color: #d4d4d4;
-  background: #181818;
-  border: 1px solid #3c3c3c;
-  border-radius: 0.25rem;
+  background: #080808;
+  border: 1px solid #292929;
+  border-radius: 1rem;
   font: 13px/1.6 Consolas, "Courier New", monospace;
 }
 .toolbar {
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;
-  background: #202020;
-  border-bottom: 1px solid #3c3c3c;
+  background: #0d0d0d;
+  border-bottom: 1px solid #292929;
 }
 .languages { display: flex; min-width: 0; }
 .demo button {
@@ -25,11 +25,10 @@
 }
 .demo button[aria-pressed="true"] {
   color: #fff;
-  background: #181818;
+  background: #080808;
   box-shadow: inset 0 2px #007acc;
 }
 .demo button:focus-visible, .editor:focus-visible { outline: 2px solid #007acc; outline-offset: -2px; }
-.demo .playback { color: #cccccc; }
 .filename { padding: 0.5rem 1rem; color: #858585; font-size: 12px; }
 .editor {
   box-sizing: border-box;
@@ -40,19 +39,21 @@
   font: inherit;
   tab-size: 4;
 }
+.comment { color: #6a9955; }
 .keyword { color: #569cd6; }
 .control { color: #c586c0; }
 .type { color: #4ec9b0; }
 .string { color: #ce9178; }
 .symbol { color: #dcdcaa; }
 .plain { color: #d4d4d4; }
-.terminal { padding: 0.75rem 1rem; background: #090b0d; border-top: 1px solid #3c3c3c; }
+.terminal { box-sizing: border-box; min-height: 0; overflow: auto; padding: 0.75rem 1rem; background: #050607; border-top: 1px solid #292929; }
 .terminalTitle { color: #cccccc; font-size: 11px; letter-spacing: 0.06em; }
 .command { margin-top: 0.35rem; color: #79c0ff; }
-.output { color: #7ee787; min-height: 1.6em; }
+.number { color: #b5cea8; }
+.output { white-space: pre-wrap; color: #7ee787; min-height: 1.6em; }
 @media (max-width: 400px) {
   .demo button { padding-inline: 0.5rem; font-size: 12px; }
 }
 
 .editor::-webkit-scrollbar-thumb { background: #424242; border-radius: 0; }
-.editor::-webkit-scrollbar-track { background: #181818; }
+.editor::-webkit-scrollbar-track { background: #080808; }

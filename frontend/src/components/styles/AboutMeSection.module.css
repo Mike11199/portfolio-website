@@ -217,7 +217,7 @@
 
   .codeDemo > section {
     display: grid;
-    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    grid-template-rows: auto auto minmax(0, 1fr) 33.333%;
   }
 
   .codeDemo pre {
@@ -237,6 +237,5 @@
 }
 
 @media (max-width: 600px) {
-  .codeDemo { grid-row: 3; }
-  .aboutMeImages { grid-row: 4; }
+  .aboutMeImages { grid-row: 3; }
 }
