@@ -68,7 +68,6 @@ jobs:
         run: |
           uv sync --frozen --group dev
           cdk deploy PortfolioRepositoryStack \
-            --revert-drift \
             --require-approval never
 
       - name: Login to Amazon ECR
