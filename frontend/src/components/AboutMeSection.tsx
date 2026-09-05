@@ -30,7 +30,7 @@ const AboutMeSection = () => {
     <>
       <section id={styles.aboutMeSection}>
         <h1>
-          About Me <span className="wave">👋</span>
+          About Me
         </h1>
         <div className={styles.aboutMeContainer} >
           <div className={styles.aboutMeImagesAndTextWrapper}>
