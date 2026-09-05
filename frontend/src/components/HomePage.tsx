@@ -1,7 +1,6 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import AboutMeSection from "./AboutMeSection";
 import AlpinePeakClimbingSkiShop from "./projects/AlpinePeakClimbingSkiShop";
-import RSAEncryptionApp from "./projects/RSAEncryptionApp";
 import KspScripting from "./projects/KspScripting";
 import SmallShellProject from "./projects/SmallShellProject";
 import PythonHashMap from "./projects/PythonHashMap";
@@ -23,9 +22,6 @@ const HomePage = () => {
         <AlpinePeakClimbingSkiShop />
 
         {/* Project # 2 - MERN Full Stack Job Application Tracker*/}
-
-        {/* Project # 3 - Electron.js and React RSA and AES Encryption App - */}
-        <RSAEncryptionApp />
 
         {/* Project # 4 - C# KSP scripting with kRPC */}
         <KspScripting />
