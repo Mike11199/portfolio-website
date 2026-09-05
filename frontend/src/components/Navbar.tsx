@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useScroll, animated } from "@react-spring/web";
 import resumePdf  from "../misc/CV_Michael Iwanek.pdf";  // 04_12_2025
-import BinaryDigit from "./BinaryDigit";
+import BinaryDigits from "./BinaryDigits";
 import styles from "./styles/Navbar.module.css";
 
 const Navbar = () => {
@@ -63,30 +63,14 @@ const Navbar = () => {
     );
   };
 
-  const NameInBinaryDigits = () => {
-    const nameInBinary = "Michael".split("").map((char) => {
-      const charCode = char.charCodeAt(0);
-      const binaryDigits = charCode.toString(2).padStart(8, "0").split("");
-      return { letter: char, binaryDigits };
-    });
-
-    return (
-      <div className={styles.binaryDigitIndividualContainer}>
-        {nameInBinary.flatMap((item, index) =>
-          item.binaryDigits.map((binary, innerIndex) => (
-            <BinaryDigit key={`${index}-${innerIndex}`} content={binary} />
-          ))
-        )}
-      </div>
-    );
-  };
-
   return (
     <>
       <div className={styles.navbar}>
         <AnimatedScrollBar />
         <ProfilePhotoWithName />
-        <NameInBinaryDigits />
+        <div className={styles.binaryDigitIndividualContainer}>
+          <BinaryDigits text="Michael" />
+        </div>
         <SiteNavLinks />
       </div>
     </>

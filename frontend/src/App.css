@@ -218,17 +218,18 @@ h2 {
   transform: scale(0.9);
 }
 
-.fade-in-out {
-  transition: opacity 0.5s ease-in-out;
+.binaryDigitBlink {
+  animation: binary-digit-blink ease-in-out infinite alternate;
   width: 5px;
 }
 
-.visible {
-  opacity: 1;
-}
-
-.hidden {
-  opacity: 0;
+@keyframes binary-digit-blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 ul > li > ul {
