@@ -16,7 +16,7 @@ build:
     - |
       aws ecr get-login-password --region "$AWS_REGION" |
         docker login --username AWS --password-stdin "$ECR_REGISTRY"
-    - docker build -f frontend/Dockerfile -t "$IMAGE" .
+    - docker build -f frontend/Dockerfile -t "$IMAGE" frontend
     - docker push "$IMAGE"
 
 deploy:
