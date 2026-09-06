@@ -23,6 +23,11 @@
       "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655559/portfolio-thumbnails/traffic_new_2_pjlmap_thumbnail.jpg"
     },
     {
+      "alt": "aws_cdk_stack_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788735602/pytorch-cdk-image_-_Copy_nozrj7.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/c_thumb,w_200,g_face/v1788735602/pytorch-cdk-image_-_Copy_nozrj7.png"
+    },
+    {
       "alt": "winter_traffic",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738994840/winter_traffic_new_2_hlgo1d.png",
       "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655560/portfolio-thumbnails/winter_traffic_new_2_hlgo1d_thumbnail.jpg"

@@ -16,8 +16,14 @@ const PyTorchApp = () => {
     of an image to run computer vision analytics on.  Bounding boxes and masks
     produced by the neural network can be dynamically resized by the user.`,
 
-    `The model is deployed to to an AWS EC2 instance, where a Java Spring Boot
-    API handles requests from the front end and sends binary image data to a
+    `The entire architecture has been reworked to be deployed via CI/CD using
+    a GitHub actions workflow (pipeline).  This uses AWS CDK to update a CloudFormation
+    stack for the app on code changes.  I run ECS on an EC2 spot instance, allowing me to containerize for cheap compared
+    to Fargate.  Previously, I would SSH manually into the EC2 and git clone, run linux commands
+    to build and restart the services.  The CDK also defines all the manual set up I had originally done
+    to get this working, such as Route 53 records, adding HTTP/HTTPS listener rules to a load balancer, etc.`,
+
+    `A Java Spring Boot API handles requests from the front end and sends binary image data to a
     Flask microservice.  The Flask app runs a custom inference.py script I've
     written which invokes the model. This script loads an
     image as a NumPy array into the Torch model and returns its
@@ -39,13 +45,6 @@ const PyTorchApp = () => {
     option of choosing images I've pre-selected from a drop down, or
     copying and pasting their own image URL they've found on the
     internet.`,
-    `
-    The model was developed using a Sagemaker/Jupyter Lab Notebook in Python.
-    It was first deployed to an AWS SageMaker endpoint and invoked by an AWS Lambda
-    which directly sends the image as Base64 encoded data to the endpoint. The Lambda is in turn invoked
-    by an AWS API Gateway, which is configured to directly accept binary image data from an
-    Axios post request. Going forward this and Heroku will likely be a backup or turned off due to high
-    costs - and only ran on the EC2 version.`,
   ];
 
   const windowWidth = useWindowWidth();
