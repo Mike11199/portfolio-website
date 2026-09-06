@@ -1,17 +1,19 @@
 import { useRef } from "react";
+import { useWindowWidth } from "@react-hook/window-size";
 import useHexDump from "./useHexDump";
 import styles from "./TextDecoration.module.css";
 
 interface FileDividerProps {
   label: string;
   showCursor?: boolean;
-  /** Include two hex rows above the label when source text is supplied. */
+  /** Include one hex row on mobile and two on desktop. */
   hexText?: string;
 }
 
 const FileDivider = ({ label, showCursor = true, hexText }: FileDividerProps) => {
   const preRef = useRef<HTMLPreElement>(null);
-  const headerHex = useHexDump(hexText, preRef, { maxRows: 2 });
+  const windowWidth = useWindowWidth();
+  const headerHex = useHexDump(hexText, preRef, { maxRows: windowWidth <= 600 ? 1 : 2 });
 
   return (
     <div className={styles.fileHeader} aria-hidden="true">

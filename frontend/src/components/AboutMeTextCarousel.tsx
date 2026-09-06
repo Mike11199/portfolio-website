@@ -35,36 +35,31 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarouselProps> = ({
 
   if (isMobileView) {
     return (
-      <div
-        className="carousel-container"
-        style={{ height: "auto" }}
-      >
+      <div className="carousel-container">
         <div className="text-carousel-content">
-          <button aria-label="Previous introduction paragraph" onClick={goToPrevious} className="carousel-button top-button">
+          <button type="button" aria-label="Previous introduction paragraph" onClick={goToPrevious} className="carousel-button top-button" disabled={totalChildren < 2}>
             <FontAwesomeIcon icon={faArrowUp} size="sm" />
           </button>
-          <div className="textWrapperMobile" style={{ height: heightProp }}>
-            <div className={styles.mobileText} style={{ height: "100%" }}>
-              <div className={styles.bio}>
-                <FileDivider label="about_me.txt" hexText={decorationText} />
-                {currentIndex == 0 && (
-                  <p>
-                    <TypeAnimation
-                      cursor={true}
-                      speed={{ type: "keyStrokeDelayInMs", value: 750 }}
-                      sequence={["Hello! "]}
-                    />
-                  </p>
-                )}
-                <p>{descriptionList[currentIndex]}</p>
+          <div className="textWrapperMobile">
+            <div className={styles.mobileText} style={{ minHeight: heightProp.replace("vh", "svh") }}>
+              <FileDivider label="about_me.txt" hexText={decorationText} />
+              <div className={styles.slideStack}>
+                {descriptionList.map((text, index) => (
+                  <div key={index} className={styles.slide} aria-hidden={index !== currentIndex}>
+                    <div className={styles.slideText}>
+                      {index === 0 && <p>Hello!</p>}
+                      <p>{text}</p>
+                    </div>
+                    {index === currentIndex && <HexFooter text={decorationText} fillOnly />}
+                  </div>
+                ))}
               </div>
-              <HexFooter text={decorationText} fillOnly />
-              <div style={{ textAlign: "center", marginTop: "1rem", flexShrink: 0 }}>
+              <div className={styles.pageCount} aria-live="polite" aria-atomic="true">
                 {currentIndex + 1} / {totalChildren}
               </div>
             </div>
           </div>
-          <button aria-label="Next introduction paragraph" onClick={goToNext} className="carousel-button bottom-button">
+          <button type="button" aria-label="Next introduction paragraph" onClick={goToNext} className="carousel-button bottom-button" disabled={totalChildren < 2}>
             <FontAwesomeIcon icon={faArrowDown} size="sm" />
           </button>
         </div>

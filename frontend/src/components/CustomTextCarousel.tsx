@@ -34,32 +34,32 @@ const CustomTextCarousel: React.FC<CustomTextCarouselProps> = ({
 
   if (isMobileView) {
     return (
-      <div
-        className="carousel-container"
-        style={{ height: "fit-content", minHeight: heightProp }}
-      >
+      <div className="carousel-container">
         <div className="text-carousel-content">
-          <button onClick={goToPrevious} className="carousel-button top-button">
+          <button type="button" aria-label="Previous project paragraph" onClick={goToPrevious} className="carousel-button top-button" disabled={totalChildren < 2}>
             <FontAwesomeIcon icon={faArrowUp} size="sm" />
           </button>
-          <div
-            className="textWrapperMobile"
-            style={{ height: "fit-content", minHeight: heightProp }}
-          >
-            <div className={styles.mobileText} style={{ minHeight: heightProp }}>
-              <div className={styles.bio}>
-                <FileDivider label="project.txt" hexText={decorationText} />
-                <ul style={{ marginBottom: "1rem" }}>
-                  <li className="listTextItem">{descriptionList[currentIndex]}</li>
-                </ul>
+          <div className="textWrapperMobile">
+            <div className={styles.mobileText} style={{ minHeight: heightProp.replace("vh", "svh") }}>
+              <FileDivider label="project.txt" hexText={decorationText} />
+              <div className={styles.slideStack}>
+                {descriptionList.map((text, index) => (
+                  <div key={index} className={styles.slide} aria-hidden={index !== currentIndex}>
+                    <div className={styles.slideText}>
+                      <ul style={{ marginBottom: "1rem" }}>
+                        <li className="listTextItem">{text}</li>
+                      </ul>
+                    </div>
+                    {index === currentIndex && <HexFooter text={decorationText} fillOnly />}
+                  </div>
+                ))}
               </div>
-              <HexFooter text={decorationText} />
-              <div style={{textAlign: "center", marginTop: "1rem", flexShrink: 0}}>
+              <div className={styles.pageCount} aria-live="polite" aria-atomic="true">
                 {currentIndex + 1} / {totalChildren}
               </div>
             </div>
           </div>
-          <button onClick={goToNext} className="carousel-button bottom-button">
+          <button type="button" aria-label="Next project paragraph" onClick={goToNext} className="carousel-button bottom-button" disabled={totalChildren < 2}>
             <FontAwesomeIcon icon={faArrowDown} size="sm" />
           </button>
         </div>

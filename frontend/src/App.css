@@ -675,7 +675,7 @@ ul {
   .textWrapperMobile {
     display: flex;
     justify-content: center;
-    overflow: auto;
+    overflow: visible;
     background: #191c29;
     border-radius: 6px;
     border: 2px solid rgba(56, 128, 62, 0.849);
@@ -748,4 +748,20 @@ section.portfolio-project {
 
 .portfolio-project .projectHeaderText {
   overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .carousel-button {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+
+  .carousel-button:focus-visible {
+    outline: 2px solid rgb(25, 212, 88);
+    outline-offset: 3px;
+  }
+
+  .carousel-button:disabled {
+    opacity: 0.45;
+  }
 }
