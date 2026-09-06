@@ -1,5 +1,6 @@
 .layout {
   --project-panel-height: 480px;
+  --project-nav-height: 3rem;
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
   gap: 1.5rem;
@@ -39,6 +40,13 @@
   border: 2px solid rgba(56, 128, 62, 0.849);
   border-radius: 0.5rem;
   scrollbar-gutter: stable;
+}
+
+/* Carousel media now includes a navigation footer below its fixed image. */
+@media (min-width: 901px) {
+  .layout:has(:global(.project-image-carousel)) .description {
+    height: calc(var(--project-panel-height) + var(--project-nav-height));
+  }
 }
 
 .description:focus-visible {

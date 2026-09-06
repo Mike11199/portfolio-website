@@ -1,29 +1,90 @@
 .project-image-carousel {
-  --project-arrow-width: clamp(2.75rem, 8%, 7rem);
+  --project-nav-height: 3rem;
 }
 
-/* Widen the existing full-height buttons without changing the arrow icons. */
+/* Keep the image clean and give the carousel a dedicated navigation footer. */
+.project-image-carousel .carousel.carousel-slider {
+  padding-bottom: var(--project-nav-height);
+  background: #000;
+}
+
 .project-image-carousel .carousel.carousel-slider .control-arrow {
-  width: var(--project-arrow-width);
-  background: rgba(16, 16, 16, 0.9) !important;
+  top: auto !important;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: var(--project-nav-height);
+  padding: 0 1.25rem;
+  color: #a3a3a3;
+  font: 600 0.7rem/1 Consolas, "Courier New", monospace;
+  letter-spacing: 0.08em;
+  background: transparent !important;
   opacity: 1 !important; /* Override the global carousel button dimming. */
-  border: 0;
-  transition: background-color 0.15s ease;
+  border: 0 !important;
+  border-top: 1px solid #26352b !important;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
 .project-image-carousel .carousel.carousel-slider .control-arrow:hover,
 .project-image-carousel .carousel.carousel-slider .control-arrow:focus-visible {
-  background: rgba(20, 20, 20, 0.9) !important;
+  color: #e5e5e5;
+  background: rgba(255, 255, 255, 0.08) !important;
 }
 
 .project-image-carousel .carousel.carousel-slider .control-arrow:focus-visible {
-  outline: 2px solid #aaa;
+  outline: 2px solid #a3a3a3;
   outline-offset: -2px;
 }
 
-/* Keep the slide counter clear of the wider Next button. */
+/* Replace the library triangles with small chevrons and readable labels. */
+.project-image-carousel .carousel.carousel-slider .control-arrow::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  margin: 0 0.7rem 0 0;
+  border: 0 !important;
+  border-bottom: 2px solid currentColor !important;
+  border-right: 2px solid currentColor !important;
+  content: "";
+  transform: rotate(135deg);
+}
+
+.project-image-carousel .carousel.carousel-slider .control-prev {
+  justify-content: flex-start;
+}
+
+.project-image-carousel .carousel.carousel-slider .control-next {
+  justify-content: flex-end;
+}
+
+.project-image-carousel .carousel.carousel-slider .control-next::before {
+  order: 2;
+  margin: 0 0 0 0.7rem;
+  transform: rotate(-45deg);
+}
+
+.project-image-carousel .carousel.carousel-slider .control-prev::after {
+  content: "PREVIOUS";
+}
+
+.project-image-carousel .carousel.carousel-slider .control-next::after {
+  content: "NEXT";
+}
+
+/* Keep the slide counter centered in the navigation footer. */
 .project-image-carousel .carousel-status {
-  margin-right: var(--project-arrow-width);
+  top: auto;
+  right: 50%;
+  bottom: 0;
+  z-index: 3;
+  margin: 0;
+  padding: 0;
+  color: #a3a3a3;
+  background: transparent !important;
+  font: 600 0.75rem/var(--project-nav-height) system-ui, sans-serif;
+  letter-spacing: 0.04em;
+  text-shadow: none;
+  transform: translateX(50%);
 }
 
 /* The fade animation does not use infinite mode's boundary clones. */
