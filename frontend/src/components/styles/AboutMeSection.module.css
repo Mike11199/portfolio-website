@@ -1,6 +1,6 @@
 #aboutMeSection {
   color: white;
-  background-image: linear-gradient(#000000 0%, #031e42 15%, #132b3d 55%, #000000 100%);
+  background-image: linear-gradient(#000000 0%, #031e42 25%, #101e29 95%, #000000 100%);
   padding: 130px clamp(1rem, 4vw, 3rem) 3rem;
 }
 
@@ -113,6 +113,7 @@
 
 @media (max-width: 600px) {
   #aboutMeSection {
+    background-image: linear-gradient(#000000 0%, #031e42 15%, #101e29 95%, #000000 100%);
     padding-top: 1.5rem;
   }
 
