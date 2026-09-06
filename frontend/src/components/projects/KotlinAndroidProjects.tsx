@@ -2,6 +2,7 @@ import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ProjectSection from "./ProjectSection";
 import ProjectMediaFrame from "./ProjectMediaFrame";
+import ProjectMediaSlide from "../utils/ProjectMediaSlide";
 
 const KotlinAndroidProjects = () => {
   const kotlinAndroidProjectsDescriptionText = [
@@ -11,7 +12,7 @@ const KotlinAndroidProjects = () => {
     Compose framework for state/ UI management.`,
 
     `Sacramento City App - Code is NOT allowed to be posted to a
-    public repo - showing GIF only.`,
+    public repo - showing a demo recording only.`,
 
     `Flight Search App - This is the portfolio project and is
     allowed to be posted to a public repo per the Syllabus.`,
@@ -104,14 +105,16 @@ const KotlinAndroidProjects = () => {
         <ProjectSection
           media={
             <ProjectMediaFrame paired>
-              <img
-              alt="sacramento_phone_view_android_app_gif"
-              src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442796/android_kotlin_sacramento_app_fdubuz.gif"
-            />
-              <img
-              alt="flight_search_sql_lite_phone_view_android_app_gif"
-              src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702442786/android_kotlin_flight_search_fu06fc.gif"
-            />
+              <ProjectMediaSlide media={{
+                alt: "Sacramento city Android app demo",
+                src: "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654731/portfolio-webm/android_kotlin_sacramento_app_fdubuz.webm",
+                poster: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654733/portfolio-webm/android_kotlin_sacramento_app_fdubuz_poster.jpg",
+              }} />
+              <ProjectMediaSlide media={{
+                alt: "Flight search Android app demo",
+                src: "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654725/portfolio-webm/android_kotlin_flight_search_fu06fc.webm",
+                poster: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654727/portfolio-webm/android_kotlin_flight_search_fu06fc_poster.jpg",
+              }} />
             </ProjectMediaFrame>
           }
           description={kotlinAndroidProjectsDescriptionText}

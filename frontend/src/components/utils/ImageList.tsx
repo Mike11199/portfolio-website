@@ -1,14 +1,9 @@
-interface Image {
-  alt: string;
-  src: string;
-}
+import ProjectMediaSlide, { type ProjectMedia } from "./ProjectMediaSlide";
 
-// Return list of image elements for React Carousel
-const ImagesList = (images: Image[]) => (
-  images.map((image, index) => (
-    <div key={index}>
-      <img loading="lazy" alt={image.alt} src={image.src} />
-    </div>
+// Existing image manifests can also supply video slides and still thumbnails.
+const ImagesList = (images: ProjectMedia[]) => (
+  images.map((image) => (
+    <ProjectMediaSlide key={image.src} media={image} />
   ))
 );
 

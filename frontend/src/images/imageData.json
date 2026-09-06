@@ -2,253 +2,325 @@
   "PyTorchImages": [
     {
       "alt": "new_york_traffic_gif",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1740892012/pytorch_trraffic_a1r5fm.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654759/portfolio-webm/pytorch_trraffic_a1r5fm.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654761/portfolio-webm/pytorch_trraffic_a1r5fm_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654763/portfolio-webm/pytorch_trraffic_a1r5fm_thumbnail.jpg"
     },
     {
       "alt": "cats_and_dogs_gif_mask_rcnn",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738994257/mask_rcnn_new_page_layout_optimized_hqaap0.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654754/portfolio-webm/mask_rcnn_new_page_layout_optimized_hqaap0.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654756/portfolio-webm/mask_rcnn_new_page_layout_optimized_hqaap0_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654757/portfolio-webm/mask_rcnn_new_page_layout_optimized_hqaap0_thumbnail.jpg"
     },
     {
       "alt": "new_york_traffic_mask_only",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995501/traffic_new_1_imioqt.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995501/traffic_new_1_imioqt.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655559/portfolio-thumbnails/traffic_new_1_imioqt_thumbnail.jpg"
     },
     {
       "alt": "new_york_traffic",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995534/traffic_new_2_pjlmap.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995534/traffic_new_2_pjlmap.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655559/portfolio-thumbnails/traffic_new_2_pjlmap_thumbnail.jpg"
     },
     {
       "alt": "winter_traffic",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738994840/winter_traffic_new_2_hlgo1d.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738994840/winter_traffic_new_2_hlgo1d.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655560/portfolio-thumbnails/winter_traffic_new_2_hlgo1d_thumbnail.jpg"
     },
     {
       "alt": "pytorch_doggo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995445/new_dog_v4lcyn.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995445/new_dog_v4lcyn.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655560/portfolio-thumbnails/new_dog_v4lcyn_thumbnail.jpg"
     },
     {
       "alt": "pytorch_home_page",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995774/fast_rcnn_page_aykfi7.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738995774/fast_rcnn_page_aykfi7.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655561/portfolio-thumbnails/fast_rcnn_page_aykfi7_thumbnail.jpg"
     },
     {
       "alt": "nat_geo_collage",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738996012/nat_geo_collage_new_tu7gsv.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1738996012/nat_geo_collage_new_tu7gsv.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655561/portfolio-thumbnails/nat_geo_collage_new_tu7gsv_thumbnail.jpg"
     },
     {
       "alt": "jupyterlab_model_load_weights",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000182/jupyter_notebook_screenshot_bear_oy8vzh.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000182/jupyter_notebook_screenshot_bear_oy8vzh.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655562/portfolio-thumbnails/jupyter_notebook_screenshot_bear_oy8vzh_thumbnail.jpg"
     },
     {
       "alt": "aws_lambda_model_invoker",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703998674/clean_lambda_invoker_xkcjrm.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703998674/clean_lambda_invoker_xkcjrm.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655562/portfolio-thumbnails/clean_lambda_invoker_xkcjrm_thumbnail.jpg"
     },
     {
       "alt": "front_end_and_server_code",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000819/typescript_new_if4it7.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000819/typescript_new_if4it7.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655563/portfolio-thumbnails/typescript_new_if4it7_thumbnail.jpg"
     },
     {
       "alt": "java_spring_boot_ide",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1736115861/java_api_new_yvf8af.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1736115861/java_api_new_yvf8af.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655564/portfolio-thumbnails/java_api_new_yvf8af_thumbnail.jpg"
     },
     {
       "alt": "flask_microservice_ide",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1729052680/flask-microservice-pytorch_kwgymy.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1729052680/flask-microservice-pytorch_kwgymy.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655564/portfolio-thumbnails/flask-microservice-pytorch_kwgymy_thumbnail.jpg"
     }
   ],
   "alpinePeakClimbingSkiShopImages": [
     {
       "alt": "home_page_gif",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1744491501/ski_page_new_gif_1_o28o0z.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654771/portfolio-webm/ski_page_new_gif_1_o28o0z.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654773/portfolio-webm/ski_page_new_gif_1_o28o0z_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654774/portfolio-webm/ski_page_new_gif_1_o28o0z_thumbnail.jpg"
     },
     {
       "alt": "home_page_gif_2",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1744491666/ski_home_page_gif_new_snow_2_sd9g9s.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654765/portfolio-webm/ski_home_page_gif_new_snow_2_sd9g9s.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654767/portfolio-webm/ski_home_page_gif_new_snow_2_sd9g9s_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654769/portfolio-webm/ski_home_page_gif_new_snow_2_sd9g9s_thumbnail.jpg"
     },
     {
       "alt": "product_search_grid",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742101112/products_search_grid_h5i7sh.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742101112/products_search_grid_h5i7sh.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655564/portfolio-thumbnails/products_search_grid_h5i7sh_thumbnail.jpg"
     },
     {
       "alt": "user_orders_page",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1743490809/my_orders_new_zrfhv9.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1743490809/my_orders_new_zrfhv9.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655565/portfolio-thumbnails/my_orders_new_zrfhv9_thumbnail.jpg"
     },
     {
       "alt": "login_page_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742448752/login-page_yac4qr.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742448752/login-page_yac4qr.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655565/portfolio-thumbnails/login-page_yac4qr_thumbnail.jpg"
     },
     {
       "alt": "register_page_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742448489/register-page_eha6iw.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742448489/register-page_eha6iw.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655566/portfolio-thumbnails/register-page_eha6iw_thumbnail.jpg"
     },
     {
       "alt": "order_details_payment_paypal_buttons_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742174984/order_details_new_-_Copy_fmvvlt.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742174984/order_details_new_-_Copy_fmvvlt.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655567/portfolio-thumbnails/order_details_new_-_Copy_fmvvlt_thumbnail.jpg"
     },
     {
       "alt": "home_page_giving_pledge",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1743393296/home_pag_new_giving_back_rhftta.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1743393296/home_pag_new_giving_back_rhftta.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655568/portfolio-thumbnails/home_pag_new_giving_back_rhftta_thumbnail.jpg"
     },
     {
       "alt": "nasa_snow_tracker_new",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1743393297/nasa_new_snow_cover_l3f8su.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1743393297/nasa_new_snow_cover_l3f8su.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655568/portfolio-thumbnails/nasa_new_snow_cover_l3f8su_thumbnail.jpg"
     },
     {
       "alt": "dotnet_api_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1712202640/ski_shop_dotnet_api_jotwiq.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1712202640/ski_shop_dotnet_api_jotwiq.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655569/portfolio-thumbnails/ski_shop_dotnet_api_jotwiq_thumbnail.jpg"
     },
     {
       "alt": "pgadmin_postgresql_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1712202638/ski_shop_postgresql_zk8std.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1712202638/ski_shop_postgresql_zk8std.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655570/portfolio-thumbnails/ski_shop_postgresql_zk8std_thumbnail.jpg"
     },
     {
       "alt": "home_page_static_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1744491834/home_page_static_new_y9c23n.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1744491834/home_page_static_new_y9c23n.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655571/portfolio-thumbnails/home_page_static_new_y9c23n_thumbnail.jpg"
     },
     {
       "alt": "shopping_cart_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742448488/shopping-cart-new_tuloyl.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742448488/shopping-cart-new_tuloyl.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655572/portfolio-thumbnails/shopping-cart-new_tuloyl_thumbnail.jpg"
     },
     {
       "alt": "editing_ski_mountaineering_login_page_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702441833/SkiShopPhotoEditProcessGimp_jkrj7l.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654776/portfolio-webm/SkiShopPhotoEditProcessGimp_jkrj7l.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654778/portfolio-webm/SkiShopPhotoEditProcessGimp_jkrj7l_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654780/portfolio-webm/SkiShopPhotoEditProcessGimp_jkrj7l_thumbnail.jpg"
     },
     {
       "alt": "nginx_dockerfile_docker.yml_docker_containers_screenshot_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226162/docker_nginx_code_w5e7ei.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226162/docker_nginx_code_w5e7ei.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655572/portfolio-thumbnails/docker_nginx_code_w5e7ei_thumbnail.jpg"
     },
     {
       "alt": "aws_ecs_cluster_container_task_screenshot_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_aws_ecr_w0gtma.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_aws_ecr_w0gtma.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655572/portfolio-thumbnails/alpine_peak_aws_ecr_w0gtma_thumbnail.jpg"
     },
     {
       "alt": "aws_ci_cd_github_actions_yml_file_task_json_aws_screenshot_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226472/alpine_peak_github_actions_yml_jqoioi.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226472/alpine_peak_github_actions_yml_jqoioi.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655573/portfolio-thumbnails/alpine_peak_github_actions_yml_jqoioi_thumbnail.jpg"
     },
     {
       "alt": "aws_load_balancer_ecs_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_load_balancer_hhrakr.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_load_balancer_hhrakr.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655573/portfolio-thumbnails/alpine_peak_load_balancer_hhrakr_thumbnail.jpg"
     },
     {
       "alt": "aws_lambda_cron_screenshots_to_stop_and_restart_site_every_night_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226735/lambda_cron_pac3zd.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226735/lambda_cron_pac3zd.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655574/portfolio-thumbnails/lambda_cron_pac3zd_thumbnail.jpg"
     }
   ],
   "rsaEncryptionImages": [
     {
       "alt": "rsa_encryption_gif",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443108/encryption_react_app_rsa_zm71g8.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654742/portfolio-webm/encryption_react_app_rsa_zm71g8.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654744/portfolio-webm/encryption_react_app_rsa_zm71g8_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654746/portfolio-webm/encryption_react_app_rsa_zm71g8_thumbnail.jpg"
     },
     {
       "alt": "rsa_encryption_image",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228815/RSAPage_fgvomf.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228815/RSAPage_fgvomf.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655575/portfolio-thumbnails/RSAPage_fgvomf_thumbnail.jpg"
     },
     {
       "alt": "aes_encryption_gif",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1702443106/encryption_react_app_aes_iblpok.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654736/portfolio-webm/encryption_react_app_aes_iblpok.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654739/portfolio-webm/encryption_react_app_aes_iblpok_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654740/portfolio-webm/encryption_react_app_aes_iblpok_thumbnail.jpg"
     },
     {
       "alt": "aes_encryption_image",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228816/AESPage_hfsbt2.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228816/AESPage_hfsbt2.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655575/portfolio-thumbnails/AESPage_hfsbt2_thumbnail.jpg"
     }
   ],
   "solarSystemImages": [
     {
       "alt": "solar_system_and_both_belts_from_distance_gif",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1715213400/solar_system_optimized_zfcrh3.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654782/portfolio-webm/solar_system_optimized_zfcrh3.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654784/portfolio-webm/solar_system_optimized_zfcrh3_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654785/portfolio-webm/solar_system_optimized_zfcrh3_thumbnail.jpg"
     },
     {
       "alt": "solar_system_and_both_belts_from_distance_gif2",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1714884993/solarSystemOrbits4_ipcemf.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654787/portfolio-webm/solarSystemOrbits4_ipcemf.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654789/portfolio-webm/solarSystemOrbits4_ipcemf_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654791/portfolio-webm/solarSystemOrbits4_ipcemf_thumbnail.jpg"
     },
     {
       "alt": "earth_system_rotation_gif_over_10MB_cloudinary_limit",
-      "src": "https://github.com/Mike11199/GIFs/blob/main/earth_rotation_clouds.gif?raw=true"
+      "src": "https://github.com/Mike11199/GIFs/blob/main/earth_rotation_clouds.gif?raw=true",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655576/portfolio-thumbnails/earth_rotation_clouds_thumbnail.jpg"
     },
     {
       "alt": "solar_system_jupiter_and_main_asteroid_belt",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229666/AsteroidBeltPlanetsCloseUpPhoto_busxio.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229666/AsteroidBeltPlanetsCloseUpPhoto_busxio.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655576/portfolio-thumbnails/AsteroidBeltPlanetsCloseUpPhoto_busxio_thumbnail.jpg"
     },
     {
       "alt": "close_up_of_planets_aligned",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229665/PlanetsAlignedImage_xaiskz.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229665/PlanetsAlignedImage_xaiskz.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655577/portfolio-thumbnails/PlanetsAlignedImage_xaiskz_thumbnail.jpg"
     },
     {
       "alt": "earth_system_static_image",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229667/EarthCloudsImage_bdpfo5.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229667/EarthCloudsImage_bdpfo5.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655577/portfolio-thumbnails/EarthCloudsImage_bdpfo5_thumbnail.jpg"
     },
     {
       "alt": "solar_system_from_distance",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229662/SolarSystemFarOut_xqjery.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703229662/SolarSystemFarOut_xqjery.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655578/portfolio-thumbnails/SolarSystemFarOut_xqjery_thumbnail.jpg"
     }
   ],
   "unrealEngineImages": [
     {
       "alt": "unreal_destruction",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227399/unreal_destruction_zgdoxb.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654793/portfolio-webm/unreal_destruction_zgdoxb.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654795/portfolio-webm/unreal_destruction_zgdoxb_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654796/portfolio-webm/unreal_destruction_zgdoxb_thumbnail.jpg"
     },
     {
       "alt": "unreal_open_world",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723439344/open_world_2_kg5jtp.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723439344/open_world_2_kg5jtp.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655579/portfolio-thumbnails/open_world_2_kg5jtp_thumbnail.jpg"
     },
     {
       "alt": "unreal_voronoi_uniform_fracturing",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227381/unreal_voronoi_uniform_fracturing_i82ukx.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227381/unreal_voronoi_uniform_fracturing_i82ukx.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655579/portfolio-thumbnails/unreal_voronoi_uniform_fracturing_i82ukx_thumbnail.jpg"
     },
     {
       "alt": "enemy_class_code",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723436343/EnemyClass_svhbdd.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723436343/EnemyClass_svhbdd.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655580/portfolio-thumbnails/EnemyClass_svhbdd_thumbnail.jpg"
     },
     {
       "alt": "unreal_dot_product_math_onenote",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227353/unreal_dot_product_2_cnpc9j.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227353/unreal_dot_product_2_cnpc9j.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655580/portfolio-thumbnails/unreal_dot_product_2_cnpc9j_thumbnail.jpg"
     },
     {
       "alt": "open_world_lake",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723436553/OpenWorld1_up57rx.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723436553/OpenWorld1_up57rx.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655580/portfolio-thumbnails/OpenWorld1_up57rx_thumbnail.jpg"
     },
     {
       "alt": "unreal_determine_hit_animation_code",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227348/unreal_determine_hit_animation_kfgni2.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227348/unreal_determine_hit_animation_kfgni2.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655581/portfolio-thumbnails/unreal_determine_hit_animation_kfgni2_thumbnail.jpg"
     },
     {
       "alt": "unreal_directional_hit_animation",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227397/unreal_directional_hit_animation_gnkuyy.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654798/portfolio-webm/unreal_directional_hit_animation_gnkuyy.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654801/portfolio-webm/unreal_directional_hit_animation_gnkuyy_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654802/portfolio-webm/unreal_directional_hit_animation_gnkuyy_thumbnail.jpg"
     },
     {
       "alt": "unreal_weapon_class_code",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723438206/weapon_code_f7vb5s.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723438206/weapon_code_f7vb5s.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655581/portfolio-thumbnails/weapon_code_f7vb5s_thumbnail.jpg"
     },
     {
       "alt": "unreal_randomly_generated_treasure",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227375/unreal_treasure_fqw3zb.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227375/unreal_treasure_fqw3zb.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655582/portfolio-thumbnails/unreal_treasure_fqw3zb_thumbnail.jpg"
     },
     {
       "alt": "unreal_patrol_routes",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227366/unreal_patrol_zi4zqw.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227366/unreal_patrol_zi4zqw.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655582/portfolio-thumbnails/unreal_patrol_zi4zqw_thumbnail.jpg"
     },
     {
       "alt": "unreal_sensing_component",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227362/unreal_sensing_sa1pfs.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703227362/unreal_sensing_sa1pfs.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655583/portfolio-thumbnails/unreal_sensing_sa1pfs_thumbnail.jpg"
     },
     {
       "alt": "unreal_insect_enemy",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723438759/insect_enemy_kdixhz.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1723438759/insect_enemy_kdixhz.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655583/portfolio-thumbnails/insect_enemy_kdixhz_thumbnail.jpg"
     }
   ],
   "hashMapImages": [
     {
       "alt": "hash_map_separate_chaining_gif",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228131/hash_map_separate_chaining_tljado.gif"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654748/portfolio-webm/hash_map_separate_chaining_tljado.webm",
+      "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654750/portfolio-webm/hash_map_separate_chaining_tljado_poster.jpg",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654752/portfolio-webm/hash_map_separate_chaining_tljado_thumbnail.jpg"
     },
     {
       "alt": "hash_map_put_function",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_put_function_yql8dr.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_put_function_yql8dr.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655584/portfolio-thumbnails/hash_map_put_function_yql8dr_thumbnail.jpg"
     },
     {
       "alt": "hash_map_keys_buckets_diagram",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228636/hash_function_diagram_abmwcz.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228636/hash_function_diagram_abmwcz.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655584/portfolio-thumbnails/hash_function_diagram_abmwcz_thumbnail.jpg"
     },
     {
       "alt": "hash_map_resize_table_function",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_resize_table_function_opqhi4.png"
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703228119/hash_map_resize_table_function_opqhi4.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655585/portfolio-thumbnails/hash_map_resize_table_function_opqhi4_thumbnail.jpg"
     }
   ]
 }

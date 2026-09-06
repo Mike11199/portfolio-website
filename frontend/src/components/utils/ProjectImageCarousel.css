@@ -1,10 +1,17 @@
-/* Only the selected image determines the viewport, even with taller offscreen slides. */
+/* The fade animation does not use infinite mode's boundary clones. */
+.project-image-carousel[data-infinite-loop="true"] .slider > .slide:first-child,
+.project-image-carousel[data-infinite-loop="true"] .slider > .slide:last-child {
+  display: none !important; /* Override the fade handler's inline display. */
+}
+
+/* Only the selected media determines the viewport, even with taller offscreen slides. */
 .project-image-carousel .carousel-slider .slider-wrapper {
-  aspect-ratio: var(--project-image-ratio);
+  aspect-ratio: var(--project-image-ratio, 16 / 9);
   height: auto;
 }
 
-.project-image-carousel .carousel-slider .slide img {
+.project-image-carousel .carousel-slider .slide img,
+.project-image-carousel .carousel-slider .slide video {
   display: block;
   width: 100%;
   height: auto;
@@ -36,11 +43,13 @@
 .project-image-carousel--fixed .carousel-slider .slider,
 .project-image-carousel--fixed .carousel-slider .slide,
 .project-image-carousel--fixed .carousel-slider .slide > div,
-.project-image-carousel--fixed .carousel-slider .slide img {
+.project-image-carousel--fixed .carousel-slider .slide img,
+.project-image-carousel--fixed .carousel-slider .slide video {
   height: 100%;
 }
 
-.project-image-carousel--fixed .carousel-slider .slide img {
+.project-image-carousel--fixed .carousel-slider .slide img,
+.project-image-carousel--fixed .carousel-slider .slide video {
   object-fit: contain;
 }
 
