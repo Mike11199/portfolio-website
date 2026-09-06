@@ -17,10 +17,11 @@ const sqlKeywords = /^(PREPARE|AS|WITH|SELECT|FROM|WHERE|CROSS|JOIN|ORDER|BY|LIM
 const yamlKeys = /^(steps|name|id|uses|env|run|working|directory|stages|stage|default|tags|variables|build|deploy|script|rules|resource_group)$/;
 const controls = /^(foreach|in|for|of|if|try|catch|continue)$/;
 const types = /^(System|Console|Promise|BoundingBox|string|number|unknown|boolean|void|bigint)$/;
-const highlight = (code: string) => code.split(/(--[^\n]*|\/\/[^\n]*|#[^\n]*|\$?f?"[^"\n]*"|`[^`]*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g)
+// Match triple quotes first so multiline Python docstrings stay one string token.
+const highlight = (code: string) => code.split(/("""[\s\S]*?"""|'''[\s\S]*?'''|--[^\n]*|\/\/[^\n]*|#[^\n]*|\$?f?"[^"\n]*"|`[^`]*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g)
   .map((token, index, tokens) => {
     const kind = (token.startsWith("#") || token.startsWith("//") || token.startsWith("--")) ? "comment"
-      : /^(\$?f?"|`)/.test(token) ? "string"
+      : /^(\$?f?"|'''|`)/.test(token) ? "string"
       : (keywords.test(token) || sqlKeywords.test(token)) ? "keyword"
       : yamlKeys.test(token) ? "symbol"
       : controls.test(token) ? "control"

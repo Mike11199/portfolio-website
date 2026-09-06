@@ -1,6 +1,11 @@
 export const pythonExample = {
     language: "Python", file: "similarity.py", command: "python similarity.py",
-    code: `from math import sqrt
+    code: `"""
+Image similarity search using cosine similarity.
+Uses short, made-up embeddings for demonstration.
+"""
+
+from math import sqrt
 
 def cosine(a, b):
     """Compare embeddings: closer to 1 means more similar."""

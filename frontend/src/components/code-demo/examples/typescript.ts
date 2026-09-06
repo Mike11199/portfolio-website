@@ -1,6 +1,8 @@
 export const typescriptExample = {
     language: "TypeScript", file: "annotations.ts", command: "npx tsx annotations.ts",
-    code: `interface BoundingBox {
+    code: `// Rename an image annotation and undo the edit.
+
+interface BoundingBox {
   label: string;
   x: number;
   y: number;

@@ -1,6 +1,9 @@
 export const csharpExample = {
     language: "C#", file: "Checkout.cs", command: "dotnet run",
-    code: `using Microsoft.EntityFrameworkCore;
+    code: `// Save an order and update inventory together.
+// Roll back both changes if checkout fails.
+
+using Microsoft.EntityFrameworkCore;
 
 // Inside checkout: db is the context, order is the new order.
 await using var transaction =

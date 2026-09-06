@@ -1,6 +1,8 @@
 export const postgresqlExample = {
     language: "PostgreSQL", file: "similar_images.sql", command: "psql -f similar_images.sql",
-    code: `-- Find images similar to photo 42 using pgvector.
+    code: `-- Find the five closest images to photo 42.
+-- Compare their embeddings using pgvector.
+
 SELECT id, filename
 FROM images
 WHERE id <> 42
@@ -11,5 +13,5 @@ ORDER BY embedding <=> (
     WHERE id = 42
 )
 LIMIT 5;`,
-    output: " id | filename\n----+-------------------\n 17 | snowy_trail.jpg\n 28 | mountain_path.jpg\n  9 | winter_camp.jpg\n(3 rows)",
+    output: " id | filename\n----+-------------------\n 17 | snowy_trail.jpg\n 28 | mountain_path.jpg\n  9 | winter_camp.jpg",
   };

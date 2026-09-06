@@ -1,6 +1,8 @@
 export const dockerExample = {
     language: "Docker", file: "Dockerfile", command: "docker build -f frontend/Dockerfile -t portfolio frontend",
-    code: `# Build React with Node and the locked dependencies.
+    code: `# Build the React site and serve it with nginx.
+
+# Build React with Node and the locked dependencies.
 FROM node:24-alpine AS build
 WORKDIR /app
 COPY package*.json ./
