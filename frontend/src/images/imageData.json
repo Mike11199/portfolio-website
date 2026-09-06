@@ -48,11 +48,6 @@
       "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655562/portfolio-thumbnails/jupyter_notebook_screenshot_bear_oy8vzh_thumbnail.jpg"
     },
     {
-      "alt": "aws_lambda_model_invoker",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703998674/clean_lambda_invoker_xkcjrm.png",
-      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655562/portfolio-thumbnails/clean_lambda_invoker_xkcjrm_thumbnail.jpg"
-    },
-    {
       "alt": "front_end_and_server_code",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704000819/typescript_new_if4it7.png",
       "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655563/portfolio-thumbnails/typescript_new_if4it7_thumbnail.jpg"
@@ -85,6 +80,11 @@
       "alt": "product_search_grid",
       "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1742101112/products_search_grid_h5i7sh.png",
       "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655564/portfolio-thumbnails/products_search_grid_h5i7sh_thumbnail.jpg"
+    },
+    {
+      "alt": "aws_cloudformation_stack_photo",
+      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788733697/alpine_peak_cf_stack_t3htae.png",
+      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/c_thumb,w_200,g_face/v1788733697/alpine_peak_cf_stack_t3htae.png"
     },
     {
       "alt": "user_orders_page",
@@ -141,31 +141,6 @@
       "src": "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654776/portfolio-webm/SkiShopPhotoEditProcessGimp_jkrj7l.webm",
       "poster": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654778/portfolio-webm/SkiShopPhotoEditProcessGimp_jkrj7l_poster.jpg",
       "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654780/portfolio-webm/SkiShopPhotoEditProcessGimp_jkrj7l_thumbnail.jpg"
-    },
-    {
-      "alt": "nginx_dockerfile_docker.yml_docker_containers_screenshot_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226162/docker_nginx_code_w5e7ei.png",
-      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655572/portfolio-thumbnails/docker_nginx_code_w5e7ei_thumbnail.jpg"
-    },
-    {
-      "alt": "aws_ecs_cluster_container_task_screenshot_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_aws_ecr_w0gtma.png",
-      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655572/portfolio-thumbnails/alpine_peak_aws_ecr_w0gtma_thumbnail.jpg"
-    },
-    {
-      "alt": "aws_ci_cd_github_actions_yml_file_task_json_aws_screenshot_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226472/alpine_peak_github_actions_yml_jqoioi.png",
-      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655573/portfolio-thumbnails/alpine_peak_github_actions_yml_jqoioi_thumbnail.jpg"
-    },
-    {
-      "alt": "aws_load_balancer_ecs_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226471/alpine_peak_load_balancer_hhrakr.png",
-      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655573/portfolio-thumbnails/alpine_peak_load_balancer_hhrakr_thumbnail.jpg"
-    },
-    {
-      "alt": "aws_lambda_cron_screenshots_to_stop_and_restart_site_every_night_photo",
-      "src": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1703226735/lambda_cron_pac3zd.png",
-      "thumbnail": "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788655574/portfolio-thumbnails/lambda_cron_pac3zd_thumbnail.jpg"
     }
   ],
   "rsaEncryptionImages": [
