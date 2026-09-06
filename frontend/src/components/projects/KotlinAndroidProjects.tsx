@@ -104,7 +104,7 @@ const KotlinAndroidProjects = () => {
 
         <ProjectSection
           media={
-            <ProjectMediaFrame paired>
+            <ProjectMediaFrame paired background="transparent">
               <ProjectMediaSlide media={{
                 alt: "Sacramento city Android app demo",
                 src: "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654731/portfolio-webm/android_kotlin_sacramento_app_fdubuz.webm",
