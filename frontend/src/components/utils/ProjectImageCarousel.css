@@ -120,6 +120,11 @@
   .project-image-carousel--mobile-padded {
     padding-inline: 5%;
   }
+
+  .project-image-carousel .carousel.carousel-slider .control-arrow {
+    font-weight: 700;
+  }
+
 }
 
 /* A stable frame with contained images: no cropping or height changes between slides. */
