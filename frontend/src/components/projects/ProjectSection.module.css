@@ -19,6 +19,13 @@
 }
 
 .description {
+  --scrollbar-size: 8px;
+  --scrollbar-native-width: thin;
+  --scrollbar-thumb: #1d3926;
+  --scrollbar-track: #161616;
+  --scrollbar-radius: 4px;
+  --scrollbar-hover: #2b5035;
+  --scrollbar-inset: 4px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
