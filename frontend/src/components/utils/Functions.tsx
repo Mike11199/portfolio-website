@@ -6,22 +6,22 @@ import { useEffect, useState } from "react";
  *
  * @returns {{ width: number, height: number }} The width and height of the browser window.
  */
-export function useBrowserWindowDimensions() {
+export const useBrowserWindowDimensions = () => {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
 
   useEffect(() => {
-    function handleResize() {
+    const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
-    }
+    };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return windowSize;
-}
+};

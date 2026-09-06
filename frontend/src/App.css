@@ -4,14 +4,15 @@ html {
   padding: 0px;
   scroll-behavior: smooth;
   background: #000000;
-  cursor: url("./images/dark_cursor_small.png"), auto;
+  /* Match the click point to the visible arrow tip inside the padded PNG. */
+  cursor: url("./images/dark_cursor_small.png") 7 3, auto;
   scroll-padding-top: 75px;
 }
 
 a,
 button,
 [role="button"] {
-  cursor: url("./images/dark_pointer_small.png"), pointer;
+  cursor: url("./images/dark_pointer_small.png") 9 2, pointer;
 }
 
 p,
@@ -21,7 +22,7 @@ textarea,
 h1,
 h3,
 h2 {
-  cursor: url("./images/dark_text_cursor_18px.png"), text;
+  cursor: url("./images/dark_text_cursor_18px.png") 8 9, text;
 }
 
 .carousel-status {
@@ -34,11 +35,11 @@ h2 {
 }
 
 .carousel .control-next {
-  cursor: url("./images/dark_pointer_small.png"), pointer !important;
+  cursor: url("./images/dark_pointer_small.png") 9 2, pointer !important;
 }
 
 .carousel .control-prev {
-  cursor: url("./images/dark_pointer_small.png"), pointer !important;
+  cursor: url("./images/dark_pointer_small.png") 9 2, pointer !important;
 }
 
 /* 1. NEXT arrow normal state */
@@ -236,7 +237,7 @@ h2 {
   height: 50px;
   display: inline-block;
   outline: none;
-  cursor: url("./images/dark_pointer_small.png"), pointer;
+  cursor: url("./images/dark_pointer_small.png") 9 2, pointer;
   font-size: 14px;
   line-height: 16px;
   padding: 2px 16px;
@@ -511,7 +512,7 @@ ul {
   height: 50px;
   justify-content: center;
   outline: none;
-  cursor: url("./images/dark_pointer_small.png"), pointer;
+  cursor: url("./images/dark_pointer_small.png") 9 2, pointer;
   font-size: 14px;
   border: none;
   color: #fff;
@@ -535,7 +536,7 @@ ul {
   height: 50px;
   display: inline-block;
   outline: none;
-  cursor: url("./images/dark_pointer_small.png"), pointer;
+  cursor: url("./images/dark_pointer_small.png") 9 2, pointer;
   font-size: 14px;
   padding: 2px 16px;
   border: none;

@@ -7,11 +7,11 @@ interface HexDumpOptions {
 }
 
 /** Render complete UTF-8 byte pairs and rows that fit the current font and panel. */
-export default function useHexDump(
+const useHexDump = (
   text: string | undefined,
   preRef: RefObject<HTMLPreElement>,
   { maxRows = Infinity, frameRef }: HexDumpOptions = {},
-) {
+) => {
   const [hexDump, setHexDump] = useState("");
 
   useLayoutEffect(() => {
@@ -63,4 +63,6 @@ export default function useHexDump(
   }, [text, preRef, maxRows, frameRef]);
 
   return hexDump;
-}
+};
+
+export default useHexDump;

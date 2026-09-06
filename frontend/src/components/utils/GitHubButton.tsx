@@ -7,7 +7,7 @@ interface GitHubButtonProps {
 const GitHubButton = ({ URL }: GitHubButtonProps) => {
   // opens link in new tab
   const handleClick = (site: string) => {
-    setTimeout(function () {
+    setTimeout(() => {
       window.open(site, "_blank");
     }, 130);
   };

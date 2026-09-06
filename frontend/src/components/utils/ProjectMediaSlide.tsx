@@ -12,7 +12,7 @@ interface Props {
 }
 
 /** Play uploaded videos directly, with the same looping behavior as GIFs. */
-export default function ProjectMediaSlide({ media }: Props) {
+const ProjectMediaSlide = ({ media }: Props) => {
   return (
     <div>
       {/\.(webm|mp4)(?:$|[?#])/i.test(media.src) ? (
@@ -32,4 +32,6 @@ export default function ProjectMediaSlide({ media }: Props) {
       )}
     </div>
   );
-}
+};
+
+export default ProjectMediaSlide;

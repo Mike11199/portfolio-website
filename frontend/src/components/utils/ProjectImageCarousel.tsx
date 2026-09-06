@@ -10,9 +10,9 @@ type Props = Partial<ComponentProps<typeof Carousel>> & {
   fixedHeight?: number | string;
 };
 
-function isMediaSlide(slide: unknown): slide is ReactElement<{ media: ProjectMedia }> {
+const isMediaSlide = (slide: unknown): slide is ReactElement<{ media: ProjectMedia }> => {
   return isValidElement<{ media: ProjectMedia }>(slide) && slide.type === ProjectMediaSlide;
-}
+};
 
 // Avoid relying on the library's mount-time measurement of lazy-loaded images.
 const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: Props) => {

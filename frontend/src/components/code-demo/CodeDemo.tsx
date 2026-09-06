@@ -1,4 +1,7 @@
-import { useState } from "react";
+/** Displays selectable code examples with their sample terminal output. */
+import { useId, useState } from "react";
+import HighlightedCode from "./HighlightedCode";
+import { DIVIDER_HEIGHT, useResizablePanel } from "./useResizablePanel";
 import { codeExamples } from "./examples";
 import styles from "./CodeDemo.module.css";
 
@@ -11,30 +14,12 @@ const languageIcons: Record<string, string> = {
   Docker: "docker/docker-original.svg",
 };
 
-// These curated snippets are displayed as text, never evaluated in the browser.
-const keywords = /^(using|var|let|new|const|async|await|from|import|def|lambda|return|interface|function|typeof|throw)$/;
-const sqlKeywords = /^(PREPARE|AS|WITH|SELECT|FROM|WHERE|CROSS|JOIN|ORDER|BY|LIMIT|EXECUTE|WORKDIR|COPY|RUN|EXPOSE|CMD)$/;
-const yamlKeys = /^(steps|name|id|uses|env|run|working|directory|stages|stage|default|tags|variables|build|deploy|script|rules|resource_group)$/;
-const controls = /^(foreach|in|for|of|if|try|catch|continue)$/;
-const types = /^(System|Console|Promise|BoundingBox|string|number|unknown|boolean|void|bigint)$/;
-// Match triple quotes first so multiline Python docstrings stay one string token.
-const highlight = (code: string) => code.split(/("""[\s\S]*?"""|'''[\s\S]*?'''|--[^\n]*|\/\/[^\n]*|#[^\n]*|\$?f?"[^"\n]*"|`[^`]*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g)
-  .map((token, index, tokens) => {
-    const kind = (token.startsWith("#") || token.startsWith("//") || token.startsWith("--")) ? "comment"
-      : /^(\$?f?"|'''|`)/.test(token) ? "string"
-      : (keywords.test(token) || sqlKeywords.test(token)) ? "keyword"
-      : yamlKeys.test(token) ? "symbol"
-      : controls.test(token) ? "control"
-      : types.test(token) ? "type"
-      : /^\d/.test(token) ? "number"
-      : /^\s*\(/.test(tokens[index + 1] ?? "") && /^\w+$/.test(token) ? "symbol"
-      : "plain";
-    return <span key={index} className={styles[kind]}>{token}</span>;
-  });
 
 const CodeDemo = () => {
   const [active, setActive] = useState(0);
   const example = codeExamples[active];
+  const editorId = useId();
+  const { panelsRef, editorHeight, separatorProps } = useResizablePanel();
 
   return (
     <section className={styles.demo} aria-label="Code demo">
@@ -55,11 +40,19 @@ const CodeDemo = () => {
           ))}
         </div>
       </div>
-      <pre className={styles.editor} tabIndex={0} aria-label={`${example.language} example`}><code>{highlight(example.code)}</code></pre>
-      <div className={styles.terminal}>
-        <div className={styles.terminalTitle}>TERMINAL</div>
-        <div className={styles.command}>$ {example.command}</div>
-        <div className={styles.output}>{example.output}</div>
+      <div ref={panelsRef} className={styles.panels}>
+        <pre id={editorId} className={styles.editor} style={{ height: editorHeight }}
+          tabIndex={0} aria-label={`${example.language} example`}>
+          <HighlightedCode code={example.code} />
+        </pre>
+        <div {...separatorProps} className={styles.separator} style={{ height: DIVIDER_HEIGHT }} aria-controls={editorId}
+          aria-label="Resize code and terminal panels"
+          title="Drag to resize. Use Up/Down arrows, Home/End, or double-click to reset." />
+        <div className={styles.terminal} role="region" aria-label="Terminal output" tabIndex={0}>
+          <div className={styles.terminalTitle}>TERMINAL</div>
+          <div className={styles.command}>$ {example.command}</div>
+          <div className={styles.output}>{example.output}</div>
+        </div>
       </div>
     </section>
   );

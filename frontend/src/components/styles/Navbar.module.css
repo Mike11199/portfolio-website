@@ -70,7 +70,7 @@
   font-size: 35px;
   text-transform: uppercase;
   margin-right: 50px;
-  cursor: url("../../images/dark_pointer_small.png"), pointer !important;
+  cursor: url("../../images/dark_pointer_small.png") 9 2, pointer !important;
 }
 
 .navbarFullName:active {

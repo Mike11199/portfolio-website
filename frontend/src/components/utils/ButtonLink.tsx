@@ -7,7 +7,7 @@ interface ButtonLinkProps {
 const ButtonLink = ({ URL, variant = "blue", buttonText }: ButtonLinkProps) => {
   // opens link in new tab
   const handleClick = (site: string) => {
-    setTimeout(function () {
+    setTimeout(() => {
       window.open(site, "_blank");
     }, 130);
   };
