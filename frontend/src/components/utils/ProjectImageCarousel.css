@@ -1,3 +1,31 @@
+.project-image-carousel {
+  --project-arrow-width: clamp(2.75rem, 8%, 7rem);
+}
+
+/* Widen the existing full-height buttons without changing the arrow icons. */
+.project-image-carousel .carousel.carousel-slider .control-arrow {
+  width: var(--project-arrow-width);
+  background: rgba(16, 16, 16, 0.9) !important;
+  opacity: 1 !important; /* Override the global carousel button dimming. */
+  border: 0;
+  transition: background-color 0.15s ease;
+}
+
+.project-image-carousel .carousel.carousel-slider .control-arrow:hover,
+.project-image-carousel .carousel.carousel-slider .control-arrow:focus-visible {
+  background: rgba(20, 20, 20, 0.9) !important;
+}
+
+.project-image-carousel .carousel.carousel-slider .control-arrow:focus-visible {
+  outline: 2px solid #aaa;
+  outline-offset: -2px;
+}
+
+/* Keep the slide counter clear of the wider Next button. */
+.project-image-carousel .carousel-status {
+  margin-right: var(--project-arrow-width);
+}
+
 /* The fade animation does not use infinite mode's boundary clones. */
 .project-image-carousel[data-infinite-loop="true"] .slider > .slide:first-child,
 .project-image-carousel[data-infinite-loop="true"] .slider > .slide:last-child {

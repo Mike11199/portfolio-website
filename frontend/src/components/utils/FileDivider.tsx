@@ -18,7 +18,7 @@ const FileDivider = ({ label, showCursor = true, hexText }: FileDividerProps) =>
       {hexText !== undefined && <pre ref={preRef} className={styles.headerHex}>{headerHex}</pre>}
       <div className={styles.divider}>
         {label}
-        {showCursor && <span className={styles.cursor}>?</span>}
+        {showCursor && <span className={styles.cursor}>|</span>}
       </div>
     </div>
   );
