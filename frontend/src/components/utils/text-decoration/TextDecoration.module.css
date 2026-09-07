@@ -6,7 +6,7 @@
 .headerHex {
   margin: 0 0 0.65rem;
   overflow: hidden;
-  color: #235b35;
+  color: var(--terminal-muted);
   font: 0.75rem/1.35rem Consolas, monospace;
   user-select: none;
 }
@@ -16,7 +16,7 @@
   flex-shrink: 0;
   align-items: center;
   gap: 0.65rem;
-  color: #287441;
+  color: var(--terminal-label);
   font: 0.75rem/1.6 Consolas, monospace;
   user-select: none;
 }
@@ -24,7 +24,7 @@
 .divider::after {
   content: "";
   flex: 1;
-  border-top: 1px solid #163f25;
+  border-top: 1px solid var(--terminal-rule);
 }
 
 /* Reserve the minimum rows plus the divider, then fill any spare space. */
@@ -61,7 +61,7 @@
 
 .hexContent pre {
   margin: 0.65rem 0 0;
-  color: #235b35;
+  color: var(--terminal-muted);
   font: 0.75rem / var(--hex-line-height) Consolas, monospace;
 }
 

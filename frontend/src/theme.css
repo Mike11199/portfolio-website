@@ -1,0 +1,27 @@
+/*
+ * Imported once by App.tsx. Variables on :root are inherited across the page,
+ * so any stylesheet (including CSS modules) can use var(--terminal-...) without importing this file.
+ */
+:root {
+  --terminal-accent: rgb(25, 212, 88);
+  --terminal-title: rgb(17, 167, 67);
+  --terminal-indicator: rgb(35, 168, 41);
+  --terminal-border: rgba(56, 128, 62, 0.849);
+  --terminal-selection: rgb(13, 70, 13);
+  --terminal-divider: rgba(13, 70, 13, 0.4);
+  --terminal-muted: #235b35;
+  --terminal-label: #287441;
+  --terminal-rule: #163f25;
+  --terminal-scrollbar: #1d3926;
+  --terminal-scrollbar-hover: #2b5035;
+  --terminal-hover: rgba(25, 212, 88, 0.08);
+  --terminal-spinner-track: rgba(25, 212, 88, 0.2);
+  --terminal-active-background: #102219;
+  --terminal-resize: #20432c;
+  --terminal-output: #7ee787;
+  --terminal-number: #b5cea8;
+  --terminal-section-start: #051b10;
+  --terminal-section-end: #072e1b;
+  --terminal-binary: rgb(64, 192, 64);
+  --terminal-explorer-resize: #1b5e35;
+}

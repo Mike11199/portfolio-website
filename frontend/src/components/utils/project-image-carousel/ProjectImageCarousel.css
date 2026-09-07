@@ -8,22 +8,22 @@
 
 /* 1. NEXT arrow normal state */
 .carousel .control-next.control-arrow:before {
-  border-left: 10px solid rgb(35, 168, 41) !important;
+  border-left: 10px solid var(--terminal-indicator) !important;
 }
 
 /* 2. NEXT arrow hover state */
 .carousel .control-next.control-arrow:hover:before {
-  border-left: 10px solid rgb(35, 168, 41) !important;
+  border-left: 10px solid var(--terminal-indicator) !important;
 }
 
 /* 3. PREV arrow normal state */
 .carousel .control-prev.control-arrow:before {
-  border-right: 10px solid rgb(35, 168, 41) !important;
+  border-right: 10px solid var(--terminal-indicator) !important;
 }
 
 /* 4. PREV arrow hover state */
 .carousel .control-prev.control-arrow:hover:before {
-  border-right: 10px solid rgb(35, 168, 41) !important;
+  border-right: 10px solid var(--terminal-indicator) !important;
 }
 
 .carousel .thumb,
@@ -80,8 +80,8 @@
 .project-image-carousel {
   position: relative;
   --project-nav-height: 3rem;
-  --project-carousel-border-color: rgb(13, 70, 13);
-  --project-carousel-divider-color: rgba(13, 70, 13, 0.4);
+  --project-carousel-border-color: var(--terminal-selection);
+  --project-carousel-divider-color: var(--terminal-divider);
 }
 
 /* The library keeps the image and thumbnail ribbon together above our footer. */
@@ -138,12 +138,12 @@
 }
 
 .project-image-carousel .carousel-fullscreen-button:hover {
-  color: rgb(25, 212, 88);
-  background: rgba(25, 212, 88, 0.08);
+  color: var(--terminal-accent);
+  background: var(--terminal-hover);
 }
 
 .project-image-carousel .carousel-fullscreen-button:focus-visible {
-  outline: 2px solid rgb(25, 212, 88);
+  outline: 2px solid var(--terminal-accent);
   outline-offset: 3px;
 }
 

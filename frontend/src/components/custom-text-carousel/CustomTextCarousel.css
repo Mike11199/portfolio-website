@@ -5,8 +5,8 @@
   margin-bottom: 3%;
   background: #191c29;
   border-radius: 6px;
-  border: 2px solid rgba(56, 128, 62, 0.849);
-  color: rgb(25, 212, 88);
+  border: 2px solid var(--terminal-border);
+  color: var(--terminal-accent);
   background-image: linear-gradient(#000000, #000000, #000000);
   max-height: 50vh;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
@@ -17,10 +17,10 @@
   overflow: auto;
   --scrollbar-size: 8px;
   --scrollbar-native-width: thin;
-  --scrollbar-thumb: #1d3926;
+  --scrollbar-thumb: var(--terminal-scrollbar);
   --scrollbar-track: #161616;
   --scrollbar-radius: 4px;
-  --scrollbar-hover: #2b5035;
+  --scrollbar-hover: var(--terminal-scrollbar-hover);
   --scrollbar-inset: 4px;
   scrollbar-gutter: stable;
 }
@@ -52,10 +52,10 @@
     width: 100%;
     padding: 10px;
     background-color: #000000;
-    color: rgb(25, 212, 88);
+    color: var(--terminal-accent);
     font-size: x-large;
     border-radius: 6px;
-    border: 2px solid rgba(56, 128, 62, 0.849);
+    border: 2px solid var(--terminal-border);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     min-height: 48px;
     touch-action: manipulation;
@@ -77,14 +77,14 @@
     overflow: visible;
     background: #191c29;
     border-radius: 6px;
-    border: 2px solid rgba(56, 128, 62, 0.849);
-    color: rgb(25, 212, 88);
+    border: 2px solid var(--terminal-border);
+    color: var(--terminal-accent);
     background-image: linear-gradient(#000000, #000000, #000000);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   }
 
   .carousel-button:focus-visible {
-    outline: 2px solid rgb(25, 212, 88);
+    outline: 2px solid var(--terminal-accent);
     outline-offset: 3px;
   }
 

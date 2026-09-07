@@ -77,7 +77,7 @@
 
 .explorerDivider:hover,
 .explorerDivider:focus-visible {
-  background: #1b5e35;
+  background: var(--terminal-explorer-resize);
   outline: none;
 }
 

@@ -22,12 +22,12 @@
 }
 
 .codeButton:hover {
-  color: rgb(25, 212, 88);
-  background: rgba(25, 212, 88, 0.08);
+  color: var(--terminal-accent);
+  background: var(--terminal-hover);
 }
 
 .codeButton:focus-visible {
-  outline: 2px solid rgb(25, 212, 88);
+  outline: 2px solid var(--terminal-accent);
   outline-offset: 3px;
 }
 

@@ -1,5 +1,5 @@
 .digit {
-  color: rgb(64, 192, 64);
+  color: var(--terminal-binary);
   font-weight: 400;
   font-size: 18px;
 }

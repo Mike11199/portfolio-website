@@ -71,7 +71,7 @@
   display: grid;
   place-items: center;
   pointer-events: none;
-  color: rgb(35, 168, 41);
+  color: var(--terminal-indicator);
   font: 500 0.75rem/1 system-ui, sans-serif;
   letter-spacing: 0.04em;
 }

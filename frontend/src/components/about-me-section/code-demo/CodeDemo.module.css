@@ -46,12 +46,12 @@
 
 .demo button[aria-pressed="true"] {
   color: #fff;
-  background: #102219;
+  background: var(--terminal-active-background);
 }
 
 .demo button:focus-visible,
 .editor:focus-visible {
-  outline: 2px solid rgb(25, 212, 88);
+  outline: 2px solid var(--terminal-accent);
   outline-offset: -2px;
 }
 
@@ -86,8 +86,8 @@
 }
 .terminalTitle { color: #cccccc; font-size: 11px; letter-spacing: 0.06em; }
 .command { margin-top: 0.35rem; color: #79c0ff; }
-.number { color: #b5cea8; }
-.output { white-space: pre-wrap; color: #7ee787; min-height: 1.6em; }
+.number { color: var(--terminal-number); }
+.output { white-space: pre-wrap; color: var(--terminal-output); min-height: 1.6em; }
 @media (max-width: 400px) {
   .demo button { padding-inline: 0.5rem; font-size: 12px; }
 }
@@ -133,11 +133,11 @@
 
 .separator:hover,
 .separator:focus-visible {
-  background: #20432c;
+  background: var(--terminal-resize);
 }
 
 .separator:focus-visible,
 .terminal:focus-visible {
-  outline: 2px solid rgb(25, 212, 88);
+  outline: 2px solid var(--terminal-accent);
   outline-offset: -2px;
 }
