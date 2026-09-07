@@ -1,0 +1,71 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 200px;
+  height: 50px;
+  padding: 2px 16px;
+  border: none;
+  border-radius: 0;
+  font-family: "Segoe UI";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.17s ease, color 0.17s ease;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button:focus-visible {
+  outline: 2px solid rgb(25, 212, 88);
+  outline-offset: 3px;
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+.red {
+  line-height: 16px;
+  background-color: rgb(77, 13, 13);
+}
+
+.red:hover {
+  background-color: rgb(104, 18, 18);
+}
+
+.blue {
+  background-color: rgb(24, 29, 85);
+}
+
+.blue:hover {
+  background-color: rgb(31, 37, 109);
+}
+
+.github {
+  gap: 20px;
+  padding: 2px 6px;
+  background-color: #191d20;
+}
+
+.github:hover {
+  background-color: #202529;
+}
+
+.logo {
+  height: 20px;
+  width: 20px;
+}
+
+@media (max-width: 600px) {
+  .button {
+    width: 100%;
+  }
+
+  .github {
+    gap: 10px;
+  }
+}

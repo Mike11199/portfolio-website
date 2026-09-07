@@ -1,0 +1,42 @@
+.codeButton {
+  display: inline-flex;
+  flex: 0 0 50px;
+  align-items: center;
+  justify-content: center;
+  order: 2;
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  padding: 0.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  color: #9a9a9a;
+  background: transparent;
+  transition: color 0.17s ease, background-color 0.17s ease;
+}
+
+.codeButton,
+.codeButton * {
+  user-select: none;
+}
+
+.codeButton:hover {
+  color: rgb(25, 212, 88);
+  background: rgba(25, 212, 88, 0.08);
+}
+
+.codeButton:focus-visible {
+  outline: 2px solid rgb(25, 212, 88);
+  outline-offset: 3px;
+}
+
+.codeButton:active {
+  transform: scale(0.9);
+}
+
+@media (max-width: 600px) {
+  .codeButton {
+    display: none;
+  }
+}

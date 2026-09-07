@@ -1,29 +1,22 @@
 import GitHubLogo from "../../../images/githubButtonLogo.png";
+import styles from "./Buttons.module.css";
 
 interface GitHubButtonProps {
   URL: string;
+  className?: string;
 }
 
-const GitHubButton = ({ URL }: GitHubButtonProps) => {
-  // opens link in new tab
-  const handleClick = (site: string) => {
-    setTimeout(() => {
-      window.open(site, "_blank");
-    }, 130);
-  };
-
-  return (
-    <>
-      <button
-        className="github_button"
-        onClick={() => handleClick(URL)}
-        title={URL}
-      >
-        <img className="github_logo" src={GitHubLogo} alt="github logo"></img>
-        GitHub Repo
-      </button>
-    </>
-  );
-};
+const GitHubButton = ({ URL, className = "" }: GitHubButtonProps) => (
+  <a
+    className={`${styles.button} ${styles.github} ${className}`}
+    href={URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    title={URL}
+  >
+    <img className={styles.logo} src={GitHubLogo} alt="" />
+    GitHub Repo
+  </a>
+);
 
 export default GitHubButton;

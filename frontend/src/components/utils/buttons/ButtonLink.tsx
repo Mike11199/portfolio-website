@@ -1,28 +1,21 @@
+import styles from "./Buttons.module.css";
+
 interface ButtonLinkProps {
   URL: string;
   variant?: "red" | "blue";
   buttonText: string;
 }
 
-const ButtonLink = ({ URL, variant = "blue", buttonText }: ButtonLinkProps) => {
-  // opens link in new tab
-  const handleClick = (site: string) => {
-    setTimeout(() => {
-      window.open(site, "_blank");
-    }, 130);
-  };
-
-  return (
-    <>
-      <button
-        className={`${variant === "red" ? "video_button" : "website_button"}`}
-        onClick={() => handleClick(URL)}
-        title={URL}
-      >
-        {buttonText}
-      </button>
-    </>
-  );
-};
+const ButtonLink = ({ URL, variant = "blue", buttonText }: ButtonLinkProps) => (
+  <a
+    className={`${styles.button} ${styles[variant]}`}
+    href={URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    title={URL}
+  >
+    {buttonText}
+  </a>
+);
 
 export default ButtonLink;

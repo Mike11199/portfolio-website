@@ -219,32 +219,6 @@ button *,
   font-size: 18px;
 }
 
-.video_button {
-  font-family: "Segoe UI";
-  font-weight: 500;
-  width: 200px;
-  height: 50px;
-  display: inline-block;
-  outline: none;
-  cursor: url("./images/dark_pointer_small.png") 9 2, pointer;
-  font-size: 14px;
-  line-height: 16px;
-  padding: 2px 16px;
-  border: none;
-  color: #fff;
-  background-color: rgb(77, 13, 13);
-  transition: background-color 0.17s ease, color 0.17s ease;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-
-.video_button:hover {
-  background-color: rgb(104, 18, 18);
-}
-
-.video_button:active {
-  transform: scale(0.9);
-}
-
 .binaryDigitBlink {
   animation: binary-digit-blink ease-in-out infinite alternate;
   width: 5px;
@@ -266,56 +240,6 @@ ul > li > ul {
 ul > li > ul > li {
   margin-top: 10px;
   list-style-type: circle;
-}
-
-.repositoryActions {
-  display: contents;
-}
-
-.repositoryActions .github_button {
-  width: 200px;
-  height: 50px;
-  border-radius: 0;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-
-.repositoryCodeButton {
-  display: inline-flex;
-  flex: 0 0 50px;
-  align-items: center;
-  justify-content: center;
-  order: 2;
-  width: 50px;
-  height: 50px;
-  margin-left: auto;
-  padding: 0.25rem;
-  border: none;
-  border-radius: 0.25rem;
-  box-shadow: none;
-  cursor: url("./images/dark_pointer_small.png") 9 2, pointer;
-  color: #9a9a9a;
-  background: transparent;
-  transition: color 0.17s ease, background-color 0.17s ease;
-}
-
-.repositoryCodeButton,
-.repositoryCodeButton * {
-  user-select: none;
-}
-
-.repositoryCodeButton:hover {
-  color: rgb(25, 212, 88);
-  background: rgba(25, 212, 88, 0.08);
-}
-
-.repositoryCodeButton:active,
-.repositoryActions .github_button:active {
-  transform: scale(0.9);
-}
-
-.github_logo {
-  height: 20px;
-  width: 20px;
 }
 
 .entire_page {
@@ -408,59 +332,6 @@ ul {
   margin: 0;
   list-style-type: square;
   height: auto;
-}
-
-.github_button {
-  font-family: "Segoe UI";
-  font-weight: 500;
-  width: 200px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  height: 50px;
-  justify-content: center;
-  outline: none;
-  cursor: url("./images/dark_pointer_small.png") 9 2, pointer;
-  font-size: 14px;
-  border: none;
-  color: #fff;
-  background-color: #191d20;
-  transition: background-color 0.17s ease, color 0.17s ease;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-
-.github_button:hover {
-  background-color: #202529;
-}
-
-.github_button:active {
-  transform: scale(0.9);
-}
-
-.website_button {
-  font-family: "Segoe UI";
-  font-weight: 500;
-  width: 200px;
-  height: 50px;
-  display: inline-block;
-  outline: none;
-  cursor: url("./images/dark_pointer_small.png") 9 2, pointer;
-  font-size: 14px;
-  padding: 2px 16px;
-  border: none;
-  color: #fff;
-  background-color: rgb(24, 29, 85);
-  transition: background-color 0.17s ease, color 0.17s ease;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-
-.website_button:hover {
-  background-color: rgb(31, 37, 109);
-}
-
-.website_button:active {
-  transform: scale(0.9);
 }
 
 /* Styles for screens smaller than 600px */
@@ -569,37 +440,8 @@ ul {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   }
 
-  .repositoryActions {
-    width: 100%;
-  }
-
-  .repositoryActions .github_button {
-    flex: 1;
-    width: auto;
-  }
-
-  .repositoryCodeButton {
-    display: none;
-  }
-
   .entire_page {
     gap: 0rem;
-  }
-
-  .github_button {
-    width: 100%;
-    border-radius: 0px;
-    gap: 10px;
-  }
-
-  .website_button {
-    width: 100%;
-    border-radius: 0px;
-  }
-
-  .video_button {
-    width: 100%;
-    border-radius: 0px;
   }
   html {
     scroll-padding-top: 50px;

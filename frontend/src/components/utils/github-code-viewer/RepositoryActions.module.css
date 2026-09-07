@@ -1,0 +1,14 @@
+.actions {
+  display: contents;
+}
+
+@media (max-width: 600px) {
+  .actions {
+    width: 100%;
+  }
+
+  .actions .repositoryLink {
+    flex: 1;
+    width: auto;
+  }
+}
