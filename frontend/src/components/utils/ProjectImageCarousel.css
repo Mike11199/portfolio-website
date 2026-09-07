@@ -224,6 +224,19 @@
   isolation: isolate;
 }
 
+@media (min-width: 601px) {
+  .project-image-carousel .carousel-slider .slide,
+  .project-image-carousel .carousel-slider img,
+  .project-image-carousel .carousel-slider video {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .project-image-carousel .carousel-slider img {
+    -webkit-user-drag: none;
+  }
+}
+
 @media (max-width: 600px) {
   .project-image-carousel--mobile-padded {
     padding-inline: 5%;
