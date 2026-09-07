@@ -64,9 +64,9 @@ const getLanguage = (path: string): FileLanguage => {
   const lowerPath = path.toLowerCase();
   const fileName = lowerPath.split("/").pop() ?? lowerPath;
 
-  if (fileName === "dockerfile" || fileName.endsWith("../.dockerfile")) return "docker";
-  if (!fileName.includes("..")) return "text";
-  const extension = fileName.slice(fileName.lastIndexOf("..") + 1);
+  if (fileName === "dockerfile" || fileName.endsWith(".dockerfile")) return "docker";
+  if (!fileName.includes(".")) return "text";
+  const extension = fileName.slice(fileName.lastIndexOf(".") + 1);
   return fileLanguages.get(extension) ?? "text";
 };
 

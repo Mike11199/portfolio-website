@@ -22,7 +22,7 @@
 
 .menu button:hover,
 .menu button:focus-visible {
-  background: #264f78;
-  color: #fff;
+  background: var(--terminal-hover);
+  color: var(--terminal-accent);
   outline: none;
 }
