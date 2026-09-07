@@ -110,8 +110,16 @@
 }
 
 @media (max-width: 600px) {
+  .footer { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+  .first,
+  .last { display: none; }
+  .previous { grid-column: 1; }
+  .status { grid-column: 2; }
+  .next { grid-column: 3; }
+
   .previous,
   .next {
+    padding-inline: 1rem;
     font-weight: 700;
   }
 }

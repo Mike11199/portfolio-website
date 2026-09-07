@@ -28,6 +28,7 @@ const FullscreenButton = ({ isFullscreen, disabled, onClick }: FullscreenButtonP
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d={iconPath} />
       </svg>
+      <span className={styles.buttonLabel}>{isFullscreen ? "Exit fullscreen" : "Fullscreen"}</span>
     </button>
   );
 };

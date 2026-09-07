@@ -1,5 +1,5 @@
 // Read-only GitHub source viewer with a collapsible explorer and resizable panes.
-import { useId, type CSSProperties } from "react";
+import { useId, useState, type CSSProperties } from "react";
 import RepositoryEditor from "./RepositoryEditor";
 import RepositoryExplorer from "./RepositoryExplorer";
 import { useExplorerResize } from "./useExplorerResize";
@@ -15,6 +15,7 @@ export interface GitHubCodeViewerProps {
 
 const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main" }: GitHubCodeViewerProps) => {
   const panelId = useId();
+  const [showFiles, setShowFiles] = useState(false);
   const { files, activeFile, openPaths, setActivePath, closePath, source, isLoading, hasError } = useRepositorySource(owner, repository, branch);
   const { workspaceRef, explorerWidth, isResizing, separatorProps } = useExplorerResize();
   return (
@@ -27,12 +28,29 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main" }:
         <span className={styles.windowTitle}>{repository}</span>
       </header>
 
-      <div ref={workspaceRef} className={styles.workspace}>
+      <button
+        type="button"
+        className={styles.filesToggle}
+        aria-expanded={showFiles}
+        onClick={() => setShowFiles((visible) => !visible)}
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 7V5h6l2 2h10v13H3Z" />
+        </svg>
+        <span>{showFiles ? "Back to code" : "Files"}</span>
+        <svg className={styles.filesChevron} viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m9 5 7 7-7 7" />
+        </svg>
+      </button>
+      <div ref={workspaceRef} className={`${styles.workspace} ${showFiles ? styles.mobileFilesOpen : ""}`}>
         <RepositoryExplorer
           repository={repository}
           files={files}
           activePath={activeFile?.path ?? ""}
-          onSelectFile={setActivePath}
+          onSelectFile={(path) => {
+            setActivePath(path);
+            setShowFiles(false);
+          }}
         />
         <div className={styles.explorerDivider} {...separatorProps} />
         <RepositoryEditor

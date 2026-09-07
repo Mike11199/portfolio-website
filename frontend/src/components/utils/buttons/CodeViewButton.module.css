@@ -14,6 +14,8 @@
   transition: color 0.17s ease, background-color 0.17s ease;
 }
 
+.label { display: none; }
+
 .codeButton,
 .codeButton * {
   user-select: none;

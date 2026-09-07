@@ -85,10 +85,6 @@ const ProjectImageCarousel = ({ items, loop = true }: ProjectImageCarouselProps)
             items={items}
             activeIndex={activeIndex}
             onSelect={setSelectedIndex}
-            onPrevious={previous}
-            onNext={next}
-            hasPrevious={hasPrevious}
-            hasNext={hasNext}
           />
           <CarouselFooter
             status={`${activeIndex + 1} of ${items.length}`}

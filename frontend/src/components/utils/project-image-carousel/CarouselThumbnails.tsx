@@ -6,20 +6,12 @@ interface CarouselThumbnailsProps {
   items: ProjectMedia[];
   activeIndex: number;
   onSelect: (index: number) => void;
-  onPrevious: () => void;
-  onNext: () => void;
-  hasPrevious: boolean;
-  hasNext: boolean;
 }
 
 const CarouselThumbnails = ({
   items,
   activeIndex,
   onSelect,
-  onPrevious,
-  onNext,
-  hasPrevious,
-  hasNext,
 }: CarouselThumbnailsProps) => {
   const strip = useRef<HTMLDivElement>(null);
   const selected = useRef<HTMLButtonElement>(null);
@@ -36,9 +28,18 @@ const CarouselThumbnails = ({
     }
   }, [activeIndex]);
 
+  const scrollThumbnails = (direction: number) => {
+    const container = strip.current;
+    if (!container) return;
+    container.scrollBy({
+      left: direction * container.clientWidth,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+    });
+  };
+
   return (
     <div className={styles.ribbon}>
-      <button type="button" className={styles.scrollButton} aria-label="Previous image from thumbnails" onClick={onPrevious} disabled={!hasPrevious}>
+      <button type="button" className={styles.scrollButton} aria-label="Scroll thumbnails left" onClick={() => scrollThumbnails(-1)}>
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m10 3-5 5 5 5" /></svg>
       </button>
       <div ref={strip} className={styles.strip} role="group" aria-label="Choose image">
@@ -55,7 +56,7 @@ const CarouselThumbnails = ({
           </button>
         ))}
       </div>
-      <button type="button" className={styles.scrollButton} aria-label="Next image from thumbnails" onClick={onNext} disabled={!hasNext}>
+      <button type="button" className={styles.scrollButton} aria-label="Scroll thumbnails right" onClick={() => scrollThumbnails(1)}>
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
       </button>
     </div>

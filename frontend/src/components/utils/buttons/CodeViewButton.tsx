@@ -55,6 +55,7 @@ const CodeViewButton = ({ showCode, onToggleCode }: CodeViewButtonProps) => {
       onClick={onToggleCode}
     >
       {showCode ? <ImageIcon /> : <CodeIcon />}
+      <span className={styles.label}>{showCode ? "Images" : "Code"}</span>
     </button>
   );
 };

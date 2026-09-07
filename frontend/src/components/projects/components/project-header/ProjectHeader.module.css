@@ -55,6 +55,12 @@
 }
 
 @media (max-width: 600px) {
+  .icons img {
+    width: 2rem !important;
+    height: 2rem !important;
+    object-fit: contain;
+  }
+
   .trailingAction { display: none; }
   .header {
     flex-direction: column;

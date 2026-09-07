@@ -32,8 +32,8 @@ const ProjectSection = ({
       <ProjectMediaView
         className={styles.media}
         code={code}
-        showCode={!isMobile && showCode}
-        onToggleCode={isMobile ? undefined : onToggleCode}
+        showCode={showCode && (!isMobile || mediaLayout !== "phone")}
+        onToggleCode={onToggleCode}
         mediaLayout={mediaLayout}
       >
         {media}
