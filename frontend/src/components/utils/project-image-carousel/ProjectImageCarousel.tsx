@@ -93,7 +93,7 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
         aria-pressed={isFullscreen}
         title={isFullscreen ? "Exit fullscreen" : "View carousel fullscreen"}>
         <svg className="carousel-fullscreen-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" />
+          <path d={isFullscreen ? "M9 4v5H4M15 4v5h5M15 20v-5h5M9 20v-5H4" : "M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"} />
         </svg>
       </button>
       <Carousel
