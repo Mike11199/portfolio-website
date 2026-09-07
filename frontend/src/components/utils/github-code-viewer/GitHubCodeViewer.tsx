@@ -1,5 +1,5 @@
 // Read-only GitHub source viewer with a collapsible explorer and resizable panes.
-import type { CSSProperties } from "react";
+import { useId, type CSSProperties } from "react";
 import RepositoryEditor from "./RepositoryEditor";
 import RepositoryExplorer from "./RepositoryExplorer";
 import { useExplorerResize } from "./useExplorerResize";
@@ -13,8 +13,9 @@ interface GitHubCodeViewerProps {
   branch?: string;
 }
 
-const GitHubCodeViewer = ({ repositoryUrl, owner, repository, branch = "main" }: GitHubCodeViewerProps) => {
-  const { files, activeFile, setActivePath, source, isLoading, hasError } = useRepositorySource(owner, repository, branch);
+const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main" }: GitHubCodeViewerProps) => {
+  const panelId = useId();
+  const { files, activeFile, openPaths, setActivePath, closePath, source, isLoading, hasError } = useRepositorySource(owner, repository, branch);
   const { workspaceRef, explorerWidth, isResizing, separatorProps } = useExplorerResize();
   return (
     <section
@@ -30,14 +31,18 @@ const GitHubCodeViewer = ({ repositoryUrl, owner, repository, branch = "main" }:
         <RepositoryExplorer
           repository={repository}
           files={files}
-          activePath={activeFile.path}
+          activePath={activeFile?.path ?? ""}
           onSelectFile={setActivePath}
         />
         <div className={styles.explorerDivider} {...separatorProps} />
         <RepositoryEditor
+          panelId={panelId}
           repository={repository}
           file={activeFile}
-          fileUrl={`${repositoryUrl}/blob/${branch}/${activeFile.path}`}
+          openPaths={openPaths}
+          onSelectFile={setActivePath}
+          onCloseFile={closePath}
+          fileUrl={activeFile ? `${repositoryUrl}/blob/${branch}/${activeFile.path}` : repositoryUrl}
           source={source}
           isLoading={isLoading}
           hasError={hasError}
@@ -45,8 +50,8 @@ const GitHubCodeViewer = ({ repositoryUrl, owner, repository, branch = "main" }:
       </div>
 
       <footer className={styles.statusbar}>
-        <span>{activeFile.language}</span>
-        <span>{isLoading ? "Loading" : hasError ? "Offline" : "GitHub source"}</span>
+        <span>{activeFile?.language ?? "No file open"}</span>
+        <span>{activeFile && isLoading ? "Loading" : activeFile && hasError ? "Offline" : "GitHub source"}</span>
         <span className={styles.statusSpacer} />
         <a href={`https://github.dev/${owner}/${repository}`} target="_blank" rel="noreferrer">VS Code Web ↗</a>
         <a href={repositoryUrl} target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -54,5 +59,9 @@ const GitHubCodeViewer = ({ repositoryUrl, owner, repository, branch = "main" }:
     </section>
   );
 };
+
+const GitHubCodeViewer = (props: GitHubCodeViewerProps) => (
+  <RepositoryViewer key={`${props.owner}/${props.repository}/${props.branch ?? "main"}`} {...props} />
+);
 
 export default GitHubCodeViewer;

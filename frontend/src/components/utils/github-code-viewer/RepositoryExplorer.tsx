@@ -78,8 +78,15 @@ const RepositoryExplorer = ({ repository, files, activePath, onSelectFile }: Rep
   const [expandedDirectories, setExpandedDirectories] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    setExpandedDirectories(new Set());
-  }, [files]);
+    setExpandedDirectories((current) => {
+      const next = new Set(current);
+      const parts = activePath.split("/");
+      for (let depth = 1; depth < parts.length; depth++) {
+        next.add(parts.slice(0, depth).join("/"));
+      }
+      return next;
+    });
+  }, [activePath]);
 
   const toggleDirectory = (path: string) => {
     setExpandedDirectories((current) => {
@@ -91,7 +98,20 @@ const RepositoryExplorer = ({ repository, files, activePath, onSelectFile }: Rep
 
   return (
     <aside className={styles.explorer} aria-label="Repository files">
-      <div className={styles.explorerTitle}>EXPLORER</div>
+      <div className={styles.explorerTitle}>
+        <span>EXPLORER</span>
+        <button
+          type="button"
+          className={styles.collapseAll}
+          aria-label="Collapse all folders"
+          title="Collapse all folders"
+          onClick={() => setExpandedDirectories(new Set())}
+        >
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M5 2h9v9M2 5h9v9H2zM4 9.5h5" />
+          </svg>
+        </button>
+      </div>
       <div className={styles.rootLabel}><span aria-hidden="true">▾</span> {repository}</div>
       <div className={styles.tree} role="tree" aria-label="Source files">
         {fileTree.children.map((node) => (

@@ -44,7 +44,6 @@
 }
 
 .windowTitle,
-.tabName,
 .treeLabel {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -104,11 +103,37 @@
 }
 
 .explorerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 0.8rem 0.55rem;
   color: #9d9d9d;
   font: 600 0.68rem/1 system-ui, sans-serif;
   letter-spacing: 0.08em;
 }
+
+.collapseAll {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0.2rem;
+}
+
+.collapseAll svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+}
+
+.collapseAll:hover { color: #fff; background: #242424; }
+.collapseAll:focus-visible { outline: 2px solid var(--terminal-accent); }
 
 .rootLabel {
   display: flex;
@@ -182,21 +207,6 @@
   min-height: 0;
   background: #101010;
 }
-
-.tab {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  gap: 0.5rem;
-  min-width: 0;
-  min-height: 2.15rem;
-  padding: 0 0.9rem;
-  color: #f0f0f0;
-  background: #101010;
-  border-bottom: 1px solid #242424;
-}
-
-.tab .fileIcon { width: 1rem; height: 1rem; }
 
 .breadcrumb {
   flex-shrink: 0;

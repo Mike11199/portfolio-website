@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { createRepositoryFile } from "./repositoryFiles";
+import { useRepositoryTabs } from "./useRepositoryTabs";
 
 interface GitTreeResponse {
   tree?: Array<{ path: string; type: string }>;
@@ -9,11 +10,11 @@ const fallbackFiles = [createRepositoryFile("README.md")];
 
 export const useRepositorySource = (owner: string, repository: string, branch: string) => {
   const [files, setFiles] = useState(fallbackFiles);
-  const [activePath, setActivePath] = useState(fallbackFiles[0].path);
+  const { paths: openPaths, activePath, selectPath: setActivePath, closePath, selectInitialPath } = useRepositoryTabs(fallbackFiles[0].path);
   const [source, setSource] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const activeFile = files.find((file) => file.path === activePath) ?? files[0];
+  const activeFile = files.find((file) => file.path === activePath) ?? null;
 
   useEffect(() => {
     let cancelled = false;
@@ -32,7 +33,7 @@ export const useRepositorySource = (owner: string, repository: string, branch: s
         if (discoveredFiles.length > 0) {
           const preferredFile = discoveredFiles.find((file) => /hash_map_oa\.py$/i.test(file.path)) ?? discoveredFiles[0];
           setFiles(discoveredFiles);
-          setActivePath(preferredFile.path);
+          selectInitialPath(preferredFile.path);
         }
       })
       .catch(() => {
@@ -42,7 +43,7 @@ export const useRepositorySource = (owner: string, repository: string, branch: s
     return () => {
       cancelled = true;
     };
-  }, [branch, owner, repository]);
+  }, [branch, owner, repository, selectInitialPath]);
 
   useEffect(() => {
     let cancelled = false;
@@ -50,7 +51,7 @@ export const useRepositorySource = (owner: string, repository: string, branch: s
     setHasError(false);
     setSource("");
 
-    if (activeFile.isBinary) {
+    if (!activeFile || activeFile.isBinary) {
       setIsLoading(false);
       return () => {
         cancelled = true;
@@ -78,7 +79,7 @@ export const useRepositorySource = (owner: string, repository: string, branch: s
     return () => {
       cancelled = true;
     };
-  }, [activeFile.isBinary, activeFile.path, branch, owner, repository]);
+  }, [activeFile, branch, owner, repository]);
 
-  return { files, activeFile, setActivePath, source, isLoading, hasError };
+  return { files, activeFile, openPaths, setActivePath, closePath, source, isLoading, hasError };
 };
