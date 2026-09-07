@@ -1,6 +1,6 @@
 .layout {
   /* Change this to resize the complete media and text panels together. */
-  --project-total-height: 602px;
+  --project-total-height: 570px;
   --project-nav-height: 3rem;
   --project-thumbnails-height: 6rem;
   display: grid;
@@ -66,7 +66,7 @@
 
 @media (max-width: 900px) {
   .layout {
-    --project-total-height: clamp(410px, 75vw, 540px);
+    --project-total-height: clamp(390px, 70vw, 510px);
     grid-template-columns: minmax(0, 1fr);
   }
 

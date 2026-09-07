@@ -27,7 +27,7 @@ const KspScripting = () => (
       icons={<CSharpIcon />}
     />
     <ProjectSection
-      hideMediaControls
+      mediaLayout="video"
       media={
         <ProjectMediaFrame>
           <ReactVideoPlayer URL="https://www.youtube.com/watch?v=wl0nVNRrcf0" />

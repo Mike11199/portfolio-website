@@ -13,7 +13,7 @@ interface ProjectSectionProps {
   supplementalMedia?: ReactNode;
   showCode?: boolean;
   onToggleCode?: () => void;
-  hideMediaControls?: boolean;
+  mediaLayout?: "carousel" | "video" | "phone";
 }
 
 /** Owns panel sizing; media can inherit --project-panel-height for its frame. */
@@ -24,7 +24,7 @@ const ProjectSection = ({
   supplementalMedia,
   showCode,
   onToggleCode,
-  hideMediaControls = false,
+  mediaLayout = "carousel",
 }: ProjectSectionProps) => {
   const isMobile = useWindowWidth() <= 600;
   const decorationText = description.join("\n\n");
@@ -35,8 +35,8 @@ const ProjectSection = ({
         className={styles.media}
         code={code}
         showCode={!isMobile && showCode}
-        onToggleCode={isMobile || hideMediaControls ? undefined : onToggleCode}
-        hideMediaControls={hideMediaControls}
+        onToggleCode={isMobile ? undefined : onToggleCode}
+        mediaLayout={mediaLayout}
       >
         {media}
         {supplementalMedia && <div className={styles.supplemental}>{supplementalMedia}</div>}

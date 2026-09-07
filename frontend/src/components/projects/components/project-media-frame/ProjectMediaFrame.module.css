@@ -1,9 +1,8 @@
 .frame {
-  height: var(--project-total-height, var(--project-panel-height));
+  height: calc(var(--project-total-height) - var(--project-header-height) - var(--project-nav-height));
   min-width: 0;
   overflow: hidden;
   background: #000;
-  border-radius: 0.5rem;
 }
 
 .frame > :global(.player-wrapper) {
@@ -16,6 +15,8 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
+
+.phone { height: var(--project-total-height); }
 
 .paired > div,
 .paired img,

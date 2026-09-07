@@ -20,6 +20,12 @@
   padding-top: var(--project-header-height);
 }
 .hiddenMedia { visibility: hidden; }
+.videoFooter {
+  box-sizing: border-box;
+  height: var(--project-nav-height, 3rem);
+  background: #000;
+  border-top: 2px solid var(--terminal-divider);
+}
 .codeLayer { position: absolute; inset: 0; }
 .codeLayer > :global(.github-code-viewer) { height: 100%; min-height: 0; border: 0; }
 

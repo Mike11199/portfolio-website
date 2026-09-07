@@ -55,7 +55,9 @@ const KotlinAndroidProjects = () => {
     <>
       <section className="portfolio-project kotlin_section">
         <ProjectHeader
-          trailingAction={<CodeViewButton showCode={showCode} onToggleCode={() => setShowCode((visible) => !visible)} />}
+          trailingAction={
+            <CodeViewButton showCode={showCode} onToggleCode={() => setShowCode((visible) => !visible)} />
+          }
           title={"Kotlin (Jetpack Compose) - Sacramento City and Flight Search App"}
           icons={
             <>
@@ -80,7 +82,7 @@ const KotlinAndroidProjects = () => {
         />
 
         <ProjectSection
-          hideMediaControls
+          mediaLayout="phone"
           showCode={showCode}
           code={
               <GitHubCodeViewer

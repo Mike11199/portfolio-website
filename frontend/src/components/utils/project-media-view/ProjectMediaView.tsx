@@ -82,7 +82,7 @@ interface ProjectMediaViewProps {
   className?: string;
   showCode?: boolean;
   showHeader?: boolean;
-  hideMediaControls?: boolean;
+  mediaLayout?: "carousel" | "video" | "phone";
   onToggleCode?: () => void;
 }
 
@@ -93,11 +93,11 @@ const ProjectMediaView = ({
   className = "",
   showCode = false,
   showHeader = true,
-  hideMediaControls = false,
+  mediaLayout = "carousel",
   onToggleCode,
 }: ProjectMediaViewProps) => {
   const { root, isFullscreen, isChangingFullscreen, error, toggleFullscreen } = useMediaFullscreen();
-  const headerClass = showHeader && !hideMediaControls ? "" : styles.overlayControls;
+  const headerClass = showHeader && mediaLayout !== "phone" ? "" : styles.overlayControls;
   const mediaClass = showCode ? `${styles.mediaLayer} ${styles.hiddenMedia}` : styles.mediaLayer;
 
   return (
@@ -109,18 +109,21 @@ const ProjectMediaView = ({
         aria-label="Project media"
         className={`${styles.view} ${headerClass} ${className} project-media-view`}
       >
-        {(!hideMediaControls || showCode) && (
+        {(mediaLayout !== "phone" || showCode) && (
           <MediaToolbar showCode={showCode} onToggleCode={onToggleCode}>
-            <FullscreenButton
-              isFullscreen={isFullscreen}
-              disabled={isChangingFullscreen}
-              onClick={toggleFullscreen}
-            />
+            {(mediaLayout !== "video" || showCode) && (
+              <FullscreenButton
+                isFullscreen={isFullscreen}
+                disabled={isChangingFullscreen}
+                onClick={toggleFullscreen}
+              />
+            )}
           </MediaToolbar>
         )}
         {error && <div className={styles.error} role="status">{error}</div>}
         <div className={mediaClass} aria-hidden={showCode || undefined}>
           {children}
+          {mediaLayout === "video" && <div className={styles.videoFooter} aria-hidden="true" />}
         </div>
         {showCode && code && <div className={styles.codeLayer}>{code}</div>}
       </div>
