@@ -84,6 +84,11 @@
   --project-carousel-divider-color: var(--terminal-divider);
 }
 
+/* Arrow-key navigation focuses the frame; Tab still outlines individual controls. */
+.project-image-carousel:focus {
+  outline: none;
+}
+
 /* Native buttons cover each half; CSS cursors need no pointer tracking or renders. */
 .project-image-carousel .carousel-slide-navigation {
   position: absolute;

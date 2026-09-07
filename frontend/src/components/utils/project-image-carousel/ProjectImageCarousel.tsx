@@ -47,6 +47,7 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
       event.preventDefault();
       // Handle fullscreen navigation once, before the library's keyboard listener.
       event.stopPropagation();
+      root.current?.focus({ preventScroll: true });
       if (event.key === "ArrowLeft") {
         carouselRef.current?.onClickPrev();
       } else {
@@ -86,7 +87,7 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
   useLayoutEffect(updateAspectRatio, [activeItem, props.children]);
 
   return (
-    <div ref={root} data-infinite-loop={Boolean(props.infiniteLoop)} className={`project-image-carousel${mobilePadding ? " project-image-carousel--mobile-padded" : ""}${fixedHeight !== undefined ? " project-image-carousel--fixed" : ""}`} style={{ "--project-image-height": typeof fixedHeight === "number" ? `${fixedHeight}px` : fixedHeight } as CSSProperties} onLoadCapture={updateAspectRatio} onLoadedMetadataCapture={updateAspectRatio}>
+    <div ref={root} tabIndex={-1} role="region" aria-label="Project media carousel" data-infinite-loop={Boolean(props.infiniteLoop)} className={`project-image-carousel${mobilePadding ? " project-image-carousel--mobile-padded" : ""}${fixedHeight !== undefined ? " project-image-carousel--fixed" : ""}`} style={{ "--project-image-height": typeof fixedHeight === "number" ? `${fixedHeight}px` : fixedHeight } as CSSProperties} onLoadCapture={updateAspectRatio} onLoadedMetadataCapture={updateAspectRatio}>
       <button type="button" className="carousel-fullscreen-button" onClick={toggleFullscreen}
         aria-label={isFullscreen ? "Exit fullscreen" : "View carousel fullscreen"}
         aria-pressed={isFullscreen}
@@ -102,10 +103,13 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
         // Use the library's navigation slots so hit areas stay inside the media frame.
         renderArrowPrev={(onClick, available, label) => slides.length > 1 && (
           <button type="button" className="carousel-slide-navigation carousel-slide-navigation--previous"
+            // Pointer clicks should not leave keyboard focus on the half-frame hit area.
+            onMouseDown={(event) => event.preventDefault()}
             onClick={onClick} disabled={!available} aria-label={label} />
         )}
         renderArrowNext={(onClick, available, label) => slides.length > 1 && (
           <button type="button" className="carousel-slide-navigation carousel-slide-navigation--next"
+            onMouseDown={(event) => event.preventDefault()}
             onClick={onClick} disabled={!available} aria-label={label} />
         )}
         showStatus={false}
