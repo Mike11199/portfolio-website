@@ -1,6 +1,6 @@
 .footer {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 2.75rem minmax(0, 1fr) auto minmax(0, 1fr) 2.75rem;
   position: relative;
   height: var(--project-nav-height, 3rem);
   background: #000;
@@ -10,13 +10,15 @@
   box-sizing: border-box;
 }
 
+.first,
+.last,
 .previous,
 .next {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.4rem;
   min-width: 0;
-  padding: 0 1.25rem;
+  padding: 0 0.35rem;
   border: 0;
   color: #a3a3a3;
   background: transparent;
@@ -27,20 +29,24 @@
 }
 
 .previous {
-  grid-column: 1;
+  grid-column: 2;
 }
 
 .next {
-  grid-column: 2;
+  grid-column: 4;
   justify-content: flex-end;
 }
 
-.previous:hover,
-.next:hover {
+.first:hover,
+.last:hover,
+.previous:hover:not(:disabled),
+.next:hover:not(:disabled) {
   color: #e5e5e5;
   background: rgba(255, 255, 255, 0.08);
 }
 
+.first:focus-visible,
+.last:focus-visible,
 .previous:focus-visible,
 .next:focus-visible {
   outline: 2px solid #a3a3a3;
@@ -50,6 +56,31 @@
 .previous:disabled,
 .next:disabled {
   visibility: hidden;
+}
+
+.first {
+  grid-column: 1;
+}
+
+.last {
+  grid-column: 5;
+}
+
+.first,
+.last {
+  justify-content: center;
+  color: #313131;
+}
+
+.first svg,
+.last svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .chevron {
@@ -66,11 +97,12 @@
 }
 
 .status {
-  position: absolute;
-  inset: 0;
+  grid-column: 3;
+  grid-row: 1;
   display: grid;
   place-items: center;
   pointer-events: none;
+  padding-inline: 0.35rem;
   color: var(--terminal-indicator);
   font: 500 0.75rem/1 system-ui, sans-serif;
   letter-spacing: 0.04em;

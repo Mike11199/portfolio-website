@@ -132,6 +132,10 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
           showArrows={showArrows}
           hasPrevious={activeItem > 0 || Boolean(props.infiniteLoop)}
           hasNext={activeItem < slides.length - 1 || Boolean(props.infiniteLoop)}
+          hasFirst={activeItem > 0}
+          hasLast={activeItem < slides.length - 1}
+          onFirst={() => carouselRef.current?.moveTo(0)}
+          onLast={() => carouselRef.current?.moveTo(slides.length - 1)}
           onPrevious={() => carouselRef.current?.onClickPrev()}
           onNext={() => carouselRef.current?.onClickNext()}
         />
