@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "../App.css";
+import "./CustomTextCarousel.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { useWindowWidth } from "@react-hook/window-size";
-import HexFooter from "./utils/text-decoration/HexFooter";
-import FileDivider from "./utils/text-decoration/FileDivider";
-import styles from "./about-me-section/AboutMeTextCarousel.module.css";
+import HexFooter from "../utils/text-decoration/HexFooter";
+import FileDivider from "../utils/text-decoration/FileDivider";
+import styles from "../about-me-section/AboutMeTextCarousel.module.css";
 
 interface CustomTextCarouselProps {
   descriptionList: string[];
@@ -36,7 +36,7 @@ const CustomTextCarousel: React.FC<CustomTextCarouselProps> = ({
     return (
       <div className="carousel-container">
         <div className="text-carousel-content">
-          <button type="button" aria-label="Previous project paragraph" onClick={goToPrevious} className="carousel-button top-button" disabled={totalChildren < 2}>
+          <button type="button" aria-label="Previous project paragraph" onClick={goToPrevious} className="carousel-button" disabled={totalChildren < 2}>
             <FontAwesomeIcon icon={faArrowUp} size="sm" />
           </button>
           <div className="textWrapperMobile">
@@ -59,7 +59,7 @@ const CustomTextCarousel: React.FC<CustomTextCarouselProps> = ({
               </div>
             </div>
           </div>
-          <button type="button" aria-label="Next project paragraph" onClick={goToNext} className="carousel-button bottom-button" disabled={totalChildren < 2}>
+          <button type="button" aria-label="Next project paragraph" onClick={goToNext} className="carousel-button" disabled={totalChildren < 2}>
             <FontAwesomeIcon icon={faArrowDown} size="sm" />
           </button>
         </div>

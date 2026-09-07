@@ -32,128 +32,6 @@ button *,
   cursor: inherit;
 }
 
-.carousel-status {
-  color: rgb(35, 168, 41) !important;
-  background-color: rgba(0, 0, 0, 0.2);
-  font-size: 0.75rem !important;
-  font-weight: 500 !important;
-  margin-right: 2rem;
-  border-radius: 0.25rem;
-}
-
-.carousel .control-next {
-  cursor: url("./images/dark_pointer_small.png") 9 2, pointer !important;
-}
-
-.carousel .control-prev {
-  cursor: url("./images/dark_pointer_small.png") 9 2, pointer !important;
-}
-
-/* 1. NEXT arrow normal state */
-.carousel .control-next.control-arrow:before {
-  border-left: 10px solid rgb(35, 168, 41) !important;
-}
-
-/* 2. NEXT arrow hover state */
-.carousel .control-next.control-arrow:hover:before {
-  border-left: 10px solid rgb(35, 168, 41) !important;
-}
-
-/* 3. PREV arrow normal state */
-.carousel .control-prev.control-arrow:before {
-  border-right: 10px solid rgb(35, 168, 41) !important;
-}
-
-/* 4. PREV arrow hover state */
-.carousel .control-prev.control-arrow:hover:before {
-  border-right: 10px solid rgb(35, 168, 41) !important;
-}
-
-.carousel .thumb,
-.carousel .thumb:focus,
-.carousel .thumb:active,
-.carousel .thumb:hover {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  transition: none !important;
-}
-
-.carousel .thumb.selected {
-  border: 2px solid rgb(13, 70, 13) !important;
-  outline: none !important;
-  box-shadow: none !important;
-  transition: none !important;
-}
-
-/* 1. NEXT button normal */
-.carousel .control-arrow.control-next {
-  background: #000 !important;
-  opacity: 0.4 !important;
-}
-
-/* 2. NEXT button hover */
-.carousel .control-arrow.control-next:hover {
-  background: #000 !important;
-  opacity: 0.6 !important;
-}
-
-/* 1. PREV button normal */
-.carousel .control-arrow.control-prev {
-  background: #000 !important;
-  opacity: 0.4 !important;
-}
-
-/* 2. PREV button hover */
-.carousel .control-arrow.control-prev:hover {
-  background: #000 !important;
-  opacity: 0.6 !important;
-}
-
-.carousel.carousel-slider {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-  border-radius: 0.5rem !important;
-}
-
-.carousel .thumb {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
-  border-radius: 0.25rem !important;
-}
-
-.normal-text-desktop-view {
-  overflow: hidden;
-  display: flex;
-  width: 35%;
-  margin-bottom: 3%;
-  background: #191c29;
-  border-radius: 6px;
-  border: 2px solid rgba(56, 128, 62, 0.849);
-  color: rgb(25, 212, 88);
-  background-image: linear-gradient(#000000, #000000, #000000);
-  max-height: 50vh;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-}
-
-.textWrapperDesktop {
-  padding: 2rem 2rem;
-  overflow: auto;
-}
-
-.carousel-container {
-  display: none;
-}
-.carousel-button {
-  display: none;
-}
-
-.top-button {
-  display: none;
-}
-
-.bottom-button {
-  display: none;
-}
-
 .player-wrapper {
   width: 100%;
   position: absolute;
@@ -200,17 +78,6 @@ button *,
     scrollbar-width: var(--scrollbar-native-width, thin);
     scrollbar-color: var(--scrollbar-thumb, #383838) var(--scrollbar-track, #000);
   }
-}
-
-.textWrapperDesktop {
-  --scrollbar-size: 8px;
-  --scrollbar-native-width: thin;
-  --scrollbar-thumb: #1d3926;
-  --scrollbar-track: #161616;
-  --scrollbar-radius: 4px;
-  --scrollbar-hover: #2b5035;
-  --scrollbar-inset: 4px;
-  scrollbar-gutter: stable;
 }
 
 .binaryDigit {
@@ -347,11 +214,6 @@ ul {
     padding-right: 0%;
   }
 
-  .listTextItem {
-    margin-top: 2rem;
-    overflow-wrap: anywhere;
-  }
-
   body {
     background: #212534;
     width: 100% !important;
@@ -397,49 +259,6 @@ ul {
     list-style-position: inside;
   }
 
-  .carousel-container {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-  }
-
-  .carousel-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #000000;
-    border: none;
-    color: rgb(25, 212, 88);
-    font-size: x-large;
-    border-radius: 6px;
-    border: 2px solid rgba(56, 128, 62, 0.849);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .normal-text-desktop-view {
-    display: none;
-  }
-
-  .text-carousel-content {
-    margin-top: 3rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .textWrapperMobile {
-    display: flex;
-    justify-content: center;
-    overflow: visible;
-    background: #191c29;
-    border-radius: 6px;
-    border: 2px solid rgba(56, 128, 62, 0.849);
-    color: rgb(25, 212, 88);
-    background-image: linear-gradient(#000000, #000000, #000000);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-  }
-
   .entire_page {
     gap: 0rem;
   }
@@ -452,20 +271,4 @@ ul {
 /* Shared gutters belong to the section, not its images or description. */
 section.portfolio-project {
   padding-inline: clamp(1rem, 4vw, 3rem);
-}
-
-@media (max-width: 600px) {
-  .carousel-button {
-    min-height: 48px;
-    touch-action: manipulation;
-  }
-
-  .carousel-button:focus-visible {
-    outline: 2px solid rgb(25, 212, 88);
-    outline-offset: 3px;
-  }
-
-  .carousel-button:disabled {
-    opacity: 0.45;
-  }
 }

@@ -1,4 +1,3 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import AboutMeSection from "./about-me-section/AboutMeSection";
 import AlpinePeakClimbingSkiShop from "./projects/alpine-peak/AlpinePeakClimbingSkiShop";
 import KspScripting from "./projects/ksp-scripting/KspScripting";

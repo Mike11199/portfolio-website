@@ -1,0 +1,94 @@
+.normal-text-desktop-view {
+  overflow: hidden;
+  display: flex;
+  width: 35%;
+  margin-bottom: 3%;
+  background: #191c29;
+  border-radius: 6px;
+  border: 2px solid rgba(56, 128, 62, 0.849);
+  color: rgb(25, 212, 88);
+  background-image: linear-gradient(#000000, #000000, #000000);
+  max-height: 50vh;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.textWrapperDesktop {
+  padding: 2rem 2rem;
+  overflow: auto;
+  --scrollbar-size: 8px;
+  --scrollbar-native-width: thin;
+  --scrollbar-thumb: #1d3926;
+  --scrollbar-track: #161616;
+  --scrollbar-radius: 4px;
+  --scrollbar-hover: #2b5035;
+  --scrollbar-inset: 4px;
+  scrollbar-gutter: stable;
+}
+
+.carousel-container {
+  display: none;
+}
+
+.carousel-button {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .listTextItem {
+    margin-top: 2rem;
+    overflow-wrap: anywhere;
+  }
+
+  .carousel-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .carousel-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: rgb(25, 212, 88);
+    font-size: x-large;
+    border-radius: 6px;
+    border: 2px solid rgba(56, 128, 62, 0.849);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+
+  .normal-text-desktop-view {
+    display: none;
+  }
+
+  .text-carousel-content {
+    margin-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .textWrapperMobile {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    background: #191c29;
+    border-radius: 6px;
+    border: 2px solid rgba(56, 128, 62, 0.849);
+    color: rgb(25, 212, 88);
+    background-image: linear-gradient(#000000, #000000, #000000);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .carousel-button:focus-visible {
+    outline: 2px solid rgb(25, 212, 88);
+    outline-offset: 3px;
+  }
+
+  .carousel-button:disabled {
+    opacity: 0.45;
+  }
+}

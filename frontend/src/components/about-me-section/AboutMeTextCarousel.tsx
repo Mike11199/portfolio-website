@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../App.css";
+import "../custom-text-carousel/CustomTextCarousel.css";
 import styles from "./AboutMeTextCarousel.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -37,7 +37,7 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarouselProps> = ({
     return (
       <div className="carousel-container">
         <div className="text-carousel-content">
-          <button type="button" aria-label="Previous introduction paragraph" onClick={goToPrevious} className="carousel-button top-button" disabled={totalChildren < 2}>
+          <button type="button" aria-label="Previous introduction paragraph" onClick={goToPrevious} className="carousel-button" disabled={totalChildren < 2}>
             <FontAwesomeIcon icon={faArrowUp} size="sm" />
           </button>
           <div className="textWrapperMobile">
@@ -59,7 +59,7 @@ const AboutMeTextCarousel: React.FC<AboutMeTextCarouselProps> = ({
               </div>
             </div>
           </div>
-          <button type="button" aria-label="Next introduction paragraph" onClick={goToNext} className="carousel-button bottom-button" disabled={totalChildren < 2}>
+          <button type="button" aria-label="Next introduction paragraph" onClick={goToNext} className="carousel-button" disabled={totalChildren < 2}>
             <FontAwesomeIcon icon={faArrowDown} size="sm" />
           </button>
         </div>

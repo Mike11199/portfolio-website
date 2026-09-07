@@ -1,6 +1,7 @@
 import { Children, isValidElement, useEffect, useLayoutEffect, useRef, useState, type ComponentProps, type CSSProperties, type ReactElement } from "react";
 import { Carousel } from "react-responsive-carousel";
 import ProjectMediaSlide, { type ProjectMedia } from "./ProjectMediaSlide";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./ProjectImageCarousel.css";
 
 type Props = Partial<ComponentProps<typeof Carousel>> & {
