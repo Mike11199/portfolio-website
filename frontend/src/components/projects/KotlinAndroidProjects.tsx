@@ -3,7 +3,7 @@ import { useWindowWidth } from "@react-hook/window-size";
 import ButtonLink from "../utils/buttons/ButtonLink";
 import ProjectSection from "./ProjectSection";
 import ProjectMediaFrame from "./ProjectMediaFrame";
-import ProjectMediaSlide from "../utils/ProjectMediaSlide";
+import ProjectMediaSlide from "../utils/project-image-carousel/ProjectMediaSlide";
 import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../utils/github-code-viewer/RepositoryActions";
 

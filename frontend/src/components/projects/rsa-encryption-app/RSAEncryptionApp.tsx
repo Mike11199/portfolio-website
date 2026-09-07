@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
 import ButtonLink from "../../utils/buttons/ButtonLink";
-import ImagesList from "../../utils/ImageList";
+import ImagesList from "../../utils/project-image-carousel/ImageList";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { rsaEncryptionImages } from "../../../images/imageData.json";
