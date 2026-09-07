@@ -17,6 +17,7 @@ const isMediaSlide = (slide: unknown): slide is ReactElement<{ media: ProjectMed
 // Avoid relying on the library's mount-time measurement of lazy-loaded images.
 const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: Props) => {
   const root = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<Carousel>(null);
   const [selectedItem, setSelectedItem] = useState(props.selectedItem ?? 0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const activeItem = props.selectedItem ?? selectedItem;
@@ -69,6 +70,7 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
         </svg>
       </button>
       <Carousel
+        ref={carouselRef}
         {...props}
         dynamicHeight={false}
         // The library selects its animation handler only in its constructor.
@@ -85,6 +87,10 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
         onChange={(index, item) => {
           setSelectedItem(index);
           props.onChange?.(index, item);
+        }}
+        onClickItem={(index, item) => {
+          carouselRef.current?.onClickNext();
+          props.onClickItem?.(index, item);
         }}
       />
     </div>
