@@ -1,3 +1,4 @@
+import { CppIcon, OpenGLIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./OpenGLSolarSystem.css";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
@@ -51,22 +52,8 @@ const OpenGLSolarSystem = () => {
           title={"OpenGL C++ Solar System Model"}
           icons={
             <>
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
-                alt="c++ logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opengl/opengl-plain.svg"
-                alt="opengl logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
+              <CppIcon />
+              <OpenGLIcon />
             </>
           }
           actions={

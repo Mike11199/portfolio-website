@@ -1,3 +1,4 @@
+import { AndroidStudioIcon, KotlinIcon, JavaIcon, JetpackComposeIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./KotlinAndroidProjects.css";
 import { useState } from "react";
@@ -58,40 +59,10 @@ const KotlinAndroidProjects = () => {
           title={"Kotlin (Jetpack Compose) - Sacramento City and Flight Search App"}
           icons={
             <>
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg"
-                alt="android studio logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
-
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-plain-wordmark.svg"
-                alt="kotlin logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
-                alt="java logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
-
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jetpackcompose/jetpackcompose-original-wordmark.svg"
-                alt="jetpack compose logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
+              <AndroidStudioIcon />
+              <KotlinIcon />
+              <JavaIcon />
+              <JetpackComposeIcon />
             </>
           }
           actions={

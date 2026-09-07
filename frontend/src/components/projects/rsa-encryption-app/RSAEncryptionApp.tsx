@@ -1,3 +1,4 @@
+import { OpenSSLIcon, ElectronIcon, ReactIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./RSAEncryptionApp.css";
 import { useState } from "react";
@@ -9,7 +10,6 @@ import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions"
 import { rsaEncryptionImages } from "../../../images/imageData.json";
 import ProjectSection from "../components/project-section/ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
-import OpenSSLLogo from "./openssl_logo.svg";
 
 
 const RSAEncryptionApp = () => {
@@ -50,51 +50,9 @@ const RSAEncryptionApp = () => {
           title={"RSA & AES Encryption App - Electron.js, React.js"}
           icons={
             <>
-              <div
-                  style={{
-                    position: "relative",
-                    width: "4rem",
-                    height: "4rem",
-                    borderRadius: "50%",
-                    backgroundColor: "#8b8a8a",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    boxShadow: '5px 2px 10px rgba(0, 0, 0, 0.4)',
-                  }}
-                >
-              <img src={OpenSSLLogo} alt="OpenSSL logo" style={{ width: "3.5rem", height: "auto" }} />
-              </div>
-                <div
-                  style={{
-                    position: "relative",
-                    width: "4rem",
-                    height: "4rem",
-                    borderRadius: "50%",
-                    backgroundColor: "#222",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    boxShadow: '5px 2px 10px rgba(0, 0, 0, 0.4)',
-                  }}
-                >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg"
-                    alt="electron.js logo"
-                    style={{
-                      width: "3rem",
-                      height: "auto",
-                      position: "relative",
-                      zIndex: 1,
-                    }}
-                  />
-                </div>
-
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
-                  alt="React logo"
-                  style={{ width: "3.5rem", height: "auto" }}
-                />
+              <OpenSSLIcon />
+              <ElectronIcon />
+              <ReactIcon />
             </>
           }
           actions={

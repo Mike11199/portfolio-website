@@ -1,3 +1,4 @@
+import { PythonIcon, PytestIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./PythonHashMap.css";
 import { useState } from "react";
@@ -47,22 +48,8 @@ const PythonHashMap = () => {
           title={"Hash Map Data Structure Implementation - Python"}
           icons={
             <>
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
-                alt="python logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytest/pytest-original-wordmark.svg"
-                alt="pytest logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
+              <PythonIcon />
+              <PytestIcon />
             </>
           }
           actions={

@@ -1,3 +1,4 @@
+import { CppIcon, UnrealEngineIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./SlashUnrealEngine.css";
 import { useState } from "react";
@@ -55,23 +56,8 @@ const SlashUnrealEngine = () => {
           title={"C++ Unreal Engine Project Slash"}
           icons={
             <>
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
-                alt="c++ logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original-wordmark.svg"
-                alt="unreal engine logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                  filter: "invert(100%) brightness(200%)",
-                }}
-              />
+              <CppIcon />
+              <UnrealEngineIcon />
             </>
           }
           actions={

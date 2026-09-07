@@ -1,3 +1,4 @@
+import { DotNetIcon, DockerIcon, SocketIOIcon, AwsIcon, PostgreSQLIcon, CSharpIcon, TypeScriptIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./AlpinePeakClimbingSkiShop.css";
 import { useState } from "react";
@@ -76,47 +77,13 @@ const AlpinePeakClimbingSkiShop = () => {
           title={"Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/ PostgreSQL)"}
           icons={
             <>
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
-                alt=".NET logo"
-                style={{ width: "3.5rem", height: "auto" }}
-              />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg"
-
-                alt="docker logo"
-                style={{ width: "3.5rem", height: "auto" }}
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original-wordmark.svg"
-                alt="socket-io logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                  filter: "brightness(0) invert(1)",
-                }}
-              />
-              <img
-                style={{ width: "3.5rem", height: "auto" }}
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-                alt="aws logo"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg"
-                style={{ width: "3.5rem", height: "auto" }}
-                alt="postgresql logo"
-              />
-
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
-                style={{ width: "3.5rem", height: "auto" }}
-                alt="csharp logo"
-              />
-
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-                alt="typescript logo"
-                style={{ width: "3.5rem", height: "auto" }}
-              />
+              <DotNetIcon />
+              <DockerIcon />
+              <SocketIOIcon />
+              <AwsIcon />
+              <PostgreSQLIcon />
+              <CSharpIcon />
+              <TypeScriptIcon />
             </>
           }
           actions={

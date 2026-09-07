@@ -1,3 +1,4 @@
+import { LinuxIcon, CIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./SmallShellProject.css";
 import { useState } from "react";
@@ -49,22 +50,8 @@ const SmallShellProject = () => {
           title={"Small Shell (smallsh) - C Unix Shell"}
           icons={
             <>
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-                alt="linux logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"
-                alt="c logo"
-                style={{
-                  width: "3.5rem",
-                  height: "auto",
-                }}
-              />
+              <LinuxIcon />
+              <CIcon />
             </>
           }
           actions={

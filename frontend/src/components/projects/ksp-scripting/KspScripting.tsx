@@ -1,3 +1,4 @@
+import { CSharpIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./KspScripting.css";
 import ReactVideoPlayer from "../../utils/react-video-player/ReactVideoPlayer";
@@ -23,15 +24,7 @@ const KspScripting = () => (
     <ProjectHeader
       title={"C# KSP Automated Scripting - kRPC (Remote Procedure Calls)"}
       centeredIcons
-      icons={
-        <>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
-            alt="C# logo"
-            style={{ width: "3.5rem", height: "auto" }}
-          />
-        </>
-      }
+      icons={<CSharpIcon />}
     />
     <ProjectSection
       media={

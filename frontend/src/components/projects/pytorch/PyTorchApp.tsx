@@ -1,3 +1,4 @@
+import { JavaIcon, AwsIcon, PythonIcon, NginxIcon, TypeScriptIcon, SpringIcon, PyTorchIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
@@ -68,41 +69,13 @@ const PyTorchApp = () => {
           className={styles.header}
           icons={
             <>
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
-                alt="java logo"
-                style={{ width: "3.5rem", height: "auto" }}
-              />
-              <img
-                style={{ width: "3.5rem", height: "auto" }}
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-                alt="aws logo"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
-                alt="python logo"
-                style={{ width: "3.5rem", height: "auto" }}
-              />
-              <img
-                alt="nginx logo"
-                style={{ width: "3.5rem", height: "auto" }}
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-                alt="typescript logo"
-                style={{ width: "3.5rem", height: "auto" }}
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg"
-                alt="spring boot logo"
-                style={{ width: "3.5rem", height: "auto" }}
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-plain-wordmark.svg"
-                alt="pytorch logo"
-                style={{ width: "3.5rem", height: "auto" }}
-              />
+              <JavaIcon />
+              <AwsIcon />
+              <PythonIcon />
+              <NginxIcon />
+              <TypeScriptIcon />
+              <SpringIcon />
+              <PyTorchIcon />
             </>
           }
           actions={
