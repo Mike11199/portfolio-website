@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { useWindowWidth } from "@react-hook/window-size";
 import { TypeAnimation } from "react-type-animation";
-import HexFooter from "../utils/HexFooter";
-import FileDivider from "../utils/FileDivider";
+import HexFooter from "../utils/text-decoration/HexFooter";
+import FileDivider from "../utils/text-decoration/FileDivider";
 
 interface AboutMeTextCarouselProps {
   descriptionList: string[];
