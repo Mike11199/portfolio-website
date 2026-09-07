@@ -26,7 +26,7 @@
   font: 600 0.7rem/1 Consolas, "Courier New", monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: color 0.15s ease, background-color 0.15s ease;
+  transition: color 0.17s ease, background-color 0.17s ease;
 }
 
 .previous {
@@ -38,19 +38,17 @@
   justify-content: flex-end;
 }
 
-.first:hover,
-.last:hover,
-.previous:hover:not(:disabled),
-.next:hover:not(:disabled) {
-  color: #e5e5e5;
-  background: rgba(255, 255, 255, 0.08);
+.footer button:hover,
+.footer button:active {
+  color: var(--terminal-accent);
+  background: var(--terminal-hover);
 }
 
 .first:focus-visible,
 .last:focus-visible,
 .previous:focus-visible,
 .next:focus-visible {
-  outline: 2px solid #a3a3a3;
+  outline: 2px solid var(--terminal-accent);
   outline-offset: -2px;
 }
 
