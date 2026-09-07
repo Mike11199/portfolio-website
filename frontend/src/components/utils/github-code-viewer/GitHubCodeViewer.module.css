@@ -27,16 +27,17 @@
 }
 
 :global(.project-media-view:fullscreen) .titlebar {
-  min-height: 4.5rem;
   padding-right: 7.5rem;
 }
 
 .titlebar {
+  box-sizing: border-box;
   display: flex;
   flex-shrink: 0;
   align-items: center;
   gap: 0.55rem;
-  min-height: 4rem;
+  height: var(--project-nav-height, 3rem);
+  min-height: var(--project-nav-height, 3rem);
   padding: 0 6.5rem 0 0.8rem;
   color: #bdbdbd;
   background: #0b0b0b;

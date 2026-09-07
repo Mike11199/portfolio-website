@@ -1,5 +1,5 @@
 .layout {
-  --project-panel-height: 480px;
+  --project-panel-height: 410px;
   --project-nav-height: 3rem;
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
@@ -74,7 +74,7 @@
 
 @media (max-width: 900px) {
   .layout {
-    --project-panel-height: clamp(220px, 55vw, 420px);
+    --project-panel-height: clamp(220px, 47vw, 350px);
     grid-template-columns: minmax(0, 1fr);
   }
 

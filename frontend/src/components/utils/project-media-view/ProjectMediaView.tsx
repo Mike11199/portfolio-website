@@ -3,20 +3,53 @@ import CodeViewButton from "../buttons/CodeViewButton";
 import { MediaViewContext } from "./MediaViewContext";
 import styles from "./ProjectMediaView.module.css";
 
-interface Props {
-  children: ReactNode;
-  code?: ReactNode;
-  className?: string;
-  showCode?: boolean;
-  onToggleCode?: () => void;
+interface FullscreenButtonProps {
+  isFullscreen: boolean;
+  disabled: boolean;
+  onClick: () => void;
 }
 
-/** Keep the fullscreen element and toolbar mounted when switching media views. */
-const ProjectMediaView = ({ children, code, className = "", showCode = false, onToggleCode }: Props) => {
+const FullscreenButton = ({ isFullscreen, disabled, onClick }: FullscreenButtonProps) => {
+  const label = isFullscreen ? "Exit fullscreen" : "View media fullscreen";
+  const iconPath = isFullscreen
+    ? "M9 4v5H4M15 4v5h5M15 20v-5h5M9 20v-5H4"
+    : "M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5";
+
+  return (
+    <button
+      type="button"
+      className={styles.fullscreenButton}
+      onClick={onClick}
+      disabled={disabled}
+      aria-pressed={isFullscreen}
+      aria-label={label}
+      title={label}
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d={iconPath} />
+      </svg>
+    </button>
+  );
+};
+
+interface MediaToolbarProps {
+  showCode: boolean;
+  onToggleCode?: () => void;
+  children: ReactNode;
+}
+
+const MediaToolbar = ({ showCode, onToggleCode, children }: MediaToolbarProps) => (
+  <div className={styles.toolbar} role="group" aria-label="Media controls">
+    {onToggleCode && <CodeViewButton showCode={showCode} onToggleCode={onToggleCode} />}
+    {children}
+  </div>
+);
+
+const useMediaFullscreen = () => {
   const root = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isChangingFullscreen, setIsChangingFullscreen] = useState(false);
-  const [fullscreenError, setFullscreenError] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const syncFullscreen = () => setIsFullscreen(document.fullscreenElement === root.current);
@@ -27,35 +60,62 @@ const ProjectMediaView = ({ children, code, className = "", showCode = false, on
   const toggleFullscreen = async () => {
     const element = root.current;
     if (!element || isChangingFullscreen) return;
+
     setIsChangingFullscreen(true);
-    setFullscreenError("");
+    setError("");
     try {
       if (document.fullscreenElement === element) await document.exitFullscreen();
       else await element.requestFullscreen();
     } catch {
-      setFullscreenError("Fullscreen is unavailable. Please try again.");
+      setError("Fullscreen is unavailable. Please try again.");
     } finally {
       setIsChangingFullscreen(false);
     }
   };
 
+  return { root, isFullscreen, isChangingFullscreen, error, toggleFullscreen };
+};
+
+interface ProjectMediaViewProps {
+  children: ReactNode;
+  code?: ReactNode;
+  className?: string;
+  showCode?: boolean;
+  showHeader?: boolean;
+  onToggleCode?: () => void;
+}
+
+/** Keep the fullscreen element and toolbar mounted when switching media views. */
+const ProjectMediaView = ({
+  children,
+  code,
+  className = "",
+  showCode = false,
+  showHeader = true,
+  onToggleCode,
+}: ProjectMediaViewProps) => {
+  const { root, isFullscreen, isChangingFullscreen, error, toggleFullscreen } = useMediaFullscreen();
+  const headerClass = showHeader ? "" : styles.overlayControls;
+  const mediaClass = showCode ? `${styles.mediaLayer} ${styles.hiddenMedia}` : styles.mediaLayer;
+
   return (
     <MediaViewContext.Provider value={{ root, isFullscreen, showCode }}>
-      <div ref={root} tabIndex={-1} role="region" aria-label="Project media"
-        className={`${styles.view} ${className} project-media-view`}>
-        <div className={styles.toolbar} role="group" aria-label="Media controls">
-          {onToggleCode && <CodeViewButton showCode={showCode} onToggleCode={onToggleCode} />}
-          <button type="button" className={styles.fullscreenButton} onClick={toggleFullscreen}
-            disabled={isChangingFullscreen} aria-pressed={isFullscreen}
-            aria-label={isFullscreen ? "Exit fullscreen" : "View media fullscreen"}
-            title={isFullscreen ? "Exit Fullscreen" : "View Fullscreen"}>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d={isFullscreen ? "M9 4v5H4M15 4v5h5M15 20v-5h5M9 20v-5H4" : "M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"} />
-            </svg>
-          </button>
-        </div>
-        {fullscreenError && <div className={styles.error} role="status">{fullscreenError}</div>}
-        <div className={`${styles.mediaLayer}${showCode ? ` ${styles.hiddenMedia}` : ""}`} aria-hidden={showCode || undefined}>
+      <div
+        ref={root}
+        tabIndex={-1}
+        role="region"
+        aria-label="Project media"
+        className={`${styles.view} ${headerClass} ${className} project-media-view`}
+      >
+        <MediaToolbar showCode={showCode} onToggleCode={onToggleCode}>
+          <FullscreenButton
+            isFullscreen={isFullscreen}
+            disabled={isChangingFullscreen}
+            onClick={toggleFullscreen}
+          />
+        </MediaToolbar>
+        {error && <div className={styles.error} role="status">{error}</div>}
+        <div className={mediaClass} aria-hidden={showCode || undefined}>
           {children}
         </div>
         {showCode && code && <div className={styles.codeLayer}>{code}</div>}
