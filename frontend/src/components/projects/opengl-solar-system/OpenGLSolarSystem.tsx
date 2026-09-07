@@ -1,9 +1,10 @@
+import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./OpenGLSolarSystem.css";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
 import ButtonLink from "../../utils/buttons/ButtonLink";
 import ImagesList from "../../utils/project-image-carousel/ImageList";
 import { solarSystemImages } from "../../../images/imageData.json";
-import ProjectSection from "../ProjectSection";
+import ProjectSection from "../components/project-section/ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const OpenGLSolarSystem = () => {
@@ -46,37 +47,38 @@ const OpenGLSolarSystem = () => {
   return (
     <>
       <section className="portfolio-project solar_system_section">
-        <div className={"projectHeaderTextContainer"}>
-          <h3 className="projectHeaderText">OpenGL C++ Solar System Model</h3>
-
-          <div className={"devIconsContainer"}>
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
-              alt="c++ logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opengl/opengl-plain.svg"
-              alt="opengl logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
-          </div>
-
-          {/* Buttons */}
-          <div className="projectButtons">
-            <ButtonLink
-              URL={"https://www.youtube.com/watch?v=ZvKFpJYDZkw"}
-              variant={"red"}
-              buttonText={"Video Link"}
-            />
-          </div>
-        </div>
+        <ProjectHeader
+          title={"OpenGL C++ Solar System Model"}
+          icons={
+            <>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                alt="c++ logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opengl/opengl-plain.svg"
+                alt="opengl logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
+            </>
+          }
+          actions={
+            <>
+              <ButtonLink
+                URL={"https://www.youtube.com/watch?v=ZvKFpJYDZkw"}
+                variant={"red"}
+                buttonText={"Video Link"}
+              />
+            </>
+          }
+        />
 
         <ProjectSection
           media={

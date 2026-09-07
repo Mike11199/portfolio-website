@@ -1,0 +1,76 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 5rem 0 2rem;
+  padding: 1.5rem;
+  overflow: visible;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.title {
+  margin: 0;
+  color: rgb(17, 167, 67);
+  overflow-wrap: anywhere;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  overflow: visible;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  overflow: visible;
+}
+
+.centeredIcons {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+}
+
+@media (min-width: 601px) {
+  .icons img {
+    width: 2.5rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem 0 3rem;
+    padding: 2rem;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+
+  .actions {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding-inline: 0;
+  }
+
+  .centeredIcons {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .centeredIcons .icons {
+    justify-self: center;
+  }
+}

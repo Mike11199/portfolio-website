@@ -1,9 +1,10 @@
+import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./KotlinAndroidProjects.css";
 import { useState } from "react";
 import { useWindowWidth } from "@react-hook/window-size";
 import ButtonLink from "../../utils/buttons/ButtonLink";
-import ProjectSection from "../ProjectSection";
-import ProjectMediaFrame from "../ProjectMediaFrame";
+import ProjectSection from "../components/project-section/ProjectSection";
+import ProjectMediaFrame from "../components/project-media-frame/ProjectMediaFrame";
 import ProjectMediaSlide from "../../utils/project-image-carousel/ProjectMediaSlide";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
@@ -53,62 +54,61 @@ const KotlinAndroidProjects = () => {
   return (
     <>
       <section className="portfolio-project kotlin_section">
-        <div className={"projectHeaderTextContainer"}>
-          <h3 className="projectHeaderText">
-            Kotlin (Jetpack Compose) - Sacramento City and Flight Search App
-          </h3>
+        <ProjectHeader
+          title={"Kotlin (Jetpack Compose) - Sacramento City and Flight Search App"}
+          icons={
+            <>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg"
+                alt="android studio logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
 
-          <div className={"devIconsContainer"}>
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg"
-              alt="android studio logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-plain-wordmark.svg"
+                alt="kotlin logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
+                alt="java logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
 
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-plain-wordmark.svg"
-              alt="kotlin logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
-              alt="java logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jetpackcompose/jetpackcompose-original-wordmark.svg"
-              alt="jetpack compose logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
-          </div>
-
-          {/* Buttons */}
-          <div className="projectButtons">
-            <RepositoryActions
-              repositoryUrl={repositoryUrl}
-              showCode={showCode}
-              onToggleCode={() => setShowCode((visible) => !visible)}
-            />
-            <ButtonLink
-              URL={"https://www.youtube.com/watch?v=hwGGgglHlus"}
-              variant={"red"}
-              buttonText={"Video Link"}
-            />
-          </div>
-        </div>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jetpackcompose/jetpackcompose-original-wordmark.svg"
+                alt="jetpack compose logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
+            </>
+          }
+          actions={
+            <>
+              <RepositoryActions
+                repositoryUrl={repositoryUrl}
+                showCode={showCode}
+                onToggleCode={() => setShowCode((visible) => !visible)}
+              />
+              <ButtonLink
+                URL={"https://www.youtube.com/watch?v=hwGGgglHlus"}
+                variant={"red"}
+                buttonText={"Video Link"}
+              />
+            </>
+          }
+        />
 
         <ProjectSection
           media={

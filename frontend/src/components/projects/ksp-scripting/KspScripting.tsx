@@ -1,7 +1,8 @@
+import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./KspScripting.css";
 import ReactVideoPlayer from "../../utils/react-video-player/ReactVideoPlayer";
-import ProjectSection from "../ProjectSection";
-import ProjectMediaFrame from "../ProjectMediaFrame";
+import ProjectSection from "../components/project-section/ProjectSection";
+import ProjectMediaFrame from "../components/project-media-frame/ProjectMediaFrame";
 
 const description = [
   `Experimented with C# scripts to automate launches in Kerbal Space Program
@@ -19,18 +20,19 @@ const description = [
 
 const KspScripting = () => (
   <section className="portfolio-project ksp_scripting_section">
-    <div className="projectHeaderTextContainer">
-      <h3 className="projectHeaderText">
-        C# KSP Automated Scripting - kRPC (Remote Procedure Calls)
-      </h3>
-      <div className="devIconsContainer">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
-          alt="C# logo"
-          style={{ width: "3.5rem", height: "auto" }}
-        />
-      </div>
-    </div>
+    <ProjectHeader
+      title={"C# KSP Automated Scripting - kRPC (Remote Procedure Calls)"}
+      centeredIcons
+      icons={
+        <>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+            alt="C# logo"
+            style={{ width: "3.5rem", height: "auto" }}
+          />
+        </>
+      }
+    />
     <ProjectSection
       media={
         <ProjectMediaFrame>

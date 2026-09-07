@@ -1,19 +1,5 @@
-.projectHeaderText {
-  color: rgb(17, 167, 67);
-  margin: 0px;
-}
-
-.projectHeaderTextContainer {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 5rem;
+.header h3 {
+  overflow-wrap: inherit;
 }
 
 .pyTorchOuterContainer {
@@ -36,18 +22,6 @@
   visibility: hidden;
 }
 
-.devIconsContainer {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-@media (min-width: 601px) {
-  .devIconsContainer img {
-    width: 2.5rem !important;
-  }
-}
-
 .projectsHeader {
   margin-top: 3rem;
 }
@@ -58,6 +32,15 @@
 }
 
 @media (max-width: 600px) {
+  .header {
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  .header h3 {
+    width: 100%;
+  }
+
   .projectsHeader {
     margin-top: 0rem;
   }
@@ -73,30 +56,5 @@
 
   #projects {
     top: 0px;
-  }
-
-  .projectHeaderText {
-    text-align: center;
-    width: 100%;
-  }
-
-  .projectHeaderTextContainer {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    margin: 0;
-    text-align: center;
-    flex-wrap: wrap;
-    word-wrap: break-word;
-    margin-bottom: 3rem;
-    margin-top: 2rem;
-  }
-
-  .devIconsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
   }
 }

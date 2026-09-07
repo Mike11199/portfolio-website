@@ -1,9 +1,10 @@
+import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./SmallShellProject.css";
 import { useState } from "react";
 import { useWindowWidth } from "@react-hook/window-size";
 import ReactVideoPlayer from "../../utils/react-video-player/ReactVideoPlayer";
-import ProjectSection from "../ProjectSection";
-import ProjectMediaFrame from "../ProjectMediaFrame";
+import ProjectSection from "../components/project-section/ProjectSection";
+import ProjectMediaFrame from "../components/project-media-frame/ProjectMediaFrame";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 
@@ -44,39 +45,38 @@ const SmallShellProject = () => {
   return (
     <>
       <section className="portfolio-project smallsh_section">
-        <div className={"projectHeaderTextContainer"}>
-          <h3 className="projectHeaderText">
-            Small Shell (smallsh) - C Unix Shell
-          </h3>
-
-        <div className={"devIconsContainer"}>
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-              alt="linux logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"
-              alt="c logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
-          </div>
-
-          {/* Buttons */}
-          <div className="projectButtons">
-            <RepositoryActions
-              repositoryUrl={repositoryUrl}
-              showCode={showCode}
-              onToggleCode={() => setShowCode((visible) => !visible)}
-            />
-          </div>
-        </div>
+        <ProjectHeader
+          title={"Small Shell (smallsh) - C Unix Shell"}
+          icons={
+            <>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+                alt="linux logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"
+                alt="c logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
+            </>
+          }
+          actions={
+            <>
+              <RepositoryActions
+                repositoryUrl={repositoryUrl}
+                showCode={showCode}
+                onToggleCode={() => setShowCode((visible) => !visible)}
+              />
+            </>
+          }
+        />
 
         <ProjectSection
           media={

@@ -1,3 +1,4 @@
+import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./SlashUnrealEngine.css";
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
@@ -5,7 +6,7 @@ import ImagesList from "../../utils/project-image-carousel/ImageList";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { unrealEngineImages } from "../../../images/imageData.json";
-import ProjectSection from "../ProjectSection";
+import ProjectSection from "../components/project-section/ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const SlashUnrealEngine = () => {
@@ -50,38 +51,39 @@ const SlashUnrealEngine = () => {
   return (
     <>
       <section className="portfolio-project unreal_section">
-        <div className={"projectHeaderTextContainer"}>
-          <h3 className="projectHeaderText">C++ Unreal Engine Project Slash</h3>
-
-          <div className={"devIconsContainer"}>
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
-              alt="c++ logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original-wordmark.svg"
-              alt="unreal engine logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-                filter: "invert(100%) brightness(200%)",
-              }}
-            />
-          </div>
-
-          {/* Buttons */}
-          <div className="projectButtons">
-            <RepositoryActions
-              repositoryUrl={repositoryUrl}
-              showCode={showCode}
-              onToggleCode={() => setShowCode((visible) => !visible)}
-            />
-          </div>
-        </div>
+        <ProjectHeader
+          title={"C++ Unreal Engine Project Slash"}
+          icons={
+            <>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                alt="c++ logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original-wordmark.svg"
+                alt="unreal engine logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                  filter: "invert(100%) brightness(200%)",
+                }}
+              />
+            </>
+          }
+          actions={
+            <>
+              <RepositoryActions
+                repositoryUrl={repositoryUrl}
+                showCode={showCode}
+                onToggleCode={() => setShowCode((visible) => !visible)}
+              />
+            </>
+          }
+        />
 
         <ProjectSection
           media={

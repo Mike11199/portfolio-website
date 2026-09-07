@@ -62,24 +62,6 @@ h2 {
   border-right: 10px solid rgb(35, 168, 41) !important;
 }
 
-.projectHeaderText {
-  color: rgb(17, 167, 67);
-  margin: 0px;
-}
-
-.projectHeaderTextContainer {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  gap: 2rem;
-}
-
 .carousel .thumb,
 .carousel .thumb:focus,
 .carousel .thumb:active,
@@ -279,11 +261,6 @@ ul > li > ul > li {
   list-style-type: circle;
 }
 
-.projectButtons {
-  display: flex;
-  gap: 1rem;
-}
-
 .repositoryActions {
   display: contents;
 }
@@ -367,19 +344,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100px;
-}
-
-
-.devIconsContainer {
-  display: flex;
-  gap: 2rem;
-  overflow: hidden;
-}
-
-@media (min-width: 601px) {
-  .devIconsContainer img {
-    width: 2.5rem !important;
-  }
 }
 
 .project_card {
@@ -526,21 +490,9 @@ ul {
     height: 100%;
   }
 
-  .projectButtons {
-    gap: 10px;
-    justify-content: center;
-    padding-left: 0rem;
-    padding-right: 0rem;
-    width: 100%;
-  }
-
   ul {
     margin-left: 0px;
     padding: 0px;
-  }
-
-  .projectHeaderText {
-    text-align: center;
   }
 
   h1 {
@@ -611,20 +563,6 @@ ul {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   }
 
-  .projectHeaderTextContainer {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    margin: 1rem;
-    margin-bottom: 3rem;
-    margin-top: 2rem;
-  }
-
-  .projectButtons {
-    flex-direction: column;
-  }
-
   .repositoryActions {
     width: 100%;
   }
@@ -636,13 +574,6 @@ ul {
 
   .repositoryCodeButton {
     display: none;
-  }
-
-  .devIconsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
   }
 
   .entire_page {
@@ -673,21 +604,6 @@ ul {
 /* Shared gutters belong to the section, not its images or description. */
 section.portfolio-project {
   padding-inline: clamp(1rem, 4vw, 3rem);
-}
-
-.portfolio-project .projectHeaderTextContainer,
-.portfolio-project .devIconsContainer,
-.portfolio-project .projectButtons {
-  flex-wrap: wrap;
-  overflow: visible;
-}
-
-.portfolio-project .projectHeaderTextContainer {
-  margin-inline: 0;
-}
-
-.portfolio-project .projectHeaderText {
-  overflow-wrap: anywhere;
 }
 
 @media (max-width: 600px) {

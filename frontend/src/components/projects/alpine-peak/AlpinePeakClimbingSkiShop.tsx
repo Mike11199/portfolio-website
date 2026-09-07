@@ -1,3 +1,4 @@
+import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./AlpinePeakClimbingSkiShop.css";
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
@@ -6,7 +7,7 @@ import ImagesList from "../../utils/project-image-carousel/ImageList";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { alpinePeakClimbingSkiShopImages } from "../../../images/imageData.json";
-import ProjectSection from "../ProjectSection";
+import ProjectSection from "../components/project-section/ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const AlpinePeakClimbingSkiShop = () => {
@@ -71,70 +72,68 @@ const AlpinePeakClimbingSkiShop = () => {
   return (
     <>
       <section className="portfolio-project ski_shop_section">
-        <div className={"projectHeaderTextContainer"}>
-          <h3 className="projectHeaderText">
-            Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/
-            PostgreSQL)
-          </h3>
+        <ProjectHeader
+          title={"Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/ PostgreSQL)"}
+          icons={
+            <>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+                alt=".NET logo"
+                style={{ width: "3.5rem", height: "auto" }}
+              />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg"
 
-          <div className={"devIconsContainer"}>
-          <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
-              alt=".NET logo"
-              style={{ width: "3.5rem", height: "auto" }}
-            />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg"
+                alt="docker logo"
+                style={{ width: "3.5rem", height: "auto" }}
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original-wordmark.svg"
+                alt="socket-io logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                  filter: "brightness(0) invert(1)",
+                }}
+              />
+              <img
+                style={{ width: "3.5rem", height: "auto" }}
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                alt="aws logo"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg"
+                style={{ width: "3.5rem", height: "auto" }}
+                alt="postgresql logo"
+              />
 
-              alt="docker logo"
-              style={{ width: "3.5rem", height: "auto" }}
-            />
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original-wordmark.svg"
-              alt="socket-io logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-                filter: "brightness(0) invert(1)",
-              }}
-            />
-            <img
-              style={{ width: "3.5rem", height: "auto" }}
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-              alt="aws logo"
-            />
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg"
-              style={{ width: "3.5rem", height: "auto" }}
-              alt="postgresql logo"
-            />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+                style={{ width: "3.5rem", height: "auto" }}
+                alt="csharp logo"
+              />
 
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
-              style={{ width: "3.5rem", height: "auto" }}
-              alt="csharp logo"
-            />
-
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-              alt="typescript logo"
-              style={{ width: "3.5rem", height: "auto" }}
-            />
-          </div>
-
-          {/* Buttons */}
-          <div className="projectButtons">
-            <RepositoryActions
-              repositoryUrl={repositoryUrl}
-              showCode={showCode}
-              onToggleCode={() => setShowCode((visible) => !visible)}
-            />
-            <ButtonLink
-              URL={"https://alpine-peak-climbing-ski-gear.com/"}
-              variant={"blue"}
-              buttonText={"Live Link - AWS ECS"}
-            />
-          </div>
-        </div>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                alt="typescript logo"
+                style={{ width: "3.5rem", height: "auto" }}
+              />
+            </>
+          }
+          actions={
+            <>
+              <RepositoryActions
+                repositoryUrl={repositoryUrl}
+                showCode={showCode}
+                onToggleCode={() => setShowCode((visible) => !visible)}
+              />
+              <ButtonLink
+                URL={"https://alpine-peak-climbing-ski-gear.com/"}
+                variant={"blue"}
+                buttonText={"Live Link - AWS ECS"}
+              />
+            </>
+          }
+        />
 
         <ProjectSection
           media={

@@ -1,3 +1,4 @@
+import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./PythonHashMap.css";
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
@@ -5,7 +6,7 @@ import ImagesList from "../../utils/project-image-carousel/ImageList";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { hashMapImages } from "../../../images/imageData.json";
-import ProjectSection from "../ProjectSection";
+import ProjectSection from "../components/project-section/ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const PythonHashMap = () => {
@@ -42,39 +43,38 @@ const PythonHashMap = () => {
   return (
     <>
       <section className="portfolio-project hash_map_section">
-        <div className={"projectHeaderTextContainer"}>
-          <h3 className="projectHeaderText">
-            Hash Map Data Structure Implementation - Python
-          </h3>
-
-          <div className={"devIconsContainer"}>
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
-              alt="python logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytest/pytest-original-wordmark.svg"
-              alt="pytest logo"
-              style={{
-                width: "3.5rem",
-                height: "auto",
-              }}
-            />
-          </div>
-
-          {/* Buttons */}
-          <div className="projectButtons">
-            <RepositoryActions
-              repositoryUrl={repositoryUrl}
-              showCode={showCode}
-              onToggleCode={() => setShowCode((visible) => !visible)}
-            />
-          </div>
-        </div>
+        <ProjectHeader
+          title={"Hash Map Data Structure Implementation - Python"}
+          icons={
+            <>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
+                alt="python logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytest/pytest-original-wordmark.svg"
+                alt="pytest logo"
+                style={{
+                  width: "3.5rem",
+                  height: "auto",
+                }}
+              />
+            </>
+          }
+          actions={
+            <>
+              <RepositoryActions
+                repositoryUrl={repositoryUrl}
+                showCode={showCode}
+                onToggleCode={() => setShowCode((visible) => !visible)}
+              />
+            </>
+          }
+        />
 
         <ProjectSection
           media={

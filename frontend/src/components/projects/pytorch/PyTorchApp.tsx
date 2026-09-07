@@ -1,3 +1,4 @@
+import ProjectHeader from "../components/project-header/ProjectHeader";
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
 import ButtonLink from "../../utils/buttons/ButtonLink";
@@ -6,7 +7,7 @@ import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { PyTorchImages } from "../../../images/imageData.json";
 import styles from "./PyTorchApp.module.css";
-import ProjectSection from "../ProjectSection";
+import ProjectSection from "../components/project-section/ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const PyTorchApp = () => {
@@ -62,63 +63,65 @@ const PyTorchApp = () => {
           Please see full-stack Computer Science projects I've completed below,
           in various programming languages.
         </p>
-        <div className={styles.projectHeaderTextContainer}>
-          <h3 className={styles.projectHeaderText}>
-            PyTorch Image Classification Website - Java Spring Boot/ Flask/
-            TypeScript
-          </h3>
-          <div className={styles.devIconsContainer}>
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
-              alt="java logo"
-              style={{ width: "3.5rem", height: "auto" }}
-            />
-            <img
-              style={{ width: "3.5rem", height: "auto" }}
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-              alt="aws logo"
-            />
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
-              alt="python logo"
-              style={{ width: "3.5rem", height: "auto" }}
-            />
-            <img
-              alt="nginx logo"
-              style={{ width: "3.5rem", height: "auto" }}
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg"
-            />
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-              alt="typescript logo"
-              style={{ width: "3.5rem", height: "auto" }}
-            />
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg"
-              alt="spring boot logo"
-              style={{ width: "3.5rem", height: "auto" }}
-            />
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-plain-wordmark.svg"
-              alt="pytorch logo"
-              style={{ width: "3.5rem", height: "auto" }}
-            />
-          </div>
-          <div className="projectButtons">
-            <RepositoryActions
-              repositoryUrl={repositoryUrl}
-              showCode={showCode}
-              onToggleCode={() => setShowCode((visible) => !visible)}
-            />
-            <ButtonLink
-              URL={
-                "https://machine-learning-projects.com/image-classification-mask-resnet"
-              }
-              variant={"blue"}
-              buttonText={"Live Link - AWS EC2"}
-            />
-          </div>
-        </div>
+        <ProjectHeader
+          title={"PyTorch Image Classification Website - Java Spring Boot/ Flask/ TypeScript"}
+          className={styles.header}
+          icons={
+            <>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
+                alt="java logo"
+                style={{ width: "3.5rem", height: "auto" }}
+              />
+              <img
+                style={{ width: "3.5rem", height: "auto" }}
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                alt="aws logo"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
+                alt="python logo"
+                style={{ width: "3.5rem", height: "auto" }}
+              />
+              <img
+                alt="nginx logo"
+                style={{ width: "3.5rem", height: "auto" }}
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                alt="typescript logo"
+                style={{ width: "3.5rem", height: "auto" }}
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg"
+                alt="spring boot logo"
+                style={{ width: "3.5rem", height: "auto" }}
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-plain-wordmark.svg"
+                alt="pytorch logo"
+                style={{ width: "3.5rem", height: "auto" }}
+              />
+            </>
+          }
+          actions={
+            <>
+              <RepositoryActions
+                repositoryUrl={repositoryUrl}
+                showCode={showCode}
+                onToggleCode={() => setShowCode((visible) => !visible)}
+              />
+              <ButtonLink
+                URL={
+                  "https://machine-learning-projects.com/image-classification-mask-resnet"
+                }
+                variant={"blue"}
+                buttonText={"Live Link - AWS EC2"}
+              />
+            </>
+          }
+        />
 
         <ProjectSection
           media={

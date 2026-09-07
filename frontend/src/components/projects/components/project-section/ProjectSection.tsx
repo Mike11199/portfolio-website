@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import { useWindowWidth } from "@react-hook/window-size";
-import CustomTextCarousel from "../CustomTextCarousel";
+import CustomTextCarousel from "../../../CustomTextCarousel";
 import styles from "./ProjectSection.module.css";
-import FileDivider from "../utils/text-decoration/FileDivider";
-import HexFooter from "../utils/text-decoration/HexFooter";
+import FileDivider from "../../../utils/text-decoration/FileDivider";
+import HexFooter from "../../../utils/text-decoration/HexFooter";
 
 interface ProjectSectionProps {
   media: ReactNode;
