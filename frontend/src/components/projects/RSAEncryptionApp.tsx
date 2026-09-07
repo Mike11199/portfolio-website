@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Carousel from "../utils/ProjectImageCarousel";
-import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
+import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";
+import RepositoryActions from "../utils/github-code-viewer/RepositoryActions";
 import { rsaEncryptionImages } from "../../images/imageData.json";
 import ProjectSection from "./ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
@@ -36,6 +38,8 @@ const RSAEncryptionApp = () => {
     decrypted using the website's functionality.`,
   ];
   const windowWidth = useWindowWidth();
+  const [showCode, setShowCode] = useState(false);
+  const repositoryUrl = "https://github.com/Mike11199/CS-361-RSA-React-App";
 
   return (
     <>
@@ -95,8 +99,10 @@ const RSAEncryptionApp = () => {
 
           {/* Buttons */}
           <div className="projectButtons">
-            <GitHubButton
-              URL={"https://github.com/Mike11199/CS-361-RSA-React-App"}
+            <RepositoryActions
+              repositoryUrl={repositoryUrl}
+              showCode={showCode}
+              onToggleCode={() => setShowCode((visible) => !visible)}
             />
             <ButtonLink
               URL={"https://rsa-react-app.herokuapp.com/"}
@@ -113,18 +119,26 @@ const RSAEncryptionApp = () => {
 
         <ProjectSection
           media={
-            <Carousel
-              fixedHeight="var(--project-panel-height)"
-              mobilePadding={false}
-              swipeable={false}
-              emulateTouch={false}
-              width="100%"
-              infiniteLoop={true}
-              showIndicators={false}
-              showThumbs={windowWidth > 600}
-            >
-              {ImagesList(rsaEncryptionImages)}
-            </Carousel>
+            showCode ? (
+              <GitHubCodeViewer
+                repositoryUrl={repositoryUrl}
+                owner="Mike11199"
+                repository="CS-361-RSA-React-App"
+              />
+            ) : (
+              <Carousel
+                fixedHeight="var(--project-panel-height)"
+                mobilePadding={false}
+                swipeable={false}
+                emulateTouch={false}
+                width="100%"
+                infiniteLoop={true}
+                showIndicators={false}
+                showThumbs={windowWidth > 600}
+              >
+                {ImagesList(rsaEncryptionImages)}
+              </Carousel>
+            )
           }
           description={rSAEncryptionProjectDescriptionText}
         />

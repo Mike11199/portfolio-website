@@ -1,7 +1,9 @@
-import GitHubButton from "../utils/GitHubButton";
+import { useState } from "react";
 import ReactVideoPlayer from "../utils/ReactVideoPlayer";
 import ProjectSection from "./ProjectSection";
 import ProjectMediaFrame from "./ProjectMediaFrame";
+import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";
+import RepositoryActions from "../utils/github-code-viewer/RepositoryActions";
 
 const SmallShellProject = () => {
   const smallShellProjectDescriptionText = [
@@ -33,6 +35,9 @@ const SmallShellProject = () => {
     '&gt;&gt;' to redirect STDIN and STDOUT to specific files.`,
   ];
 
+  const [showCode, setShowCode] = useState(false);
+  const repositoryUrl = "https://github.com/Mike11199/CS-344-Small-Shell";
+
   return (
     <>
       <section className="portfolio-project smallsh_section">
@@ -62,21 +67,31 @@ const SmallShellProject = () => {
 
           {/* Buttons */}
           <div className="projectButtons">
-            <GitHubButton
-              URL={"https://github.com/Mike11199/CS-344-Small-Shell"}
+            <RepositoryActions
+              repositoryUrl={repositoryUrl}
+              showCode={showCode}
+              onToggleCode={() => setShowCode((visible) => !visible)}
             />
           </div>
         </div>
 
         <ProjectSection
           media={
-            <ProjectMediaFrame>
-              <ReactVideoPlayer
-              URL={
-                "https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1"
-              }
-            />
-            </ProjectMediaFrame>
+            showCode ? (
+              <GitHubCodeViewer
+                repositoryUrl={repositoryUrl}
+                owner="Mike11199"
+                repository="CS-344-Small-Shell"
+              />
+            ) : (
+              <ProjectMediaFrame>
+                <ReactVideoPlayer
+                URL={
+                  "https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1"
+                }
+              />
+              </ProjectMediaFrame>
+            )
           }
           description={smallShellProjectDescriptionText}
         />

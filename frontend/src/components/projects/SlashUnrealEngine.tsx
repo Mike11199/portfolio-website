@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Carousel from "../utils/ProjectImageCarousel";
-import GitHubButton from "../utils/GitHubButton";
 import ImagesList from "../utils/ImageList";
+import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";
+import RepositoryActions from "../utils/github-code-viewer/RepositoryActions";
 import { unrealEngineImages } from "../../images/imageData.json";
 import ProjectSection from "./ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
@@ -42,6 +44,8 @@ const SlashUnrealEngine = () => {
     possibly hit.`,
   ];
   const windowWidth = useWindowWidth();
+  const [showCode, setShowCode] = useState(false);
+  const repositoryUrl = "https://github.com/Mike11199/unreal-project-slash";
   return (
     <>
       <section className="portfolio-project unreal_section">
@@ -70,27 +74,37 @@ const SlashUnrealEngine = () => {
 
           {/* Buttons */}
           <div className="projectButtons">
-            <GitHubButton
-              URL={"https://github.com/Mike11199/unreal-project-slash"}
+            <RepositoryActions
+              repositoryUrl={repositoryUrl}
+              showCode={showCode}
+              onToggleCode={() => setShowCode((visible) => !visible)}
             />
           </div>
         </div>
 
         <ProjectSection
           media={
-            <Carousel
-              fixedHeight="var(--project-panel-height)"
-              mobilePadding={false}
-              swipeable={false}
-              emulateTouch={false}
-              showIndicators={false}
-              width="100%"
-              infiniteLoop={true}
-              showArrows={true}
-              showThumbs={windowWidth > 600}
-            >
-              {ImagesList(unrealEngineImages)}
-            </Carousel>
+            showCode ? (
+              <GitHubCodeViewer
+                repositoryUrl={repositoryUrl}
+                owner="Mike11199"
+                repository="unreal-project-slash"
+              />
+            ) : (
+              <Carousel
+                fixedHeight="var(--project-panel-height)"
+                mobilePadding={false}
+                swipeable={false}
+                emulateTouch={false}
+                showIndicators={false}
+                width="100%"
+                infiniteLoop={true}
+                showArrows={true}
+                showThumbs={windowWidth > 600}
+              >
+                {ImagesList(unrealEngineImages)}
+              </Carousel>
+            )
           }
           description={slashUnrealEngineProjectsDescriptionText}
         />

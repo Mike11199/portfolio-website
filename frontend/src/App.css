@@ -281,7 +281,53 @@ ul > li > ul > li {
 
 .projectButtons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+.repositoryActions {
+  display: contents;
+}
+
+.repositoryActions .github_button {
+  width: 200px;
+  height: 50px;
+  border-radius: 0;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.repositoryCodeButton {
+  display: inline-flex;
+  flex: 0 0 50px;
+  align-items: center;
+  justify-content: center;
+  order: 2;
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  padding: 0.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  cursor: url("./images/dark_pointer_small.png") 9 2, pointer;
+  color: #9a9a9a;
+  background: transparent;
+  transition: color 0.17s ease, background-color 0.17s ease;
+}
+
+.repositoryCodeButton,
+.repositoryCodeButton * {
+  cursor: url("./images/dark_pointer_small.png") 9 2, pointer !important;
+  user-select: none;
+}
+
+.repositoryCodeButton:hover {
+  color: rgb(25, 212, 88);
+  background: rgba(25, 212, 88, 0.08);
+}
+
+.repositoryCodeButton:active,
+.repositoryActions .github_button:active {
+  transform: scale(0.9);
 }
 
 .github_logo {
@@ -401,6 +447,12 @@ body {
   display: flex;
   gap: 2rem;
   overflow: hidden;
+}
+
+@media (min-width: 601px) {
+  .devIconsContainer img {
+    width: 2.5rem !important;
+  }
 }
 
 .rsa_section {
@@ -734,6 +786,23 @@ ul {
 
   .projectButtons {
     flex-direction: column;
+  }
+
+  .repositoryActions {
+    width: 100%;
+  }
+
+  .repositoryActions .github_button {
+    flex: 1;
+    width: auto;
+  }
+
+  .repositoryCodeButton {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    margin-left: 0;
+    align-self: center;
   }
 
   .devIconsContainer {

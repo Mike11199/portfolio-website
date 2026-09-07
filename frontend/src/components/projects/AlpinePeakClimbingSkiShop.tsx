@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Carousel from "../utils/ProjectImageCarousel";
-import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
+import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";
+import RepositoryActions from "../utils/github-code-viewer/RepositoryActions";
 import { alpinePeakClimbingSkiShopImages } from "../../images/imageData.json";
 import ProjectSection from "./ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
@@ -62,6 +64,8 @@ const AlpinePeakClimbingSkiShop = () => {
   ];
 
   const windowWidth = useWindowWidth();
+  const [showCode, setShowCode] = useState(false);
+  const repositoryUrl = "https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack";
 
   return (
     <>
@@ -118,10 +122,10 @@ const AlpinePeakClimbingSkiShop = () => {
 
           {/* Buttons */}
           <div className="projectButtons">
-            <GitHubButton
-              URL={
-                "https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack"
-              }
+            <RepositoryActions
+              repositoryUrl={repositoryUrl}
+              showCode={showCode}
+              onToggleCode={() => setShowCode((visible) => !visible)}
             />
             <ButtonLink
               URL={"https://alpine-peak-climbing-ski-gear.com/"}
@@ -133,18 +137,27 @@ const AlpinePeakClimbingSkiShop = () => {
 
         <ProjectSection
           media={
-            <Carousel
-              fixedHeight="var(--project-panel-height)"
-              mobilePadding={false}
-              swipeable={false}
-              emulateTouch={false}
-              width="100%"
-              infiniteLoop={true}
-              showIndicators={false}
-              showThumbs={windowWidth > 600}
-            >
-              {ImagesList(alpinePeakClimbingSkiShopImages)}
-            </Carousel>
+            showCode ? (
+              <GitHubCodeViewer
+                repositoryUrl={repositoryUrl}
+                owner="Mike11199"
+                repository="rock-climbing-and-ski-shop-mern-stack"
+                branch="api-v2-dotnet-conversion"
+              />
+            ) : (
+              <Carousel
+                fixedHeight="var(--project-panel-height)"
+                mobilePadding={false}
+                swipeable={false}
+                emulateTouch={false}
+                width="100%"
+                infiniteLoop={true}
+                showIndicators={false}
+                showThumbs={windowWidth > 600}
+              >
+                {ImagesList(alpinePeakClimbingSkiShopImages)}
+              </Carousel>
+            )
           }
           description={AlpinePeakProjectDescriptionText}
         />

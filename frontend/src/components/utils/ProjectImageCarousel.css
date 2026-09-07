@@ -205,6 +205,7 @@
 .project-image-carousel .carousel-slider .slider-wrapper {
   aspect-ratio: var(--project-image-ratio, 16 / 9);
   height: auto;
+  transition: none !important;
 }
 
 .project-image-carousel .carousel-slider .slide img,

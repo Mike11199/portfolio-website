@@ -65,13 +65,17 @@
   font: inherit;
   tab-size: 4;
 }
-.comment { color: #6a9955; }
-.keyword { color: #569cd6; }
-.control { color: #c586c0; }
-.type { color: #4ec9b0; }
-.string { color: #ce9178; }
-.symbol { color: #dcdcaa; }
-.plain { color: #d4d4d4; }
+.editor :global(code.hljs) {
+  display: inline;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+}
+
+.editor :global(.hljs-title.function_) {
+  color: #dcdcaa;
+}
+
 .terminal {
   box-sizing: border-box;
   flex: 1;

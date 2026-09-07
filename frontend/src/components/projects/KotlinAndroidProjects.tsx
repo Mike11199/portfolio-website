@@ -1,8 +1,10 @@
-import GitHubButton from "../utils/GitHubButton";
+import { useState } from "react";
 import ButtonLink from "../utils/ButtonLink";
 import ProjectSection from "./ProjectSection";
 import ProjectMediaFrame from "./ProjectMediaFrame";
 import ProjectMediaSlide from "../utils/ProjectMediaSlide";
+import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";
+import RepositoryActions from "../utils/github-code-viewer/RepositoryActions";
 
 const KotlinAndroidProjects = () => {
   const kotlinAndroidProjectsDescriptionText = [
@@ -42,6 +44,9 @@ const KotlinAndroidProjects = () => {
     which are intended to hold data without the boilerplate code
     needed in Java for getter/setter functions - https://www.baeldung.com/kotlin/data-classes.`,
   ];
+  const [showCode, setShowCode] = useState(false);
+  const repositoryUrl = "https://github.com/Mike11199/CS-492-Assignment-5-Flight-Search-App";
+
   return (
     <>
       <section className="portfolio-project kotlin_section">
@@ -89,10 +94,10 @@ const KotlinAndroidProjects = () => {
 
           {/* Buttons */}
           <div className="projectButtons">
-            <GitHubButton
-              URL={
-                "https://github.com/Mike11199/CS-492-Assignment-5-Flight-Search-App"
-              }
+            <RepositoryActions
+              repositoryUrl={repositoryUrl}
+              showCode={showCode}
+              onToggleCode={() => setShowCode((visible) => !visible)}
             />
             <ButtonLink
               URL={"https://www.youtube.com/watch?v=hwGGgglHlus"}
@@ -104,18 +109,26 @@ const KotlinAndroidProjects = () => {
 
         <ProjectSection
           media={
-            <ProjectMediaFrame paired background="transparent">
-              <ProjectMediaSlide media={{
-                alt: "Sacramento city Android app demo",
-                src: "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654731/portfolio-webm/android_kotlin_sacramento_app_fdubuz.webm",
-                poster: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654733/portfolio-webm/android_kotlin_sacramento_app_fdubuz_poster.jpg",
-              }} />
-              <ProjectMediaSlide media={{
-                alt: "Flight search Android app demo",
-                src: "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654725/portfolio-webm/android_kotlin_flight_search_fu06fc.webm",
-                poster: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654727/portfolio-webm/android_kotlin_flight_search_fu06fc_poster.jpg",
-              }} />
-            </ProjectMediaFrame>
+            showCode ? (
+              <GitHubCodeViewer
+                repositoryUrl={repositoryUrl}
+                owner="Mike11199"
+                repository="CS-492-Assignment-5-Flight-Search-App"
+              />
+            ) : (
+              <ProjectMediaFrame paired background="transparent">
+                <ProjectMediaSlide media={{
+                  alt: "Sacramento city Android app demo",
+                  src: "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654731/portfolio-webm/android_kotlin_sacramento_app_fdubuz.webm",
+                  poster: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654733/portfolio-webm/android_kotlin_sacramento_app_fdubuz_poster.jpg",
+                }} />
+                <ProjectMediaSlide media={{
+                  alt: "Flight search Android app demo",
+                  src: "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654725/portfolio-webm/android_kotlin_flight_search_fu06fc.webm",
+                  poster: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654727/portfolio-webm/android_kotlin_flight_search_fu06fc_poster.jpg",
+                }} />
+              </ProjectMediaFrame>
+            )
           }
           description={kotlinAndroidProjectsDescriptionText}
         />

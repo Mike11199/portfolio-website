@@ -47,6 +47,15 @@
   .layout:has(:global(.project-image-carousel)) .description {
     height: calc(var(--project-panel-height) + var(--project-nav-height));
   }
+
+  .layout:has(:global(.github-code-viewer)) .media,
+  .layout:has(:global(.github-code-viewer)) .description {
+    height: calc(var(--project-panel-height) + var(--project-nav-height));
+  }
+
+  .layout:has(:global(.github-code-viewer)) .media > :global(.github-code-viewer) {
+    height: 100%;
+  }
 }
 
 .description:focus-visible {

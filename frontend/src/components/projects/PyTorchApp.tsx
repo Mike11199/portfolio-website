@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Carousel from "../utils/ProjectImageCarousel";
-import GitHubButton from "../utils/GitHubButton";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
+import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";
+import RepositoryActions from "../utils/github-code-viewer/RepositoryActions";
 import { PyTorchImages } from "../../images/imageData.json";
 import styles from "../styles/PyTorchApp.module.css";
 import ProjectSection from "./ProjectSection";
@@ -48,6 +50,8 @@ const PyTorchApp = () => {
   ];
 
   const windowWidth = useWindowWidth();
+  const [showCode, setShowCode] = useState(false);
+  const repositoryUrl = "https://github.com/Mike11199/PyTorch-Image-Classification-Java-Flask-TypeScript";
 
   return (
     <>
@@ -101,10 +105,10 @@ const PyTorchApp = () => {
             />
           </div>
           <div className="projectButtons">
-            <GitHubButton
-              URL={
-                "https://github.com/Mike11199/PyTorch-Image-Classification-Java-Flask-TypeScript"
-              }
+            <RepositoryActions
+              repositoryUrl={repositoryUrl}
+              showCode={showCode}
+              onToggleCode={() => setShowCode((visible) => !visible)}
             />
             <ButtonLink
               URL={
@@ -118,17 +122,26 @@ const PyTorchApp = () => {
 
         <ProjectSection
           media={
-            <Carousel
-              fixedHeight="var(--project-panel-height)"
-              mobilePadding={false}
-              showIndicators={false}
-              width="100%"
-              infiniteLoop={true}
-              showArrows={true}
-              showThumbs={windowWidth > 600}
-            >
-              {ImagesList(PyTorchImages)}
-            </Carousel>
+            showCode ? (
+              <GitHubCodeViewer
+                repositoryUrl={repositoryUrl}
+                owner="Mike11199"
+                repository="PyTorch-Image-Classification-Java-Flask-TypeScript"
+                branch="backend-v3"
+              />
+            ) : (
+              <Carousel
+                fixedHeight="var(--project-panel-height)"
+                mobilePadding={false}
+                showIndicators={false}
+                width="100%"
+                infiniteLoop={true}
+                showArrows={true}
+                showThumbs={windowWidth > 600}
+              >
+                {ImagesList(PyTorchImages)}
+              </Carousel>
+            )
           }
           description={pyTorchProjectDescriptionText}
         />

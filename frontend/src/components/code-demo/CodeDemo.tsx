@@ -43,7 +43,7 @@ const CodeDemo = () => {
       <div ref={panelsRef} className={styles.panels}>
         <pre id={editorId} className={styles.editor} style={{ height: editorHeight }}
           tabIndex={0} aria-label={`${example.language} example`}>
-          <HighlightedCode code={example.code} />
+          <HighlightedCode code={example.code} language={example.language} />
         </pre>
         <div {...separatorProps} className={styles.separator} style={{ height: DIVIDER_HEIGHT }} aria-controls={editorId}
           aria-label="Resize code and terminal panels"
