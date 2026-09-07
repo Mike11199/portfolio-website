@@ -142,7 +142,6 @@
 .folder *,
 .file,
 .file * {
-  cursor: url("../../../images/dark_pointer_small.png") 9 2, pointer !important;
   user-select: none;
 }
 

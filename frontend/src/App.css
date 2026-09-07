@@ -25,6 +25,13 @@ h2 {
   cursor: url("./images/dark_text_cursor_18px.png") 8 9, text;
 }
 
+/* Labels and icons keep the cursor of their clickable control. */
+a *,
+button *,
+[role="button"] * {
+  cursor: inherit;
+}
+
 .carousel-status {
   color: rgb(35, 168, 41) !important;
   background-color: rgba(0, 0, 0, 0.2);
@@ -293,7 +300,6 @@ ul > li > ul > li {
 
 .repositoryCodeButton,
 .repositoryCodeButton * {
-  cursor: url("./images/dark_pointer_small.png") 9 2, pointer !important;
   user-select: none;
 }
 
