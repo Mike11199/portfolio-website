@@ -2,15 +2,15 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import styles from "./TabContextMenu.module.css";
 
+export type TabMenuAction = "close" | "closeOthers" | "closeAll";
+
 interface Props {
   position: { x: number; y: number };
-  onClose: () => void;
-  onCloseAll: () => void;
-  onCloseOthers: () => void;
+  onAction: (action: TabMenuAction) => void;
   onDismiss: () => void;
 }
 
-const TabContextMenu = ({ position, onClose, onCloseAll, onCloseOthers, onDismiss }: Props) => {
+const TabContextMenu = ({ position, onAction, onDismiss }: Props) => {
   const menu = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -44,9 +44,9 @@ const TabContextMenu = ({ position, onClose, onCloseAll, onCloseOthers, onDismis
 
   return createPortal(
     <div ref={menu} className={styles.menu} role="menu" aria-label="Tab actions">
-      <button type="button" role="menuitem" onClick={onClose}>Close tab</button>
-      <button type="button" role="menuitem" onClick={onCloseOthers}>Close other tabs</button>
-      <button type="button" role="menuitem" onClick={onCloseAll}>Close all tabs</button>
+      <button type="button" role="menuitem" onClick={() => onAction("close")}>Close tab</button>
+      <button type="button" role="menuitem" onClick={() => onAction("closeOthers")}>Close other tabs</button>
+      <button type="button" role="menuitem" onClick={() => onAction("closeAll")}>Close all tabs</button>
     </div>,
     document.fullscreenElement ?? document.body,
   );

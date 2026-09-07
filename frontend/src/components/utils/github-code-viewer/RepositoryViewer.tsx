@@ -1,9 +1,11 @@
 // Read-only GitHub source viewer with a collapsible explorer and resizable panes.
 import { useId, useState, type CSSProperties } from "react";
-import RepositoryEditor from "./RepositoryEditor";
-import RepositoryExplorer from "./RepositoryExplorer";
-import { useExplorerResize } from "./useExplorerResize";
-import { useRepositorySource } from "./useRepositorySource";
+import FileContent from "./editor/FileContent";
+import RepositoryTabs from "./tabs/RepositoryTabs";
+import RepositoryEditor from "./editor/RepositoryEditor";
+import RepositoryExplorer from "./explorer/RepositoryExplorer";
+import { useExplorerResize } from "./explorer/useExplorerResize";
+import { useRepositorySource } from "./data/useRepositorySource";
 import styles from "./GitHubCodeViewer.module.css";
 
 export interface GitHubCodeViewerProps {
@@ -18,7 +20,13 @@ export interface GitHubCodeViewerProps {
 const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", defaultFile, defaultOpenFiles }: GitHubCodeViewerProps) => {
   const panelId = useId();
   const [showFiles, setShowFiles] = useState(false);
-  const { files, activeFile, openPaths, setActivePath, closePath, closeAll, closeOthers, source, isLoading, hasError } = useRepositorySource(owner, repository, branch, defaultFile, defaultOpenFiles);
+  const { files, activeFile, tabs, source, isLoading, hasError } = useRepositorySource({
+    owner,
+    repository,
+    branch,
+    defaultFile,
+    defaultOpenFiles,
+  });
   const { workspaceRef, explorerWidth, isResizing, separatorProps } = useExplorerResize();
   return (
     <section
@@ -50,7 +58,7 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
           files={files}
           activePath={activeFile?.path ?? ""}
           onSelectFile={(path) => {
-            setActivePath(path);
+            tabs.selectPath(path);
             setShowFiles(false);
           }}
         />
@@ -58,19 +66,29 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
         <RepositoryEditor
           panelId={panelId}
           repository={repository}
-          repositoryUrl={repositoryUrl}
-          branch={branch}
-          file={activeFile}
-          openPaths={openPaths}
-          onSelectFile={setActivePath}
-          onCloseFile={closePath}
-          onCloseAll={closeAll}
-          onCloseOthers={closeOthers}
-          fileUrl={activeFile ? `${repositoryUrl}/blob/${branch}/${activeFile.path}` : repositoryUrl}
-          source={source}
-          isLoading={isLoading}
-          hasError={hasError}
-        />
+          filePath={activeFile?.path}
+          tabs={
+            <RepositoryTabs
+              panelId={panelId}
+              paths={tabs.paths}
+              activePath={tabs.activePath}
+              onSelect={tabs.selectPath}
+              onClose={tabs.closePath}
+              onCloseAll={tabs.closeAll}
+              onCloseOthers={tabs.closeOthers}
+            />
+          }
+        >
+          <FileContent
+            file={activeFile}
+            repositoryUrl={repositoryUrl}
+            branch={branch}
+            fileUrl={activeFile ? `${repositoryUrl}/blob/${branch}/${activeFile.path}` : repositoryUrl}
+            source={source}
+            isLoading={isLoading}
+            hasError={hasError}
+          />
+        </RepositoryEditor>
       </div>
 
       <footer className={styles.statusbar}>

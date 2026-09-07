@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { createRepositoryFile } from "./repositoryFiles";
-import { useRepositoryTabs } from "./useRepositoryTabs";
+import { useRepositoryTabs } from "../tabs/useRepositoryTabs";
 
 interface GitTreeResponse {
   tree?: Array<{ path: string; type: string }>;
@@ -8,10 +8,19 @@ interface GitTreeResponse {
 
 const fallbackFiles = [createRepositoryFile("README.md")];
 
-export const useRepositorySource = (owner: string, repository: string, branch: string, defaultFile?: string, defaultOpenFiles?: readonly string[]) => {
+interface RepositorySourceOptions {
+  owner: string;
+  repository: string;
+  branch: string;
+  defaultFile?: string;
+  defaultOpenFiles?: readonly string[];
+}
+
+export const useRepositorySource = ({ owner, repository, branch, defaultFile, defaultOpenFiles }: RepositorySourceOptions) => {
   const initialOpenFiles = useRef(defaultOpenFiles ?? []);
   const [files, setFiles] = useState(fallbackFiles);
-  const { paths: openPaths, activePath, selectPath: setActivePath, closePath, closeAll, closeOthers, initializeTabs } = useRepositoryTabs(fallbackFiles[0].path);
+  const tabs = useRepositoryTabs(fallbackFiles[0].path);
+  const { activePath, initializeTabs } = tabs;
   const [source, setSource] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -83,5 +92,5 @@ export const useRepositorySource = (owner: string, repository: string, branch: s
     };
   }, [activeFile, branch, owner, repository]);
 
-  return { files, activeFile, openPaths, setActivePath, closePath, closeAll, closeOthers, source, isLoading, hasError };
+  return { files, activeFile, tabs, source, isLoading, hasError };
 };

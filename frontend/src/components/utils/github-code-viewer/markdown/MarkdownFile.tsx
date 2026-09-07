@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import Markdown, { defaultUrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
-import HighlightedCode from "../code/HighlightedCode";
+import HighlightedCode from "../../code/HighlightedCode";
 import styles from "./MarkdownFile.module.css";
 
 interface Props {

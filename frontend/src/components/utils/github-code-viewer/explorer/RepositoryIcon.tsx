@@ -1,5 +1,5 @@
 import { getIconForFile, getIconForFolder, getIconForOpenFolder } from "vscode-icons-js";
-import styles from "./GitHubCodeViewer.module.css";
+import styles from "../GitHubCodeViewer.module.css";
 
 const iconBaseUrl = "https://cdn.jsdelivr.net/gh/vscode-icons/vscode-icons@v11.6.0/icons/";
 

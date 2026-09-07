@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import { buildFileTree } from "./repositoryFiles";
-import type { RepositoryFile, TreeNode } from "./repositoryFiles";
+import { buildFileTree } from "../data/repositoryFiles";
+import type { RepositoryFile, TreeNode } from "../data/repositoryFiles";
 import RepositoryIcon from "./RepositoryIcon";
-import styles from "./GitHubCodeViewer.module.css";
+import styles from "../GitHubCodeViewer.module.css";
 
 interface FileTreeNodeProps {
   node: TreeNode;
