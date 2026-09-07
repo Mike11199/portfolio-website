@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createRepositoryFile } from "./repositoryFiles";
 import { useRepositoryTabs } from "./useRepositoryTabs";
 
@@ -8,9 +8,10 @@ interface GitTreeResponse {
 
 const fallbackFiles = [createRepositoryFile("README.md")];
 
-export const useRepositorySource = (owner: string, repository: string, branch: string, defaultFile?: string) => {
+export const useRepositorySource = (owner: string, repository: string, branch: string, defaultFile?: string, defaultOpenFiles?: readonly string[]) => {
+  const initialOpenFiles = useRef(defaultOpenFiles ?? []);
   const [files, setFiles] = useState(fallbackFiles);
-  const { paths: openPaths, activePath, selectPath: setActivePath, closePath, closeAll, closeOthers, selectInitialPath } = useRepositoryTabs(fallbackFiles[0].path);
+  const { paths: openPaths, activePath, selectPath: setActivePath, closePath, closeAll, closeOthers, initializeTabs } = useRepositoryTabs(fallbackFiles[0].path);
   const [source, setSource] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -33,7 +34,8 @@ export const useRepositorySource = (owner: string, repository: string, branch: s
         if (discoveredFiles.length > 0) {
           const preferredFile = discoveredFiles.find((file) => file.path === defaultFile) ?? discoveredFiles[0];
           setFiles(discoveredFiles);
-          selectInitialPath(preferredFile.path);
+          const availablePaths = new Set(discoveredFiles.map((file) => file.path));
+          initializeTabs(preferredFile.path, initialOpenFiles.current.filter((path) => availablePaths.has(path)));
         }
       })
       .catch(() => {
@@ -43,7 +45,7 @@ export const useRepositorySource = (owner: string, repository: string, branch: s
     return () => {
       cancelled = true;
     };
-  }, [branch, owner, repository, defaultFile, selectInitialPath]);
+  }, [branch, owner, repository, defaultFile, initializeTabs]);
 
   useEffect(() => {
     let cancelled = false;

@@ -6,8 +6,10 @@ import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { hashMapImages } from "../../../images/imageData.json";
 import ProjectSection from "../components/project-section/ProjectSection";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const PythonHashMap = () => {
+  const isDesktop = useWindowWidth() > 600;
   const pythonHashMapProjectDescriptionText = [
     `This is the portfolio project for the Oregon State University
     course CS 261 - Data Structures, which is allowed to be posted
@@ -63,6 +65,7 @@ const PythonHashMap = () => {
                 owner="Mike11199"
                 repository="HashMap-Python-Implementation"
                 defaultFile="hash_map_oa.py"
+                defaultOpenFiles={isDesktop ? ["README.md"] : undefined}
               />
           }
           media={

@@ -1,11 +1,16 @@
 import HighlightedCode from "../code/HighlightedCode";
+import { lazy, Suspense } from "react";
 import type { RepositoryFile } from "./repositoryFiles";
 import RepositoryTabs from "./RepositoryTabs";
 import styles from "./GitHubCodeViewer.module.css";
 
+const MarkdownFile = lazy(() => import("./MarkdownFile"));
+
 interface RepositoryEditorProps {
   panelId: string;
   repository: string;
+  repositoryUrl: string;
+  branch: string;
   file: RepositoryFile | null;
   openPaths: string[];
   onSelectFile: (path: string) => void;
@@ -32,6 +37,8 @@ const SourceCode = ({ source, language }: { source: string; language: string }) 
 const RepositoryEditor = ({
   panelId,
   repository,
+  repositoryUrl,
+  branch,
   file,
   openPaths,
   onSelectFile,
@@ -62,7 +69,13 @@ const RepositoryEditor = ({
         </div>
       )}
       {file && !isLoading && !hasError && !file.isBinary && (
-        <SourceCode source={source} language={file.language} />
+        file.language === "markdown" ? (
+          <Suspense fallback={<div className={styles.message}>Loading Markdown preview…</div>}>
+            <MarkdownFile key={file.path} source={source} filePath={file.path} repositoryUrl={repositoryUrl} branch={branch}>
+              <SourceCode source={source} language={file.language} />
+            </MarkdownFile>
+          </Suspense>
+        ) : <SourceCode source={source} language={file.language} />
       )}
     </div>
   </div>

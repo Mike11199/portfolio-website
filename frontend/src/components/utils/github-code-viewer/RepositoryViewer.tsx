@@ -12,12 +12,13 @@ export interface GitHubCodeViewerProps {
   repository: string;
   branch?: string;
   defaultFile?: string;
+  defaultOpenFiles?: readonly string[];
 }
 
-const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", defaultFile }: GitHubCodeViewerProps) => {
+const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", defaultFile, defaultOpenFiles }: GitHubCodeViewerProps) => {
   const panelId = useId();
   const [showFiles, setShowFiles] = useState(false);
-  const { files, activeFile, openPaths, setActivePath, closePath, closeAll, closeOthers, source, isLoading, hasError } = useRepositorySource(owner, repository, branch, defaultFile);
+  const { files, activeFile, openPaths, setActivePath, closePath, closeAll, closeOthers, source, isLoading, hasError } = useRepositorySource(owner, repository, branch, defaultFile, defaultOpenFiles);
   const { workspaceRef, explorerWidth, isResizing, separatorProps } = useExplorerResize();
   return (
     <section
@@ -57,6 +58,8 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
         <RepositoryEditor
           panelId={panelId}
           repository={repository}
+          repositoryUrl={repositoryUrl}
+          branch={branch}
           file={activeFile}
           openPaths={openPaths}
           onSelectFile={setActivePath}

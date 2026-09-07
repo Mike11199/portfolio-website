@@ -1,5 +1,6 @@
 const languagesByExtension = {
   md: "markdown",
+  markdown: "markdown",
   py: "python",
   sql: "sql",
   yml: "yaml",
