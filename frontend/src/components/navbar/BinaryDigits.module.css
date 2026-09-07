@@ -1,0 +1,19 @@
+.digit {
+  color: rgb(64, 192, 64);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.blink {
+  animation: binary-digit-blink ease-in-out infinite alternate;
+  width: 5px;
+}
+
+@keyframes binary-digit-blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

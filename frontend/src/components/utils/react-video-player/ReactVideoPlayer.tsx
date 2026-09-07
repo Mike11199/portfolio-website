@@ -32,7 +32,7 @@ const ReactVideoPlayer = ({ URL, controls = true, loadingIndicator = false }: Re
   };
 
   return (
-    <div className={`player-wrapper ${loadingIndicator ? styles.frame : ""}`} aria-busy={isLoading}>
+    <div className={`player-wrapper ${styles.frame}`} aria-busy={isLoading}>
       <ReactPlayer
         playing
         onPlay={() => setSettledUrl(URL)}

@@ -1,0 +1,11 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (max-width: 600px) {
+
+  .page {
+    gap: 0rem;
+  }
+}

@@ -32,16 +32,6 @@ button *,
   cursor: inherit;
 }
 
-.player-wrapper {
-  width: 100%;
-  position: absolute;
-}
-
-.react-player {
-  width: 100%;
-  position: absolute;
-}
-
 /* Page scrollbars are neutral; text panels supply their own colors and size. */
 ::-webkit-scrollbar {
   width: var(--scrollbar-size, 8px);
@@ -80,26 +70,6 @@ button *,
   }
 }
 
-.binaryDigit {
-  color: rgb(64, 192, 64); /* Light green */
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.binaryDigitBlink {
-  animation: binary-digit-blink ease-in-out infinite alternate;
-  width: 5px;
-}
-
-@keyframes binary-digit-blink {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 ul > li > ul {
   padding-left: 20px;
 }
@@ -107,12 +77,6 @@ ul > li > ul {
 ul > li > ul > li {
   margin-top: 10px;
   list-style-type: circle;
-}
-
-.entire_page {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 body {
@@ -132,15 +96,6 @@ body {
 
 #root {
   background: #000000;
-}
-
-.bottom_footer {
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
 }
 
 .project_card {
@@ -182,11 +137,6 @@ body {
   }
 }
 
-.player-wrapper {
-  position: relative;
-  z-index: 1;
-}
-
 .bar {
   position: absolute;
   top: 0;
@@ -205,13 +155,6 @@ ul {
 @media (max-width: 600px) {
   p {
     padding-left: 0px;
-  }
-
-  .player-wrapper {
-    position: relative;
-    z-index: 1;
-    padding-left: 0%;
-    padding-right: 0%;
   }
 
   body {
@@ -257,10 +200,6 @@ ul {
 
   ul > li > ul {
     list-style-position: inside;
-  }
-
-  .entire_page {
-    gap: 0rem;
   }
   html {
     scroll-padding-top: 50px;
