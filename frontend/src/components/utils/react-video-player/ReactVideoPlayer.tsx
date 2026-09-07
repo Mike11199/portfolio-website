@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./ReactVideoPlayer.module.css";
 import ReactPlayerImport from "react-player";
+import { useMediaView } from "../project-media-view/MediaViewContext";
 
 // Vite 8 can expose react-player v2's CommonJS default as a nested export.
 const ReactPlayer = (
@@ -22,6 +23,7 @@ const ReactVideoPlayer = ({ URL, controls = true, loadingIndicator = false }: Re
 
   const [settledUrl, setSettledUrl] = useState<string | null>(null);
   const isLoading = loadingIndicator && settledUrl !== URL;
+  const showCode = useMediaView()?.showCode ?? false;
 
   const youtubeOptions = {
     playerVars: {
@@ -34,7 +36,7 @@ const ReactVideoPlayer = ({ URL, controls = true, loadingIndicator = false }: Re
   return (
     <div className={`player-wrapper ${styles.frame}`} aria-busy={isLoading}>
       <ReactPlayer
-        playing
+        playing={!showCode}
         onPlay={() => setSettledUrl(URL)}
         onError={() => setSettledUrl(URL)}
         width="100%"

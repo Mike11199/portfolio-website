@@ -64,22 +64,22 @@ const SlashUnrealEngine = () => {
             <>
               <RepositoryActions
                 repositoryUrl={repositoryUrl}
-                showCode={showCode}
-                onToggleCode={() => setShowCode((visible) => !visible)}
               />
             </>
           }
         />
 
         <ProjectSection
-          media={
-            showCode && windowWidth > 600 ? (
+          showCode={showCode}
+          onToggleCode={() => setShowCode((visible) => !visible)}
+          code={
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"
                 repository="unreal-project-slash"
               />
-            ) : (
+          }
+          media={
               <Carousel
                 fixedHeight="var(--project-panel-height)"
                 mobilePadding={false}
@@ -93,7 +93,6 @@ const SlashUnrealEngine = () => {
               >
                 {ImagesList(unrealEngineImages)}
               </Carousel>
-            )
           }
           description={slashUnrealEngineProjectsDescriptionText}
         />

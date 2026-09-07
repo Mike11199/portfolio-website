@@ -19,47 +19,16 @@
   font: 600 0.65rem/1 system-ui, sans-serif;
 }
 
-.viewer:fullscreen {
-  width: 100vw;
-  /* Override the surrounding project layout's fixed panel height. */
-  height: 100vh !important;
+:global(.project-media-view:fullscreen) .viewer {
+  height: 100% !important;
   min-height: 0;
-  max-width: none;
-  max-height: none;
   border: 0;
   border-radius: 0;
 }
 
-.fullscreenButton {
-  display: grid;
-  place-items: center;
-  flex: 0 0 2.2rem;
-  width: 2.2rem;
-  height: 2.2rem;
-  margin-left: auto;
-  padding: 0;
-  border: 0;
-  border-radius: 0.25rem;
-  color: #9a9a9a;
-  background: transparent;
-}
-
-.fullscreenButton svg {
-  width: 1.15rem;
-  height: 1.15rem;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.25;
-}
-
-.fullscreenButton:hover {
-  color: var(--terminal-accent);
-  background: var(--terminal-hover);
-}
-
-.fullscreenButton:focus-visible {
-  outline: 2px solid var(--terminal-accent);
-  outline-offset: -2px;
+:global(.project-media-view:fullscreen) .titlebar {
+  min-height: 4.5rem;
+  padding-right: 7.5rem;
 }
 
 .titlebar {
@@ -67,8 +36,8 @@
   flex-shrink: 0;
   align-items: center;
   gap: 0.55rem;
-  min-height: 2.2rem;
-  padding: 0 0.8rem;
+  min-height: 4rem;
+  padding: 0 6.5rem 0 0.8rem;
   color: #bdbdbd;
   background: #0b0b0b;
   border-bottom: 1px solid #242424;

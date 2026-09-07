@@ -4,24 +4,28 @@ import CustomTextCarousel from "../../../custom-text-carousel/CustomTextCarousel
 import styles from "./ProjectSection.module.css";
 import FileDivider from "../../../utils/text-decoration/FileDivider";
 import HexFooter from "../../../utils/text-decoration/HexFooter";
+import ProjectMediaView from "../../../utils/project-media-view/ProjectMediaView";
 
 interface ProjectSectionProps {
   media: ReactNode;
+  code?: ReactNode;
   description: string[];
   supplementalMedia?: ReactNode;
+  showCode?: boolean;
+  onToggleCode?: () => void;
 }
 
 /** Owns panel sizing; media can inherit --project-panel-height for its frame. */
-const ProjectSection = ({ media, description, supplementalMedia }: ProjectSectionProps) => {
+const ProjectSection = ({ media, code, description, supplementalMedia, showCode, onToggleCode }: ProjectSectionProps) => {
   const isMobile = useWindowWidth() <= 600;
   const decorationText = description.join("\n\n");
 
   return (
     <div className={styles.layout}>
-      <div className={styles.media}>
+      <ProjectMediaView className={styles.media} code={code} showCode={!isMobile && showCode} onToggleCode={isMobile ? undefined : onToggleCode}>
         {media}
         {supplementalMedia && <div className={styles.supplemental}>{supplementalMedia}</div>}
-      </div>
+      </ProjectMediaView>
       {isMobile ? (
         <div className={styles.mobileDescription}>
           <CustomTextCarousel descriptionList={description} heightProp="62vh" />

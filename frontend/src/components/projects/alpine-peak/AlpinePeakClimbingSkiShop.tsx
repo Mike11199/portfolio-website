@@ -90,8 +90,6 @@ const AlpinePeakClimbingSkiShop = () => {
             <>
               <RepositoryActions
                 repositoryUrl={repositoryUrl}
-                showCode={showCode}
-                onToggleCode={() => setShowCode((visible) => !visible)}
               />
               <ButtonLink
                 URL={"https://alpine-peak-climbing-ski-gear.com/"}
@@ -103,15 +101,17 @@ const AlpinePeakClimbingSkiShop = () => {
         />
 
         <ProjectSection
-          media={
-            showCode && windowWidth > 600 ? (
+          showCode={showCode}
+          onToggleCode={() => setShowCode((visible) => !visible)}
+          code={
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"
                 repository="rock-climbing-and-ski-shop-mern-stack"
                 branch="api-v2-dotnet-conversion"
               />
-            ) : (
+          }
+          media={
               <Carousel
                 fixedHeight="var(--project-panel-height)"
                 mobilePadding={false}
@@ -124,7 +124,6 @@ const AlpinePeakClimbingSkiShop = () => {
               >
                 {ImagesList(alpinePeakClimbingSkiShopImages)}
               </Carousel>
-            )
           }
           description={AlpinePeakProjectDescriptionText}
         />

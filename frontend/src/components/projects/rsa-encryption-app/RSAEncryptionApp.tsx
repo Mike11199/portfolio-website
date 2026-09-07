@@ -59,8 +59,6 @@ const RSAEncryptionApp = () => {
             <>
               <RepositoryActions
                 repositoryUrl={repositoryUrl}
-                showCode={showCode}
-                onToggleCode={() => setShowCode((visible) => !visible)}
               />
               <ButtonLink
                 URL={"https://rsa-react-app.herokuapp.com/"}
@@ -77,14 +75,16 @@ const RSAEncryptionApp = () => {
         />
 
         <ProjectSection
-          media={
-            showCode && windowWidth > 600 ? (
+          showCode={showCode}
+          onToggleCode={() => setShowCode((visible) => !visible)}
+          code={
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"
                 repository="CS-361-RSA-React-App"
               />
-            ) : (
+          }
+          media={
               <Carousel
                 fixedHeight="var(--project-panel-height)"
                 mobilePadding={false}
@@ -97,7 +97,6 @@ const RSAEncryptionApp = () => {
               >
                 {ImagesList(rsaEncryptionImages)}
               </Carousel>
-            )
           }
           description={rSAEncryptionProjectDescriptionText}
         />
@@ -107,5 +106,3 @@ const RSAEncryptionApp = () => {
 };
 
 export default RSAEncryptionApp;
-
-

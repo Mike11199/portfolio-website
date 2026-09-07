@@ -2,7 +2,6 @@ import { AndroidStudioIcon, KotlinIcon, JavaIcon, JetpackComposeIcon } from "../
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./KotlinAndroidProjects.css";
 import { useState } from "react";
-import { useWindowWidth } from "@react-hook/window-size";
 import ButtonLink from "../../utils/buttons/ButtonLink";
 import ProjectSection from "../components/project-section/ProjectSection";
 import ProjectMediaFrame from "../components/project-media-frame/ProjectMediaFrame";
@@ -48,7 +47,6 @@ const KotlinAndroidProjects = () => {
     which are intended to hold data without the boilerplate code
     needed in Java for getter/setter functions - https://www.baeldung.com/kotlin/data-classes.`,
   ];
-  const windowWidth = useWindowWidth();
   const [showCode, setShowCode] = useState(false);
   const repositoryUrl = "https://github.com/Mike11199/CS-492-Assignment-5-Flight-Search-App";
 
@@ -69,8 +67,6 @@ const KotlinAndroidProjects = () => {
             <>
               <RepositoryActions
                 repositoryUrl={repositoryUrl}
-                showCode={showCode}
-                onToggleCode={() => setShowCode((visible) => !visible)}
               />
               <ButtonLink
                 URL={"https://www.youtube.com/watch?v=hwGGgglHlus"}
@@ -82,14 +78,16 @@ const KotlinAndroidProjects = () => {
         />
 
         <ProjectSection
-          media={
-            showCode && windowWidth > 600 ? (
+          showCode={showCode}
+          onToggleCode={() => setShowCode((visible) => !visible)}
+          code={
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"
                 repository="CS-492-Assignment-5-Flight-Search-App"
               />
-            ) : (
+          }
+          media={
               <ProjectMediaFrame layout="phone" background="transparent">
                 <ProjectMediaSlide media={{
                   alt: "Sacramento city Android app demo",
@@ -102,7 +100,6 @@ const KotlinAndroidProjects = () => {
                   poster: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654727/portfolio-webm/android_kotlin_flight_search_fu06fc_poster.jpg",
                 }} />
               </ProjectMediaFrame>
-            )
           }
           description={kotlinAndroidProjectsDescriptionText}
         />

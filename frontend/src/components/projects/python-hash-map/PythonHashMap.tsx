@@ -56,22 +56,22 @@ const PythonHashMap = () => {
             <>
               <RepositoryActions
                 repositoryUrl={repositoryUrl}
-                showCode={showCode}
-                onToggleCode={() => setShowCode((visible) => !visible)}
               />
             </>
           }
         />
 
         <ProjectSection
-          media={
-            showCode && windowWidth > 600 ? (
+          showCode={showCode}
+          onToggleCode={() => setShowCode((visible) => !visible)}
+          code={
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"
                 repository="HashMap-Python-Implementation"
               />
-            ) : (
+          }
+          media={
               <Carousel
                 fixedHeight="var(--project-panel-height)"
                 mobilePadding={false}
@@ -85,7 +85,6 @@ const PythonHashMap = () => {
               >
                 {ImagesList(hashMapImages)}
               </Carousel>
-            )
           }
           description={pythonHashMapProjectDescriptionText}
         />

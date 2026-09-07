@@ -1,0 +1,87 @@
+.view {
+  position: relative;
+  min-width: 0;
+}
+
+.view:focus { outline: none; }
+
+/* The original media keeps its natural height, including thumbnails and footer. */
+.mediaLayer { min-width: 0; }
+.hiddenMedia { visibility: hidden; }
+.codeLayer { position: absolute; inset: 0; }
+.codeLayer > :global(.github-code-viewer) { height: 100%; min-height: 0; }
+
+.toolbar {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 4;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.fullscreenButton {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #9a9a9a;
+  background: transparent;
+}
+
+.fullscreenButton svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+}
+
+.fullscreenButton:hover {
+  color: var(--terminal-accent);
+  background: var(--terminal-hover);
+}
+
+.fullscreenButton:focus-visible {
+  outline: 2px solid var(--terminal-accent);
+  outline-offset: -2px;
+}
+
+.error {
+  position: absolute;
+  top: 3.5rem;
+  right: 0.75rem;
+  z-index: 4;
+  padding: 0.5rem;
+  color: #fff;
+  background: #101010;
+}
+
+.view:fullscreen {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh !important;
+  min-height: 0;
+  max-width: none;
+  max-height: none;
+  overflow: hidden;
+  background: #000;
+  --project-panel-height: 100vh;
+}
+
+.view:fullscreen .mediaLayer { height: 100%; min-height: 0; }
+
+.view:fullscreen .toolbar button {
+  flex: 0 0 3rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+.view:fullscreen .toolbar svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}

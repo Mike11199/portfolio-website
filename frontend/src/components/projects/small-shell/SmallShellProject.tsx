@@ -2,7 +2,6 @@ import { LinuxIcon, CIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./SmallShellProject.css";
 import { useState } from "react";
-import { useWindowWidth } from "@react-hook/window-size";
 import ReactVideoPlayer from "../../utils/react-video-player/ReactVideoPlayer";
 import ProjectSection from "../components/project-section/ProjectSection";
 import ProjectMediaFrame from "../components/project-media-frame/ProjectMediaFrame";
@@ -39,7 +38,6 @@ const SmallShellProject = () => {
     '&gt;&gt;' to redirect STDIN and STDOUT to specific files.`,
   ];
 
-  const windowWidth = useWindowWidth();
   const [showCode, setShowCode] = useState(false);
   const repositoryUrl = "https://github.com/Mike11199/CS-344-Small-Shell";
 
@@ -58,22 +56,22 @@ const SmallShellProject = () => {
             <>
               <RepositoryActions
                 repositoryUrl={repositoryUrl}
-                showCode={showCode}
-                onToggleCode={() => setShowCode((visible) => !visible)}
               />
             </>
           }
         />
 
         <ProjectSection
-          media={
-            showCode && windowWidth > 600 ? (
+          showCode={showCode}
+          onToggleCode={() => setShowCode((visible) => !visible)}
+          code={
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"
                 repository="CS-344-Small-Shell"
               />
-            ) : (
+          }
+          media={
               <ProjectMediaFrame>
                 <ReactVideoPlayer
                 URL={
@@ -81,7 +79,6 @@ const SmallShellProject = () => {
                 }
               />
               </ProjectMediaFrame>
-            )
           }
           description={smallShellProjectDescriptionText}
         />
