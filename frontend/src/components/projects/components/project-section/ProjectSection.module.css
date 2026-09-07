@@ -37,7 +37,7 @@
   padding: 1.5rem;
   color: rgb(25, 212, 88);
   background: #000;
-  border: 1px solid rgba(56, 128, 62, 0.849);
+  border: 2px solid rgba(56, 128, 62, 0.849);
   border-radius: 0.5rem;
   scrollbar-gutter: stable;
 }

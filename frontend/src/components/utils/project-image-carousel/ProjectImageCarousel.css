@@ -95,7 +95,7 @@
 .project-image-carousel .carousel-root > .carousel:not(.carousel-slider) {
   display: flow-root;
   background: #000;
-  border-top: 1px solid var(--project-carousel-divider-color);
+  border-top: 2px solid var(--project-carousel-divider-color);
   box-sizing: border-box;
 }
 
