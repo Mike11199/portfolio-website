@@ -6,6 +6,9 @@ import FileDivider from "../../../utils/text-decoration/FileDivider";
 import HexFooter from "../../../utils/text-decoration/HexFooter";
 import ProjectMediaView from "../../../utils/project-media-view/ProjectMediaView";
 
+// Set to false to hide code view on mobile. Desktop is unaffected.
+const SHOW_CODE_ON_MOBILE = true;
+
 interface ProjectSectionProps {
   media: ReactNode;
   code?: ReactNode;
@@ -25,6 +28,7 @@ const ProjectSection = ({
   mediaLayout = "carousel",
 }: ProjectSectionProps) => {
   const isMobile = useWindowWidth() <= 600;
+  const canShowCode = !isMobile || (SHOW_CODE_ON_MOBILE && mediaLayout !== "phone");
   const decorationText = description.join("\n\n");
 
   return (
@@ -32,8 +36,8 @@ const ProjectSection = ({
       <ProjectMediaView
         className={styles.media}
         code={code}
-        showCode={showCode && (!isMobile || mediaLayout !== "phone")}
-        onToggleCode={onToggleCode}
+        showCode={showCode && canShowCode}
+        onToggleCode={canShowCode ? onToggleCode : undefined}
         mediaLayout={mediaLayout}
       >
         {media}
