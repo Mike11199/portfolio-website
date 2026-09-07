@@ -37,15 +37,18 @@
   padding: 1.5rem;
   color: rgb(25, 212, 88);
   background: #000;
-  border: 2px solid rgba(56, 128, 62, 0.849);
+  border: 1px solid rgba(56, 128, 62, 0.849);
   border-radius: 0.5rem;
   scrollbar-gutter: stable;
 }
 
-/* Carousel media now includes a navigation footer below its fixed image. */
+/* Let the full media column set the row height, including thumbnails and footer. */
 @media (min-width: 901px) {
   .layout:has(:global(.project-image-carousel)) .description {
-    height: calc(var(--project-panel-height) + var(--project-nav-height));
+    height: auto;
+    min-height: 0;
+    align-self: stretch;
+    contain: size;
   }
 
   .layout:has(:global(.github-code-viewer)) .media,

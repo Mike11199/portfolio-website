@@ -1,0 +1,84 @@
+.footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  position: relative;
+  height: var(--project-nav-height, 3rem);
+  background: #000;
+  border-radius: 0 0 0.5rem 0.5rem;
+  overflow: hidden;
+  border-top: 1px solid var(--project-carousel-divider-color);
+  box-sizing: border-box;
+}
+
+.previous,
+.next {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+  padding: 0 1.25rem;
+  border: 0;
+  color: #a3a3a3;
+  background: transparent;
+  font: 600 0.7rem/1 Consolas, "Courier New", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.previous {
+  grid-column: 1;
+}
+
+.next {
+  grid-column: 2;
+  justify-content: flex-end;
+}
+
+.previous:hover,
+.next:hover {
+  color: #e5e5e5;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.previous:focus-visible,
+.next:focus-visible {
+  outline: 2px solid #a3a3a3;
+  outline-offset: -2px;
+}
+
+.previous:disabled,
+.next:disabled {
+  visibility: hidden;
+}
+
+.chevron {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  box-sizing: border-box;
+  transform: rotate(135deg);
+}
+
+.next .chevron {
+  transform: rotate(-45deg);
+}
+
+.status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  color: rgb(35, 168, 41);
+  font: 500 0.75rem/1 system-ui, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .previous,
+  .next {
+    font-weight: 700;
+  }
+}

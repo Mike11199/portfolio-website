@@ -1,6 +1,7 @@
 import { Children, isValidElement, useEffect, useLayoutEffect, useRef, useState, type ComponentProps, type CSSProperties, type ReactElement } from "react";
 import { Carousel } from "react-responsive-carousel";
 import ProjectMediaSlide, { type ProjectMedia } from "./ProjectMediaSlide";
+import CarouselFooter from "./CarouselFooter";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./ProjectImageCarousel.css";
 
@@ -23,6 +24,8 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
   const [isFullscreen, setIsFullscreen] = useState(false);
   const activeItem = props.selectedItem ?? selectedItem;
   const slides = Children.toArray(props.children);
+  const showArrows = props.showArrows !== false && slides.length > 1;
+  const showStatus = props.showStatus !== false;
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -73,6 +76,8 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
       <Carousel
         ref={carouselRef}
         {...props}
+        showArrows={false}
+        showStatus={false}
         dynamicHeight={false}
         // The library selects its animation handler only in its constructor.
         key="fade"
@@ -94,6 +99,16 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
           props.onClickItem?.(index, item);
         }}
       />
+      {slides.length > 0 && (showArrows || showStatus) && (
+        <CarouselFooter
+          status={showStatus ? (props.statusFormatter?.(activeItem + 1, slides.length) ?? `${activeItem + 1} of ${slides.length}`) : null}
+          showArrows={showArrows}
+          hasPrevious={activeItem > 0 || Boolean(props.infiniteLoop)}
+          hasNext={activeItem < slides.length - 1 || Boolean(props.infiniteLoop)}
+          onPrevious={() => carouselRef.current?.onClickPrev()}
+          onNext={() => carouselRef.current?.onClickNext()}
+        />
+      )}
     </div>
   );
 };
