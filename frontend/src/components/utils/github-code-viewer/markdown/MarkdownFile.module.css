@@ -15,7 +15,7 @@
   font: 12px/1.4 system-ui, sans-serif;
 }
 
-.toolbar button[aria-pressed="true"] { background: #264f78; color: #fff; }
+.toolbar button[aria-pressed="true"],
 .toolbar button:hover { background: var(--terminal-hover); color: var(--terminal-accent); }
 .toolbar button:focus-visible { outline: 2px solid var(--terminal-accent); }
 
