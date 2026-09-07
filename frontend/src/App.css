@@ -85,7 +85,6 @@ body {
   box-sizing: border-box;
   position: relative;
   line-height: 1.5;
-  font-family: sans-serif;
   overflow-x: hidden;
   overflow-y: scroll;
   font-family: "Source Sans Pro", sans-serif;
@@ -98,52 +97,6 @@ body {
   background: #000000;
 }
 
-.project_card {
-  padding-left: 100px !important;
-}
-
-.wave {
-  animation-name: wave-animation;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
-}
-
-@keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(14deg);
-  }
-  20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.bar {
-  position: absolute;
-  top: 0;
-  width: 270px;
-  height: 50px;
-}
-
 ul {
   padding: 0;
   margin: 0;
@@ -153,9 +106,6 @@ ul {
 
 /* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
-  p {
-    padding-left: 0px;
-  }
 
   body {
     background: #212534;
@@ -163,7 +113,6 @@ ul {
     box-sizing: border-box;
     position: relative;
     line-height: 1.5;
-    font-family: sans-serif;
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: "Source Sans Pro", sans-serif;
