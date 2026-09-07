@@ -77,15 +77,23 @@
   flex: none;
   min-height: 0;
   align-self: stretch;
+  grid-row: 1;
   height: auto !important;
+  overflow: hidden;
 }
 
 .project-image-carousel:fullscreen .carousel-slider .slider-wrapper {
-  flex: 1;
+  flex: 1 1 0;
   width: 100%;
-  height: auto !important;
+  height: 0 !important;
   min-height: 0;
   aspect-ratio: auto;
+}
+
+.project-image-carousel:fullscreen .carousel-root > .carousel:not(.carousel-slider) {
+  grid-row: 2;
+  min-height: 0;
+  align-self: stretch;
 }
 
 .project-image-carousel:fullscreen .carousel-slider .slider,
