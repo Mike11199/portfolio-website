@@ -1,4 +1,4 @@
-import GitHubButton from "../GitHubButton";
+import GitHubButton from "../buttons/GitHubButton";
 
 interface RepositoryActionsProps {
   repositoryUrl: string;

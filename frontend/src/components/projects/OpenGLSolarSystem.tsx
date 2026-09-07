@@ -1,5 +1,5 @@
 import Carousel from "../utils/project-image-carousel/ProjectImageCarousel";
-import ButtonLink from "../utils/ButtonLink";
+import ButtonLink from "../utils/buttons/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import { solarSystemImages } from "../../images/imageData.json";
 import ProjectSection from "./ProjectSection";

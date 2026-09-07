@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useWindowWidth } from "@react-hook/window-size";
-import ButtonLink from "../utils/ButtonLink";
+import ButtonLink from "../utils/buttons/ButtonLink";
 import ProjectSection from "./ProjectSection";
 import ProjectMediaFrame from "./ProjectMediaFrame";
 import ProjectMediaSlide from "../utils/ProjectMediaSlide";
