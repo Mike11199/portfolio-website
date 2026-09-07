@@ -21,11 +21,11 @@
   min-width: 0;
   padding: 0 0.35rem;
   border: 0;
-  color: #a3a3a3;
+  color: #9a9a9a;
   background: transparent;
-  font: 600 0.7rem/1 Consolas, "Courier New", monospace;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font: 600 0.8rem/1 system-ui, sans-serif;
+  text-transform: capitalize;
+  letter-spacing: normal;
   transition: color 0.17s ease, background-color 0.17s ease;
 }
 
@@ -118,6 +118,5 @@
   .previous,
   .next {
     padding-inline: 1rem;
-    font-weight: 700;
   }
 }
