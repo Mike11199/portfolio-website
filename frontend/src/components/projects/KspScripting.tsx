@@ -1,4 +1,4 @@
-import ReactVideoPlayer from "../utils/ReactVideoPlayer";
+import ReactVideoPlayer from "../utils/react-video-player/ReactVideoPlayer";
 import ProjectSection from "./ProjectSection";
 import ProjectMediaFrame from "./ProjectMediaFrame";
 

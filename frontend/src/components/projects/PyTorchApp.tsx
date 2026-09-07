@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Carousel from "../utils/ProjectImageCarousel";
+import Carousel from "../utils/project-image-carousel/ProjectImageCarousel";
 import ButtonLink from "../utils/ButtonLink";
 import ImagesList from "../utils/ImageList";
 import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";

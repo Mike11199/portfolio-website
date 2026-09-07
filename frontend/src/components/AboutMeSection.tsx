@@ -1,5 +1,5 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import ReactVideoPlayer from "./utils/ReactVideoPlayer";
+import ReactVideoPlayer from "./utils/react-video-player/ReactVideoPlayer";
 import styles from "./styles/AboutMeSection.module.css";
 import AboutMeTextCarousel from "./AboutMeTextCarousel";
 import CodeDemo from "./code-demo/CodeDemo";

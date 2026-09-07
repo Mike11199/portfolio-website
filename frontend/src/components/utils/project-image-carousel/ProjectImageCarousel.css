@@ -17,7 +17,7 @@
   background: rgba(0, 0, 0, 0.6);
   border: 0;
   border-radius: 0.25rem;
-  cursor: url("../../images/dark_pointer_small.png") 9 2, pointer;
+  cursor: url("../../../images/dark_pointer_small.png") 9 2, pointer;
   transition: color 0.15s ease, background-color 0.15s ease;
 }
 
