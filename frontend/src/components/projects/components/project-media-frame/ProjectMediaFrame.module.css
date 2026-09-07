@@ -28,15 +28,15 @@
 }
 
 /* Round the actual phone recording, rather than its wider contain-fit box. */
-:global(.kotlin_section) .paired > div {
+.paired.phone > div {
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 0;
 }
 
-:global(.kotlin_section) .paired video,
-:global(.kotlin_section) .paired img {
+.paired.phone video,
+.paired.phone img {
   width: auto;
   height: auto;
   max-width: 100%;
