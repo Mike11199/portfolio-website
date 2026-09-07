@@ -1,0 +1,18 @@
+.smallsh_section {
+  background-image: linear-gradient(
+    #000000 0%,
+    #051b10 15%,
+    #072e1b 85%,
+    #000000 100%
+  );
+  color: white;
+  min-height: fit-content;
+  padding: 3rem;
+}
+
+@media (max-width: 600px) {
+  .smallsh_section {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}

@@ -1,8 +1,9 @@
-import Carousel from "../utils/project-image-carousel/ProjectImageCarousel";
-import ButtonLink from "../utils/buttons/ButtonLink";
-import ImagesList from "../utils/project-image-carousel/ImageList";
-import { solarSystemImages } from "../../images/imageData.json";
-import ProjectSection from "./ProjectSection";
+import "./OpenGLSolarSystem.css";
+import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
+import ButtonLink from "../../utils/buttons/ButtonLink";
+import ImagesList from "../../utils/project-image-carousel/ImageList";
+import { solarSystemImages } from "../../../images/imageData.json";
+import ProjectSection from "../ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const OpenGLSolarSystem = () => {

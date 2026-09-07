@@ -1,10 +1,11 @@
+import "./SmallShellProject.css";
 import { useState } from "react";
 import { useWindowWidth } from "@react-hook/window-size";
-import ReactVideoPlayer from "../utils/react-video-player/ReactVideoPlayer";
-import ProjectSection from "./ProjectSection";
-import ProjectMediaFrame from "./ProjectMediaFrame";
-import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";
-import RepositoryActions from "../utils/github-code-viewer/RepositoryActions";
+import ReactVideoPlayer from "../../utils/react-video-player/ReactVideoPlayer";
+import ProjectSection from "../ProjectSection";
+import ProjectMediaFrame from "../ProjectMediaFrame";
+import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
+import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 
 const SmallShellProject = () => {
   const smallShellProjectDescriptionText = [

@@ -1,0 +1,22 @@
+.kotlin_section {
+  background-image: linear-gradient(
+    #000000 0%,
+    #201031 15%,
+    #12091b 85%,
+    #000000 100%
+  );
+  color: white;
+  min-height: auto;
+  padding: 3rem;
+}
+
+@media (max-width: 600px) {
+  .kotlin_section {
+    color: white;
+    min-height: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 50px;
+    padding-top: 40px;
+  }
+}

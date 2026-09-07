@@ -1,6 +1,7 @@
-import ReactVideoPlayer from "../utils/react-video-player/ReactVideoPlayer";
-import ProjectSection from "./ProjectSection";
-import ProjectMediaFrame from "./ProjectMediaFrame";
+import "./KspScripting.css";
+import ReactVideoPlayer from "../../utils/react-video-player/ReactVideoPlayer";
+import ProjectSection from "../ProjectSection";
+import ProjectMediaFrame from "../ProjectMediaFrame";
 
 const description = [
   `Experimented with C# scripts to automate launches in Kerbal Space Program

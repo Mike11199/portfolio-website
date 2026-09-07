@@ -1,10 +1,11 @@
+import "./SlashUnrealEngine.css";
 import { useState } from "react";
-import Carousel from "../utils/project-image-carousel/ProjectImageCarousel";
-import ImagesList from "../utils/project-image-carousel/ImageList";
-import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";
-import RepositoryActions from "../utils/github-code-viewer/RepositoryActions";
-import { unrealEngineImages } from "../../images/imageData.json";
-import ProjectSection from "./ProjectSection";
+import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
+import ImagesList from "../../utils/project-image-carousel/ImageList";
+import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
+import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
+import { unrealEngineImages } from "../../../images/imageData.json";
+import ProjectSection from "../ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const SlashUnrealEngine = () => {

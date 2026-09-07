@@ -1,0 +1,22 @@
+.solar_system_section {
+  background-image: linear-gradient(
+    #000000 0%,
+    #211130 15%,
+    #0b0213 85%,
+    #13071d 100%
+  );
+  color: white;
+  min-height: auto;
+  padding: 3rem;
+}
+
+@media (max-width: 600px) {
+  .solar_system_section {
+    color: white;
+    min-height: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 50px;
+    padding-top: 40px;
+  }
+}

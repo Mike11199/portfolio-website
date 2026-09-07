@@ -1,12 +1,12 @@
 import { useState } from "react";
-import Carousel from "../utils/project-image-carousel/ProjectImageCarousel";
-import ButtonLink from "../utils/buttons/ButtonLink";
-import ImagesList from "../utils/project-image-carousel/ImageList";
-import GitHubCodeViewer from "../utils/github-code-viewer/GitHubCodeViewer";
-import RepositoryActions from "../utils/github-code-viewer/RepositoryActions";
-import { PyTorchImages } from "../../images/imageData.json";
-import styles from "../styles/PyTorchApp.module.css";
-import ProjectSection from "./ProjectSection";
+import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
+import ButtonLink from "../../utils/buttons/ButtonLink";
+import ImagesList from "../../utils/project-image-carousel/ImageList";
+import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
+import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
+import { PyTorchImages } from "../../../images/imageData.json";
+import styles from "./PyTorchApp.module.css";
+import ProjectSection from "../ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const PyTorchApp = () => {
