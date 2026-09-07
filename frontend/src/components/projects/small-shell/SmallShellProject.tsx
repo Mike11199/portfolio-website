@@ -71,6 +71,7 @@ const SmallShellProject = () => {
                 owner="Mike11199"
                 repository="CS-344-Small-Shell"
                 defaultFile="smallsh.c"
+                defaultOpenFiles={["README.md"]}
               />
           }
           media={

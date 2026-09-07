@@ -109,6 +109,7 @@ const AlpinePeakClimbingSkiShop = () => {
                 defaultOpenFiles={[
                   ".github/workflows/deploy-cdk-aws.yml",
                   "backend_v2_dotnet/Repositories/OrderRepository.cs",
+                  "frontend/src/pages/HomePage/HomePageSatelliteImage.tsx",
                 ]}
               />
           }

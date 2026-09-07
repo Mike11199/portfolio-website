@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { createRepositoryFile } from "./repositoryFiles";
+import { createRepositoryFile, type RepositoryFile } from "./repositoryFiles";
 import { useRepositoryTabs } from "../tabs/useRepositoryTabs";
 
 interface GitTreeResponse {
@@ -7,6 +7,12 @@ interface GitTreeResponse {
 }
 
 const fallbackFiles = [createRepositoryFile("README.md")];
+
+interface FileResult {
+  path: string;
+  source: string;
+  hasError: boolean;
+}
 
 interface RepositorySourceOptions {
   owner: string;
@@ -18,16 +24,24 @@ interface RepositorySourceOptions {
 
 export const useRepositorySource = ({ owner, repository, branch, defaultFile, defaultOpenFiles }: RepositorySourceOptions) => {
   const initialOpenFiles = useRef(defaultOpenFiles ?? []);
-  const [files, setFiles] = useState(fallbackFiles);
-  const tabs = useRepositoryTabs(fallbackFiles[0].path);
+  const [files, setFiles] = useState<RepositoryFile[]>([]);
+  const [isTreeLoading, setIsTreeLoading] = useState(true);
+  const tabs = useRepositoryTabs();
   const { activePath, initializeTabs } = tabs;
-  const [source, setSource] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  const [fileResult, setFileResult] = useState<FileResult | null>(null);
   const activeFile = files.find((file) => file.path === activePath) ?? null;
 
   useEffect(() => {
     let cancelled = false;
+
+    const openInitialFiles = (availableFiles: RepositoryFile[]) => {
+      if (cancelled) return;
+      const preferredFile = availableFiles.find((file) => file.path === defaultFile) ?? availableFiles[0];
+      const availablePaths = new Set(availableFiles.map((file) => file.path));
+      setFiles(availableFiles);
+      initializeTabs(preferredFile.path, initialOpenFiles.current.filter((path) => availablePaths.has(path)));
+      setIsTreeLoading(false);
+    };
 
     fetch(`https://api.github.com/repos/${owner}/${repository}/git/trees/${branch}?recursive=1`)
       .then((response) => {
@@ -35,20 +49,15 @@ export const useRepositorySource = ({ owner, repository, branch, defaultFile, de
         return response.json() as Promise<GitTreeResponse>;
       })
       .then((tree) => {
-        if (cancelled || !tree.tree) return;
-        const discoveredFiles = tree.tree
+        if (cancelled) return;
+        const discoveredFiles = (tree.tree ?? [])
           .filter((entry) => entry.type === "blob")
           .map((entry) => createRepositoryFile(entry.path))
           .sort((left, right) => left.path.localeCompare(right.path, undefined, { numeric: true, sensitivity: "base" }));
-        if (discoveredFiles.length > 0) {
-          const preferredFile = discoveredFiles.find((file) => file.path === defaultFile) ?? discoveredFiles[0];
-          setFiles(discoveredFiles);
-          const availablePaths = new Set(discoveredFiles.map((file) => file.path));
-          initializeTabs(preferredFile.path, initialOpenFiles.current.filter((path) => availablePaths.has(path)));
-        }
+        openInitialFiles(discoveredFiles.length > 0 ? discoveredFiles : fallbackFiles);
       })
       .catch(() => {
-        // If the tree is unavailable, keep README available as a fallback.
+        openInitialFiles(fallbackFiles);
       });
 
     return () => {
@@ -58,16 +67,7 @@ export const useRepositorySource = ({ owner, repository, branch, defaultFile, de
 
   useEffect(() => {
     let cancelled = false;
-    setIsLoading(true);
-    setHasError(false);
-    setSource("");
-
-    if (!activeFile || activeFile.isBinary) {
-      setIsLoading(false);
-      return () => {
-        cancelled = true;
-      };
-    }
+    if (!activeFile || activeFile.isBinary) return;
 
     fetch(`https://raw.githubusercontent.com/${owner}/${repository}/${branch}/${activeFile.path}`)
       .then((response) => {
@@ -76,14 +76,12 @@ export const useRepositorySource = ({ owner, repository, branch, defaultFile, de
       })
       .then((text) => {
         if (!cancelled) {
-          setSource(text);
-          setIsLoading(false);
+          setFileResult({ path: activeFile.path, source: text, hasError: false });
         }
       })
       .catch(() => {
         if (!cancelled) {
-          setHasError(true);
-          setIsLoading(false);
+          setFileResult({ path: activeFile.path, source: "", hasError: true });
         }
       });
 
@@ -92,5 +90,11 @@ export const useRepositorySource = ({ owner, repository, branch, defaultFile, de
     };
   }, [activeFile, branch, owner, repository]);
 
-  return { files, activeFile, tabs, source, isLoading, hasError };
+  const currentResult = fileResult?.path === activePath ? fileResult : null;
+  const isLoading = isTreeLoading || (!!activeFile && !activeFile.isBinary && !currentResult);
+  return {
+    files, activeFile, tabs, isLoading,
+    source: currentResult?.source ?? "",
+    hasError: currentResult?.hasError ?? false,
+  };
 };

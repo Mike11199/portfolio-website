@@ -27,8 +27,8 @@ const SourceCode = ({ source, language }: { source: string; language: string }) 
 );
 
 const FileContent = ({ file, repositoryUrl, branch, fileUrl, source, isLoading, hasError }: Props) => {
+  if (isLoading) return <div className={styles.message} role="status">{file ? "Loading source from GitHub…" : "Loading repository…"}</div>;
   if (!file) return <div className={styles.message}>Select a file from the explorer to open it.</div>;
-  if (isLoading) return <div className={styles.message}>Loading source from GitHub…</div>;
   if (hasError) return (
     <div className={styles.message} role="alert">
       Could not load this file. <a href={fileUrl} target="_blank" rel="noreferrer">Open it on GitHub.</a>

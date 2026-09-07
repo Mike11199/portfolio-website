@@ -22,8 +22,8 @@ export const closeTab = (state: RepositoryTabState, path: string): RepositoryTab
   };
 };
 
-export const useRepositoryTabs = (initialPath: string) => {
-  const [tabs, setTabs] = useState<RepositoryTabState>({ paths: [initialPath], activePath: initialPath });
+export const useRepositoryTabs = () => {
+  const [tabs, setTabs] = useState<RepositoryTabState>({ paths: [], activePath: null });
   const hasInteracted = useRef(false);
 
   const selectPath = (path: string) => {

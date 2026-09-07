@@ -65,7 +65,7 @@ const PythonHashMap = () => {
                 owner="Mike11199"
                 repository="HashMap-Python-Implementation"
                 defaultFile="hash_map_oa.py"
-                defaultOpenFiles={isDesktop ? ["README.md"] : undefined}
+                defaultOpenFiles={isDesktop ? ["hash_map_sc.py", "README.md"] : undefined}
               />
           }
           media={
