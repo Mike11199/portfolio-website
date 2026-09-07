@@ -70,6 +70,7 @@ const SmallShellProject = () => {
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"
                 repository="CS-344-Small-Shell"
+                defaultFile="smallsh.c"
               />
           }
           media={

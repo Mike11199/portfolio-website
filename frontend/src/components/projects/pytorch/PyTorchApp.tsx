@@ -99,6 +99,12 @@ const PyTorchApp = () => {
                 owner="Mike11199"
                 repository="PyTorch-Image-Classification-Java-Flask-TypeScript"
                 branch="backend-v3"
+                defaultFile="backend-flask-pytorch/inference_mask.py"
+                defaultOpenFiles={[
+                  ".github/workflows/deploy-cdk-aws.yml",
+                  "backend-java-spring-boot/src/main/java/pytorchAPI/services/ImageService.java",
+                  "frontend/src/assets/components/Dropzone.tsx",
+                ]}
               />
           }
           media={

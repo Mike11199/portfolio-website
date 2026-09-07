@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import type { ProjectMedia } from "./ProjectMediaSlide";
 import styles from "./CarouselThumbnails.module.css";
 
@@ -15,6 +15,17 @@ const CarouselThumbnails = ({
 }: CarouselThumbnailsProps) => {
   const strip = useRef<HTMLDivElement>(null);
   const selected = useRef<HTMLButtonElement>(null);
+  const [hasOverflow, setHasOverflow] = useState(false);
+
+  useLayoutEffect(() => {
+    const container = strip.current;
+    if (!container) return;
+    const updateOverflow = () => setHasOverflow(container.scrollWidth > container.clientWidth + 1);
+    updateOverflow();
+    const observer = new ResizeObserver(updateOverflow);
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [items.length]);
 
   useLayoutEffect(() => {
     const container = strip.current;
@@ -38,7 +49,7 @@ const CarouselThumbnails = ({
   };
 
   return (
-    <div className={styles.ribbon}>
+    <div className={`${styles.ribbon} ${hasOverflow ? "" : styles.noOverflow}`}>
       <button type="button" className={styles.scrollButton} aria-label="Scroll thumbnails left" onClick={() => scrollThumbnails(-1)}>
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m10 3-5 5 5 5" /></svg>
       </button>

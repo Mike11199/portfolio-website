@@ -105,6 +105,11 @@ const AlpinePeakClimbingSkiShop = () => {
                 owner="Mike11199"
                 repository="rock-climbing-and-ski-shop-mern-stack"
                 branch="api-v2-dotnet-conversion"
+                defaultFile="backend_v2_dotnet/Controllers/ProductsController.cs"
+                defaultOpenFiles={[
+                  ".github/workflows/deploy-cdk-aws.yml",
+                  "backend_v2_dotnet/Repositories/OrderRepository.cs",
+                ]}
               />
           }
           media={

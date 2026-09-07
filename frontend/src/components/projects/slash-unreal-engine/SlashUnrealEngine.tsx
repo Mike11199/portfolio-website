@@ -74,6 +74,8 @@ const SlashUnrealEngine = () => {
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"
                 repository="unreal-project-slash"
+                defaultFile="Source/Slash/Private/Characters/BaseCharacter.cpp"
+                defaultOpenFiles={["Source/Slash/Private/Items/Weapons/Weapon.cpp"]}
               />
           }
           media={
