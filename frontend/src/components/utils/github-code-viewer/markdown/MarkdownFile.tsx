@@ -1,6 +1,9 @@
 import { useState, type ReactNode } from "react";
 import Markdown, { defaultUrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 import HighlightedCode from "../../code/HighlightedCode";
 import styles from "./MarkdownFile.module.css";
 
@@ -39,7 +42,8 @@ const MarkdownFile = ({ source, filePath, repositoryUrl, branch, children }: Pro
       {preview ? (
         <article className={styles.markdown}>
           <Markdown
-            remarkPlugins={[remarkGfm]}
+            remarkPlugins={[remarkGfm, remarkMath]}
+            rehypePlugins={[rehypeKatex]}
             skipHtml
             urlTransform={resolveUrl}
             components={{

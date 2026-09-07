@@ -45,6 +45,7 @@
 .markdown :is(th, td) { padding: 0.4em 0.75em; border: 1px solid #333; }
 .markdown th { background: #181818; }
 .markdown hr { border: 0; border-top: 1px solid #333; margin: 1.5em 0; }
+.markdown :global(.katex-display) { overflow-x: auto; overflow-y: hidden; padding-block: 0.25em; }
 
 @media (max-width: 600px) {
   .markdown { padding: 0.75rem; font-size: 12px; }
