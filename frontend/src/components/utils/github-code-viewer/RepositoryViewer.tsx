@@ -20,6 +20,7 @@ export interface GitHubCodeViewerProps {
 const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", defaultFile, defaultOpenFiles }: GitHubCodeViewerProps) => {
   const panelId = useId();
   const [showFiles, setShowFiles] = useState(false);
+  const [revealRequest, setRevealRequest] = useState(0);
   const { files, activeFile, tabs, source, isLoading, hasError } = useRepositorySource({
     owner,
     repository,
@@ -55,6 +56,7 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
       <div ref={workspaceRef} className={`${styles.workspace} ${showFiles ? styles.mobileFilesOpen : ""}`}>
         <RepositoryExplorer
           repository={repository}
+          revealRequest={revealRequest}
           files={files}
           activePath={activeFile?.path ?? ""}
           onSelectFile={(path) => {
@@ -72,7 +74,10 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
               panelId={panelId}
               paths={tabs.paths}
               activePath={tabs.activePath}
-              onSelect={tabs.selectPath}
+              onSelect={(path) => {
+                tabs.selectPath(path);
+                setRevealRequest((request) => request + 1);
+              }}
               onClose={tabs.closePath}
               onCloseAll={tabs.closeAll}
               onCloseOthers={tabs.closeOthers}

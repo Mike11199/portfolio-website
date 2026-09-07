@@ -1,8 +1,24 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { buildFileTree } from "../data/repositoryFiles";
 import type { RepositoryFile, TreeNode } from "../data/repositoryFiles";
 import RepositoryIcon from "./RepositoryIcon";
 import styles from "../GitHubCodeViewer.module.css";
+
+// Position revealed files at the center (0.5) or top (0) of the explorer.
+const FILE_REVEAL_ALIGNMENT = 0.5;
+
+const revealSelectedFile = (container: HTMLElement | null) => {
+  const selectedFile = container?.querySelector<HTMLElement>('[aria-selected="true"]');
+  if (!container || !selectedFile) return false;
+
+  const containerTop = container.getBoundingClientRect().top;
+  const fileBounds = selectedFile.getBoundingClientRect();
+  const fileOffset = fileBounds.top - containerTop;
+  const targetOffset = (container.clientHeight - fileBounds.height) * FILE_REVEAL_ALIGNMENT;
+
+  container.scrollTop += fileOffset - targetOffset;
+  return true;
+};
 
 interface FileTreeNodeProps {
   node: TreeNode;
@@ -68,13 +84,16 @@ const FileTreeNode = ({ node, depth, activePath, expandedDirectories, onToggleDi
 
 interface RepositoryExplorerProps {
   repository: string;
+  revealRequest: number;
   files: RepositoryFile[];
   activePath: string;
   onSelectFile: (path: string) => void;
 }
 
-const RepositoryExplorer = ({ repository, files, activePath, onSelectFile }: RepositoryExplorerProps) => {
+const RepositoryExplorer = ({ repository, files, activePath, onSelectFile, revealRequest }: RepositoryExplorerProps) => {
   const fileTree = useMemo(() => buildFileTree(files), [files]);
+  const explorer = useRef<HTMLElement>(null);
+  const lastRevealRequest = useRef(0);
   const [expandedDirectories, setExpandedDirectories] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -86,7 +105,15 @@ const RepositoryExplorer = ({ repository, files, activePath, onSelectFile }: Rep
       }
       return next;
     });
-  }, [activePath]);
+  }, [activePath, revealRequest]);
+
+  useLayoutEffect(() => {
+    if (revealRequest === lastRevealRequest.current) return;
+
+    if (revealSelectedFile(explorer.current)) {
+      lastRevealRequest.current = revealRequest;
+    }
+  }, [activePath, expandedDirectories, revealRequest]);
 
   const toggleDirectory = (path: string) => {
     setExpandedDirectories((current) => {
@@ -97,7 +124,7 @@ const RepositoryExplorer = ({ repository, files, activePath, onSelectFile }: Rep
   };
 
   return (
-    <aside className={styles.explorer} aria-label="Repository files">
+    <aside ref={explorer} className={styles.explorer} aria-label="Repository files">
       <div className={styles.explorerTitle}>
         <span>EXPLORER</span>
         <button
