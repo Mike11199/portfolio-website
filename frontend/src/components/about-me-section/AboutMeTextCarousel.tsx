@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "../App.css";
-import styles from "./styles/AboutMeTextCarousel.module.css";
+import "../../App.css";
+import styles from "./AboutMeTextCarousel.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { useWindowWidth } from "@react-hook/window-size";
 import { TypeAnimation } from "react-type-animation";
-import HexFooter from "./utils/HexFooter";
-import FileDivider from "./utils/FileDivider";
+import HexFooter from "../utils/HexFooter";
+import FileDivider from "../utils/FileDivider";
 
 interface AboutMeTextCarouselProps {
   descriptionList: string[];

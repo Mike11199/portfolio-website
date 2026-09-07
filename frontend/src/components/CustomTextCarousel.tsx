@@ -5,7 +5,7 @@ import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { useWindowWidth } from "@react-hook/window-size";
 import HexFooter from "./utils/HexFooter";
 import FileDivider from "./utils/FileDivider";
-import styles from "./styles/AboutMeTextCarousel.module.css";
+import styles from "./about-me-section/AboutMeTextCarousel.module.css";
 
 interface CustomTextCarouselProps {
   descriptionList: string[];

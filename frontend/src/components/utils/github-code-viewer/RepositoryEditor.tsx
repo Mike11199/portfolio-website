@@ -1,4 +1,4 @@
-import HighlightedCode from "../../code-demo/HighlightedCode";
+import HighlightedCode from "../../about-me-section/code-demo/HighlightedCode";
 import type { RepositoryFile } from "./repositoryFiles";
 import RepositoryIcon from "./RepositoryIcon";
 import styles from "./GitHubCodeViewer.module.css";
