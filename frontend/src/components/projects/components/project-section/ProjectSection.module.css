@@ -11,7 +11,6 @@
 }
 
 .media {
-  --project-panel-height: calc(var(--project-total-height) - var(--project-header-height) - var(--project-nav-height) - var(--project-thumbnails-height));
   min-width: 0;
 }
 
@@ -87,6 +86,3 @@
   padding-inline: 0;
 }
 
-.supplemental {
-  margin-top: 1.5rem;
-}

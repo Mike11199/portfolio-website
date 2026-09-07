@@ -10,18 +10,16 @@ interface ProjectSectionProps {
   media: ReactNode;
   code?: ReactNode;
   description: string[];
-  supplementalMedia?: ReactNode;
   showCode?: boolean;
   onToggleCode?: () => void;
   mediaLayout?: "carousel" | "video" | "phone";
 }
 
-/** Owns panel sizing; media can inherit --project-panel-height for its frame. */
+/** Owns the shared height for media and description panels. */
 const ProjectSection = ({
   media,
   code,
   description,
-  supplementalMedia,
   showCode,
   onToggleCode,
   mediaLayout = "carousel",
@@ -39,11 +37,10 @@ const ProjectSection = ({
         mediaLayout={mediaLayout}
       >
         {media}
-        {supplementalMedia && <div className={styles.supplemental}>{supplementalMedia}</div>}
       </ProjectMediaView>
       {isMobile ? (
         <div className={styles.mobileDescription}>
-          <CustomTextCarousel descriptionList={description} heightProp="62vh" />
+          <CustomTextCarousel descriptionList={description} heightProp="var(--project-total-height)" />
         </div>
       ) : (
         <div className={styles.description} role="region" aria-label="Project description" tabIndex={0}>

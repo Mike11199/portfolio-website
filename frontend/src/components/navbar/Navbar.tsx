@@ -1,80 +1,47 @@
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import { useScroll, animated } from "@react-spring/web";
-import resumePdf  from "../../misc/CV_Michael Iwanek.pdf";  // 04_12_2025
+import resumePdf from "../../misc/CV_Michael Iwanek.pdf";
 import BinaryDigits from "./BinaryDigits";
 import styles from "./Navbar.module.css";
 
-const Navbar = () => {
-  const ProfilePhotoWithName = () => {
-    return (
-      <div className={styles.navbarLogoNameContainer}>
-        <img
-          src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/profile_photo_snowshoe_tunnel_e8zff8.png"
-          alt="Michael Iwanek Navbar"
-          className={styles.profilePhotoImage}
-        />
-        <p 
-        onClick={()=> window.location.href = '/'}
-        className={styles.navbarFullName}>
-          Michael Iwanek</p>
-      </div>
-    );
-  };
+const ProfilePhotoWithName = () => (
+  <a href="#top" className={styles.navbarLogoNameContainer}>
+    <img
+      src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/profile_photo_snowshoe_tunnel_e8zff8.png"
+      alt="Michael Iwanek Navbar"
+      className={styles.profilePhotoImage}
+    />
+    <p className={styles.navbarFullName}>Michael Iwanek</p>
+  </a>
+);
 
-  const AnimatedScrollBar = () => {
-    const { scrollYProgress } = useScroll();
-
-    return (
-      <>
-        <animated.div
-          className={styles.myAnimatedDiv}
-          style={{ transform: scrollYProgress.to((value) => `scaleX(${value})`) }}
-        />
-      </>
-    );
-  };
-
-  const SiteNavLinks = () => {
-    const handleContactClick = () => {
-      window.open("https://www.linkedin.com/in/michael-iwanek/", "_blank");
-    };
-
-    return (
-      <div className={styles.navbarElementContainerLinks}>
-        <HashLink className={styles.navbarLink} smooth to="#top">
-          Home
-        </HashLink>
-        <HashLink className={styles.navbarLink} smooth to="./#projects">
-          Projects
-        </HashLink>
-        <Link
-          className={styles.navbarLink}
-          to={resumePdf}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Resume
-        </Link>
-        <Link to="/" className={styles.navbarLink} onClick={handleContactClick}>
-          Contact
-        </Link>
-      </div>
-    );
-  };
-
+const AnimatedScrollBar = () => {
+  const { scrollYProgress } = useScroll();
   return (
-    <>
-      <div className={styles.navbar}>
-        <AnimatedScrollBar />
-        <ProfilePhotoWithName />
-        <div className={styles.binaryDigitIndividualContainer}>
-          <BinaryDigits text="Michael" />
-        </div>
-        <SiteNavLinks />
-      </div>
-    </>
+    <animated.div
+      className={styles.myAnimatedDiv}
+      style={{ transform: scrollYProgress.to((value) => `scaleX(${value})`) }}
+    />
   );
 };
+
+const SiteNavLinks = () => (
+  <div className={styles.navbarElementContainerLinks}>
+    <a className={styles.navbarLink} href="#top">Home</a>
+    <a className={styles.navbarLink} href="#projects">Projects</a>
+    <a className={styles.navbarLink} href={resumePdf} target="_blank" rel="noopener noreferrer">Resume</a>
+    <a className={styles.navbarLink} href="https://www.linkedin.com/in/michael-iwanek/" target="_blank" rel="noopener noreferrer">Contact</a>
+  </div>
+);
+
+const Navbar = () => (
+  <nav className={styles.navbar} aria-label="Main navigation">
+    <AnimatedScrollBar />
+    <ProfilePhotoWithName />
+    <div className={styles.binaryDigitIndividualContainer}>
+      <BinaryDigits text="Michael" />
+    </div>
+    <SiteNavLinks />
+  </nav>
+);
 
 export default Navbar;

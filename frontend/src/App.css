@@ -109,16 +109,6 @@ ul {
 
   body {
     background: #212534;
-    width: 100% !important;
-    box-sizing: border-box;
-    position: relative;
-    line-height: 1.5;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    font-family: "Source Sans Pro", sans-serif;
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
   }
 
   ul {
@@ -128,17 +118,6 @@ ul {
 
   h1 {
     text-align: center;
-  }
-
-  li {
-    list-style-position: inside;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
-  p {
-    padding-left: 5%;
-    padding-right: 5%;
   }
 
   ul > li > ul > li {

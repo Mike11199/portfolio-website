@@ -1,301 +1,70 @@
-.carousel .control-next {
-  cursor: url("../../../images/dark_pointer_small.png") 9 2, pointer !important;
-}
-
-.carousel .control-prev {
-  cursor: url("../../../images/dark_pointer_small.png") 9 2, pointer !important;
-}
-
-/* 1. NEXT arrow normal state */
-.carousel .control-next.control-arrow:before {
-  border-left: 10px solid var(--terminal-indicator) !important;
-}
-
-/* 2. NEXT arrow hover state */
-.carousel .control-next.control-arrow:hover:before {
-  border-left: 10px solid var(--terminal-indicator) !important;
-}
-
-/* 3. PREV arrow normal state */
-.carousel .control-prev.control-arrow:before {
-  border-right: 10px solid var(--terminal-indicator) !important;
-}
-
-/* 4. PREV arrow hover state */
-.carousel .control-prev.control-arrow:hover:before {
-  border-right: 10px solid var(--terminal-indicator) !important;
-}
-
-.carousel .thumb,
-.carousel .thumb:focus,
-.carousel .thumb:active,
-.carousel .thumb:hover {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  transition: none !important;
-}
-
-.carousel .thumb.selected {
-  border: 2px solid var(--project-carousel-border-color) !important;
-  outline: none !important;
-  box-shadow: none !important;
-  transition: none !important;
-}
-
-/* 1. NEXT button normal */
-.carousel .control-arrow.control-next {
-  background: #000 !important;
-  opacity: 0.4 !important;
-}
-
-/* 2. NEXT button hover */
-.carousel .control-arrow.control-next:hover {
-  background: #000 !important;
-  opacity: 0.6 !important;
-}
-
-/* 1. PREV button normal */
-.carousel .control-arrow.control-prev {
-  background: #000 !important;
-  opacity: 0.4 !important;
-}
-
-/* 2. PREV button hover */
-.carousel .control-arrow.control-prev:hover {
-  background: #000 !important;
-  opacity: 0.6 !important;
-}
-
-.carousel.carousel-slider {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-  border-radius: 0.5rem 0.5rem 0 0 !important;
-}
-
-.carousel .thumb {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
-  border-radius: 0.25rem !important;
-}
-
 .project-image-carousel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: #000;
+}
+
+.carousel-viewport {
   position: relative;
-  --project-nav-height: 3rem;
-  --project-carousel-border-color: var(--terminal-selection);
-  --project-carousel-divider-color: var(--terminal-divider);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
-/* Arrow-key navigation focuses the frame; Tab still outlines individual controls. */
-.project-image-carousel:focus {
-  outline: none;
-}
-
-/* Native buttons cover each half; CSS cursors need no pointer tracking or renders. */
-.project-image-carousel .carousel-slide-navigation {
+.carousel-slide {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 2;
+  inset: 0;
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.carousel-slide[aria-hidden="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel-slide > div,
+.carousel-slide img,
+.carousel-slide video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel-slide img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.carousel-slide-navigation {
+  position: absolute;
+  inset-block: 0;
+  z-index: 1;
   width: 50%;
-  margin: 0;
   padding: 0;
   border: 0;
-  border-radius: 0;
   background: transparent;
 }
 
-.project-image-carousel .carousel-slide-navigation--previous {
+.carousel-slide-navigation--previous {
   left: 0;
   cursor: url("../../../images/carousel-previous-cursor.svg") 9 9, pointer;
 }
 
-.project-image-carousel .carousel-slide-navigation--next {
+.carousel-slide-navigation--next {
   right: 0;
   cursor: url("../../../images/carousel-next-cursor.svg") 9 9, pointer;
 }
 
-.project-image-carousel .carousel-slide-navigation:disabled {
-  cursor: default;
-}
-
-.project-image-carousel .carousel-slide-navigation:focus-visible {
+.carousel-slide-navigation:disabled { cursor: default; }
+.carousel-slide-navigation:focus-visible {
   outline: 2px solid var(--terminal-accent);
   outline-offset: -4px;
 }
 
-/* The library keeps the image and thumbnail ribbon together above our footer. */
-.project-image-carousel .carousel-root {
-  display: flow-root;
-  background: #000;
-  border-radius: 0.5rem 0.5rem 0 0;
-  overflow: hidden;
-}
-
-.project-image-carousel .carousel-root > .carousel:not(.carousel-slider) {
-  display: flex;
-  background: #000;
-  border-top: 2px solid var(--project-carousel-divider-color);
-  box-sizing: border-box;
-  height: var(--project-thumbnails-height, 6rem);
-  align-items: center;
-}
-
-.project-image-carousel .thumbs-wrapper {
-  width: calc(100% - 40px);
-  margin: 0 20px;
-}
-
-.project-image-carousel .thumbs {
-  margin-block: 0;
-}
-
-.project-image-carousel .thumb img {
-  height: 3rem;
-  object-fit: contain;
-}
-
-.project-media-view:fullscreen .project-image-carousel {
-  display: grid;
-  flex: 1;
-  min-height: 0;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none;
-  max-height: none;
-  overflow: hidden;
-  background: #000;
-  grid-template-rows: minmax(0, 1fr) auto;
-  padding: 0;
-}
-
-.project-media-view:fullscreen .project-image-carousel .carousel-root {
-  position: relative;
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  width: 100% !important;
-  height: auto !important;
-  min-height: 0;
-  min-width: 0;
-}
-
-.project-media-view:fullscreen .project-image-carousel .carousel,
-.project-media-view:fullscreen .project-image-carousel .carousel.carousel-slider {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  width: 100% !important;
-  height: auto !important;
-}
-
-.project-media-view:fullscreen .project-image-carousel .carousel.carousel-slider {
-  flex: none;
-  min-height: 0;
-  align-self: stretch;
-  grid-row: 1;
-  height: auto !important;
-  overflow: hidden;
-}
-
-.project-media-view:fullscreen .project-image-carousel .carousel-slider .slider-wrapper {
-  flex: 1 1 0;
-  width: 100%;
-  height: 0 !important;
-  min-height: 0;
-  aspect-ratio: auto;
-}
-
-.project-media-view:fullscreen .project-image-carousel .carousel-root > .carousel:not(.carousel-slider) {
-  grid-row: 2;
-  min-height: 0;
-  align-self: stretch;
-}
-
-.project-media-view:fullscreen .project-image-carousel .carousel-slider .slider,
-.project-media-view:fullscreen .project-image-carousel .carousel-slider .slide,
-.project-media-view:fullscreen .project-image-carousel .carousel-slider .slide > div {
-  height: 100%;
-  min-height: 0;
-}
-
-.project-media-view:fullscreen .project-image-carousel .carousel-slider .slide img,
-.project-media-view:fullscreen .project-image-carousel .carousel-slider .slide video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.project-image-carousel .carousel.carousel-slider {
-  background: #000;
-}
-
-/* The fade animation does not use infinite mode's boundary clones. */
-.project-image-carousel[data-infinite-loop="true"] .slider > .slide:first-child,
-.project-image-carousel[data-infinite-loop="true"] .slider > .slide:last-child {
-  display: none !important; /* Override the fade handler's inline display. */
-}
-
-/* Only the selected media determines the viewport, even with taller offscreen slides. */
-.project-image-carousel .carousel-slider .slider-wrapper {
-  aspect-ratio: var(--project-image-ratio, 16 / 9);
-  height: auto;
-  transition: none !important;
-}
-
-.project-image-carousel .carousel-slider .slide img,
-.project-image-carousel .carousel-slider .slide video {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* Spacing belongs outside the frame, not between its controls and image. */
-.project-image-carousel .carousel-slider .slide {
-  padding: 0;
-}
-
-/* Keep the fade handler's negative-z-index slides above the section background. */
-.project-image-carousel .carousel-slider {
-  isolation: isolate;
-}
-
-@media (min-width: 601px) {
-  .project-image-carousel .carousel-slider .slide,
-  .project-image-carousel .carousel-slider img,
-  .project-image-carousel .carousel-slider video {
-    user-select: none;
-    -webkit-user-select: none;
-  }
-
-  .project-image-carousel .carousel-slider img {
-    -webkit-user-drag: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .project-image-carousel--mobile-padded {
-    padding-inline: 5%;
-  }
-
-}
-
-/* A stable frame with contained images: no cropping or height changes between slides. */
-.project-image-carousel--fixed .carousel-slider .slider-wrapper {
-  aspect-ratio: auto;
-  height: var(--project-image-height);
-  background: #000;
-}
-
-.project-image-carousel--fixed .carousel-slider .slider,
-.project-image-carousel--fixed .carousel-slider .slide,
-.project-image-carousel--fixed .carousel-slider .slide > div,
-.project-image-carousel--fixed .carousel-slider .slide img,
-.project-image-carousel--fixed .carousel-slider .slide video {
-  height: 100%;
-}
-
-.project-image-carousel--fixed .carousel-slider .slide img,
-.project-image-carousel--fixed .carousel-slider .slide video {
-  object-fit: contain;
-}
-
-.project-image-carousel--fixed .carousel-slider .slider {
-  isolation: isolate;
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide { transition: none; }
 }

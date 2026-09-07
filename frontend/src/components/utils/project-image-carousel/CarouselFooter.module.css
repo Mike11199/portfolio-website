@@ -1,4 +1,5 @@
 .footer {
+  flex-shrink: 0;
   display: grid;
   grid-template-columns: 2.75rem minmax(0, 1fr) auto minmax(0, 1fr) 2.75rem;
   position: relative;
@@ -6,7 +7,7 @@
   background: #000;
   border-radius: 0 0 0.5rem 0.5rem;
   overflow: hidden;
-  border-top: 2px solid var(--project-carousel-divider-color);
+  border-top: 2px solid var(--terminal-divider);
   box-sizing: border-box;
 }
 

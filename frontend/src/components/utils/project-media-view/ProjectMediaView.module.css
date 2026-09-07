@@ -1,6 +1,6 @@
 .view {
-  --project-header-height: var(--project-nav-height, 3rem);
   position: relative;
+  height: var(--project-total-height);
   min-width: 0;
   overflow: hidden;
   border-radius: 0.5rem;
@@ -8,22 +8,22 @@
 
 .view:focus { outline: none; }
 
-.view :global(.project-image-carousel .carousel-root),
-.view :global(.project-image-carousel .carousel.carousel-slider) {
-  border-radius: 0 !important;
-}
-
-/* The original media keeps its natural height, including thumbnails and footer. */
 .mediaLayer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   min-width: 0;
-  box-sizing: border-box;
-  padding-top: var(--project-header-height);
 }
+.mediaContent { flex: 1; min-height: 0; }
+.mediaHeader,
+.videoFooter {
+  flex: 0 0 var(--project-nav-height, 3rem);
+  box-sizing: border-box;
+  background: #000;
+}
+.mediaHeader { border-bottom: 2px solid var(--terminal-divider); }
 .hiddenMedia { visibility: hidden; }
 .videoFooter {
-  box-sizing: border-box;
-  height: var(--project-nav-height, 3rem);
-  background: #000;
   border-top: 2px solid var(--terminal-divider);
 }
 .codeLayer { position: absolute; inset: 0; }
@@ -39,7 +39,7 @@
   padding-right: 0.75rem;
   align-items: center;
   justify-content: flex-end;
-  border-bottom: 2px solid var(--terminal-divider);
+  border-bottom: 2px solid transparent;
   z-index: 4;
   display: flex;
   gap: 0.25rem;
@@ -86,35 +86,17 @@
 }
 
 .view:fullscreen {
-  display: flex;
-  flex-direction: column;
   width: 100vw;
-  height: 100vh !important;
+  height: 100vh;
   min-height: 0;
   max-width: none;
   max-height: none;
   overflow: hidden;
   background: #000;
   border-radius: 0;
-  --project-panel-height: 100vh;
 }
 
-.view:fullscreen .mediaLayer { height: 100%; min-height: 0; }
-
-.view:not(:has(.codeLayer)) .toolbar {
-  background: #000;
-  border-radius: 0.5rem 0.5rem 0 0;
-}
-
-.view:has(.codeLayer) .toolbar {
-  border-bottom-color: transparent;
-}
-
-.view:fullscreen .toolbar { border-radius: 0; }
-
-.overlayControls { --project-header-height: 0px; }
-
-.overlayControls:not(:has(.codeLayer)) .toolbar {
+.overlayControls:not(.codeVisible) .toolbar {
   top: 0.75rem;
   right: 0.75rem;
   left: auto;

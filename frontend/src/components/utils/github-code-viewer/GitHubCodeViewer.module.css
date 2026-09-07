@@ -230,34 +230,35 @@
   padding: 0.35rem 0 0.8rem;
 }
 
-.codeLines { min-width: max-content; }
-
-.codeLine {
+.sourceCode {
   display: grid;
   grid-template-columns: 3.2rem minmax(0, 1fr);
-  min-height: 1.5em;
+  min-width: max-content;
   padding-right: 1.2rem;
 }
 
-.lineNumber {
+.sourceCode pre {
+  margin: 0;
+  font: inherit;
+  white-space: pre;
+}
+
+.lineNumbers {
   padding-right: 0.9rem;
   color: #5a5a5a;
   text-align: right;
   user-select: none;
 }
 
-.codeLine :global(code) {
-  white-space: pre;
-}
-
-.codeLine :global(code.hljs) {
+.sourceText :global(code.hljs) {
   display: inline;
   padding: 0;
   color: inherit;
   background: transparent;
+  font: inherit;
 }
 
-.codeLine :global(.hljs-title.function_) {
+.sourceText :global(.hljs-title.function_) {
   color: #dcdcaa;
 }
 

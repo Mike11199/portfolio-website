@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./ReactVideoPlayer.module.css";
 import ReactPlayerImport from "react-player";
 import { useMediaView } from "../project-media-view/MediaViewContext";
+import { useMediaVisibility } from "../project-media-view/useMediaVisibility";
 
 // Vite 8 can expose react-player v2's CommonJS default as a nested export.
 const ReactPlayer = (
@@ -14,16 +15,12 @@ interface ReactPlayerProps {
   loadingIndicator?: boolean;
 }
 
-/**
- * React video player to embed a video on the website from YouTube.
- * @param {string} URL - The URL of the video.
- * @returns {JSX.Element} The React element representing the video player.
- */
 const ReactVideoPlayer = ({ URL, controls = true, loadingIndicator = false }: ReactPlayerProps) => {
 
   const [settledUrl, setSettledUrl] = useState<string | null>(null);
   const isLoading = loadingIndicator && settledUrl !== URL;
   const showCode = useMediaView()?.showCode ?? false;
+  const { ref, isVisible } = useMediaVisibility();
 
   const youtubeOptions = {
     playerVars: {
@@ -34,9 +31,9 @@ const ReactVideoPlayer = ({ URL, controls = true, loadingIndicator = false }: Re
   };
 
   return (
-    <div className={`player-wrapper ${styles.frame}`} aria-busy={isLoading}>
+    <div ref={ref} className={`player-wrapper ${styles.frame}`} aria-busy={isLoading}>
       <ReactPlayer
-        playing={!showCode}
+        playing={isVisible && !showCode}
         onPlay={() => setSettledUrl(URL)}
         onError={() => setSettledUrl(URL)}
         width="100%"

@@ -1,4 +1,4 @@
-import HighlightedCode from "../../about-me-section/code-demo/HighlightedCode";
+import HighlightedCode from "../code/HighlightedCode";
 import type { RepositoryFile } from "./repositoryFiles";
 import RepositoryTabs from "./RepositoryTabs";
 import styles from "./GitHubCodeViewer.module.css";
@@ -16,8 +16,30 @@ interface RepositoryEditorProps {
   hasError: boolean;
 }
 
-const RepositoryEditor = ({ panelId, repository, file, openPaths, onSelectFile, onCloseFile, fileUrl, source, isLoading, hasError }: RepositoryEditorProps) => (
-  <main className={styles.editor}>
+const SourceCode = ({ source, language }: { source: string; language: string }) => (
+  <div className={styles.sourceCode}>
+    <pre className={styles.lineNumbers} aria-hidden="true">
+      {source.split("\n").map((_, index) => index + 1).join("\n")}
+    </pre>
+    <pre className={styles.sourceText}>
+      <HighlightedCode code={source || " "} language={language} />
+    </pre>
+  </div>
+);
+
+const RepositoryEditor = ({
+  panelId,
+  repository,
+  file,
+  openPaths,
+  onSelectFile,
+  onCloseFile,
+  fileUrl,
+  source,
+  isLoading,
+  hasError,
+}: RepositoryEditorProps) => (
+  <div className={styles.editor}>
     <RepositoryTabs paths={openPaths} activePath={file?.path ?? null} panelId={panelId} onSelect={onSelectFile} onClose={onCloseFile} />
     {file && <div className={styles.breadcrumb}>
       {repository} <span aria-hidden="true">›</span> {file.path}
@@ -36,17 +58,10 @@ const RepositoryEditor = ({ panelId, repository, file, openPaths, onSelectFile, 
         </div>
       )}
       {file && !isLoading && !hasError && !file.isBinary && (
-        <div className={styles.codeLines}>
-          {source.split("\n").map((line, index) => (
-            <div className={styles.codeLine} key={`${file.path}-${index}`}>
-              <span className={styles.lineNumber} aria-hidden="true">{index + 1}</span>
-              <HighlightedCode code={line || " "} language={file.language} />
-            </div>
-          ))}
-        </div>
+        <SourceCode source={source} language={file.language} />
       )}
     </div>
-  </main>
+  </div>
 );
 
 export default RepositoryEditor;

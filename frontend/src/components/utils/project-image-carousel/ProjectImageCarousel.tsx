@@ -1,119 +1,108 @@
-import { Children, isValidElement, useEffect, useLayoutEffect, useRef, useState, type ComponentProps, type CSSProperties, type ReactElement } from "react";
-import { Carousel } from "react-responsive-carousel";
+import { useEffect, useRef, useState } from "react";
 import ProjectMediaSlide, { type ProjectMedia } from "./ProjectMediaSlide";
 import CarouselFooter from "./CarouselFooter";
+import CarouselThumbnails from "./CarouselThumbnails";
 import { useMediaView } from "../project-media-view/MediaViewContext";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { getSlideIndex } from "./carouselNavigation";
 import "./ProjectImageCarousel.css";
 
-type Props = Partial<ComponentProps<typeof Carousel>> & {
-  /** Inset the entire carousel by 5% on each side on mobile. */
-  mobilePadding?: boolean;
-  /** Fixed frame height (pixels or a CSS length). Omit for adaptive height. */
-  fixedHeight?: number | string;
-};
+interface ProjectImageCarouselProps {
+  items: ProjectMedia[];
+  loop?: boolean;
+}
 
-const isMediaSlide = (slide: unknown): slide is ReactElement<{ media: ProjectMedia }> => {
-  return isValidElement<{ media: ProjectMedia }>(slide) && slide.type === ProjectMediaSlide;
-};
+interface SlideNavigationProps {
+  direction: "previous" | "next";
+  disabled: boolean;
+  onClick: () => void;
+}
 
-// Avoid relying on the library's mount-time measurement of lazy-loaded images.
-const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: Props) => {
-  const root = useRef<HTMLDivElement>(null);
-  const carouselRef = useRef<Carousel>(null);
-  const [selectedItem, setSelectedItem] = useState(props.selectedItem ?? 0);
+const SlideNavigation = ({ direction, disabled, onClick }: SlideNavigationProps) => (
+  <button
+    type="button"
+    className={`carousel-slide-navigation carousel-slide-navigation--${direction}`}
+    aria-label={`${direction === "previous" ? "Previous" : "Next"} image`}
+    disabled={disabled}
+    onMouseDown={(event) => event.preventDefault()}
+    onClick={onClick}
+  />
+);
+
+const useFullscreenNavigation = (onPrevious: () => void, onNext: () => void) => {
   const mediaView = useMediaView();
-  const isFullscreen = Boolean(mediaView?.isFullscreen && !mediaView.showCode);
-  const fullscreenRoot = mediaView?.root;
-  const activeItem = props.selectedItem ?? selectedItem;
-  const slides = Children.toArray(props.children);
-  const showArrows = props.showArrows !== false && slides.length > 1;
-  const showStatus = props.showStatus !== false;
+  const { root, isFullscreen, showCode } = mediaView ?? {};
 
   useEffect(() => {
-    if (!isFullscreen) return;
+    if (!isFullscreen || showCode) return;
 
-    const handleArrowKey = (event: KeyboardEvent) => {
-      if (document.fullscreenElement !== fullscreenRoot?.current || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (document.fullscreenElement !== root?.current) return;
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       if (event.target instanceof Element && event.target.closest("input, textarea, select, [contenteditable]")) return;
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
 
       event.preventDefault();
-      // Handle fullscreen navigation once, before the library's keyboard listener.
-      event.stopPropagation();
-      fullscreenRoot?.current?.focus({ preventScroll: true });
-      if (event.key === "ArrowLeft") {
-        carouselRef.current?.onClickPrev();
-      } else {
-        carouselRef.current?.onClickNext();
-      }
+      root.current?.focus({ preventScroll: true });
+      if (event.key === "ArrowLeft") onPrevious();
+      else onNext();
     };
 
-    document.addEventListener("keydown", handleArrowKey, true);
-    return () => document.removeEventListener("keydown", handleArrowKey, true);
-  }, [isFullscreen, fullscreenRoot]);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [root, isFullscreen, showCode, onPrevious, onNext]);
+};
 
-  const updateAspectRatio = () => {
-    const image = root.current?.querySelector<HTMLImageElement>(".slide.selected img");
-    const video = root.current?.querySelector<HTMLVideoElement>(".slide.selected video");
-    const width = video?.videoWidth || image?.naturalWidth;
-    const height = video?.videoHeight || image?.naturalHeight;
-    if (width && height) {
-      root.current?.style.setProperty("--project-image-ratio", `${width} / ${height}`);
-    }
-  };
+const ProjectImageCarousel = ({ items, loop = true }: ProjectImageCarouselProps) => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const root = useRef<HTMLDivElement>(null);
+  const activeIndex = Math.min(selectedIndex, Math.max(0, items.length - 1));
+  const hasMultipleSlides = items.length > 1;
+  const hasPrevious = hasMultipleSlides && (loop || activeIndex > 0);
+  const hasNext = hasMultipleSlides && (loop || activeIndex < items.length - 1);
+  const previous = () => setSelectedIndex(getSlideIndex(activeIndex, -1, items.length, loop));
+  const next = () => setSelectedIndex(getSlideIndex(activeIndex, 1, items.length, loop));
 
-  useLayoutEffect(updateAspectRatio, [activeItem, props.children]);
+  useFullscreenNavigation(previous, next);
 
   return (
-    <div ref={root} tabIndex={-1} role="region" aria-label="Project media carousel" data-infinite-loop={Boolean(props.infiniteLoop)} className={`project-image-carousel${mobilePadding ? " project-image-carousel--mobile-padded" : ""}${fixedHeight !== undefined ? " project-image-carousel--fixed" : ""}`} style={{ "--project-image-height": typeof fixedHeight === "number" ? `${fixedHeight}px` : fixedHeight } as CSSProperties} onLoadCapture={updateAspectRatio} onLoadedMetadataCapture={updateAspectRatio}>
-      <Carousel
-        ref={carouselRef}
-        {...props}
-        showArrows={slides.length > 1}
-        // Use the library's navigation slots so hit areas stay inside the media frame.
-        renderArrowPrev={(onClick, available, label) => slides.length > 1 && (
-          <button type="button" className="carousel-slide-navigation carousel-slide-navigation--previous"
-            // Pointer clicks should not leave keyboard focus on the half-frame hit area.
-            onMouseDown={(event) => event.preventDefault()}
-            onClick={onClick} disabled={!available} aria-label={label} />
+    <div ref={root} className="project-image-carousel" role="region" aria-label="Project media carousel">
+      <div className="carousel-viewport">
+        {items.map((item, index) => (
+          <div className="carousel-slide" key={item.src} aria-hidden={index !== activeIndex}>
+            <ProjectMediaSlide media={item} active={index === activeIndex} />
+          </div>
+        ))}
+        {hasMultipleSlides && (
+          <>
+            <SlideNavigation direction="previous" disabled={!hasPrevious} onClick={previous} />
+            <SlideNavigation direction="next" disabled={!hasNext} onClick={next} />
+          </>
         )}
-        renderArrowNext={(onClick, available, label) => slides.length > 1 && (
-          <button type="button" className="carousel-slide-navigation carousel-slide-navigation--next"
-            onMouseDown={(event) => event.preventDefault()}
-            onClick={onClick} disabled={!available} aria-label={label} />
-        )}
-        showStatus={false}
-        dynamicHeight={false}
-        // The library selects its animation handler only in its constructor.
-        key="fade"
-        animationHandler="fade"
-        selectedItem={activeItem}
-        swipeable={false}
-        emulateTouch={false}
-        // Use uploaded stills; eager loading keeps the ribbon populated before navigation.
-        renderThumbs={() => slides.map((slide, index) => isMediaSlide(slide) ? (
-          <img key={slide.key} loading="eager" decoding="async" alt={slide.props.media.alt}
-            src={slide.props.media.thumbnail ?? slide.props.media.poster ?? slide.props.media.src} />
-        ) : <span key={index}>{index + 1}</span>)}
-        onChange={(index, item) => {
-          setSelectedItem(index);
-          props.onChange?.(index, item);
-        }}
-      />
-      {slides.length > 0 && (showArrows || showStatus) && (
-        <CarouselFooter
-          status={showStatus ? (props.statusFormatter?.(activeItem + 1, slides.length) ?? `${activeItem + 1} of ${slides.length}`) : null}
-          showArrows={showArrows}
-          hasPrevious={activeItem > 0 || Boolean(props.infiniteLoop)}
-          hasNext={activeItem < slides.length - 1 || Boolean(props.infiniteLoop)}
-          hasFirst={activeItem > 0}
-          hasLast={activeItem < slides.length - 1}
-          onFirst={() => carouselRef.current?.moveTo(0)}
-          onLast={() => carouselRef.current?.moveTo(slides.length - 1)}
-          onPrevious={() => carouselRef.current?.onClickPrev()}
-          onNext={() => carouselRef.current?.onClickNext()}
-        />
+      </div>
+      {items.length > 0 && (
+        <>
+          <CarouselThumbnails
+            items={items}
+            activeIndex={activeIndex}
+            onSelect={setSelectedIndex}
+            onPrevious={previous}
+            onNext={next}
+            hasPrevious={hasPrevious}
+            hasNext={hasNext}
+          />
+          <CarouselFooter
+            status={`${activeIndex + 1} of ${items.length}`}
+            showArrows={hasMultipleSlides}
+            hasPrevious={hasPrevious}
+            hasNext={hasNext}
+            hasFirst={activeIndex > 0}
+            hasLast={activeIndex < items.length - 1}
+            onFirst={() => setSelectedIndex(0)}
+            onLast={() => setSelectedIndex(items.length - 1)}
+            onPrevious={previous}
+            onNext={next}
+          />
+        </>
       )}
     </div>
   );

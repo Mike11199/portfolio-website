@@ -30,7 +30,7 @@ const languagesByExtension = {
   bash: "bash",
   bat: "bash",
   cmd: "bash",
-  ps1: "bash",
+  ps1: "powershell",
 } as const;
 
 type FileLanguage = typeof languagesByExtension[keyof typeof languagesByExtension] | "docker" | "text";

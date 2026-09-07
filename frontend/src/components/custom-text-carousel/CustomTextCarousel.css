@@ -37,6 +37,9 @@
   .listTextItem {
     margin-top: 2rem;
     overflow-wrap: anywhere;
+    list-style-position: inside;
+    padding-inline: 5%;
+    margin-bottom: 1rem;
   }
 
   .carousel-container {

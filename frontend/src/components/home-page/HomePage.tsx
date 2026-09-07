@@ -12,7 +12,7 @@ import PyTorchApp from "../projects/pytorch/PyTorchApp";
 const HomePage = () => {
   return (
     <>
-      <div className={styles.page}>
+      <main className={styles.page}>
         <AboutMeSection />
         <PyTorchApp />
         <AlpinePeakClimbingSkiShop />
@@ -22,7 +22,7 @@ const HomePage = () => {
         <KotlinAndroidProjects />
         <SlashUnrealEngine />
         <OpenGLSolarSystem />
-      </div>
+      </main>
     </>
   );
 };

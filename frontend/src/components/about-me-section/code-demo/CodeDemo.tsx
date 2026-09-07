@@ -1,6 +1,6 @@
 /** Displays selectable code examples with their sample terminal output. */
 import { useId, useState } from "react";
-import HighlightedCode from "./HighlightedCode";
+import HighlightedCode from "../../utils/code/HighlightedCode";
 import { DIVIDER_HEIGHT, useResizablePanel } from "./useResizablePanel";
 import { codeExamples } from "./examples";
 import styles from "./CodeDemo.module.css";

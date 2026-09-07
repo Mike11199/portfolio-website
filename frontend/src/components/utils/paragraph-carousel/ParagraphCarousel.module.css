@@ -1,0 +1,35 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.panel p { padding-inline: 0; }
+
+/* All paragraphs size the same row so navigating doesn't move the buttons. */
+.slideStack {
+  display: grid;
+  flex: 1 0 auto;
+  min-width: 0;
+}
+
+.slide {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.slide[aria-hidden="true"] { visibility: hidden; pointer-events: none; }
+.slideText { display: flow-root; flex: 0 0 auto; }
+
+.pageCount {
+  text-align: center;
+  margin-top: 1rem;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}

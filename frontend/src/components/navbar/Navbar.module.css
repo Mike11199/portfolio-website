@@ -37,6 +37,8 @@
 }
 
 .navbarLogoNameContainer {
+  text-decoration: none;
+  color: inherit;
   min-width: fit-content;
   height: 100%;
   width: 25%;

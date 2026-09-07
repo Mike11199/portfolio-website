@@ -18,6 +18,22 @@ env:
   ECR_REPOSITORY: portfolio-website
 
 jobs:
+  frontend-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Check frontend
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run lint
+          npm run build
+
   cdk-test:
     name: cdk-test
     runs-on: ubuntu-latest
@@ -42,7 +58,7 @@ jobs:
 
   build-docker-image:
     name: build-docker-image
-    needs: cdk-test
+    needs: [cdk-test, frontend-check]
     runs-on: ubuntu-latest
 
     steps:

@@ -3,12 +3,10 @@ import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./SlashUnrealEngine.css";
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
-import ImagesList from "../../utils/project-image-carousel/ImageList";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { unrealEngineImages } from "../../../images/imageData.json";
 import ProjectSection from "../components/project-section/ProjectSection";
-import { useWindowWidth } from "@react-hook/window-size";
 
 const SlashUnrealEngine = () => {
   const slashUnrealEngineProjectsDescriptionText = [
@@ -46,7 +44,6 @@ const SlashUnrealEngine = () => {
     for a weapon to avoid needing logic for everything it could
     possibly hit.`,
   ];
-  const windowWidth = useWindowWidth();
   const [showCode, setShowCode] = useState(false);
   const repositoryUrl = "https://github.com/Mike11199/unreal-project-slash";
   return (
@@ -80,19 +77,7 @@ const SlashUnrealEngine = () => {
               />
           }
           media={
-              <Carousel
-                fixedHeight="var(--project-panel-height)"
-                mobilePadding={false}
-                swipeable={false}
-                emulateTouch={false}
-                showIndicators={false}
-                width="100%"
-                infiniteLoop={true}
-                showArrows={true}
-                showThumbs={windowWidth > 600}
-              >
-                {ImagesList(unrealEngineImages)}
-              </Carousel>
+              <Carousel items={unrealEngineImages} />
           }
           description={slashUnrealEngineProjectsDescriptionText}
         />

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useMediaView } from "../project-media-view/MediaViewContext";
+import { useMediaVisibility } from "../project-media-view/useMediaVisibility";
 
 export interface ProjectMedia {
   alt: string;
@@ -12,22 +13,25 @@ export interface ProjectMedia {
 
 interface Props {
   media: ProjectMedia;
+  active?: boolean;
 }
 
 /** Play uploaded videos directly, with the same looping behavior as GIFs. */
-const ProjectMediaSlide = ({ media }: Props) => {
+const ProjectMediaSlide = ({ media, active = true }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const showCode = useMediaView()?.showCode ?? false;
+  const { ref, isVisible } = useMediaVisibility();
+  const shouldPlay = active && isVisible && !showCode;
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (showCode) video.pause();
+    if (!shouldPlay) video.pause();
     else void video.play().catch(() => { /* Autoplay may be unavailable. */ });
-  }, [showCode, media.src]);
+  }, [shouldPlay, media.src]);
 
   return (
-    <div>
+    <div ref={ref}>
       {/\.(webm|mp4)(?:$|[?#])/i.test(media.src) ? (
         <video
           ref={videoRef}
@@ -35,7 +39,7 @@ const ProjectMediaSlide = ({ media }: Props) => {
           poster={media.poster}
           aria-label={media.alt}
           controls={false}
-          autoPlay
+          autoPlay={shouldPlay}
           muted
           loop
           playsInline

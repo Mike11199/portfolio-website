@@ -86,7 +86,7 @@ const AboutMeImagesContainer = ({ blackContainer = false }: { blackContainer?: b
 
 const AboutMeTextContainer = () => {
   return (
-    <AboutMeTextCarousel descriptionList={AboutMeText} heightProp={"45vh"} />
+    <AboutMeTextCarousel descriptionList={AboutMeText} heightProp="45svh" />
   );
 };
 

@@ -4,12 +4,10 @@ import "./RSAEncryptionApp.css";
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
 import ButtonLink from "../../utils/buttons/ButtonLink";
-import ImagesList from "../../utils/project-image-carousel/ImageList";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { rsaEncryptionImages } from "../../../images/imageData.json";
 import ProjectSection from "../components/project-section/ProjectSection";
-import { useWindowWidth } from "@react-hook/window-size";
 
 
 const RSAEncryptionApp = () => {
@@ -39,7 +37,6 @@ const RSAEncryptionApp = () => {
     encrypted with that AES key. These two items can then be
     decrypted using the website's functionality.`,
   ];
-  const windowWidth = useWindowWidth();
   const [showCode, setShowCode] = useState(false);
   const repositoryUrl = "https://github.com/Mike11199/CS-361-RSA-React-App";
 
@@ -85,18 +82,7 @@ const RSAEncryptionApp = () => {
               />
           }
           media={
-              <Carousel
-                fixedHeight="var(--project-panel-height)"
-                mobilePadding={false}
-                swipeable={false}
-                emulateTouch={false}
-                width="100%"
-                infiniteLoop={true}
-                showIndicators={false}
-                showThumbs={windowWidth > 600}
-              >
-                {ImagesList(rsaEncryptionImages)}
-              </Carousel>
+              <Carousel items={rsaEncryptionImages} />
           }
           description={rSAEncryptionProjectDescriptionText}
         />

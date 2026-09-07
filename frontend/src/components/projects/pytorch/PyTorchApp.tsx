@@ -3,13 +3,11 @@ import ProjectHeader from "../components/project-header/ProjectHeader";
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
 import ButtonLink from "../../utils/buttons/ButtonLink";
-import ImagesList from "../../utils/project-image-carousel/ImageList";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { PyTorchImages } from "../../../images/imageData.json";
 import styles from "./PyTorchApp.module.css";
 import ProjectSection from "../components/project-section/ProjectSection";
-import { useWindowWidth } from "@react-hook/window-size";
 
 const PyTorchApp = () => {
   const pyTorchProjectDescriptionText = [
@@ -50,8 +48,6 @@ const PyTorchApp = () => {
     copying and pasting their own image URL they've found on the
     internet.`,
   ];
-
-  const windowWidth = useWindowWidth();
   const [showCode, setShowCode] = useState(false);
   const repositoryUrl = "https://github.com/Mike11199/PyTorch-Image-Classification-Java-Flask-TypeScript";
 
@@ -106,17 +102,7 @@ const PyTorchApp = () => {
               />
           }
           media={
-              <Carousel
-                fixedHeight="var(--project-panel-height)"
-                mobilePadding={false}
-                showIndicators={false}
-                width="100%"
-                infiniteLoop={true}
-                showArrows={true}
-                showThumbs={windowWidth > 600}
-              >
-                {ImagesList(PyTorchImages)}
-              </Carousel>
+              <Carousel items={PyTorchImages} />
           }
           description={pyTorchProjectDescriptionText}
         />

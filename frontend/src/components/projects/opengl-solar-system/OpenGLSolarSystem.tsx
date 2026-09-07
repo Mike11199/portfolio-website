@@ -3,10 +3,8 @@ import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./OpenGLSolarSystem.css";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
 import ButtonLink from "../../utils/buttons/ButtonLink";
-import ImagesList from "../../utils/project-image-carousel/ImageList";
 import { solarSystemImages } from "../../../images/imageData.json";
 import ProjectSection from "../components/project-section/ProjectSection";
-import { useWindowWidth } from "@react-hook/window-size";
 
 const OpenGLSolarSystem = () => {
   const openGLSolarSystemProjectDescriptionText = [
@@ -43,8 +41,6 @@ const OpenGLSolarSystem = () => {
     of the length of the semi-major axis of its orbit.`,
   ];
 
-  const windowWidth = useWindowWidth();
-
   return (
     <>
       <section className="portfolio-project solar_system_section">
@@ -69,19 +65,7 @@ const OpenGLSolarSystem = () => {
 
         <ProjectSection
           media={
-            <Carousel
-              fixedHeight="var(--project-panel-height)"
-              mobilePadding={false}
-              swipeable={false}
-              emulateTouch={false}
-              showIndicators={false}
-              width="100%"
-              infiniteLoop={true}
-              showArrows={true}
-              showThumbs={windowWidth > 600}
-            >
-              {ImagesList(solarSystemImages)}
-            </Carousel>
+            <Carousel items={solarSystemImages} />
           }
           description={openGLSolarSystemProjectDescriptionText}
         />

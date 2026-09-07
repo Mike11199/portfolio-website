@@ -28,6 +28,7 @@
 
 .icons {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
   overflow: visible;
@@ -48,6 +49,8 @@
 @media (min-width: 601px) {
   .icons img {
     width: 2.5rem !important;
+    height: 2.5rem !important;
+    object-fit: contain;
   }
 }
 

@@ -97,6 +97,11 @@ const ProjectMediaView = ({
   onToggleCode,
 }: ProjectMediaViewProps) => {
   const { root, isFullscreen, isChangingFullscreen, error, toggleFullscreen } = useMediaFullscreen();
+  const [hasOpenedCode, setHasOpenedCode] = useState(showCode);
+  useEffect(() => {
+    if (showCode) setHasOpenedCode(true);
+  }, [showCode]);
+
   const headerClass = showHeader && mediaLayout !== "phone" ? "" : styles.overlayControls;
   const mediaClass = showCode ? `${styles.mediaLayer} ${styles.hiddenMedia}` : styles.mediaLayer;
 
@@ -107,7 +112,7 @@ const ProjectMediaView = ({
         tabIndex={-1}
         role="region"
         aria-label="Project media"
-        className={`${styles.view} ${headerClass} ${className} project-media-view`}
+        className={`${styles.view} ${headerClass} ${showCode ? styles.codeVisible : ""} ${className} project-media-view`}
       >
         {(mediaLayout !== "phone" || showCode) && (
           <MediaToolbar showCode={showCode} onToggleCode={onToggleCode}>
@@ -122,10 +127,13 @@ const ProjectMediaView = ({
         )}
         {error && <div className={styles.error} role="status">{error}</div>}
         <div className={mediaClass} aria-hidden={showCode || undefined}>
-          {children}
+          {showHeader && mediaLayout !== "phone" && <div className={styles.mediaHeader} aria-hidden="true" />}
+          <div className={styles.mediaContent}>{children}</div>
           {mediaLayout === "video" && <div className={styles.videoFooter} aria-hidden="true" />}
         </div>
-        {showCode && code && <div className={styles.codeLayer}>{code}</div>}
+        {(hasOpenedCode || showCode) && code && (
+          <div className={styles.codeLayer} hidden={!showCode}>{code}</div>
+        )}
       </div>
     </MediaViewContext.Provider>
   );
