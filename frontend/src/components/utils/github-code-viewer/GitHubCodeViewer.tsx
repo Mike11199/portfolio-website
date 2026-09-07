@@ -4,6 +4,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerEvent } from "react";
 import HighlightedCode from "../../code-demo/HighlightedCode";
+import RepositoryIcon from "./RepositoryIcon";
 import styles from "./GitHubCodeViewer.module.css";
 
 interface GitHubCodeViewerProps {
@@ -64,8 +65,8 @@ const fallbackFiles: RepositoryFile[] = [
 ];
 
 const binaryFilePattern = /\.(7z|avif|bmp|class|dll|docx?|eot|exe|gif|ico|jpe?g|mov|mp3|mp4|otf|pdf|png|psd|so|tar|ttf|wav|webm|webp|woff2?|xlsx?|zip)$/i;
-const MIN_EXPLORER_WIDTH = 144;
-const MAX_EXPLORER_WIDTH = 320;
+const MIN_EXPLORER_WIDTH = 96;
+const MAX_EXPLORER_WIDTH = 400;
 
 const getLanguage = (path: string): FileLanguage => {
   const lowerPath = path.toLowerCase();
@@ -99,29 +100,6 @@ const getInitialExplorerWidth = () => {
   return typeof window !== "undefined" && window.innerWidth <= 600 ? 160 : 224;
 };
 
-const getFileIcon = (file: RepositoryFile) => {
-  const iconByLanguage: Partial<Record<FileLanguage, string>> = {
-    python: "py",
-    javascript: "JS",
-    typescript: "TS",
-    java: "{}",
-    kotlin: "K",
-    csharp: "C#",
-    cpp: "C+",
-    rust: "R",
-    go: "Go",
-    json: "{}",
-    markdown: "M",
-    css: "#",
-    html: "<>",
-    xml: "<> ",
-    yaml: "Y",
-    sql: "DB",
-    docker: "◇",
-    bash: "$",
-  };
-  return iconByLanguage[file.language] ?? file.path.split(".").pop()?.slice(0, 3).toUpperCase() ?? "•";
-};
 
 const sortTreeNodes = (left: TreeNode, right: TreeNode) => {
   if (left.type !== right.type) return left.type === "directory" ? -1 : 1;
@@ -186,7 +164,7 @@ const FileTreeNode = ({ node, depth, activePath, expandedDirectories, onToggleDi
           onClick={() => onToggleDirectory(node.path)}
         >
           <span className={styles.chevron} aria-hidden="true">{isExpanded ? "⌄" : "›"}</span>
-          <span className={styles.folderIcon} aria-hidden="true">{isExpanded ? "▾" : "▸"}</span>
+          <RepositoryIcon path={node.path} folder expanded={isExpanded} />
           <span className={styles.treeLabel}>{node.name}</span>
         </button>
         {isExpanded && (
@@ -218,7 +196,7 @@ const FileTreeNode = ({ node, depth, activePath, expandedDirectories, onToggleDi
       title={node.path}
       onClick={() => onSelectFile(node.path)}
     >
-      <span className={`${styles.fileIcon} ${styles[`language${node.language}`]}`} aria-hidden="true">{getFileIcon(node)}</span>
+      <RepositoryIcon path={node.path} />
       <span className={styles.treeLabel}>{node.name}</span>
     </button>
   );
@@ -390,7 +368,7 @@ const GitHubCodeViewer = ({ repositoryUrl, owner, repository, branch = "main" }:
 
         <main className={styles.editor}>
           <div className={styles.tab}>
-            <span className={`${styles.fileIcon} ${styles[`language${activeFile.language}`]}`}>{getFileIcon(activeFile)}</span>
+            <RepositoryIcon path={activeFile.path} />
             <span className={styles.tabName}>{getFileLabel(activeFile.path)}</span>
           </div>
           <div className={styles.breadcrumb}>

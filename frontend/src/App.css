@@ -798,11 +798,7 @@ ul {
   }
 
   .repositoryCodeButton {
-    flex: 0 0 50px;
-    width: 50px;
-    height: 50px;
-    margin-left: 0;
-    align-self: center;
+    display: none;
   }
 
   .devIconsContainer {

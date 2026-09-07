@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useWindowWidth } from "@react-hook/window-size";
 import ReactVideoPlayer from "../utils/ReactVideoPlayer";
 import ProjectSection from "./ProjectSection";
 import ProjectMediaFrame from "./ProjectMediaFrame";
@@ -35,6 +36,7 @@ const SmallShellProject = () => {
     '&gt;&gt;' to redirect STDIN and STDOUT to specific files.`,
   ];
 
+  const windowWidth = useWindowWidth();
   const [showCode, setShowCode] = useState(false);
   const repositoryUrl = "https://github.com/Mike11199/CS-344-Small-Shell";
 
@@ -77,7 +79,7 @@ const SmallShellProject = () => {
 
         <ProjectSection
           media={
-            showCode ? (
+            showCode && windowWidth > 600 ? (
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"

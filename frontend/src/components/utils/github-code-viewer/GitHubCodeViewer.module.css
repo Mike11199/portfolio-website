@@ -9,7 +9,7 @@
   color: #d4d4d4;
   background: #101010;
   border: 1px solid #242424;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #0b0b0b;
   border-radius: 0.5rem;
   font: 12px/1.5 Consolas, "Courier New", monospace;
 }
@@ -147,45 +147,17 @@
   text-align: center;
 }
 
-.folderIcon {
-  color: #dcb67a;
-  font-size: 0.85rem;
-}
-
 .treeLabel {
   min-width: 0;
 }
 
 .fileIcon {
-  display: inline-grid;
+  display: block;
   flex: 0 0 1.15rem;
   width: 1.15rem;
   height: 1.15rem;
-  place-items: center;
-  border-radius: 0.15rem;
-  color: #1e1e1e;
-  background: #c5c5c5;
-  font: 700 0.52rem/1 system-ui, sans-serif;
+  object-fit: contain;
 }
-
-.languagepython { color: #1e1e1e; background: #ffd343; }
-.languagejavascript { color: #1e1e1e; background: #f7df1e; }
-.languagetypescript { color: #fff; background: #3178c6; }
-.languagejava { color: #fff; background: #b07219; }
-.languagekotlin { color: #fff; background: #7f52ff; }
-.languagecsharp { color: #fff; background: #68217a; }
-.languagecpp { color: #fff; background: #659ad2; }
-.languagerust { color: #fff; background: #dea584; }
-.languagego { color: #1e1e1e; background: #00add8; }
-.languagejson { color: #1e1e1e; background: #cbcb41; }
-.languagemarkdown { color: #1e1e1e; background: #75beff; }
-.languagecss { color: #fff; background: #563d7c; }
-.languagehtml,
-.languagexml { color: #fff; background: #e34c26; }
-.languageyaml { color: #fff; background: #cb171e; }
-.languagesql { color: #fff; background: #336791; }
-.languagedocker { color: #fff; background: #2496ed; }
-.languagebash { color: #fff; background: #4d4d4d; }
 
 .editor {
   display: flex;
@@ -273,9 +245,9 @@
   min-height: 1.6rem;
   padding: 0 0.7rem;
   color: #d4d4d4;
-  background: #3a0d0d;
+  background: #0b0b0b;
   border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #0b0b0b;
   font: 600 0.65rem/1 system-ui, sans-serif;
 }
 

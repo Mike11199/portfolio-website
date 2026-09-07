@@ -119,7 +119,7 @@ const RSAEncryptionApp = () => {
 
         <ProjectSection
           media={
-            showCode ? (
+            showCode && windowWidth > 600 ? (
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"

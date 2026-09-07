@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useWindowWidth } from "@react-hook/window-size";
 import ButtonLink from "../utils/ButtonLink";
 import ProjectSection from "./ProjectSection";
 import ProjectMediaFrame from "./ProjectMediaFrame";
@@ -44,6 +45,7 @@ const KotlinAndroidProjects = () => {
     which are intended to hold data without the boilerplate code
     needed in Java for getter/setter functions - https://www.baeldung.com/kotlin/data-classes.`,
   ];
+  const windowWidth = useWindowWidth();
   const [showCode, setShowCode] = useState(false);
   const repositoryUrl = "https://github.com/Mike11199/CS-492-Assignment-5-Flight-Search-App";
 
@@ -109,7 +111,7 @@ const KotlinAndroidProjects = () => {
 
         <ProjectSection
           media={
-            showCode ? (
+            showCode && windowWidth > 600 ? (
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"
