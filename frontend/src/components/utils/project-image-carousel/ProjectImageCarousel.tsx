@@ -18,16 +18,25 @@ interface SlideNavigationProps {
   onClick: () => void;
 }
 
-const SlideNavigation = ({ direction, disabled, onClick }: SlideNavigationProps) => (
-  <button
-    type="button"
-    className={`carousel-slide-navigation carousel-slide-navigation--${direction}`}
-    aria-label={`${direction === "previous" ? "Previous" : "Next"} image`}
-    disabled={disabled}
-    onMouseDown={(event) => event.preventDefault()}
-    onClick={onClick}
-  />
-);
+const SlideNavigation = ({ direction, disabled, onClick }: SlideNavigationProps) => {
+  const [flash, setFlash] = useState(0);
+
+  return (
+    <button
+      type="button"
+      className={`carousel-slide-navigation carousel-slide-navigation--${direction}`}
+      aria-label={`${direction === "previous" ? "Previous" : "Next"} image`}
+      disabled={disabled}
+      onMouseDown={(event) => event.preventDefault()}
+      onClick={() => {
+        setFlash((value) => value + 1);
+        onClick();
+      }}
+    >
+      {flash > 0 && <span key={flash} className="carousel-navigation-flash" aria-hidden="true" />}
+    </button>
+  );
+};
 
 const useFullscreenNavigation = (onPrevious: () => void, onNext: () => void) => {
   const mediaView = useMediaView();
