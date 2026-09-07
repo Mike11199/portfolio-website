@@ -1,8 +1,8 @@
 .layout {
-  --project-panel-height: 410px;
+  /* Change this to resize the complete media and text panels together. */
+  --project-total-height: 602px;
   --project-nav-height: 3rem;
   --project-thumbnails-height: 6rem;
-  --project-total-height: calc(var(--project-panel-height) + 2 * var(--project-nav-height) + var(--project-thumbnails-height));
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
   gap: 1.5rem;
@@ -11,6 +11,7 @@
 }
 
 .media {
+  --project-panel-height: calc(var(--project-total-height) - var(--project-header-height) - var(--project-nav-height) - var(--project-thumbnails-height));
   min-width: 0;
 }
 
@@ -34,7 +35,7 @@
   gap: 1rem;
   box-sizing: border-box;
   min-width: 0;
-  height: var(--project-panel-height);
+  height: var(--project-total-height);
   overflow-y: auto;
   padding: 1.5rem;
   color: var(--terminal-accent);
@@ -42,17 +43,6 @@
   border: 2px solid var(--terminal-border);
   border-radius: 0.5rem;
   scrollbar-gutter: stable;
-}
-
-/* Let the full media column set the row height, including thumbnails and footer. */
-@media (min-width: 901px) {
-  .description {
-    height: auto;
-    min-height: 0;
-    align-self: stretch;
-    contain: size;
-  }
-
 }
 
 .description:focus-visible {
@@ -76,7 +66,7 @@
 
 @media (max-width: 900px) {
   .layout {
-    --project-panel-height: clamp(220px, 47vw, 350px);
+    --project-total-height: clamp(410px, 75vw, 540px);
     grid-template-columns: minmax(0, 1fr);
   }
 

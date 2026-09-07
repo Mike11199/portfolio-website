@@ -3,7 +3,7 @@
   flex-direction: column;
   box-sizing: border-box;
   min-width: 0;
-  height: var(--project-panel-height);
+  height: var(--project-total-height);
   min-height: 320px;
   overflow: hidden;
   color: #d4d4d4;
