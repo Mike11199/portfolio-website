@@ -8,7 +8,7 @@ interface GitTreeResponse {
 
 const fallbackFiles = [createRepositoryFile("README.md")];
 
-export const useRepositorySource = (owner: string, repository: string, branch: string) => {
+export const useRepositorySource = (owner: string, repository: string, branch: string, defaultFile?: string) => {
   const [files, setFiles] = useState(fallbackFiles);
   const { paths: openPaths, activePath, selectPath: setActivePath, closePath, closeAll, closeOthers, selectInitialPath } = useRepositoryTabs(fallbackFiles[0].path);
   const [source, setSource] = useState("");
@@ -31,7 +31,7 @@ export const useRepositorySource = (owner: string, repository: string, branch: s
           .map((entry) => createRepositoryFile(entry.path))
           .sort((left, right) => left.path.localeCompare(right.path, undefined, { numeric: true, sensitivity: "base" }));
         if (discoveredFiles.length > 0) {
-          const preferredFile = discoveredFiles.find((file) => /hash_map_oa\.py$/i.test(file.path)) ?? discoveredFiles[0];
+          const preferredFile = discoveredFiles.find((file) => file.path === defaultFile) ?? discoveredFiles[0];
           setFiles(discoveredFiles);
           selectInitialPath(preferredFile.path);
         }
@@ -43,7 +43,7 @@ export const useRepositorySource = (owner: string, repository: string, branch: s
     return () => {
       cancelled = true;
     };
-  }, [branch, owner, repository, selectInitialPath]);
+  }, [branch, owner, repository, defaultFile, selectInitialPath]);
 
   useEffect(() => {
     let cancelled = false;

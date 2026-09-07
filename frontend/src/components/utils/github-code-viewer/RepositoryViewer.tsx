@@ -11,12 +11,13 @@ export interface GitHubCodeViewerProps {
   owner: string;
   repository: string;
   branch?: string;
+  defaultFile?: string;
 }
 
-const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main" }: GitHubCodeViewerProps) => {
+const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", defaultFile }: GitHubCodeViewerProps) => {
   const panelId = useId();
   const [showFiles, setShowFiles] = useState(false);
-  const { files, activeFile, openPaths, setActivePath, closePath, closeAll, closeOthers, source, isLoading, hasError } = useRepositorySource(owner, repository, branch);
+  const { files, activeFile, openPaths, setActivePath, closePath, closeAll, closeOthers, source, isLoading, hasError } = useRepositorySource(owner, repository, branch, defaultFile);
   const { workspaceRef, explorerWidth, isResizing, separatorProps } = useExplorerResize();
   return (
     <section

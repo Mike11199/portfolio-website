@@ -50,7 +50,10 @@ const RepositoryTabs = ({ paths, activePath, panelId, onSelect, onClose, onClose
         </div>
       ))}
     </div>
-    {menu && <TabContextMenu position={menu} onDismiss={() => setMenu(null)} onCloseAll={() => {
+    {menu && <TabContextMenu position={menu} onDismiss={() => setMenu(null)} onClose={() => {
+      onClose(menu.path);
+      setMenu(null);
+    }} onCloseAll={() => {
       onCloseAll();
       setMenu(null);
     }} onCloseOthers={() => {

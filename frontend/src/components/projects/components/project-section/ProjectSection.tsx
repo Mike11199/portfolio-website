@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { useWindowWidth } from "@react-hook/window-size";
 import CustomTextCarousel from "../../../custom-text-carousel/CustomTextCarousel";
 import styles from "./ProjectSection.module.css";
@@ -14,6 +14,7 @@ interface ProjectSectionProps {
   code?: ReactNode;
   description: string[];
   showCode?: boolean;
+  defaultDesktopView?: "media" | "code";
   onToggleCode?: () => void;
   mediaLayout?: "carousel" | "video" | "phone";
 }
@@ -24,10 +25,14 @@ const ProjectSection = ({
   code,
   description,
   showCode,
+  defaultDesktopView = "media",
   onToggleCode,
   mediaLayout = "carousel",
 }: ProjectSectionProps) => {
   const isMobile = useWindowWidth() <= 600;
+  const [selectedCodeView, setSelectedCodeView] = useState<boolean | null>(null);
+  const codeVisible = showCode ?? selectedCodeView ?? (!isMobile && defaultDesktopView === "code");
+  const toggleCode = onToggleCode ?? (() => setSelectedCodeView(!codeVisible));
   const canShowCode = !isMobile || (SHOW_CODE_ON_MOBILE && mediaLayout !== "phone");
   const decorationText = description.join("\n\n");
 
@@ -36,8 +41,8 @@ const ProjectSection = ({
       <ProjectMediaView
         className={styles.media}
         code={code}
-        showCode={showCode && canShowCode}
-        onToggleCode={canShowCode ? onToggleCode : undefined}
+        showCode={codeVisible && canShowCode}
+        onToggleCode={canShowCode && code ? toggleCode : undefined}
         mediaLayout={mediaLayout}
       >
         {media}

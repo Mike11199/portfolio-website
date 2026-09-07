@@ -1,7 +1,6 @@
 import { PythonIcon, PytestIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./PythonHashMap.css";
-import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
@@ -34,7 +33,6 @@ const PythonHashMap = () => {
     leading to O(N) time complexity. The load factor is expressed as
     n (number of elements) / m (number of buckets).`,
   ];
-  const [showCode, setShowCode] = useState(false);
   const repositoryUrl = "https://github.com/Mike11199/HashMap-Python-Implementation";
 
   return (
@@ -58,13 +56,13 @@ const PythonHashMap = () => {
         />
 
         <ProjectSection
-          showCode={showCode}
-          onToggleCode={() => setShowCode((visible) => !visible)}
+          defaultDesktopView="code"
           code={
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}
                 owner="Mike11199"
                 repository="HashMap-Python-Implementation"
+                defaultFile="hash_map_oa.py"
               />
           }
           media={
