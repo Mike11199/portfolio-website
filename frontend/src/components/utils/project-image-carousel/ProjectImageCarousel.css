@@ -84,6 +84,39 @@
   --project-carousel-divider-color: var(--terminal-divider);
 }
 
+/* Native buttons cover each half; CSS cursors need no pointer tracking or renders. */
+.project-image-carousel .carousel-slide-navigation {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.project-image-carousel .carousel-slide-navigation--previous {
+  left: 0;
+  cursor: url("../../../images/carousel-previous-cursor.svg") 9 9, pointer;
+}
+
+.project-image-carousel .carousel-slide-navigation--next {
+  right: 0;
+  cursor: url("../../../images/carousel-next-cursor.svg") 9 9, pointer;
+}
+
+.project-image-carousel .carousel-slide-navigation:disabled {
+  cursor: default;
+}
+
+.project-image-carousel .carousel-slide-navigation:focus-visible {
+  outline: 2px solid var(--terminal-accent);
+  outline-offset: -4px;
+}
+
 /* The library keeps the image and thumbnail ribbon together above our footer. */
 .project-image-carousel .carousel-root {
   display: flow-root;

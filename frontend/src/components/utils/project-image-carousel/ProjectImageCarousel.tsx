@@ -36,6 +36,28 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
     return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
   }, []);
 
+  useEffect(() => {
+    if (!isFullscreen) return;
+
+    const handleArrowKey = (event: KeyboardEvent) => {
+      if (document.fullscreenElement !== root.current || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      if (event.target instanceof Element && event.target.closest("input, textarea, select, [contenteditable]")) return;
+
+      event.preventDefault();
+      // Handle fullscreen navigation once, before the library's keyboard listener.
+      event.stopPropagation();
+      if (event.key === "ArrowLeft") {
+        carouselRef.current?.onClickPrev();
+      } else {
+        carouselRef.current?.onClickNext();
+      }
+    };
+
+    document.addEventListener("keydown", handleArrowKey, true);
+    return () => document.removeEventListener("keydown", handleArrowKey, true);
+  }, [isFullscreen]);
+
   const toggleFullscreen = async () => {
     const element = root.current;
     if (!element) return;
@@ -76,7 +98,16 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
       <Carousel
         ref={carouselRef}
         {...props}
-        showArrows={false}
+        showArrows={slides.length > 1}
+        // Use the library's navigation slots so hit areas stay inside the media frame.
+        renderArrowPrev={(onClick, available, label) => slides.length > 1 && (
+          <button type="button" className="carousel-slide-navigation carousel-slide-navigation--previous"
+            onClick={onClick} disabled={!available} aria-label={label} />
+        )}
+        renderArrowNext={(onClick, available, label) => slides.length > 1 && (
+          <button type="button" className="carousel-slide-navigation carousel-slide-navigation--next"
+            onClick={onClick} disabled={!available} aria-label={label} />
+        )}
         showStatus={false}
         dynamicHeight={false}
         // The library selects its animation handler only in its constructor.
@@ -93,10 +124,6 @@ const ProjectImageCarousel = ({ mobilePadding = true, fixedHeight, ...props }: P
         onChange={(index, item) => {
           setSelectedItem(index);
           props.onChange?.(index, item);
-        }}
-        onClickItem={(index, item) => {
-          carouselRef.current?.onClickNext();
-          props.onClickItem?.(index, item);
         }}
       />
       {slides.length > 0 && (showArrows || showStatus) && (
