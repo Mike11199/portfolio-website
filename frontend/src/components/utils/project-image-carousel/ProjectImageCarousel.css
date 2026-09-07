@@ -131,10 +131,26 @@
 }
 
 .project-image-carousel .carousel-root > .carousel:not(.carousel-slider) {
-  display: flow-root;
+  display: flex;
   background: #000;
   border-top: 2px solid var(--project-carousel-divider-color);
   box-sizing: border-box;
+  height: var(--project-thumbnails-height, 6rem);
+  align-items: center;
+}
+
+.project-image-carousel .thumbs-wrapper {
+  width: calc(100% - 40px);
+  margin: 0 20px;
+}
+
+.project-image-carousel .thumbs {
+  margin-block: 0;
+}
+
+.project-image-carousel .thumb img {
+  height: 3rem;
+  object-fit: contain;
 }
 
 .project-media-view:fullscreen .project-image-carousel {

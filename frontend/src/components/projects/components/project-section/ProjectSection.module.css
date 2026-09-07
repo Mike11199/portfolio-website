@@ -1,6 +1,8 @@
 .layout {
   --project-panel-height: 410px;
   --project-nav-height: 3rem;
+  --project-thumbnails-height: 6rem;
+  --project-total-height: calc(var(--project-panel-height) + 2 * var(--project-nav-height) + var(--project-thumbnails-height));
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
   gap: 1.5rem;
@@ -44,7 +46,7 @@
 
 /* Let the full media column set the row height, including thumbnails and footer. */
 @media (min-width: 901px) {
-  .layout:has(:global(.project-image-carousel)) .description {
+  .description {
     height: auto;
     min-height: 0;
     align-self: stretch;

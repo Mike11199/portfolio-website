@@ -1,5 +1,5 @@
 .frame {
-  height: var(--project-panel-height);
+  height: var(--project-total-height, var(--project-panel-height));
   min-width: 0;
   overflow: hidden;
   background: #000;

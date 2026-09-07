@@ -82,6 +82,7 @@ interface ProjectMediaViewProps {
   className?: string;
   showCode?: boolean;
   showHeader?: boolean;
+  hideMediaControls?: boolean;
   onToggleCode?: () => void;
 }
 
@@ -92,10 +93,11 @@ const ProjectMediaView = ({
   className = "",
   showCode = false,
   showHeader = true,
+  hideMediaControls = false,
   onToggleCode,
 }: ProjectMediaViewProps) => {
   const { root, isFullscreen, isChangingFullscreen, error, toggleFullscreen } = useMediaFullscreen();
-  const headerClass = showHeader ? "" : styles.overlayControls;
+  const headerClass = showHeader && !hideMediaControls ? "" : styles.overlayControls;
   const mediaClass = showCode ? `${styles.mediaLayer} ${styles.hiddenMedia}` : styles.mediaLayer;
 
   return (
@@ -107,13 +109,15 @@ const ProjectMediaView = ({
         aria-label="Project media"
         className={`${styles.view} ${headerClass} ${className} project-media-view`}
       >
-        <MediaToolbar showCode={showCode} onToggleCode={onToggleCode}>
-          <FullscreenButton
-            isFullscreen={isFullscreen}
-            disabled={isChangingFullscreen}
-            onClick={toggleFullscreen}
-          />
-        </MediaToolbar>
+        {(!hideMediaControls || showCode) && (
+          <MediaToolbar showCode={showCode} onToggleCode={onToggleCode}>
+            <FullscreenButton
+              isFullscreen={isFullscreen}
+              disabled={isChangingFullscreen}
+              onClick={toggleFullscreen}
+            />
+          </MediaToolbar>
+        )}
         {error && <div className={styles.error} role="status">{error}</div>}
         <div className={mediaClass} aria-hidden={showCode || undefined}>
           {children}

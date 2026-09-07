@@ -8,6 +8,7 @@ import ProjectMediaFrame from "../components/project-media-frame/ProjectMediaFra
 import ProjectMediaSlide from "../../utils/project-image-carousel/ProjectMediaSlide";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
+import CodeViewButton from "../../utils/buttons/CodeViewButton";
 
 const KotlinAndroidProjects = () => {
   const kotlinAndroidProjectsDescriptionText = [
@@ -54,6 +55,7 @@ const KotlinAndroidProjects = () => {
     <>
       <section className="portfolio-project kotlin_section">
         <ProjectHeader
+          trailingAction={<CodeViewButton showCode={showCode} onToggleCode={() => setShowCode((visible) => !visible)} />}
           title={"Kotlin (Jetpack Compose) - Sacramento City and Flight Search App"}
           icons={
             <>
@@ -78,8 +80,8 @@ const KotlinAndroidProjects = () => {
         />
 
         <ProjectSection
+          hideMediaControls
           showCode={showCode}
-          onToggleCode={() => setShowCode((visible) => !visible)}
           code={
               <GitHubCodeViewer
                 repositoryUrl={repositoryUrl}

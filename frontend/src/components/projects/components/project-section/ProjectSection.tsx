@@ -13,16 +13,31 @@ interface ProjectSectionProps {
   supplementalMedia?: ReactNode;
   showCode?: boolean;
   onToggleCode?: () => void;
+  hideMediaControls?: boolean;
 }
 
 /** Owns panel sizing; media can inherit --project-panel-height for its frame. */
-const ProjectSection = ({ media, code, description, supplementalMedia, showCode, onToggleCode }: ProjectSectionProps) => {
+const ProjectSection = ({
+  media,
+  code,
+  description,
+  supplementalMedia,
+  showCode,
+  onToggleCode,
+  hideMediaControls = false,
+}: ProjectSectionProps) => {
   const isMobile = useWindowWidth() <= 600;
   const decorationText = description.join("\n\n");
 
   return (
     <div className={styles.layout}>
-      <ProjectMediaView className={styles.media} code={code} showCode={!isMobile && showCode} onToggleCode={isMobile ? undefined : onToggleCode}>
+      <ProjectMediaView
+        className={styles.media}
+        code={code}
+        showCode={!isMobile && showCode}
+        onToggleCode={isMobile || hideMediaControls ? undefined : onToggleCode}
+        hideMediaControls={hideMediaControls}
+      >
         {media}
         {supplementalMedia && <div className={styles.supplemental}>{supplementalMedia}</div>}
       </ProjectMediaView>
