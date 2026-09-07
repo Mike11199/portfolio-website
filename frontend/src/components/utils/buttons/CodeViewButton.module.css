@@ -31,7 +31,8 @@
   outline-offset: 3px;
 }
 
-.codeButton:active {
+.codeButton:active > svg,
+.codeButton:active > .label {
   transform: scale(0.9);
 }
 
