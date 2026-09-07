@@ -1,0 +1,28 @@
+.menu {
+  position: fixed;
+  z-index: 1000;
+  padding: 0.25rem;
+  border: 1px solid #343434;
+  border-radius: 0.3rem;
+  background: #181818;
+  box-shadow: 0 4px 12px #0008;
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 0.15rem;
+  background: transparent;
+  color: #ddd;
+  font: 12px/1.4 system-ui, sans-serif;
+}
+
+.menu button:hover,
+.menu button:focus-visible {
+  background: #264f78;
+  color: #fff;
+  outline: none;
+}

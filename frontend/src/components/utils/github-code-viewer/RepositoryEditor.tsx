@@ -10,6 +10,8 @@ interface RepositoryEditorProps {
   openPaths: string[];
   onSelectFile: (path: string) => void;
   onCloseFile: (path: string) => void;
+  onCloseAll: () => void;
+  onCloseOthers: (path: string) => void;
   fileUrl: string;
   source: string;
   isLoading: boolean;
@@ -34,13 +36,15 @@ const RepositoryEditor = ({
   openPaths,
   onSelectFile,
   onCloseFile,
+  onCloseAll,
+  onCloseOthers,
   fileUrl,
   source,
   isLoading,
   hasError,
 }: RepositoryEditorProps) => (
   <div className={styles.editor}>
-    <RepositoryTabs paths={openPaths} activePath={file?.path ?? null} panelId={panelId} onSelect={onSelectFile} onClose={onCloseFile} />
+    <RepositoryTabs paths={openPaths} activePath={file?.path ?? null} panelId={panelId} onSelect={onSelectFile} onClose={onCloseFile} onCloseAll={onCloseAll} onCloseOthers={onCloseOthers} />
     {file && <div className={styles.breadcrumb}>
       {repository} <span aria-hidden="true">›</span> {file.path}
     </div>}

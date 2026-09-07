@@ -36,9 +36,19 @@ export const useRepositoryTabs = (initialPath: string) => {
     setTabs((current) => closeTab(current, path));
   };
 
+  const closeOthers = (path: string) => {
+    hasInteracted.current = true;
+    setTabs({ paths: [path], activePath: path });
+  };
+
+  const closeAll = () => {
+    hasInteracted.current = true;
+    setTabs({ paths: [], activePath: null });
+  };
+
   const selectInitialPath = useCallback((path: string) => {
     if (!hasInteracted.current) setTabs({ paths: [path], activePath: path });
   }, []);
 
-  return { ...tabs, selectPath, closePath, selectInitialPath };
+  return { ...tabs, selectPath, closePath, closeAll, closeOthers, selectInitialPath };
 };

@@ -77,6 +77,10 @@
   outline-offset: -2px;
 }
 
+.view .toolbar button:active:not(:disabled) > :is(svg, span) {
+  transform: none;
+}
+
 .error {
   position: absolute;
   top: 3.5rem;

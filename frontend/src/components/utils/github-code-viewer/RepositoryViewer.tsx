@@ -16,7 +16,7 @@ export interface GitHubCodeViewerProps {
 const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main" }: GitHubCodeViewerProps) => {
   const panelId = useId();
   const [showFiles, setShowFiles] = useState(false);
-  const { files, activeFile, openPaths, setActivePath, closePath, source, isLoading, hasError } = useRepositorySource(owner, repository, branch);
+  const { files, activeFile, openPaths, setActivePath, closePath, closeAll, closeOthers, source, isLoading, hasError } = useRepositorySource(owner, repository, branch);
   const { workspaceRef, explorerWidth, isResizing, separatorProps } = useExplorerResize();
   return (
     <section
@@ -60,6 +60,8 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main" }:
           openPaths={openPaths}
           onSelectFile={setActivePath}
           onCloseFile={closePath}
+          onCloseAll={closeAll}
+          onCloseOthers={closeOthers}
           fileUrl={activeFile ? `${repositoryUrl}/blob/${branch}/${activeFile.path}` : repositoryUrl}
           source={source}
           isLoading={isLoading}

@@ -10,7 +10,7 @@ const fallbackFiles = [createRepositoryFile("README.md")];
 
 export const useRepositorySource = (owner: string, repository: string, branch: string) => {
   const [files, setFiles] = useState(fallbackFiles);
-  const { paths: openPaths, activePath, selectPath: setActivePath, closePath, selectInitialPath } = useRepositoryTabs(fallbackFiles[0].path);
+  const { paths: openPaths, activePath, selectPath: setActivePath, closePath, closeAll, closeOthers, selectInitialPath } = useRepositoryTabs(fallbackFiles[0].path);
   const [source, setSource] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -81,5 +81,5 @@ export const useRepositorySource = (owner: string, repository: string, branch: s
     };
   }, [activeFile, branch, owner, repository]);
 
-  return { files, activeFile, openPaths, setActivePath, closePath, source, isLoading, hasError };
+  return { files, activeFile, openPaths, setActivePath, closePath, closeAll, closeOthers, source, isLoading, hasError };
 };

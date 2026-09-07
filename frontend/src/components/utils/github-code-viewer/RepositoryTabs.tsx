@@ -1,4 +1,5 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import TabContextMenu from "./TabContextMenu";
 import RepositoryIcon from "./RepositoryIcon";
 import styles from "./RepositoryTabs.module.css";
 
@@ -8,9 +9,12 @@ interface Props {
   panelId: string;
   onSelect: (path: string) => void;
   onClose: (path: string) => void;
+  onCloseAll: () => void;
+  onCloseOthers: (path: string) => void;
 }
 
-const RepositoryTabs = ({ paths, activePath, panelId, onSelect, onClose }: Props) => {
+const RepositoryTabs = ({ paths, activePath, panelId, onSelect, onClose, onCloseAll, onCloseOthers }: Props) => {
+  const [menu, setMenu] = useState<{ x: number; y: number; path: string } | null>(null);
   const strip = useRef<HTMLDivElement>(null);
   const activeTab = useRef<HTMLDivElement>(null);
 
@@ -25,9 +29,14 @@ const RepositoryTabs = ({ paths, activePath, panelId, onSelect, onClose }: Props
   }, [activePath, paths]);
 
   return (
+    <>
     <div ref={strip} className={styles.tabs} role="tablist" aria-label="Open files">
       {paths.map((path) => (
-        <div key={path} ref={path === activePath ? activeTab : null} className={`${styles.tab}${path === activePath ? ` ${styles.active}` : ""}`} role="presentation">
+        <div key={path} ref={path === activePath ? activeTab : null} className={`${styles.tab}${path === activePath ? ` ${styles.active}` : ""}`} role="presentation"
+          onContextMenu={(event) => {
+            event.preventDefault();
+            setMenu({ x: event.clientX, y: event.clientY, path });
+          }}>
           <button
             type="button" role="tab" className={styles.select} title={path} aria-label={path}
             aria-selected={path === activePath} aria-controls={panelId}
@@ -41,6 +50,14 @@ const RepositoryTabs = ({ paths, activePath, panelId, onSelect, onClose }: Props
         </div>
       ))}
     </div>
+    {menu && <TabContextMenu position={menu} onDismiss={() => setMenu(null)} onCloseAll={() => {
+      onCloseAll();
+      setMenu(null);
+    }} onCloseOthers={() => {
+      onCloseOthers(menu.path);
+      setMenu(null);
+    }} />}
+    </>
   );
 };
 
