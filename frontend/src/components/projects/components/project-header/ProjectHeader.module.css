@@ -56,8 +56,8 @@
 
 @media (max-width: 600px) {
   .icons img {
-    width: 2rem !important;
-    height: 2rem !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
     object-fit: contain;
   }
 

@@ -68,3 +68,9 @@
 @media (prefers-reduced-motion: reduce) {
   .carousel-slide { transition: none; }
 }
+
+@media (max-width: 600px) {
+  .project-media-view:fullscreen .carousel-viewport {
+    touch-action: pan-y pinch-zoom;
+  }
+}

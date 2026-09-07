@@ -133,5 +133,5 @@
 
 @media (max-width: 600px) {
   .view .toolbar svg,
-  .view:fullscreen .toolbar svg { width: 1.35rem; height: 1.35rem; }
+  .view:fullscreen .toolbar svg { width: 1.2rem; height: 1.2rem; }
 }
