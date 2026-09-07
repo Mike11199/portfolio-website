@@ -283,6 +283,18 @@
 .statusbar a { color: inherit; text-decoration: none; }
 .statusSpacer { flex: 1; }
 
+.viewer button > :is(svg, img, span) {
+  transition: scale 0.12s ease;
+}
+
+.viewer button:active > :is(svg, img, span) {
+  scale: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewer button > :is(svg, img, span) { transition: none; }
+}
+
 .filesToggle { display: none; }
 
 @media (max-width: 600px) {

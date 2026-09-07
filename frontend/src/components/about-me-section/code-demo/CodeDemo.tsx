@@ -35,7 +35,7 @@ const CodeDemo = () => {
                 width={18}
                 height={18}
               />
-              {item.language}
+              <span>{item.language}</span>
             </button>
           ))}
         </div>

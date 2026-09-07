@@ -72,6 +72,18 @@
   background: transparent;
 }
 
+.languages button > :is(img, span) {
+  transition: scale 0.12s ease;
+}
+
+.languages button:active > :is(img, span) {
+  scale: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .languages button > :is(img, span) { transition: none; }
+}
+
 .editor :global(.hljs-title.function_) {
   color: #dcdcaa;
 }
