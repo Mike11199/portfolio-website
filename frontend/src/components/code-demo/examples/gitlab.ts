@@ -3,11 +3,9 @@ export const gitlabExample = {
     code: `# Build and push a Docker image to AWS ECR.
 # Deploy the default branch to ECS with CDK.
 
-# Shell runner: Docker, AWS CLI, CDK,
-# and project dependencies installed.
-# Set AWS credentials, AWS_REGION,
-# and ECR_REGISTRY in CI.
-stages: [build, deploy]
+stages:
+  - build
+  - deploy
 
 default:
   tags: [aws-shell]

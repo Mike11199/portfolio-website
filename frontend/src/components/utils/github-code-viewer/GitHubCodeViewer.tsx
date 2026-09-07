@@ -65,8 +65,8 @@ const fallbackFiles: RepositoryFile[] = [
 ];
 
 const binaryFilePattern = /\.(7z|avif|bmp|class|dll|docx?|eot|exe|gif|ico|jpe?g|mov|mp3|mp4|otf|pdf|png|psd|so|tar|ttf|wav|webm|webp|woff2?|xlsx?|zip)$/i;
-const MIN_EXPLORER_WIDTH = 96;
-const MAX_EXPLORER_WIDTH = 400;
+const MIN_EXPLORER_WIDTH = 48;
+const MAX_EXPLORER_WIDTH = 600;
 
 const getLanguage = (path: string): FileLanguage => {
   const lowerPath = path.toLowerCase();
