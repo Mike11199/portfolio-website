@@ -4,13 +4,6 @@
   z-index: 1;
 }
 
-@media (max-width: 600px) {
-  .frame {
-    padding-left: 0%;
-    padding-right: 0%;
-  }
-}
-
 .loading {
   position: absolute;
   inset: 0;
@@ -32,6 +25,13 @@
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .frame {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

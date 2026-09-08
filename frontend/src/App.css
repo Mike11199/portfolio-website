@@ -103,10 +103,12 @@ ul {
   list-style-type: square;
   height: auto;
 }
+/* Shared gutters belong to the section, not its images or description. */
+section.portfolio-project {
+  padding-inline: clamp(1rem, 4vw, 3rem);
+}
 
-/* Styles for screens smaller than 600px */
 @media (max-width: 600px) {
-
   body {
     background: #212534;
   }
@@ -121,9 +123,7 @@ ul {
   }
 
   ul > li > ul > li {
-    margin-top: 10px;
     padding-left: 20px;
-    list-style-type: circle;
   }
 
   ul > li > ul {
@@ -132,10 +132,4 @@ ul {
   html {
     scroll-padding-top: 50px;
   }
-}
-
-
-/* Shared gutters belong to the section, not its images or description. */
-section.portfolio-project {
-  padding-inline: clamp(1rem, 4vw, 3rem);
 }

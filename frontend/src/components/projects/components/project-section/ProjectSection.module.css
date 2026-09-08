@@ -14,13 +14,6 @@
   min-width: 0;
 }
 
-@media (min-width: 601px) {
-  .description,
-  .descriptionList > li {
-    font-size: 0.9rem;
-  }
-}
-
 .description {
   --scrollbar-size: 8px;
   --scrollbar-native-width: thin;
@@ -63,6 +56,23 @@
   overflow-wrap: anywhere;
 }
 
+/* The section already supplies the gap and outer gutters. */
+.mobileDescription {
+  min-width: 0;
+}
+
+.mobileDescription :global(.text-carousel-content) {
+  margin-top: 0;
+  padding-inline: 0;
+}
+
+@media (min-width: 601px) {
+  .description,
+  .descriptionList > li {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 900px) {
   .layout {
     --project-total-height: clamp(390px, 70vw, 510px);
@@ -75,14 +85,3 @@
     scrollbar-gutter: auto;
   }
 }
-
-/* The section already supplies the gap and outer gutters. */
-.mobileDescription {
-  min-width: 0;
-}
-
-.mobileDescription :global(.text-carousel-content) {
-  margin-top: 0;
-  padding-inline: 0;
-}
-

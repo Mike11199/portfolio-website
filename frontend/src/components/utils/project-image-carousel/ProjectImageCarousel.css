@@ -90,10 +90,6 @@
   outline-offset: -4px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .carousel-slide { transition: none; }
-}
-
 .carousel-viewport--swipe {
   touch-action: pan-y pinch-zoom;
   -webkit-user-select: none;
@@ -121,6 +117,10 @@
   flex: 0 0 100%;
   min-width: 0;
   height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide { transition: none; }
 }
 
 @media (max-width: 600px) {

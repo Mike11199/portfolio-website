@@ -55,7 +55,6 @@
   display: flex;
   width: 100%;
   height: 100px;
-  background: #fefefe;
   background: #000000;
   box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
   align-items: center;
@@ -90,7 +89,6 @@
 
 .navbarLink {
   margin: 0px;
-  padding: 0px;
   display: inline-block;
   color: #ffffff;
   text-transform: uppercase;
@@ -136,19 +134,12 @@
     flex-direction: column;
     height: 100%;
     min-height: fit-content;
-    z-index: 50;
     margin: 0px;
     padding: 0px;
-    align-items: center;
     justify-content: center;
   }
 
   .navbarFullName {
-    color: white;
-    font-weight: 150;
-    font-family: Segoe UI;
-    font-size: 25px;
-    text-transform: uppercase;
     padding-right: 0vh;
     padding-left: 0vh;
     margin: 0px;
@@ -165,12 +156,10 @@
   }
 
   .navbarLink {
-    font-size: 12px;
     padding: 10px;
   }
 
   .navbarElementContainer {
-    display: flex;
     flex-direction: column;
     width: 100%;
     margin: 0px;
@@ -180,17 +169,12 @@
   .navbarLogoNameContainer {
     width: 100%;
     margin-top: 70px;
-    display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 30px;
   }
 
   .navbarElementContainerLinks {
     width: 100%;
-    display: flex;
     flex-direction: column;
     margin-bottom: 40px;
   }

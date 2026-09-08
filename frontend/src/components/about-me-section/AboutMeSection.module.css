@@ -68,13 +68,6 @@
   min-width: 0;
 }
 
-@media (min-width: 601px) {
-  .introduction :global(.textWrapperDesktop),
-  .introduction :global(.textWrapperDesktop) p {
-    font-size: 0.9rem;
-  }
-}
-
 .introduction :global(.normal-text-desktop-view) {
   box-sizing: border-box;
   width: 100%;
@@ -97,50 +90,6 @@
   padding: 0;
 }
 
-@media (max-width: 900px) {
-  .aboutMeImagesAndTextWrapper {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .introduction {
-    grid-row: 1;
-  }
-
-  .introduction :global(.normal-text-desktop-view) {
-    max-height: none;
-  }
-}
-
-@media (max-width: 600px) {
-  #aboutMeSection {
-    background-image: linear-gradient(#000000 0%, #031e42 15%, #101e29 95%, #000000 100%);
-    padding-top: 1.5rem;
-  }
-
-  .mediaGroup {
-    display: contents;
-  }
-
-  .aboutMeVideoWrapper {
-    grid-row: 1;
-  }
-
-  .introduction {
-    grid-row: 2;
-  }
-
-  .aboutMeImages {
-    grid-row: 3;
-  }
-
-  .aboutMeVideoWrapper {
-    height: clamp(240px, 45svh, 360px);
-    aspect-ratio: auto;
-    box-sizing: border-box;
-    border: 4px solid #000;
-  }
-}
-
 /* Optional frame; the natural photo layout and proportions remain unchanged. */
 .photoPanel {
   padding: 1.5rem;
@@ -157,8 +106,20 @@
   gap: 1.5rem;
 }
 
-/* Side-by-side media shares one frame and one inset around all visible content. */
+.codeDemo {
+  min-width: 0;
+}
+
+.codeDemo > section {
+  margin-top: 0;
+}
+
 @media (min-width: 601px) {
+  .introduction :global(.textWrapperDesktop),
+  .introduction :global(.textWrapperDesktop) p {
+    font-size: 0.9rem;
+  }
+
   .mediaGroup {
     padding: 1.5rem;
     /* Fit the 9:16 video to the natural collage height, including its 24px gap.
@@ -185,22 +146,6 @@
        the photos or changing the shared 24px padding and gaps. */
     grid-template-columns: minmax(0, min(65%, 915px)) minmax(0, 1fr);
   }
-}
-
-
-
-@media (min-width: 901px) {
-  .introduction :global(.normal-text-desktop-view) {
-    max-height: 560px;
-  }
-}
-
-.codeDemo {
-  min-width: 0;
-}
-
-.codeDemo > section {
-  margin-top: 0;
 }
 
 @media (min-width: 1400px) {
@@ -239,11 +184,46 @@
 }
 
 @media (max-width: 900px) {
+  .aboutMeImagesAndTextWrapper {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .introduction {
+    grid-row: 1;
+  }
+
+  .introduction :global(.normal-text-desktop-view) {
+    max-height: none;
+  }
+
   .codeDemo { display: none; }
 }
 
 @media (max-width: 600px) {
-  .aboutMeImages { grid-row: 3; }
+  #aboutMeSection {
+    background-image: linear-gradient(#000000 0%, #031e42 15%, #101e29 95%, #000000 100%);
+    padding-top: 1.5rem;
+  }
+
+  .mediaGroup {
+    display: contents;
+  }
+
+  .introduction {
+    grid-row: 2;
+  }
+
+  .aboutMeImages {
+    grid-row: 3;
+  }
+
+  .aboutMeVideoWrapper {
+    grid-row: 1;
+    height: clamp(240px, 45svh, 360px);
+    aspect-ratio: auto;
+    box-sizing: border-box;
+    border: 4px solid #000;
+  }
 
   .photoPanel {
     padding: 0.75rem;

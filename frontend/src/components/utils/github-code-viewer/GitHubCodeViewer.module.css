@@ -296,11 +296,11 @@
   scale: 0.9;
 }
 
+.filesToggle { display: none; }
+
 @media (prefers-reduced-motion: reduce) {
   .viewer button > :is(svg, img, span) { transition: none; }
 }
-
-.filesToggle { display: none; }
 
 @media (max-width: 600px) {
   .viewer { height: clamp(320px, 70vh, 560px); }
