@@ -108,7 +108,10 @@
 }
 
 @media (max-width: 600px) {
-  .footer { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+  .footer {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    border-top: 0;
+  }
   .first,
   .last { display: none; }
   .previous { grid-column: 1; }

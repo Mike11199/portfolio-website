@@ -59,7 +59,7 @@ const MediaToolbar = ({ mediaLayout, onToggleCode, onToggleFullscreen }: MediaTo
       {onToggleCode && <CodeViewButton showCode={showCode} onToggleCode={onToggleCode} />}
       {!isMobile && fullscreenButton}
       {isMobile && isFullscreen && !showCode && mediaLayout === "carousel" && (
-        <p className={styles.swipeHint}>Swipe or Tap to Browse</p>
+        <p className={styles.swipeHint}>Swipe or Tap Sides to Browse</p>
       )}
     </div>
   );

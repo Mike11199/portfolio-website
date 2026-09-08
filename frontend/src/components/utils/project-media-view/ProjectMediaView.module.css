@@ -154,6 +154,29 @@
 .toolbar svg { flex-shrink: 0; }
 
 @media (max-width: 600px) {
+  .view[data-media-layout="carousel"]:not(.codeVisible):not([data-fullscreen]) {
+    box-sizing: border-box;
+    border: 4px solid #000;
+  }
+
+  .videoWithoutCode:not([data-fullscreen]) .mediaHeader,
+  .videoWithoutCode:not([data-fullscreen]) .toolbar {
+    display: none;
+  }
+
+  .mediaHeader { border-bottom: 0; }
+  .videoFooter { display: none; }
+  .toolbar button + button { border-left: 0; }
+
+  /* Fit the media's aspect ratio outside code view and fullscreen. */
+  .adaptiveHeight:not(.codeVisible):not([data-fullscreen]) {
+    height: auto;
+  }
+
+  .adaptiveHeight:not(.codeVisible):not([data-fullscreen]) .mediaLayer {
+    height: auto;
+  }
+
   .view .toolbar svg,
   .view[data-fullscreen] .toolbar svg { width: 1.2rem; height: 1.2rem; }
 }

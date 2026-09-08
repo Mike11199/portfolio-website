@@ -122,3 +122,23 @@
   min-width: 0;
   height: 100%;
 }
+
+@media (max-width: 600px) {
+  .project-media-view:not([data-fullscreen]) .project-image-carousel {
+    height: auto;
+  }
+
+  .project-media-view:not([data-fullscreen]) .carousel-viewport {
+    flex: none;
+  }
+
+  .project-media-view:not([data-fullscreen]) .carousel-slide[aria-hidden="false"] {
+    position: relative;
+  }
+
+  .project-media-view:not([data-fullscreen]) .carousel-slide > div,
+  .project-media-view:not([data-fullscreen]) .carousel-slide img,
+  .project-media-view:not([data-fullscreen]) .carousel-slide video {
+    height: auto;
+  }
+}

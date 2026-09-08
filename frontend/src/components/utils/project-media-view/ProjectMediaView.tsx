@@ -54,6 +54,8 @@ const ProjectMediaView = ({
   const hasHeader = showHeader && mediaLayout !== "phone";
   const viewClass = [
     styles.view,
+    mediaLayout !== "phone" && styles.adaptiveHeight,
+    mediaLayout === "video" && !onToggleCode && styles.videoWithoutCode,
     isFullscreen && styles.expanded,
     !hasHeader && styles.overlayControls,
     showCode && styles.codeVisible,
@@ -67,6 +69,7 @@ const ProjectMediaView = ({
         <div
           ref={root}
           data-fullscreen={isFullscreen || undefined}
+          data-media-layout={mediaLayout}
           tabIndex={-1}
           role={isFullscreen ? "dialog" : "region"}
           aria-modal={isFullscreen || undefined}

@@ -10,6 +10,20 @@
   width: 100%;
 }
 
+@media (max-width: 600px) {
+  :global(.project-media-view[data-media-layout="video"]:not([data-fullscreen])) .frame {
+    position: relative;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 4px solid #000;
+  }
+
+  :global(.project-media-view[data-media-layout="video"]:not([data-fullscreen])) .frame > :global(.player-wrapper) {
+    position: absolute;
+    inset: 0;
+  }
+}
+
 .paired {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
