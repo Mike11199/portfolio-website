@@ -27,7 +27,10 @@
 
 .carousel-slide > div,
 .carousel-slide img,
-.carousel-slide video {
+.carousel-slide video,
+.carousel-swipe-slide > div,
+.carousel-swipe-slide img,
+.carousel-swipe-slide video {
   display: block;
   width: 100%;
   height: 100%;
@@ -91,8 +94,31 @@
   .carousel-slide { transition: none; }
 }
 
-@media (max-width: 600px) {
-  .project-media-view[data-fullscreen] .carousel-viewport {
-    touch-action: pan-y pinch-zoom;
-  }
+.carousel-viewport--swipe {
+  touch-action: pan-y pinch-zoom;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carousel-viewport--swipe img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+.carousel-viewport--swipe .carousel-slide-navigation:focus-visible {
+  outline: none;
+}
+
+.carousel-swipe-track {
+  display: flex;
+  height: 100%;
+  transform: translateX(-100%);
+  will-change: transform;
+}
+
+.carousel-swipe-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
 }

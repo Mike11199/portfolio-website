@@ -5,6 +5,7 @@ import CarouselThumbnails from "./CarouselThumbnails";
 import { useMediaView } from "../project-media-view/MediaViewContext";
 import { getSlideIndex } from "./carouselNavigation";
 import { useFullscreenSwipe } from "./useFullscreenSwipe";
+import SwipeSlides from "./SwipeSlides";
 import "./ProjectImageCarousel.css";
 
 interface ProjectImageCarouselProps {
@@ -72,12 +73,14 @@ const ProjectImageCarousel = ({ items, loop = true }: ProjectImageCarouselProps)
   const next = () => setSelectedIndex(getSlideIndex(activeIndex, 1, items.length, loop));
 
   useFullscreenNavigation(previous, next);
-  const viewport = useFullscreenSwipe(previous, next);
+  const swipe = useFullscreenSwipe({ activeIndex, hasPrevious, hasNext, onPrevious: previous, onNext: next });
 
   return (
     <div ref={root} className="project-image-carousel" role="region" aria-label="Project media carousel">
-      <div ref={viewport} className="carousel-viewport">
-        {items.map((item, index) => (
+      <div className={`carousel-viewport ${swipe.enabled ? "carousel-viewport--swipe" : ""}`} {...swipe.handlers}>
+        {swipe.enabled ? (
+          <SwipeSlides items={items} activeIndex={activeIndex} loop={loop} track={swipe.track} />
+        ) : items.map((item, index) => (
           <div className="carousel-slide" key={item.src} aria-hidden={index !== activeIndex}>
             <ProjectMediaSlide media={item} active={index === activeIndex} />
           </div>
