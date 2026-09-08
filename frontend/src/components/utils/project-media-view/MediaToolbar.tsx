@@ -42,6 +42,7 @@ interface MediaToolbarProps {
 const MediaToolbar = ({ mediaLayout, onToggleCode, onToggleFullscreen }: MediaToolbarProps) => {
   const { isFullscreen = false, showCode = false } = useMediaView() ?? {};
   const isMobile = useWindowWidth() <= 600;
+  const codeToggleInProjectHeader = isMobile && mediaLayout === "video" && !isFullscreen;
 
   if (mediaLayout === "phone" && !showCode && !isFullscreen) return null;
 
@@ -56,7 +57,9 @@ const MediaToolbar = ({ mediaLayout, onToggleCode, onToggleFullscreen }: MediaTo
   return (
     <div className={styles.toolbar} role="group" aria-label="Media controls">
       {isMobile && fullscreenButton}
-      {onToggleCode && <CodeViewButton showCode={showCode} onToggleCode={onToggleCode} />}
+      {onToggleCode && !codeToggleInProjectHeader && (
+        <CodeViewButton showCode={showCode} onToggleCode={onToggleCode} />
+      )}
       {!isMobile && fullscreenButton}
       {isMobile && isFullscreen && !showCode && mediaLayout === "carousel" && (
         <p className={styles.swipeHint}>Swipe or Tap Sides to Browse</p>

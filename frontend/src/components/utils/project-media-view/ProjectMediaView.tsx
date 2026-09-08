@@ -54,7 +54,7 @@ const ProjectMediaView = ({
   const hasHeader = showHeader && mediaLayout !== "phone";
   const viewClass = [
     styles.view,
-    mediaLayout !== "phone" && styles.adaptiveHeight,
+    styles.adaptiveHeight,
     mediaLayout === "video" && !onToggleCode && styles.videoWithoutCode,
     isFullscreen && styles.expanded,
     !hasHeader && styles.overlayControls,

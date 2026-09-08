@@ -56,3 +56,17 @@
   max-height: 100%;
   border-radius: 6% / 3%;
 }
+
+@media (max-width: 600px) {
+  :global(.project-media-view:not([data-fullscreen])) .paired.phone,
+  :global(.project-media-view:not([data-fullscreen])) .paired.phone > div {
+    height: auto;
+    align-items: start;
+  }
+
+  :global(.project-media-view:not([data-fullscreen])) .paired.phone video,
+  :global(.project-media-view:not([data-fullscreen])) .paired.phone img {
+    width: 100%;
+    max-height: none;
+  }
+}

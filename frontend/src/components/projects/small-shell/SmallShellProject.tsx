@@ -7,6 +7,7 @@ import ProjectSection from "../components/project-section/ProjectSection";
 import ProjectMediaFrame from "../components/project-media-frame/ProjectMediaFrame";
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
+import CodeViewButton from "../../utils/buttons/CodeViewButton";
 
 const SmallShellProject = () => {
   const smallShellProjectDescriptionText = [
@@ -46,6 +47,9 @@ const SmallShellProject = () => {
       <section className="portfolio-project smallsh_section">
         <ProjectHeader
           title={"Small Shell (smallsh) - C Unix Shell"}
+          mobileAction={
+            <CodeViewButton showCode={showCode} onToggleCode={() => setShowCode((visible) => !visible)} />
+          }
           icons={
             <>
               <LinuxIcon />

@@ -154,6 +154,15 @@
 .toolbar svg { flex-shrink: 0; }
 
 @media (max-width: 600px) {
+  .view[data-media-layout="video"]:not(.codeVisible):not([data-fullscreen]) {
+    border-radius: 0.35rem;
+  }
+
+  .view[data-media-layout="video"]:not(.codeVisible):not([data-fullscreen]) .mediaHeader,
+  .view[data-media-layout="video"]:not(.codeVisible):not([data-fullscreen]) .toolbar {
+    display: none;
+  }
+
   .view[data-media-layout="carousel"]:not(.codeVisible):not([data-fullscreen]) {
     box-sizing: border-box;
     border: 4px solid #000;

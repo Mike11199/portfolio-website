@@ -26,6 +26,8 @@
   overflow-wrap: anywhere;
 }
 
+.mobileAction { display: none; }
+
 .icons {
   display: flex;
   align-items: center;
@@ -55,6 +57,34 @@
 }
 
 @media (max-width: 600px) {
+  .actions:has(.mobileAction) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .mobileAction { display: flex; }
+  .mobileAction button {
+    display: inline-flex;
+    width: 100%;
+    flex: 1;
+    box-sizing: border-box;
+    height: 50px;
+    gap: 10px;
+    padding: 2px 6px;
+    border-radius: 0;
+    background: #000;
+    color: #fff;
+    font: 500 14px/normal "Segoe UI";
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  }
+  .mobileAction button:hover { background: var(--terminal-hover); }
+  .mobileAction button svg { width: 20px; height: 20px; }
+  .mobileAction button:active { transform: scale(0.9); }
+  .mobileAction button:active > :is(svg, span) { transform: none; }
+  .mobileAction button span { display: inline; }
+
   .icons img {
     width: 2.5rem !important;
     height: 2.5rem !important;
@@ -65,7 +95,7 @@
   .header {
     flex-direction: column;
     justify-content: center;
-    margin: 2rem 0 3rem;
+    margin: 2rem 0 1.5rem;
     padding: 2rem;
   }
 
