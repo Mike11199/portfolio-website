@@ -78,7 +78,7 @@
 }
 
 @keyframes carousel-navigation-flash {
-  from { opacity: 0.16; }
+  from { opacity: 0.04; }
   to { opacity: 0; }
 }
 
