@@ -148,7 +148,6 @@
   font: 600 0.8rem/1 system-ui, sans-serif;
 }
 
-.toolbar button + button { border-left: 1px solid var(--terminal-divider); }
 .toolbar button span { display: inline; }
 .toolbar svg { flex-shrink: 0; }
 
@@ -174,7 +173,6 @@
 
   .mediaHeader { border-bottom: 0; }
   .videoFooter { display: none; }
-  .toolbar button + button { border-left: 0; }
 
   /* Fit the media's aspect ratio outside code view and fullscreen. */
   .adaptiveHeight:not(.codeVisible):not([data-fullscreen]) {

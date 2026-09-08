@@ -338,7 +338,7 @@
   .sourceCode {
     grid-template-columns: 2.5rem minmax(0, 1fr);
     min-width: 0;
-    font-size: 9px;
+    font-size: 1rem;
     font-weight: 600;
   }
   .sourceCode pre {
