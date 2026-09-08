@@ -238,16 +238,18 @@
 }
 
 .sourceCode {
+  font: 0.875rem/1.5 Consolas, "Courier New", monospace;
   display: grid;
   grid-template-columns: 3.2rem minmax(0, 1fr);
-  min-width: max-content;
+  min-width: 0;
   padding-right: 1.2rem;
 }
 
 .sourceCode pre {
   margin: 0;
   font: inherit;
-  white-space: pre;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .lineNumbers {
@@ -338,12 +340,7 @@
   .sourceCode {
     grid-template-columns: 2.5rem minmax(0, 1fr);
     min-width: 0;
-    font-size: 1rem;
     font-weight: 600;
-  }
-  .sourceCode pre {
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
   }
   .explorer { font-weight: 600; }
   .statusbar > * { visibility: hidden; }

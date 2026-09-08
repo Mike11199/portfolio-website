@@ -1,4 +1,5 @@
 import styles from "./Buttons.module.css";
+import ButtonTooltip from "./button-tooltip/ButtonTooltip";
 
 interface ButtonLinkProps {
   URL: string;
@@ -7,15 +8,12 @@ interface ButtonLinkProps {
 }
 
 const ButtonLink = ({ URL, variant = "blue", buttonText }: ButtonLinkProps) => (
-  <a
+  <ButtonTooltip
     className={`${styles.button} ${styles[variant]}`}
-    href={URL}
-    target="_blank"
-    rel="noopener noreferrer"
-    title={URL}
+    url={URL}
   >
     {buttonText}
-  </a>
+  </ButtonTooltip>
 );
 
 export default ButtonLink;

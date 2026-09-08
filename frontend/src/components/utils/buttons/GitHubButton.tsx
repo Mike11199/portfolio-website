@@ -1,5 +1,6 @@
 import GitHubLogo from "../../../images/githubButtonLogo.png";
 import styles from "./Buttons.module.css";
+import ButtonTooltip from "./button-tooltip/ButtonTooltip";
 
 interface GitHubButtonProps {
   URL: string;
@@ -7,16 +8,13 @@ interface GitHubButtonProps {
 }
 
 const GitHubButton = ({ URL, className = "" }: GitHubButtonProps) => (
-  <a
+  <ButtonTooltip
     className={`${styles.button} ${styles.github} ${className}`}
-    href={URL}
-    target="_blank"
-    rel="noopener noreferrer"
-    title={URL}
+    url={URL}
   >
     <img className={styles.logo} src={GitHubLogo} alt="" />
     GitHub Repo
-  </a>
+  </ButtonTooltip>
 );
 
 export default GitHubButton;
