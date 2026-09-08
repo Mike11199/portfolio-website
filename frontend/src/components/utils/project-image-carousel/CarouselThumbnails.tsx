@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import type { ProjectMedia } from "./ProjectMediaSlide";
 import styles from "./CarouselThumbnails.module.css";
+import useThumbnailDrag from "./useThumbnailDrag";
 
 interface CarouselThumbnailsProps {
   items: ProjectMedia[];
@@ -16,6 +17,7 @@ const CarouselThumbnails = ({
   const strip = useRef<HTMLDivElement>(null);
   const selected = useRef<HTMLButtonElement>(null);
   const [hasOverflow, setHasOverflow] = useState(false);
+  const drag = useThumbnailDrag(hasOverflow);
 
   useLayoutEffect(() => {
     const container = strip.current;
@@ -53,7 +55,13 @@ const CarouselThumbnails = ({
       <button type="button" className={styles.scrollButton} aria-label="Scroll thumbnails left" onClick={() => scrollThumbnails(-1)}>
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m10 3-5 5 5 5" /></svg>
       </button>
-      <div ref={strip} className={styles.strip} role="group" aria-label="Choose image">
+      <div
+        ref={strip}
+        className={`${styles.strip} ${drag.isDragging ? styles.dragging : ""}`}
+        role="group"
+        aria-label="Choose image"
+        {...drag.handlers}
+      >
         {items.map((item, index) => (
           <button
             key={item.src}
@@ -63,7 +71,7 @@ const CarouselThumbnails = ({
             aria-pressed={index === activeIndex}
             onClick={() => onSelect(index)}
           >
-            <img src={item.thumbnail ?? item.poster ?? item.src} alt="" />
+            <img src={item.thumbnail ?? item.poster ?? item.src} alt="" draggable={false} />
           </button>
         ))}
       </div>

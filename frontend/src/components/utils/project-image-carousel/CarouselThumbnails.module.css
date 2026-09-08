@@ -16,6 +16,12 @@
   padding-block: 4px;
   overflow-x: auto;
   scrollbar-width: none;
+  user-select: none;
+}
+
+.strip.dragging,
+.strip.dragging * {
+  cursor: url("../../../images/thumbnail-grab-cursor.svg") 11 8, grabbing;
 }
 
 .strip::-webkit-scrollbar { display: none; }

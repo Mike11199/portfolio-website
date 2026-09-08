@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 25 25">
+  <!-- Original pointer pixels, with the index fingertip moved down five pixels. -->
+  <defs>
+    <image id="pointer" width="25" height="25" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAeRJREFUSEtjZKADYKSDHQwELRF2Fp76tvVtlny4vNTDhw+fk+MogpYwnGD4DzJYuEN4+tsNb7Noa0m78Iy3G99mDg9LeC/yFv748YP3xYsXr0nxEfFx0i4841PoJ5vfKr91+Lv4Z35c9zGDWItItcT2t8pvbdY7rFd51/Puelf6rlCkUmTum/1vUvBZSLYlfKv5Dr+tfAvxjQUDo6Sk5LLnz59HYbOMKpZIBUlFPVv3bJlUkNSUZ8+e5aJbhNcSCQkJ0RcbXrwCaWK/yP7/j/Qfxr8ifxlAwYXsE5glMF8RbYmQj9AJjnMcE0EuJBTBfHP5LnxK/mRAkiVSUlIRz9Y9W47iQkI2weQtMIsqrMHF2c355bvtd26aWgIrryRDJZc/X/08klhPkBRcrEtYj/9W+W1BkuEMDAwcpzie/cj7IU1UxEtJSXE9W/fsK6mWCDYLLnm/9X0sUZaAk+x09j8/DX8yk2KRkJcQ/7t37z4RbYmUlJTIs3XPiC4IWR6zfPsT+oeb5BwvISHh8GLDi/2EfMPylIXhT/AfnBmbcLHCwMDCuJ/xx3/O/1iDTixL7Murc694KSsgoboVFBQ4Pql/imF5yZLNwMDw7bfk75b329/vZGBg+EfIp8T4hJAZBOXpYgkAzQLaGnGYIzwAAAAASUVORK5CYII="/>
+    <clipPath id="hand"><path d="M0 0H25V25H0Z M7 0V10H11V0Z" clip-rule="evenodd"/></clipPath>
+    <clipPath id="fingertip"><rect x="7" y="2" width="4" height="3"/></clipPath>
+  </defs>
+  <use xlink:href="#pointer" clip-path="url(#hand)"/>
+  <g transform="translate(0 5)">
+    <use xlink:href="#pointer" clip-path="url(#fingertip)"/>
+  </g>
+</svg>
