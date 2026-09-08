@@ -8,6 +8,19 @@
 
 .view:focus { outline: none; }
 
+.placeholder { height: var(--project-total-height); }
+
+.view.expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  height: 100dvh;
+  box-sizing: border-box;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.expanded .codeLayer { bottom: env(safe-area-inset-bottom); }
+
 .mediaLayer {
   display: flex;
   flex-direction: column;
@@ -67,6 +80,20 @@
 
 .buttonLabel { display: none; }
 
+.swipeHint {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.4rem;
+  color: color-mix(in srgb, var(--terminal-accent) 70%, transparent);
+  background: #000c;
+  text-align: center;
+  font: 0.7rem/1.4 system-ui, sans-serif;
+  pointer-events: none;
+}
+
 .fullscreenButton:hover {
   color: var(--terminal-accent);
   background: var(--terminal-hover);
@@ -81,19 +108,10 @@
   transform: none;
 }
 
-.error {
-  position: absolute;
-  top: 3.5rem;
-  right: 0.75rem;
-  z-index: 4;
-  padding: 0.5rem;
-  color: #fff;
-  background: #101010;
-}
 
-.view:fullscreen {
+.view[data-fullscreen] {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   min-height: 0;
   max-width: none;
   max-height: none;
@@ -112,7 +130,7 @@
   background: transparent;
 }
 
-.view:fullscreen .toolbar svg {
+.view[data-fullscreen] .toolbar svg {
   width: 1.75rem;
   height: 1.75rem;
 }
@@ -137,5 +155,5 @@
 
 @media (max-width: 600px) {
   .view .toolbar svg,
-  .view:fullscreen .toolbar svg { width: 1.2rem; height: 1.2rem; }
+  .view[data-fullscreen] .toolbar svg { width: 1.2rem; height: 1.2rem; }
 }

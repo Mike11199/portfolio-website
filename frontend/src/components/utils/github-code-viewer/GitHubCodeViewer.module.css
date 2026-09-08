@@ -19,14 +19,14 @@
   font: 600 0.65rem/1 system-ui, sans-serif;
 }
 
-:global(.project-media-view:fullscreen) .viewer {
+:global(.project-media-view[data-fullscreen]) .viewer {
   height: 100% !important;
   min-height: 0;
   border: 0;
   border-radius: 0;
 }
 
-:global(.project-media-view:fullscreen) .titlebar {
+:global(.project-media-view[data-fullscreen]) .titlebar {
   padding-right: 7.5rem;
 }
 

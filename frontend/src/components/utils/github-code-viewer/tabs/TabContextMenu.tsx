@@ -48,7 +48,7 @@ const TabContextMenu = ({ position, onAction, onDismiss }: Props) => {
       <button type="button" role="menuitem" onClick={() => onAction("closeOthers")}>Close other tabs</button>
       <button type="button" role="menuitem" onClick={() => onAction("closeAll")}>Close all tabs</button>
     </div>,
-    document.fullscreenElement ?? document.body,
+    document.fullscreenElement ?? document.querySelector('.project-media-view[data-fullscreen]') ?? document.body,
   );
 };
 

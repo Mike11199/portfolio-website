@@ -92,7 +92,7 @@
 }
 
 @media (max-width: 600px) {
-  .project-media-view:fullscreen .carousel-viewport {
+  .project-media-view[data-fullscreen] .carousel-viewport {
     touch-action: pan-y pinch-zoom;
   }
 }

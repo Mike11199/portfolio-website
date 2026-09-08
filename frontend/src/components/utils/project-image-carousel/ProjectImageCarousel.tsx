@@ -46,13 +46,12 @@ const useFullscreenNavigation = (onPrevious: () => void, onNext: () => void) => 
     if (!isFullscreen || showCode) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (document.fullscreenElement !== root?.current) return;
       if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       if (event.target instanceof Element && event.target.closest("input, textarea, select, [contenteditable]")) return;
       if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
 
       event.preventDefault();
-      root.current?.focus({ preventScroll: true });
+      root?.current?.focus({ preventScroll: true });
       if (event.key === "ArrowLeft") onPrevious();
       else onNext();
     };
