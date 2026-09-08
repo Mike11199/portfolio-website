@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import HighlightedCode from "../../code/HighlightedCode";
+import SourceCode from "./SourceCode";
 import type { RepositoryFile } from "../data/repositoryFiles";
 import styles from "../GitHubCodeViewer.module.css";
 
@@ -14,17 +14,6 @@ interface Props {
   isLoading: boolean;
   hasError: boolean;
 }
-
-const SourceCode = ({ source, language }: { source: string; language: string }) => (
-  <div className={styles.sourceCode}>
-    <pre className={styles.lineNumbers} aria-hidden="true">
-      {source.split("\n").map((_, index) => index + 1).join("\n")}
-    </pre>
-    <pre className={styles.sourceText}>
-      <HighlightedCode code={source || " "} language={language} />
-    </pre>
-  </div>
-);
 
 const FileContent = ({ file, repositoryUrl, branch, fileUrl, source, isLoading, hasError }: Props) => {
   if (isLoading) return <div className={styles.message} role="status">{file ? "Loading source from GitHub…" : "Loading repository…"}</div>;

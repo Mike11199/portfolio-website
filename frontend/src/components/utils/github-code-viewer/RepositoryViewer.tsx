@@ -1,5 +1,6 @@
 // Read-only GitHub source viewer with a collapsible explorer and resizable panes.
 import { useId, useState, type CSSProperties } from "react";
+import { useWindowWidth } from "@react-hook/window-size";
 import FileContent from "./editor/FileContent";
 import RepositoryTabs from "./tabs/RepositoryTabs";
 import RepositoryEditor from "./editor/RepositoryEditor";
@@ -19,6 +20,7 @@ export interface GitHubCodeViewerProps {
 
 const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", defaultFile, defaultOpenFiles }: GitHubCodeViewerProps) => {
   const panelId = useId();
+  const isMobile = useWindowWidth() <= 600;
   const [showFiles, setShowFiles] = useState(false);
   const [revealRequest, setRevealRequest] = useState(0);
   const { files, activeFile, tabs, source, isLoading, hasError } = useRepositorySource({
@@ -26,7 +28,7 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
     repository,
     branch,
     defaultFile,
-    defaultOpenFiles,
+    defaultOpenFiles: isMobile ? undefined : defaultOpenFiles,
   });
   const { workspaceRef, explorerWidth, isResizing, separatorProps } = useExplorerResize();
   return (

@@ -337,6 +337,14 @@
   .breadcrumb { display: none; }
   .sourceCode {
     grid-template-columns: 2.5rem minmax(0, 1fr);
+    min-width: 0;
     font-size: 9px;
+    font-weight: 600;
   }
+  .sourceCode pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .explorer { font-weight: 600; }
+  .statusbar > * { visibility: hidden; }
 }
