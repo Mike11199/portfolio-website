@@ -4,7 +4,7 @@ import type { GitHubCodeViewerProps } from "./RepositoryViewer";
 const RepositoryViewer = lazy(() => import("./RepositoryViewer"));
 
 const GitHubCodeViewer = (props: GitHubCodeViewerProps) => (
-  <Suspense fallback={<p role="status">Loading code viewer…</p>}>
+  <Suspense fallback={null}>
     <RepositoryViewer {...props} />
   </Suspense>
 );

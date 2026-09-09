@@ -136,7 +136,7 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
 
       <footer className={styles.statusbar}>
         <span>{activeFile?.language ?? "No file open"}</span>
-        <span>{activeFile && isLoading ? "Loading" : activeFile && hasError ? "Offline" : "GitHub source"}</span>
+        {activeFile && !isLoading && hasError && <span>Offline</span>}
         <span className={styles.statusSpacer} />
         {showFontControls && (
           <FontSizeControls
@@ -145,7 +145,7 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
             onIncrease={() => setFontSize((size) => Math.min(24, size + 1))}
           />
         )}
-        <a href={`https://github.dev/${owner}/${repository}`} target="_blank" rel="noreferrer">VS Code Web ↗</a>
+
         <a href={repositoryUrl} target="_blank" rel="noreferrer">GitHub ↗</a>
       </footer>
     </section>

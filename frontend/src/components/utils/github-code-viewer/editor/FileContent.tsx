@@ -16,7 +16,7 @@ interface Props {
 }
 
 const FileContent = ({ file, repositoryUrl, branch, fileUrl, source, isLoading, hasError }: Props) => {
-  if (isLoading) return <div className={styles.message} role="status">{file ? "Loading source from GitHub…" : "Loading repository…"}</div>;
+  if (isLoading) return null;
   if (!file) return <div className={styles.message}>Select a file from the explorer to open it.</div>;
   if (hasError) return (
     <div className={styles.message} role="alert">
@@ -33,7 +33,7 @@ const FileContent = ({ file, repositoryUrl, branch, fileUrl, source, isLoading, 
   if (file.language !== "markdown") return sourceView;
 
   return (
-    <Suspense fallback={<div className={styles.message}>Loading Markdown preview…</div>}>
+    <Suspense fallback={null}>
       <MarkdownFile key={file.path} source={source} filePath={file.path} repositoryUrl={repositoryUrl} branch={branch}>
         {sourceView}
       </MarkdownFile>
