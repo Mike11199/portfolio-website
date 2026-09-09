@@ -340,8 +340,8 @@
   .sourceCode {
     grid-template-columns: 2.5rem minmax(0, 1fr);
     min-width: 0;
-    font-weight: 600;
+    font-weight: 700;
   }
-  .explorer { font-weight: 600; }
+  .explorer { font-weight: 700; }
   .statusbar > * { visibility: hidden; }
 }
