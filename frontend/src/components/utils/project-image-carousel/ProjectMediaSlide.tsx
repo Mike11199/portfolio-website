@@ -22,6 +22,7 @@ const ProjectMediaSlide = ({ media, active = true }: Props) => {
   const showCode = useMediaView()?.showCode ?? false;
   const { ref, isVisible } = useMediaVisibility();
   const shouldPlay = active && isVisible && !showCode;
+  const isVideo = /\.(webm|mp4)(?:$|[?#])/i.test(media.src);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -31,8 +32,11 @@ const ProjectMediaSlide = ({ media, active = true }: Props) => {
   }, [shouldPlay, media.src]);
 
   return (
-    <div ref={ref}>
-      {/\.(webm|mp4)(?:$|[?#])/i.test(media.src) ? (
+    <div ref={ref} className={isVideo && media.poster ? "carousel-video-with-poster" : undefined}>
+      {isVideo && media.poster && (
+        <img className="carousel-video-poster" src={media.poster} alt="" aria-hidden="true" loading="lazy" />
+      )}
+      {isVideo ? (
         <video
           ref={videoRef}
           src={media.src}

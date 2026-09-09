@@ -123,22 +123,62 @@
   .carousel-slide { transition: none; }
 }
 
+.carousel-slide .carousel-video-poster,
+.carousel-swipe-slide .carousel-video-poster {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .project-media-view:not([data-fullscreen]) .project-image-carousel {
     height: auto;
   }
 
+  /*
+   * Hidden slides share the same grid cell, so the tallest sets the height.
+   * Keep navigation out of that cell's sizing and leave room around the media.
+   */
   .project-media-view:not([data-fullscreen]) .carousel-viewport {
+    display: grid;
     flex: none;
+    padding-block: 8px;
   }
 
-  .project-media-view:not([data-fullscreen]) .carousel-slide[aria-hidden="false"] {
+  .project-media-view:not([data-fullscreen]) .carousel-slide {
     position: relative;
+    inset: auto;
+    grid-area: 1 / 1;
+    align-self: center;
+    min-width: 0;
   }
 
   .project-media-view:not([data-fullscreen]) .carousel-slide > div,
   .project-media-view:not([data-fullscreen]) .carousel-slide img,
   .project-media-view:not([data-fullscreen]) .carousel-slide video {
     height: auto;
+  }
+
+  .project-media-view:not([data-fullscreen]) .carousel-slide img,
+  .project-media-view:not([data-fullscreen]) .carousel-slide video {
+    max-height: 60svh;
+  }
+
+  /*
+   * Size videos from their posters so starting playback cannot resize the grid.
+   */
+  .project-media-view:not([data-fullscreen]) .carousel-slide .carousel-video-with-poster {
+    position: relative;
+  }
+
+  .project-media-view:not([data-fullscreen]) .carousel-slide .carousel-video-poster {
+    display: block;
+    visibility: hidden;
+  }
+
+  .project-media-view:not([data-fullscreen]) .carousel-slide .carousel-video-with-poster video {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    max-height: none;
+    background: #000;
   }
 }

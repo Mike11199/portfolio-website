@@ -174,12 +174,17 @@
   .mediaHeader { border-bottom: 0; }
   .videoFooter { display: none; }
 
-  /* Fit the media's aspect ratio outside code view and fullscreen. */
-  .adaptiveHeight:not(.codeVisible):not([data-fullscreen]) {
+  /*
+   * The carousel grid sizes itself to its tallest slide on mobile.
+   * Standalone videos use their own aspect ratio.
+   */
+  .adaptiveHeight[data-media-layout="carousel"]:not([data-fullscreen]),
+  .adaptiveHeight[data-media-layout="video"]:not(.codeVisible):not([data-fullscreen]) {
     height: auto;
   }
 
-  .adaptiveHeight:not(.codeVisible):not([data-fullscreen]) .mediaLayer {
+  .adaptiveHeight[data-media-layout="carousel"]:not([data-fullscreen]) .mediaLayer,
+  .adaptiveHeight[data-media-layout="video"]:not(.codeVisible):not([data-fullscreen]) .mediaLayer {
     height: auto;
   }
 
