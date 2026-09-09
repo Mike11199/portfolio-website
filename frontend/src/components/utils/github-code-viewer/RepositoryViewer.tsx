@@ -7,6 +7,7 @@ import RepositoryEditor from "./editor/RepositoryEditor";
 import RepositoryExplorer from "./explorer/RepositoryExplorer";
 import { useExplorerResize } from "./explorer/useExplorerResize";
 import { useRepositorySource } from "./data/useRepositorySource";
+import { useMediaView } from "../project-media-view/MediaViewContext";
 import styles from "./GitHubCodeViewer.module.css";
 
 export interface GitHubCodeViewerProps {
@@ -18,10 +19,45 @@ export interface GitHubCodeViewerProps {
   defaultOpenFiles?: readonly string[];
 }
 
+interface FontSizeButtonProps {
+  direction: "decrease" | "increase";
+  disabled: boolean;
+  onClick: () => void;
+}
+
+const FontSizeButton = ({ direction, disabled, onClick }: FontSizeButtonProps) => {
+  const label = direction === "decrease" ? "Decrease code font size" : "Increase code font size";
+
+  return (
+    <button type="button" aria-label={label} title={label} disabled={disabled} onClick={onClick}>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10" cy="10" r="6" />
+        <path d={direction === "decrease" ? "m15 15 6 6M7 10h6" : "m15 15 6 6M7 10h6M10 7v6"} />
+      </svg>
+    </button>
+  );
+};
+
+interface FontSizeControlsProps {
+  fontSize: number;
+  onDecrease: () => void;
+  onIncrease: () => void;
+}
+
+const FontSizeControls = ({ fontSize, onDecrease, onIncrease }: FontSizeControlsProps) => (
+  <div className={styles.fontControls} role="group" aria-label="Code font size">
+    <FontSizeButton direction="decrease" disabled={fontSize <= 6} onClick={onDecrease} />
+    <FontSizeButton direction="increase" disabled={fontSize >= 24} onClick={onIncrease} />
+  </div>
+);
+
 const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", defaultFile, defaultOpenFiles }: GitHubCodeViewerProps) => {
   const panelId = useId();
   const isMobile = useWindowWidth() <= 600;
   const [showFiles, setShowFiles] = useState(false);
+  const [fontSize, setFontSize] = useState(14);
+  const isFullscreen = useMediaView()?.isFullscreen ?? false;
+  const showFontControls = !isMobile || isFullscreen;
   const [revealRequest, setRevealRequest] = useState(0);
   const { files, activeFile, tabs, source, isLoading, hasError } = useRepositorySource({
     owner,
@@ -34,7 +70,7 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
   return (
     <section
       className={`${styles.viewer} ${isResizing ? styles.isResizing : ""} github-code-viewer`}
-      style={{ "--explorer-width": `${explorerWidth}px` } as CSSProperties}
+      style={{ "--explorer-width": `${explorerWidth}px`, "--code-font-size": showFontControls ? `${fontSize}px` : undefined } as CSSProperties}
       aria-label={`${repository} source code`}
     >
       <header className={styles.titlebar}>
@@ -102,6 +138,13 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
         <span>{activeFile?.language ?? "No file open"}</span>
         <span>{activeFile && isLoading ? "Loading" : activeFile && hasError ? "Offline" : "GitHub source"}</span>
         <span className={styles.statusSpacer} />
+        {showFontControls && (
+          <FontSizeControls
+            fontSize={fontSize}
+            onDecrease={() => setFontSize((size) => Math.max(6, size - 1))}
+            onIncrease={() => setFontSize((size) => Math.min(24, size + 1))}
+          />
+        )}
         <a href={`https://github.dev/${owner}/${repository}`} target="_blank" rel="noreferrer">VS Code Web ↗</a>
         <a href={repositoryUrl} target="_blank" rel="noreferrer">GitHub ↗</a>
       </footer>

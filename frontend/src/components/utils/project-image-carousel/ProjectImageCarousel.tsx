@@ -82,7 +82,7 @@ const ProjectImageCarousel = ({ items, loop = true }: ProjectImageCarouselProps)
           <SwipeSlides items={items} activeIndex={activeIndex} loop={loop} track={swipe.track} />
         ) : items.map((item, index) => (
           <div className="carousel-slide" key={item.src} aria-hidden={index !== activeIndex}>
-            <ProjectMediaSlide media={item} active={index === activeIndex} />
+            <ProjectMediaSlide media={item} active={index === activeIndex} reservePosterSpace />
           </div>
         ))}
         {hasMultipleSlides && (

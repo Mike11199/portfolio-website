@@ -14,10 +14,11 @@ export interface ProjectMedia {
 interface Props {
   media: ProjectMedia;
   active?: boolean;
+  reservePosterSpace?: boolean;
 }
 
 /** Play uploaded videos directly, with the same looping behavior as GIFs. */
-const ProjectMediaSlide = ({ media, active = true }: Props) => {
+const ProjectMediaSlide = ({ media, active = true, reservePosterSpace = false }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const showCode = useMediaView()?.showCode ?? false;
   const { ref, isVisible } = useMediaVisibility();
@@ -33,7 +34,7 @@ const ProjectMediaSlide = ({ media, active = true }: Props) => {
 
   return (
     <div ref={ref} className={isVideo && media.poster ? "carousel-video-with-poster" : undefined}>
-      {isVideo && media.poster && (
+      {reservePosterSpace && isVideo && media.poster && (
         <img className="carousel-video-poster" src={media.poster} alt="" aria-hidden="true" loading="lazy" />
       )}
       {isVideo ? (
