@@ -27,7 +27,7 @@ const SourceCode = ({ source, language }: { source: string; language: string }) 
   const lines = useMemo(() => splitHighlightedLines(highlightCode(source, language)), [source, language]);
 
   return (
-    <div className={styles.sourceCode}>
+    <div className={styles.sourceCode} data-code-minimap-source>
       {lines.map((line, index) => (
         <Fragment key={index}>
           <span className={styles.lineNumbers} aria-hidden="true">{index + 1}</span>

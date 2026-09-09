@@ -1,0 +1,52 @@
+.editorBody {
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 100%;
+}
+
+.editorContent {
+  flex: 1;
+  min-width: 0;
+  padding: 0.35rem 0 0.8rem;
+}
+
+.minimap {
+  position: sticky;
+  top: 0;
+  right: 0;
+  flex: 0 0 clamp(48px, 8vw, 100px);
+  min-height: 0;
+  overflow: hidden;
+  border: 0;
+  background: var(--viewer-editor);
+  color: var(--viewer-fg);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  cursor: url("../../../../../images/dark_pointer_small.png") 9 2, pointer;
+  touch-action: none;
+  user-select: none;
+}
+
+.minimap:not([data-active]) { display: none; }
+.minimap canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0.65; pointer-events: none; }
+
+.thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  border: 0;
+  background: color-mix(in srgb, var(--viewer-interaction-accent) 8%, transparent);
+  pointer-events: none;
+}
+
+.minimap:is(:hover, :focus-visible, [data-dragging]) .thumb {
+  background: color-mix(in srgb, var(--viewer-interaction-accent) 14%, transparent);
+}
+.minimap:focus-visible { outline: 1px solid var(--viewer-muted); outline-offset: -1px; }
+
+/* Keep narrow layouts usable, including portrait fullscreen. */
+@media (max-width: 600px) {
+  .minimap { display: none; }
+}
