@@ -1,7 +1,9 @@
 // Read-only GitHub source viewer with a collapsible explorer and resizable panes.
-import { useEffect, useId, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
-import { createPortal } from "react-dom";
+import { useId, useState, type CSSProperties } from "react";
 import { useWindowWidth } from "@react-hook/window-size";
+import ThemeSelector from "./ThemeSelector";
+import FontSizeControls from "./FontSizeControls";
+import { readTheme, THEME_STORAGE_KEY, type ViewerTheme } from "./viewerTheme";
 import FileContent from "./editor/FileContent";
 import RepositoryTabs from "./tabs/RepositoryTabs";
 import RepositoryEditor from "./editor/RepositoryEditor";
@@ -12,173 +14,6 @@ import { useMediaView } from "../project-media-view/MediaViewContext";
 import styles from "./GitHubCodeViewer.module.css";
 import themeStyles from "./ViewerThemes.module.css";
 
-const THEMES = [
-  { id: "current-dark", label: "Default Dark" },
-  { id: "darcula", label: "Darcula" },
-  { id: "monokai", label: "Monokai" },
-  { id: "tokyo-night", label: "Tokyo Night" },
-] as const;
-type ViewerTheme = (typeof THEMES)[number]["id"];
-const THEME_STORAGE_KEY = "github-code-viewer-theme";
-const isViewerTheme = (value: string | null): value is ViewerTheme => THEMES.some(({ id }) => id === value);
-
-const readTheme = (): ViewerTheme => {
-  try {
-    const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
-    // Preserve selections saved before correcting Dracula to JetBrains Darcula.
-    if (saved === "dracula") return "darcula";
-    return isViewerTheme(saved) ? saved : "current-dark";
-  } catch {
-    return "current-dark";
-  }
-};
-
-interface ThemeSelectorProps {
-  theme: ViewerTheme;
-  onChange: (theme: ViewerTheme) => void;
-}
-
-const ThemeSelector = ({ theme, onChange }: ThemeSelectorProps) => {
-  const menuId = useId();
-  const trigger = useRef<HTMLButtonElement>(null);
-  const menu = useRef<HTMLDivElement>(null);
-  const [open, setOpen] = useState(false);
-  const selectedIndex = THEMES.findIndex(({ id }) => id === theme);
-  const [activeIndex, setActiveIndex] = useState(selectedIndex);
-
-  const close = () => {
-    setOpen(false);
-    trigger.current?.focus({ preventScroll: true });
-  };
-  const show = () => {
-    setActiveIndex(selectedIndex);
-    setOpen(true);
-  };
-
-  useLayoutEffect(() => {
-    if (!open || !menu.current || !trigger.current) return;
-    const element = menu.current;
-    const rect = trigger.current.getBoundingClientRect();
-    element.style.left = `${Math.max(8, Math.min(rect.right - element.offsetWidth, window.innerWidth - element.offsetWidth - 8))}px`;
-    // The status-bar control opens upwards, outside the clipped viewer.
-    element.style.top = `${Math.max(8, Math.min(rect.top - element.offsetHeight - 4, window.innerHeight - element.offsetHeight - 8))}px`;
-  }, [open]);
-
-  useLayoutEffect(() => {
-    if (open) menu.current?.querySelectorAll<HTMLButtonElement>("button")[activeIndex]?.focus({ preventScroll: true });
-  }, [open, activeIndex]);
-
-  useEffect(() => {
-    if (!open) return;
-    const dismissOutside = (event: Event) => {
-      const target = event.target as Node;
-      if (!menu.current?.contains(target) && !trigger.current?.contains(target)) {
-        setOpen(false);
-        // Do not steal focus from another control clicked outside the menu.
-        if (event.type === "pointerdown" && menu.current?.contains(document.activeElement)) {
-          trigger.current?.focus({ preventScroll: true });
-        }
-      }
-    };
-    const dismissOnLayoutChange = (event: Event) => {
-      if (event.type === "scroll" && menu.current?.contains(event.target as Node)) return;
-      setOpen(false);
-      if (menu.current?.contains(document.activeElement)) trigger.current?.focus({ preventScroll: true });
-    };
-    document.addEventListener("pointerdown", dismissOutside);
-    document.addEventListener("focusin", dismissOutside);
-    document.addEventListener("scroll", dismissOnLayoutChange, true);
-    document.addEventListener("fullscreenchange", dismissOnLayoutChange);
-    window.addEventListener("resize", dismissOnLayoutChange);
-    return () => {
-      document.removeEventListener("pointerdown", dismissOutside);
-      document.removeEventListener("focusin", dismissOutside);
-      document.removeEventListener("scroll", dismissOnLayoutChange, true);
-      document.removeEventListener("fullscreenchange", dismissOnLayoutChange);
-      window.removeEventListener("resize", dismissOnLayoutChange);
-    };
-  }, [open]);
-
-  return (
-    <>
-      <button
-        ref={trigger}
-        type="button"
-        className={styles.themeSelector}
-        aria-label={`Code viewer theme: ${THEMES[selectedIndex].label}`}
-        aria-haspopup="menu"
-        aria-expanded={open}
-        aria-controls={open ? menuId : undefined}
-        title="Code viewer theme"
-        onClick={() => open ? close() : show()}
-        onKeyDown={(event) => {
-          if (event.key === "ArrowDown" || event.key === "ArrowUp") {
-            event.preventDefault();
-            show();
-          } else if (event.key === "Escape" && open) {
-            event.preventDefault();
-            event.stopPropagation();
-            close();
-          }
-        }}
-      >
-        {THEMES[selectedIndex].label} <span aria-hidden="true">▾</span>
-      </button>
-      {open && createPortal(
-        <div
-          ref={menu}
-          id={menuId}
-          role="menu"
-          aria-label="Code viewer theme"
-          className={`${styles.themeMenu} ${themeStyles.theme}`}
-          data-viewer-theme={theme}
-          onKeyDown={(event) => {
-            let nextIndex: number | undefined;
-            if (event.key === "ArrowDown") nextIndex = (activeIndex + 1) % THEMES.length;
-            if (event.key === "ArrowUp") nextIndex = (activeIndex + THEMES.length - 1) % THEMES.length;
-            if (event.key === "Home") nextIndex = 0;
-            if (event.key === "End") nextIndex = THEMES.length - 1;
-            if (nextIndex !== undefined) {
-              event.preventDefault();
-              setActiveIndex(nextIndex);
-            } else if (event.key === "Escape") {
-              event.preventDefault();
-              event.stopPropagation();
-              close();
-            } else if (event.key === "Tab") {
-              // Return to the trigger before the browser advances tab order.
-              close();
-            } else if (event.key.length === 1 && event.key !== " ") {
-              const match = THEMES.findIndex(({ label }) => label.toLowerCase().startsWith(event.key.toLowerCase()));
-              if (match !== -1) {
-                event.preventDefault();
-                setActiveIndex(match);
-              }
-            }
-          }}
-        >
-          {THEMES.map(({ id, label }, index) => (
-            <button
-              key={id}
-              type="button"
-              role="menuitemradio"
-              aria-checked={theme === id}
-              tabIndex={activeIndex === index ? 0 : -1}
-              className={styles.themeOption}
-              onFocus={() => setActiveIndex(index)}
-              onClick={() => { onChange(id); close(); }}
-            >
-              <span className={styles.themeCheck} aria-hidden="true">{theme === id ? "✓" : ""}</span>
-              {label}
-            </button>
-          ))}
-        </div>,
-        document.fullscreenElement ?? trigger.current?.closest('.project-media-view[data-fullscreen]') ?? document.body,
-      )}
-    </>
-  );
-};
-
 export interface GitHubCodeViewerProps {
   repositoryUrl: string;
   owner: string;
@@ -187,38 +22,6 @@ export interface GitHubCodeViewerProps {
   defaultFile?: string;
   defaultOpenFiles?: readonly string[];
 }
-
-interface FontSizeButtonProps {
-  direction: "decrease" | "increase";
-  disabled: boolean;
-  onClick: () => void;
-}
-
-const FontSizeButton = ({ direction, disabled, onClick }: FontSizeButtonProps) => {
-  const label = direction === "decrease" ? "Decrease code font size" : "Increase code font size";
-
-  return (
-    <button type="button" aria-label={label} title={label} disabled={disabled} onClick={onClick}>
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="10" cy="10" r="6" />
-        <path d={direction === "decrease" ? "m15 15 6 6M7 10h6" : "m15 15 6 6M7 10h6M10 7v6"} />
-      </svg>
-    </button>
-  );
-};
-
-interface FontSizeControlsProps {
-  fontSize: number;
-  onDecrease: () => void;
-  onIncrease: () => void;
-}
-
-const FontSizeControls = ({ fontSize, onDecrease, onIncrease }: FontSizeControlsProps) => (
-  <div className={styles.fontControls} role="group" aria-label="Code font size">
-    <FontSizeButton direction="decrease" disabled={fontSize <= 6} onClick={onDecrease} />
-    <FontSizeButton direction="increase" disabled={fontSize >= 24} onClick={onIncrease} />
-  </div>
-);
 
 const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", defaultFile, defaultOpenFiles }: GitHubCodeViewerProps) => {
   const panelId = useId();

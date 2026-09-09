@@ -1,4 +1,5 @@
 .tabs {
+  font-family: "Segoe UI", system-ui, sans-serif;
   position: relative;
   display: flex;
   flex-shrink: 0;
