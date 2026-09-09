@@ -1,19 +1,23 @@
 export const gitlabExample = {
     language: "GitLab CI", file: ".gitlab-ci.yml", command: "git push origin HEAD",
-    code: `# Build and push a Docker image to AWS ECR.
-# Deploy the default branch to ECS with CDK.
+    code: `# build - build app's docker image and push it to ecr
+# deploy - deploy image to ecs using cdk
 
 stages:
   - build
   - deploy
 
 default:
-  tags: [aws-shell]
+  tags:
+    - default-gitlab-runner
 
 variables:
   IMAGE: >-
     $ECR_REGISTRY/portfolio-website:$CI_COMMIT_SHA
 
+# - command = one script command
+# > = wrap one command across lines
+# | = preserve lines, useful for several commands/block scripts
 build:
   stage: build
   script:
@@ -35,7 +39,8 @@ deploy:
   script:
     - cd cdk
     - >
-      cdk deploy PortfolioStack --exclusively
+      cdk deploy PortfolioStack
+      --exclusively
       --require-approval never
       --parameters ImageTag="$CI_COMMIT_SHA"`,
     output: "build   passed: image pushed to ECR\ndeploy  passed: ECS service updated",
