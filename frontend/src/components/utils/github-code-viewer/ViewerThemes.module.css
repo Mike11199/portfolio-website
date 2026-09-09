@@ -1,0 +1,196 @@
+/* Applied only to the viewer and its portaled tab menu, never the site root. */
+.theme {
+  color-scheme: dark;
+  /* Site interaction colors stay green independently of syntax palettes. */
+  --viewer-interaction-accent: #19d458;
+  --viewer-interaction-hover: #19d45814;
+  --viewer-fg: #d4d4d4;
+  --viewer-editor: #101010;
+  --viewer-chrome: #0b0b0b;
+  --viewer-border: #242424;
+  --viewer-border-dark: #111;
+  --viewer-divider: #151515;
+  --viewer-secondary: #bdbdbd;
+  --viewer-muted: #9d9d9d;
+  --viewer-strong: #eee;
+  --viewer-selected-fg: #fff;
+  --viewer-selection: #263238;
+  --viewer-subtle: #555;
+  --viewer-line-number: #5a5a5a;
+  --viewer-link: #79c0ff;
+  --viewer-accent: #19d458;
+  --viewer-hover: #19d45814;
+  --viewer-resize: #1b5e35;
+  --viewer-tab-accent: #264f78;
+  --viewer-menu: #181818;
+  --viewer-menu-border: #343434;
+  --viewer-code-block: #080808;
+  --viewer-inline-code: #202020;
+  --viewer-status: var(--viewer-chrome);
+  --viewer-status-fg: var(--viewer-secondary);
+  --viewer-syntax-keyword: #569cd6;
+  --viewer-syntax-type: #4ec9b0;
+  --viewer-syntax-number: #b8d7a3;
+  --viewer-syntax-string: #d69d85;
+  --viewer-syntax-regexp: #9a5334;
+  --viewer-syntax-comment: #57a64a;
+  --viewer-syntax-doctag: #608b4e;
+  --viewer-syntax-meta: #9b9b9b;
+  --viewer-syntax-variable: #bd63c5;
+  --viewer-syntax-attr: #9cdcfe;
+  --viewer-syntax-function: #dcdcaa;
+  --viewer-syntax-selector: #d7ba7d;
+  --viewer-syntax-section: #ffd700;
+  --viewer-syntax-addition: #144212;
+  --viewer-syntax-deletion: #600;
+}
+
+/* JetBrains upstream Darcula palette, adapted to highlight.js token granularity.
+   Editor: https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/DefaultColorSchemesManager.xml (Darcula scheme)
+   Chrome: https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/themes/darcula.theme.json */
+.theme[data-viewer-theme="darcula"] {
+  --viewer-fg: #a9b7c6; /* TEXT foreground */
+  --viewer-editor: #1e1e1e; /* Custom darker surface; Darcula syntax preserved. */
+  --viewer-chrome: #161819;
+  --viewer-border: #303234;
+  --viewer-border-dark: #101112;
+  --viewer-divider: #232527;
+  --viewer-secondary: #bbbbbb; /* UI foreground */
+  --viewer-muted: #808080; /* UI textInactiveText */
+  --viewer-strong: #bbbbbb;
+  --viewer-selected-fg: #a9b7c6;
+  --viewer-selection: #214283; /* SELECTION_BACKGROUND */
+  --viewer-subtle: #606060;
+  --viewer-line-number: #606366;
+  --viewer-link: #589df6; /* UI Hyperlink.linkColor */
+  --viewer-accent: #589df6;
+  --viewer-hover: #19d45814;
+  --viewer-resize: #466d94;
+  --viewer-tab-accent: #4a88c7; /* UI TabbedPane.underlineColor */
+  --viewer-menu: #1b1d1e;
+  --viewer-menu-border: #36383a;
+  --viewer-code-block: #191919;
+  --viewer-inline-code: #292929;
+  --viewer-syntax-keyword: #cc7832; /* DEFAULT_KEYWORD */
+  --viewer-syntax-type: #769aa5; /* DEFAULT_CLASS_REFERENCE */
+  --viewer-syntax-number: #6897bb; /* DEFAULT_NUMBER */
+  --viewer-syntax-string: #6a8759; /* DEFAULT_STRING */
+  --viewer-syntax-regexp: #6a8759;
+  --viewer-syntax-comment: #808080; /* DEFAULT_LINE_COMMENT */
+  --viewer-syntax-doctag: #629755; /* DEFAULT_DOC_COMMENT_TAG */
+  --viewer-syntax-meta: #bbb529; /* DEFAULT_METADATA */
+  --viewer-syntax-variable: #a9b7c6; /* DEFAULT_IDENTIFIER */
+  --viewer-syntax-attr: #9876aa; /* DEFAULT_INSTANCE_FIELD */
+  --viewer-syntax-function: #ffc66d; /* DEFAULT_FUNCTION_DECLARATION */
+  --viewer-syntax-selector: #e8bf6a; /* SASS_RULE */
+  --viewer-syntax-section: #ffc66d;
+  --viewer-syntax-addition: #294436; /* DIFF_INSERTED */
+  --viewer-syntax-deletion: #484a4a; /* DIFF_DELETED */
+}
+
+.theme[data-viewer-theme="monokai"] {
+  --viewer-fg: #f8f8f2;
+  --viewer-editor: #272822;
+  --viewer-chrome: #1e1f1c;
+  --viewer-border: #414339;
+  --viewer-border-dark: #171814;
+  --viewer-divider: #34352f;
+  --viewer-secondary: #d6d6ca;
+  --viewer-muted: #a5a694;
+  --viewer-strong: #f8f8f2;
+  --viewer-selection: #49483e;
+  --viewer-subtle: #75715e;
+  --viewer-line-number: #909080;
+  --viewer-link: #66d9ef;
+  --viewer-accent: #a6e22e;
+  --viewer-hover: #a6e22e1a;
+  --viewer-resize: #a6e22e;
+  --viewer-tab-accent: #a6e22e;
+  --viewer-menu: #272822;
+  --viewer-menu-border: #75715e;
+  --viewer-code-block: #1e1f1c;
+  --viewer-inline-code: #3e3d32;
+  --viewer-syntax-keyword: #f92672;
+  --viewer-syntax-type: #66d9ef;
+  --viewer-syntax-number: #ae81ff;
+  --viewer-syntax-string: #e6db74;
+  --viewer-syntax-regexp: #fd971f;
+  --viewer-syntax-comment: #75715e;
+  --viewer-syntax-doctag: #75715e;
+  --viewer-syntax-meta: #f92672;
+  --viewer-syntax-variable: #fd971f;
+  --viewer-syntax-attr: #a6e22e;
+  --viewer-syntax-function: #a6e22e;
+  --viewer-syntax-selector: #a6e22e;
+  --viewer-syntax-section: #e6db74;
+  --viewer-syntax-addition: #34451f;
+  --viewer-syntax-deletion: #502333;
+}
+
+.theme[data-viewer-theme="tokyo-night"] {
+  --viewer-fg: #c0caf5;
+  --viewer-editor: #1a1b26;
+  --viewer-chrome: #16161e;
+  --viewer-border: #292e42;
+  --viewer-border-dark: #101014;
+  --viewer-divider: #24283b;
+  --viewer-secondary: #a9b1d6;
+  --viewer-muted: #9aa5ce;
+  --viewer-strong: #c0caf5;
+  --viewer-selected-fg: #c0caf5;
+  --viewer-selection: #283457;
+  --viewer-subtle: #565f89;
+  --viewer-line-number: #737aa2;
+  --viewer-link: #7aa2f7;
+  --viewer-accent: #7aa2f7;
+  --viewer-hover: #7aa2f71f;
+  --viewer-resize: #7aa2f7;
+  --viewer-tab-accent: #bb9af7;
+  --viewer-menu: #1f2335;
+  --viewer-menu-border: #414868;
+  --viewer-code-block: #16161e;
+  --viewer-inline-code: #24283b;
+  --viewer-syntax-keyword: #bb9af7;
+  --viewer-syntax-type: #2ac3de;
+  --viewer-syntax-number: #ff9e64;
+  --viewer-syntax-string: #9ece6a;
+  --viewer-syntax-regexp: #b4f9f8;
+  --viewer-syntax-comment: #565f89;
+  --viewer-syntax-doctag: #565f89;
+  --viewer-syntax-meta: #7dcfff;
+  --viewer-syntax-variable: #c0caf5;
+  --viewer-syntax-attr: #7dcfff;
+  --viewer-syntax-function: #7aa2f7;
+  --viewer-syntax-selector: #bb9af7;
+  --viewer-syntax-section: #7aa2f7;
+  --viewer-syntax-addition: #233b32;
+  --viewer-syntax-deletion: #482b3b;
+}
+
+.theme ::selection { background: var(--viewer-selection); color: var(--viewer-selected-fg); }
+.theme :global(code.hljs) { color: var(--viewer-fg); background: transparent; }
+.theme :is(:global(.hljs-subst), :global(.hljs-function), :global(.hljs-title), :global(.hljs-params), :global(.hljs-formula)) { color: var(--viewer-fg); }
+.theme :is(:global(.hljs-keyword), :global(.hljs-literal), :global(.hljs-symbol), :global(.hljs-name), :global(.hljs-link)) { color: var(--viewer-syntax-keyword); }
+.theme :is(:global(.hljs-built_in), :global(.hljs-type), :global(.hljs-title.class_)) { color: var(--viewer-syntax-type); }
+.theme :is(:global(.hljs-number), :global(.hljs-class)) { color: var(--viewer-syntax-number); }
+.theme :global(.hljs-string), .theme :global(.hljs-meta .hljs-string) { color: var(--viewer-syntax-string); }
+.theme :is(:global(.hljs-regexp), :global(.hljs-template-tag)) { color: var(--viewer-syntax-regexp); }
+.theme :is(:global(.hljs-comment), :global(.hljs-quote)) { color: var(--viewer-syntax-comment); }
+.theme :global(.hljs-doctag) { color: var(--viewer-syntax-doctag); }
+.theme :is(:global(.hljs-meta), :global(.hljs-tag)), .theme :global(.hljs-meta .hljs-keyword) { color: var(--viewer-syntax-meta); }
+.theme :is(:global(.hljs-variable), :global(.hljs-template-variable)) { color: var(--viewer-syntax-variable); }
+.theme :is(:global(.hljs-attr), :global(.hljs-attribute), :global(.hljs-property)) { color: var(--viewer-syntax-attr); }
+.theme :global(.hljs-title.function_) { color: var(--viewer-syntax-function); }
+.theme :global(.hljs-section) { color: var(--viewer-syntax-section); }
+.theme :is(:global(.hljs-bullet), :global(.hljs-selector-tag), :global(.hljs-selector-id), :global(.hljs-selector-class), :global(.hljs-selector-attr), :global(.hljs-selector-pseudo)) { color: var(--viewer-syntax-selector); }
+.theme :global(.hljs-addition) { background: var(--viewer-syntax-addition); }
+.theme :global(.hljs-deletion) { background: var(--viewer-syntax-deletion); }
+
+/* Darcula distinguishes markup from metadata and fields from HTML attributes.
+   These overrides leave the other palettes' existing token mappings intact. */
+.theme[data-viewer-theme="darcula"] :is(:global(.hljs-tag), :global(.hljs-name)) { color: #e8bf6a; } /* HTML_TAG / XML_TAG_NAME */
+.theme[data-viewer-theme="darcula"] :global(.hljs-tag .hljs-attr) { color: #bababa; } /* HTML_ATTRIBUTE_NAME */
+.theme[data-viewer-theme="darcula"] :global(.hljs-tag .hljs-string) { color: #a5c261; } /* HTML_ATTRIBUTE_VALUE */
+.theme[data-viewer-theme="darcula"] :global(.hljs-class) { color: var(--viewer-fg); }
+.theme[data-viewer-theme="darcula"] :global(.hljs-symbol) { color: #9876aa; } /* DEFAULT_CONSTANT */
+.theme[data-viewer-theme="darcula"] :global(.hljs-link) { color: #287bde; } /* HYPERLINK_ATTRIBUTES */

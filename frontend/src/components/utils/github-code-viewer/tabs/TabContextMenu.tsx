@@ -1,16 +1,18 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import styles from "./TabContextMenu.module.css";
+import themeStyles from "../ViewerThemes.module.css";
 
 export type TabMenuAction = "close" | "closeOthers" | "closeAll";
 
 interface Props {
+  theme: string;
   position: { x: number; y: number };
   onAction: (action: TabMenuAction) => void;
   onDismiss: () => void;
 }
 
-const TabContextMenu = ({ position, onAction, onDismiss }: Props) => {
+const TabContextMenu = ({ theme, position, onAction, onDismiss }: Props) => {
   const menu = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -43,7 +45,7 @@ const TabContextMenu = ({ position, onAction, onDismiss }: Props) => {
   }, [onDismiss]);
 
   return createPortal(
-    <div ref={menu} className={styles.menu} role="menu" aria-label="Tab actions">
+    <div ref={menu} className={`${styles.menu} ${themeStyles.theme}`} data-viewer-theme={theme} role="menu" aria-label="Tab actions">
       <button type="button" role="menuitem" onClick={() => onAction("close")}>Close tab</button>
       <button type="button" role="menuitem" onClick={() => onAction("closeOthers")}>Close other tabs</button>
       <button type="button" role="menuitem" onClick={() => onAction("closeAll")}>Close all tabs</button>

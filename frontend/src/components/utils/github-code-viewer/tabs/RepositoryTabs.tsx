@@ -4,6 +4,7 @@ import RepositoryIcon from "../explorer/RepositoryIcon";
 import styles from "./RepositoryTabs.module.css";
 
 interface Props {
+  theme: string;
   paths: string[];
   activePath: string | null;
   panelId: string;
@@ -13,7 +14,7 @@ interface Props {
   onCloseOthers: (path: string) => void;
 }
 
-const RepositoryTabs = ({ paths, activePath, panelId, onSelect, onClose, onCloseAll, onCloseOthers }: Props) => {
+const RepositoryTabs = ({ theme, paths, activePath, panelId, onSelect, onClose, onCloseAll, onCloseOthers }: Props) => {
   const [menu, setMenu] = useState<{ x: number; y: number; path: string } | null>(null);
   const strip = useRef<HTMLDivElement>(null);
   const activeTab = useRef<HTMLDivElement>(null);
@@ -79,7 +80,7 @@ const RepositoryTabs = ({ paths, activePath, panelId, onSelect, onClose, onClose
         ))}
       </div>
       {menu && (
-        <TabContextMenu position={menu} onDismiss={dismissMenu} onAction={handleMenuAction} />
+        <TabContextMenu theme={theme} position={menu} onDismiss={dismissMenu} onAction={handleMenuAction} />
       )}
     </>
   );

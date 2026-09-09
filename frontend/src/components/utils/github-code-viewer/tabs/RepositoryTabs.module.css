@@ -5,8 +5,8 @@
   min-width: 0;
   min-height: 2.3rem;
   overflow-x: auto;
-  background: #0b0b0b;
-  border-bottom: 1px solid #242424;
+  background: var(--viewer-chrome);
+  border-bottom: 1px solid var(--viewer-border);
 }
 
 .tab {
@@ -14,12 +14,12 @@
   flex: 0 0 auto;
   align-items: center;
   max-width: 18rem;
-  border-right: 1px solid #242424;
+  border-right: 1px solid var(--viewer-border);
   border-top: 2px solid transparent;
-  color: #888;
+  color: var(--viewer-muted);
 }
 
-.active { color: #eee; background: #101010; border-top-color: #264f78; }
+.active { color: var(--viewer-strong); background: var(--viewer-editor); border-top-color: var(--viewer-tab-accent); }
 .select, .close { color: inherit; background: transparent; border: 0; }
 .select {
   display: flex;
@@ -33,8 +33,8 @@
 .select span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .close { display: grid; place-items: center; flex: 0 0 1.8rem; height: 1.8rem; margin-right: 0.2rem; padding: 0; border-radius: 0.2rem; }
 .close svg { width: 0.85rem; height: 0.85rem; fill: none; stroke: currentColor; stroke-width: 1.5; }
-.select:hover, .close:hover { color: var(--terminal-accent); background: var(--terminal-hover); }
-.select:focus-visible, .close:focus-visible { outline: 2px solid var(--terminal-accent); outline-offset: -2px; }
+.select:hover, .close:hover { color: var(--viewer-interaction-accent); background: var(--viewer-interaction-hover); }
+.select:focus-visible, .close:focus-visible { outline: 2px solid var(--viewer-interaction-accent); outline-offset: -2px; }
 
 @media (max-width: 600px) {
   .select { font-weight: 700; }
