@@ -30,9 +30,15 @@ const showExitHint = () => {
 };
 
 /** Expand media within the page, keeping browser controls available. */
-const useMediaFullscreen = () => {
+const useMediaFullscreen = (onExit?: () => void) => {
   const root = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const onExitRef = useRef(onExit);
+  useEffect(() => { onExitRef.current = onExit; }, [onExit]);
+  const closeFullscreen = useCallback(() => {
+    onExitRef.current?.();
+    setIsFullscreen(false);
+  }, []);
 
   useEffect(() => {
     const mediaView = root.current;
@@ -45,7 +51,7 @@ const useMediaFullscreen = () => {
     const hint = showExitHint();
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsFullscreen(false);
+      if (event.key === "Escape") closeFullscreen();
       if (event.key === "Tab") keepFocusInside(event, mediaView);
     };
     document.addEventListener("keydown", handleKeyDown);
@@ -56,9 +62,9 @@ const useMediaFullscreen = () => {
       // Keep focus nearby without highlighting the fullscreen button.
       mediaView.focus({ preventScroll: true });
     };
-  }, [isFullscreen]);
+  }, [isFullscreen, closeFullscreen]);
 
-  const toggleFullscreen = () => setIsFullscreen((current) => !current);
+  const toggleFullscreen = () => isFullscreen ? closeFullscreen() : setIsFullscreen(true);
   const openFullscreen = useCallback(() => setIsFullscreen(true), []);
   return { root, isFullscreen, toggleFullscreen, openFullscreen };
 };

@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
+import { useWindowWidth } from "@react-hook/window-size";
 import useMediaFullscreen from "./useMediaFullscreen";
 import MediaToolbar from "./MediaToolbar";
 import { MediaViewContext } from "./MediaViewContext";
@@ -50,12 +51,16 @@ const ProjectMediaView = ({
   mediaLayout = "carousel",
   onToggleCode,
 }: ProjectMediaViewProps) => {
-  const { root, isFullscreen, toggleFullscreen, openFullscreen } = useMediaFullscreen();
+  const isMobile = useWindowWidth() <= 600;
+  const { root, isFullscreen, toggleFullscreen, openFullscreen } = useMediaFullscreen(() => {
+    if (isMobile && showCode) onToggleCode?.();
+  });
+  const codeVisible = showCode && (!isMobile || isFullscreen);
   useEffect(() => {
-    if (showCode && window.matchMedia("(max-width: 600px)").matches) {
+    if (showCode && isMobile) {
       openFullscreen();
     }
-  }, [showCode, openFullscreen]);
+  }, [showCode, isMobile, openFullscreen]);
   const hasHeader = showHeader && mediaLayout !== "phone";
   const viewClass = [
     styles.view,
@@ -63,13 +68,13 @@ const ProjectMediaView = ({
     mediaLayout === "video" && !onToggleCode && styles.videoWithoutCode,
     isFullscreen && styles.expanded,
     !hasHeader && styles.overlayControls,
-    showCode && styles.codeVisible,
+    codeVisible && styles.codeVisible,
     className,
     "project-media-view",
   ].filter(Boolean).join(" ");
 
   return (
-    <MediaViewContext.Provider value={{ root, isFullscreen, showCode }}>
+    <MediaViewContext.Provider value={{ root, isFullscreen, showCode: codeVisible }}>
       <div className={isFullscreen ? styles.placeholder : undefined}>
         <div
           ref={root}
@@ -86,10 +91,10 @@ const ProjectMediaView = ({
             onToggleCode={onToggleCode}
             onToggleFullscreen={toggleFullscreen}
           />
-          <MediaLayer hidden={showCode} hasHeader={hasHeader} hasFooter={mediaLayout === "video"}>
+          <MediaLayer hidden={codeVisible} hasHeader={hasHeader} hasFooter={mediaLayout === "video"}>
             {children}
           </MediaLayer>
-          <CodeLayer visible={showCode}>{code}</CodeLayer>
+          <CodeLayer visible={codeVisible}>{code}</CodeLayer>
         </div>
       </div>
     </MediaViewContext.Provider>
