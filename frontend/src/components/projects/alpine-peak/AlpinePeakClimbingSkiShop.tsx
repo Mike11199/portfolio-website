@@ -13,9 +13,8 @@ const AlpinePeakClimbingSkiShop = () => {
   const AlpinePeakProjectDescriptionText = [
     `A complex full-stack website (e.g - REI/Amazon clone) where users can
           search for and review products, add them to a cart, and submit/pay for
-          an order with a mock PayPal account. An admin dashboard allows for
-          CRUD operations on users, products, and orders without directly
-          editing the PostgreSQL database.`,
+          an order with a mock PayPal account.  Users have profile pages where they
+          can edit their personal information, and an orders page to track purchases.`,
     `Implemented TypeScript and Redux for global state management on the
           front end. A .NET/C# API uses Entity Framework Core and JWT
           authentication to communicate with a PostgreSQL relational database
@@ -27,11 +26,6 @@ const AlpinePeakClimbingSkiShop = () => {
           Actions .yml file which re-builds and deploys three docker images to
           ECR/ECS for the front end/.NET backend/express.js microservice. This runs
           whenever new commits are pushed to the default branch.`,
-    `Deployed Python
-          AWS Lambda Crons with EventBridge rules to shut the site down between
-          1AM-6AM (to save hosting costs). Added an EventBridge Lambda
-          which publishes to an SNS Topic, to notify me via email if a container
-          crashes.`,
     `Added an EC2 load balancer to redirect HTTP traffic on port 80 to
           HTTPS port 443. The front-end is served by a Nginx reverse proxy,
           which is defined in a nginx.conf file ran by the docker container. AWS
