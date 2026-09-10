@@ -1,4 +1,11 @@
-import { DotNetIcon, DockerIcon, AwsIcon, PostgreSQLIcon, CSharpIcon, TypeScriptIcon } from "../components/dev-icons/DevIcons";
+import {
+  DotNetIcon,
+  DockerIcon,
+  AwsIcon,
+  PostgreSQLIcon,
+  CSharpIcon,
+  TypeScriptIcon,
+} from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./AlpinePeakClimbingSkiShop.css";
 import { useState } from "react";
@@ -14,7 +21,8 @@ const AlpinePeakClimbingSkiShop = () => {
     `A complex full-stack website (e.g - REI/Amazon clone) where users can
           search for and review products, add them to a cart, and submit/pay for
           an order with a mock PayPal account. Users can view their profile
-          information and track purchases on their orders page.`,
+          information and track purchases on their orders page.
+          The layout is responsive and accommodates both desktop and mobile screen sizes.`,
     `Implemented TypeScript and Redux for global state management on the
           front end. A .NET/C# API uses Entity Framework Core and JWT
           authentication to communicate with a PostgreSQL relational database
@@ -56,13 +64,16 @@ const AlpinePeakClimbingSkiShop = () => {
           with their google account after being registered.`,
   ];
   const [showCode, setShowCode] = useState(false);
-  const repositoryUrl = "https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack";
+  const repositoryUrl =
+    "https://github.com/Mike11199/rock-climbing-and-ski-shop-mern-stack";
 
   return (
     <>
       <section className="portfolio-project ski_shop_section">
         <ProjectHeader
-          title={"Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/ PostgreSQL)"}
+          title={
+            "Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/ PostgreSQL)"
+          }
           icons={
             <>
               <DotNetIcon />
@@ -75,9 +86,7 @@ const AlpinePeakClimbingSkiShop = () => {
           }
           actions={
             <>
-              <RepositoryActions
-                repositoryUrl={repositoryUrl}
-              />
+              <RepositoryActions repositoryUrl={repositoryUrl} />
               <ButtonLink
                 URL={"https://alpine-peak-climbing-ski-gear.com/"}
                 variant={"blue"}
@@ -91,22 +100,20 @@ const AlpinePeakClimbingSkiShop = () => {
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}
           code={
-              <GitHubCodeViewer
-                repositoryUrl={repositoryUrl}
-                owner="Mike11199"
-                repository="rock-climbing-and-ski-shop-mern-stack"
-                branch="api-v2-dotnet-conversion"
-                defaultFile="backend_v2_dotnet/Controllers/ProductsController.cs"
-                defaultOpenFiles={[
-                  ".github/workflows/deploy-cdk-aws.yml",
-                  "backend_v2_dotnet/Repositories/OrderRepository.cs",
-                  "frontend/src/pages/HomePage/HomePageSatelliteImage.tsx",
-                ]}
-              />
+            <GitHubCodeViewer
+              repositoryUrl={repositoryUrl}
+              owner="Mike11199"
+              repository="rock-climbing-and-ski-shop-mern-stack"
+              branch="api-v2-dotnet-conversion"
+              defaultFile="backend_v2_dotnet/Controllers/ProductsController.cs"
+              defaultOpenFiles={[
+                ".github/workflows/deploy-cdk-aws.yml",
+                "backend_v2_dotnet/Repositories/OrderRepository.cs",
+                "frontend/src/pages/HomePage/HomePageSatelliteImage.tsx",
+              ]}
+            />
           }
-          media={
-              <Carousel items={alpinePeakClimbingSkiShopImages} />
-          }
+          media={<Carousel items={alpinePeakClimbingSkiShopImages} />}
           description={AlpinePeakProjectDescriptionText}
         />
       </section>
