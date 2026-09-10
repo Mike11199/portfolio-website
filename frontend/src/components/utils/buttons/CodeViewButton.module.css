@@ -21,9 +21,11 @@
   user-select: none;
 }
 
-.codeButton:hover {
-  color: var(--terminal-accent);
-  background: var(--terminal-hover);
+@media (hover: hover) {
+  .codeButton:hover {
+    color: var(--terminal-accent);
+    background: var(--terminal-hover);
+  }
 }
 
 .codeButton:focus-visible {

@@ -118,6 +118,7 @@ const RepositoryViewer = ({ repositoryUrl, owner, repository, branch = "main", d
       </div>
 
       <footer className={styles.statusbar}>
+        {isMobile && <ThemeSelector theme={theme} onChange={changeTheme} />}
         <span>{activeFile?.language ?? "No file open"}</span>
         {activeFile && !isLoading && hasError && <span>Offline</span>}
         <span className={styles.statusSpacer} />

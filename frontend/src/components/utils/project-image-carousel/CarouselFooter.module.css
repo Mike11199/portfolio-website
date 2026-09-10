@@ -38,10 +38,16 @@
   justify-content: flex-end;
 }
 
-.footer button:hover,
 .footer button:active {
   color: var(--terminal-accent);
   background: var(--terminal-hover);
+}
+
+@media (hover: hover) {
+  .footer button:hover {
+    color: var(--terminal-accent);
+    background: var(--terminal-hover);
+  }
 }
 
 .first:focus-visible,

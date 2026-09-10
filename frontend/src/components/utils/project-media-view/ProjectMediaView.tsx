@@ -50,7 +50,12 @@ const ProjectMediaView = ({
   mediaLayout = "carousel",
   onToggleCode,
 }: ProjectMediaViewProps) => {
-  const { root, isFullscreen, toggleFullscreen } = useMediaFullscreen();
+  const { root, isFullscreen, toggleFullscreen, openFullscreen } = useMediaFullscreen();
+  useEffect(() => {
+    if (showCode && window.matchMedia("(max-width: 600px)").matches) {
+      openFullscreen();
+    }
+  }, [showCode, openFullscreen]);
   const hasHeader = showHeader && mediaLayout !== "phone";
   const viewClass = [
     styles.view,

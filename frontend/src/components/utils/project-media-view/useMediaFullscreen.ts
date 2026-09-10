@@ -2,7 +2,7 @@
  * Keeps fullscreen behavior out of ProjectMediaView.
  * Uses an in-page overlay to avoid browser fullscreen prompts and keep mobile navigation visible.
  */
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 /** Wrap Tab navigation at the edges of the expanded view. */
@@ -59,7 +59,8 @@ const useMediaFullscreen = () => {
   }, [isFullscreen]);
 
   const toggleFullscreen = () => setIsFullscreen((current) => !current);
-  return { root, isFullscreen, toggleFullscreen };
+  const openFullscreen = useCallback(() => setIsFullscreen(true), []);
+  return { root, isFullscreen, toggleFullscreen, openFullscreen };
 };
 
 export default useMediaFullscreen;

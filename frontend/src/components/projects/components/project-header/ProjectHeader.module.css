@@ -77,7 +77,9 @@
     font: 500 14px/normal "Segoe UI";
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
   }
-  .mobileAction button:hover { background: var(--terminal-hover); }
+  @media (hover: hover) {
+    .mobileAction button:hover { background: var(--terminal-hover); }
+  }
   .mobileAction button svg { width: 20px; height: 20px; }
   .mobileAction button:active { transform: scale(0.9); }
   .mobileAction button:active > :is(svg, span) { transform: none; }

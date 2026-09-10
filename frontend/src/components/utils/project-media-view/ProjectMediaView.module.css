@@ -94,9 +94,11 @@
   pointer-events: none;
 }
 
-.fullscreenButton:hover {
-  color: var(--terminal-accent);
-  background: var(--terminal-hover);
+@media (hover: hover) {
+  .fullscreenButton:hover {
+    color: var(--terminal-accent);
+    background: var(--terminal-hover);
+  }
 }
 
 .fullscreenButton:focus-visible {

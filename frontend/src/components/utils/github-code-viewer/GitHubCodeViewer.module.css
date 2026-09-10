@@ -384,7 +384,6 @@
 }
 
 @media (max-width: 600px) {
-  .themeSelector { display: none; }
   .viewer { height: clamp(320px, 70vh, 560px); }
   .filesToggle {
     display: flex;
@@ -423,9 +422,10 @@
     font-weight: 700;
   }
   .explorer { font-weight: 700; }
-  .statusbar > * { visibility: hidden; }
-  :global(.project-media-view[data-fullscreen]) .statusbar { padding: 0; gap: 0; }
-  :global(.project-media-view[data-fullscreen]) .statusbar > :not(.fontControls) { display: none; }
-  .statusbar .fontControls { visibility: visible; width: 100%; gap: 0; }
+  .statusbar { padding: 0; gap: 0; }
+  .statusbar > :not(.themeSelector):not(.fontControls) { display: none; }
+  .statusbar .themeSelector { flex: 1; max-width: none; min-height: 2.75rem; border: 0; border-radius: 0; }
+  .statusbar .fontControls { flex: 2; min-width: 0; gap: 0; }
+  .themeOption { min-height: 2.75rem; }
   .fontControls button { flex: 1; min-width: 0; min-height: 2.75rem; border: 0; border-radius: 0; }
 }
