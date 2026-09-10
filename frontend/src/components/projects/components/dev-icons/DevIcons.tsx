@@ -114,11 +114,6 @@ export const ReactIcon = () => (
   <DevIcon src={`${iconUrl}react/react-original-wordmark.svg`} alt="React logo" />
 );
 
-export const SocketIOIcon = () => (
-  <DevIcon src={`${iconUrl}socketio/socketio-original-wordmark.svg`} alt="socket-io logo"
-    style={{ filter: "brightness(0) invert(1)" }} />
-);
-
 export const SpringIcon = () => (
   <DevIcon src={`${iconUrl}spring/spring-original-wordmark.svg`} alt="spring boot logo" />
 );

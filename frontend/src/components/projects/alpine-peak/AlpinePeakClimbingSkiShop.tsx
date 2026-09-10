@@ -1,4 +1,4 @@
-import { DotNetIcon, DockerIcon, SocketIOIcon, AwsIcon, PostgreSQLIcon, CSharpIcon, TypeScriptIcon } from "../components/dev-icons/DevIcons";
+import { DotNetIcon, DockerIcon, AwsIcon, PostgreSQLIcon, CSharpIcon, TypeScriptIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./AlpinePeakClimbingSkiShop.css";
 import { useState } from "react";
@@ -13,19 +13,17 @@ const AlpinePeakClimbingSkiShop = () => {
   const AlpinePeakProjectDescriptionText = [
     `A complex full-stack website (e.g - REI/Amazon clone) where users can
           search for and review products, add them to a cart, and submit/pay for
-          an order with a mock PayPal account.  Users have profile pages where they
-          can edit their personal information, and an orders page to track purchases.`,
+          an order with a mock PayPal account. Users can view their profile
+          information and track purchases on their orders page.`,
     `Implemented TypeScript and Redux for global state management on the
           front end. A .NET/C# API uses Entity Framework Core and JWT
           authentication to communicate with a PostgreSQL relational database
-          hosted on AWS RDS. A secondary Express.js API/microservice uses
-          Socket.io to enable bi-directional communication between admins and
-          clients - for order help via a chat button.`,
-    `Deployed on an AWS Elastic Container Service (ECS) cluster via
-          serverless AWS Fargate. Implemented a CI/CD pipeline via a GitHub
-          Actions .yml file which re-builds and deploys three docker images to
-          ECR/ECS for the front end/.NET backend/express.js microservice. This runs
-          whenever new commits are pushed to the default branch.`,
+          hosted on AWS RDS.`,
+    `Configured AWS CDK to run the storefront on serverless AWS Fargate
+          with two containers in one ECS task: the front end served by Nginx
+          and the .NET API. A GitHub Actions pipeline builds both Docker images,
+          pushes them to Amazon ECR, and deploys them to ECS when commits are
+          pushed to the deployment branch.`,
     `Added an EC2 load balancer to redirect HTTP traffic on port 80 to
           HTTPS port 443. The front-end is served by a Nginx reverse proxy,
           which is defined in a nginx.conf file ran by the docker container. AWS
@@ -69,7 +67,6 @@ const AlpinePeakClimbingSkiShop = () => {
             <>
               <DotNetIcon />
               <DockerIcon />
-              <SocketIOIcon />
               <AwsIcon />
               <PostgreSQLIcon />
               <CSharpIcon />
