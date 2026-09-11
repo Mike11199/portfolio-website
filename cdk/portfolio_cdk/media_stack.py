@@ -94,7 +94,11 @@ class MediaStack(Stack):
                 ],
             },
         )
-        # Use the CloudFormation resource so the pinned CDK need not expose a new L2.
+        # 100 GB and 1 million requests per month are FREE.
+        # Files fetched from S3 cost $0.44 per million reads in us-west-1.
+        # For 50 TB and 10 million requests at $15/month, change
+        # "PlanTier": "FREE" to "PlanTier": "PRO" below and redeploy.
+        # Current setup should cost pennies to $1/month with light traffic
         plan = CfnResource(
             self, "FreeMediaPlan", type="AWS::PricingPlanManager::Subscription",
             properties={
