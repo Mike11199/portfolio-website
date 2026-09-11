@@ -95,13 +95,13 @@ const KotlinAndroidProjects = () => {
               <ProjectMediaFrame layout="phone" background="transparent">
                 <ProjectMediaSlide media={{
                   alt: "Sacramento city Android app demo",
-                  src: "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654731/portfolio-webm/android_kotlin_sacramento_app_fdubuz.webm",
-                  poster: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654733/portfolio-webm/android_kotlin_sacramento_app_fdubuz_poster.jpg",
+                  src: "https://assets.michael-iwanek-portfolio.com/videos/android_kotlin_sacramento_app_fdubuz-8bfa812bb0fd.webm",
+                  poster: "https://assets.michael-iwanek-portfolio.com/images/android_kotlin_sacramento_app_fdubuz_poster-05ea8664ef42.jpg",
                 }} />
                 <ProjectMediaSlide media={{
                   alt: "Flight search Android app demo",
-                  src: "https://res.cloudinary.com/dwgvi9vwb/video/upload/v1788654725/portfolio-webm/android_kotlin_flight_search_fu06fc.webm",
-                  poster: "https://res.cloudinary.com/dwgvi9vwb/image/upload/v1788654727/portfolio-webm/android_kotlin_flight_search_fu06fc_poster.jpg",
+                  src: "https://assets.michael-iwanek-portfolio.com/videos/android_kotlin_flight_search_fu06fc-13a53a01b252.webm",
+                  poster: "https://assets.michael-iwanek-portfolio.com/images/android_kotlin_flight_search_fu06fc_poster-95721076901c.jpg",
                 }} />
               </ProjectMediaFrame>
           }

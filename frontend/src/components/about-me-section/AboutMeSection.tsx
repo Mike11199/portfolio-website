@@ -64,19 +64,19 @@ const AboutMeImagesContainer = ({ blackContainer = false }: { blackContainer?: b
     <div className={`${styles.aboutMeImages}${blackContainer ? ` ${styles.photoPanel}` : ""}`}>
       <div className={styles.aboutMeImagesFirstRow}>
         <img
-          src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/about_me_snowshoe_tunnel_qtqonc.jpg"
+          src="https://assets.michael-iwanek-portfolio.com/images/about_me_snowshoe_tunnel_qtqonc-7073087b6c2b.jpg"
           alt="Michael snowshoeing in an ice tunnel"
           className={styles.aboutMeSnowshoeingPhoto}
         />
         <img
-          src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864636/about_me_heavenly_ski_resort_bu4bzj.jpg"
+          src="https://assets.michael-iwanek-portfolio.com/images/about_me_heavenly_ski_resort_bu4bzj-7aa57b848bc5.jpg"
           alt="Michael skiing at Heavenly"
           className={styles.aboutMeSkiingPhoto}
         />
       </div>
       <div className="aboutMeImagesSecondRow">
         <img
-          src="https://res.cloudinary.com/dwgvi9vwb/image/upload/v1704864634/about_me_tent_snow_camping_qvoznf.jpg"
+          src="https://assets.michael-iwanek-portfolio.com/images/about_me_tent_snow_camping_qvoznf-bf97524fd37d.jpg"
           alt="Tent at a snowy campsite"
           className={styles.tentImage}
         />
