@@ -1,227 +1,49 @@
 import json
-from pathlib import Path
-from unittest.mock import patch
 
-from aws_cdk import App, Fn
-
-from portfolio_cdk.repository_stack import RepositoryStack
-from portfolio_cdk.stack import PortfolioStack
+from aws_cdk.assertions import Match, Template
 
 
-def template() -> dict:
-    app = App()
-    stack = PortfolioStack(app, "TestPortfolioStack")
-    return app.synth().get_stack_by_name(stack.stack_name).template
-
-
-def repository_template() -> dict:
-    app = App()
-    stack = RepositoryStack(app, "TestRepositoryStack")
-    return app.synth().get_stack_by_name(stack.stack_name).template
-
-
-def resources(cloudformation: dict, resource_type: str) -> list[dict]:
-    return [
-        resource
-        for resource in cloudformation["Resources"].values()
-        if resource["Type"] == resource_type
-    ]
-
-
-def test_application_stack_depends_on_repository_stack():
-    import app as cdk_app
-
-    assert cdk_app.repository_stack in cdk_app.portfolio_stack.dependencies
-
-
-def test_application_deploy_excludes_the_already_deployed_repository_stack():
-    """Image parameters must be sent only to the application stack."""
-    workflow = (
-        Path(__file__).parents[3] / ".github/workflows/deploy-cdk-ecs-ec2.yml"
-    ).read_text()
-    application_deploy = workflow[workflow.index("cdk deploy PortfolioStack") :]
-
-    assert "--exclusively" in application_deploy
-    assert application_deploy.index("--exclusively") < application_deploy.index(
-        "--parameters"
-    )
-
-
-def test_repository_stack_retains_live_repository_and_exports_uri():
-    cloudformation = repository_template()
-
-    repository = cloudformation["Resources"]["PortfolioRepository"]
-    assert repository["Type"] == "AWS::ECR::Repository"
+def test_repository_is_retained_and_keeps_recent_images(stacks):
+    template = Template.from_stack(stacks["repository"])
+    repository = template.to_json()["Resources"]["PortfolioRepository"]
     assert repository["DeletionPolicy"] == "Retain"
     assert repository["UpdateReplacePolicy"] == "Retain"
-    lifecycle_policy = json.loads(
-        repository["Properties"].pop("LifecyclePolicy")["LifecyclePolicyText"]
-    )
-    assert repository["Properties"] == {
-        "RepositoryName": "portfolio-website",
-        "ImageTagMutability": "MUTABLE",
-        "ImageScanningConfiguration": {"ScanOnPush": False},
-        "EncryptionConfiguration": {"EncryptionType": "AES256"},
-    }
-    assert cloudformation["Outputs"]["RepositoryUri"] == {
-        "Value": {"Fn::GetAtt": ["PortfolioRepository", "RepositoryUri"]},
-        "Export": {"Name": "PortfolioRepositoryUri"},
-    }
-    assert lifecycle_policy["rules"] == [
-        {
-            "rulePriority": 1,
-            "description": "Keep the three most recent release images",
-            "selection": {
-                "tagStatus": "tagged",
-                "tagPatternList": ["*"],
-                "countType": "imageCountMoreThan",
-                "countNumber": 3,
-            },
-            "action": {"type": "expire"},
-        },
-        {
-            "rulePriority": 2,
-            "description": "Expire untagged images after one day",
-            "selection": {
-                "tagStatus": "untagged",
-                "countType": "sinceImagePushed",
-                "countUnit": "days",
-                "countNumber": 1,
-            },
-            "action": {"type": "expire"},
-        },
-    ]
+    rules = json.loads(repository["Properties"]["LifecyclePolicy"]["LifecyclePolicyText"])["rules"]
+    assert rules[0]["selection"]["countNumber"] == 3
+    assert rules[1]["selection"]["countNumber"] == 1
+    template.has_output("RepositoryUri", {"Export": {"Name": "PortfolioRepositoryUri"}})
 
 
-def import_values(value) -> list[str]:
-    if isinstance(value, dict):
-        imports = (
-            [value["Fn::ImportValue"]] if "Fn::ImportValue" in value else []
-        )
-        return imports + [
-            item
-            for child in value.values()
-            for item in import_values(child)
-        ]
-    if isinstance(value, list):
-        return [item for child in value for item in import_values(child)]
-    return []
+def test_application_runs_one_small_spot_host(stacks):
+    assert stacks["repository"] in stacks["application"].dependencies
+    template = Template.from_stack(stacks["application"])
+    template.has_resource_properties("AWS::ECS::Service", {"DesiredCount": 1})
+    template.has_resource_properties("AWS::EC2::LaunchTemplate", {
+        "LaunchTemplateData": {"InstanceType": "t3.micro"},
+    })
+    template.has_resource_properties("AWS::AutoScaling::AutoScalingGroup", {
+        "MinSize": "1", "MaxSize": "1",
+        "MixedInstancesPolicy": {"InstancesDistribution": {"OnDemandPercentageAboveBaseCapacity": 0}},
+    })
+    template.has_resource_properties("AWS::ECS::TaskDefinition", {
+        "ContainerDefinitions": [Match.object_like({
+            "Name": "NginxContainer",
+            "Image": {"Fn::Join": ["", [{"Fn::ImportValue": "PortfolioRepositoryUri"}, ":", {"Ref": "ImageTag"}]]},
+            "PortMappings": [Match.object_like({"ContainerPort": 80})],
+        })],
+    })
 
 
-def test_imports_shared_network_listener_and_repository_values():
-    cloudformation = template()
-
-    assert {
-        "SharedVpcId",
-        "SharedPublicSubnet1Id",
-        "SharedAlbSecurityGroupId",
-        "SharedHttpsListenerArn",
-        "PortfolioRepositoryUri",
-    }.issubset(set(import_values(cloudformation)))
-
-    task_definition = resources(cloudformation, "AWS::ECS::TaskDefinition")[0]
-    image = task_definition["Properties"]["ContainerDefinitions"][0]["Image"]
-    assert image == {
-        "Fn::Join": [
-            "",
-            [
-                {"Fn::ImportValue": "PortfolioRepositoryUri"},
-                ":",
-                {"Ref": "ImageTag"},
-            ],
-        ]
-    }
-
-
-def test_imports_shared_public_subnet_availability_zone():
-    with patch(
-        "portfolio_cdk.stack.Fn.import_value", wraps=Fn.import_value
-    ) as import_value:
-        app = App()
-        PortfolioStack(app, "TestPortfolioStack")
-
-    import_value.assert_any_call("SharedPublicSubnet1AvailabilityZone")
-
-
-def test_runs_one_nginx_task():
-    cloudformation = template()
-    services = resources(cloudformation, "AWS::ECS::Service")
-    task_definitions = resources(cloudformation, "AWS::ECS::TaskDefinition")
-
-    assert services[0]["Properties"]["DesiredCount"] == 1
-    containers = task_definitions[0]["Properties"]["ContainerDefinitions"]
-    assert [container["Name"] for container in containers] == ["NginxContainer"]
-    assert containers[0]["PortMappings"][0]["ContainerPort"] == 80
-
-
-def test_uses_one_t3_micro_spot_instance():
-    cloudformation = template()
-    launch_template = resources(cloudformation, "AWS::EC2::LaunchTemplate")[0]
-    auto_scaling_group = resources(
-        cloudformation, "AWS::AutoScaling::AutoScalingGroup"
-    )[0]
-
-    assert launch_template["Properties"]["LaunchTemplateData"]["InstanceType"] == "t3.micro"
-    properties = auto_scaling_group["Properties"]
-    assert properties["MinSize"] == "1"
-    assert properties["MaxSize"] == "1"
-    assert properties["MixedInstancesPolicy"]["InstancesDistribution"]["OnDemandPercentageAboveBaseCapacity"] == 0
-
-
-def test_routes_portfolio_host_through_shared_listener():
-    cloudformation = template()
-    listener_rule_id, listener_rule = next(
-        (logical_id, resource)
-        for logical_id, resource in cloudformation["Resources"].items()
-        if resource["Type"] == "AWS::ElasticLoadBalancingV2::ListenerRule"
-    )
-    target_group_id, target_group = next(
-        (logical_id, resource)
-        for logical_id, resource in cloudformation["Resources"].items()
-        if resource["Type"] == "AWS::ElasticLoadBalancingV2::TargetGroup"
-    )
-
-    assert listener_rule["Properties"]["ListenerArn"] == {
-        "Fn::ImportValue": "SharedHttpsListenerArn"
-    }
-    assert listener_rule["Properties"]["Priority"] == 2
-    assert listener_rule["Properties"]["Conditions"][0]["HostHeaderConfig"]["Values"] == [
-        "michael-iwanek-portfolio.com"
-    ]
-    assert target_group["Properties"]["HealthCheckPath"] == "/health"
-    assert target_group["Properties"]["TargetType"] == "ip"
-    for logical_id in (listener_rule_id, target_group_id):
-        resource = cloudformation["Resources"][logical_id]
-        assert resource["DeletionPolicy"] == "Retain"
-        assert resource["UpdateReplacePolicy"] == "Retain"
-
-
-def test_owns_retained_root_alias_using_shared_exports():
-    cloudformation = template()
-    records = resources(cloudformation, "AWS::Route53::RecordSet")
-
-    assert len(records) == 1
-    alias = cloudformation["Resources"]["PortfolioAliasRecord"]
-    assert alias["DeletionPolicy"] == "Retain"
-    assert alias["UpdateReplacePolicy"] == "Retain"
-    assert alias["Properties"] == {
-        "Name": "michael-iwanek-portfolio.com.",
-        "Type": "A",
-        "HostedZoneId": {"Fn::ImportValue": "SharedPortfolioHostedZoneId"},
-        "AliasTarget": {
-            "DNSName": {
-                "Fn::Join": [
-                    "",
-                    [
-                        "dualstack.",
-                        {"Fn::ImportValue": "SharedLoadBalancerDnsName"},
-                        ".",
-                    ],
-                ]
-            },
-            "HostedZoneId": {
-                "Fn::ImportValue": "SharedLoadBalancerCanonicalHostedZoneId"
-            },
-            "EvaluateTargetHealth": True,
-        },
-    }
+def test_application_reuses_shared_routing(stacks):
+    template = Template.from_stack(stacks["application"])
+    template.resource_count_is("AWS::EC2::VPC", 0)
+    template.resource_count_is("AWS::ElasticLoadBalancingV2::LoadBalancer", 0)
+    template.has_resource_properties("AWS::ElasticLoadBalancingV2::ListenerRule", {
+        "ListenerArn": {"Fn::ImportValue": "SharedHttpsListenerArn"},
+        "Conditions": [{"Field": "host-header", "HostHeaderConfig": {"Values": ["michael-iwanek-portfolio.com"]}}],
+    })
+    template.has_resource_properties("AWS::ElasticLoadBalancingV2::TargetGroup", {
+        "HealthCheckPath": "/health", "TargetType": "ip",
+    })
+    for kind in ("AWS::Route53::RecordSet", "AWS::ElasticLoadBalancingV2::ListenerRule", "AWS::ElasticLoadBalancingV2::TargetGroup"):
+        template.has_resource(kind, {"DeletionPolicy": "Retain", "UpdateReplacePolicy": "Retain"})

@@ -41,6 +41,7 @@ const ReactVideoPlayer = ({ URL, controls = true, loadingIndicator = false }: Re
         url={URL}
         loop={true}
         muted={true}
+        playsinline
         style={{ zIndex: 1 }}
         config={{
           youtube: youtubeOptions,

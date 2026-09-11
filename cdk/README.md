@@ -37,3 +37,8 @@ PortfolioStack
 5. Verify target health and HTTPS.
 
 Domain registration and name-server delegation remain manual. ACM creates its validation CNAME automatically.
+
+## Media
+
+Media uses private S3 storage in `us-west-1` and CloudFront's FREE plan at `assets.michael-iwanek-portfolio.com`, with the required certificate/WAF in `us-east-1` and A/AAAA aliases for IPv4/IPv6.
+From `cdk`, deploy both media stacks with `cdk --app "uv run media_app.py" deploy --all --parameters PortfolioMediaStack:HostedZoneId=<existing-zone-id>`; video uploads are separate, and S3 request charges still apply.

@@ -38,7 +38,7 @@ const AboutMeSection = () => {
               <ReactVideoPlayer
                 loadingIndicator
                 URL={
-                  "https://www.youtube.com/shorts/tDcxweOlAns?autoplay=1&modestbranding=1"
+                  "https://assets.michael-iwanek-portfolio.com/videos/climbing-tDcxweOlAns-1080p-v1.mp4"
                 }
                 controls={false}
               />

@@ -33,3 +33,4 @@ cdk/.pytest_cache/
 
 # Local migration plan
 /MIGRATION_README.md
+/.media-test/

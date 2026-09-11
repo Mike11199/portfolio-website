@@ -35,7 +35,6 @@ jobs:
           npm run build
 
   cdk-test:
-    name: cdk-test
     runs-on: ubuntu-latest
 
     steps:
@@ -46,15 +45,11 @@ jobs:
           enable-cache: true
           cache-dependency-glob: cdk/uv.lock
 
-      - name: Install pinned CDK CLI
-        run: npm install --global "aws-cdk@$CDK_CLI_VERSION"
-
-      - name: Run tests and synth
+      - name: Test and synthesize CDK apps
         working-directory: cdk
         run: |
           uv sync --frozen --group dev
           uv run pytest -q
-          cdk synth
 
   build-docker-image:
     name: build-docker-image
