@@ -36,11 +36,12 @@ const AboutMeSection = () => {
             <div className={styles.mediaGroup}>
             <div className={styles.aboutMeVideoWrapper}>
               <ReactVideoPlayer
+                title="vent5/auburn quarry rock climbing"
                 loadingIndicator
                 URL={
                   "https://assets.michael-iwanek-portfolio.com/videos/climbing-tDcxweOlAns-1080p-v1.mp4"
                 }
-                controls={false}
+                controls
               />
             </div>
             <AboutMeImagesContainer blackContainer={true} />

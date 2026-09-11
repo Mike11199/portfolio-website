@@ -81,8 +81,9 @@ const SmallShellProject = () => {
           media={
               <ProjectMediaFrame>
                 <ReactVideoPlayer
+                title="Small Shell (smallsh) - C Unix Shell"
                 URL={
-                  "https://www.youtube.com/watch?v=vD2dPFSQ668?autoplay=1&modestbranding=1"
+                  "https://assets.michael-iwanek-portfolio.com/videos/small-shell-4k-v1.mp4"
                 }
               />
               </ProjectMediaFrame>

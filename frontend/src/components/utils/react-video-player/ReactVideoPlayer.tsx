@@ -11,11 +11,12 @@ const ReactPlayer = (
 
 interface ReactPlayerProps {
   URL: string;
+  title?: string;
   controls?: boolean;
   loadingIndicator?: boolean;
 }
 
-const ReactVideoPlayer = ({ URL, controls = true, loadingIndicator = false }: ReactPlayerProps) => {
+const ReactVideoPlayer = ({ URL, title, controls = true, loadingIndicator = false }: ReactPlayerProps) => {
 
   const [settledUrl, setSettledUrl] = useState<string | null>(null);
   const isLoading = loadingIndicator && settledUrl !== URL;
@@ -39,14 +40,17 @@ const ReactVideoPlayer = ({ URL, controls = true, loadingIndicator = false }: Re
         width="100%"
         height="100%"
         url={URL}
+        controls={controls}
         loop={true}
         muted={true}
         playsinline
         style={{ zIndex: 1 }}
         config={{
+          file: { attributes: { "aria-label": title } },
           youtube: youtubeOptions,
         }}
       />
+      {title && <div className={styles.title}>{title}</div>}
       {isLoading && (
         <div className={styles.loading} role="status" aria-label="Loading climbing video">
           <span className={styles.spinner} aria-hidden="true" />

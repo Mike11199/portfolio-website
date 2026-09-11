@@ -2,6 +2,60 @@
   width: 100%;
   position: relative;
   z-index: 1;
+  color-scheme: dark;
+}
+
+.frame video {
+  color-scheme: dark;
+  accent-color: auto;
+  --video-control-cursor: url("../../../images/dark_pointer_small.png") 9 2, pointer;
+}
+
+/* Match --terminal-title (#11a743) while preserving native control shading. */
+.frame video::-webkit-media-controls-panel {
+  filter: grayscale(1) brightness(0.2) sepia(1) saturate(3.88) hue-rotate(87.2deg) brightness(2.0634);
+  cursor: var(--video-control-cursor);
+}
+
+.frame video::-webkit-media-controls-play-button {
+  cursor: var(--video-control-cursor);
+}
+
+.frame video::-webkit-media-controls-mute-button {
+  cursor: var(--video-control-cursor);
+}
+
+.frame video::-webkit-media-controls-timeline {
+  cursor: var(--video-control-cursor);
+}
+
+.frame video::-webkit-media-controls-volume-slider {
+  cursor: var(--video-control-cursor);
+}
+
+.frame video::-webkit-media-controls-fullscreen-button {
+  cursor: var(--video-control-cursor);
+}
+
+.title {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: rgb(0 0 0 / 80%);
+  color: var(--terminal-title);
+  font-size: 14px;
+  font-weight: 700;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.frame:hover .title,
+.frame:focus-within .title {
+  opacity: 1;
 }
 
 .loading {

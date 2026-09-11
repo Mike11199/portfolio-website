@@ -73,7 +73,7 @@ const KotlinAndroidProjects = () => {
                 repositoryUrl={repositoryUrl}
               />
               <ButtonLink
-                URL={"https://www.youtube.com/watch?v=hwGGgglHlus"}
+                URL={"https://assets.michael-iwanek-portfolio.com/videos/kotlin-android-1080p-v1.mp4"}
                 variant={"red"}
                 buttonText={"Video Link"}
               />
