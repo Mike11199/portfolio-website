@@ -39,7 +39,7 @@ const AboutMeSection = () => {
                 title="vent5/auburn quarry rock climbing"
                 loadingIndicator
                 URL={
-                  "https://assets.michael-iwanek-portfolio.com/videos/climbing-tDcxweOlAns-1080p-v1.mp4"
+                  "https://assets.michael-iwanek-portfolio.com/videos/climbing.mp4"
                 }
                 controls
               />
@@ -64,19 +64,19 @@ const AboutMeImagesContainer = ({ blackContainer = false }: { blackContainer?: b
     <div className={`${styles.aboutMeImages}${blackContainer ? ` ${styles.photoPanel}` : ""}`}>
       <div className={styles.aboutMeImagesFirstRow}>
         <img
-          src="https://assets.michael-iwanek-portfolio.com/images/about_me_snowshoe_tunnel_qtqonc-7073087b6c2b.jpg"
+          src="https://assets.michael-iwanek-portfolio.com/images/snowshoe-tunnel.jpg"
           alt="Michael snowshoeing in an ice tunnel"
           className={styles.aboutMeSnowshoeingPhoto}
         />
         <img
-          src="https://assets.michael-iwanek-portfolio.com/images/about_me_heavenly_ski_resort_bu4bzj-7aa57b848bc5.jpg"
+          src="https://assets.michael-iwanek-portfolio.com/images/heavenly-ski-resort.jpg"
           alt="Michael skiing at Heavenly"
           className={styles.aboutMeSkiingPhoto}
         />
       </div>
       <div className="aboutMeImagesSecondRow">
         <img
-          src="https://assets.michael-iwanek-portfolio.com/images/about_me_tent_snow_camping_qvoznf-bf97524fd37d.jpg"
+          src="https://assets.michael-iwanek-portfolio.com/images/snow-camping.jpg"
           alt="Tent at a snowy campsite"
           className={styles.tentImage}
         />

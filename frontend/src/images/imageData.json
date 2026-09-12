@@ -2,310 +2,310 @@
   "PyTorchImages": [
     {
       "alt": "new_york_traffic_gif",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/pytorch_trraffic_a1r5fm-d19b5211d7b8.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/pytorch_trraffic_a1r5fm_poster-89393fe68c5d.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/pytorch_trraffic_a1r5fm_thumbnail-4326456ae1ca.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/pytorch-traffic.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/pytorch-traffic-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/pytorch-traffic-thumbnail.jpg"
     },
     {
       "alt": "cats_and_dogs_gif_mask_rcnn",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/mask_rcnn_new_page_layout_optimized_hqaap0-ac7e789a1e29.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/mask_rcnn_new_page_layout_optimized_hqaap0_poster-131f34d6f24b.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/mask_rcnn_new_page_layout_optimized_hqaap0_thumbnail-4732ac8911a9.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/mask-rcnn-demo.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/mask-rcnn-demo-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/mask-rcnn-demo-thumbnail.jpg"
     },
     {
       "alt": "new_york_traffic_mask_only",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/traffic_new_1_imioqt-9239d53d017a.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/traffic_new_1_imioqt_thumbnail-21dd27a843a2.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/traffic-1.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/traffic-1-thumbnail.jpg"
     },
     {
       "alt": "new_york_traffic",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/traffic_new_2_pjlmap-7cd6ee1cc061.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/traffic_new_2_pjlmap_thumbnail-f1beb33fe29e.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/traffic-2.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/traffic-2-thumbnail.jpg"
     },
     {
       "alt": "aws_cdk_stack_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/pytorch-cdk-image_-_Copy_nozrj7-f438a4fc78b7.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/pytorch-cdk-image_-_Copy_nozrj7-7fe430616cfa.png"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/pytorch-cdk.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/pytorch-cdk-thumbnail.png"
     },
     {
       "alt": "github_actions_pytorch_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/gh-actions-pytorch_r2yc1c-f683f74dc1dc.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/gh-actions-pytorch_r2yc1c-d8aa3c1bc069.png"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/pytorch-github-actions.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/pytorch-github-actions-thumbnail.png"
     },
     {
       "alt": "winter_traffic",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/winter_traffic_new_2_hlgo1d-64192d7e1965.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/winter_traffic_new_2_hlgo1d_thumbnail-d8758e8bc3e2.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/winter-traffic-2.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/winter-traffic-2-thumbnail.jpg"
     },
     {
       "alt": "pytorch_doggo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/new_dog_v4lcyn-79bbefb2b760.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/new_dog_v4lcyn_thumbnail-16e8a329692f.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/pytorch-dog.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/pytorch-dog-thumbnail.jpg"
     },
     {
       "alt": "pytorch_home_page",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/fast_rcnn_page_aykfi7-ac539422e9d0.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/fast_rcnn_page_aykfi7_thumbnail-1dad10a5f779.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/faster-rcnn.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/faster-rcnn-thumbnail.jpg"
     },
     {
       "alt": "nat_geo_collage",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/nat_geo_collage_new_tu7gsv-6c56d50923fa.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/nat_geo_collage_new_tu7gsv_thumbnail-032e5d4f2195.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/nat-geo-collage.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/nat-geo-collage-thumbnail.jpg"
     },
     {
       "alt": "jupyterlab_model_load_weights",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/jupyter_notebook_screenshot_bear_oy8vzh-aa605053aa3f.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/jupyter_notebook_screenshot_bear_oy8vzh_thumbnail-27969ee11c50.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/jupyter-notebook-screenshot-bear.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/jupyter-notebook-screenshot-bear-thumbnail.jpg"
     },
     {
       "alt": "front_end_and_server_code",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/typescript_new_if4it7-dbd986c429ef.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/typescript_new_if4it7_thumbnail-2dccdd20c32f.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/typescript.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/typescript-thumbnail.jpg"
     },
     {
       "alt": "java_spring_boot_ide",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/java_api_new_yvf8af-1750e9405ed4.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/java_api_new_yvf8af_thumbnail-57a17036fc1f.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/java-api.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/java-api-thumbnail.jpg"
     },
     {
       "alt": "flask_microservice_ide",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/flask-microservice-pytorch_kwgymy-693e186f8be0.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/flask-microservice-pytorch_kwgymy_thumbnail-fcd157cf8d39.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/flask-microservice-pytorch.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/flask-microservice-pytorch-thumbnail.jpg"
     }
   ],
   "alpinePeakClimbingSkiShopImages": [
     {
       "alt": "home_page_gif",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/ski_page_new_gif_1_o28o0z-120dbebaf105.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/ski_page_new_gif_1_o28o0z_poster-75eff6f9bb10.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski_page_new_gif_1_o28o0z_thumbnail-d2badb6f89f3.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/ski-shop-demo.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-demo-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-demo-thumbnail.jpg"
     },
     {
       "alt": "home_page_gif_2",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/ski_home_page_gif_new_snow_2_sd9g9s-bbc77626f2f2.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/ski_home_page_gif_new_snow_2_sd9g9s_poster-41d717f5a735.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski_home_page_gif_new_snow_2_sd9g9s_thumbnail-ee8e2e9f8ab3.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/ski-shop-snow-banner.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-snow-banner-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-snow-banner-thumbnail.jpg"
     },
     {
       "alt": "product_search_grid",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/products_search_grid_h5i7sh-8f0eaebd6d5c.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/products_search_grid_h5i7sh_thumbnail-9f89499fa062.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/products-search-grid.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/products-search-grid-thumbnail.jpg"
     },
     {
       "alt": "aws_cloudformation_stack_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/alpine_peak_cf_stack_t3htae-b7a09147e7d5.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/alpine_peak_cf_stack_t3htae-5ba97158bd5f.png"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-cdk.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-cdk-thumbnail.png"
     },
     {
       "alt": "user_orders_page",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/my_orders_new_zrfhv9-97d4186c8109.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/my_orders_new_zrfhv9_thumbnail-78b4138d02a5.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/my-orders.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/my-orders-thumbnail.jpg"
     },
     {
       "alt": "login_page_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/login-page_yac4qr-0b35f864c1b9.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/login-page_yac4qr_thumbnail-4f111c9a98a0.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/login-page.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/login-page-thumbnail.jpg"
     },
     {
       "alt": "register_page_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/register-page_eha6iw-759e01a9c988.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/register-page_eha6iw_thumbnail-4e4bb087a025.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/register-page.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/register-page-thumbnail.jpg"
     },
     {
       "alt": "order_details_payment_paypal_buttons_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/order_details_new_-_Copy_fmvvlt-858885f7e0f2.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/order_details_new_-_Copy_fmvvlt_thumbnail-a60f87459e27.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/order-details.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/order-details-thumbnail.jpg"
     },
     {
       "alt": "home_page_giving_pledge",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/home_pag_new_giving_back_rhftta-9d94b2ea8e0c.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/home_pag_new_giving_back_rhftta_thumbnail-e2dcc61b0800.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/giving-back.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/giving-back-thumbnail.jpg"
     },
     {
       "alt": "nasa_snow_tracker_new",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/nasa_new_snow_cover_l3f8su-93f77fcef356.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/nasa_new_snow_cover_l3f8su_thumbnail-1b466e7c5027.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/nasa-snow-cover.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/nasa-snow-cover-thumbnail.jpg"
     },
     {
       "alt": "dotnet_api_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/ski_shop_dotnet_api_jotwiq-21640554ef53.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski_shop_dotnet_api_jotwiq_thumbnail-56c9b138df03.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-dotnet-api.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-dotnet-api-thumbnail.jpg"
     },
     {
       "alt": "pgadmin_postgresql_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/ski_shop_postgresql_zk8std-ee79195b3a3e.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski_shop_postgresql_zk8std_thumbnail-ee8b2147b43f.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-postgresql.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-postgresql-thumbnail.jpg"
     },
     {
       "alt": "home_page_static_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/home_page_static_new_y9c23n-cb0c2cf19676.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/home_page_static_new_y9c23n_thumbnail-052a3e99a486.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-home.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-home-thumbnail.jpg"
     },
     {
       "alt": "shopping_cart_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/shopping-cart-new_tuloyl-c03cc5c9ada5.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/shopping-cart-new_tuloyl_thumbnail-c3f82d310451.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/shopping-cart.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/shopping-cart-thumbnail.jpg"
     },
     {
       "alt": "editing_ski_mountaineering_login_page_photo",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/SkiShopPhotoEditProcessGimp_jkrj7l-b718de3d5571.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/SkiShopPhotoEditProcessGimp_jkrj7l_poster-601b06221d43.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/SkiShopPhotoEditProcessGimp_jkrj7l_thumbnail-77e5a95c0dfe.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/ski-shop-photo-editing.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-photo-editing-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/ski-shop-photo-editing-thumbnail.jpg"
     }
   ],
   "rsaEncryptionImages": [
     {
       "alt": "rsa_encryption_gif",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/encryption_react_app_rsa_zm71g8-f00a2380f29e.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/encryption_react_app_rsa_zm71g8_poster-4de6cf4af0ac.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/encryption_react_app_rsa_zm71g8_thumbnail-0d87b828c8c8.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/encryption-react-app-rsa.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/encryption-react-app-rsa-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/encryption-react-app-rsa-thumbnail.jpg"
     },
     {
       "alt": "rsa_encryption_image",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/RSAPage_fgvomf-7def3592a9ce.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/RSAPage_fgvomf_thumbnail-3695d406528c.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/rsapage.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/rsapage-thumbnail.jpg"
     },
     {
       "alt": "aes_encryption_gif",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/encryption_react_app_aes_iblpok-7c227a00ab88.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/encryption_react_app_aes_iblpok_poster-25f42bd99f87.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/encryption_react_app_aes_iblpok_thumbnail-1fa221740128.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/encryption-react-app-aes.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/encryption-react-app-aes-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/encryption-react-app-aes-thumbnail.jpg"
     },
     {
       "alt": "aes_encryption_image",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/AESPage_hfsbt2-173e3c32d67e.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/AESPage_hfsbt2_thumbnail-bb11d4eadca2.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/aespage.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/aespage-thumbnail.jpg"
     }
   ],
   "solarSystemImages": [
     {
       "alt": "solar_system_and_both_belts_from_distance_gif",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/solar_system_optimized_zfcrh3-e33372d5a8fa.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/solar_system_optimized_zfcrh3_poster-e9177d869d60.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/solar_system_optimized_zfcrh3_thumbnail-1afc6664b10c.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/solar-system-demo.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/solar-system-demo-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/solar-system-demo-thumbnail.jpg"
     },
     {
       "alt": "solar_system_and_both_belts_from_distance_gif2",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/solarSystemOrbits4_ipcemf-3de419d3aa01.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/solarSystemOrbits4_ipcemf_poster-d3a7889a7e3c.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/solarSystemOrbits4_ipcemf_thumbnail-15e65976b145.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/solar-system-orbits.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/solar-system-orbits-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/solar-system-orbits-thumbnail.jpg"
     },
     {
       "alt": "earth_system_rotation_gif_over_10MB_cloudinary_limit",
       "src": "https://github.com/Mike11199/GIFs/blob/main/earth_rotation_clouds.gif?raw=true",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/earth_rotation_clouds_thumbnail-fa29123d8dac.jpg"
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/earth-rotation-thumbnail.jpg"
     },
     {
       "alt": "solar_system_jupiter_and_main_asteroid_belt",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/AsteroidBeltPlanetsCloseUpPhoto_busxio-c3433b17e4ad.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/AsteroidBeltPlanetsCloseUpPhoto_busxio_thumbnail-022575c24ea8.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/asteroid-belt-planets-close-up-photo.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/asteroid-belt-planets-close-up-photo-thumbnail.jpg"
     },
     {
       "alt": "close_up_of_planets_aligned",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/PlanetsAlignedImage_xaiskz-c38bc4bccb2a.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/PlanetsAlignedImage_xaiskz_thumbnail-69ca7867c92f.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/planets-aligned-image.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/planets-aligned-image-thumbnail.jpg"
     },
     {
       "alt": "earth_system_static_image",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/EarthCloudsImage_bdpfo5-48f06d5bc1cb.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/EarthCloudsImage_bdpfo5_thumbnail-6ae07fb85255.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/earth-clouds-image.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/earth-clouds-image-thumbnail.jpg"
     },
     {
       "alt": "solar_system_from_distance",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/SolarSystemFarOut_xqjery-15269a432739.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/SolarSystemFarOut_xqjery_thumbnail-471d4862dc8b.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/solar-system-far-out.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/solar-system-far-out-thumbnail.jpg"
     }
   ],
   "unrealEngineImages": [
     {
       "alt": "unreal_destruction",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/unreal_destruction_zgdoxb-e753d89d004c.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/unreal_destruction_zgdoxb_poster-5a44fa2bf0f2.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal_destruction_zgdoxb_thumbnail-9f8d01fbc375.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/unreal-destruction.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/unreal-destruction-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal-destruction-thumbnail.jpg"
     },
     {
       "alt": "unreal_open_world",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/open_world_2_kg5jtp-73920481b057.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/open_world_2_kg5jtp_thumbnail-35f6ee9c0570.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/open-world-2.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/open-world-2-thumbnail.jpg"
     },
     {
       "alt": "unreal_voronoi_uniform_fracturing",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal_voronoi_uniform_fracturing_i82ukx-818dfb03fc96.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal_voronoi_uniform_fracturing_i82ukx_thumbnail-634131e9e135.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal-voronoi-uniform-fracturing.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal-voronoi-uniform-fracturing-thumbnail.jpg"
     },
     {
       "alt": "enemy_class_code",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/EnemyClass_svhbdd-b5e5c6495b84.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/EnemyClass_svhbdd_thumbnail-294a5b485576.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/enemy-class.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/enemy-class-thumbnail.jpg"
     },
     {
       "alt": "unreal_dot_product_math_onenote",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal_dot_product_2_cnpc9j-09431d237d37.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal_dot_product_2_cnpc9j_thumbnail-ee40c80e5292.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal-dot-product-2.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal-dot-product-2-thumbnail.jpg"
     },
     {
       "alt": "open_world_lake",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/OpenWorld1_up57rx-c4fd594bfdce.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/OpenWorld1_up57rx_thumbnail-f36c251b153a.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/open-world1.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/open-world1-thumbnail.jpg"
     },
     {
       "alt": "unreal_determine_hit_animation_code",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal_determine_hit_animation_kfgni2-d558cbbc8993.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal_determine_hit_animation_kfgni2_thumbnail-a137d9802097.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal-determine-hit-animation.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal-determine-hit-animation-thumbnail.jpg"
     },
     {
       "alt": "unreal_directional_hit_animation",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/unreal_directional_hit_animation_gnkuyy-4fe8766252de.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/unreal_directional_hit_animation_gnkuyy_poster-a9554cd35932.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal_directional_hit_animation_gnkuyy_thumbnail-efaab8178fd4.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/unreal-directional-hit-animation.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/unreal-directional-hit-animation-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal-directional-hit-animation-thumbnail.jpg"
     },
     {
       "alt": "unreal_weapon_class_code",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/weapon_code_f7vb5s-ace94eb508bd.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/weapon_code_f7vb5s_thumbnail-bcef0d963717.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/weapon-code.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/weapon-code-thumbnail.jpg"
     },
     {
       "alt": "unreal_randomly_generated_treasure",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal_treasure_fqw3zb-c4a5fb916f0b.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal_treasure_fqw3zb_thumbnail-9bfe43b81813.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal-treasure.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal-treasure-thumbnail.jpg"
     },
     {
       "alt": "unreal_patrol_routes",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal_patrol_zi4zqw-07fbca5ced4c.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal_patrol_zi4zqw_thumbnail-88d5368c486b.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal-patrol.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal-patrol-thumbnail.jpg"
     },
     {
       "alt": "unreal_sensing_component",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal_sensing_sa1pfs-8342453d5aaa.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal_sensing_sa1pfs_thumbnail-a34496c70b61.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/unreal-sensing.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/unreal-sensing-thumbnail.jpg"
     },
     {
       "alt": "unreal_insect_enemy",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/insect_enemy_kdixhz-ef0e1913a873.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/insect_enemy_kdixhz_thumbnail-5f2722c86dec.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/insect-enemy.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/insect-enemy-thumbnail.jpg"
     }
   ],
   "hashMapImages": [
     {
       "alt": "hash_map_separate_chaining_gif",
-      "src": "https://assets.michael-iwanek-portfolio.com/videos/hash_map_separate_chaining_tljado-87304a4229dd.webm",
-      "poster": "https://assets.michael-iwanek-portfolio.com/images/hash_map_separate_chaining_tljado_poster-2291438698ea.jpg",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/hash_map_separate_chaining_tljado_thumbnail-48d42acf0483.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/videos/hash-map-separate-chaining.webm",
+      "poster": "https://assets.michael-iwanek-portfolio.com/images/hash-map-separate-chaining-poster.jpg",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/hash-map-separate-chaining-thumbnail.jpg"
     },
     {
       "alt": "hash_map_put_function",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/hash_map_put_function_yql8dr-c8526a1cd885.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/hash_map_put_function_yql8dr_thumbnail-e8e9d87186d8.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/hash-map-put-function.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/hash-map-put-function-thumbnail.jpg"
     },
     {
       "alt": "hash_map_keys_buckets_diagram",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/hash_function_diagram_abmwcz-fceee9b6f896.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/hash_function_diagram_abmwcz_thumbnail-eb5b93398d31.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/hash-function-diagram.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/hash-function-diagram-thumbnail.jpg"
     },
     {
       "alt": "hash_map_resize_table_function",
-      "src": "https://assets.michael-iwanek-portfolio.com/images/hash_map_resize_table_function_opqhi4-ee4913c688ad.png",
-      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/hash_map_resize_table_function_opqhi4_thumbnail-12b805637a45.jpg"
+      "src": "https://assets.michael-iwanek-portfolio.com/images/hash-map-resize-table-function.png",
+      "thumbnail": "https://assets.michael-iwanek-portfolio.com/images/hash-map-resize-table-function-thumbnail.jpg"
     }
   ]
 }

@@ -30,7 +30,7 @@ const KspScripting = () => (
       mediaLayout="video"
       media={
         <ProjectMediaFrame>
-          <ReactVideoPlayer title="C# KSP Automated Scripting - kRPC (Remote Procedure Calls)" URL="https://assets.michael-iwanek-portfolio.com/videos/ksp-scripting-1080p-v1.mp4" />
+          <ReactVideoPlayer title="C# KSP Automated Scripting - kRPC (Remote Procedure Calls)" URL="https://assets.michael-iwanek-portfolio.com/videos/ksp-scripting.mp4" />
         </ProjectMediaFrame>
       }
       description={description}

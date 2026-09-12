@@ -83,7 +83,7 @@ const SmallShellProject = () => {
                 <ReactVideoPlayer
                 title="Small Shell (smallsh) - C Unix Shell"
                 URL={
-                  "https://assets.michael-iwanek-portfolio.com/videos/small-shell-4k-v1.mp4"
+                  "https://assets.michael-iwanek-portfolio.com/videos/small-shell.mp4"
                 }
               />
               </ProjectMediaFrame>

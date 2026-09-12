@@ -73,7 +73,7 @@ const KotlinAndroidProjects = () => {
                 repositoryUrl={repositoryUrl}
               />
               <ButtonLink
-                URL={"https://assets.michael-iwanek-portfolio.com/videos/kotlin-android-1080p-v1.mp4"}
+                URL={"https://assets.michael-iwanek-portfolio.com/videos/kotlin-android.mp4"}
                 variant={"red"}
                 buttonText={"Video Link"}
               />
@@ -95,13 +95,13 @@ const KotlinAndroidProjects = () => {
               <ProjectMediaFrame layout="phone" background="transparent">
                 <ProjectMediaSlide media={{
                   alt: "Sacramento city Android app demo",
-                  src: "https://assets.michael-iwanek-portfolio.com/videos/android_kotlin_sacramento_app_fdubuz-8bfa812bb0fd.webm",
-                  poster: "https://assets.michael-iwanek-portfolio.com/images/android_kotlin_sacramento_app_fdubuz_poster-05ea8664ef42.jpg",
+                  src: "https://assets.michael-iwanek-portfolio.com/videos/android-kotlin-sacramento-app.webm",
+                  poster: "https://assets.michael-iwanek-portfolio.com/images/android-kotlin-sacramento-app-poster.jpg",
                 }} />
                 <ProjectMediaSlide media={{
                   alt: "Flight search Android app demo",
-                  src: "https://assets.michael-iwanek-portfolio.com/videos/android_kotlin_flight_search_fu06fc-13a53a01b252.webm",
-                  poster: "https://assets.michael-iwanek-portfolio.com/images/android_kotlin_flight_search_fu06fc_poster-95721076901c.jpg",
+                  src: "https://assets.michael-iwanek-portfolio.com/videos/android-kotlin-flight-search.webm",
+                  poster: "https://assets.michael-iwanek-portfolio.com/images/android-kotlin-flight-search-poster.jpg",
                 }} />
               </ProjectMediaFrame>
           }

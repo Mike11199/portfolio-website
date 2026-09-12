@@ -6,7 +6,7 @@ import styles from "./Navbar.module.css";
 const ProfilePhotoWithName = () => (
   <a href="#top" className={styles.navbarLogoNameContainer}>
     <img
-      src="https://assets.michael-iwanek-portfolio.com/images/profile_photo_snowshoe_tunnel_e8zff8-e9c3dc166c9d.png"
+      src="https://assets.michael-iwanek-portfolio.com/images/profile.png"
       alt="Michael Iwanek Navbar"
       className={styles.profilePhotoImage}
     />
