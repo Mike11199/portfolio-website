@@ -35,3 +35,5 @@ A fresh account needs GitHub AWS credentials and the region configured, plus dom
 ## Runtime
 
 The ASG keeps exactly one host. Releases stop the old task before starting its replacement; releases and Spot interruptions can cause brief downtime. The ALB checks Nginx `/health`, and ECS service creation waits for the listener rule and host capacity.
+
+New hosts make stopped containers and unused images eligible for cleanup after one minute, checking images every ten minutes. Existing hosts need a one-time ECS configuration update; disk sizes and ECR retention are unchanged.
