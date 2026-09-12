@@ -5,7 +5,7 @@ import json
 from aws_cdk import CfnOutput, RemovalPolicy, Stack, aws_ecr as ecr
 from constructs import Construct
 
-from . import existing_resources
+from .. import existing_resources
 
 
 class RepositoryStack(Stack):

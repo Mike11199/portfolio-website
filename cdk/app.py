@@ -1,8 +1,8 @@
 from aws_cdk import App, Environment
-from portfolio_cdk.media_stack import MediaStack
+from portfolio_cdk.media.stack import MediaStack
 
-from portfolio_cdk.repository_stack import RepositoryStack
-from portfolio_cdk.stack import PortfolioStack
+from portfolio_cdk.repository.stack import RepositoryStack
+from portfolio_cdk.application.stack import PortfolioStack
 
 
 app = App()

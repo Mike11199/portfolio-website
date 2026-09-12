@@ -17,9 +17,9 @@ from aws_cdk import (
     aws_wafv2 as waf,
 )
 from constructs import Construct
-from .media_storage import MEDIA_REGION, media_bucket_name
+from ..application.constructs.media_storage import MEDIA_REGION, media_bucket_name
 
-from .existing_resources import PRODUCTION_HOST
+from ..existing_resources import PRODUCTION_HOST
 
 MEDIA_HOST = f"assets.{PRODUCTION_HOST}"
 
