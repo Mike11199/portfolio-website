@@ -1,6 +1,6 @@
-"""Set up the ECS cluster, application containers, and service."""
+"""Set up the ECS cluster, application container, and reversible service."""
 
-from aws_cdk import Fn, aws_ec2 as ec2, aws_ecs as ecs, aws_iam as iam
+from aws_cdk import CfnCondition, Fn, aws_ec2 as ec2, aws_ecs as ecs, aws_iam as iam
 from constructs import Construct
 
 
@@ -13,6 +13,7 @@ class ApplicationService(Construct):
         vpc: ec2.IVpc,
         alb_security_group: ec2.ISecurityGroup,
         image_tag: str,
+        static_hosting: CfnCondition,
     ) -> None:
         super().__init__(scope, construct_id)
         # Preserve deployed resource paths while separating their implementation.
@@ -71,6 +72,10 @@ class ApplicationService(Construct):
             alb_security_group,
             ec2.Port.tcp(80),
             "Allow the shared ALB to reach Nginx",
+        )
+        service.node.default_child.add_override(
+            "Properties.DesiredCount",
+            Fn.condition_if(static_hosting.logical_id, 0, 1),
         )
         self.cluster = cluster
         self.service = service

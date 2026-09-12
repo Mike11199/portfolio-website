@@ -6,6 +6,7 @@ stack for both fresh deployments and updates. The main application stack owns
 the S3 bucket in us-west-1 through MediaStorage. GitHub Actions deploys both
 stacks using the standard CDK bootstrap roles configured in each region.
 """
+
 from aws_cdk import (
     CfnOutput, CfnParameter, CfnResource, Stack,
     aws_certificatemanager as acm,
@@ -18,7 +19,7 @@ from aws_cdk import (
 )
 from constructs import Construct
 from ..application.constructs.media_storage import MEDIA_REGION, media_bucket_name
-
+from .constructs.static_website import StaticWebsite
 from ..existing_resources import PRODUCTION_HOST
 
 MEDIA_HOST = f"assets.{PRODUCTION_HOST}"
@@ -38,6 +39,7 @@ class MediaStack(Stack):
         )
         certificate = acm.Certificate(
             self, "MediaCertificate", domain_name=MEDIA_HOST,
+            subject_alternative_names=[PRODUCTION_HOST],
             validation=acm.CertificateValidation.from_dns(zone),
         )
         web_acl = waf.CfnWebACL(
@@ -48,14 +50,19 @@ class MediaStack(Stack):
                 metric_name="portfolioMedia",
             ),
         )
+        website = StaticWebsite(self, "StaticWebsite")
         distribution = cloudfront.Distribution(
-            self, "MediaDistribution", domain_names=[MEDIA_HOST],
+            self, "MediaDistribution", domain_names=[MEDIA_HOST, PRODUCTION_HOST],
             certificate=certificate, web_acl_id=web_acl.attr_arn,
             default_behavior=cloudfront.BehaviorOptions(
                 origin=origins.S3BucketOrigin.with_origin_access_control(bucket),
                 viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
                 allowed_methods=cloudfront.AllowedMethods.ALLOW_GET_HEAD,
                 cache_policy=cloudfront.CachePolicy.CACHING_OPTIMIZED,
+                function_associations=[cloudfront.FunctionAssociation(
+                    event_type=cloudfront.FunctionEventType.VIEWER_REQUEST,
+                    function=website.function,
+                )],
             ),
             comment="Portfolio media",
         )
@@ -103,5 +110,6 @@ class MediaStack(Stack):
             record.node.add_dependency(plan)
         CfnOutput(self, "BucketName", value=bucket.bucket_name)
         CfnOutput(self, "DistributionId", value=distribution.distribution_id)
+        CfnOutput(self, "WebsiteDomainName", value=distribution.domain_name)
         CfnOutput(self, "SubscriptionArn", value=plan.ref)
         CfnOutput(self, "MediaBaseUrl", value=f"https://{MEDIA_HOST}")

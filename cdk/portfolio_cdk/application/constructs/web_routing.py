@@ -1,6 +1,7 @@
-"""Create the Route 53 alias, load balancer listener rule, and target group."""
+"""Switch the root DNS alias between CloudFront and the ECS load balancer."""
 
 from aws_cdk import (
+    CfnCondition,
     Duration,
     Fn,
     RemovalPolicy,
@@ -22,6 +23,8 @@ class WebRouting(Construct):
         *,
         vpc: ec2.IVpc,
         service: ecs.Ec2Service,
+        static_hosting: CfnCondition,
+        website_domain: str,
     ) -> None:
         super().__init__(scope, construct_id)
         # Preserve deployed resource paths while separating their implementation.
@@ -47,6 +50,20 @@ class WebRouting(Construct):
                 evaluate_target_health=True,
             ),
         )
+        alias_record.add_override(
+            "Properties.AliasTarget",
+            Fn.condition_if(static_hosting.logical_id,
+                {"DNSName": website_domain, "HostedZoneId": "Z2FDTNDATAQYW2", "EvaluateTargetHealth": False},
+                {"DNSName": Fn.join("", ["dualstack.", Fn.import_value("SharedLoadBalancerDnsName"), "."]),
+                 "HostedZoneId": Fn.import_value("SharedLoadBalancerCanonicalHostedZoneId"), "EvaluateTargetHealth": True}),
+        )
+        ipv6 = route53.CfnRecordSet(scope, "PortfolioStaticIpv6",
+            hosted_zone_id=Fn.import_value("SharedPortfolioHostedZoneId"),
+            name=f"{existing_resources.PRODUCTION_HOST}.", type="AAAA",
+            alias_target=route53.CfnRecordSet.AliasTargetProperty(
+                dns_name=website_domain, hosted_zone_id="Z2FDTNDATAQYW2", evaluate_target_health=False),
+        )
+        ipv6.cfn_options.condition = static_hosting
 
         alias_record.override_logical_id("PortfolioAliasRecord")
 

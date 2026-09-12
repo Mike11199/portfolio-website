@@ -1,21 +1,29 @@
-name: Deploy portfolio ECS service
+name: Deploy portfolio
 
 on:
   push:
     branches: [master]
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      hosting_mode:
+        description: Serve the site with ECS or S3/CloudFront
+        required: true
+        default: static
+        type: choice
+        options: [ecs, static]
 
 permissions:
   contents: read
 
 concurrency:
-  group: portfolio-ecs-deploy
+  group: portfolio-deploy
   cancel-in-progress: false
 
 env:
   AWS_REGION: ${{ vars.AWS_REGION }}
   CDK_CLI_VERSION: 2.1139.0
   ECR_REPOSITORY: portfolio-website
+  HOSTING_MODE: ${{ inputs.hosting_mode || 'static' }}
 
 jobs:
   frontend-check:
@@ -33,6 +41,11 @@ jobs:
           npm ci
           npm run lint
           npm run build
+      - name: Save frontend build
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/dist
 
   cdk-test:
     runs-on: ubuntu-latest
@@ -106,6 +119,11 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - uses: actions/download-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/dist
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6.2.3
         with:
@@ -121,13 +139,28 @@ jobs:
       - name: Install pinned CDK CLI
         run: npm install --global "aws-cdk@$CDK_CLI_VERSION"
 
-      - name: Deploy ECS stack with image tag
+      - name: Deploy portfolio
         working-directory: cdk
+        env:
+          IMAGE_TAG: ${{ github.sha }}
         run: |
           uv sync --frozen --group dev
-          HOSTED_ZONE_ID="$(aws cloudformation list-exports --query "Exports[?Name=='SharedPortfolioHostedZoneId'].Value | [0]" --output text)"
-          cdk deploy PortfolioStack PortfolioMediaStack \
-            --exclusively \
-            --require-approval never \
-            --parameters PortfolioStack:ImageTag="${{ github.sha }}" \
-            --parameters PortfolioMediaStack:HostedZoneId="$HOSTED_ZONE_ID"
+          ZONE_ID="$(aws cloudformation list-exports --query "Exports[?Name=='SharedPortfolioHostedZoneId'].Value | [0]" --output text)"
+          cdk deploy PortfolioStack PortfolioMediaStack --exclusively --require-approval never \
+            --parameters PortfolioStack:ImageTag="$IMAGE_TAG" \
+            --parameters PortfolioStack:HostingMode="$HOSTING_MODE" \
+            --parameters PortfolioMediaStack:HostedZoneId="$ZONE_ID" \
+            --outputs-file outputs.json
+
+          BUCKET="$(jq -er '.PortfolioStack.WebsiteBucketName' outputs.json)"
+          DOMAIN="$(jq -er '.PortfolioMediaStack.WebsiteDomainName' outputs.json)"
+          DISTRIBUTION="$(jq -er '.PortfolioMediaStack.DistributionId' outputs.json)"
+          aws s3 sync ../frontend/dist "s3://$BUCKET/website/" --exclude index.html
+          aws s3 cp ../frontend/dist/index.html "s3://$BUCKET/website/index.html" --cache-control no-cache
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION" --paths '/*'
+
+          # Pass the cross-region CloudFront domain to the root DNS alias.
+          cdk deploy PortfolioStack --exclusively --require-approval never \
+            --parameters PortfolioStack:ImageTag="$IMAGE_TAG" \
+            --parameters PortfolioStack:HostingMode="$HOSTING_MODE" \
+            --parameters PortfolioStack:WebsiteDomainName="$DOMAIN"

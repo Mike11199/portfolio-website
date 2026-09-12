@@ -1,6 +1,8 @@
-"""Set up one Spot EC2 host and connect its capacity to the ECS cluster."""
+"""Set up the reversible one-host Spot capacity for ECS."""
 
 from aws_cdk import (
+    CfnCondition,
+    Fn,
     Tags,
     aws_autoscaling as autoscaling,
     aws_ec2 as ec2,
@@ -18,6 +20,7 @@ class SpotCapacity(Construct):
         *,
         vpc: ec2.IVpc,
         cluster: ecs.Cluster,
+        static_hosting: CfnCondition,
     ) -> None:
         super().__init__(scope, construct_id)
         # Preserve deployed resource paths while separating their implementation.
@@ -81,6 +84,14 @@ class SpotCapacity(Construct):
             "echo ECS_IMAGE_MINIMUM_CLEANUP_AGE=1m >> /etc/ecs/ecs.config",
             "echo ECS_IMAGE_CLEANUP_INTERVAL=10m >> /etc/ecs/ecs.config",
             "echo ECS_NUM_IMAGES_DELETE_PER_CYCLE=100 >> /etc/ecs/ecs.config",
+        )
+        capacity.node.default_child.add_override(
+            "Properties.MinSize",
+            Fn.condition_if(static_hosting.logical_id, "0", "1"),
+        )
+        capacity.node.default_child.add_override(
+            "Properties.DesiredCapacity",
+            Fn.condition_if(static_hosting.logical_id, "0", "1"),
         )
 
         Tags.of(capacity).add("Project", "portfolio-website")
