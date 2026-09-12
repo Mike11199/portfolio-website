@@ -41,4 +41,4 @@ Domain registration and name-server delegation remain manual. ACM creates its va
 ## Media
 
 Media uses private S3 storage in `us-west-1` and CloudFront's FREE plan at `assets.michael-iwanek-portfolio.com`, with the required certificate/WAF in `us-east-1` and A/AAAA aliases for IPv4/IPv6.
-From `cdk`, deploy both media stacks with `cdk --app "uv run media_app.py" deploy --all --parameters PortfolioMediaStack:HostedZoneId=<existing-zone-id>`; video uploads are separate, and S3 request charges still apply.
+The S3 bucket belongs to `PortfolioStack` through the separate `MediaStorage` construct. `PortfolioMediaStack` handles delivery in us-east-1. Both are included in the main CDK app and the existing GitHub Actions deployment; no separate media deployment command is required.

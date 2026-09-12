@@ -125,7 +125,9 @@ jobs:
         working-directory: cdk
         run: |
           uv sync --frozen --group dev
-          cdk deploy PortfolioStack \
+          HOSTED_ZONE_ID="$(aws cloudformation list-exports --query "Exports[?Name=='SharedPortfolioHostedZoneId'].Value | [0]" --output text)"
+          cdk deploy PortfolioStack PortfolioMediaStack \
             --exclusively \
             --require-approval never \
-            --parameters ImageTag="${{ github.sha }}"
+            --parameters PortfolioStack:ImageTag="${{ github.sha }}" \
+            --parameters PortfolioMediaStack:HostedZoneId="$HOSTED_ZONE_ID"

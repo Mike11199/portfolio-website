@@ -1,4 +1,5 @@
-from aws_cdk import App
+from aws_cdk import App, Environment
+from portfolio_cdk.media_stack import MediaStack
 
 from portfolio_cdk.repository_stack import RepositoryStack
 from portfolio_cdk.stack import PortfolioStack
@@ -10,4 +11,9 @@ repository_stack = RepositoryStack(
 )
 portfolio_stack = PortfolioStack(app, "PortfolioStack")
 portfolio_stack.add_stack_dependency(repository_stack)
+delivery = MediaStack(
+    app, "PortfolioMediaStack", env=Environment(region="us-east-1"),
+    analytics_reporting=False,
+)
+delivery.add_stack_dependency(portfolio_stack)
 app.synth()

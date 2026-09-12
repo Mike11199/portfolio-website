@@ -15,6 +15,7 @@ from aws_cdk import (
     aws_route53 as route53,
 )
 from constructs import Construct
+from .media_storage import MediaStorage
 
 from . import existing_resources
 
@@ -22,6 +23,7 @@ from . import existing_resources
 class PortfolioStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
+        MediaStorage(self, "MediaStorage")
 
         image_tag = CfnParameter(self, "ImageTag", default="latest").value_as_string
 

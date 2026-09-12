@@ -1,6 +1,13 @@
-"""Private media storage and CloudFront delivery on the free pricing plan."""
+"""Media delivery in us-east-1, separate from the application in us-west-1.
+
+CloudFront requires its ACM certificate and CLOUDFRONT-scoped WAF in us-east-1.
+A CloudFormation stack belongs to one region, so delivery needs this separate
+stack for both fresh deployments and updates. The main application stack owns
+the S3 bucket in us-west-1 through MediaStorage. GitHub Actions deploys both
+stacks using the standard CDK bootstrap roles configured in each region.
+"""
 from aws_cdk import (
-    CfnOutput, CfnParameter, CfnResource, RemovalPolicy, Stack,
+    CfnOutput, CfnParameter, CfnResource, Stack,
     aws_certificatemanager as acm,
     aws_cloudfront as cloudfront,
     aws_cloudfront_origins as origins,
@@ -10,29 +17,11 @@ from aws_cdk import (
     aws_wafv2 as waf,
 )
 from constructs import Construct
+from .media_storage import MEDIA_REGION, media_bucket_name
 
 from .existing_resources import PRODUCTION_HOST
 
 MEDIA_HOST = f"assets.{PRODUCTION_HOST}"
-MEDIA_REGION = "us-west-1"
-
-
-def media_bucket_name(stack: Stack) -> str:
-    return f"portfolio-media-{stack.account}-{MEDIA_REGION}"
-
-
-class MediaStorageStack(Stack):
-    """Video data lives in the user's preferred region, in the same account."""
-    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
-        super().__init__(scope, construct_id, **kwargs)
-        bucket = s3.Bucket(
-            self, "MediaBucket", bucket_name=media_bucket_name(self),
-            block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
-            encryption=s3.BucketEncryption.S3_MANAGED,
-            removal_policy=RemovalPolicy.RETAIN,
-        )
-        # The east-region stack owns the complete policy, including TLS enforcement.
-        CfnOutput(self, "BucketName", value=bucket.bucket_name)
 
 
 class MediaStack(Stack):
