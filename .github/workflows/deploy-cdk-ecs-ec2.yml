@@ -64,8 +64,8 @@ jobs:
           uv sync --frozen --group dev
           uv run pytest -q
 
-  build-docker-image:
-    name: build-docker-image
+  prepare-deployment:
+    name: Prepare deployment
     needs: [cdk-test, frontend-check]
     runs-on: ubuntu-latest
 
@@ -95,10 +95,12 @@ jobs:
             --require-approval never
 
       - name: Login to Amazon ECR
+        if: env.HOSTING_MODE == 'ecs'
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build React/nginx image
+        if: env.HOSTING_MODE == 'ecs'
         run: |
           REGISTRY="${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}"
           IMAGE_TAG="${{ github.sha }}"
@@ -106,6 +108,7 @@ jobs:
             --tag "$REGISTRY:$IMAGE_TAG" frontend
 
       - name: Push React/nginx image to ECR
+        if: env.HOSTING_MODE == 'ecs'
         run: |
           REGISTRY="${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}"
           IMAGE_TAG="${{ github.sha }}"
@@ -113,7 +116,7 @@ jobs:
 
   cdk-deploy:
     name: cdk-deploy
-    needs: build-docker-image
+    needs: prepare-deployment
     runs-on: ubuntu-latest
 
     steps:

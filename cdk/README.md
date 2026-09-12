@@ -30,7 +30,7 @@ Shared infrastructure owns the VPC, subnets, ALB security group, hosted zone, AL
 
 ## Deployment
 
-Deploy shared infrastructure first; its workflow bootstraps missing CDK environments in both regions. The [site workflow](../.github/workflows/deploy-cdk-ecs-ec2.yml) then deploys the repository, builds and pushes the image, and deploys the application and media stacks together. It reads the hosted-zone ID from shared exports.
+Deploy shared infrastructure first; its workflow bootstraps missing CDK environments in both regions. The [site workflow](../.github/workflows/deploy-cdk-ecs-ec2.yml) then deploys the repository and the application and media stacks. Docker images are built and pushed only in ECS mode. It reads the hosted-zone ID from shared exports.
 
 Actions uploads the Vite build to S3, invalidates CloudFront, then deploys the application stack again with CloudFront's domain for the root DNS alias. Pushes select `static`; workflow dispatch can select `ecs`. Switching modes can cause downtime.
 
