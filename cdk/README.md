@@ -1,44 +1,37 @@
 # Portfolio CDK
 
-The retained-resource migration is complete. The deployment workflow is active for normal repository, image, and application deployments.
+React/Nginx runs as one ECS task on one Spot `t3.micro` EC2 host. Deployments run through GitHub Actions.
 
-## Ownership
+## Structure and ownership
 
 ```text
-PortfolioRepositoryStack
-└── retained ECR repository: portfolio-website
-
-PortfolioStack
-├── retained root A-alias
-├── listener rule and target group
-├── ECS cluster and service
-├── one-host Spot Auto Scaling Group
-└── application security group
+app.py                                  # connects the three stacks
+portfolio_cdk/
++-- existing_resources.py                # application constants
++-- application/
+|   +-- stack.py                         # PortfolioStack
+|   \-- constructs/
+|       +-- application_service.py       # ECS cluster, container, and service
+|       +-- shared_network.py            # imports shared networking
+|       +-- web_routing.py               # Route 53 alias, ALB rule, and target group
+|       +-- spot_capacity.py             # EC2 launch template and one-host Spot ASG
+|       \-- media_storage.py             # retained private S3 bucket
++-- media/
+|   \-- stack.py                         # PortfolioMediaStack (us-east-1)
+\-- repository/
+    \-- stack.py                         # PortfolioRepositoryStack: retained portfolio-website ECR
 ```
 
-- Shared CDK owns the VPC, public subnets, ALB security group, hosted zone, certificates, ALB, and listeners.
-- `PortfolioStack` imports shared IDs through stable CloudFormation exports. No production network or listener IDs are stored in source.
-- `PortfolioRepositoryStack` exports `PortfolioRepositoryUri`; the application uses that URI for immutable image tags.
-- Dependencies are one-way: shared infrastructure, then repository, image push, then application.
+The application stack owns the S3 bucket in `us-west-1`. The media stack owns CloudFront with a FREE-plan subscription, WAF, origin access control, the bucket policy, an ACM certificate, and Route 53 A/AAAA records for `assets.michael-iwanek-portfolio.com`. Its certificate and CloudFront-scoped WAF require `us-east-1`.
 
-## Existing account
+Shared infrastructure owns the VPC, subnets, ALB security group, hosted zone, ALB certificate, load balancer, and listeners. This application imports their CloudFormation exports.
 
-- The existing ECR repository, listener rule, and target group were retained and imported without changing physical IDs.
-- Shared identifiers now come from CloudFormation exports.
-- Drift detection reports `IN_SYNC`; the final CDK diff is empty; target health and HTTPS are healthy.
-- Do not rerun retained-resource import steps.
+## Deployment
 
-## Fresh environment
+Deploy shared infrastructure first; its workflow bootstraps missing CDK environments in both regions. The [site workflow](../.github/workflows/deploy-cdk-ecs-ec2.yml) then deploys the repository, builds and pushes the image, and deploys the application and media stacks together. It reads the hosted-zone ID from shared exports.
 
-1. Deploy shared infrastructure.
-2. Deploy `PortfolioRepositoryStack`.
-3. Build and push the image.
-4. Deploy `PortfolioStack`.
-5. Verify target health and HTTPS.
+A fresh account needs GitHub AWS credentials and the region configured, plus domain registration/name-server delegation. Media files must be copied into S3 separately; deploying CDK creates the resources, not their content.
 
-Domain registration and name-server delegation remain manual. ACM creates its validation CNAME automatically.
+## Runtime
 
-## Media
-
-Media uses private S3 storage in `us-west-1` and CloudFront's FREE plan at `assets.michael-iwanek-portfolio.com`, with the required certificate/WAF in `us-east-1` and A/AAAA aliases for IPv4/IPv6.
-The S3 bucket belongs to `PortfolioStack` through the separate `MediaStorage` construct. `PortfolioMediaStack` handles delivery in us-east-1. Both are included in the main CDK app and the existing GitHub Actions deployment; no separate media deployment command is required.
+The ASG keeps exactly one host. Releases stop the old task before starting its replacement; releases and Spot interruptions can cause brief downtime. The ALB checks Nginx `/health`, and ECS service creation waits for the listener rule and host capacity.
