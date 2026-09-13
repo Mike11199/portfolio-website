@@ -1,6 +1,6 @@
 """Set up the ECS cluster, application container, and reversible service."""
 
-from aws_cdk import CfnCondition, Fn, aws_ec2 as ec2, aws_ecs as ecs, aws_iam as iam
+from aws_cdk import CfnCondition, Duration, Fn, aws_ec2 as ec2, aws_ecs as ecs, aws_iam as iam
 from constructs import Construct
 
 
@@ -66,6 +66,7 @@ class ApplicationService(Construct):
             min_healthy_percent=0,
             max_healthy_percent=100,
             circuit_breaker=ecs.DeploymentCircuitBreaker(rollback=True),
+            bake_time=Duration.minutes(5),
         )
 
         service.connections.allow_from(
