@@ -42,7 +42,7 @@ jobs:
           npm run lint
           npm run build
       - name: Save frontend build
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: frontend-dist
           path: frontend/dist
@@ -122,7 +122,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: frontend-dist
           path: frontend/dist
@@ -149,8 +149,13 @@ jobs:
         run: |
           uv sync --frozen --group dev
           ZONE_ID="$(aws cloudformation list-exports --query "Exports[?Name=='SharedPortfolioHostedZoneId'].Value | [0]" --output text)"
+          # Static releases keep the existing ECS image tag to avoid idle service updates.
+          IMAGE_PARAMETERS=()
+          if [[ "$HOSTING_MODE" == ecs ]]; then
+            IMAGE_PARAMETERS=(--parameters "PortfolioStack:ImageTag=$IMAGE_TAG")
+          fi
           cdk deploy PortfolioStack PortfolioMediaStack --exclusively --require-approval never \
-            --parameters PortfolioStack:ImageTag="$IMAGE_TAG" \
+            "${IMAGE_PARAMETERS[@]}" \
             --parameters PortfolioStack:HostingMode="$HOSTING_MODE" \
             --parameters PortfolioMediaStack:HostedZoneId="$ZONE_ID" \
             --outputs-file outputs.json
@@ -164,6 +169,6 @@ jobs:
 
           # Pass the cross-region CloudFront domain to the root DNS alias.
           cdk deploy PortfolioStack --exclusively --require-approval never \
-            --parameters PortfolioStack:ImageTag="$IMAGE_TAG" \
+            "${IMAGE_PARAMETERS[@]}" \
             --parameters PortfolioStack:HostingMode="$HOSTING_MODE" \
             --parameters PortfolioStack:WebsiteDomainName="$DOMAIN"
