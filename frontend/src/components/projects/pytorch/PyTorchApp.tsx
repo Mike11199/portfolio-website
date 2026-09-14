@@ -81,7 +81,7 @@ const PyTorchApp = () => {
               />
               <ButtonLink
                 URL={
-                  "https://machine-learning-projects.com/image-classification-mask-resnet"
+                  "https://machine-learning-projects.com/video-mask-rcnn"
                 }
                 variant={"blue"}
                 buttonText={"Live Link - AWS EC2"}
