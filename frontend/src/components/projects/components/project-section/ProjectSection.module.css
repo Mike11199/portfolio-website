@@ -1,6 +1,6 @@
 .layout {
   /* Change this to resize the complete media and text panels together. */
-  --project-total-height: 570px;
+  --project-total-height: 630px;
   --project-nav-height: 3rem;
   --project-thumbnails-height: 6rem;
   display: grid;
