@@ -8,7 +8,7 @@ const AboutMeText = [
   projects I've completed for personal learning and development.`,
 
   `I'm currently employed as a full stack software engineer, and am a
-  recent graduate from Oregon State University - where I obtained a B.S
+  graduate from Oregon State University - where I obtained a B.S
   in Computer Science through an accelerated post-bacc program. My first
   degree was in accounting, and I successfully switched careers after
   four years as a CPA in public accounting and government roles.`,
