@@ -4,6 +4,7 @@ import HighlightedCode from "../../utils/code/HighlightedCode";
 import { DIVIDER_HEIGHT, useResizablePanel } from "./useResizablePanel";
 import { codeExamples } from "./examples";
 import styles from "./CodeDemo.module.css";
+import { devIconBaseUrl } from "../../../images/devIcons";
 
 const languageIcons: Record<string, string> = {
   Python: "python/python-original.svg",
@@ -30,7 +31,7 @@ const CodeDemo = () => {
               onClick={() => setActive(index)}>
               <img
                 className={styles.languageIcon}
-                src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${languageIcons[item.language]}`}
+                src={`${devIconBaseUrl}${languageIcons[item.language]}`}
                 alt=""
                 width={18}
                 height={18}

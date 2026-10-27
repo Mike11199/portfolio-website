@@ -1,7 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
-import OpenSSLLogo from "./openssl_logo.svg";
-
-const iconUrl = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/";
+import { devIconBaseUrl as iconUrl } from "../../../../images/devIcons";
 
 interface DevIconProps {
   src: string;
@@ -38,7 +36,7 @@ export const AwsIcon = () => (
 );
 
 export const CIcon = () => (
-  <DevIcon src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="c logo" />
+  <DevIcon src={`${iconUrl}c/C_Logo.png`} alt="c logo" />
 );
 
 export const CppIcon = () => (
@@ -90,7 +88,7 @@ export const OpenGLIcon = () => (
 
 export const OpenSSLIcon = () => (
   <IconBadge background="#8b8a8a">
-    <DevIcon src={OpenSSLLogo} alt="OpenSSL logo" />
+    <DevIcon src={`${iconUrl}openssl/openssl_logo.svg`} alt="OpenSSL logo" />
   </IconBadge>
 );
 

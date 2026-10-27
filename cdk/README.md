@@ -34,7 +34,7 @@ Deploy shared infrastructure first; its workflow bootstraps missing CDK environm
 
 Actions uploads the Vite build to S3, invalidates CloudFront, then deploys the application stack again with CloudFront's domain for the root DNS alias. Pushes select `static`; workflow dispatch can select `ecs`. Switching modes can cause downtime.
 
-A fresh account needs GitHub AWS credentials and the region configured, plus domain registration/name-server delegation. Media files must be copied into S3 separately; the workflow uploads the website build automatically.
+A fresh account needs GitHub AWS credentials and the region configured, plus domain registration/name-server delegation. The workflow uploads the website build and the checked-in [dev icons](../media/dev-icons/README.md) automatically. Other media files must be copied into S3 separately.
 
 ## Runtime
 
