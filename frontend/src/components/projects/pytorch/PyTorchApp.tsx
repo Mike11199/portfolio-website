@@ -75,7 +75,7 @@ const PyTorchApp = () => {
     <>
       <section className={`portfolio-project ${styles.pyTorchOuterContainer}`}>
         <div id="projects"></div>
-        <SectionHeading>Projects</SectionHeading>
+        <SectionHeading icon="folder-code">Projects</SectionHeading>
         <ProjectHeader
           title={caseStudies.pytorch.title}
           category={caseStudies.pytorch.category}
