@@ -10,9 +10,8 @@ const AboutMeText = [
 
   `I'm currently employed as a full stack software engineer, and am a
   graduate from Oregon State University - where I obtained a B.S
-  in Computer Science through an accelerated post-bacc program. My first
-  degree was in accounting, and I successfully switched careers after
-  four years as a CPA in public accounting and government roles.`,
+  in Computer Science through an accelerated post-bacc program. I transitioned
+  into software development after four years as a CPA.`,
 
   `I first discovered programming by self-teaching myself VBA to automate
   work tasks, and discovered how much I enjoy working through coding

@@ -77,12 +77,11 @@ export default function ProjectSummary({ content, description }: { content: Proj
       </div>
     ) : (
     <div className={styles.highlights} role="region" aria-label={`${content.title} summary`} tabIndex={0}>
-      <FileDivider label="project.txt" hexText={description[0]} />
+      <FileDivider label="project.txt" hexText={description[0]} action={detailsButton} />
       {content.highlights.map(({ heading, text }) => <article key={heading}>
         <h3>{heading}</h3><p>{text}</p>
       </article>)}
-      {detailsButton}
-      <HexFooter text={text} fillOnly />
+      <HexFooter text={text} />
     </div>
     )}
     <dialog ref={dialog} className={styles.detailsDialog} aria-labelledby={titleId}
@@ -101,7 +100,7 @@ export default function ProjectSummary({ content, description }: { content: Proj
         </button>
       </div>
       <div className={styles.detailContent} tabIndex={0} role="region" aria-label="Technical details content">
-        <FileDivider label="technical_details.txt" hexText={text} />
+        <FileDivider label="technical_details.txt" hexText={text} hexRows={2} />
         {content.detailGroups.map(({ heading, paragraphs }) => (
           <section className={styles.detailGroup} key={heading}>
             <h3>{heading}</h3>
@@ -110,7 +109,7 @@ export default function ProjectSummary({ content, description }: { content: Proj
             </ul>
           </section>
         ))}
-        <FileDivider label="end of file" showCursor={false} />
+        {isMobile ? <HexFooter text={text} /> : <FileDivider label="end of file" showCursor={false} />}
       </div>
     </dialog>
   </>;

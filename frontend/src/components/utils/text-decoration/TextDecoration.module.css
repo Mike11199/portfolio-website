@@ -11,6 +11,10 @@
   user-select: none;
 }
 
+.headerRow { display: flex; align-items: center; gap: 0.75rem; }
+.headerRow > .divider { flex: 1; min-width: 0; }
+.headerRow > button { flex-shrink: 0; }
+
 .divider {
   display: flex;
   flex-shrink: 0;
@@ -29,7 +33,7 @@
 
 /* Reserve the minimum rows plus the divider, then fill any spare space. */
 .hexFooter {
-  --hex-min-rows: 4;
+  --hex-min-rows: 2;
   --hex-line-height: 1.35rem;
   --hex-min-height: calc(0.5rem + 1.2rem + 0.65rem + var(--hex-min-rows) * var(--hex-line-height));
   position: relative;
@@ -46,10 +50,8 @@
   min-height: 0;
 }
 
-/* Clip the decoration so the full dump cannot lengthen the text box. */
+/* Keep both footer rows in normal flow so height rounding cannot clip them. */
 .hexContent {
-  position: absolute;
-  inset: 0;
   padding-top: 0.5rem;
 }
 
@@ -61,12 +63,6 @@
 
 .cursor { animation: blink 2s step-end infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-
-@media (min-width: 601px) {
-  .hexFooter {
-    --hex-min-rows: 2;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .cursor { animation: none; }

@@ -10,13 +10,12 @@ interface HexFooterProps {
 }
 
 const HexFooter = ({ text, fillOnly = false }: HexFooterProps) => {
-  const frameRef = useRef<HTMLDivElement>(null);
   const preRef = useRef<HTMLPreElement>(null);
-  const hexDump = useHexDump(text, preRef, { frameRef });
+  const hexDump = useHexDump(text, preRef, { maxRows: 2 });
 
   return (
-    <div ref={frameRef} className={`${styles.hexFooter}${fillOnly ? ` ${styles.fillOnly}` : ""}`} aria-hidden="true">
-      <div className={styles.hexContent} style={{ visibility: hexDump ? "visible" : "hidden" }}>
+    <div className={`${styles.hexFooter}${fillOnly ? ` ${styles.fillOnly}` : ""}`} aria-hidden="true">
+      <div className={styles.hexContent} style={{ visibility: hexDump ? "inherit" : "hidden" }}>
         <FileDivider label="end of file" />
         <pre ref={preRef}>{hexDump}</pre>
       </div>

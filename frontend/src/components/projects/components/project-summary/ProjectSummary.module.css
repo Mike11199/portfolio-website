@@ -102,7 +102,7 @@
 }
 .projectBody > * { min-width: 0; }
 .highlights article + article { border-top: 1px solid var(--terminal-divider); padding-top: 0.75rem; }
-.highlights h3 { font: 600 0.95rem/1.5 Consolas, monospace; margin: 0 0 0.4rem; color: var(--terminal-accent); }
+.highlights h3 { font: 700 0.95rem/1.5 "Segoe UI", sans-serif; margin: 0 0 0.4rem; color: var(--terminal-accent); }
 .highlights p { margin: 0; color: var(--terminal-accent); line-height: 1.6; }
 .highlights > .summary,
 .highlights article > p {
@@ -116,7 +116,7 @@
   min-height: 44px;
   font: inherit;
 }
-.detailsButton { align-self: flex-start; font: 0.85rem/1.5 Consolas, monospace; overflow-wrap: anywhere; max-width: 100%; }
+.detailsButton { align-self: flex-start; font: 400 0.85rem/1.5 "Segoe UI", sans-serif; overflow-wrap: anywhere; max-width: 100%; }
 .detailsButton:hover, .closeButton:hover { background: #142019; }
 .detailsButton:focus-visible, .closeButton:focus-visible {
   outline: 2px solid var(--terminal-accent);
@@ -146,24 +146,25 @@
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--terminal-divider);
 }
-.dialogHeader h2 { margin: 0; font: 1rem/1.5 Consolas, monospace; overflow-wrap: anywhere; min-width: 0; }
+.dialogHeader h2 { margin: 0; font: 700 1rem/1.5 "Segoe UI", sans-serif; overflow-wrap: anywhere; min-width: 0; }
 .closeButton { flex-shrink: 0; }
 .mobileBack { display: none; }
 .mobileSummary { min-width: 0; }
 .mobileSummary :global(.carousel-container) { margin: 0; }
 .mobileSummary :global(.text-carousel-content) { margin: 0; padding: 0; }
+.mobileSummary article { padding-block: 0.5rem 1rem; }
 .mobileSummary h3 {
-  margin: 1rem 0 0.5rem;
+  margin: 1.5rem 0 1rem;
   color: var(--terminal-accent);
-  font: 600 0.95rem/1.5 Consolas, monospace;
+  font: 700 0.95rem/1.5 "Segoe UI", sans-serif;
 }
 .mobileSummary article p { margin: 0; padding-inline-start: 1.25rem; line-height: 1.6; }
-.mobileSummary .detailsButton { width: 100%; }
+.mobileSummary .detailsButton { width: 100%; margin-block: 1rem; }
 .detailGroup { margin-block: 1.5rem; }
 .detailGroup h3 {
   margin: 0 0 0.65rem;
   color: var(--terminal-accent);
-  font: 600 1rem/1.5 Consolas, monospace;
+  font: 700 1rem/1.5 "Segoe UI", sans-serif;
 }
 .detailGroup + .detailGroup {
   padding-top: 1.25rem;
@@ -192,6 +193,7 @@
 }
 
 @media (max-width: 600px) {
+  .headerTitle > .eyebrow { display: none; }
   .detailsDialog {
     position: fixed;
     inset: 0;

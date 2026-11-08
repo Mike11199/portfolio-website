@@ -117,7 +117,7 @@
 @media (min-width: 601px) {
   .introduction :global(.textWrapperDesktop),
   .introduction :global(.textWrapperDesktop) p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .mediaGroup {

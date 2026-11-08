@@ -13,9 +13,10 @@ interface ParagraphCarouselProps {
   minHeight: string;
   renderParagraph: (text: string, index: number) => ReactNode;
   footer?: ReactNode;
+  headerAction?: ReactNode;
 }
 
-const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, renderParagraph, footer }: ParagraphCarouselProps) => {
+const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, renderParagraph, footer, headerAction }: ParagraphCarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const activeIndex = Math.min(selectedIndex, Math.max(0, paragraphs.length - 1));
   const decorationText = paragraphs.join("\n\n");
@@ -39,19 +40,19 @@ const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, rend
         </button>
         <div className="textWrapperMobile">
           <div className={styles.panel} style={{ minHeight }}>
-            <FileDivider label={label} hexText={decorationText} />
+            <FileDivider label={label} hexText={decorationText} action={headerAction} />
             <div className={styles.slideStack}>
               {paragraphs.map((text, index) => (
                 <div key={index} className={styles.slide} aria-hidden={index !== activeIndex}>
                   <div className={styles.slideText}>{renderParagraph(text, index)}</div>
-                  {index === activeIndex && <HexFooter text={decorationText} fillOnly />}
                 </div>
               ))}
             </div>
+            {footer && <div className={styles.footer}>{footer}</div>}
+            <HexFooter text={decorationText} />
             <div className={styles.pageCount} aria-live="polite" aria-atomic="true">
               {paragraphs.length === 0 ? 0 : activeIndex + 1} / {paragraphs.length}
             </div>
-            {footer && <div className={styles.footer}>{footer}</div>}
           </div>
         </div>
         <button
