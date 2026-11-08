@@ -1,5 +1,6 @@
 import ReactVideoPlayer from "../utils/react-video-player/ReactVideoPlayer";
 import styles from "./AboutMeSection.module.css";
+import SectionHeading from "../utils/section-heading/SectionHeading";
 import AboutMeTextCarousel from "./AboutMeTextCarousel";
 import CodeDemo from "./code-demo/CodeDemo";
 
@@ -28,9 +29,7 @@ const AboutMeSection = () => {
   return (
     <>
       <section id={styles.aboutMeSection}>
-        <h1>
-          About Me
-        </h1>
+        <SectionHeading>About Me</SectionHeading>
         <div className={styles.aboutMeContainer} >
           <div className={styles.aboutMeImagesAndTextWrapper}>
             <div className={styles.mediaGroup}>

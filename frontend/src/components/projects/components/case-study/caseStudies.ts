@@ -67,7 +67,7 @@ export const caseStudies = {
         ]
       }
     ],
-    "subtitle": "Java / Python / TypeScript / LangChain"
+    "subtitle": "Java / Python / TypeScript / LangChain / AWS CDK / GitHub Actions"
   },
   "alpine": {
     "title": "Ski & Rock Climbing E-Commerce Store",
@@ -131,7 +131,7 @@ export const caseStudies = {
         ]
       }
     ],
-    "subtitle": ".NET / C# / TypeScript / PostgreSQL"
+    "subtitle": ".NET / C# / TypeScript / PostgreSQL / AWS CDK / GitHub Actions"
   },
   "kotlin": {
     "title": "Kotlin (Jetpack Compose) - Sacramento City and Flight Search App",

@@ -6,6 +6,7 @@ import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { PyTorchImages } from "../../../images/imageData.json";
 import styles from "./PyTorchApp.module.css";
+import SectionHeading from "../../utils/section-heading/SectionHeading";
 import ProjectSection from "../components/project-section/ProjectSection";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import { caseStudies } from "../components/case-study/caseStudies";
@@ -74,11 +75,7 @@ const PyTorchApp = () => {
     <>
       <section className={`portfolio-project ${styles.pyTorchOuterContainer}`}>
         <div id="projects"></div>
-        <h1 className={styles.projectsHeader}> Projects </h1>
-        <p className={styles.projectsParagraph}>
-          Please see full-stack Computer Science projects I've completed below,
-          in various programming languages.
-        </p>
+        <SectionHeading>Projects</SectionHeading>
         <ProjectHeader
           title={caseStudies.pytorch.title}
           category={caseStudies.pytorch.category}
