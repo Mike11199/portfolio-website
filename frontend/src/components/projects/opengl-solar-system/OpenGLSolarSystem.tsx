@@ -1,3 +1,4 @@
+import { caseStudies } from "../components/case-study/caseStudies";
 import { CppIcon, OpenGLIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./OpenGLSolarSystem.css";
@@ -45,7 +46,9 @@ const OpenGLSolarSystem = () => {
     <>
       <section className="portfolio-project solar_system_section">
         <ProjectHeader
-          title={"OpenGL C++ Solar System Model"}
+          title={caseStudies.opengl.title}
+          category={caseStudies.opengl.category}
+          subtitle={caseStudies.opengl.subtitle}
           icons={
             <>
               <CppIcon />
@@ -64,6 +67,7 @@ const OpenGLSolarSystem = () => {
         />
 
         <ProjectSection
+          study={caseStudies.opengl}
           media={
             <Carousel items={solarSystemImages} />
           }

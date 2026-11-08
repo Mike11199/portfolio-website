@@ -12,9 +12,10 @@ interface ParagraphCarouselProps {
   navigationLabel: string;
   minHeight: string;
   renderParagraph: (text: string, index: number) => ReactNode;
+  footer?: ReactNode;
 }
 
-const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, renderParagraph }: ParagraphCarouselProps) => {
+const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, renderParagraph, footer }: ParagraphCarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const activeIndex = Math.min(selectedIndex, Math.max(0, paragraphs.length - 1));
   const decorationText = paragraphs.join("\n\n");
@@ -50,6 +51,7 @@ const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, rend
             <div className={styles.pageCount} aria-live="polite" aria-atomic="true">
               {paragraphs.length === 0 ? 0 : activeIndex + 1} / {paragraphs.length}
             </div>
+            {footer && <div className={styles.footer}>{footer}</div>}
           </div>
         </div>
         <button

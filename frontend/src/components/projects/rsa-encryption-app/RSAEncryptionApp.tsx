@@ -1,3 +1,4 @@
+import { caseStudies } from "../components/case-study/caseStudies";
 import { OpenSSLIcon, ElectronIcon, ReactIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./RSAEncryptionApp.css";
@@ -44,7 +45,9 @@ const RSAEncryptionApp = () => {
     <>
       <section className="portfolio-project rsa_section">
         <ProjectHeader
-          title={"RSA & AES Encryption App - Electron.js, React.js"}
+          title={caseStudies.rsa.title}
+          category={caseStudies.rsa.category}
+          subtitle={caseStudies.rsa.subtitle}
           icons={
             <>
               <OpenSSLIcon />
@@ -72,6 +75,7 @@ const RSAEncryptionApp = () => {
         />
 
         <ProjectSection
+          study={caseStudies.rsa}
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}
           code={

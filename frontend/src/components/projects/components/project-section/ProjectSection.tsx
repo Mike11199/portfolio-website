@@ -1,15 +1,15 @@
 import { useState, type ReactNode } from "react";
 import { useWindowWidth } from "@react-hook/window-size";
-import CustomTextCarousel from "../../../custom-text-carousel/CustomTextCarousel";
-import styles from "./ProjectSection.module.css";
-import FileDivider from "../../../utils/text-decoration/FileDivider";
-import HexFooter from "../../../utils/text-decoration/HexFooter";
+import CaseStudySummary from "../case-study/CaseStudySummary";
+import type { CaseStudy } from "../case-study/caseStudies";
+import styles from "../case-study/CaseStudy.module.css";
 import ProjectMediaView from "../../../utils/project-media-view/ProjectMediaView";
 
 // Set to false to hide code view on mobile. Desktop is unaffected.
 const SHOW_CODE_ON_MOBILE = true;
 
 interface ProjectSectionProps {
+  study: CaseStudy;
   media: ReactNode;
   code?: ReactNode;
   description: string[];
@@ -21,6 +21,7 @@ interface ProjectSectionProps {
 
 /** Owns the shared height for media and description panels. */
 const ProjectSection = ({
+  study,
   media,
   code,
   description,
@@ -34,12 +35,10 @@ const ProjectSection = ({
   const codeVisible = showCode ?? selectedCodeView ?? (!isMobile && defaultDesktopView === "code");
   const toggleCode = onToggleCode ?? (() => setSelectedCodeView(!codeVisible));
   const canShowCode = !isMobile || (SHOW_CODE_ON_MOBILE && mediaLayout !== "phone");
-  const decorationText = description.join("\n\n");
 
   return (
-    <div className={styles.layout}>
+    <div className={`${styles.caseStudy} ${styles.caseBody}`}>
       <ProjectMediaView
-        className={styles.media}
         code={code}
         showCode={codeVisible && canShowCode}
         onToggleCode={canShowCode && code ? toggleCode : undefined}
@@ -47,19 +46,7 @@ const ProjectSection = ({
       >
         {media}
       </ProjectMediaView>
-      {isMobile ? (
-        <div className={styles.mobileDescription}>
-          <CustomTextCarousel descriptionList={description} heightProp="var(--project-total-height)" />
-        </div>
-      ) : (
-        <div className={styles.description} role="region" aria-label="Project description" tabIndex={0}>
-          <FileDivider label="project.txt" hexText={decorationText} />
-          <ul className={styles.descriptionList}>
-            {description.map((text) => <li key={text}>{text}</li>)}
-          </ul>
-          <HexFooter text={decorationText} />
-        </div>
-      )}
+      <CaseStudySummary study={study} description={description} />
     </div>
   );
 };

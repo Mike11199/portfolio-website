@@ -1,3 +1,4 @@
+import { caseStudies } from "../components/case-study/caseStudies";
 import { PythonIcon, PytestIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./PythonHashMap.css";
@@ -41,7 +42,9 @@ const PythonHashMap = () => {
     <>
       <section className="portfolio-project hash_map_section">
         <ProjectHeader
-          title={"Hash Map Data Structure Implementation - Python"}
+          title={caseStudies.hash.title}
+          category={caseStudies.hash.category}
+          subtitle={caseStudies.hash.subtitle}
           icons={
             <>
               <PythonIcon />
@@ -58,6 +61,7 @@ const PythonHashMap = () => {
         />
 
         <ProjectSection
+          study={caseStudies.hash}
           defaultDesktopView="code"
           code={
               <GitHubCodeViewer

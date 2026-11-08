@@ -12,10 +12,11 @@ const DevIcon = ({ src, alt, style }: DevIconProps) => (
 );
 
 const IconBadge = ({ background, children }: { background: string; children: ReactNode }) => (
-  <div style={{
+  <div data-icon-badge style={{
     position: "relative",
-    width: "4rem",
-    height: "4rem",
+    width: "var(--project-icon-size, 4rem)",
+    height: "var(--project-icon-size, 4rem)",
+    flexShrink: 0,
     borderRadius: "50%",
     backgroundColor: background,
     display: "flex",

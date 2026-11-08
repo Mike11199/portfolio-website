@@ -1,5 +1,4 @@
 import { JavaIcon, AwsIcon, PythonIcon, NginxIcon, TypeScriptIcon, SpringIcon, PyTorchIcon, LangChainIcon } from "../components/dev-icons/DevIcons";
-import ProjectHeader from "../components/project-header/ProjectHeader";
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
 import ButtonLink from "../../utils/buttons/ButtonLink";
@@ -8,6 +7,8 @@ import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions"
 import { PyTorchImages } from "../../../images/imageData.json";
 import styles from "./PyTorchApp.module.css";
 import ProjectSection from "../components/project-section/ProjectSection";
+import ProjectHeader from "../components/project-header/ProjectHeader";
+import { caseStudies } from "../components/case-study/caseStudies";
 
 const PyTorchApp = () => {
   const pyTorchProjectDescriptionText = [
@@ -79,37 +80,19 @@ const PyTorchApp = () => {
           in various programming languages.
         </p>
         <ProjectHeader
-          title={"PyTorch Computer Vision & Tool-Enabled LLM App (Java/ Python/ TypeScript/ LangChain)"}
-          className={styles.header}
-          icons={
-            <>
-              <JavaIcon />
-              <AwsIcon />
-              <PythonIcon />
-              <NginxIcon />
-              <TypeScriptIcon />
-              <SpringIcon />
-              <PyTorchIcon />
-              <LangChainIcon />
-            </>
-          }
-          actions={
-            <>
-              <RepositoryActions
-                repositoryUrl={repositoryUrl}
-              />
-              <ButtonLink
-                URL={
-                  "https://machine-learning-projects.com/video-mask-rcnn"
-                }
-                variant={"blue"}
-                buttonText={"Live Link - AWS EC2"}
-              />
-            </>
-          }
+          title={caseStudies.pytorch.title}
+          category={caseStudies.pytorch.category}
+          subtitle={caseStudies.pytorch.subtitle}
+          icons={<><JavaIcon /><AwsIcon /><PythonIcon /><NginxIcon />
+            <TypeScriptIcon /><SpringIcon /><PyTorchIcon /><LangChainIcon /></>}
+          actions={<>
+            <ButtonLink URL="https://machine-learning-projects.com/video-mask-rcnn"
+              variant="blue" buttonText="Live Link - AWS EC2" />
+            <RepositoryActions repositoryUrl={repositoryUrl} />
+          </>}
         />
-
         <ProjectSection
+          study={caseStudies.pytorch}
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}
           code={
@@ -126,9 +109,7 @@ const PyTorchApp = () => {
                 ]}
               />
           }
-          media={
-              <Carousel items={PyTorchImages} />
-          }
+          media={<Carousel items={PyTorchImages} />}
           description={pyTorchProjectDescriptionText}
         />
       </section>

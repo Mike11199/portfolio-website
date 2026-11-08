@@ -6,8 +6,10 @@
   width: 200px;
   height: 50px;
   padding: 2px 16px;
-  border: none;
-  border-radius: 0;
+  gap: 0.65rem;
+  border: 1px solid #383838;
+  border-radius: 0.35rem;
+  background-color: #080b09;
   font-family: "Segoe UI";
   font-weight: 500;
   font-size: 14px;
@@ -15,45 +17,42 @@
   text-align: center;
   text-decoration: none;
   color: #fff;
-  transition: background-color 0.17s ease, color 0.17s ease;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.17s ease, border-color 0.17s ease;
 }
 
 .button:focus-visible {
+  background-color: #102219;
+  border-color: var(--terminal-accent);
   outline: 2px solid var(--terminal-accent);
   outline-offset: 3px;
 }
 
 .button:active {
-  transform: scale(0.9);
+  transform: scale(0.98);
 }
 
 .red {
-  line-height: 16px;
-  background-color: rgb(77, 13, 13);
-}
-
-.red:hover {
-  background-color: rgb(104, 18, 18);
+  border-color: #484848;
 }
 
 .blue {
-  background-color: rgb(24, 29, 85);
-}
-
-.blue:hover {
-  background-color: rgb(31, 37, 109);
+  border-color: var(--terminal-border);
 }
 
 .github {
-  gap: 20px;
+  gap: 0.65rem;
   padding: 2px 6px;
-  background-color: #191d20;
+  background-color: #080b09;
 }
 
-.github:hover {
-  background-color: #202529;
+@media (hover: hover) {
+  .button:hover {
+    background-color: #102219;
+    border-color: var(--terminal-accent);
+  }
 }
+
+.externalIcon { width: 0.85rem; height: 0.85rem; flex-shrink: 0; color: var(--terminal-accent); }
 
 .logo {
   height: 20px;

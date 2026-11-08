@@ -1,3 +1,4 @@
+import { caseStudies } from "../components/case-study/caseStudies";
 import {
   DotNetIcon,
   DockerIcon,
@@ -71,9 +72,9 @@ const AlpinePeakClimbingSkiShop = () => {
     <>
       <section className="portfolio-project ski_shop_section">
         <ProjectHeader
-          title={
-            "Ski & Rock Climbing E-Commerce Store (.NET/ C#/ TypeScript/ PostgreSQL)"
-          }
+          title={caseStudies.alpine.title}
+          category={caseStudies.alpine.category}
+          subtitle={caseStudies.alpine.subtitle}
           icons={
             <>
               <DotNetIcon />
@@ -97,6 +98,7 @@ const AlpinePeakClimbingSkiShop = () => {
         />
 
         <ProjectSection
+          study={caseStudies.alpine}
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}
           code={

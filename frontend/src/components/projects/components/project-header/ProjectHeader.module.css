@@ -1,66 +1,29 @@
-.header {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  margin: 5rem 0 2rem;
-  padding: 1.5rem;
-  overflow: visible;
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-}
-
+.header { position: relative; margin-top: 3rem; }
 .hasTrailingAction { padding-right: 5rem; }
-.trailingAction {
-  position: absolute;
-  right: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.title {
-  margin: 0;
-  color: var(--terminal-title);
-  overflow-wrap: anywhere;
-}
-
+.trailingAction { position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); }
 .mobileAction { display: none; }
-
-.icons {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  overflow: visible;
+.header .mobileAction button,
+.header .trailingAction button {
+  background: #080b09;
+  color: #fff;
+  border: 1px solid #383838;
+  border-radius: 0.35rem;
+  box-shadow: none;
+  transition: background-color 0.17s ease, border-color 0.17s ease;
 }
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  overflow: visible;
-}
-
-.centeredIcons {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-}
-
-.icons img {
-  width: 2.5rem !important;
-  height: 2.5rem !important;
-  object-fit: contain;
-}
-
-@media (max-width: 600px) {
-  .actions:has(.mobileAction) {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: stretch;
-    gap: 0.5rem;
+@media (hover: hover) {
+  .header .mobileAction button:hover,
+  .header .trailingAction button:hover {
+    background: #102219;
+    border-color: var(--terminal-accent);
   }
+}
+.header .mobileAction button:focus-visible,
+.header .trailingAction button:focus-visible {
+  background: #102219;
+  border-color: var(--terminal-accent);
+}
+@media (max-width: 600px) {
 
   .mobileAction { display: flex; }
   .mobileAction button {
@@ -68,52 +31,19 @@
     width: 100%;
     flex: 1;
     box-sizing: border-box;
-    height: 50px;
-    gap: 10px;
-    padding: 2px 6px;
-    border-radius: 0;
-    background: #000;
-    color: #fff;
+    min-height: 50px;
+    height: auto;
+    gap: 0.65rem;
+    padding: 0.75rem 1rem;
     font: 500 14px/normal "Segoe UI";
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-  }
-  @media (hover: hover) {
-    .mobileAction button:hover { background: var(--terminal-hover); }
   }
   .mobileAction button svg { width: 20px; height: 20px; }
-  .mobileAction button:active { transform: scale(0.9); }
+  .mobileAction button:active { transform: scale(0.98); }
   .mobileAction button:active > :is(svg, span) { transform: none; }
   .mobileAction button span { display: inline; }
 
   .trailingAction { display: none; }
-  .header {
-    flex-direction: column;
-    justify-content: center;
-    margin: 2rem 0 1.5rem;
-    padding: 2rem;
-  }
 
-  .title {
-    text-align: center;
-  }
-
-  .icons {
-    justify-content: center;
-  }
-
-  .actions {
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding-inline: 0;
-  }
-
-  .centeredIcons {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .centeredIcons .icons {
-    justify-self: center;
-  }
+  .header { margin-top: 2rem; }
+  .hasTrailingAction { padding-right: 1.5rem; }
 }

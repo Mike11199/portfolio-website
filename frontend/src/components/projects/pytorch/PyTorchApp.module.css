@@ -1,7 +1,3 @@
-.header h3 {
-  overflow-wrap: inherit;
-}
-
 .pyTorchOuterContainer {
   color: white;
   min-height: fit-content;
@@ -28,33 +24,11 @@
 
 .projectsParagraph {
   height: auto;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 
 @media (max-width: 600px) {
-  .header {
-    text-align: center;
-    overflow-wrap: break-word;
-  }
-
-  .header h3 {
-    width: 100%;
-  }
-
-  .projectsHeader {
-    margin-top: 0rem;
-  }
-
-  .projectsParagraph {
-    text-align: center;
-  }
-
-  .pyTorchOuterContainer {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-
-  #projects {
-    top: 0px;
-  }
+  .projectsHeader { margin-top: 0; }
+  .projectsParagraph { text-align: center; }
+  .pyTorchOuterContainer { padding-inline: 1rem; }
 }

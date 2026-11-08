@@ -1,3 +1,4 @@
+import { caseStudies } from "../components/case-study/caseStudies";
 import { CSharpIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./KspScripting.css";
@@ -22,11 +23,14 @@ const description = [
 const KspScripting = () => (
   <section className="portfolio-project ksp_scripting_section">
     <ProjectHeader
-      title={"C# KSP Automated Scripting - kRPC (Remote Procedure Calls)"}
+      title={caseStudies.ksp.title}
+          category={caseStudies.ksp.category}
+          subtitle={caseStudies.ksp.subtitle}
       centeredIcons
       icons={<CSharpIcon />}
     />
     <ProjectSection
+          study={caseStudies.ksp}
       mediaLayout="video"
       media={
         <ProjectMediaFrame>

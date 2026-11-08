@@ -1,3 +1,4 @@
+import { caseStudies } from "../components/case-study/caseStudies";
 import { CppIcon, UnrealEngineIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./SlashUnrealEngine.css";
@@ -50,7 +51,9 @@ const SlashUnrealEngine = () => {
     <>
       <section className="portfolio-project unreal_section">
         <ProjectHeader
-          title={"C++ Unreal Engine Project Slash"}
+          title={caseStudies.slash.title}
+          category={caseStudies.slash.category}
+          subtitle={caseStudies.slash.subtitle}
           icons={
             <>
               <CppIcon />
@@ -67,6 +70,7 @@ const SlashUnrealEngine = () => {
         />
 
         <ProjectSection
+          study={caseStudies.slash}
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}
           code={

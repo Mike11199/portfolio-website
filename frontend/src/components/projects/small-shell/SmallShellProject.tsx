@@ -1,3 +1,4 @@
+import { caseStudies } from "../components/case-study/caseStudies";
 import { LinuxIcon, CIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./SmallShellProject.css";
@@ -46,7 +47,9 @@ const SmallShellProject = () => {
     <>
       <section className="portfolio-project smallsh_section">
         <ProjectHeader
-          title={"Small Shell (smallsh) - C Unix Shell"}
+          title={caseStudies.shell.title}
+          category={caseStudies.shell.category}
+          subtitle={caseStudies.shell.subtitle}
           mobileAction={
             <CodeViewButton showCode={showCode} onToggleCode={() => setShowCode((visible) => !visible)} />
           }
@@ -66,6 +69,7 @@ const SmallShellProject = () => {
         />
 
         <ProjectSection
+          study={caseStudies.shell}
           mediaLayout="video"
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}

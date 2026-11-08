@@ -1,3 +1,4 @@
+import { caseStudies } from "../components/case-study/caseStudies";
 import { AndroidStudioIcon, KotlinIcon, JavaIcon, JetpackComposeIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./KotlinAndroidProjects.css";
@@ -58,7 +59,9 @@ const KotlinAndroidProjects = () => {
           trailingAction={
             <CodeViewButton showCode={showCode} onToggleCode={() => setShowCode((visible) => !visible)} />
           }
-          title={"Kotlin (Jetpack Compose) - Sacramento City and Flight Search App"}
+          title={caseStudies.kotlin.title}
+          category={caseStudies.kotlin.category}
+          subtitle={caseStudies.kotlin.subtitle}
           icons={
             <>
               <AndroidStudioIcon />
@@ -82,6 +85,7 @@ const KotlinAndroidProjects = () => {
         />
 
         <ProjectSection
+          study={caseStudies.kotlin}
           mediaLayout="phone"
           showCode={showCode}
           code={
