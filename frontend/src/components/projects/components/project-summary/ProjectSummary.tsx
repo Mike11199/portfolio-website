@@ -3,10 +3,10 @@ import { useWindowWidth } from "@react-hook/window-size";
 import ParagraphCarousel from "../../../utils/paragraph-carousel/ParagraphCarousel";
 import FileDivider from "../../../utils/text-decoration/FileDivider";
 import HexFooter from "../../../utils/text-decoration/HexFooter";
-import styles from "./CaseStudy.module.css";
-import type { CaseStudy } from "./caseStudies";
+import styles from "./ProjectSummary.module.css";
+import type { ProjectContent } from "./ProjectSummary.types";
 
-export default function CaseStudySummary({ study, description }: { study: CaseStudy; description: string[] }) {
+export default function ProjectSummary({ content, description }: { content: ProjectContent; description: string[] }) {
   const isMobile = useWindowWidth() <= 600;
   const dialog = useRef<HTMLDialogElement>(null);
   const titleId = useId();
@@ -65,20 +65,20 @@ export default function CaseStudySummary({ study, description }: { study: CaseSt
     {isMobile ? (
       <div className={styles.mobileSummary}>
         <ParagraphCarousel
-          paragraphs={study.highlights.map(({ text }) => text)}
+          paragraphs={content.highlights.map(({ text }) => text)}
           label="project.txt"
           navigationLabel="project summary"
           minHeight="390px"
           renderParagraph={(text, index) => <article>
-            <h3>{study.highlights[index].heading}</h3><p>{text}</p>
+            <h3>{content.highlights[index].heading}</h3><p>{text}</p>
           </article>}
           footer={detailsButton}
         />
       </div>
     ) : (
-    <div className={styles.highlights} role="region" aria-label={`${study.title} summary`} tabIndex={0}>
+    <div className={styles.highlights} role="region" aria-label={`${content.title} summary`} tabIndex={0}>
       <FileDivider label="project.txt" hexText={description[0]} />
-      {study.highlights.map(({ heading, text }) => <article key={heading}>
+      {content.highlights.map(({ heading, text }) => <article key={heading}>
         <h3>{heading}</h3><p>{text}</p>
       </article>)}
       {detailsButton}
@@ -94,7 +94,7 @@ export default function CaseStudySummary({ study, description }: { study: CaseSt
             event.clientY < bounds.top || event.clientY > bounds.bottom) closeDetails();
       }}>
       <div className={styles.dialogHeader}>
-        <h2 id={titleId}>{study.title} — Technical details</h2>
+        <h2 id={titleId}>{content.title} — Technical details</h2>
         <button type="button" className={styles.closeButton} onClick={closeDetails} autoFocus>
           <span className={styles.desktopClose}>Close</span>
           <span className={styles.mobileBack}>← Back to project</span>
@@ -102,7 +102,7 @@ export default function CaseStudySummary({ study, description }: { study: CaseSt
       </div>
       <div className={styles.detailContent} tabIndex={0} role="region" aria-label="Technical details content">
         <FileDivider label="technical_details.txt" hexText={text} />
-        {study.detailGroups.map(({ heading, paragraphs }) => (
+        {content.detailGroups.map(({ heading, paragraphs }) => (
           <section className={styles.detailGroup} key={heading}>
             <h3>{heading}</h3>
             <ul className={styles.detailList}>

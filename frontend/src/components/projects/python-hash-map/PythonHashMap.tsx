@@ -1,4 +1,4 @@
-import { caseStudies } from "../components/case-study/caseStudies";
+import type { ProjectContent } from "../components/project-summary/ProjectSummary.types";
 import { PythonIcon, PytestIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./PythonHashMap.css";
@@ -8,6 +8,56 @@ import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions"
 import { hashMapImages } from "../../../images/imageData.json";
 import ProjectSection from "../components/project-section/ProjectSection";
 import { useWindowWidth } from "@react-hook/window-size";
+
+const projectContent = {
+  "title": "Hash Map Data Structure Implementation - Python",
+  "category": "DATA STRUCTURES / PYTHON",
+  "highlights": [
+    {
+      "heading": "Overview",
+      "text": "Two hash map implementations developed for OSU CS 261, using dynamic arrays with separate collision-resolution strategies: open addressing and separate chaining."
+    },
+    {
+      "heading": "Open addressing",
+      "text": "Collisions trigger probing within the underlying array until an available slot is found, keeping key/value entries inside the table itself."
+    },
+    {
+      "heading": "Separate chaining",
+      "text": "Each bucket holds a linked list. Keys that hash to the same index are stored as additional nodes in that bucket’s chain."
+    },
+    {
+      "heading": "Complexity",
+      "text": "Resizing controls the load factor and collision frequency. With a suitable hash distribution, operations are expected amortized O(1); resizing or pathological collisions can require O(N) work."
+    }
+  ],
+  "detailGroups": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        0
+      ]
+    },
+    {
+      "heading": "Open Addressing",
+      "paragraphs": [
+        1
+      ]
+    },
+    {
+      "heading": "Separate Chaining",
+      "paragraphs": [
+        2
+      ]
+    },
+    {
+      "heading": "Load Factor & Complexity",
+      "paragraphs": [
+        3
+      ]
+    }
+  ],
+  "technologies": ["Python", "pytest"]
+} satisfies ProjectContent;
 
 const PythonHashMap = () => {
   const isDesktop = useWindowWidth() > 600;
@@ -42,9 +92,9 @@ const PythonHashMap = () => {
     <>
       <section className="portfolio-project hash_map_section">
         <ProjectHeader
-          title={caseStudies.hash.title}
-          category={caseStudies.hash.category}
-          subtitle={caseStudies.hash.subtitle}
+          title={projectContent.title}
+          category={projectContent.category}
+          technologies={projectContent.technologies}
           icons={
             <>
               <PythonIcon />
@@ -61,7 +111,7 @@ const PythonHashMap = () => {
         />
 
         <ProjectSection
-          study={caseStudies.hash}
+          content={projectContent}
           defaultDesktopView="code"
           code={
               <GitHubCodeViewer

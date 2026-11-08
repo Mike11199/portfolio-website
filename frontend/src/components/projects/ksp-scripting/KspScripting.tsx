@@ -1,10 +1,39 @@
-import { caseStudies } from "../components/case-study/caseStudies";
+import type { ProjectContent } from "../components/project-summary/ProjectSummary.types";
 import { CSharpIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./KspScripting.css";
 import ReactVideoPlayer from "../../utils/react-video-player/ReactVideoPlayer";
 import ProjectSection from "../components/project-section/ProjectSection";
 import ProjectMediaFrame from "../components/project-media-frame/ProjectMediaFrame";
+
+const projectContent = {
+  title: "C# KSP Automated Scripting - kRPC (Remote Procedure Calls)",
+  category: "SIMULATION / C# SCRIPTING",
+  technologies: ["C#", "kRPC"],
+  highlights: [
+    {
+      heading: "Overview",
+      text: "A C# scripting experiment that automates rocket launches in Kerbal Space Program through kRPC, connecting external code to the game’s spacecraft controls.",
+    },
+    {
+      heading: "Integration",
+      text: "The kRPC mod runs a server inside the game. External scripts read flight telemetry and send control commands using remote procedure calls.",
+    },
+    {
+      heading: "Flight control",
+      text: "The recorded script automates launch, staging, and the gravity turn as the rocket approaches orbit, applying programming to orbital-mechanics experiments.",
+    },
+    {
+      heading: "Scope",
+      text: "A focused gameplay automation experiment rather than a full game mod. The demonstration shows the script alongside the resulting flight sequence.",
+    },
+  ],
+  detailGroups: [
+    { heading: "Overview & Scope", paragraphs: [0, 1] },
+    { heading: "kRPC Integration", paragraphs: [2, 4] },
+    { heading: "Launch Automation", paragraphs: [3] },
+  ],
+} satisfies ProjectContent;
 
 const description = [
   `Experimented with C# scripts to automate launches in Kerbal Space Program
@@ -23,14 +52,14 @@ const description = [
 const KspScripting = () => (
   <section className="portfolio-project ksp_scripting_section">
     <ProjectHeader
-      title={caseStudies.ksp.title}
-          category={caseStudies.ksp.category}
-          subtitle={caseStudies.ksp.subtitle}
+      title={projectContent.title}
+          category={projectContent.category}
+          technologies={projectContent.technologies}
       centeredIcons
       icons={<CSharpIcon />}
     />
     <ProjectSection
-          study={caseStudies.ksp}
+          content={projectContent}
       mediaLayout="video"
       media={
         <ProjectMediaFrame>

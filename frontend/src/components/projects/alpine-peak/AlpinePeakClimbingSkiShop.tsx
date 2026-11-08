@@ -1,4 +1,4 @@
-import { caseStudies } from "../components/case-study/caseStudies";
+import type { ProjectContent } from "../components/project-summary/ProjectSummary.types";
 import {
   DotNetIcon,
   DockerIcon,
@@ -16,6 +16,71 @@ import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { alpinePeakClimbingSkiShopImages } from "../../../images/imageData.json";
 import ProjectSection from "../components/project-section/ProjectSection";
+
+const projectContent = {
+  "title": "Ski & Rock Climbing E-Commerce Store",
+  "category": "E-COMMERCE / FULL-STACK DEVELOPMENT",
+  "highlights": [
+    {
+      "heading": "Overview",
+      "text": "A full-stack climbing and ski storefront built with TypeScript, Redux, and a C#/.NET API. Users can search products, submit reviews, manage a cart, and track orders."
+    },
+    {
+      "heading": "Data & authorization",
+      "text": "Entity Framework Core models products, orders, reviews, and users in PostgreSQL on AWS RDS. JWT middleware enforces resource ownership, with Google OAuth available for sign-in."
+    },
+    {
+      "heading": "Payments",
+      "text": "The PayPal SDK and sandbox accounts simulate checkout. API responses update payment status in PostgreSQL, linking purchases to each user’s order history."
+    },
+    {
+      "heading": "Deployment",
+      "text": "GitHub Actions builds Docker images and pushes them to ECR. AWS CDK deploys the Nginx frontend and .NET API together on ECS Fargate."
+    }
+  ],
+  "detailGroups": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        0
+      ]
+    },
+    {
+      "heading": "Application Architecture",
+      "paragraphs": [
+        1
+      ]
+    },
+    {
+      "heading": "Database Modeling & Migrations",
+      "paragraphs": [
+        5,
+        6
+      ]
+    },
+    {
+      "heading": "Payments",
+      "paragraphs": [
+        4
+      ]
+    },
+    {
+      "heading": "Authentication & Authorization",
+      "paragraphs": [
+        7,
+        8
+      ]
+    },
+    {
+      "heading": "Deployment & Networking",
+      "paragraphs": [
+        2,
+        3
+      ]
+    }
+  ],
+  "technologies": [".NET", "C#", "TypeScript", "PostgreSQL", "AWS CDK", "GitHub Actions"]
+} satisfies ProjectContent;
 
 const AlpinePeakClimbingSkiShop = () => {
   const AlpinePeakProjectDescriptionText = [
@@ -72,9 +137,9 @@ const AlpinePeakClimbingSkiShop = () => {
     <>
       <section className="portfolio-project ski_shop_section">
         <ProjectHeader
-          title={caseStudies.alpine.title}
-          category={caseStudies.alpine.category}
-          subtitle={caseStudies.alpine.subtitle}
+          title={projectContent.title}
+          category={projectContent.category}
+          technologies={projectContent.technologies}
           icons={
             <>
               <DotNetIcon />
@@ -98,7 +163,7 @@ const AlpinePeakClimbingSkiShop = () => {
         />
 
         <ProjectSection
-          study={caseStudies.alpine}
+          content={projectContent}
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}
           code={

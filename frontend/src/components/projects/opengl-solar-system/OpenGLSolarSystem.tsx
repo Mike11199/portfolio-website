@@ -1,4 +1,4 @@
-import { caseStudies } from "../components/case-study/caseStudies";
+import type { ProjectContent } from "../components/project-summary/ProjectSummary.types";
 import { CppIcon, OpenGLIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./OpenGLSolarSystem.css";
@@ -6,6 +6,62 @@ import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
 import ButtonLink from "../../utils/buttons/ButtonLink";
 import { solarSystemImages } from "../../../images/imageData.json";
 import ProjectSection from "../components/project-section/ProjectSection";
+
+const projectContent = {
+  "title": "OpenGL C++ Solar System Model",
+  "category": "COMPUTER GRAPHICS / C++",
+  "highlights": [
+    {
+      "heading": "Overview",
+      "text": "A C++ solar-system model using OpenGL, GLSL vertex and fragment shaders, 8K planet textures, and lighting. The scene includes planets, moons, asteroid belts, and a galaxy skybox."
+    },
+    {
+      "heading": "Rendering",
+      "text": "GPU shaders transform vertices and calculate fragment colors. OpenGL display lists reuse stored drawing commands for planet spheres and other scene objects."
+    },
+    {
+      "heading": "Textures",
+      "text": "Earth’s surface and cloud textures are blended in the fragment shader. Texture-coordinate offsets animate cloud movement using elapsed time and a sinusoidal function."
+    },
+    {
+      "heading": "Orbits & source",
+      "text": "Orbital periods are calculated from orbital radii using Kepler’s third law. Demonstrations are available, but source is withheld under OSU CS 450 course restrictions."
+    }
+  ],
+  "detailGroups": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        0
+      ]
+    },
+    {
+      "heading": "GPU Shaders",
+      "paragraphs": [
+        1
+      ]
+    },
+    {
+      "heading": "Scene Composition & Display Lists",
+      "paragraphs": [
+        2
+      ]
+    },
+    {
+      "heading": "Cloud Textures",
+      "paragraphs": [
+        3
+      ]
+    },
+    {
+      "heading": "Orbital Mechanics",
+      "paragraphs": [
+        4
+      ]
+    }
+  ],
+  "technologies": ["C++", "OpenGL", "GLSL"]
+} satisfies ProjectContent;
 
 const OpenGLSolarSystem = () => {
   const openGLSolarSystemProjectDescriptionText = [
@@ -46,9 +102,9 @@ const OpenGLSolarSystem = () => {
     <>
       <section className="portfolio-project solar_system_section">
         <ProjectHeader
-          title={caseStudies.opengl.title}
-          category={caseStudies.opengl.category}
-          subtitle={caseStudies.opengl.subtitle}
+          title={projectContent.title}
+          category={projectContent.category}
+          technologies={projectContent.technologies}
           icons={
             <>
               <CppIcon />
@@ -67,7 +123,7 @@ const OpenGLSolarSystem = () => {
         />
 
         <ProjectSection
-          study={caseStudies.opengl}
+          content={projectContent}
           media={
             <Carousel items={solarSystemImages} />
           }

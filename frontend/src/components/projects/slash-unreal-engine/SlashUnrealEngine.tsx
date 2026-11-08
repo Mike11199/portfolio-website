@@ -1,4 +1,4 @@
-import { caseStudies } from "../components/case-study/caseStudies";
+import type { ProjectContent } from "../components/project-summary/ProjectSummary.types";
 import { CppIcon, UnrealEngineIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./SlashUnrealEngine.css";
@@ -8,6 +8,56 @@ import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import { unrealEngineImages } from "../../../images/imageData.json";
 import ProjectSection from "../components/project-section/ProjectSection";
+
+const projectContent = {
+  "title": "C++ Unreal Engine Project Slash",
+  "category": "GAME DEVELOPMENT / C++",
+  "highlights": [
+    {
+      "heading": "Overview",
+      "text": "An in-progress Unreal Engine project based on a Udemy course, exploring C++ gameplay programming, character animation, and combat interactions."
+    },
+    {
+      "heading": "Combat geometry",
+      "text": "Dot and cross products determine the direction of weapon impacts relative to an actor. The resulting hit direction selects the appropriate enemy reaction animation."
+    },
+    {
+      "heading": "Animation",
+      "text": "Animation state machines use C++ variables exposed to Blueprint. Inverse kinematics adjusts character poses on sloped surfaces, while sockets attach equipped items."
+    },
+    {
+      "heading": "Gameplay interfaces",
+      "text": "Weapon box traces detect overlaps and dispatch hit responses through a shared HitInterface. Additional C++ logic handles sphere overlaps and treasure spawning."
+    }
+  ],
+  "detailGroups": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        0
+      ]
+    },
+    {
+      "heading": "Combat Geometry & Animation",
+      "paragraphs": [
+        1
+      ]
+    },
+    {
+      "heading": "Gameplay Events & State Machines",
+      "paragraphs": [
+        2
+      ]
+    },
+    {
+      "heading": "Hit Interfaces",
+      "paragraphs": [
+        3
+      ]
+    }
+  ],
+  "technologies": ["C++", "Unreal Engine", "Blueprint"]
+} satisfies ProjectContent;
 
 const SlashUnrealEngine = () => {
   const slashUnrealEngineProjectsDescriptionText = [
@@ -51,9 +101,9 @@ const SlashUnrealEngine = () => {
     <>
       <section className="portfolio-project unreal_section">
         <ProjectHeader
-          title={caseStudies.slash.title}
-          category={caseStudies.slash.category}
-          subtitle={caseStudies.slash.subtitle}
+          title={projectContent.title}
+          category={projectContent.category}
+          technologies={projectContent.technologies}
           icons={
             <>
               <CppIcon />
@@ -70,7 +120,7 @@ const SlashUnrealEngine = () => {
         />
 
         <ProjectSection
-          study={caseStudies.slash}
+          content={projectContent}
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}
           code={

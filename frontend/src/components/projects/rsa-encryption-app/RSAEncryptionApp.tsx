@@ -1,4 +1,4 @@
-import { caseStudies } from "../components/case-study/caseStudies";
+import type { ProjectContent } from "../components/project-summary/ProjectSummary.types";
 import { OpenSSLIcon, ElectronIcon, ReactIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./RSAEncryptionApp.css";
@@ -10,6 +10,56 @@ import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions"
 import { rsaEncryptionImages } from "../../../images/imageData.json";
 import ProjectSection from "../components/project-section/ProjectSection";
 
+
+const projectContent = {
+  "title": "RSA & AES Encryption App",
+  "category": "DESKTOP & WEB / CRYPTOGRAPHY",
+  "highlights": [
+    {
+      "heading": "Overview",
+      "text": "An Electron and React application for experimenting with RSA and AES text encryption and decryption, available as a desktop executable and web interface."
+    },
+    {
+      "heading": "Encoding",
+      "text": "Keys and ciphertext are represented in Base64 so binary cryptographic data can be displayed, copied, and exchanged as text."
+    },
+    {
+      "heading": "Interoperability",
+      "text": "OpenSSL CLI tutorials demonstrate workflows compatible with the application, including keeping private keys locally and exchanging encrypted text or files."
+    },
+    {
+      "heading": "Hybrid exchange",
+      "text": "A student-developed microservice receives an RSA public key and returns an encrypted AES key plus AES-encrypted text. The application decrypts the key and then the message."
+    }
+  ],
+  "detailGroups": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        0
+      ]
+    },
+    {
+      "heading": "Key & Ciphertext Encoding",
+      "paragraphs": [
+        1
+      ]
+    },
+    {
+      "heading": "OpenSSL Interoperability",
+      "paragraphs": [
+        2
+      ]
+    },
+    {
+      "heading": "Hybrid Key Exchange",
+      "paragraphs": [
+        3
+      ]
+    }
+  ],
+  "technologies": ["Electron.js", "React.js"]
+} satisfies ProjectContent;
 
 const RSAEncryptionApp = () => {
   const rSAEncryptionProjectDescriptionText = [
@@ -45,9 +95,9 @@ const RSAEncryptionApp = () => {
     <>
       <section className="portfolio-project rsa_section">
         <ProjectHeader
-          title={caseStudies.rsa.title}
-          category={caseStudies.rsa.category}
-          subtitle={caseStudies.rsa.subtitle}
+          title={projectContent.title}
+          category={projectContent.category}
+          technologies={projectContent.technologies}
           icons={
             <>
               <OpenSSLIcon />
@@ -75,7 +125,7 @@ const RSAEncryptionApp = () => {
         />
 
         <ProjectSection
-          study={caseStudies.rsa}
+          content={projectContent}
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}
           code={

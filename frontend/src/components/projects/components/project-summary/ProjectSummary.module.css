@@ -1,11 +1,11 @@
-.caseStudy {
+.projectLayout {
   --project-total-height: 630px;
   --project-nav-height: 3rem;
   --project-thumbnails-height: 6rem;
   width: 100%;
 }
 
-.caseHeader {
+.projectHeader {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -42,7 +42,7 @@
   font: 0.75rem/1.6 monospace;
   letter-spacing: 0.06em;
 }
-.caseHeader h2 {
+.projectHeader h2 {
   margin: 0.5rem 0 0;
   font-size: clamp(1.4rem, 1.8vw, 2rem);
   line-height: 1.25;
@@ -93,14 +93,14 @@
   outline: 2px solid var(--terminal-accent);
   outline-offset: 3px;
 }
-.caseBody {
+.projectBody {
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
   gap: 1.5rem;
   margin-bottom: 1.5rem;
   align-items: start;
 }
-.caseBody > * { min-width: 0; }
+.projectBody > * { min-width: 0; }
 .highlights article + article { border-top: 1px solid var(--terminal-divider); padding-top: 0.75rem; }
 .highlights h3 { font: 600 0.95rem/1.5 Consolas, monospace; margin: 0 0 0.4rem; color: var(--terminal-accent); }
 .highlights p { margin: 0; color: var(--terminal-accent); line-height: 1.6; }
@@ -185,7 +185,7 @@
 }
 
 @media (max-width: 1000px) {
-  .caseBody { grid-template-columns: 1fr; }
+  .projectBody { grid-template-columns: 1fr; }
   .highlights { height: auto; overflow: visible; }
   .stack { justify-content: flex-start; }
   .actions { justify-content: flex-start; }
@@ -232,8 +232,8 @@
     height: auto;
     padding: 0.75rem 1rem;
   }
-  .caseHeader h2 { overflow-wrap: anywhere; }
-  .caseHeader {
+  .projectHeader h2 { overflow-wrap: anywhere; }
+  .projectHeader {
     flex-direction: column;
     align-items: stretch;
     gap: 1.5rem;

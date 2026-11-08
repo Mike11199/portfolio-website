@@ -1,4 +1,4 @@
-import { caseStudies } from "../components/case-study/caseStudies";
+import type { ProjectContent } from "../components/project-summary/ProjectSummary.types";
 import { LinuxIcon, CIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./SmallShellProject.css";
@@ -9,6 +9,62 @@ import ProjectMediaFrame from "../components/project-media-frame/ProjectMediaFra
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import CodeViewButton from "../../utils/buttons/CodeViewButton";
+
+const projectContent = {
+  "title": "Small Shell (smallsh) - C Unix Shell",
+  "category": "SYSTEMS PROGRAMMING / UNIX",
+  "highlights": [
+    {
+      "heading": "Overview",
+      "text": "A C shell built with the Unix process API, supporting interactive commands and non-interactive execution from a file. Parent and child processes handle command execution."
+    },
+    {
+      "heading": "Processes & signals",
+      "text": "The shell monitors background processes, reports their exit status and PID, and resumes stopped children with SIGCONT. Signal handling separates shell behavior from child-process behavior."
+    },
+    {
+      "heading": "Expansion",
+      "text": "Special parameters expose the shell PID, last foreground exit status, and most recent background process. Named environment variables are expanded before execution."
+    },
+    {
+      "heading": "Input & output",
+      "text": "Command-line input is split into tokens. Input, output, and append redirection connect standard streams to files through the <, >, and >> operators."
+    }
+  ],
+  "detailGroups": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        0
+      ]
+    },
+    {
+      "heading": "Background Processes",
+      "paragraphs": [
+        1
+      ]
+    },
+    {
+      "heading": "Parameter Expansion",
+      "paragraphs": [
+        2
+      ]
+    },
+    {
+      "heading": "Signal Handling",
+      "paragraphs": [
+        3
+      ]
+    },
+    {
+      "heading": "Parsing & Redirection",
+      "paragraphs": [
+        4
+      ]
+    }
+  ],
+  "technologies": ["C", "Unix"]
+} satisfies ProjectContent;
 
 const SmallShellProject = () => {
   const smallShellProjectDescriptionText = [
@@ -47,9 +103,9 @@ const SmallShellProject = () => {
     <>
       <section className="portfolio-project smallsh_section">
         <ProjectHeader
-          title={caseStudies.shell.title}
-          category={caseStudies.shell.category}
-          subtitle={caseStudies.shell.subtitle}
+          title={projectContent.title}
+          category={projectContent.category}
+          technologies={projectContent.technologies}
           mobileAction={
             <CodeViewButton showCode={showCode} onToggleCode={() => setShowCode((visible) => !visible)} />
           }
@@ -69,7 +125,7 @@ const SmallShellProject = () => {
         />
 
         <ProjectSection
-          study={caseStudies.shell}
+          content={projectContent}
           mediaLayout="video"
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}

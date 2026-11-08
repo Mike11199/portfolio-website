@@ -1,15 +1,15 @@
 import { useState, type ReactNode } from "react";
 import { useWindowWidth } from "@react-hook/window-size";
-import CaseStudySummary from "../case-study/CaseStudySummary";
-import type { CaseStudy } from "../case-study/caseStudies";
-import styles from "../case-study/CaseStudy.module.css";
+import ProjectSummary from "../project-summary/ProjectSummary";
+import type { ProjectContent } from "../project-summary/ProjectSummary.types";
+import styles from "../project-summary/ProjectSummary.module.css";
 import ProjectMediaView from "../../../utils/project-media-view/ProjectMediaView";
 
 // Set to false to hide code view on mobile. Desktop is unaffected.
 const SHOW_CODE_ON_MOBILE = true;
 
 interface ProjectSectionProps {
-  study: CaseStudy;
+  content: ProjectContent;
   media: ReactNode;
   code?: ReactNode;
   description: string[];
@@ -21,7 +21,7 @@ interface ProjectSectionProps {
 
 /** Owns the shared height for media and description panels. */
 const ProjectSection = ({
-  study,
+  content,
   media,
   code,
   description,
@@ -37,7 +37,7 @@ const ProjectSection = ({
   const canShowCode = !isMobile || (SHOW_CODE_ON_MOBILE && mediaLayout !== "phone");
 
   return (
-    <div className={`${styles.caseStudy} ${styles.caseBody}`}>
+    <div className={`${styles.projectLayout} ${styles.projectBody}`}>
       <ProjectMediaView
         code={code}
         showCode={codeVisible && canShowCode}
@@ -46,7 +46,7 @@ const ProjectSection = ({
       >
         {media}
       </ProjectMediaView>
-      <CaseStudySummary study={study} description={description} />
+      <ProjectSummary content={content} description={description} />
     </div>
   );
 };

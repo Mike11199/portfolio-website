@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 import styles from "./ProjectHeader.module.css";
-import caseStyles from "../case-study/CaseStudy.module.css";
+import summaryStyles from "../project-summary/ProjectSummary.module.css";
 
 interface ProjectHeaderProps {
   title: ReactNode;
   category: string;
-  subtitle?: string;
+  technologies?: string[];
   icons: ReactNode;
   actions?: ReactNode;
   trailingAction?: ReactNode;
@@ -14,18 +14,18 @@ interface ProjectHeaderProps {
   className?: string;
 }
 
-const ProjectHeader = ({ title, category, subtitle, icons, actions, trailingAction, mobileAction, className = "" }: ProjectHeaderProps) => (
-  <div className={`${caseStyles.caseHeader} ${styles.header} ${trailingAction ? styles.hasTrailingAction : ""} ${className}`}>
-    <div className={caseStyles.headerTitle}>
-      <p className={caseStyles.eyebrow}>{category}</p>
+const ProjectHeader = ({ title, category, technologies, icons, actions, trailingAction, mobileAction, className = "" }: ProjectHeaderProps) => (
+  <div className={`${summaryStyles.projectHeader} ${styles.header} ${trailingAction ? styles.hasTrailingAction : ""} ${className}`}>
+    <div className={summaryStyles.headerTitle}>
+      <p className={summaryStyles.eyebrow}>{category}</p>
       <h2>{title}</h2>
-      {subtitle && <ul className={caseStyles.technologyTags} aria-label="Project technologies">
-        {subtitle.split(" / ").map((technology) => <li key={technology}>{technology}</li>)}
+      {technologies && <ul className={summaryStyles.technologyTags} aria-label="Project technologies">
+        {technologies.map((technology) => <li key={technology}>{technology}</li>)}
       </ul>}
     </div>
-    <div className={caseStyles.stack}>{icons}</div>
+    <div className={summaryStyles.stack}>{icons}</div>
     {(actions || mobileAction) && (
-      <div className={caseStyles.actions}>
+      <div className={summaryStyles.actions}>
         {actions}
         {mobileAction && <div className={styles.mobileAction}>{mobileAction}</div>}
       </div>

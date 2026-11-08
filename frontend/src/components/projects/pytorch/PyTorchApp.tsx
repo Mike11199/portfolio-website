@@ -9,7 +9,70 @@ import styles from "./PyTorchApp.module.css";
 import SectionHeading from "../../utils/section-heading/SectionHeading";
 import ProjectSection from "../components/project-section/ProjectSection";
 import ProjectHeader from "../components/project-header/ProjectHeader";
-import { caseStudies } from "../components/case-study/caseStudies";
+import type { ProjectContent } from "../components/project-summary/ProjectSummary.types";
+
+const projectContent = {
+  "title": "PyTorch Computer Vision & Tool-Enabled LLM App",
+  "category": "COMPUTER VISION / FULL-STACK DEVELOPMENT",
+  "highlights": [
+    {
+      "heading": "Overview",
+      "text": "A full-stack computer vision app using PyTorch Faster R-CNN for object detection and Mask R-CNN for instance segmentation, with a Java Spring Boot API, Flask inference service, and TypeScript frontend."
+    },
+    {
+      "heading": "Interaction",
+      "text": "LangChain and LangGraph connect a locally hosted Qwen3 LLM to tools for filtering detections, modifying overlays, and seeking through video. Python validates tool calls before execution."
+    },
+    {
+      "heading": "Processing",
+      "text": "Video inference runs through an asynchronous job queue, with media and results stored in S3 and job status tracked in DynamoDB. The frontend polls for progress; retries and cached results support repeat requests."
+    },
+    {
+      "heading": "Memory",
+      "text": "A Q4_K_M-quantized Qwen3-0.6B model runs on the CPU through llama.cpp. On-demand switching between vision and language models limits memory use, while a disk-backed KV cache avoids reprocessing the shared prompt."
+    }
+  ],
+  "detailGroups": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        0
+      ]
+    },
+    {
+      "heading": "LLM & Tool Calls",
+      "paragraphs": [
+        1
+      ]
+    },
+    {
+      "heading": "Memory Management",
+      "paragraphs": [
+        2
+      ]
+    },
+    {
+      "heading": "Image & Video Processing",
+      "paragraphs": [
+        3,
+        5
+      ]
+    },
+    {
+      "heading": "AWS Architecture",
+      "paragraphs": [
+        4
+      ]
+    },
+    {
+      "heading": "Deployment",
+      "paragraphs": [
+        6
+      ]
+    }
+  ],
+  "technologies": ["Java", "Python", "TypeScript", "LangChain", "AWS CDK", "GitHub Actions"]
+} satisfies ProjectContent;
 
 const PyTorchApp = () => {
   const pyTorchProjectDescriptionText = [
@@ -77,9 +140,9 @@ const PyTorchApp = () => {
         <div id="projects"></div>
         <SectionHeading icon="folder-code">Projects</SectionHeading>
         <ProjectHeader
-          title={caseStudies.pytorch.title}
-          category={caseStudies.pytorch.category}
-          subtitle={caseStudies.pytorch.subtitle}
+          title={projectContent.title}
+          category={projectContent.category}
+          technologies={projectContent.technologies}
           icons={<><JavaIcon /><AwsIcon /><PythonIcon /><NginxIcon />
             <TypeScriptIcon /><SpringIcon /><PyTorchIcon /><LangChainIcon /></>}
           actions={<>
@@ -89,7 +152,7 @@ const PyTorchApp = () => {
           </>}
         />
         <ProjectSection
-          study={caseStudies.pytorch}
+          content={projectContent}
           showCode={showCode}
           onToggleCode={() => setShowCode((visible) => !visible)}
           code={

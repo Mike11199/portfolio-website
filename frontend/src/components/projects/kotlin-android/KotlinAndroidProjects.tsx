@@ -1,4 +1,4 @@
-import { caseStudies } from "../components/case-study/caseStudies";
+import type { ProjectContent } from "../components/project-summary/ProjectSummary.types";
 import { AndroidStudioIcon, KotlinIcon, JavaIcon, JetpackComposeIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import "./KotlinAndroidProjects.css";
@@ -10,6 +10,64 @@ import ProjectMediaSlide from "../../utils/project-image-carousel/ProjectMediaSl
 import GitHubCodeViewer from "../../utils/github-code-viewer/GitHubCodeViewer";
 import RepositoryActions from "../../utils/github-code-viewer/RepositoryActions";
 import CodeViewButton from "../../utils/buttons/CodeViewButton";
+
+const projectContent = {
+  "title": "Kotlin (Jetpack Compose) - City and Flight Search App",
+  "category": "MOBILE DEVELOPMENT / JETPACK COMPOSE",
+  "highlights": [
+    {
+      "heading": "Overview",
+      "text": "Sacramento City and Flight Search are Kotlin Android applications built for OSU CS 492. Jetpack Compose provides declarative interfaces for browsing recommendations and flight data."
+    },
+    {
+      "heading": "State",
+      "text": "ViewModel exposes UI state through Kotlin data classes and retains it across configuration changes. State determines which composable screen is rendered."
+    },
+    {
+      "heading": "Persistence",
+      "text": "Flight Search uses SQLite through Room, with DAO-defined SQL queries for database operations. Coroutines keep database work asynchronous and off the main thread."
+    },
+    {
+      "heading": "Interface & source",
+      "text": "LazyColumn renders scrolling collections, with Compose modifiers controlling presentation. Flight Search source is public; Sacramento City is shown as a recording under course restrictions."
+    }
+  ],
+  "detailGroups": [
+    {
+      "heading": "Overview",
+      "paragraphs": [
+        0
+      ]
+    },
+    {
+      "heading": "Compose Interface",
+      "paragraphs": [
+        4
+      ]
+    },
+    {
+      "heading": "State & Data Models",
+      "paragraphs": [
+        5,
+        6
+      ]
+    },
+    {
+      "heading": "Database & Coroutines",
+      "paragraphs": [
+        3
+      ]
+    },
+    {
+      "heading": "Projects & Source Availability",
+      "paragraphs": [
+        1,
+        2
+      ]
+    }
+  ],
+  "technologies": ["Kotlin", "Jetpack Compose", "SQLite", "Room"]
+} satisfies ProjectContent;
 
 const KotlinAndroidProjects = () => {
   const kotlinAndroidProjectsDescriptionText = [
@@ -56,9 +114,9 @@ const KotlinAndroidProjects = () => {
     <>
       <section className="portfolio-project kotlin_section">
         <ProjectHeader
-          title={caseStudies.kotlin.title}
-          category={caseStudies.kotlin.category}
-          subtitle={caseStudies.kotlin.subtitle}
+          title={projectContent.title}
+          category={projectContent.category}
+          technologies={projectContent.technologies}
           icons={
             <>
               <AndroidStudioIcon />
@@ -88,7 +146,7 @@ const KotlinAndroidProjects = () => {
         />
 
         <ProjectSection
-          study={caseStudies.kotlin}
+          content={projectContent}
           mediaLayout="phone"
           showCode={showCode}
           code={
