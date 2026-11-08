@@ -134,7 +134,7 @@ export const caseStudies = {
     "subtitle": ".NET / C# / TypeScript / PostgreSQL / AWS CDK / GitHub Actions"
   },
   "kotlin": {
-    "title": "Kotlin (Jetpack Compose) - Sacramento City and Flight Search App",
+    "title": "Kotlin (Jetpack Compose) - City and Flight Search App",
     "category": "MOBILE DEVELOPMENT / JETPACK COMPOSE",
     "highlights": [
       {

@@ -31,7 +31,9 @@ const CodeDemo = () => {
               onClick={() => setActive(index)}>
               <img
                 className={styles.languageIcon}
-                src={`${devIconBaseUrl}${languageIcons[item.language]}`}
+                src={item.language === "Bash"
+                  ? "https://cdn.jsdelivr.net/gh/vscode-icons/vscode-icons@v11.6.0/icons/file_type_shell.svg"
+                  : `${devIconBaseUrl}${languageIcons[item.language]}`}
                 alt=""
                 width={18}
                 height={18}

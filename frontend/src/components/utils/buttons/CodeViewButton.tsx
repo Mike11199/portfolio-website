@@ -1,8 +1,11 @@
 import styles from "./CodeViewButton.module.css";
+import buttonStyles from "./Buttons.module.css";
 
 interface CodeViewButtonProps {
   showCode: boolean;
   onToggleCode: () => void;
+  standalone?: boolean;
+  mediaLabel?: string;
 }
 
 const CodeIcon = () => (
@@ -42,12 +45,12 @@ const ImageIcon = () => (
   </svg>
 );
 
-const CodeViewButton = ({ showCode, onToggleCode }: CodeViewButtonProps) => {
-  const actionLabel = showCode ? "View Images" : "View Code";
+const CodeViewButton = ({ showCode, onToggleCode, standalone = false, mediaLabel = "Images" }: CodeViewButtonProps) => {
+  const actionLabel = showCode ? `View ${mediaLabel}` : "View Code";
 
   return (
     <button
-      className={styles.codeButton}
+      className={standalone ? `${buttonStyles.button} ${styles.standalone}` : styles.codeButton}
       type="button"
       aria-pressed={showCode}
       aria-label={actionLabel}
@@ -55,7 +58,7 @@ const CodeViewButton = ({ showCode, onToggleCode }: CodeViewButtonProps) => {
       onClick={onToggleCode}
     >
       {showCode ? <ImageIcon /> : <CodeIcon />}
-      <span className={styles.label}>{showCode ? "Images" : "Code"}</span>
+      <span className={standalone ? undefined : styles.label}>{standalone ? actionLabel : showCode ? mediaLabel : "Code"}</span>
     </button>
   );
 };

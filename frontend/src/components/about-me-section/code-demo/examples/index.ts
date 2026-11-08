@@ -4,6 +4,7 @@ import { typescriptExample } from "./typescript";
 import { postgresqlExample } from "./postgresql";
 import { gitlabExample } from "./gitlab";
 import { dockerExample } from "./docker";
+import { bashExample } from "./bash";
 
 export const codeExamples = [
   pythonExample,
@@ -12,4 +13,5 @@ export const codeExamples = [
   postgresqlExample,
   gitlabExample,
   dockerExample,
+  bashExample,
 ];

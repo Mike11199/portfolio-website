@@ -56,9 +56,6 @@ const KotlinAndroidProjects = () => {
     <>
       <section className="portfolio-project kotlin_section">
         <ProjectHeader
-          trailingAction={
-            <CodeViewButton showCode={showCode} onToggleCode={() => setShowCode((visible) => !visible)} />
-          }
           title={caseStudies.kotlin.title}
           category={caseStudies.kotlin.category}
           subtitle={caseStudies.kotlin.subtitle}
@@ -79,6 +76,12 @@ const KotlinAndroidProjects = () => {
                 URL={"https://assets.michael-iwanek-portfolio.com/videos/kotlin-android.mp4"}
                 variant={"red"}
                 buttonText={"Video Link"}
+              />
+              <CodeViewButton
+                standalone
+                mediaLabel="Videos"
+                showCode={showCode}
+                onToggleCode={() => setShowCode((visible) => !visible)}
               />
             </>
           }
