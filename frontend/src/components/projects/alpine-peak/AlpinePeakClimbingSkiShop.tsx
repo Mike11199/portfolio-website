@@ -79,7 +79,7 @@ const projectContent = {
       ]
     }
   ],
-  "technologies": [".NET", "C#", "TypeScript", "PostgreSQL", "AWS CDK", "GitHub Actions"]
+  "technologies": [".NET", "C#", "EF Core", "TypeScript", "PostgreSQL", "AWS CDK", "GitHub Actions"]
 } satisfies ProjectContent;
 
 const AlpinePeakClimbingSkiShop = () => {

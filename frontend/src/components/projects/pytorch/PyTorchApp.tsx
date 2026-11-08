@@ -71,7 +71,7 @@ const projectContent = {
       ]
     }
   ],
-  "technologies": ["Java", "Python", "TypeScript", "LangChain", "AWS CDK", "GitHub Actions"]
+  "technologies": ["Java", "Python", "Docker", "TypeScript", "LangChain", "AWS CDK", "GitHub Actions"]
 } satisfies ProjectContent;
 
 const PyTorchApp = () => {

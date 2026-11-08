@@ -14,10 +14,9 @@ interface ProjectHeaderProps {
   className?: string;
 }
 
-const ProjectHeader = ({ title, category, technologies, icons, actions, trailingAction, mobileAction, className = "" }: ProjectHeaderProps) => (
+const ProjectHeader = ({ title, technologies, icons, actions, trailingAction, mobileAction, className = "" }: ProjectHeaderProps) => (
   <div className={`${summaryStyles.projectHeader} ${styles.header} ${trailingAction ? styles.hasTrailingAction : ""} ${className}`}>
     <div className={summaryStyles.headerTitle}>
-      <p className={summaryStyles.eyebrow}>{category}</p>
       <h2>{title}</h2>
       {technologies && <ul className={summaryStyles.technologyTags} aria-label="Project technologies">
         {technologies.map((technology) => <li key={technology}>{technology}</li>)}
