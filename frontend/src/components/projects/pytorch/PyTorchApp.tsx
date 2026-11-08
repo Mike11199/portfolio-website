@@ -1,4 +1,4 @@
-import { JavaIcon, AwsIcon, PythonIcon, NginxIcon, TypeScriptIcon, SpringIcon, PyTorchIcon } from "../components/dev-icons/DevIcons";
+import { JavaIcon, AwsIcon, PythonIcon, NginxIcon, TypeScriptIcon, SpringIcon, PyTorchIcon, LangChainIcon } from "../components/dev-icons/DevIcons";
 import ProjectHeader from "../components/project-header/ProjectHeader";
 import { useState } from "react";
 import Carousel from "../../utils/project-image-carousel/ProjectImageCarousel";
@@ -11,42 +11,60 @@ import ProjectSection from "../components/project-section/ProjectSection";
 
 const PyTorchApp = () => {
   const pyTorchProjectDescriptionText = [
-    `A full stack machine learning project involving multiple deployed PyTorch
-    computer vision models.  A user can choose between a mask-rcnn (Instance Segmentation)
-    model, giving near pixel accurate detection, or fast-rcnn (only bounding boxes). A TypeScript
-    site can be used to upload images or provide the URL
-    of an image to run computer vision analytics on.  Bounding boxes and masks
-    produced by the neural network can be dynamically resized by the user.`,
+    `A full stack computer vision project which combines PyTorch image and video
+    analysis with a locally hosted LLM. LangChain and LangGraph connect the
+    LLM to tools for interacting with the results. A user can ask it to filter
+    detected objects, change overlay colors, or navigate to a point in a video.
+    Videos are processed asynchronously on AWS, with progress
+    previews and cached results. Model switching and prompt caching is used
+    to run the vision models and LLM on a server with limited memory.`,
 
-    `The entire architecture has been reworked to be deployed via CI/CD using
-    a GitHub actions workflow (pipeline).  This uses AWS CDK to update a CloudFormation
-    stack for the app on code changes.  I run ECS on an EC2 spot instance, allowing me to containerize for cheap compared
-    to Fargate.  Previously, I would SSH manually into the EC2 and git clone, run linux commands
-    to build and restart the services.  The CDK also defines all the manual set up I had originally done
-    to get this working, such as Route 53 records, adding HTTP/HTTPS listener rules to a load balancer, etc.`,
+    `The LLM is Qwen3-0.6B, a 600 million parameter model running locally on the
+    server's CPU through llama.cpp. I run a GGUF version with Q4_K_M quantization
+    to reduce the memory needed for the model weights. A user can ask it to
+    "make cars purple and people red" instead of changing each setting manually.
+    LangGraph and LangChain connect the LLM to functions for filtering detections,
+    changing the overlays, and navigating video results. The Python code checks
+    the function calls before applying any changes. If a call is invalid, the
+    error is sent back to the LLM so it can try to correct it.`,
 
-    `A Java Spring Boot API handles requests from the front end and sends binary image data to a
-    Flask microservice.  The Flask app runs a custom inference.py script I've
-    written which invokes the model. This script loads an
-    image as a NumPy array into the Torch model and returns its
-    predictions as a JSON object.  Masks are returned as an array of binary values.`,
+    `Since the server doesn't have enough memory to keep all of these models loaded
+    at once, I switch between Qwen and the PyTorch models depending on the request.
+    Reloading the LLM would normally mean processing the same instructions and
+    function definitions again. To avoid repeating this work, I save its prompt
+    KV cache to disk and restore it when the model is loaded again. This keeps the
+    already computed part of the prompt available across model switches, without
+    having to keep the LLM itself in memory.`,
 
-    `The Java Spring Boot API takes multi-part-form data from the front end to
-    route to the Flask microservice. From the UI, a user can upload an URL of an image
-    which is downloaded and converted to a blob, then appended to the form
-    data. An image file can also be uploaded from their
-    computer/phone with a file explorer pop up, or by dragging and
-    dropping the file onto the web page.`,
+    `For images, a user can upload an image file or provide an
+    image URL for processing with either Faster R-CNN or Mask R-CNN.
+    Both produce bounding boxes, while Mask R-CNN also returns masks outlining
+    each object. Video processing uses Mask R-CNN and accepts uploaded videos,
+    direct video URLs, or YouTube links. The results are
+    drawn over the video and stay in sync with playback.`,
 
-    `After receiving data from the PyTorch model, the front end uses
-    the JavaScript Canvas to plot the bounding boxes and accuracy of
-    the models predictions onto the image provided by the user. The
-    model is capable of analyzing multiple objects in an image and
-    can plot each of these bounding boxes on a supplied image. If an
-    image URL is preferred over an image upload, a user has the
-    option of choosing images I've pre-selected from a drop down, or
-    copying and pasting their own image URL they've found on the
-    internet.`,
+    `A Java Spring Boot API handles requests from the front end and sends them to a
+    Flask microservice, which runs the PyTorch models. Since processing a video can
+    take a while, these requests are handled asynchronously through a job queue.
+    The video files and generated results are stored in AWS S3, while DynamoDB keeps
+    track of each job's status and progress. The front end checks this progress and
+    displays previews as frames are processed, so the user can see results before
+    the entire video is finished.`,
+
+    `Video jobs can be retried if processing is interrupted, and completed results
+    are cached so the same video doesn't need to go through the model again.
+    The front end uses the JavaScript Canvas to plot the model's predictions,
+    keeping the bounding boxes and masks in sync with video playback. A user can
+    filter which objects are shown, change their colors, or hide the masks and
+    bounding boxes without having to rerun the model.`,
+
+    `The entire architecture is deployed via CI/CD using a GitHub Actions workflow.
+    This builds the Docker images, pushes them to Amazon ECR, and uses AWS CDK to
+    update a CloudFormation stack for the app on code changes. I run ECS on an EC2
+    Spot instance to keep hosting costs down. Previously, I would SSH manually into
+    the EC2 and run Linux commands to build and restart the services. The CDK now
+    defines the setup I originally did manually, such as Route 53 records and
+    HTTP/HTTPS listener rules on the load balancer.`,
   ];
   const [showCode, setShowCode] = useState(false);
   const repositoryUrl = "https://github.com/Mike11199/PyTorch-Image-Classification-Java-Flask-TypeScript";
@@ -61,7 +79,7 @@ const PyTorchApp = () => {
           in various programming languages.
         </p>
         <ProjectHeader
-          title={"PyTorch Image Classification Website - Java Spring Boot/ Flask/ TypeScript"}
+          title={"PyTorch Computer Vision & Tool-Enabled LLM App (Java/ Python/ TypeScript/ LangChain)"}
           className={styles.header}
           icons={
             <>
@@ -72,6 +90,7 @@ const PyTorchApp = () => {
               <TypeScriptIcon />
               <SpringIcon />
               <PyTorchIcon />
+              <LangChainIcon />
             </>
           }
           actions={

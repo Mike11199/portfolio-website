@@ -78,6 +78,10 @@ export const LinuxIcon = () => (
   <DevIcon src={`${iconUrl}linux/linux-original.svg`} alt="linux logo" />
 );
 
+export const LangChainIcon = () => (
+  <DevIcon src={`${iconUrl}langchain/langchain-stacked-v2.svg`} alt="LangChain logo" />
+);
+
 export const NginxIcon = () => (
   <DevIcon src={`${iconUrl}nginx/nginx-original.svg`} alt="nginx logo" />
 );

@@ -1,6 +1,6 @@
 # Dev icons
 
-These are the self-hosted copies of the 27 technology icons used by project badges
+These are the self-hosted copies of the 28 technology icons used by project badges
 and the code demo. Both components use `frontend/src/images/devIcons.ts` to load
 them from `https://assets.michael-iwanek-portfolio.com/icons/dev/v1/`.
 
@@ -17,6 +17,20 @@ Sources:
   their respective owners' property.
 - `c/C_Logo.png` preserves the previously used
   [Wikimedia C logo](https://commons.wikimedia.org/wiki/File:C_Logo.png).
+- `langchain/langchain.svg` comes from
+  [Simple Icons revision 1bb2f6e](https://github.com/simple-icons/simple-icons/blob/1bb2f6e6ea50f920de8d2f3d273ae48564a5eaee/icons/langchain.svg).
+  Its CC0 license is preserved in `LICENSE.simple-icons`. This previous icon is
+  retained for older frontend releases.
+- `langgraph/langgraph-dark.svg` is the official LangGraph mark and wordmark from
+  [LangChain's brand assets](https://www.langchain.com/brand-assets), using the
+  supplied dark-background variant with white text. This previous icon is
+  retained for older frontend releases.
+- `langchain/langchain-stacked-v2.svg` is a custom compact arrangement requested for
+  this portfolio: the blue LangChain bird on a dark navy rounded square, with
+  light blue outlined lettering underneath. The earlier `langchain-stacked.svg`
+  is retained for older frontend releases.
+  The paths come from the [official LangChain lockup](https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6a9936e4f7726409a9ce4092_LangChain_Lockup_Black%201-1.svg).
+  It uses a square viewBox and no external fonts, so it fits the standard icon row.
 - `openssl/openssl_logo.svg` is the existing repository's OpenSSL logo, moved
   from the project badge component directory.
 
