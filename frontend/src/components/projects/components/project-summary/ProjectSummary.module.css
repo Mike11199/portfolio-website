@@ -71,6 +71,10 @@
   height: 80% !important;
 }
 .highlights {
+  --hex-row-height: 1.1rem;
+  --hex-spacing: 0.25rem;
+  --hex-footer-padding: 0rem;
+  --file-header-alignment: flex-end;
   display: flex;
   flex-direction: column;
   gap: 1rem;

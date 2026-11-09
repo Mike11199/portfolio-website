@@ -17,7 +17,7 @@ const projectContent = {
   "highlights": [
     {
       "heading": "Overview",
-      "text": "A full-stack computer vision app using PyTorch Faster R-CNN for object detection and Mask R-CNN for instance segmentation, with a Java Spring Boot API, Flask inference service, and TypeScript frontend."
+      "text": "A full-stack app combining PyTorch Faster R-CNN for object detection and Mask R-CNN for instance segmentation with a locally hosted LLM agent, using LangChain and LangGraph to interact with image and video results."
     },
     {
       "heading": "Interaction",

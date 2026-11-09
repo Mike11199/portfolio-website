@@ -82,7 +82,7 @@ export default function ProjectSummary({ content, description }: { content: Proj
       {content.highlights.map(({ heading, text }) => <article key={heading}>
         <h3>{heading}</h3><p>{text}</p>
       </article>)}
-      <HexFooter text={text} />
+      <HexFooter text={text} expand />
     </div>
     )}
     <dialog ref={dialog} className={styles.detailsDialog} aria-labelledby={titleId}
@@ -110,7 +110,7 @@ export default function ProjectSummary({ content, description }: { content: Proj
             </ul>
           </section>
         ))}
-        {isMobile ? <HexFooter text={text} /> : <FileDivider label="end of file" showCursor={false} />}
+        <HexFooter text={text} rows={2} />
       </div>
     </dialog>
   </>;

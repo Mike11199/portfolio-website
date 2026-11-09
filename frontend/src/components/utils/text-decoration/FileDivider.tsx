@@ -18,7 +18,7 @@ const FileDivider = ({ label, showCursor = true, hexText, hexRows, action }: Fil
   const headerHex = useHexDump(hexText, preRef, { maxRows: hexRows ?? (windowWidth <= 600 ? 1 : 2) });
 
   return (
-    <div className={styles.fileHeader}>
+    <div className={`${styles.fileHeader}${action && hexText !== undefined ? ` ${styles.withAction}` : ""}`}>
       {hexText !== undefined && <pre ref={preRef} className={styles.headerHex} aria-hidden="true">{headerHex}</pre>}
       <div className={styles.headerRow}>
       <div className={styles.divider} aria-hidden="true">
