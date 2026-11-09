@@ -14,9 +14,10 @@ interface ParagraphCarouselProps {
   renderParagraph: (text: string, index: number) => ReactNode;
   footer?: ReactNode;
   headerAction?: ReactNode;
+  fitViewport?: boolean;
 }
 
-const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, renderParagraph, footer, headerAction }: ParagraphCarouselProps) => {
+const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, renderParagraph, footer, headerAction, fitViewport = false }: ParagraphCarouselProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const activeIndex = Math.min(selectedIndex, Math.max(0, paragraphs.length - 1));
   const decorationText = paragraphs.join("\n\n");
@@ -27,7 +28,7 @@ const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, rend
   };
 
   return (
-    <div className="carousel-container">
+    <div className={`carousel-container${fitViewport ? ` ${styles.viewportFit}` : ""}`}>
       <div className="text-carousel-content">
         <button
           type="button"
@@ -39,7 +40,7 @@ const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, rend
           <FontAwesomeIcon icon={faArrowUp} size="sm" />
         </button>
         <div className="textWrapperMobile">
-          <div className={styles.panel} style={{ minHeight }}>
+          <div className={styles.panel} style={fitViewport ? undefined : { minHeight }}>
             <FileDivider label={label} hexText={decorationText} action={headerAction} />
             <div className={styles.slideStack}>
               {paragraphs.map((text, index) => (
@@ -49,7 +50,7 @@ const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, rend
               ))}
             </div>
             {footer && <div className={styles.footer}>{footer}</div>}
-            <HexFooter text={decorationText} />
+            <HexFooter text={decorationText} rows={fitViewport ? 1 : 2} />
             <div className={styles.pageCount} aria-live="polite" aria-atomic="true">
               {paragraphs.length === 0 ? 0 : activeIndex + 1} / {paragraphs.length}
             </div>
@@ -70,3 +71,4 @@ const ParagraphCarousel = ({ paragraphs, label, navigationLabel, minHeight, rend
 };
 
 export default ParagraphCarousel;
+

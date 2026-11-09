@@ -69,6 +69,7 @@ export default function ProjectSummary({ content, description }: { content: Proj
           label="project.txt"
           navigationLabel="project summary"
           minHeight="390px"
+          fitViewport
           renderParagraph={(text, index) => <article>
             <h3>{content.highlights[index].heading}</h3><p>{text}</p>
           </article>}

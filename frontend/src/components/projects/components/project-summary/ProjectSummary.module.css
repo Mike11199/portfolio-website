@@ -153,14 +153,20 @@
 .mobileSummary { min-width: 0; }
 .mobileSummary :global(.carousel-container) { margin: 0; }
 .mobileSummary :global(.text-carousel-content) { margin: 0; padding: 0; }
-.mobileSummary article { padding-block: 0.5rem 1rem; }
+.mobileSummary article { padding-block: 0.5rem; }
 .mobileSummary h3 {
-  margin: 1.5rem 0 1rem;
+  margin: 0 0 0.5rem;
   color: var(--terminal-accent);
   font: 700 0.95rem/1.5 "Segoe UI", sans-serif;
 }
 .mobileSummary article p { margin: 0; padding-inline-start: 1.25rem; line-height: 1.6; }
-.mobileSummary .detailsButton { width: 100%; margin-block: 1rem; }
+.mobileSummary .detailsButton { width: 100%; margin-block: 0; }
+@media (max-height: 600px) {
+  .mobileSummary article { padding-block: 0.25rem; }
+  .mobileSummary article p { padding-inline-start: 0; }
+  .mobileSummary h3 { margin-bottom: 0.25rem; }
+  .mobileSummary .detailsButton { padding-block: 0.25rem; }
+}
 .detailGroup { margin-block: 1.5rem; }
 .detailGroup h3 {
   margin: 0 0 0.65rem;

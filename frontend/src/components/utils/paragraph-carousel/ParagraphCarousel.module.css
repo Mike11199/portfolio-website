@@ -34,3 +34,38 @@
   flex-shrink: 0;
   font-variant-numeric: tabular-nums;
 }
+
+/* Budget for both arrow buttons as part of the mobile card, not outside it. */
+.viewportFit :global(.text-carousel-content) {
+  display: grid;
+  grid-template-rows: 48px minmax(0, 1fr) 48px;
+  height: min(720px, calc(100svh - 1rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)));
+}
+.viewportFit :global(.textWrapperMobile) { min-height: 0; }
+.viewportFit .panel {
+  min-height: 0;
+  padding: 0.75rem;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto auto;
+}
+.viewportFit .slideStack { position: relative; min-height: 0; }
+.viewportFit .footer { padding-top: 0.25rem; }
+.viewportFit .pageCount { margin-top: 0.25rem; }
+/* Short screens prioritize the original, complete slides over decoration. */
+@media (max-height: 600px) {
+  .viewportFit .panel { padding: 0.5rem; grid-template-rows: auto minmax(0, 1fr) auto auto; }
+  .viewportFit .panel > [aria-hidden="true"],
+  .viewportFit .panel > :first-child pre { display: none; }
+}
+
+@media (max-height: 400px) {
+  .viewportFit .panel {
+    padding-block: 0.25rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: minmax(0, 1fr) auto;
+    column-gap: 0.5rem;
+  }
+  .viewportFit .panel > :first-child { display: none; }
+  .viewportFit .slideStack { grid-column: 1 / -1; }
+  .viewportFit .pageCount { align-self: center; margin: 0; }
+}

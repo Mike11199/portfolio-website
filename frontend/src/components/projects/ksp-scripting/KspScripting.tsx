@@ -25,7 +25,7 @@ const projectContent = {
     },
     {
       heading: "Scope",
-      text: "A focused gameplay automation experiment rather than a full game mod. The demonstration shows the script alongside the resulting flight sequence.",
+      text: "A simple project built to explore automation rather than a larger mod in Unity.",
     },
   ],
   detailGroups: [

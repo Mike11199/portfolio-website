@@ -28,7 +28,7 @@ const AboutMeSection = () => {
   return (
     <>
       <section id={styles.aboutMeSection}>
-        <SectionHeading icon="user">About Me</SectionHeading>
+        <SectionHeading>About Me</SectionHeading>
         <div className={styles.aboutMeContainer} >
           <div className={styles.aboutMeImagesAndTextWrapper}>
             <div className={styles.mediaGroup}>
