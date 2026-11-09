@@ -59,13 +59,17 @@ const projectContent = {
       ]
     },
     {
+      "heading": "YouTube Imports",
+      "paragraphs": [7]
+    },
+    {
       "heading": "AWS Architecture",
       "paragraphs": [
         4
       ]
     },
     {
-      "heading": "Deployment",
+      "heading": "Deployment - CI/CD",
       "paragraphs": [
         6
       ]
@@ -93,13 +97,11 @@ const PyTorchApp = () => {
     the function calls before applying any changes. If a call is invalid, the
     error is sent back to the LLM so it can try to correct it.`,
 
-    `Since the server doesn't have enough memory to keep all of these models loaded
-    at once, I switch between Qwen and the PyTorch models depending on the request.
-    Reloading the LLM would normally mean processing the same instructions and
-    function definitions again. To avoid repeating this work, I save its prompt
-    KV cache to disk and restore it when the model is loaded again. This keeps the
-    already computed part of the prompt available across model switches, without
-    having to keep the LLM itself in memory.`,
+    `Qwen and the PyTorch models are loaded on demand to fit within the server's
+    memory limits. A precomputed prompt KV cache for shared instructions and tool
+    definitions is bundled into the Docker image stored in Amazon ECR. Replacement
+    containers can restore this starter cache after Spot instance interruptions or
+    redeployments, while a disk cache supports model switching during runtime.`,
 
     `For images, a user can upload an image file or provide an
     image URL for processing with either Faster R-CNN or Mask R-CNN.
@@ -123,13 +125,19 @@ const PyTorchApp = () => {
     filter which objects are shown, change their colors, or hide the masks and
     bounding boxes without having to rerun the model.`,
 
-    `The entire architecture is deployed via CI/CD using a GitHub Actions workflow.
-    This builds the Docker images, pushes them to Amazon ECR, and uses AWS CDK to
-    update a CloudFormation stack for the app on code changes. I run ECS on an EC2
-    Spot instance to keep hosting costs down. Previously, I would SSH manually into
-    the EC2 and run Linux commands to build and restart the services. The CDK now
-    defines the setup I originally did manually, such as Route 53 records and
-    HTTP/HTTPS listener rules on the load balancer.`,
+    `GitHub Actions automates deployment on code changes. Docker images package
+    each service with its dependencies and are stored in Amazon Elastic Container
+    Registry (ECR), AWS's container image registry. Amazon ECS runs the containers
+    on an EC2 Spot instance to reduce hosting costs. AWS CDK updates the
+    CloudFormation stack, including Route 53 records and load balancer rules,
+    replacing manual SSH builds and service restarts.`,
+
+    `YouTube imports use yt-dlp through a Tor HTTP proxy running in a dedicated container to work around
+    download restrictions affecting AWS-hosted IP addresses. The downloader reads
+    the video metadata and uses FFmpeg to fetch only the requested clip. Temporary
+    failures can trigger up to five attempts within a five-minute deadline. Between
+    attempts, Python uses Stem to exclude the current exit nodes and request a new
+    Tor identity. Each attempt starts with a fresh temporary file.`,
   ];
   const [showCode, setShowCode] = useState(false);
   const repositoryUrl = "https://github.com/Mike11199/PyTorch-Image-Classification-Java-Flask-TypeScript";
